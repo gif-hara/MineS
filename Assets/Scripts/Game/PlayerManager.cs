@@ -11,7 +11,7 @@ namespace MineS
 	public class PlayerManager : SingletonMonoBehaviour<PlayerManager>
 	{
 		[SerializeField]
-		private List<PlayerDataObserver> observers;
+		private List<CharacterDataObserver> observers;
 
 		public PlayerData Data{ private set; get; }
 
