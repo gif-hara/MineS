@@ -17,7 +17,9 @@ namespace MineS
 		[SerializeField]
 		private CellController cellPrefab;
 
-		private CellController[,] cells = new CellController[RowMax, CulumnMax];
+		private CellController[,] cellControllers = new CellController[RowMax, CulumnMax];
+
+		private CellData[,] cellDatabase;
 
 		private const int RowMax = 10;
 
@@ -32,31 +34,35 @@ namespace MineS
 
 		void Start()
 		{
-			var database = new CellData[RowMax, CulumnMax];
+			var database = this.CreateDebugCellDatabase();
 			for(int y = 0; y < RowMax; y++)
 			{
 				for(int x = 0; x < CulumnMax; x++)
 				{
-					this.cells[y, x] = Instantiate(this.cellPrefab, this.cellField, false) as CellController;
-					database[y, x] = this.CreateDebugCellData(y, x);
+					this.cellControllers[y, x] = Instantiate(this.cellPrefab, this.cellField, false) as CellController;
 				}
 			}
 			this.SetCell(database);
 
-			var initialCell = database[Random.Range(0, CulumnMax), Random.Range(0, CulumnMax)];
-			initialCell.Steppable();
-			initialCell.Identification();
+			this.InitializeStep();
 		}
 
 		public void SetCell(CellData[,] database)
 		{
+			this.cellDatabase = database;
 			for(int y = 0; y < RowMax; y++)
 			{
 				for(int x = 0; x < CulumnMax; x++)
 				{
-					this.cells[y, x].SetCellData(database[y, x]);
+					this.cellControllers[y, x].SetCellData(database[y, x]);
 				}
 			}
+		}
+
+		public void NextFloor()
+		{
+			this.SetCell(this.CreateDebugCellDatabase());
+			this.InitializeStep();
 		}
 
 		public CellData GetAdjacentCellData(int y, int x, GameDefine.AdjacentType type)
@@ -64,21 +70,21 @@ namespace MineS
 			switch(type)
 			{
 			case GameDefine.AdjacentType.Left:
-				return x <= 0 ? null : cells[y, x - 1].Data;
+				return x <= 0 ? null : cellControllers[y, x - 1].Data;
 			case GameDefine.AdjacentType.LeftTop:
-				return (x <= 0 || y <= 0) ? null : cells[y - 1, x - 1].Data;
+				return (x <= 0 || y <= 0) ? null : cellControllers[y - 1, x - 1].Data;
 			case GameDefine.AdjacentType.Top:
-				return y <= 0 ? null : cells[y - 1, x].Data;
+				return y <= 0 ? null : cellControllers[y - 1, x].Data;
 			case GameDefine.AdjacentType.RightTop:
-				return (x >= CulumnMax - 1 || y <= 0) ? null : cells[y - 1, x + 1].Data;
+				return (x >= CulumnMax - 1 || y <= 0) ? null : cellControllers[y - 1, x + 1].Data;
 			case GameDefine.AdjacentType.Right:
-				return x >= CulumnMax - 1 ? null : cells[y, x + 1].Data;
+				return x >= CulumnMax - 1 ? null : cellControllers[y, x + 1].Data;
 			case GameDefine.AdjacentType.RightBottom:
-				return (x >= CulumnMax - 1 || y >= RowMax - 1) ? null : cells[y + 1, x + 1].Data;
+				return (x >= CulumnMax - 1 || y >= RowMax - 1) ? null : cellControllers[y + 1, x + 1].Data;
 			case GameDefine.AdjacentType.Bottom:
-				return y >= RowMax - 1 ? null : cells[y + 1, x].Data;
+				return y >= RowMax - 1 ? null : cellControllers[y + 1, x].Data;
 			case GameDefine.AdjacentType.LeftBottom:
-				return (x <= 0 || y >= RowMax - 1) ? null : cells[y + 1, x - 1].Data;
+				return (x <= 0 || y >= RowMax - 1) ? null : cellControllers[y + 1, x - 1].Data;
 			}
 
 			return null;
@@ -113,6 +119,15 @@ namespace MineS
 			return result;
 		}
 
+		private void InitializeStep()
+		{
+			int y, x;
+			this.GetBlankCellIndex(this.cellDatabase, out y, out x);
+			var initialCell = this.cellDatabase[y, x];
+			initialCell.Steppable();
+			initialCell.Identification();
+		}
+
 		private CellData CreateDebugCellData(int y, int x)
 		{
 			var cellData = new CellData(y, x);
@@ -126,6 +141,70 @@ namespace MineS
 			}
 
 			return cellData;
+		}
+
+		private CellData[,] CreateDebugCellDatabase()
+		{
+			var database = new CellData[RowMax, CulumnMax];
+			CellData cellData = null;
+			int y, x;
+
+			// 階段を作成.
+			this.GetNullCellIndex(database, out y, out x);
+			cellData = new CellData(y, x);
+			cellData.BindIdentificationAction(new CreateStairAction());
+			database[y, x] = cellData;
+
+			// 回復アイテムを作成.
+			for(int i = 0, imax = Random.Range(3, 5); i < imax; i++)
+			{
+				this.GetNullCellIndex(database, out y, out x);
+				cellData = new CellData(y, x);
+				cellData.BindIdentificationAction(new CreateRecoveryItemAction());
+				database[y, x] = cellData;
+			}
+
+			// 敵を作成.
+			for(int i = 0, imax = Random.Range(4, 6); i < imax; i++)
+			{
+				this.GetNullCellIndex(database, out y, out x);
+				cellData = new CellData(y, x);
+				cellData.BindIdentificationAction(new CreateEnemyAction());
+				database[y, x] = cellData;
+			}
+
+			for(y = 0; y < RowMax; y++)
+			{
+				for(x = 0; x < CulumnMax; x++)
+				{
+					if(database[y, x] != null)
+					{
+						continue;
+					}
+
+					database[y, x] = new CellData(y, x);
+				}
+			}
+
+			return database;
+		}
+
+		private void GetNullCellIndex(CellData[,] database, out int y, out int x)
+		{
+			do
+			{
+				y = Random.Range(0, RowMax);
+				x = Random.Range(0, CulumnMax);
+			} while(database[y, x] != null);
+		}
+
+		private void GetBlankCellIndex(CellData[,] database, out int y, out int x)
+		{
+			do
+			{
+				y = Random.Range(0, RowMax);
+				x = Random.Range(0, CulumnMax);
+			} while(database[y, x].IsBlank);
 		}
 	}
 }

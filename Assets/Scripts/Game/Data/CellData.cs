@@ -11,9 +11,9 @@ namespace MineS
 	[System.Serializable]
 	public sealed class CellData
 	{
-		private int x;
+		public int X{ private set; get; }
 
-		private int y;
+		public int Y{ private set; get; }
 
 		private bool canStep = false;
 
@@ -37,9 +37,10 @@ namespace MineS
 
 		public CellData(int y, int x)
 		{
-			this.x = x;
-			this.y = y;
+			this.X = x;
+			this.Y = y;
 			this.IsIdentification = false;
+			this.lockCount = 0;
 		}
 
 		public void Action()
@@ -98,6 +99,7 @@ namespace MineS
 
 		public void BindRidingObjectAction(CellClickActionBase ridingObjectAction)
 		{
+			this.identificationAction = null;
 			this.ridingObjectAction = ridingObjectAction;
 		}
 
@@ -140,7 +142,7 @@ namespace MineS
 				return;
 			}
 
-			var adjacentCells = CellManager.Instance.GetAdjacentCellDataLeftTopRightBottom(this.y, this.x);
+			var adjacentCells = CellManager.Instance.GetAdjacentCellDataLeftTopRightBottom(this.Y, this.X);
 			for(int i = 0; i < adjacentCells.Count; i++)
 			{
 				adjacentCells[i].Steppable();
@@ -157,7 +159,7 @@ namespace MineS
 		{
 			get
 			{
-				return CellManager.Instance.GetAdjacentCellDataAll(this.y, this.x);
+				return CellManager.Instance.GetAdjacentCellDataAll(this.Y, this.X);
 			}
 		}
 
@@ -166,6 +168,14 @@ namespace MineS
 			get
 			{
 				return this.lockCount > 0;
+			}
+		}
+
+		public bool IsBlank
+		{
+			get
+			{
+				return this.identificationAction == null && this.ridingObjectAction == null;
 			}
 		}
 

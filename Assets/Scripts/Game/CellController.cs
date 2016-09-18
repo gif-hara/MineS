@@ -50,6 +50,7 @@ namespace MineS
 			);
 			this.Data.SetController(this);
 			this.SetActiveStatusObject(false);
+			this.SetDebugText("");
 		}
 
 		public void Action()
