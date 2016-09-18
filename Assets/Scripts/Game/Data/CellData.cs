@@ -9,7 +9,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public abstract class CellData
+	public sealed class CellData
 	{
 		private int x;
 
@@ -17,11 +17,15 @@ namespace MineS
 
 		private bool canStep = false;
 
-		protected bool isIdentification = false;
+		private bool isIdentification = false;
 
 		private int lockCount = 0;
 
-		protected CellController controller;
+		public CellController Controller{ private set; get; }
+
+		private CellClickActionBase identificationAction;
+
+		private CellClickActionBase ridingObjectAction;
 
 		private System.Action<GameDefine.ActionableType> infeasibleEvent = null;
 
@@ -46,21 +50,27 @@ namespace MineS
 				return;
 			}
 
-			this.InternalAction();
-			this.Identification();
+			if(!this.isIdentification)
+			{
+				this.Identification();
+				if(this.identificationAction != null)
+				{
+					this.identificationAction.Invoke(this);
+				}
+			}
+			else if(this.ridingObjectAction != null)
+			{
+				this.ridingObjectAction.Invoke(this);
+			}
 		}
 
 		public void Description()
 		{
 		}
 
-		protected abstract void InternalAction();
-
-		public abstract void InternalDescription();
-
 		public void SetController(CellController controller)
 		{
-			this.controller = controller;
+			this.Controller = controller;
 		}
 
 		public void BindEvent(
@@ -78,6 +88,16 @@ namespace MineS
 			this.modifiedCanStepEvent(this.canStep);
 			this.modifiedIdentificationEvent(this.isIdentification);
 			this.modifiedLockCountEvent(this.lockCount);
+		}
+
+		public void BindIdentificationAction(CellClickActionBase identificationAction)
+		{
+			this.identificationAction = identificationAction;
+		}
+
+		public void BindRidingObjectAction(CellClickActionBase ridingObjectAction)
+		{
+			this.ridingObjectAction = ridingObjectAction;
 		}
 
 		public void Steppable()

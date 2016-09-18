@@ -36,7 +36,7 @@ namespace MineS
 				for(int x = 0; x < CulumnMax; x++)
 				{
 					this.cells[y, x] = Instantiate(this.cellPrefab, this.cellField, false) as CellController;
-					database[y, x] = DebugCreate(y, x);
+					database[y, x] = this.CreateDebugCellData(y, x);
 				}
 			}
 			this.SetCell(database);
@@ -111,13 +111,15 @@ namespace MineS
 			return result;
 		}
 
-		private CellData DebugCreate(int y, int x)
+		private CellData CreateDebugCellData(int y, int x)
 		{
+			var cellData = new CellData(y, x);
 			if(Random.value < 0.2f)
 			{
-				return new RecoveryCell(y, x);
+				cellData.BindIdentificationAction(new CreateRecoveryItemAction());
 			}
-			return new BlankCell(y, x);
+
+			return cellData;
 		}
 	}
 }
