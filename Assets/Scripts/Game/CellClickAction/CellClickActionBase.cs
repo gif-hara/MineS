@@ -10,6 +10,8 @@ namespace MineS
 	/// </summary>
 	public abstract class CellClickActionBase
 	{
+		public GameDefine.EventType EventType{ protected set; get; }
+
 		public abstract void Invoke(CellData data);
 	}
 }

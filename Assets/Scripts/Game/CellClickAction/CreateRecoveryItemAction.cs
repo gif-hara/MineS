@@ -10,11 +10,16 @@ namespace MineS
 	/// </summary>
 	public class CreateRecoveryItemAction : CellClickActionBase
 	{
+		public CreateRecoveryItemAction()
+		{
+			this.EventType = GameDefine.EventType.RecoveryItem;
+		}
+
 		public override void Invoke(CellData data)
 		{
 			data.Controller.SetDebugText("R");
 			data.Controller.SetActiveStatusObject(false);
-			data.BindRidingObjectAction(new InvokeRecoveryAction());
+			data.BindCellClickAction(new InvokeRecoveryAction());
 		}
 	}
 }

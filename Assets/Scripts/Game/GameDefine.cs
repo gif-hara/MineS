@@ -12,8 +12,25 @@ namespace MineS
 	{
 		public enum EventType:int
 		{
+			/// <summary>
+			/// 無し.
+			/// </summary>
 			None,
 
+			/// <summary>
+			/// 階段.
+			/// </summary>
+			Stair,
+
+			/// <summary>
+			/// 回復アイテム.
+			/// </summary>
+			RecoveryItem,
+
+			/// <summary>
+			/// 敵.
+			/// </summary>
+			Enemy,
 		}
 
 		/// <summary>

@@ -58,6 +58,11 @@ namespace MineS
 			this.Data.Action();
 		}
 
+		public void DebugAction()
+		{
+			this.Data.DebugAction();
+		}
+
 		public void SetDebugText(string message)
 		{
 			this.debugText.text = message;

@@ -10,11 +10,16 @@ namespace MineS
 	/// </summary>
 	public class CreateEnemyAction : CellClickActionBase
 	{
+		public CreateEnemyAction()
+		{
+			this.EventType = GameDefine.EventType.Enemy;
+		}
+
 		public override void Invoke(CellData data)
 		{
 			data.Controller.SetDebugText("E");
 			var enemy = EnemyManager.Instance.Create(data);
-			data.BindRidingObjectAction(new CombatEnemyAction());
+			data.BindCellClickAction(new CombatEnemyAction());
 			data.Controller.SetStatus(enemy);
 			var adjacentCells = data.AdjacentCellAll;
 			for(int i = 0; i < adjacentCells.Count; i++)

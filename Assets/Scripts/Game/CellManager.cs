@@ -47,6 +47,20 @@ namespace MineS
 			this.InitializeStep();
 		}
 
+		void Update()
+		{
+			if(Input.GetKeyDown(KeyCode.Q))
+			{
+				for(int y = 0; y < RowMax; y++)
+				{
+					for(int x = 0; x < CulumnMax; x++)
+					{
+						this.cellControllers[y, x].DebugAction();
+					}
+				}
+			}
+		}
+
 		public void SetCell(CellData[,] database)
 		{
 			this.cellDatabase = database;
@@ -57,6 +71,7 @@ namespace MineS
 					this.cellControllers[y, x].SetCellData(database[y, x]);
 				}
 			}
+			this.CheckCellData(this.cellDatabase);
 		}
 
 		public void NextFloor()
@@ -133,11 +148,11 @@ namespace MineS
 			var cellData = new CellData(y, x);
 			if(Random.value < 0.2f)
 			{
-				cellData.BindIdentificationAction(new CreateRecoveryItemAction());
+				cellData.BindCellClickAction(new CreateRecoveryItemAction());
 			}
 			if(Random.value < 0.2f)
 			{
-				cellData.BindIdentificationAction(new CreateEnemyAction());
+				cellData.BindCellClickAction(new CreateEnemyAction());
 			}
 
 			return cellData;
@@ -152,7 +167,7 @@ namespace MineS
 			// 階段を作成.
 			this.GetNullCellIndex(database, out y, out x);
 			cellData = new CellData(y, x);
-			cellData.BindIdentificationAction(new CreateStairAction());
+			cellData.BindCellClickAction(new CreateStairAction());
 			database[y, x] = cellData;
 
 			// 回復アイテムを作成.
@@ -160,7 +175,7 @@ namespace MineS
 			{
 				this.GetNullCellIndex(database, out y, out x);
 				cellData = new CellData(y, x);
-				cellData.BindIdentificationAction(new CreateRecoveryItemAction());
+				cellData.BindCellClickAction(new CreateRecoveryItemAction());
 				database[y, x] = cellData;
 			}
 
@@ -169,7 +184,7 @@ namespace MineS
 			{
 				this.GetNullCellIndex(database, out y, out x);
 				cellData = new CellData(y, x);
-				cellData.BindIdentificationAction(new CreateEnemyAction());
+				cellData.BindCellClickAction(new CreateEnemyAction());
 				database[y, x] = cellData;
 			}
 
@@ -189,6 +204,24 @@ namespace MineS
 			return database;
 		}
 
+		private void CheckCellData(CellData[,] database)
+		{
+			var existStair = false;
+			for(int y = 0; y < RowMax; y++)
+			{
+				for(int x = 0; x < CulumnMax; x++)
+				{
+					if(database[y, x].CurrentEventType == GameDefine.EventType.Stair)
+					{
+						existStair = true;
+						break;
+					}
+				}
+			}
+
+			Debug.AssertFormat(existStair, "階段がありませんでした.");
+		}
+
 		private void GetNullCellIndex(CellData[,] database, out int y, out int x)
 		{
 			do
@@ -204,7 +237,7 @@ namespace MineS
 			{
 				y = Random.Range(0, RowMax);
 				x = Random.Range(0, CulumnMax);
-			} while(database[y, x].IsBlank);
+			} while(database[y, x].CurrentEventType != GameDefine.EventType.None);
 		}
 	}
 }

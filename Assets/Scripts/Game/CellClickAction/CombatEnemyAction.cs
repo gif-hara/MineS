@@ -17,13 +17,13 @@ namespace MineS
 
 			if(enemyData.IsDead)
 			{
-				data.BindRidingObjectAction(null);
+				data.BindCellClickAction(null);
 				data.Controller.SetDebugText("");
 				data.Controller.SetActiveStatusObject(false);
 				var adjacentCells = data.AdjacentCellAll;
 				for(int i = 0; i < adjacentCells.Count; i++)
 				{
-					if(!adjacentCells[i].IsIdentification)
+					if(adjacentCells[i].IsLock)
 					{
 						adjacentCells[i].ReleaseLock();
 					}

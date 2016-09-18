@@ -10,10 +10,15 @@ namespace MineS
 	/// </summary>
 	public class CreateStairAction : CellClickActionBase
 	{
+		public CreateStairAction()
+		{
+			this.EventType = GameDefine.EventType.Stair;
+		}
+
 		public override void Invoke(CellData data)
 		{
 			data.Controller.SetDebugText("F");
-			data.BindRidingObjectAction(new InvokeNextFloorAction());
+			data.BindCellClickAction(new InvokeNextFloorAction());
 		}
 	}
 }

@@ -23,9 +23,7 @@ namespace MineS
 
 		public CellController Controller{ private set; get; }
 
-		private CellClickActionBase identificationAction;
-
-		private CellClickActionBase ridingObjectAction;
+		private CellClickActionBase cellClickAction;
 
 		private System.Action<GameDefine.ActionableType> infeasibleEvent = null;
 
@@ -52,17 +50,19 @@ namespace MineS
 				return;
 			}
 
-			if(!this.IsIdentification)
+			this.Identification();
+			if(this.cellClickAction != null)
 			{
-				this.Identification();
-				if(this.identificationAction != null)
-				{
-					this.identificationAction.Invoke(this);
-				}
+				this.cellClickAction.Invoke(this);
 			}
-			else if(this.ridingObjectAction != null)
+		}
+
+		public void DebugAction()
+		{
+			this.Identification();
+			if(this.cellClickAction != null)
 			{
-				this.ridingObjectAction.Invoke(this);
+				this.cellClickAction.Invoke(this);
 			}
 		}
 
@@ -92,15 +92,9 @@ namespace MineS
 			this.modifiedLockCountEvent(this.lockCount);
 		}
 
-		public void BindIdentificationAction(CellClickActionBase identificationAction)
+		public void BindCellClickAction(CellClickActionBase cellClickAction)
 		{
-			this.identificationAction = identificationAction;
-		}
-
-		public void BindRidingObjectAction(CellClickActionBase ridingObjectAction)
-		{
-			this.identificationAction = null;
-			this.ridingObjectAction = ridingObjectAction;
+			this.cellClickAction = cellClickAction;
 		}
 
 		public void Steppable()
@@ -171,11 +165,16 @@ namespace MineS
 			}
 		}
 
-		public bool IsBlank
+		public GameDefine.EventType CurrentEventType
 		{
 			get
 			{
-				return this.identificationAction == null && this.ridingObjectAction == null;
+				if(this.cellClickAction == null)
+				{
+					return GameDefine.EventType.None;
+				}
+
+				return this.cellClickAction.EventType;
 			}
 		}
 
