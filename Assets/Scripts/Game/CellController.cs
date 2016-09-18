@@ -37,6 +37,8 @@ namespace MineS
 
 		public CellData Data{ private set; get; }
 
+		public CharacterDataObserver CharacterDataObserver{ get { return this.characterDataObserver; } }
+
 		public void SetCellData(CellData data)
 		{
 			this.Data = data;

@@ -17,7 +17,7 @@ namespace MineS
 
 		private bool canStep = false;
 
-		private bool isIdentification = false;
+		public bool IsIdentification{ private set; get; }
 
 		private int lockCount = 0;
 
@@ -39,6 +39,7 @@ namespace MineS
 		{
 			this.x = x;
 			this.y = y;
+			this.IsIdentification = false;
 		}
 
 		public void Action()
@@ -50,7 +51,7 @@ namespace MineS
 				return;
 			}
 
-			if(!this.isIdentification)
+			if(!this.IsIdentification)
 			{
 				this.Identification();
 				if(this.identificationAction != null)
@@ -86,7 +87,7 @@ namespace MineS
 			this.modifiedLockCountEvent = modifiedLockCountEvent;
 
 			this.modifiedCanStepEvent(this.canStep);
-			this.modifiedIdentificationEvent(this.isIdentification);
+			this.modifiedIdentificationEvent(this.IsIdentification);
 			this.modifiedLockCountEvent(this.lockCount);
 		}
 
@@ -134,7 +135,7 @@ namespace MineS
 
 		public void Identification()
 		{
-			if(this.isIdentification)
+			if(this.IsIdentification)
 			{
 				return;
 			}
@@ -145,10 +146,18 @@ namespace MineS
 				adjacentCells[i].Steppable();
 			}
 
-			this.isIdentification = true;
+			this.IsIdentification = true;
 			if(this.modifiedIdentificationEvent != null)
 			{
-				this.modifiedIdentificationEvent(this.isIdentification);
+				this.modifiedIdentificationEvent(this.IsIdentification);
+			}
+		}
+
+		public List<CellData> AdjacentCellAll
+		{
+			get
+			{
+				return CellManager.Instance.GetAdjacentCellDataAll(this.y, this.x);
 			}
 		}
 

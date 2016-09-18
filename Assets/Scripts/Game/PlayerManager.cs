@@ -27,7 +27,7 @@ namespace MineS
 			this.NotifyObservers();
 		}
 
-		private void NotifyObservers()
+		public void NotifyObservers()
 		{
 			for(int i = 0; i < this.observers.Count; i++)
 			{

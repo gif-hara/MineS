@@ -10,16 +10,21 @@ namespace MineS
 	/// </summary>
 	public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
 	{
-		private Dictionary<CellData, CharacterData> enemies = new Dictionary<CellData, CharacterData>();
+		public Dictionary<CellData, CharacterData> Enemies{ private set; get; }
+
+		void Start()
+		{
+			this.Enemies = new Dictionary<CellData, CharacterData>();
+		}
 
 		public CharacterData Create(CellData data)
 		{
-			Debug.AssertFormat(!this.enemies.ContainsKey(data), "既に敵が存在します.");
+			Debug.AssertFormat(!this.Enemies.ContainsKey(data), "既に敵が存在します.");
 
 			var characterData = new CharacterData();
 			characterData.Initialize(10, 0, 10, 10);
 
-			this.enemies.Add(data, characterData);
+			this.Enemies.Add(data, characterData);
 
 			return characterData;
 		}

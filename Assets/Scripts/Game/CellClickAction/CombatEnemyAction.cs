@@ -12,7 +12,23 @@ namespace MineS
 	{
 		public override void Invoke(CellData data)
 		{
-			Debug.Log("Combat!");
+			var enemyData = EnemyManager.Instance.Enemies[data];
+			CombatController.Combat(enemyData, data.Controller.CharacterDataObserver);
+
+			if(enemyData.IsDead)
+			{
+				data.BindRidingObjectAction(null);
+				data.Controller.SetDebugText("");
+				data.Controller.SetActiveStatusObject(false);
+				var adjacentCells = data.AdjacentCellAll;
+				for(int i = 0; i < adjacentCells.Count; i++)
+				{
+					if(!adjacentCells[i].IsIdentification)
+					{
+						adjacentCells[i].ReleaseLock();
+					}
+				}
+			}
 		}
 	}
 }
