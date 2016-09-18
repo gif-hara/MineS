@@ -17,7 +17,9 @@ namespace MineS
 		[SerializeField]
 		private CellController cellPrefab;
 
-		private CellController[,] cells = new CellController[CulumnMax, CulumnMax];
+		private CellController[,] cells = new CellController[RowMax, CulumnMax];
+
+		private const int RowMax = 10;
 
 		private const int CulumnMax = 8;
 
@@ -30,8 +32,8 @@ namespace MineS
 
 		void Start()
 		{
-			var database = new CellData[CulumnMax, CulumnMax];
-			for(int y = 0; y < CulumnMax; y++)
+			var database = new CellData[RowMax, CulumnMax];
+			for(int y = 0; y < RowMax; y++)
 			{
 				for(int x = 0; x < CulumnMax; x++)
 				{
@@ -48,11 +50,11 @@ namespace MineS
 
 		public void SetCell(CellData[,] database)
 		{
-			for(int i = 0; i < CulumnMax; i++)
+			for(int y = 0; y < RowMax; y++)
 			{
-				for(int j = 0; j < CulumnMax; j++)
+				for(int x = 0; x < CulumnMax; x++)
 				{
-					this.cells[i, j].SetCellData(database[i, j]);
+					this.cells[y, x].SetCellData(database[y, x]);
 				}
 			}
 		}
@@ -72,11 +74,11 @@ namespace MineS
 			case GameDefine.AdjacentType.Right:
 				return x >= CulumnMax - 1 ? null : cells[y, x + 1].Data;
 			case GameDefine.AdjacentType.RightBottom:
-				return (x >= CulumnMax - 1 || y >= CulumnMax - 1) ? null : cells[y + 1, x + 1].Data;
+				return (x >= CulumnMax - 1 || y >= RowMax - 1) ? null : cells[y + 1, x + 1].Data;
 			case GameDefine.AdjacentType.Bottom:
-				return y >= CulumnMax - 1 ? null : cells[y + 1, x].Data;
+				return y >= RowMax - 1 ? null : cells[y + 1, x].Data;
 			case GameDefine.AdjacentType.LeftBottom:
-				return (x <= 0 || y >= CulumnMax - 1) ? null : cells[y + 1, x - 1].Data;
+				return (x <= 0 || y >= RowMax - 1) ? null : cells[y + 1, x - 1].Data;
 			}
 
 			return null;

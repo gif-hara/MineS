@@ -14,7 +14,7 @@ namespace MineS
 		{
 			data.Controller.SetDebugText("");
 			data.BindRidingObjectAction(null);
-			Debug.Log("Invoke Recovery!");
+			PlayerManager.Instance.Recovery(5);
 		}
 	}
 }
