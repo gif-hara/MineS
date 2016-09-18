@@ -120,6 +120,10 @@ namespace MineS
 			{
 				cellData.BindIdentificationAction(new CreateRecoveryItemAction());
 			}
+			if(Random.value < 0.2f)
+			{
+				cellData.BindIdentificationAction(new CreateEnemyAction());
+			}
 
 			return cellData;
 		}

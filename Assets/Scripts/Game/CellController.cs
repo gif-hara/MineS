@@ -21,6 +21,18 @@ namespace MineS
 		private GameObject lockObject;
 
 		[SerializeField]
+		private CharacterDataObserver characterDataObserver;
+
+		[SerializeField]
+		private GameObject hitPointObject;
+
+		[SerializeField]
+		private GameObject strengthObject;
+
+		[SerializeField]
+		private GameObject armorObject;
+
+		[SerializeField]
 		private Text debugText;
 
 		public CellData Data{ private set; get; }
@@ -35,6 +47,7 @@ namespace MineS
 				this.ModifiedLockCount
 			);
 			this.Data.SetController(this);
+			this.SetActiveStatusObject(false);
 		}
 
 		public void Action()
@@ -45,6 +58,19 @@ namespace MineS
 		public void SetDebugText(string message)
 		{
 			this.debugText.text = message;
+		}
+
+		public void SetActiveStatusObject(bool isActive)
+		{
+			this.hitPointObject.SetActive(isActive);
+			this.armorObject.SetActive(isActive);
+			this.strengthObject.SetActive(isActive);
+		}
+
+		public void SetStatus(CharacterData data)
+		{
+			this.SetActiveStatusObject(true);
+			this.characterDataObserver.ModifiedData(data);
 		}
 
 		private void Infeasible(GameDefine.ActionableType actionableType)

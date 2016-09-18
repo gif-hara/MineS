@@ -8,13 +8,11 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class CreateRecoveryItemAction : CellClickActionBase
+	public class CombatEnemyAction : CellClickActionBase
 	{
 		public override void Invoke(CellData data)
 		{
-			data.Controller.SetDebugText("R");
-			data.Controller.SetActiveStatusObject(false);
-			data.BindRidingObjectAction(new InvokeRecoveryAction());
+			Debug.Log("Combat!");
 		}
 	}
 }
