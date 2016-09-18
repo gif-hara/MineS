@@ -13,11 +13,11 @@ namespace MineS
 		public static void Combat(CharacterData enemy, CharacterDataObserver enemyObserver)
 		{
 			var player = PlayerManager.Instance.Data;
-			enemy.TakeDamage(player.Strength);
+			enemy.TakeDamage(player.Strength, false);
 
 			if(!enemy.IsDead)
 			{
-				player.TakeDamage(enemy.Strength);
+				player.TakeDamage(enemy.Strength, false);
 			}
 
 			PlayerManager.Instance.NotifyObservers();

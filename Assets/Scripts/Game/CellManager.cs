@@ -45,6 +45,8 @@ namespace MineS
 			this.SetCell(database);
 
 			this.InitializeStep();
+
+			DungeonManager.Instance.AddNextFloorEvent(this.NextFloor);
 		}
 
 		void Update()
@@ -74,7 +76,7 @@ namespace MineS
 			this.CheckCellData(this.cellDatabase);
 		}
 
-		public void NextFloor()
+		private void NextFloor()
 		{
 			this.SetCell(this.CreateDebugCellDatabase());
 			this.InitializeStep();

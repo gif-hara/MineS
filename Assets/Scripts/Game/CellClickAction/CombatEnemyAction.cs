@@ -20,6 +20,7 @@ namespace MineS
 				data.BindCellClickAction(null);
 				data.Controller.SetDebugText("");
 				data.Controller.SetActiveStatusObject(false);
+				EnemyManager.Instance.Remove(data);
 				var adjacentCells = data.AdjacentCellAll;
 				for(int i = 0; i < adjacentCells.Count; i++)
 				{

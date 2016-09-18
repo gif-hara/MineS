@@ -37,9 +37,18 @@ namespace MineS
 			this.HitPoint += value;
 		}
 
-		public void TakeDamage(int value)
+		public void TakeDamage(int value, bool onlyHitPoint)
 		{
+			if(!onlyHitPoint)
+			{
+				this.Armor -= value;
+				value = -this.Armor;
+				value = value < 0 ? 0 : value;
+				this.Armor = this.Armor < 0 ? 0 : this.Armor;
+			}
+
 			this.HitPoint -= value;
+			this.HitPoint = this.HitPoint < 0 ? 0 : this.HitPoint;
 		}
 
 		public bool IsDead

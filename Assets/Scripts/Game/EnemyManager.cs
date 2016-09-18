@@ -15,6 +15,7 @@ namespace MineS
 		void Start()
 		{
 			this.Enemies = new Dictionary<CellData, CharacterData>();
+			DungeonManager.Instance.AddNextFloorEvent(this.NextFloor);
 		}
 
 		public CharacterData Create(CellData data)
@@ -27,6 +28,16 @@ namespace MineS
 			this.Enemies.Add(data, characterData);
 
 			return characterData;
+		}
+
+		public void Remove(CellData data)
+		{
+			this.Enemies.Remove(data);
+		}
+
+		private void NextFloor()
+		{
+			this.Enemies.Clear();
 		}
 	}
 }
