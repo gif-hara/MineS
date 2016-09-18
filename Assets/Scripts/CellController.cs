@@ -18,14 +18,32 @@ namespace MineS
 
 		private int id;
 
+		private CellData data;
+
 		public void Initialize(int id)
 		{
 			this.id = id;
 		}
 
+		public void SetCellData(CellData data)
+		{
+			this.data = data;
+			this.data.BindEvent(this.ModifiedIdentification, this.ModifiedLockCount);
+		}
+
 		public void Action()
 		{
-			CellManager.Instance.Database[this.id].Action();
+			this.data.Action();
+		}
+
+		public void ModifiedIdentification(bool isIdentification)
+		{
+			this.identificationObject.SetActive(!isIdentification);
+		}
+
+		public void ModifiedLockCount(int lockCount)
+		{
+			this.lockObject.SetActive(lockCount > 0);
 		}
 	}
 }

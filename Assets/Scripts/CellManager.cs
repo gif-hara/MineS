@@ -17,29 +17,35 @@ namespace MineS
 		[SerializeField]
 		private CellController cellPrefab;
 
-		public List<CellData> Database{ private set; get; }
+		private List<CellController> cells = new List<CellController>();
 
 		private const int CellMax = 8 * 8;
 
 		protected override void Awake()
 		{
 			base.Awake();
-			this.Database = new List<CellData>(CellMax);
 		}
 
 		void Start()
 		{
+			var database = new List<CellData>();
 			for(int i = 0; i < CellMax; i++)
 			{
-				(Instantiate(this.cellPrefab, this.cellField, false) as CellController).Initialize(i);
-				this.Database.Add(new BlankCell());
+				var cell = (Instantiate(this.cellPrefab, this.cellField, false) as CellController);
+				cell.Initialize(i);
+				this.cells.Add(cell);
+				database.Add(new BlankCell());
 			}
+			this.SetCell(database);
 		}
 
 		public void SetCell(List<CellData> database)
 		{
-			Debug.AssertFormat(database.Count == CellMax, "セルの数が合っていません.");
-			this.Database = database;
+			Debug.AssertFormat(this.cells.Count == database.Count, "セルの数が合っていません.");
+			for(int i = 0, imax = this.cells.Count; i < imax; i++)
+			{
+				this.cells[i].SetCellData(database[i]);
+			}
 		}
 	}
 }

@@ -12,7 +12,7 @@ namespace MineS
 	{
 		public override void Action()
 		{
-			Debug.Log("Blank Cell");
+			base.Action();
 		}
 
 		public override void Description()
