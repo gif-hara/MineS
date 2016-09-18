@@ -17,9 +17,11 @@ namespace MineS
 
 		private bool canStep = false;
 
-		private bool isIdentification = false;
+		protected bool isIdentification = false;
 
 		private int lockCount = 0;
+
+		protected CellController controller;
 
 		private System.Action<GameDefine.ActionableType> infeasibleEvent = null;
 
@@ -44,8 +46,8 @@ namespace MineS
 				return;
 			}
 
-			this.Identification();
 			this.InternalAction();
+			this.Identification();
 		}
 
 		public void Description()
@@ -55,6 +57,11 @@ namespace MineS
 		protected abstract void InternalAction();
 
 		public abstract void InternalDescription();
+
+		public void SetController(CellController controller)
+		{
+			this.controller = controller;
+		}
 
 		public void BindEvent(
 			System.Action<GameDefine.ActionableType> infeasibleEvent,

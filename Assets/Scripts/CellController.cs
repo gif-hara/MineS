@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using HK.Framework;
 
@@ -19,6 +20,9 @@ namespace MineS
 		[SerializeField]
 		private GameObject lockObject;
 
+		[SerializeField]
+		private Text debugText;
+
 		public CellData Data{ private set; get; }
 
 		public void SetCellData(CellData data)
@@ -30,6 +34,7 @@ namespace MineS
 				this.ModifiedIdentification,
 				this.ModifiedLockCount
 			);
+			this.Data.SetController(this);
 		}
 
 		public void Action()
@@ -37,22 +42,27 @@ namespace MineS
 			this.Data.Action();
 		}
 
-		public void Infeasible(GameDefine.ActionableType actionableType)
+		public void SetDebugText(string message)
+		{
+			this.debugText.text = message;
+		}
+
+		private void Infeasible(GameDefine.ActionableType actionableType)
 		{
 			Debug.Log("Not Executable = " + actionableType);
 		}
 
-		public void ModifiedCanStep(bool canStep)
+		private void ModifiedCanStep(bool canStep)
 		{
 			this.notStepObject.SetActive(!canStep);
 		}
 
-		public void ModifiedIdentification(bool isIdentification)
+		private void ModifiedIdentification(bool isIdentification)
 		{
 			this.identificationObject.SetActive(!isIdentification);
 		}
 
-		public void ModifiedLockCount(int lockCount)
+		private void ModifiedLockCount(int lockCount)
 		{
 			this.lockObject.SetActive(lockCount > 0);
 		}

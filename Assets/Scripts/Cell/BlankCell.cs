@@ -16,12 +16,10 @@ namespace MineS
 
 		protected override void InternalAction()
 		{
-			Debug.Log("Blank Cell Action!");
 		}
 
 		public override void InternalDescription()
 		{
-			Debug.Log("Blank Cell Description!");
 		}
 	}
 }

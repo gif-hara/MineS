@@ -31,12 +31,12 @@ namespace MineS
 		void Start()
 		{
 			var database = new CellData[CulumnMax, CulumnMax];
-			for(int i = 0; i < CulumnMax; i++)
+			for(int y = 0; y < CulumnMax; y++)
 			{
-				for(int j = 0; j < CulumnMax; j++)
+				for(int x = 0; x < CulumnMax; x++)
 				{
-					this.cells[i, j] = Instantiate(this.cellPrefab, this.cellField, false) as CellController;
-					database[i, j] = new BlankCell(i, j);
+					this.cells[y, x] = Instantiate(this.cellPrefab, this.cellField, false) as CellController;
+					database[y, x] = DebugCreate(y, x);
 				}
 			}
 			this.SetCell(database);
@@ -109,6 +109,15 @@ namespace MineS
 			result.RemoveAll(c => c == null);
 
 			return result;
+		}
+
+		private CellData DebugCreate(int y, int x)
+		{
+			if(Random.value < 0.2f)
+			{
+				return new RecoveryCell(y, x);
+			}
+			return new BlankCell(y, x);
 		}
 	}
 }
