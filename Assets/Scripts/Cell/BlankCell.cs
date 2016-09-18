@@ -10,13 +10,18 @@ namespace MineS
 	/// </summary>
 	public class BlankCell : CellData
 	{
-		public override void Action()
+		public BlankCell(int y, int x) : base(y, x)
 		{
-			base.Action();
 		}
 
-		public override void Description()
+		protected override void InternalAction()
 		{
+			Debug.Log("Blank Cell Action!");
+		}
+
+		public override void InternalDescription()
+		{
+			Debug.Log("Blank Cell Description!");
 		}
 	}
 }

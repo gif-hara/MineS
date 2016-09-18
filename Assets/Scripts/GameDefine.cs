@@ -15,5 +15,38 @@ namespace MineS
 			None,
 
 		}
+
+		/// <summary>
+		/// アクション実行タイプ.
+		/// </summary>
+		public enum ActionableType:int
+		{
+			/// <summary>
+			/// アクション可能.
+			/// </summary>
+			OK,
+			/// <summary>
+			/// まだ踏めない.
+			/// </summary>
+			NotStep,
+			/// <summary>
+			/// ロックされている.
+			/// </summary>
+			Lock,
+		}
+
+		public enum AdjacentType:int
+		{
+			Left,
+			LeftTop,
+			Top,
+			RightTop,
+			Right,
+			RightBottom,
+			Bottom,
+			LeftBottom,
+		}
+
+		public const int AdjacentMax = 9;
 	}
 }

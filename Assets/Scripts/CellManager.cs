@@ -17,9 +17,11 @@ namespace MineS
 		[SerializeField]
 		private CellController cellPrefab;
 
-		private List<CellController> cells = new List<CellController>();
+		private CellController[,] cells = new CellController[CulumnMax, CulumnMax];
 
-		private const int CellMax = 8 * 8;
+		private const int CulumnMax = 8;
+
+		private const int CellMax = CulumnMax * CulumnMax;
 
 		protected override void Awake()
 		{
@@ -28,24 +30,85 @@ namespace MineS
 
 		void Start()
 		{
-			var database = new List<CellData>();
-			for(int i = 0; i < CellMax; i++)
+			var database = new CellData[CulumnMax, CulumnMax];
+			for(int i = 0; i < CulumnMax; i++)
 			{
-				var cell = (Instantiate(this.cellPrefab, this.cellField, false) as CellController);
-				cell.Initialize(i);
-				this.cells.Add(cell);
-				database.Add(new BlankCell());
+				for(int j = 0; j < CulumnMax; j++)
+				{
+					this.cells[i, j] = Instantiate(this.cellPrefab, this.cellField, false) as CellController;
+					database[i, j] = new BlankCell(i, j);
+				}
 			}
 			this.SetCell(database);
+
+			var initialCell = database[Random.Range(0, CulumnMax), Random.Range(0, CulumnMax)];
+			initialCell.Steppable();
+			initialCell.Identification();
 		}
 
-		public void SetCell(List<CellData> database)
+		public void SetCell(CellData[,] database)
 		{
-			Debug.AssertFormat(this.cells.Count == database.Count, "セルの数が合っていません.");
-			for(int i = 0, imax = this.cells.Count; i < imax; i++)
+			for(int i = 0; i < CulumnMax; i++)
 			{
-				this.cells[i].SetCellData(database[i]);
+				for(int j = 0; j < CulumnMax; j++)
+				{
+					this.cells[i, j].SetCellData(database[i, j]);
+				}
 			}
+		}
+
+		public CellData GetAdjacentCellData(int y, int x, GameDefine.AdjacentType type)
+		{
+			switch(type)
+			{
+			case GameDefine.AdjacentType.Left:
+				return x <= 0 ? null : cells[y, x - 1].Data;
+			case GameDefine.AdjacentType.LeftTop:
+				return (x <= 0 || y <= 0) ? null : cells[y - 1, x - 1].Data;
+			case GameDefine.AdjacentType.Top:
+				return y <= 0 ? null : cells[y - 1, x].Data;
+			case GameDefine.AdjacentType.RightTop:
+				return (x >= CulumnMax - 1 || y <= 0) ? null : cells[y - 1, x + 1].Data;
+			case GameDefine.AdjacentType.Right:
+				return x >= CulumnMax - 1 ? null : cells[y, x + 1].Data;
+			case GameDefine.AdjacentType.RightBottom:
+				return (x >= CulumnMax - 1 || y >= CulumnMax - 1) ? null : cells[y + 1, x + 1].Data;
+			case GameDefine.AdjacentType.Bottom:
+				return y >= CulumnMax - 1 ? null : cells[y + 1, x].Data;
+			case GameDefine.AdjacentType.LeftBottom:
+				return (x <= 0 || y >= CulumnMax - 1) ? null : cells[y + 1, x - 1].Data;
+			}
+
+			return null;
+		}
+
+		public List<CellData> GetAdjacentCellDataAll(int y, int x)
+		{
+			var result = new List<CellData>();
+			for(int i = 0; i < GameDefine.AdjacentMax; i++)
+			{
+				var cell = GetAdjacentCellData(y, x, (GameDefine.AdjacentType)i);
+				if(cell == null)
+				{
+					continue;
+				}
+
+				result.Add(cell);
+			}
+
+			return result;
+		}
+
+		public List<CellData> GetAdjacentCellDataLeftTopRightBottom(int y, int x)
+		{
+			var result = new List<CellData>();
+			result.Add(GetAdjacentCellData(y, x, GameDefine.AdjacentType.Left));
+			result.Add(GetAdjacentCellData(y, x, GameDefine.AdjacentType.Top));
+			result.Add(GetAdjacentCellData(y, x, GameDefine.AdjacentType.Right));
+			result.Add(GetAdjacentCellData(y, x, GameDefine.AdjacentType.Bottom));
+			result.RemoveAll(c => c == null);
+
+			return result;
 		}
 	}
 }

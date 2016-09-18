@@ -11,29 +11,40 @@ namespace MineS
 	public class CellController : MonoBehaviour
 	{
 		[SerializeField]
+		private GameObject notStepObject;
+
+		[SerializeField]
 		private GameObject identificationObject;
 
 		[SerializeField]
 		private GameObject lockObject;
 
-		private int id;
-
-		private CellData data;
-
-		public void Initialize(int id)
-		{
-			this.id = id;
-		}
+		public CellData Data{ private set; get; }
 
 		public void SetCellData(CellData data)
 		{
-			this.data = data;
-			this.data.BindEvent(this.ModifiedIdentification, this.ModifiedLockCount);
+			this.Data = data;
+			this.Data.BindEvent(
+				this.Infeasible,
+				this.ModifiedCanStep,
+				this.ModifiedIdentification,
+				this.ModifiedLockCount
+			);
 		}
 
 		public void Action()
 		{
-			this.data.Action();
+			this.Data.Action();
+		}
+
+		public void Infeasible(GameDefine.ActionableType actionableType)
+		{
+			Debug.Log("Not Executable = " + actionableType);
+		}
+
+		public void ModifiedCanStep(bool canStep)
+		{
+			this.notStepObject.SetActive(!canStep);
 		}
 
 		public void ModifiedIdentification(bool isIdentification)
