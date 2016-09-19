@@ -9,7 +9,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public abstract class ItemMasterDataBase
+	public abstract class ItemMasterDataBase : ScriptableObject
 	{
 		[SerializeField]
 		private StringAsset.Finder name;

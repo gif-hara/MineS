@@ -191,6 +191,15 @@ namespace MineS
 				database[y, x] = cellData;
 			}
 
+			// アイテムを作成.
+			for(int i = 0, imax = dungeonData.CreateItemRange.Random; i < imax; i++)
+			{
+				this.GetNullCellIndex(database, out y, out x);
+				cellData = new CellData(y, x);
+				cellData.BindCellClickAction(new CreateItemAction(dungeonData.CreateItem()));
+				database[y, x] = cellData;
+			}
+
 			for(y = 0; y < RowMax; y++)
 			{
 				for(x = 0; x < CulumnMax; x++)

@@ -25,7 +25,7 @@ namespace MineS
 		public bool AddItem(Item item)
 		{
 			var emptyIndex = this.items.FindIndex(i => i == null);
-			if(emptyIndex <= 0)
+			if(emptyIndex < 0)
 			{
 				return false;
 			}

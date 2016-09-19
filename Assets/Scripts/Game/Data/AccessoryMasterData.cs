@@ -9,24 +9,17 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable][CreateAssetMenu()]
-	public class AccessoryMasterData : ScriptableObject
+	public class AccessoryMasterData : ItemMasterDataBase
 	{
-		[System.Serializable]
-		public class Element : ItemMasterDataBase
-		{
-			[SerializeField]
-			private int power;
+		[SerializeField]
+		private int power;
 
-			public override GameDefine.ItemType ItemType
+		public override GameDefine.ItemType ItemType
+		{
+			get
 			{
-				get
-				{
-					return GameDefine.ItemType.Accessory;
-				}
+				return GameDefine.ItemType.Accessory;
 			}
 		}
-
-		[SerializeField]
-		private List<Element> database;
 	}
 }

@@ -9,27 +9,20 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable][CreateAssetMenu()]
-	public class ShieldMasterData : ScriptableObject
+	public class ShieldMasterData : ItemMasterDataBase
 	{
-		[System.Serializable]
-		public class Element : ItemMasterDataBase
-		{
-			[SerializeField]
-			private int power;
-
-			[SerializeField]
-			private List<int> spells;
-
-			public override GameDefine.ItemType ItemType
-			{
-				get
-				{
-					return GameDefine.ItemType.Shield;
-				}
-			}
-		}
+		[SerializeField]
+		private int power;
 
 		[SerializeField]
-		private List<Element> database;
+		private List<int> spells;
+
+		public override GameDefine.ItemType ItemType
+		{
+			get
+			{
+				return GameDefine.ItemType.Shield;
+			}
+		}
 	}
 }
