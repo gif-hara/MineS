@@ -28,7 +28,7 @@ namespace MineS
 
 				public bool IsMatchFloor(int floor)
 				{
-					return floor >= this.floorMin && floor <= this.floorMin;
+					return floor >= this.floorMin && floor <= this.floorMax;
 				}
 
 				public CharacterData Create()
@@ -50,6 +50,7 @@ namespace MineS
 							result.Initialize(table.MasterData);
 							return result;
 						}
+						currentProbability += table.Probability;
 					}
 
 					Debug.AssertFormat(false, "計算を間違えている可能性があります.");
@@ -89,7 +90,17 @@ namespace MineS
 		[SerializeField]
 		private EnemyTable enemyTable;
 
+		[SerializeField]
+		private Range createRecoveryItemRange;
+
+		[SerializeField]
+		private Range createEnemyRange;
+
 		public string Name{ get { return this.dungeonName.ToString(); } }
+
+		public Range CreateRecoveryItemRange{ get { return this.createRecoveryItemRange; } }
+
+		public Range CreateEnemyRange{ get { return this.createEnemyRange; } }
 
 		public CharacterData CreateEnemy(int floor)
 		{

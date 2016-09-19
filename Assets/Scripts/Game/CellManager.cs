@@ -34,7 +34,7 @@ namespace MineS
 
 		void Start()
 		{
-			var database = this.CreateDebugCellDatabase();
+			var database = this.CreateCellDatabaseFromDungeonData();
 			for(int y = 0; y < RowMax; y++)
 			{
 				for(int x = 0; x < CulumnMax; x++)
@@ -78,7 +78,7 @@ namespace MineS
 
 		private void NextFloor()
 		{
-			this.SetCell(this.CreateDebugCellDatabase());
+			this.SetCell(this.CreateCellDatabaseFromDungeonData());
 			this.InitializeStep();
 		}
 
@@ -160,9 +160,10 @@ namespace MineS
 			return cellData;
 		}
 
-		private CellData[,] CreateDebugCellDatabase()
+		private CellData[,] CreateCellDatabaseFromDungeonData()
 		{
 			var database = new CellData[RowMax, CulumnMax];
+			var dungeonData = DungeonManager.Instance.CurrentData;
 			CellData cellData = null;
 			int y, x;
 
@@ -173,7 +174,7 @@ namespace MineS
 			database[y, x] = cellData;
 
 			// 回復アイテムを作成.
-			for(int i = 0, imax = Random.Range(3, 5); i < imax; i++)
+			for(int i = 0, imax = dungeonData.CreateRecoveryItemRange.Random; i < imax; i++)
 			{
 				this.GetNullCellIndex(database, out y, out x);
 				cellData = new CellData(y, x);
@@ -182,7 +183,7 @@ namespace MineS
 			}
 
 			// 敵を作成.
-			for(int i = 0, imax = Random.Range(4, 6); i < imax; i++)
+			for(int i = 0, imax = dungeonData.CreateEnemyRange.Random; i < imax; i++)
 			{
 				this.GetNullCellIndex(database, out y, out x);
 				cellData = new CellData(y, x);

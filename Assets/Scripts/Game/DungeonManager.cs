@@ -18,6 +18,8 @@ namespace MineS
 
 		private UnityEvent nextFloorEvent = new UnityEvent();
 
+		public DungeonData CurrentData{ get { return this.current; } }
+
 		public void AddNextFloorEvent(UnityAction otherEvent)
 		{
 			this.nextFloorEvent.AddListener(otherEvent);
