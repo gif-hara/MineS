@@ -8,10 +8,14 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public abstract class CellClickActionBase
+	[System.Serializable]
+	public class Item
 	{
-		public abstract GameDefine.EventType EventType{ get; }
+		private ItemMasterDataBase masterData;
 
-		public abstract void Invoke(CellData data);
+		public Item(ItemMasterDataBase masterData)
+		{
+			this.masterData = masterData;
+		}
 	}
 }

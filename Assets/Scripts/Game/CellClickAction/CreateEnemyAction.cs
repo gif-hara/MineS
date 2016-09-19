@@ -10,11 +10,6 @@ namespace MineS
 	/// </summary>
 	public class CreateEnemyAction : CellClickActionBase
 	{
-		public CreateEnemyAction()
-		{
-			this.EventType = GameDefine.EventType.Enemy;
-		}
-
 		public override void Invoke(CellData data)
 		{
 			data.Controller.SetDebugText("E");
@@ -29,6 +24,14 @@ namespace MineS
 				{
 					adjacentCells[i].AddLock();
 				}
+			}
+		}
+
+		public override GameDefine.EventType EventType
+		{
+			get
+			{
+				return GameDefine.EventType.Enemy;
 			}
 		}
 	}

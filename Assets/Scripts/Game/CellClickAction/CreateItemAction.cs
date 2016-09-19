@@ -8,18 +8,26 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class InvokeNextFloorAction : CellClickActionBase
+	public class CreateItemAction : CellClickActionBase
 	{
+		private Item item;
+
+		public CreateItemAction(Item item)
+		{
+			this.item = item;
+		}
+
 		public override void Invoke(CellData data)
 		{
-			DungeonManager.Instance.NextFloorEvent();
+			data.Controller.SetDebugText("I");
+			data.BindCellClickAction(new AcquireItemAction(this.item));
 		}
 
 		public override GameDefine.EventType EventType
 		{
 			get
 			{
-				return GameDefine.EventType.Stair;
+				return GameDefine.EventType.Item;
 			}
 		}
 	}

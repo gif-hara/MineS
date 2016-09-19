@@ -8,13 +8,21 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class InvokeRecoveryAction : CellClickActionBase
+	public class InvokeRecoveryItemAction : CellClickActionBase
 	{
 		public override void Invoke(CellData data)
 		{
 			data.Controller.SetDebugText("");
 			data.BindCellClickAction(null);
-			PlayerManager.Instance.Recovery(5);
+			PlayerManager.Instance.Recovery(GameDefine.RecoveryItemRecovery);
+		}
+
+		public override GameDefine.EventType EventType
+		{
+			get
+			{
+				return GameDefine.EventType.RecoveryItem;
+			}
 		}
 	}
 }

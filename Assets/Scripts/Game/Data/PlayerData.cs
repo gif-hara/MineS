@@ -13,10 +13,13 @@ namespace MineS
 	{
 		public int Level{ private set; get; }
 
+		public Inventory Inventory{ private set; get; }
+
 		public PlayerData()
 		{
 			this.Initialize("", 100, 100, 4, 0, 0);
 			this.Level = 1;
+			this.Inventory = new Inventory();
 		}
 
 		public void AddExperience(int value)

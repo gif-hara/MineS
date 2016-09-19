@@ -31,5 +31,13 @@ namespace MineS
 				}
 			}
 		}
+
+		public override GameDefine.EventType EventType
+		{
+			get
+			{
+				return GameDefine.EventType.Enemy;
+			}
+		}
 	}
 }

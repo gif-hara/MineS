@@ -8,10 +8,8 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public abstract class CellClickActionBase
+	public interface IProbability
 	{
-		public abstract GameDefine.EventType EventType{ get; }
-
-		public abstract void Invoke(CellData data);
+		int Probability{ get; }
 	}
 }
