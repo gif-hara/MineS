@@ -35,6 +35,15 @@ namespace MineS
 
 		private System.Action<int> modifiedLockCountEvent = null;
 
+		public CellData()
+		{
+			this.X = -1;
+			this.Y = -1;
+			this.IsIdentification = true;
+			this.lockCount = 0;
+			this.canStep = true;
+		}
+
 		public CellData(int y, int x)
 		{
 			this.X = x;

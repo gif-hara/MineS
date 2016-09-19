@@ -11,26 +11,26 @@ namespace MineS
 	[System.Serializable]
 	public class Inventory
 	{
-		private List<Item> items;
+		public List<Item> Items{ private set; get; }
 
 		public Inventory()
 		{
-			this.items = new List<Item>();
+			this.Items = new List<Item>();
 			for(int i = 0; i < GameDefine.InventoryItemMax; i++)
 			{
-				this.items.Add(null);
+				this.Items.Add(null);
 			}
 		}
 
 		public bool AddItem(Item item)
 		{
-			var emptyIndex = this.items.FindIndex(i => i == null);
+			var emptyIndex = this.Items.FindIndex(i => i == null);
 			if(emptyIndex < 0)
 			{
 				return false;
 			}
 
-			this.items[emptyIndex] = item;
+			this.Items[emptyIndex] = item;
 
 			return true;
 		}

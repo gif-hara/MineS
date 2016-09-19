@@ -35,6 +35,9 @@ namespace MineS
 		[SerializeField]
 		private AccessoryMasterData accessoryMasterData;
 
+		[SerializeField]
+		private List<InventoryObserver> observers;
+
 		public UsableItemMasterData UsableItemMasterData{ get { return this.usableItemMasterData; } }
 
 		public WeaponMasterData WeaponMasterData{ get { return this.weaponMasterData; } }
@@ -51,5 +54,9 @@ namespace MineS
 
 		public AccessoryMasterData AccessoryMasterData{ get { return this.accessoryMasterData; } }
 
+		public void OpenInventory()
+		{
+			this.observers.ForEach(o => o.ModifiedData(PlayerManager.Instance.Data.Inventory));
+		}
 	}
 }

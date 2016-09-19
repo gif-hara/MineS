@@ -17,5 +17,10 @@ namespace MineS
 		{
 			this.masterData = masterData;
 		}
+
+		public void Use()
+		{
+			Debug.Log("Use " + this.masterData.Name);
+		}
 	}
 }
