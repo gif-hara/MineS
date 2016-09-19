@@ -15,7 +15,11 @@ namespace MineS
 			var player = PlayerManager.Instance.Data;
 			enemy.TakeDamage(player.Strength, false);
 
-			if(!enemy.IsDead)
+			if(enemy.IsDead)
+			{
+				PlayerManager.Instance.AddExperience(enemy.Experience);
+			}
+			else
 			{
 				player.TakeDamage(enemy.Strength, false);
 			}

@@ -36,6 +36,9 @@ namespace MineS
 		[SerializeField]
 		private int armor;
 
+		public int Experience{ get { return this.experience; } }
 
+		[SerializeField]
+		private int experience;
 	}
 }

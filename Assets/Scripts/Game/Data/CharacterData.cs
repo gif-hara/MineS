@@ -8,23 +8,26 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
+	[System.Serializable]
 	public class CharacterData
 	{
 		public string Name{ private set; get; }
 
-		public int HitPointMax{ private set; get; }
+		public int HitPointMax{ protected set; get; }
 
-		public int HitPoint{ private set; get; }
+		public int HitPoint{ protected set; get; }
 
-		public int MagicPointMax{ private set; get; }
+		public int MagicPointMax{ protected set; get; }
 
-		public int MagicPoint{ private set; get; }
+		public int MagicPoint{ protected set; get; }
 
-		public int Strength{ private set; get; }
+		public int Strength{ protected set; get; }
 
-		public int Armor{ private set; get; }
+		public int Armor{ protected set; get; }
 
-		public void Initialize(string name, int hitPoint, int magicPoint, int strength, int armor)
+		public int Experience{ protected set; get; }
+
+		public void Initialize(string name, int hitPoint, int magicPoint, int strength, int armor, int experience)
 		{
 			this.Name = name;
 			this.HitPointMax = hitPoint;
@@ -33,6 +36,7 @@ namespace MineS
 			this.MagicPoint = magicPoint;
 			this.Strength = strength;
 			this.Armor = armor;
+			this.Experience = experience;
 		}
 
 		public void Initialize(CharacterMasterData masterData)
@@ -44,6 +48,7 @@ namespace MineS
 			this.MagicPoint = masterData.MagicPoint;
 			this.Strength = masterData.Strength;
 			this.Armor = masterData.Armor;
+			this.Experience = masterData.Experience;
 		}
 
 		public void Recovery(int value)

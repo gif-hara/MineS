@@ -13,7 +13,15 @@ namespace MineS
 		[SerializeField]
 		private List<CharacterDataObserver> observers;
 
+		[SerializeField]
+		private ExperienceData experienceData;
+
+		[SerializeField]
+		private CharacterMasterData growthData;
+
 		public PlayerData Data{ private set; get; }
+
+		public ExperienceData ExperienceData{ get { return this.experienceData; } }
 
 		void Start()
 		{
@@ -25,6 +33,16 @@ namespace MineS
 		{
 			this.Data.Recovery(value);
 			this.NotifyObservers();
+		}
+
+		public void AddExperience(int value)
+		{
+			this.Data.AddExperience(value);
+			while(this.Data.CanLevelUp)
+			{
+				this.Data.LevelUp(this.growthData);
+				this.NotifyObservers();
+			}
 		}
 
 		public void NotifyObservers()
