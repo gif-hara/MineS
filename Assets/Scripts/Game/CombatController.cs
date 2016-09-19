@@ -18,6 +18,7 @@ namespace MineS
 			if(enemy.IsDead)
 			{
 				PlayerManager.Instance.AddExperience(enemy.Experience);
+				PlayerManager.Instance.AddMoney(enemy.Money);
 			}
 			else
 			{

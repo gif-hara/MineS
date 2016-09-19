@@ -38,11 +38,18 @@ namespace MineS
 		public void AddExperience(int value)
 		{
 			this.Data.AddExperience(value);
+			this.NotifyObservers();
 			while(this.Data.CanLevelUp)
 			{
 				this.Data.LevelUp(this.growthData);
 				this.NotifyObservers();
 			}
+		}
+
+		public void AddMoney(int value)
+		{
+			this.Data.AddMoney(value);
+			this.NotifyObservers();
 		}
 
 		public void NotifyObservers()

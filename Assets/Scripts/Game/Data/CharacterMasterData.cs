@@ -40,5 +40,11 @@ namespace MineS
 
 		[SerializeField]
 		private int experience;
+
+		public int Money{ get { return this.money; } }
+
+		[SerializeField]
+		private int money;
+
 	}
 }

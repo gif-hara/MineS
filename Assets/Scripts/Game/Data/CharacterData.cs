@@ -27,6 +27,8 @@ namespace MineS
 
 		public int Experience{ protected set; get; }
 
+		public int Money{ protected set; get; }
+
 		public void Initialize(string name, int hitPoint, int magicPoint, int strength, int armor, int experience)
 		{
 			this.Name = name;
@@ -49,6 +51,7 @@ namespace MineS
 			this.Strength = masterData.Strength;
 			this.Armor = masterData.Armor;
 			this.Experience = masterData.Experience;
+			this.Money = masterData.Money;
 		}
 
 		public void Recovery(int value)
@@ -68,6 +71,12 @@ namespace MineS
 
 			this.HitPoint -= value;
 			this.HitPoint = this.HitPoint < 0 ? 0 : this.HitPoint;
+		}
+
+		public void AddMoney(int value)
+		{
+			this.Money += value;
+			this.Money = this.Money > GameDefine.MoneyMax ? GameDefine.MoneyMax : this.Money;
 		}
 
 		public bool IsDead
