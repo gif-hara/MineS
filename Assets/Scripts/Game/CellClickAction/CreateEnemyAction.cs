@@ -20,6 +20,7 @@ namespace MineS
 			data.Controller.SetDebugText("E");
 			var enemy = EnemyManager.Instance.Create(data);
 			data.BindCellClickAction(new CombatEnemyAction());
+			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("Enemy"));
 			data.Controller.SetStatus(enemy);
 			var adjacentCells = data.AdjacentCellAll;
 			for(int i = 0; i < adjacentCells.Count; i++)

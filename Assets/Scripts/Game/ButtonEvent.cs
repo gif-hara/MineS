@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using System.Collections;
 
 namespace MineS
 {
@@ -13,13 +14,33 @@ namespace MineS
 		[SerializeField]
 		private CellController cellController;
 
+		private Coroutine deployDescriptionCoroutine = null;
+
+		private const float WaitDeployDescriptionTime = 0.3f;
+
 		public void OnButtonDown()
 		{
+			this.deployDescriptionCoroutine = StartCoroutine(this.DeployDescription());
 		}
 
 		public void OnButtonUp()
 		{
+			if(this.deployDescriptionCoroutine == null)
+			{
+				return;
+			}
+
+			StopCoroutine(this.deployDescriptionCoroutine);
+			this.deployDescriptionCoroutine = null;
 			this.cellController.Action();
+		}
+
+		private IEnumerator DeployDescription()
+		{
+			yield return new WaitForSecondsRealtime(WaitDeployDescriptionTime);
+
+			this.cellController.Description();
+			this.deployDescriptionCoroutine = null;
 		}
 	}
 }

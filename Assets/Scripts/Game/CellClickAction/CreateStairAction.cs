@@ -19,6 +19,7 @@ namespace MineS
 		{
 			data.Controller.SetDebugText("F");
 			data.BindCellClickAction(new InvokeNextFloorAction());
+			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("NextFloor"));
 		}
 	}
 }

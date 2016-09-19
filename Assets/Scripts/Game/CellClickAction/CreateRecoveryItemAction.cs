@@ -20,6 +20,7 @@ namespace MineS
 			data.Controller.SetDebugText("R");
 			data.Controller.SetActiveStatusObject(false);
 			data.BindCellClickAction(new InvokeRecoveryAction());
+			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("RecoveryItem"));
 		}
 	}
 }

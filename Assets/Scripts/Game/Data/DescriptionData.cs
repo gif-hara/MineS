@@ -15,11 +15,22 @@ namespace MineS
 		[System.Serializable]
 		public class Element
 		{
+			public string Key{ get { return this.key; } }
+
+			[SerializeField]
+			private string key;
+
+			public string Title{ get { return this.title.ToString(); } }
+
 			[SerializeField]
 			private StringAsset.Finder title;
 
+			public string Message{ get { return this.message.ToString(); } }
+
 			[SerializeField]
 			private StringAsset.Finder message;
+
+			public Image Image{ get { return this.image; } }
 
 			[SerializeField]
 			private Image image;
@@ -27,5 +38,22 @@ namespace MineS
 
 		[SerializeField]
 		private List<Element> database;
+
+		private static Dictionary<string, Element> finder = null;
+
+		public Element Get(string key)
+		{
+			if(finder == null)
+			{
+				finder = new Dictionary<string, Element>();
+				for(int i = 0; i < database.Count; i++)
+				{
+					var data = database[i];
+					finder.Add(data.Key, data);
+				}
+			}
+
+			return finder[key];
+		}
 	}
 }

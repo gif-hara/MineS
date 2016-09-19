@@ -25,6 +25,8 @@ namespace MineS
 
 		private CellClickActionBase cellClickAction;
 
+		private DeployDescriptionBase deployDescription;
+
 		private System.Action<GameDefine.ActionableType> infeasibleEvent = null;
 
 		private System.Action<bool> modifiedCanStepEvent = null;
@@ -68,6 +70,12 @@ namespace MineS
 
 		public void Description()
 		{
+			if(this.deployDescription == null)
+			{
+				return;
+			}
+
+			this.deployDescription.Deploy();
 		}
 
 		public void SetController(CellController controller)
@@ -95,6 +103,11 @@ namespace MineS
 		public void BindCellClickAction(CellClickActionBase cellClickAction)
 		{
 			this.cellClickAction = cellClickAction;
+		}
+
+		public void BindDeployDescription(DeployDescriptionBase deployDescription)
+		{
+			this.deployDescription = deployDescription;
 		}
 
 		public void Steppable()
