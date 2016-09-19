@@ -11,7 +11,10 @@ namespace MineS
 	/// </summary>
 	public class DungeonManager : SingletonMonoBehaviour<DungeonManager>
 	{
-		private int floorCount = 0;
+		[SerializeField]
+		private DungeonData current;
+
+		private int floorCount = 1;
 
 		private UnityEvent nextFloorEvent = new UnityEvent();
 
@@ -22,7 +25,13 @@ namespace MineS
 
 		public void NextFloorEvent()
 		{
+			this.floorCount++;
 			this.nextFloorEvent.Invoke();
+		}
+
+		public CharacterData CreateEnemy()
+		{
+			return this.current.CreateEnemy(this.floorCount);
 		}
 	}
 }

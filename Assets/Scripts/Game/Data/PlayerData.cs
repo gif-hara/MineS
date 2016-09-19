@@ -12,7 +12,7 @@ namespace MineS
 	{
 		public PlayerData()
 		{
-			this.Initialize(100, 100, 4, 0);
+			this.Initialize("", 100, 100, 4, 0);
 		}
 	}
 }
