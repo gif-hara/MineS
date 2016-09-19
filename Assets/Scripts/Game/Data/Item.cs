@@ -11,16 +11,20 @@ namespace MineS
 	[System.Serializable]
 	public class Item
 	{
-		private ItemMasterDataBase masterData;
+		public ItemDataBase InstanceData{ private set; get; }
 
-		public Item(ItemMasterDataBase masterData)
+		public Item(ItemDataBase masterData)
 		{
-			this.masterData = masterData;
+			this.InstanceData = masterData.Clone;
 		}
 
 		public void Use()
 		{
-			Debug.Log("Use " + this.masterData.Name);
+			if(GameDefine.IsEquipment(InstanceData.ItemType))
+			{
+				PlayerManager.Instance.Data.Inventory.SetEquipment(this);
+			}
+			Debug.Log(this.InstanceData.ItemName);
 		}
 	}
 }

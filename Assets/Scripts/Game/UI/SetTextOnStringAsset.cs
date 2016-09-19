@@ -21,7 +21,7 @@ namespace MineS
 		void Start()
 		{
 #if UNITY_EDITOR
-			if(!Application.isPlayer)
+			if(!Application.isPlaying)
 			{
 				return;
 			}

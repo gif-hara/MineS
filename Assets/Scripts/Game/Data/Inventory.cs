@@ -13,6 +13,8 @@ namespace MineS
 	{
 		public List<Item> Items{ private set; get; }
 
+		public Equipment Equipment{ private set; get; }
+
 		public Inventory()
 		{
 			this.Items = new List<Item>();
@@ -20,6 +22,7 @@ namespace MineS
 			{
 				this.Items.Add(null);
 			}
+			this.Equipment = new Equipment();
 		}
 
 		public bool AddItem(Item item)
@@ -33,6 +36,11 @@ namespace MineS
 			this.Items[emptyIndex] = item;
 
 			return true;
+		}
+
+		public void SetEquipment(Item item)
+		{
+			this.Equipment.Set(item);
 		}
 	}
 }

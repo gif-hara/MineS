@@ -135,5 +135,17 @@ namespace MineS
 			Debug.AssertFormat(false, "計算を間違えている可能性があります.");
 			return -1;
 		}
+
+		public static bool IsEquipment(ItemType itemType)
+		{
+			return
+				itemType == ItemType.Accessory
+			|| itemType == ItemType.Body
+			|| itemType == ItemType.Glove
+			|| itemType == ItemType.Helmet
+			|| itemType == ItemType.Leg
+			|| itemType == ItemType.Shield
+			|| itemType == ItemType.Weapon;
+		}
 	}
 }

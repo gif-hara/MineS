@@ -9,7 +9,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable][CreateAssetMenu()]
-	public class UsableItemMasterData : ItemMasterDataBase
+	public class UsableItemData : ItemDataBase
 	{
 		[SerializeField]
 		private GameDefine.UsableItemType type;
@@ -33,6 +33,20 @@ namespace MineS
 			get
 			{
 				return GameDefine.ItemType.UsableItem;
+			}
+		}
+
+		public override ItemDataBase Clone
+		{
+			get
+			{
+				var result = ScriptableObject.CreateInstance<UsableItemData>();
+				this.InternalClone(result);
+				result.type = this.type;
+				result.power0 = this.power0;
+				result.power1 = this.power1;
+
+				return result;
 			}
 		}
 	}

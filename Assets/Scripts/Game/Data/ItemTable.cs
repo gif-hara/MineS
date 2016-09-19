@@ -23,12 +23,12 @@ namespace MineS
 		private class Element : IProbability
 		{
 			[SerializeField]
-			private ItemMasterDataBase masterData;
+			private ItemDataBase masterData;
 
 			[SerializeField]
 			private int probability;
 
-			public ItemMasterDataBase MasterData{ get { return this.masterData; } }
+			public ItemDataBase MasterData{ get { return this.masterData; } }
 
 			public int Probability{ get { return this.probability; } }
 

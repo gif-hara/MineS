@@ -9,7 +9,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable][CreateAssetMenu()]
-	public class EquipmentMasterData : ItemMasterDataBase
+	public class EquipmentData : ItemDataBase
 	{
 		[SerializeField]
 		private int power;
@@ -25,6 +25,20 @@ namespace MineS
 			get
 			{
 				return this.itemType;
+			}
+		}
+
+		public override ItemDataBase Clone
+		{
+			get
+			{
+				var result = ScriptableObject.CreateInstance<EquipmentData>();
+				this.InternalClone(result);
+				result.power = this.power;
+				result.itemType = this.itemType;
+				result.spells = new List<int>(this.spells);
+
+				return result;
 			}
 		}
 	}
