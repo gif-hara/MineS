@@ -15,6 +15,12 @@ namespace MineS
 		private StringAsset.Finder dungeonName;
 
 		[SerializeField]
+		private Sprite stairImage;
+
+		[SerializeField]
+		private Sprite recoveryItemImage;
+
+		[SerializeField]
 		private EnemyTable enemyTable;
 
 		[SerializeField]
@@ -30,6 +36,10 @@ namespace MineS
 		private Range createItemRange;
 
 		public string Name{ get { return this.dungeonName.ToString(); } }
+
+		public Sprite StairImage{ get { return this.stairImage; } }
+
+		public Sprite RecoveryItemImage{ get { return this.recoveryItemImage; } }
 
 		public Range CreateRecoveryItemRange{ get { return this.createRecoveryItemRange; } }
 

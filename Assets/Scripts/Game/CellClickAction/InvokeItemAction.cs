@@ -12,9 +12,13 @@ namespace MineS
 	{
 		private Item item;
 
-		public InvokeItemAction(Item item)
+		public InvokeItemAction(Item item, CellController cellController)
 		{
 			this.item = item;
+			if(this.item != null)
+			{
+				cellController.SetImage(this.item.InstanceData.Image);
+			}
 		}
 
 		public override void Invoke(CellData data)

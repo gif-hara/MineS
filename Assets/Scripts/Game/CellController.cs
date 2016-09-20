@@ -32,8 +32,8 @@ namespace MineS
 		[SerializeField]
 		private GameObject armorObject;
 
-        [SerializeField]
-        private Image image;
+		[SerializeField]
+		private Image image;
 
 		[SerializeField]
 		private Text debugText;
@@ -44,6 +44,9 @@ namespace MineS
 
 		public void SetCellData(CellData data)
 		{
+			this.SetActiveStatusObject(false);
+			this.SetDebugText("");
+			this.SetImage(null);
 			this.Data = data;
 			this.Data.BindEvent(
 				this.Infeasible,
@@ -52,8 +55,6 @@ namespace MineS
 				this.ModifiedLockCount
 			);
 			this.Data.SetController(this);
-			this.SetActiveStatusObject(false);
-			this.SetDebugText("");
 		}
 
 		public void Action()
@@ -82,10 +83,11 @@ namespace MineS
 			this.debugText.text = message;
 		}
 
-        public void SetImage(Sprite sprite)
-        {
-            this.image.sprite = sprite;
-        }
+		public void SetImage(Sprite sprite)
+		{
+			this.image.sprite = sprite;
+			this.image.enabled = sprite != null;
+		}
 
 		public void SetActiveStatusObject(bool isActive)
 		{

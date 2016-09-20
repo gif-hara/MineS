@@ -12,7 +12,7 @@ namespace MineS
 	{
 		public override void Invoke(CellData data)
 		{
-			data.Controller.SetDebugText("F");
+			data.Controller.SetImage(DungeonManager.Instance.CurrentData.StairImage);
 			data.BindCellClickAction(new InvokeNextFloorAction());
 			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("NextFloor"));
 		}

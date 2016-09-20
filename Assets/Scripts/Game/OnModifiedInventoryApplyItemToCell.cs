@@ -46,19 +46,10 @@ namespace MineS
 			{
 				var item = data.Items[i];
 				var cellController = this.cellControllers[i];
-				this.cellControllers[i].SetCellData(this.CreateCellData(data.Items[i]));
-
-				var debugText = item == null ? "" : "I";
-				cellController.SetDebugText(debugText);
+				var cellData = new CellData();
+				this.cellControllers[i].SetCellData(cellData);
+				cellData.BindCellClickAction(new InvokeItemAction(item, cellController));
 			}
-		}
-
-		private CellData CreateCellData(Item item)
-		{
-			var result = new CellData();
-			result.BindCellClickAction(new InvokeItemAction(item));
-
-			return result;
 		}
 
 #endregion

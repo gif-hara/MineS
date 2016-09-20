@@ -12,7 +12,7 @@ namespace MineS
 	{
 		public override void Invoke(CellData data)
 		{
-			data.Controller.SetDebugText("");
+			data.Controller.SetImage(null);
 			data.BindCellClickAction(null);
 			PlayerManager.Instance.Recovery(GameDefine.RecoveryItemRecovery);
 		}

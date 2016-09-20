@@ -18,7 +18,14 @@ namespace MineS
 		[SerializeField]
 		protected GameDefine.RareType rare;
 
+		[SerializeField]
+		private Sprite image;
+
 		public string ItemName{ get { return this.itemName.ToString(); } }
+
+		public GameDefine.RareType RareType{ get { return this.rare; } }
+
+		public Sprite Image{ get { return this.image; } }
 
 		public abstract GameDefine.ItemType ItemType{ get; }
 
@@ -28,6 +35,7 @@ namespace MineS
 		{
 			clone.itemName = this.itemName;
 			clone.rare = this.rare;
+			clone.image = this.image;
 		}
 	}
 }

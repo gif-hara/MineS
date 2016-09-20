@@ -19,7 +19,7 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			data.Controller.SetDebugText("I");
+			data.Controller.SetImage(this.item.InstanceData.Image);
 			data.BindCellClickAction(new AcquireItemAction(this.item));
 		}
 
@@ -30,5 +30,7 @@ namespace MineS
 				return GameDefine.EventType.Item;
 			}
 		}
+
+
 	}
 }
