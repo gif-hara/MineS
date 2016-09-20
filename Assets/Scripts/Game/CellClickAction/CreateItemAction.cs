@@ -20,7 +20,7 @@ namespace MineS
 		public override void Invoke(CellData data)
 		{
 			data.Controller.SetImage(this.item.InstanceData.Image);
-			data.BindCellClickAction(new AcquireItemAction(this.item));
+			data.BindCellClickAction(new AcquireItemAction(PlayerManager.Instance.Data.Inventory, this.item));
 		}
 
 		public override GameDefine.EventType EventType
