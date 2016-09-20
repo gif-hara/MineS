@@ -21,7 +21,7 @@ namespace MineS
 
 		public int MagicPoint{ protected set; get; }
 
-		public int Strength{ protected set; get; }
+		public virtual int Strength{ protected set; get; }
 
 		public int Armor{ protected set; get; }
 
@@ -29,7 +29,7 @@ namespace MineS
 
 		public int Money{ protected set; get; }
 
-        public Sprite Image { protected set; get; }
+		public Sprite Image { protected set; get; }
 
 		public void Initialize(string name, int hitPoint, int magicPoint, int strength, int armor, int experience, int money, Sprite image)
 		{
@@ -41,8 +41,8 @@ namespace MineS
 			this.Strength = strength;
 			this.Armor = armor;
 			this.Experience = experience;
-            this.Money = money;
-            this.Image = image;
+			this.Money = money;
+			this.Image = image;
 		}
 
 		public void Initialize(CharacterMasterData masterData)
@@ -56,7 +56,7 @@ namespace MineS
 			this.Armor = masterData.Armor;
 			this.Experience = masterData.Experience;
 			this.Money = masterData.Money;
-            this.Image = masterData.Image;
+			this.Image = masterData.Image;
 		}
 
 		public void Recovery(int value)

@@ -120,5 +120,18 @@ namespace MineS
 			Debug.AssertFormat(false, "不正な値です = {0}", itemType);
 			return null;
 		}
+
+		public int TotalStrength
+		{
+			get
+			{
+				var weaponPower = 0;
+				if(this.Weapon != null)
+				{
+					weaponPower = (this.Weapon.InstanceData as EquipmentData).Power;
+				}
+				return weaponPower;
+			}
+		}
 	}
 }

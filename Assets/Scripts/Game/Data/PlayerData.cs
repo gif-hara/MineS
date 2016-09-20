@@ -54,5 +54,17 @@ namespace MineS
 				return this.Experience >= PlayerManager.Instance.ExperienceData.NeedNextLevel(this.Level);
 			}
 		}
+
+		public override int Strength
+		{
+			protected set
+			{
+				base.Strength = value;
+			}
+			get
+			{
+				return base.Strength + this.Inventory.Equipment.TotalStrength;
+			}
+		}
 	}
 }

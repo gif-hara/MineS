@@ -28,7 +28,9 @@ namespace MineS
 				return;
 			}
 			item.Use();
-			PlayerManager.Instance.UpdateInventoryUI();
+			var playerManager = PlayerManager.Instance;
+			playerManager.NotifyCharacterDataObservers();
+			playerManager.UpdateInventoryUI();
 		}
 
 		public override GameDefine.EventType EventType

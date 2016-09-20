@@ -20,6 +20,10 @@ namespace MineS
 		[SerializeField]
 		private List<int> spells;
 
+		public int Power{ get { return this.power; } }
+
+		public List<int> Spells{ get { return this.spells; } }
+
 		public override GameDefine.ItemType ItemType
 		{
 			get

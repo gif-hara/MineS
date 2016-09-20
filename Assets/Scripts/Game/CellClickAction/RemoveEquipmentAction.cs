@@ -27,7 +27,9 @@ namespace MineS
 			{
 				inventory.RemoveEquipment(this.item);
 				inventory.AddItem(this.item);
-				PlayerManager.Instance.UpdateInventoryUI();
+				var playerManager = PlayerManager.Instance;
+				playerManager.NotifyCharacterDataObservers();
+				playerManager.UpdateInventoryUI();
 			}
 			else
 			{
