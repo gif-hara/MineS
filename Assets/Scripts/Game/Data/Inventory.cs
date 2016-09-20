@@ -38,15 +38,34 @@ namespace MineS
 			return true;
 		}
 
-		public void RemoveItem(Item Item)
+		public void RemoveItem(Item item)
 		{
-			var index = this.Items.FindIndex(i => i == Item);
+			var index = this.Items.FindIndex(i => i == item);
 			this.Items[index] = null;
 		}
 
-		public void SetEquipment(Item item)
+		public void ChangeItem(Item before, Item after)
 		{
-			this.Equipment.Set(item);
+			var index = this.Items.FindIndex(i => i == before);
+			this.Items[index] = after;
+		}
+
+		public bool IsFreeSpace
+		{
+			get
+			{
+				return this.Items.FindIndex(i => i == null) != -1;
+			}
+		}
+
+		public Item ChangeEquipment(Item item)
+		{
+			return this.Equipment.Change(item);
+		}
+
+		public void RemoveEquipment(Item item)
+		{
+			this.Equipment.Remove(item);
 		}
 	}
 }

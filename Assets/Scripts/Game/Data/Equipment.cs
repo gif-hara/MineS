@@ -11,45 +11,85 @@ namespace MineS
 	[System.Serializable]
 	public class Equipment
 	{
-		public EquipmentData Accessory{ private set; get; }
+		public Item Accessory{ private set; get; }
 
-		public EquipmentData Body{ private set; get; }
+		public Item Body{ private set; get; }
 
-		public EquipmentData Glove{ private set; get; }
+		public Item Glove{ private set; get; }
 
-		public EquipmentData Helmet{ private set; get; }
+		public Item Helmet{ private set; get; }
 
-		public EquipmentData Leg{ private set; get; }
+		public Item Leg{ private set; get; }
 
-		public EquipmentData Shield{ private set; get; }
+		public Item Shield{ private set; get; }
 
-		public EquipmentData Weapon{ private set; get; }
+		public Item Weapon{ private set; get; }
 
-		public void Set(Item item)
+		public Item Change(Item item)
 		{
-			Debug.Log("SetEquipment! " + item.InstanceData.ItemName);
+			Item beforeItem = null;
 			switch(item.InstanceData.ItemType)
 			{
 			case GameDefine.ItemType.Accessory:
-				this.Accessory = item.InstanceData as EquipmentData;
+				beforeItem = this.Accessory;
+				this.Accessory = item;
 			break;
 			case GameDefine.ItemType.Body:
-				this.Body = item.InstanceData as EquipmentData;
+				beforeItem = this.Body;
+				this.Body = item;
 			break;
 			case GameDefine.ItemType.Glove:
-				this.Glove = item.InstanceData as EquipmentData;
+				beforeItem = this.Glove;
+				this.Glove = item;
 			break;
 			case GameDefine.ItemType.Helmet:
-				this.Helmet = item.InstanceData as EquipmentData;
+				beforeItem = this.Helmet;
+				this.Helmet = item;
 			break;
 			case GameDefine.ItemType.Leg:
-				this.Leg = item.InstanceData as EquipmentData;
+				beforeItem = this.Leg;
+				this.Leg = item;
 			break;
 			case GameDefine.ItemType.Shield:
-				this.Shield = item.InstanceData as EquipmentData;
+				beforeItem = this.Shield;
+				this.Shield = item;
 			break;
 			case GameDefine.ItemType.Weapon:
-				this.Weapon = item.InstanceData as EquipmentData;
+				beforeItem = this.Weapon;
+				this.Weapon = item;
+			break;
+			default:
+				Debug.AssertFormat(false, "不正な値です = {0}", item.InstanceData.ItemType);
+			break;
+			}
+
+			return beforeItem;
+		}
+
+		public void Remove(Item item)
+		{
+			switch(item.InstanceData.ItemType)
+			{
+			case GameDefine.ItemType.Accessory:
+				this.Accessory = null;
+			break;
+			case GameDefine.ItemType.Body:
+				this.Body = null;
+			break;
+			case GameDefine.ItemType.Glove:
+				this.Glove = null;
+			break;
+			case GameDefine.ItemType.Helmet:
+				this.Helmet = null;
+			break;
+			case GameDefine.ItemType.Leg:
+				this.Leg = null;
+			break;
+			case GameDefine.ItemType.Shield:
+				this.Shield = null;
+			break;
+			case GameDefine.ItemType.Weapon:
+				this.Weapon = null;
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です = {0}", item.InstanceData.ItemType);
@@ -57,7 +97,7 @@ namespace MineS
 			}
 		}
 
-		private EquipmentData GetMatchEquipment(GameDefine.ItemType itemType)
+		private Item GetMatchEquipment(GameDefine.ItemType itemType)
 		{
 			switch(itemType)
 			{

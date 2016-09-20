@@ -58,6 +58,11 @@ namespace MineS
 			this.Data.Inventory.RemoveItem(item);
 		}
 
+		public void ChangeItem(Item before, Item after)
+		{
+			this.Data.Inventory.ChangeItem(before, after);
+		}
+
 		public void AddMoney(int value)
 		{
 			this.Data.AddMoney(value);

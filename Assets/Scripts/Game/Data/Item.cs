@@ -22,7 +22,8 @@ namespace MineS
 		{
 			if(GameDefine.IsEquipment(InstanceData.ItemType))
 			{
-				PlayerManager.Instance.Data.Inventory.SetEquipment(this);
+				var changedEquipment = PlayerManager.Instance.Data.Inventory.ChangeEquipment(this);
+				PlayerManager.Instance.ChangeItem(this, changedEquipment);
 			}
 			else if(this.InstanceData.ItemType == GameDefine.ItemType.UsableItem)
 			{
