@@ -25,6 +25,8 @@ namespace MineS
 
 		public int Armor{ protected set; get; }
 
+		public virtual int ArmorMax{ protected set; get; }
+
 		public int Experience{ protected set; get; }
 
 		public int Money{ protected set; get; }
@@ -40,6 +42,7 @@ namespace MineS
 			this.MagicPoint = magicPoint;
 			this.Strength = strength;
 			this.Armor = armor;
+			this.ArmorMax = GameDefine.ArmorMax;
 			this.Experience = experience;
 			this.Money = money;
 			this.Image = image;
@@ -59,9 +62,25 @@ namespace MineS
 			this.Image = masterData.Image;
 		}
 
-		public void Recovery(int value)
+		public void RecoveryHitPoint(int value, bool isLimit)
 		{
+			if(this.HitPoint >= this.HitPointMax && isLimit)
+			{
+				return;
+			}
+
 			this.HitPoint += value;
+
+			if(isLimit)
+			{
+				this.HitPoint = this.HitPoint > this.HitPointMax ? this.HitPointMax : this.HitPoint;
+			}
+		}
+
+		public void RecoveryArmor(int value)
+		{
+			this.Armor += value;
+			this.Armor = this.Armor > this.ArmorMax ? this.ArmorMax : this.Armor;
 		}
 
 		public void TakeDamage(int value, bool onlyHitPoint)

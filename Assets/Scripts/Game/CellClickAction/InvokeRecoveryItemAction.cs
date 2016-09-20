@@ -14,7 +14,7 @@ namespace MineS
 		{
 			data.Controller.SetImage(null);
 			data.BindCellClickAction(null);
-			PlayerManager.Instance.Recovery(GameDefine.RecoveryItemRecovery);
+			PlayerManager.Instance.RecoveryHitPoint(GameDefine.RecoveryItemRecovery, false);
 		}
 
 		public override GameDefine.EventType EventType

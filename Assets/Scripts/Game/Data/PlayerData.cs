@@ -66,5 +66,17 @@ namespace MineS
 				return base.Strength + this.Inventory.Equipment.TotalStrength;
 			}
 		}
+
+		public override int ArmorMax
+		{
+			protected set
+			{
+				base.ArmorMax = value;
+			}
+			get
+			{
+				return this.Inventory.Equipment.TotalArmor;
+			}
+		}
 	}
 }

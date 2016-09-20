@@ -36,9 +36,9 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
-		public void Recovery(int value)
+		public void RecoveryHitPoint(int value, bool isLimit)
 		{
-			this.Data.Recovery(value);
+			this.Data.RecoveryHitPoint(value, isLimit);
 			this.NotifyCharacterDataObservers();
 		}
 
@@ -86,6 +86,18 @@ namespace MineS
 		public void UpdateInventoryUI()
 		{
 			this.inventoryObservers.ForEach(i => i.ModifiedData(this.Data.Inventory));
+		}
+
+		public void DebugRecoveryHitPoint()
+		{
+			this.Data.RecoveryHitPoint(999, false);
+			this.NotifyCharacterDataObservers();
+		}
+
+		public void DebugRecoveryArmor()
+		{
+			this.Data.RecoveryArmor(999);
+			this.NotifyCharacterDataObservers();
 		}
 	}
 }

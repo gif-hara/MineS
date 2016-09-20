@@ -42,7 +42,7 @@ namespace MineS
 			switch(usableItem.UsableItemType)
 			{
 			case GameDefine.UsableItemType.RecoveryHitPoint:
-				playerManager.Recovery(usableItem.RandomPower);
+				playerManager.RecoveryHitPoint(usableItem.RandomPower, true);
 				playerManager.RemoveInventoryItem(this);
 			break;
 			default:

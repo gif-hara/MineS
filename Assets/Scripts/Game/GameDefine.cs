@@ -112,6 +112,8 @@ namespace MineS
 
 		public const int RecoveryItemRecovery = 5;
 
+		public const int ArmorMax = 999;
+
 		public static int Lottery<P>(List<P> elements) where P : IProbability
 		{
 			int probabilityMax = 0;

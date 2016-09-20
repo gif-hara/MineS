@@ -46,8 +46,9 @@ namespace MineS
 		[SerializeField]
 		private int money;
 
-        public Sprite Image { get { return this.image; } }
-        [SerializeField]
-        private Sprite image;
+		public Sprite Image { get { return this.image; } }
+
+		[SerializeField]
+		private Sprite image;
 	}
 }

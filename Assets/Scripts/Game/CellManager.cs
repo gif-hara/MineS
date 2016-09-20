@@ -49,20 +49,6 @@ namespace MineS
 			DungeonManager.Instance.AddNextFloorEvent(this.NextFloor);
 		}
 
-		void Update()
-		{
-			if(Input.GetKeyDown(KeyCode.Q))
-			{
-				for(int y = 0; y < RowMax; y++)
-				{
-					for(int x = 0; x < CulumnMax; x++)
-					{
-						this.cellControllers[y, x].DebugAction();
-					}
-				}
-			}
-		}
-
 		public void SetCell(CellData[,] database)
 		{
 			this.cellDatabase = database;
@@ -134,6 +120,17 @@ namespace MineS
 			result.RemoveAll(c => c == null);
 
 			return result;
+		}
+
+		public void DebugAction()
+		{
+			for(int y = 0; y < RowMax; y++)
+			{
+				for(int x = 0; x < CulumnMax; x++)
+				{
+					this.cellControllers[y, x].DebugAction();
+				}
+			}
 		}
 
 		private void InitializeStep()

@@ -121,16 +121,32 @@ namespace MineS
 			return null;
 		}
 
+		private int GetPower(Item item)
+		{
+			return item == null ? 0 : (item.InstanceData as EquipmentData).Power;
+		}
+
 		public int TotalStrength
 		{
 			get
 			{
-				var weaponPower = 0;
-				if(this.Weapon != null)
-				{
-					weaponPower = (this.Weapon.InstanceData as EquipmentData).Power;
-				}
-				return weaponPower;
+				return this.GetPower(this.Weapon);
+			}
+		}
+
+		public int TotalArmor
+		{
+			get
+			{
+				return this.GetPower(this.Helmet) + this.GetPower(this.Body) + this.GetPower(this.Glove) + this.GetPower(this.Shield);
+			}
+		}
+
+		public int TotalEvasion
+		{
+			get
+			{
+				return this.GetPower(this.Leg);
 			}
 		}
 	}
