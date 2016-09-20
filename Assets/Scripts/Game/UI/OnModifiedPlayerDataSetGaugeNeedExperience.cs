@@ -24,7 +24,6 @@ namespace MineS
 			var experienceData = playerManager.ExperienceData;
 			var needNextLevel = experienceData.NeedNextLevel(playerData.Level);
 			var currentNeedExperience = needNextLevel - experienceData.Experiences[playerData.Level];
-
 			this.target.Set(1.0f - (needNextLevel - playerData.Experience) / (float)currentNeedExperience);
 		}
 

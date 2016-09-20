@@ -14,16 +14,12 @@ namespace MineS
 		[SerializeField]
 		private RectTransform valueTransform;
 
-		private RectTransform root;
-
-		void Start()
-		{
-			this.root = this.transform as RectTransform;
-		}
+		[SerializeField]
+		private float size;
 
 		public void Set(float value)
 		{
-			this.valueTransform.sizeDelta = new Vector2(-this.root.sizeDelta.x * (1.0f - value), this.valueTransform.sizeDelta.y);
+			this.valueTransform.sizeDelta = new Vector2(-this.size * (1.0f - value), this.valueTransform.sizeDelta.y);
 		}
 	}
 }
