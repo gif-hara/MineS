@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using UnityEngine.Serialization;
 
 namespace MineS
 {
@@ -11,7 +12,13 @@ namespace MineS
 	public class PlayerManager : SingletonMonoBehaviour<PlayerManager>
 	{
 		[SerializeField]
-		private List<CharacterDataObserver> observers;
+		private List<CharacterDataObserver> characterDataObservers;
+
+		[SerializeField]
+		private List<InventoryObserver> inventoryObservers;
+
+		[SerializeField]
+		private GameObject inventoryUI;
 
 		[SerializeField]
 		private ExperienceData experienceData;
@@ -26,38 +33,54 @@ namespace MineS
 		void Start()
 		{
 			this.Data = new PlayerData();
-			this.NotifyObservers();
+			this.NotifyCharacterDataObservers();
 		}
 
 		public void Recovery(int value)
 		{
 			this.Data.Recovery(value);
-			this.NotifyObservers();
+			this.NotifyCharacterDataObservers();
 		}
 
 		public void AddExperience(int value)
 		{
 			this.Data.AddExperience(value);
-			this.NotifyObservers();
+			this.NotifyCharacterDataObservers();
 			while(this.Data.CanLevelUp)
 			{
 				this.Data.LevelUp(this.growthData);
-				this.NotifyObservers();
+				this.NotifyCharacterDataObservers();
 			}
+		}
+
+		public void RemoveInventoryItem(Item item)
+		{
+			this.Data.Inventory.RemoveItem(item);
 		}
 
 		public void AddMoney(int value)
 		{
 			this.Data.AddMoney(value);
-			this.NotifyObservers();
+			this.NotifyCharacterDataObservers();
 		}
 
-		public void NotifyObservers()
+		public void NotifyCharacterDataObservers()
 		{
-			for(int i = 0; i < this.observers.Count; i++)
+			for(int i = 0; i < this.characterDataObservers.Count; i++)
 			{
-				this.observers[i].ModifiedData(this.Data);
+				this.characterDataObservers[i].ModifiedData(this.Data);
 			}
+		}
+
+		public void OpenInventoryUI()
+		{
+			this.inventoryUI.SetActive(true);
+			this.UpdateInventoryUI();
+		}
+
+		public void UpdateInventoryUI()
+		{
+			this.inventoryObservers.ForEach(i => i.ModifiedData(this.Data.Inventory));
 		}
 	}
 }

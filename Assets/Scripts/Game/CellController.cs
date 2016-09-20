@@ -55,6 +55,12 @@ namespace MineS
 
 		public void Action()
 		{
+			if(this.Data == null)
+			{
+				Debug.LogWarning("CellDataがありません.");
+				return;
+			}
+
 			this.Data.Action();
 		}
 

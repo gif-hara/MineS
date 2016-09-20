@@ -24,6 +24,7 @@ namespace MineS
 				return;
 			}
 			item.Use();
+			PlayerManager.Instance.UpdateInventoryUI();
 		}
 
 		public override GameDefine.EventType EventType

@@ -24,7 +24,31 @@ namespace MineS
 			{
 				PlayerManager.Instance.Data.Inventory.SetEquipment(this);
 			}
-			Debug.Log(this.InstanceData.ItemName);
+			else if(this.InstanceData.ItemType == GameDefine.ItemType.UsableItem)
+			{
+				this.UseUsableItem();
+			}
+			else
+			{
+				Debug.LogWarning("未実装のアイテムです ItemType = " + this.InstanceData.ItemType);
+			}
+		}
+
+		public void UseUsableItem()
+		{
+			var playerManager = PlayerManager.Instance;
+			var usableItem = this.InstanceData as UsableItemData;
+			switch(usableItem.UsableItemType)
+			{
+			case GameDefine.UsableItemType.RecoveryHitPoint:
+				playerManager.Recovery(usableItem.RandomPower);
+				playerManager.RemoveInventoryItem(this);
+			break;
+			default:
+				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
+			break;
+			}
+
 		}
 	}
 }

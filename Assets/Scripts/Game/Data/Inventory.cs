@@ -38,6 +38,12 @@ namespace MineS
 			return true;
 		}
 
+		public void RemoveItem(Item Item)
+		{
+			var index = this.Items.FindIndex(i => i == Item);
+			this.Items[index] = null;
+		}
+
 		public void SetEquipment(Item item)
 		{
 			this.Equipment.Set(item);

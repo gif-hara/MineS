@@ -25,7 +25,7 @@ namespace MineS
 				player.TakeDamage(enemy.Strength, false);
 			}
 
-			PlayerManager.Instance.NotifyObservers();
+			PlayerManager.Instance.NotifyCharacterDataObservers();
 			enemyObserver.ModifiedData(enemy);
 		}
 	}
