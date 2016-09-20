@@ -17,7 +17,7 @@ namespace MineS
 
 		public PlayerData()
 		{
-			this.Initialize("", 100, 100, 4, 0, 0);
+			this.Initialize("", 100, 100, 4, 0, 0, 0, null);
 			this.Level = 1;
 			this.Inventory = new Inventory();
 		}

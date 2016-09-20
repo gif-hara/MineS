@@ -32,6 +32,9 @@ namespace MineS
 		[SerializeField]
 		private GameObject armorObject;
 
+        [SerializeField]
+        private Image image;
+
 		[SerializeField]
 		private Text debugText;
 
@@ -78,6 +81,11 @@ namespace MineS
 		{
 			this.debugText.text = message;
 		}
+
+        public void SetImage(Sprite sprite)
+        {
+            this.image.sprite = sprite;
+        }
 
 		public void SetActiveStatusObject(bool isActive)
 		{

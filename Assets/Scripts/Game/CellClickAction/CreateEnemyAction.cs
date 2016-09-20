@@ -12,11 +12,11 @@ namespace MineS
 	{
 		public override void Invoke(CellData data)
 		{
-			data.Controller.SetDebugText("E");
 			var enemy = EnemyManager.Instance.Create(data);
 			data.BindCellClickAction(new CombatEnemyAction());
 			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("Enemy"));
 			data.Controller.SetStatus(enemy);
+            data.Controller.SetImage(enemy.Image);
 			var adjacentCells = data.AdjacentCellAll;
 			for(int i = 0; i < adjacentCells.Count; i++)
 			{

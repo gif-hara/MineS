@@ -18,8 +18,8 @@ namespace MineS
 			if(enemyData.IsDead)
 			{
 				data.BindCellClickAction(null);
-				data.Controller.SetDebugText("");
 				data.Controller.SetActiveStatusObject(false);
+                data.Controller.SetImage(null);
 				EnemyManager.Instance.Remove(data);
 				var adjacentCells = data.AdjacentCellAll;
 				for(int i = 0; i < adjacentCells.Count; i++)
