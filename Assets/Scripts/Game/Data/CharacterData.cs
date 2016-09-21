@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using System;
 
 namespace MineS
 {
@@ -31,6 +32,10 @@ namespace MineS
 
 		public int Money{ protected set; get; }
 
+		public List<Buff> Buffs{ protected set; get; }
+
+		public List<Debuff> Debuffs{ protected set; get; }
+
 		public Sprite Image { protected set; get; }
 
 		public void Initialize(string name, int hitPoint, int magicPoint, int strength, int armor, int experience, int money, Sprite image)
@@ -45,6 +50,8 @@ namespace MineS
 			this.ArmorMax = GameDefine.ArmorMax;
 			this.Experience = experience;
 			this.Money = money;
+			this.Buffs = new List<Buff>();
+			this.Debuffs = new List<Debuff>();
 			this.Image = image;
 		}
 
@@ -103,12 +110,52 @@ namespace MineS
 			this.Money = this.Money > GameDefine.MoneyMax ? GameDefine.MoneyMax : this.Money;
 		}
 
+		public void AddBuff(Buff newBuff)
+		{
+			this.AddAbnormalStatus<Buff, GameDefine.BuffType, GameDefine.DebuffType>(this.Buffs, newBuff);
+			this.RemoveAbnormalStatus<Debuff, GameDefine.DebuffType, GameDefine.BuffType>(this.Debuffs, newBuff.OppositeType);
+		}
+
+		public void AddDebuff(Debuff newDebuff)
+		{
+			this.AddAbnormalStatus<Debuff, GameDefine.DebuffType, GameDefine.BuffType>(this.Debuffs, newDebuff);
+			this.RemoveAbnormalStatus<Buff, GameDefine.BuffType, GameDefine.DebuffType>(this.Buffs, newDebuff.OppositeType);
+		}
+
 		public bool IsDead
 		{
 			get
 			{
 				return this.HitPoint <= 0;
 			}
+		}
+
+		private void AddAbnormalStatus<A, T, O>(List<A> list, A newAbnormalStatus)
+			where A : AbnormalStatusBase<T, O>
+			where T : struct, IComparable
+			where O : struct, IComparable
+		{
+			var oldIndex = list.FindIndex(a => a.Type.CompareTo(newAbnormalStatus.Type) == 0);
+			if(oldIndex >= 0)
+			{
+				list[oldIndex] = newAbnormalStatus;
+			}
+			else
+			{
+				list.Add(newAbnormalStatus);
+			}
+
+			string log = "";
+			list.ForEach(a => log += " " + a.Type.ToString());
+			Debug.Log("Abnormal Status = " + log);
+		}
+
+		private void RemoveAbnormalStatus<A, T, O>(List<A> list, T target)
+			where A : AbnormalStatusBase<T, O>
+			where T : struct, IComparable
+			where O : struct, IComparable
+		{
+			list.Remove(list.Find(a => a.Type.CompareTo(target) == 0));
 		}
 	}
 }

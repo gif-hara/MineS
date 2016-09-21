@@ -88,6 +88,18 @@ namespace MineS
 			this.inventoryObservers.ForEach(i => i.ModifiedData(this.Data.Inventory));
 		}
 
+		public void AddBuff(Buff buff)
+		{
+			this.Data.AddBuff(buff);
+			this.NotifyCharacterDataObservers();
+		}
+
+		public void AddDebuff(Debuff debuff)
+		{
+			this.Data.AddDebuff(debuff);
+			this.NotifyCharacterDataObservers();
+		}
+
 		public void DebugRecoveryHitPoint()
 		{
 			this.Data.RecoveryHitPoint(999, false);

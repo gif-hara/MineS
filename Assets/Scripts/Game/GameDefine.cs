@@ -160,6 +160,11 @@ namespace MineS
 		public enum BuffType:int
 		{
 			/// <summary>
+			/// 無し.
+			/// </summary>
+			None,
+
+			/// <summary>
 			/// 再生：ヒットポイントが徐々に回復する.
 			/// </summary>
 			Regeneration,
@@ -192,6 +197,11 @@ namespace MineS
 
 		public enum DebuffType:int
 		{
+			/// <summary>
+			/// 無し.
+			/// </summary>
+			None,
+
 			/// <summary>
 			/// 毒：ターン終了時にダメージを受ける.
 			/// </summary>
