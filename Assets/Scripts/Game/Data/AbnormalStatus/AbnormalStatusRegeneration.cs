@@ -16,5 +16,12 @@ namespace MineS
 			this.Type = GameDefine.AbnormalStatusType.Regeneration;
 			this.OppositeType = GameDefine.AbnormalStatusType.Poison;
 		}
+
+		public override void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			base.OnTurnProgress(type, turnCount);
+			var playerManager = PlayerManager.Instance;
+			playerManager.RecoveryHitPoint(Calculator.GetRegenerationValue(playerManager.Data.HitPointMax), true);
+		}
 	}
 }

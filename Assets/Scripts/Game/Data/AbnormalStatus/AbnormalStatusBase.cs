@@ -31,7 +31,7 @@ namespace MineS
 		{
 			get
 			{
-				return this.RemainingTurn >= 0;
+				return this.RemainingTurn > 0;
 			}
 		}
 	}
