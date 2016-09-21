@@ -63,6 +63,7 @@ namespace MineS
 			this.Armor = masterData.Armor;
 			this.Experience = masterData.Experience;
 			this.Money = masterData.Money;
+			this.AbnormalStatuses = new List<AbnormalStatus>();
 			this.Image = masterData.Image;
 		}
 
@@ -89,6 +90,7 @@ namespace MineS
 
 		public void TakeDamage(int value, bool onlyHitPoint)
 		{
+			value = Calculator.GetFinalDamage(value, this.AbnormalStatuses);
 			if(!onlyHitPoint)
 			{
 				this.Armor -= value;

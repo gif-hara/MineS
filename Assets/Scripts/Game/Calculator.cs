@@ -24,5 +24,15 @@ namespace MineS
 				: 1.0f;
 			return Mathf.FloorToInt(baseStrength * rate);
 		}
+
+		public static int GetFinalDamage(int baseDamage, List<AbnormalStatus> abnormalStatuses)
+		{
+			float rate = abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Gout) != null
+				? 2.0f
+				: abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Curing) != null
+				? 0.5f
+				: 1.0f;
+			return Mathf.FloorToInt(baseDamage * rate);
+		}
 	}
 }
