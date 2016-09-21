@@ -91,16 +91,69 @@ namespace MineS
 
 		public enum UsableItemType:int
 		{
-			RecoveryHitPoint,
+			/// <summary>
+			/// ヒットポイント回復.
+			/// </summary>
+			RecoveryHitPointLimit,
+
+			/// <summary>
+			/// ヒットポイント最大値を超えて回復.
+			/// </summary>
+			RecoveryHitPointUnlimit,
+
+			/// <summary>
+			/// マジックポイント回復.
+			/// </summary>
 			RecoveryMagicPoint,
+
+			/// <summary>
+			/// アーマー回復.
+			/// </summary>
 			RecoveryArmor,
-			RegenerationHitPoint,
+
+			/// <summary>
+			/// バフの効果を付与する.
+			/// </summary>
+			AddBuff,
+
+			/// <summary>
+			/// デバフの効果を削除する.
+			/// </summary>
+			RemoveDebuff,
+
+			/// <summary>
+			/// ファイアボール：敵にダメージを与える.
+			/// </summary>
 			Fire,
+
+			/// <summary>
+			/// ネイルダウン：全てのセルを表示する.
+			/// </summary>
 			NailDown,
+
+			/// <summary>
+			/// コーリングオフ：罠を全て解除する.
+			/// </summary>
 			CallingOff,
+
+			/// <summary>
+			/// カースボール：敵の攻撃力を下げる.
+			/// </summary>
 			Carse,
+
+			/// <summary>
+			/// ドレインボール：敵のヒットポイントを吸収する.
+			/// </summary>
 			Drain,
+
+			/// <summary>
+			/// ブレイクボール：敵のアーマーを0にする.
+			/// </summary>
 			Brake,
+
+			/// <summary>
+			/// デスボール：雑魚敵を倒す.
+			/// </summary>
 			Death,
 		}
 

@@ -41,7 +41,7 @@ namespace MineS
 			var usableItem = this.InstanceData as UsableItemData;
 			switch(usableItem.UsableItemType)
 			{
-			case GameDefine.UsableItemType.RecoveryHitPoint:
+			case GameDefine.UsableItemType.RecoveryHitPointLimit:
 				playerManager.RecoveryHitPoint(usableItem.RandomPower, true);
 				playerManager.RemoveInventoryItem(this);
 			break;
