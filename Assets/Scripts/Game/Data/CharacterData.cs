@@ -90,7 +90,11 @@ namespace MineS
 
 		public void TakeDamage(int value, bool onlyHitPoint)
 		{
-			value = Calculator.GetFinalDamage(value, this.AbnormalStatuses);
+			this.TakeDamageRaw(Calculator.GetFinalDamage(value, this.AbnormalStatuses), onlyHitPoint);
+		}
+
+		public void TakeDamageRaw(int value, bool onlyHitPoint)
+		{
 			if(!onlyHitPoint)
 			{
 				this.Armor -= value;

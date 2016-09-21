@@ -43,6 +43,18 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
+		public void TakeDamage(int value, bool onlyHitPoint)
+		{
+			this.Data.TakeDamage(value, onlyHitPoint);
+			this.NotifyCharacterDataObservers();
+		}
+
+		public void TakeDamageRaw(int value, bool onlyHitPoint)
+		{
+			this.Data.TakeDamageRaw(value, onlyHitPoint);
+			this.NotifyCharacterDataObservers();
+		}
+
 		public void AddExperience(int value)
 		{
 			this.Data.AddExperience(value);

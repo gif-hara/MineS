@@ -15,6 +15,11 @@ namespace MineS
 			return (hitPointMax / 50) + 1;
 		}
 
+		public static int GetPoisonValue(int hitPointMax)
+		{
+			return (hitPointMax / 50) + 1;
+		}
+
 		public static int GetFinalStrength(int baseStrength, List<AbnormalStatus> abnormalStatuses)
 		{
 			float rate = abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Sharpness) != null
