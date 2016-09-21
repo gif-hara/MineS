@@ -157,6 +157,72 @@ namespace MineS
 			Death,
 		}
 
+		public enum BuffType:int
+		{
+			/// <summary>
+			/// 再生：ヒットポイントが徐々に回復する.
+			/// </summary>
+			Regeneration,
+
+			/// <summary>
+			/// 鋭利：与えるダメージを2倍にする.
+			/// </summary>
+			Sharpness,
+
+			/// <summary>
+			/// 硬化：受けるダメージを半分にする.
+			/// </summary>
+			Curing,
+
+			/// <summary>
+			/// 精霊：一定ターンマジックポイントを消費せずに魔法が使用出来る.
+			/// </summary>
+			Spirit,
+
+			/// <summary>
+			/// 透視：未識別のセルを透視する.
+			/// </summary>
+			Xray,
+
+			/// <summary>
+			/// 罠師：罠の影響を受けない.
+			/// </summary>
+			TrapMaster,
+		}
+
+		public enum DebuffType:int
+		{
+			/// <summary>
+			/// 毒：ターン終了時にダメージを受ける.
+			/// </summary>
+			Poison,
+
+			/// <summary>
+			/// 呪い：最大HPが半分になる.
+			/// </summary>
+			Curse,
+
+			/// <summary>
+			/// 呆け：取得経験値が半分になる.
+			/// </summary>
+			Blur,
+
+			/// <summary>
+			/// 痛風：受けるダメージが2倍になる.
+			/// </summary>
+			Gout,
+
+			/// <summary>
+			/// 頭痛：魔法使用時のMP消費量が2倍になる.
+			/// </summary>
+			Headache,
+
+			/// <summary>
+			/// 鈍ら：与えるダメージが半分になる.
+			/// </summary>
+			Dull,
+		}
+
 		public const int AdjacentMax = 9;
 
 		public const int MoneyMax = 999999;
