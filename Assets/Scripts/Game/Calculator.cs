@@ -14,5 +14,15 @@ namespace MineS
 		{
 			return (hitPointMax / 50) + 1;
 		}
+
+		public static int GetFinalStrength(int baseStrength, List<AbnormalStatus> abnormalStatuses)
+		{
+			float rate = abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Sharpness) != null
+				? 2.0f
+				: abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Dull) != null
+				? 0.5f
+				: 1.0f;
+			return Mathf.FloorToInt(baseStrength * rate);
+		}
 	}
 }
