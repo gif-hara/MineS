@@ -122,12 +122,29 @@ namespace MineS
 			this.RemoveAbnormalStatus<Buff, GameDefine.BuffType, GameDefine.DebuffType>(this.Buffs, newDebuff.OppositeType);
 		}
 
+		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			this.Buffs.ForEach(b => b.OnTurnProgress(type, turnCount));
+			this.Buffs.RemoveAll(b => !b.IsValid);
+			this.Debuffs.ForEach(d => d.OnTurnProgress(type, turnCount));
+			this.Debuffs.RemoveAll(d => !d.IsValid);
+		}
+
 		public bool IsDead
 		{
 			get
 			{
 				return this.HitPoint <= 0;
 			}
+		}
+
+		public void PrintAbnormalStatus()
+		{
+			string log = "";
+			this.Buffs.ForEach(a => log += " " + a.Type.ToString());
+			log += System.Environment.NewLine;
+			this.Debuffs.ForEach(a => log += " " + a.Type.ToString());
+			Debug.Log("Abnormal Status = " + log);
 		}
 
 		private void AddAbnormalStatus<A, T, O>(List<A> list, A newAbnormalStatus)
@@ -145,9 +162,6 @@ namespace MineS
 				list.Add(newAbnormalStatus);
 			}
 
-			string log = "";
-			list.ForEach(a => log += " " + a.Type.ToString());
-			Debug.Log("Abnormal Status = " + log);
 		}
 
 		private void RemoveAbnormalStatus<A, T, O>(List<A> list, T target)

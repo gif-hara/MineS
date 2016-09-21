@@ -8,6 +8,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
+	[System.Serializable]
 	public class Buff : AbnormalStatusBase<GameDefine.BuffType, GameDefine.DebuffType>
 	{
 		public Buff(int remainingTurn, GameDefine.BuffType type)

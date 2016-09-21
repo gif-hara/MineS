@@ -139,7 +139,7 @@ namespace MineS
 			this.GetBlankCellIndex(this.cellDatabase, out y, out x);
 			var initialCell = this.cellDatabase[y, x];
 			initialCell.Steppable();
-			initialCell.Identification();
+			initialCell.Identification(false);
 		}
 
 		private CellData CreateDebugCellData(int y, int x)

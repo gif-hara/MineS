@@ -34,6 +34,7 @@ namespace MineS
 		{
 			this.Data = new PlayerData();
 			this.NotifyCharacterDataObservers();
+			TurnManager.Instance.AddEvent(this.OnTurnProgress);
 		}
 
 		public void RecoveryHitPoint(int value, bool isLimit)
@@ -109,6 +110,12 @@ namespace MineS
 		public void DebugRecoveryArmor()
 		{
 			this.Data.RecoveryArmor(999);
+			this.NotifyCharacterDataObservers();
+		}
+
+		private void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			this.Data.OnTurnProgress(type, turnCount);
 			this.NotifyCharacterDataObservers();
 		}
 	}

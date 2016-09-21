@@ -8,6 +8,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
+	[System.Serializable]
 	public abstract class AbnormalStatusBase<T, O>
 		where T : struct
 		where O : struct
@@ -22,6 +23,19 @@ namespace MineS
 		{
 			this.RemainingTurn = remainingTurn;
 			this.Type = type;
+		}
+
+		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			this.RemainingTurn--;
+		}
+
+		public bool IsValid
+		{
+			get
+			{
+				return this.RemainingTurn >= 0;
+			}
 		}
 	}
 }

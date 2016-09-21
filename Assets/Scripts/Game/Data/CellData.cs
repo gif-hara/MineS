@@ -61,7 +61,7 @@ namespace MineS
 				return;
 			}
 
-			this.Identification();
+			this.Identification(true);
 			if(this.cellClickAction != null)
 			{
 				this.cellClickAction.Invoke(this);
@@ -70,7 +70,7 @@ namespace MineS
 
 		public void DebugAction()
 		{
-			this.Identification();
+			this.Identification(false);
 			if(this.cellClickAction != null)
 			{
 				this.cellClickAction.Invoke(this);
@@ -151,7 +151,7 @@ namespace MineS
 			}
 		}
 
-		public void Identification()
+		public void Identification(bool progressTurn)
 		{
 			if(this.IsIdentification)
 			{
@@ -168,6 +168,11 @@ namespace MineS
 			if(this.modifiedIdentificationEvent != null)
 			{
 				this.modifiedIdentificationEvent(this.IsIdentification);
+			}
+
+			if(progressTurn)
+			{
+				TurnManager.Instance.Progress(GameDefine.TurnProgressType.CellClick);
 			}
 		}
 

@@ -233,6 +233,13 @@ namespace MineS
 			Dull,
 		}
 
+		public enum TurnProgressType:int
+		{
+			CellClick,
+
+			EnemyAttack,
+		}
+
 		public const int AdjacentMax = 9;
 
 		public const int MoneyMax = 999999;
