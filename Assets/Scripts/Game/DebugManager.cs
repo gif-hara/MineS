@@ -22,55 +22,67 @@ namespace MineS
 			}
 			if(Input.GetKeyDown(KeyCode.E))
 			{
+				PlayerManager.Instance.DebugRecoveryHitPointDying();
+			}
+			if(Input.GetKeyDown(KeyCode.R))
+			{
 				PlayerManager.Instance.DebugRecoveryArmor();
+			}
+			if(Input.GetKeyDown(KeyCode.T))
+			{
+				PlayerManager.Instance.DebugZeroArmor();
 			}
 			if(Input.GetKeyDown(KeyCode.A))
 			{
-				PlayerManager.Instance.AddBuff(new Buff(5, GameDefine.BuffType.Regeneration));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusRegeneration(5));
 			}
 			if(Input.GetKeyDown(KeyCode.S))
 			{
-				PlayerManager.Instance.AddBuff(new Buff(5, GameDefine.BuffType.Curing));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusSharpness(5));
 			}
 			if(Input.GetKeyDown(KeyCode.D))
 			{
-				PlayerManager.Instance.AddBuff(new Buff(5, GameDefine.BuffType.Sharpness));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusCuring(5));
 			}
 			if(Input.GetKeyDown(KeyCode.F))
 			{
-				PlayerManager.Instance.AddBuff(new Buff(5, GameDefine.BuffType.Spirit));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusSpirit(5));
 			}
 			if(Input.GetKeyDown(KeyCode.G))
 			{
-				PlayerManager.Instance.AddBuff(new Buff(5, GameDefine.BuffType.TrapMaster));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusTrapMaster(5));
 			}
 			if(Input.GetKeyDown(KeyCode.H))
 			{
-				PlayerManager.Instance.AddBuff(new Buff(5, GameDefine.BuffType.Xray));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusXray(5));
+			}
+			if(Input.GetKeyDown(KeyCode.H))
+			{
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusHappiness(5));
 			}
 			if(Input.GetKeyDown(KeyCode.Z))
 			{
-				PlayerManager.Instance.AddDebuff(new Debuff(5, GameDefine.DebuffType.Poison));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusPoison(5));
 			}
 			if(Input.GetKeyDown(KeyCode.X))
 			{
-				PlayerManager.Instance.AddDebuff(new Debuff(5, GameDefine.DebuffType.Curse));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusCurse(5));
 			}
 			if(Input.GetKeyDown(KeyCode.C))
 			{
-				PlayerManager.Instance.AddDebuff(new Debuff(5, GameDefine.DebuffType.Blur));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusBlur(5));
 			}
 			if(Input.GetKeyDown(KeyCode.V))
 			{
-				PlayerManager.Instance.AddDebuff(new Debuff(5, GameDefine.DebuffType.Gout));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusGout(5));
 			}
 			if(Input.GetKeyDown(KeyCode.B))
 			{
-				PlayerManager.Instance.AddDebuff(new Debuff(5, GameDefine.DebuffType.Headache));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusHeadache(5));
 			}
 			if(Input.GetKeyDown(KeyCode.N))
 			{
-				PlayerManager.Instance.AddDebuff(new Debuff(5, GameDefine.DebuffType.Dull));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusDull(5));
 			}
 		}
 	}

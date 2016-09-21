@@ -32,9 +32,7 @@ namespace MineS
 
 		public int Money{ protected set; get; }
 
-		public List<Buff> Buffs{ protected set; get; }
-
-		public List<Debuff> Debuffs{ protected set; get; }
+		public List<AbnormalStatus> AbnormalStatuses{ protected set; get; }
 
 		public Sprite Image { protected set; get; }
 
@@ -50,8 +48,7 @@ namespace MineS
 			this.ArmorMax = GameDefine.ArmorMax;
 			this.Experience = experience;
 			this.Money = money;
-			this.Buffs = new List<Buff>();
-			this.Debuffs = new List<Debuff>();
+			this.AbnormalStatuses = new List<AbnormalStatus>();
 			this.Image = image;
 		}
 
@@ -110,24 +107,25 @@ namespace MineS
 			this.Money = this.Money > GameDefine.MoneyMax ? GameDefine.MoneyMax : this.Money;
 		}
 
-		public void AddBuff(Buff newBuff)
+		public void AddAbnormalStatus(AbnormalStatus newAbnormalStatus)
 		{
-			this.AddAbnormalStatus<Buff, GameDefine.BuffType, GameDefine.DebuffType>(this.Buffs, newBuff);
-			this.RemoveAbnormalStatus<Debuff, GameDefine.DebuffType, GameDefine.BuffType>(this.Debuffs, newBuff.OppositeType);
-		}
+			var oldIndex = this.AbnormalStatuses.FindIndex(a => a.Type.CompareTo(newAbnormalStatus.Type) == 0);
+			if(oldIndex >= 0)
+			{
+				this.AbnormalStatuses[oldIndex] = newAbnormalStatus;
+			}
+			else
+			{
+				this.AbnormalStatuses.Add(newAbnormalStatus);
+			}
 
-		public void AddDebuff(Debuff newDebuff)
-		{
-			this.AddAbnormalStatus<Debuff, GameDefine.DebuffType, GameDefine.BuffType>(this.Debuffs, newDebuff);
-			this.RemoveAbnormalStatus<Buff, GameDefine.BuffType, GameDefine.DebuffType>(this.Buffs, newDebuff.OppositeType);
+			// 相対ステータスを削除.
 		}
 
 		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
-			this.Buffs.ForEach(b => b.OnTurnProgress(type, turnCount));
-			this.Buffs.RemoveAll(b => !b.IsValid);
-			this.Debuffs.ForEach(d => d.OnTurnProgress(type, turnCount));
-			this.Debuffs.RemoveAll(d => !d.IsValid);
+			this.AbnormalStatuses.ForEach(a => a.OnTurnProgress(type, turnCount));
+			this.AbnormalStatuses.RemoveAll(a => !a.IsValid);
 		}
 
 		public bool IsDead
@@ -141,35 +139,8 @@ namespace MineS
 		public void PrintAbnormalStatus()
 		{
 			string log = "";
-			this.Buffs.ForEach(a => log += " " + a.Type.ToString());
-			log += System.Environment.NewLine;
-			this.Debuffs.ForEach(a => log += " " + a.Type.ToString());
+			this.AbnormalStatuses.ForEach(a => log += " " + a.Type.ToString());
 			Debug.Log("Abnormal Status = " + log);
-		}
-
-		private void AddAbnormalStatus<A, T, O>(List<A> list, A newAbnormalStatus)
-			where A : AbnormalStatusBase<T, O>
-			where T : struct, IComparable
-			where O : struct, IComparable
-		{
-			var oldIndex = list.FindIndex(a => a.Type.CompareTo(newAbnormalStatus.Type) == 0);
-			if(oldIndex >= 0)
-			{
-				list[oldIndex] = newAbnormalStatus;
-			}
-			else
-			{
-				list.Add(newAbnormalStatus);
-			}
-
-		}
-
-		private void RemoveAbnormalStatus<A, T, O>(List<A> list, T target)
-			where A : AbnormalStatusBase<T, O>
-			where T : struct, IComparable
-			where O : struct, IComparable
-		{
-			list.Remove(list.Find(a => a.Type.CompareTo(target) == 0));
 		}
 	}
 }

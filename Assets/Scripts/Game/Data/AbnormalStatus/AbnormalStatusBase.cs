@@ -9,23 +9,20 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public abstract class AbnormalStatusBase<T, O>
-		where T : struct
-		where O : struct
+	public abstract class AbnormalStatus
 	{
 		public int RemainingTurn{ protected set; get; }
 
-		public T Type{ protected set; get; }
+		public GameDefine.AbnormalStatusType Type{ protected set; get; }
 
-		public abstract O OppositeType{ get; }
+		public GameDefine.AbnormalStatusType OppositeType{ protected set; get; }
 
-		public AbnormalStatusBase(int remainingTurn, T type)
+		public AbnormalStatus(int remainingTurn)
 		{
 			this.RemainingTurn = remainingTurn;
-			this.Type = type;
 		}
 
-		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		public virtual void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			this.RemainingTurn--;
 		}

@@ -89,15 +89,9 @@ namespace MineS
 			this.inventoryObservers.ForEach(i => i.ModifiedData(this.Data.Inventory));
 		}
 
-		public void AddBuff(Buff buff)
+		public void AddAbnormalStatus(AbnormalStatus abnormalStatus)
 		{
-			this.Data.AddBuff(buff);
-			this.NotifyCharacterDataObservers();
-		}
-
-		public void AddDebuff(Debuff debuff)
-		{
-			this.Data.AddDebuff(debuff);
+			this.Data.AddAbnormalStatus(abnormalStatus);
 			this.NotifyCharacterDataObservers();
 		}
 
@@ -107,9 +101,21 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
+		public void DebugRecoveryHitPointDying()
+		{
+			this.Data.RecoveryHitPoint(-this.Data.HitPoint + 1, false);
+			this.NotifyCharacterDataObservers();
+		}
+
 		public void DebugRecoveryArmor()
 		{
 			this.Data.RecoveryArmor(999);
+			this.NotifyCharacterDataObservers();
+		}
+
+		public void DebugZeroArmor()
+		{
+			this.Data.RecoveryArmor(-this.Data.Armor);
 			this.NotifyCharacterDataObservers();
 		}
 
@@ -117,6 +123,7 @@ namespace MineS
 		{
 			this.Data.OnTurnProgress(type, turnCount);
 			this.NotifyCharacterDataObservers();
+			this.Data.PrintAbnormalStatus();
 		}
 	}
 }

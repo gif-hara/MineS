@@ -157,7 +157,7 @@ namespace MineS
 			Death,
 		}
 
-		public enum BuffType:int
+		public enum AbnormalStatusType:int
 		{
 			/// <summary>
 			/// 無し.
@@ -193,14 +193,11 @@ namespace MineS
 			/// 罠師：罠の影響を受けない.
 			/// </summary>
 			TrapMaster,
-		}
 
-		public enum DebuffType:int
-		{
 			/// <summary>
-			/// 無し.
+			/// 幸福：取得経験値が2倍になる.
 			/// </summary>
-			None,
+			Happiness,
 
 			/// <summary>
 			/// 毒：ターン終了時にダメージを受ける.
