@@ -25,7 +25,7 @@ namespace MineS
 			case GameDefine.AbilityType.Penetoration:
 				return new AbilityBase(type, holder);
 			case GameDefine.AbilityType.Mercy:
-				return new AbilityBase(type, holder);
+				return new AbilityMercy(holder);
 			case GameDefine.AbilityType.Regeneration:
 				return new AbilityRegeneration(holder);
 			case GameDefine.AbilityType.Splash:

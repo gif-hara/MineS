@@ -49,7 +49,7 @@ namespace MineS
 		{
 			foreach(var e in this.Enemies)
 			{
-				if(e.Value == null)
+				if(e.Value == null || !e.Key.IsIdentification)
 				{
 					continue;
 				}
