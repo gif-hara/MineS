@@ -230,6 +230,44 @@ namespace MineS
 			Dull,
 		}
 
+		public enum AbilityType:int
+		{
+			/// <summary>
+			/// 貫通：アーマーを無視して攻撃する.
+			/// </summary>
+			Penetoration,
+
+			/// <summary>
+			/// 慈悲：ターン終了時に他の敵のHPを回復する.
+			/// </summary>
+			Mercy,
+
+			/// <summary>
+			/// 自己再生：ターン終了時にHPを回復する.
+			/// </summary>
+			Regeneration,
+
+			/// <summary>
+			/// 跳返：受けたダメージの半分を相手に返す.
+			/// </summary>
+			Splash,
+
+			/// <summary>
+			/// 吸収：与えたダメージの半分を吸収する.
+			/// </summary>
+			Absorption,
+
+			/// <summary>
+			/// 遠距離攻撃：ターン終了時に攻撃する.
+			/// </summary>
+			LongRangeAttack,
+
+			/// <summary>
+			/// 三子教訓：他の敵の数だけ攻撃力が上昇する.
+			/// </summary>
+			Reinforcement,
+		}
+
 		public enum TurnProgressType:int
 		{
 			CellClick,
