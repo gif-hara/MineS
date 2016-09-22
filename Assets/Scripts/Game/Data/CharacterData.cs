@@ -144,6 +144,11 @@ namespace MineS
 			return this.AbnormalStatuses.Find(a => a.Type == type) != null;
 		}
 
+		public bool FindAbility(GameDefine.AbilityType type)
+		{
+			return this.Abilities.Find(a => a.Type == type) != null;
+		}
+
 		public bool IsDead
 		{
 			get

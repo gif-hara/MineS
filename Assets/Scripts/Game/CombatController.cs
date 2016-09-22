@@ -13,7 +13,7 @@ namespace MineS
 		public static void Combat(CharacterData enemy, CharacterDataObserver enemyObserver)
 		{
 			var player = PlayerManager.Instance.Data;
-			enemy.TakeDamage(player.Strength, false);
+			enemy.TakeDamage(player.Strength, player.FindAbility(GameDefine.AbilityType.Penetoration));
 
 			if(enemy.IsDead)
 			{
@@ -22,7 +22,7 @@ namespace MineS
 			}
 			else
 			{
-				player.TakeDamage(enemy.Strength, false);
+				player.TakeDamage(enemy.Strength, enemy.FindAbility(GameDefine.AbilityType.Penetoration));
 			}
 
 			PlayerManager.Instance.NotifyCharacterDataObservers();
