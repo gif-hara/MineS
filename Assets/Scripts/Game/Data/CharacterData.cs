@@ -134,6 +134,11 @@ namespace MineS
 			this.AbnormalStatuses.RemoveAll(a => !a.IsValid);
 		}
 
+		public bool FindAbnormalStatus(GameDefine.AbnormalStatusType type)
+		{
+			return this.AbnormalStatuses.Find(a => a.Type == type) != null;
+		}
+
 		public bool IsDead
 		{
 			get

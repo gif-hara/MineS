@@ -13,5 +13,17 @@ namespace MineS
 		public abstract GameDefine.EventType EventType{ get; }
 
 		public abstract void Invoke(CellData data);
+
+		public virtual void SetCellData(CellData data)
+		{
+		}
+
+		public virtual void SetCellController(CellController cellController)
+		{
+		}
+
+		public virtual void OnUseXray()
+		{
+		}
 	}
 }

@@ -22,4 +22,6 @@ MonoBehaviour:
   assetAccessCounts:
   - guid: fb7414cd5676941249068426b7a00398
     count: 1
+  - guid: 55d8165fa3f22480e882ed2e139754fc
+    count: 1
   commandAccessCounts: []

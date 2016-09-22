@@ -138,8 +138,9 @@ namespace MineS
 			int y, x;
 			this.GetBlankCellIndex(this.cellDatabase, out y, out x);
 			var initialCell = this.cellDatabase[y, x];
-			initialCell.Steppable();
-			initialCell.Identification(false);
+			var isXray = PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray);
+			initialCell.Steppable(isXray);
+			initialCell.Identification(false, isXray);
 		}
 
 		private CellData CreateDebugCellData(int y, int x)

@@ -10,12 +10,24 @@ namespace MineS
 	/// </summary>
 	public class CreateRecoveryItemAction : CellClickActionBase
 	{
+		private CellController cellController;
+
 		public override void Invoke(CellData data)
 		{
 			data.Controller.SetImage(DungeonManager.Instance.CurrentData.RecoveryItemImage);
 			data.Controller.SetActiveStatusObject(false);
 			data.BindCellClickAction(new InvokeRecoveryItemAction());
 			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("RecoveryItem"));
+		}
+
+		public override void SetCellController(CellController cellController)
+		{
+			this.cellController = cellController;
+		}
+
+		public override void OnUseXray()
+		{
+			this.cellController.SetImage(DungeonManager.Instance.CurrentData.RecoveryItemImage);
 		}
 
 		public override GameDefine.EventType EventType

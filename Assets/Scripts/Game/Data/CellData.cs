@@ -61,7 +61,7 @@ namespace MineS
 				return;
 			}
 
-			this.Identification(true);
+			this.Identification(true, PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray));
 			if(this.cellClickAction != null)
 			{
 				this.cellClickAction.Invoke(this);
@@ -70,7 +70,7 @@ namespace MineS
 
 		public void DebugAction()
 		{
-			this.Identification(false);
+			this.Identification(false, false);
 			if(this.cellClickAction != null)
 			{
 				this.cellClickAction.Invoke(this);
@@ -90,6 +90,20 @@ namespace MineS
 		public void SetController(CellController controller)
 		{
 			this.Controller = controller;
+			if(this.cellClickAction != null)
+			{
+				this.cellClickAction.SetCellController(controller);
+			}
+		}
+
+		public void OnUseXray()
+		{
+			if(this.cellClickAction == null)
+			{
+				return;
+			}
+
+			this.cellClickAction.OnUseXray();
 		}
 
 		public void BindEvent(
@@ -112,6 +126,10 @@ namespace MineS
 		public void BindCellClickAction(CellClickActionBase cellClickAction)
 		{
 			this.cellClickAction = cellClickAction;
+			if(this.cellClickAction != null)
+			{
+				this.cellClickAction.SetCellData(this);
+			}
 		}
 
 		public void BindDeployDescription(DeployDescriptionBase deployDescription)
@@ -119,11 +137,16 @@ namespace MineS
 			this.deployDescription = deployDescription;
 		}
 
-		public void Steppable()
+		public void Steppable(bool isXray)
 		{
 			if(this.canStep)
 			{
 				return;
+			}
+
+			if(isXray && this.cellClickAction != null)
+			{
+				this.cellClickAction.OnUseXray();
 			}
 
 			this.canStep = true;
@@ -151,7 +174,7 @@ namespace MineS
 			}
 		}
 
-		public void Identification(bool progressTurn)
+		public void Identification(bool progressTurn, bool isXray)
 		{
 			if(this.IsIdentification)
 			{
@@ -161,7 +184,7 @@ namespace MineS
 			var adjacentCells = CellManager.Instance.GetAdjacentCellDataLeftTopRightBottom(this.Y, this.X);
 			for(int i = 0; i < adjacentCells.Count; i++)
 			{
-				adjacentCells[i].Steppable();
+				adjacentCells[i].Steppable(isXray);
 			}
 
 			this.IsIdentification = true;

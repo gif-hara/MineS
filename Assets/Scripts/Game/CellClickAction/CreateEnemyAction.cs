@@ -10,13 +10,16 @@ namespace MineS
 	/// </summary>
 	public class CreateEnemyAction : CellClickActionBase
 	{
+		private CellController cellController;
+
+		private CharacterData enemy;
+
 		public override void Invoke(CellData data)
 		{
-			var enemy = EnemyManager.Instance.Create(data);
 			data.BindCellClickAction(new CombatEnemyAction());
 			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("Enemy"));
-			data.Controller.SetStatus(enemy);
-            data.Controller.SetImage(enemy.Image);
+			data.Controller.SetStatus(this.enemy);
+			data.Controller.SetImage(this.enemy.Image);
 			var adjacentCells = data.AdjacentCellAll;
 			for(int i = 0; i < adjacentCells.Count; i++)
 			{
@@ -25,6 +28,21 @@ namespace MineS
 					adjacentCells[i].AddLock();
 				}
 			}
+		}
+
+		public override void SetCellData(CellData data)
+		{
+			this.enemy = EnemyManager.Instance.Create(data);
+		}
+
+		public override void SetCellController(CellController cellController)
+		{
+			this.cellController = cellController;
+		}
+
+		public override void OnUseXray()
+		{
+			this.cellController.SetImage(this.enemy.Image);
 		}
 
 		public override GameDefine.EventType EventType

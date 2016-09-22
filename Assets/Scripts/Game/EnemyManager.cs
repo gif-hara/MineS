@@ -12,9 +12,14 @@ namespace MineS
 	{
 		public Dictionary<CellData, CharacterData> Enemies{ private set; get; }
 
+		protected override void Awake()
+		{
+			base.Awake();
+			this.Enemies = new Dictionary<CellData, CharacterData>();
+		}
+
 		void Start()
 		{
-			this.Enemies = new Dictionary<CellData, CharacterData>();
 			DungeonManager.Instance.AddNextFloorEvent(this.NextFloor);
 		}
 

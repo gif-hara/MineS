@@ -12,6 +12,8 @@ namespace MineS
 	{
 		private Item item;
 
+		private CellController cellController;
+
 		public CreateItemAction(Item item)
 		{
 			this.item = item;
@@ -21,6 +23,16 @@ namespace MineS
 		{
 			data.Controller.SetImage(this.item.InstanceData.Image);
 			data.BindCellClickAction(new AcquireItemAction(PlayerManager.Instance.Data.Inventory, this.item));
+		}
+
+		public override void SetCellController(CellController cellController)
+		{
+			this.cellController = cellController;
+		}
+
+		public override void OnUseXray()
+		{
+			this.cellController.SetImage(this.item.InstanceData.Image);
 		}
 
 		public override GameDefine.EventType EventType

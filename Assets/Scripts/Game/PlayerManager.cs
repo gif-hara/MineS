@@ -30,9 +30,14 @@ namespace MineS
 
 		public ExperienceData ExperienceData{ get { return this.experienceData; } }
 
+		protected override void Awake()
+		{
+			base.Awake();
+			this.Data = new PlayerData();
+		}
+
 		void Start()
 		{
-			this.Data = new PlayerData();
 			this.NotifyCharacterDataObservers();
 			TurnManager.Instance.AddEvent(this.OnTurnProgress);
 		}
