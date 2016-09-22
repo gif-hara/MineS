@@ -21,6 +21,7 @@ namespace MineS
 		void Start()
 		{
 			DungeonManager.Instance.AddNextFloorEvent(this.NextFloor);
+			TurnManager.Instance.AddEvent(this.OnTurnProgress);
 		}
 
 		public CharacterData Create(CellData data)
@@ -42,6 +43,20 @@ namespace MineS
 		private void NextFloor()
 		{
 			this.Enemies.Clear();
+		}
+
+		private void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			foreach(var e in this.Enemies)
+			{
+				if(e.Value == null)
+				{
+					continue;
+				}
+
+				e.Value.OnTurnProgress(type, turnCount);
+				e.Key.Controller.CharacterDataObserver.ModifiedData(e.Value);
+			}
 		}
 	}
 }

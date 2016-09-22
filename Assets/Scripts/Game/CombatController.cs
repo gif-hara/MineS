@@ -27,8 +27,6 @@ namespace MineS
 
 			PlayerManager.Instance.NotifyCharacterDataObservers();
 			enemyObserver.ModifiedData(enemy);
-
-			TurnManager.Instance.Progress(GameDefine.TurnProgressType.EnemyAttack);
 		}
 	}
 }

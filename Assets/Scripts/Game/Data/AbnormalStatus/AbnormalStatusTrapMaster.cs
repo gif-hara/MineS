@@ -8,7 +8,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class AbnormalStatusTrapMaster : AbnormalStatus
+	public class AbnormalStatusTrapMaster : AbnormalStatusBase
 	{
 		public AbnormalStatusTrapMaster(int remainingTurn)
 			: base(remainingTurn)

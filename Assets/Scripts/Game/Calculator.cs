@@ -20,7 +20,7 @@ namespace MineS
 			return (hitPointMax / 50) + 1;
 		}
 
-		public static int GetFinalStrength(int baseStrength, List<AbnormalStatus> abnormalStatuses)
+		public static int GetFinalStrength(int baseStrength, List<AbnormalStatusBase> abnormalStatuses)
 		{
 			float rate = abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Sharpness) != null
 				? 2.0f
@@ -30,7 +30,7 @@ namespace MineS
 			return Mathf.FloorToInt(baseStrength * rate);
 		}
 
-		public static int GetFinalDamage(int baseDamage, List<AbnormalStatus> abnormalStatuses)
+		public static int GetFinalDamage(int baseDamage, List<AbnormalStatusBase> abnormalStatuses)
 		{
 			float rate = abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Gout) != null
 				? 2.0f
@@ -40,7 +40,7 @@ namespace MineS
 			return Mathf.FloorToInt(baseDamage * rate);
 		}
 
-		public static int GetFinalExperience(int baseExperience, List<AbnormalStatus> abnormalStatuses)
+		public static int GetFinalExperience(int baseExperience, List<AbnormalStatusBase> abnormalStatuses)
 		{
 			float rate = abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Happiness) != null
 				? 2.0f

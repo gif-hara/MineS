@@ -8,7 +8,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class AbnormalStatusHeadache : AbnormalStatus
+	public class AbnormalStatusHeadache : AbnormalStatusBase
 	{
 		public AbnormalStatusHeadache(int remainingTurn)
 			: base(remainingTurn)

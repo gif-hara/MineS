@@ -46,6 +46,11 @@ namespace MineS
 		[SerializeField]
 		private int money;
 
+		public List<GameDefine.AbilityType> AbilityTypes{ get { return this.abilityTypes; } }
+
+		[SerializeField]
+		private List<GameDefine.AbilityType> abilityTypes;
+
 		public Sprite Image { get { return this.image; } }
 
 		[SerializeField]

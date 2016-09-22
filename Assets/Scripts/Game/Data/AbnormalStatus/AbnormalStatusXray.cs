@@ -8,7 +8,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class AbnormalStatusXray : AbnormalStatus
+	public class AbnormalStatusXray : AbnormalStatusBase
 	{
 		public AbnormalStatusXray(int remainingTurn)
 			: base(remainingTurn)

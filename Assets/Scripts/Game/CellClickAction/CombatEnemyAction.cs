@@ -19,7 +19,7 @@ namespace MineS
 			{
 				data.BindCellClickAction(null);
 				data.Controller.SetActiveStatusObject(false);
-                data.Controller.SetImage(null);
+				data.Controller.SetImage(null);
 				EnemyManager.Instance.Remove(data);
 				var adjacentCells = data.AdjacentCellAll;
 				for(int i = 0; i < adjacentCells.Count; i++)
@@ -30,6 +30,8 @@ namespace MineS
 					}
 				}
 			}
+
+			TurnManager.Instance.Progress(GameDefine.TurnProgressType.EnemyAttack);
 		}
 
 		public override GameDefine.EventType EventType

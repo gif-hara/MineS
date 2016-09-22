@@ -107,7 +107,7 @@ namespace MineS
 			this.inventoryObservers.ForEach(i => i.ModifiedData(this.Data.Inventory));
 		}
 
-		public void AddAbnormalStatus(AbnormalStatus abnormalStatus)
+		public void AddAbnormalStatus(AbnormalStatusBase abnormalStatus)
 		{
 			this.Data.AddAbnormalStatus(abnormalStatus);
 			this.NotifyCharacterDataObservers();

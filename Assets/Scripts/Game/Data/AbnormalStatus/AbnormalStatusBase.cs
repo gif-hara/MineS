@@ -9,7 +9,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public abstract class AbnormalStatus
+	public abstract class AbnormalStatusBase
 	{
 		public int RemainingTurn{ protected set; get; }
 
@@ -17,7 +17,7 @@ namespace MineS
 
 		public GameDefine.AbnormalStatusType OppositeType{ protected set; get; }
 
-		public AbnormalStatus(int remainingTurn)
+		public AbnormalStatusBase(int remainingTurn)
 		{
 			this.RemainingTurn = remainingTurn;
 		}

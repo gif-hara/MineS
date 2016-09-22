@@ -32,7 +32,9 @@ namespace MineS
 
 		public int Money{ protected set; get; }
 
-		public List<AbnormalStatus> AbnormalStatuses{ protected set; get; }
+		public List<AbnormalStatusBase> AbnormalStatuses{ protected set; get; }
+
+		public List<AbilityBase> Abilities{ protected set; get; }
 
 		public Sprite Image { protected set; get; }
 
@@ -48,7 +50,8 @@ namespace MineS
 			this.ArmorMax = GameDefine.ArmorMax;
 			this.Experience = experience;
 			this.Money = money;
-			this.AbnormalStatuses = new List<AbnormalStatus>();
+			this.AbnormalStatuses = new List<AbnormalStatusBase>();
+			this.Abilities = new List<AbilityBase>();
 			this.Image = image;
 		}
 
@@ -63,7 +66,8 @@ namespace MineS
 			this.Armor = masterData.Armor;
 			this.Experience = masterData.Experience;
 			this.Money = masterData.Money;
-			this.AbnormalStatuses = new List<AbnormalStatus>();
+			this.AbnormalStatuses = new List<AbnormalStatusBase>();
+			this.Abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
 			this.Image = masterData.Image;
 		}
 
@@ -113,7 +117,7 @@ namespace MineS
 			this.Money = this.Money > GameDefine.MoneyMax ? GameDefine.MoneyMax : this.Money;
 		}
 
-		public void AddAbnormalStatus(AbnormalStatus newAbnormalStatus)
+		public void AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{
 			var oldIndex = this.AbnormalStatuses.FindIndex(a => a.Type.CompareTo(newAbnormalStatus.Type) == 0);
 			if(oldIndex >= 0)
@@ -132,6 +136,7 @@ namespace MineS
 		{
 			this.AbnormalStatuses.ForEach(a => a.OnTurnProgress(type, turnCount));
 			this.AbnormalStatuses.RemoveAll(a => !a.IsValid);
+			this.Abilities.ForEach(a => a.OnTurnProgress());
 		}
 
 		public bool FindAbnormalStatus(GameDefine.AbnormalStatusType type)

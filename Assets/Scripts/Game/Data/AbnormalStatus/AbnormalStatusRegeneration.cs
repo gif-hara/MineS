@@ -8,7 +8,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class AbnormalStatusRegeneration : AbnormalStatus
+	public class AbnormalStatusRegeneration : AbnormalStatusBase
 	{
 		public AbnormalStatusRegeneration(int remainingTurn)
 			: base(remainingTurn)
