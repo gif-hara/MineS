@@ -39,5 +39,16 @@ namespace MineS
 				: 1.0f;
 			return Mathf.FloorToInt(baseDamage * rate);
 		}
+
+		public static int GetFinalExperience(int baseExperience, List<AbnormalStatus> abnormalStatuses)
+		{
+			float rate = abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Happiness) != null
+				? 2.0f
+				: abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Blur) != null
+				? 0.5f
+				: 1.0f;
+
+			return Mathf.FloorToInt(baseExperience * rate);
+		}
 	}
 }

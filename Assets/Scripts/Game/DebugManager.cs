@@ -56,7 +56,7 @@ namespace MineS
 			{
 				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusXray(5));
 			}
-			if(Input.GetKeyDown(KeyCode.H))
+			if(Input.GetKeyDown(KeyCode.J))
 			{
 				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusHappiness(5));
 			}
