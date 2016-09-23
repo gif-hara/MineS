@@ -119,7 +119,7 @@ namespace MineS
 
 		public void AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{
-			var oldIndex = this.AbnormalStatuses.FindIndex(a => a.Type.CompareTo(newAbnormalStatus.Type) == 0);
+			var oldIndex = this.AbnormalStatuses.FindIndex(a => a.Type == newAbnormalStatus.Type);
 			if(oldIndex >= 0)
 			{
 				this.AbnormalStatuses[oldIndex] = newAbnormalStatus;
@@ -129,7 +129,7 @@ namespace MineS
 				this.AbnormalStatuses.Add(newAbnormalStatus);
 			}
 
-			// 相対ステータスを削除.
+			this.AbnormalStatuses.RemoveAll(a => a.Type == newAbnormalStatus.OppositeType);
 		}
 
 		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)

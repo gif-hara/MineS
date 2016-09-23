@@ -311,14 +311,26 @@ namespace MineS
 
 		public static bool IsEquipment(ItemType itemType)
 		{
-			return
-				itemType == ItemType.Accessory
+			return itemType == ItemType.Accessory
 			|| itemType == ItemType.Body
 			|| itemType == ItemType.Glove
 			|| itemType == ItemType.Helmet
 			|| itemType == ItemType.Leg
 			|| itemType == ItemType.Shield
 			|| itemType == ItemType.Weapon;
+		}
+
+		public static bool IsBuff(GameDefine.AbnormalStatusType type)
+		{
+			Debug.AssertFormat(type != AbnormalStatusType.None, "不正な値です.");
+
+			return type == AbnormalStatusType.Regeneration ||
+			type == AbnormalStatusType.Sharpness ||
+			type == AbnormalStatusType.Curing ||
+			type == AbnormalStatusType.Spirit ||
+			type == AbnormalStatusType.Xray ||
+			type == AbnormalStatusType.TrapMaster ||
+			type == AbnormalStatusType.Happiness;
 		}
 	}
 }
