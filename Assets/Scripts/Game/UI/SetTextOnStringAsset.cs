@@ -21,6 +21,11 @@ namespace MineS
 		void Start()
 		{
 #if UNITY_EDITOR
+			if(this.target == null)
+			{
+				this.target = GetComponent<Text>();
+			}
+
 			if(!Application.isPlaying)
 			{
 				return;

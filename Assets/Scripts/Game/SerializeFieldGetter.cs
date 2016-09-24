@@ -28,5 +28,10 @@ namespace MineS
 		public class Sprite : Base<UnityEngine.Sprite>
 		{
 		}
+
+		[System.Serializable]
+		public class Int : Base<UnityEngine.Sprite>
+		{
+		}
 	}
 }

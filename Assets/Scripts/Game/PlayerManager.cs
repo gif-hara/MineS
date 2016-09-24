@@ -107,9 +107,21 @@ namespace MineS
 			this.inventoryObservers.ForEach(i => i.ModifiedData(this.Data.Inventory));
 		}
 
-		public void AddAbnormalStatus(AbnormalStatusBase abnormalStatus)
+		public void AddAbnormalStatus(GameDefine.AbnormalStatusType type, int remainingTurn)
 		{
-			this.Data.AddAbnormalStatus(abnormalStatus);
+			this.Data.AddAbnormalStatus(AbnormalStatusFactory.Create(type, remainingTurn));
+			this.NotifyCharacterDataObservers();
+		}
+
+		public void DebugAddAbnormalStatus(int type)
+		{
+			this.Data.AddAbnormalStatus(AbnormalStatusFactory.Create((GameDefine.AbnormalStatusType)type, DebugManager.Instance.AbnormalStatusRemainingTurn));
+			this.NotifyCharacterDataObservers();
+		}
+
+		public void DebugRecoveryHitPointFull()
+		{
+			this.Data.RecoveryHitPoint(999, true);
 			this.NotifyCharacterDataObservers();
 		}
 
