@@ -205,11 +205,6 @@ namespace MineS
 			Poison,
 
 			/// <summary>
-			/// 呪い：最大HPが半分になる.
-			/// </summary>
-			Curse,
-
-			/// <summary>
 			/// 呆け：取得経験値が半分になる.
 			/// </summary>
 			Blur,

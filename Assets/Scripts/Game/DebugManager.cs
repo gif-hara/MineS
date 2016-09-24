@@ -66,21 +66,17 @@ namespace MineS
 			}
 			if(Input.GetKeyDown(KeyCode.X))
 			{
-				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusCurse(5));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusBlur(5));
 			}
 			if(Input.GetKeyDown(KeyCode.C))
 			{
-				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusBlur(5));
+				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusGout(5));
 			}
 			if(Input.GetKeyDown(KeyCode.V))
 			{
-				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusGout(5));
-			}
-			if(Input.GetKeyDown(KeyCode.B))
-			{
 				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusHeadache(5));
 			}
-			if(Input.GetKeyDown(KeyCode.N))
+			if(Input.GetKeyDown(KeyCode.B))
 			{
 				PlayerManager.Instance.AddAbnormalStatus(new AbnormalStatusDull(5));
 			}

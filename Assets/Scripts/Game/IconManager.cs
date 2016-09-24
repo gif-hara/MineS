@@ -31,8 +31,6 @@ namespace MineS
 			[SerializeField]
 			private SerializeFieldGetter.Sprite poison;
 			[SerializeField]
-			private SerializeFieldGetter.Sprite curse;
-			[SerializeField]
 			private SerializeFieldGetter.Sprite blur;
 			[SerializeField]
 			private SerializeFieldGetter.Sprite gout;
@@ -65,8 +63,6 @@ namespace MineS
 					return this.happiness.Element;
 				case GameDefine.AbnormalStatusType.Poison:
 					return this.poison.Element;
-				case GameDefine.AbnormalStatusType.Curse:
-					return this.curse.Element;
 				case GameDefine.AbnormalStatusType.Blur:
 					return this.blur.Element;
 				case GameDefine.AbnormalStatusType.Gout:
