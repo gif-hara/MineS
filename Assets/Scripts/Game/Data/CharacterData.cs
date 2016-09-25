@@ -22,7 +22,15 @@ namespace MineS
 
 		public int MagicPoint{ protected set; get; }
 
-		public virtual int Strength{ protected set; get; }
+		public virtual int Strength
+		{
+			get
+			{
+				return Calculator.GetFinalStrength(this.baseStrength, this.AbnormalStatuses);
+			}
+		}
+
+		protected int baseStrength = 0;
 
 		public int Armor{ protected set; get; }
 
@@ -45,7 +53,7 @@ namespace MineS
 			this.HitPoint = hitPoint;
 			this.MagicPointMax = magicPoint;
 			this.MagicPoint = magicPoint;
-			this.Strength = strength;
+			this.baseStrength = strength;
 			this.Armor = armor;
 			this.ArmorMax = GameDefine.ArmorMax;
 			this.Experience = experience;
@@ -62,7 +70,7 @@ namespace MineS
 			this.HitPoint = masterData.HitPoint;
 			this.MagicPointMax = masterData.MagicPoint;
 			this.MagicPoint = masterData.MagicPoint;
-			this.Strength = masterData.Strength;
+			this.baseStrength = masterData.Strength;
 			this.Armor = masterData.Armor;
 			this.Experience = masterData.Experience;
 			this.Money = masterData.Money;
@@ -92,9 +100,17 @@ namespace MineS
 			this.Armor = this.Armor > this.ArmorMax ? this.ArmorMax : this.Armor;
 		}
 
-		public void TakeDamage(int value, bool onlyHitPoint)
+		public void Attack(CharacterData target)
 		{
-			this.TakeDamageRaw(Calculator.GetFinalDamage(value, this.AbnormalStatuses), onlyHitPoint);
+			target.TakeDamage(this.Strength, FindAbility(GameDefine.AbilityType.Penetoration));
+		}
+
+		public int TakeDamage(int value, bool onlyHitPoint)
+		{
+			var resultDamage = Calculator.GetFinalDamage(value, this.AbnormalStatuses);
+			this.TakeDamageRaw(resultDamage, onlyHitPoint);
+
+			return resultDamage;
 		}
 
 		public void TakeDamageRaw(int value, bool onlyHitPoint)

@@ -43,7 +43,7 @@ namespace MineS
 				this.MagicPoint = this.MagicPointMax;
 			}
 
-			this.Strength += growthData.Strength;
+			this.baseStrength += growthData.Strength;
 			this.Armor += growthData.Armor;
 		}
 
@@ -57,13 +57,9 @@ namespace MineS
 
 		public override int Strength
 		{
-			protected set
-			{
-				base.Strength = value;
-			}
 			get
 			{
-				return Calculator.GetFinalStrength(base.Strength + this.Inventory.Equipment.TotalStrength, this.AbnormalStatuses);
+				return Calculator.GetFinalStrength(this.baseStrength + this.Inventory.Equipment.TotalStrength, this.AbnormalStatuses);
 			}
 		}
 
