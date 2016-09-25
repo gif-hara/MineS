@@ -153,7 +153,6 @@ namespace MineS
 		{
 			this.Data.OnTurnProgress(type, turnCount);
 			this.NotifyCharacterDataObservers();
-			this.Data.PrintAbnormalStatus();
 		}
 	}
 }
