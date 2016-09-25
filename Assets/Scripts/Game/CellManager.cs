@@ -166,15 +166,6 @@ namespace MineS
 			Debug.AssertFormat(existStair, "階段がありませんでした.");
 		}
 
-		private void GetNullCellIndex(CellData[,] database, out int y, out int x)
-		{
-			do
-			{
-				y = Random.Range(0, RowMax);
-				x = Random.Range(0, CulumnMax);
-			} while(database[y, x] != null);
-		}
-
 		private void GetBlankCellIndex(CellData[,] database, out int y, out int x)
 		{
 			do

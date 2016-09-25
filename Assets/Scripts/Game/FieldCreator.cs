@@ -91,7 +91,7 @@ namespace MineS
 			// 罠を作成.
 			for(int i = 0, imax = dungeonData.CreateItemRange.Random; i < imax; i++)
 			{
-				this.CreateCellData(database, InvokeTrapFactory.Create(GameDefine.TrapType.Mine));
+				this.CreateCellData(database, dungeonData.CreateTrap());
 			}
 
 			// 空白を作成.

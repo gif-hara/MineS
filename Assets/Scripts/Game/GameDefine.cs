@@ -320,7 +320,7 @@ namespace MineS
 				currentProbability += table.Probability;
 			}
 
-			Debug.AssertFormat(false, "計算を間違えている可能性があります.");
+			Debug.AssertFormat(false, "抽選処理に失敗しました. 計算を間違えている可能性があります.");
 			return -1;
 		}
 

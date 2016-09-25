@@ -27,6 +27,9 @@ namespace MineS
 		private ItemTable itemTable;
 
 		[SerializeField]
+		private TrapTable trapTable;
+
+		[SerializeField]
 		private Range createRecoveryItemRange;
 
 		[SerializeField]
@@ -60,6 +63,11 @@ namespace MineS
 		public Item CreateItem()
 		{
 			return this.itemTable.Create();
+		}
+
+		public InvokeTrapActionBase CreateTrap()
+		{
+			return this.trapTable.Create();
 		}
 	}
 }

@@ -44,6 +44,14 @@ MonoBehaviour:
       probability: 100
     - masterData: {fileID: 11400000, guid: b2cb144a5edce4b27b3fed3552e8556d, type: 2}
       probability: 100
+  trapTable:
+    elements:
+    - type: 0
+      probability: 100
+    - type: 1
+      probability: 100
+    - type: 5
+      probability: 100
   createRecoveryItemRange:
     min: 5
     max: 6
