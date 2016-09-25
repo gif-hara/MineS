@@ -102,7 +102,11 @@ namespace MineS
 
 		public void Attack(CharacterData target)
 		{
-			target.TakeDamage(this.Strength, FindAbility(GameDefine.AbilityType.Penetoration));
+			var damage = target.TakeDamage(this.Strength, FindAbility(GameDefine.AbilityType.Penetoration));
+			if(this.FindAbility(GameDefine.AbilityType.Absorption))
+			{
+				this.RecoveryHitPoint(damage / 2, true);
+			}
 		}
 
 		public int TakeDamage(int value, bool onlyHitPoint)
