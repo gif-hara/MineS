@@ -17,6 +17,11 @@ namespace MineS
 			this.type = type;
 		}
 
+		public InvokeAbnormalStatusTrapAction(GameDefine.TrapType type)
+		{
+			this.type = GameDefine.ConvertTrapTypeToAbnormalStatusType(type);
+		}
+
 		public override void Invoke(CellData data)
 		{
 			data.BindCellClickAction(null);

@@ -12,6 +12,9 @@ namespace MineS
 	{
 		public override void Invoke(CellData data)
 		{
+			data.BindCellClickAction(null);
+			data.BindDeployDescription(null);
+			this.cellController.SetImage(this.Image);
 			var playerManager = PlayerManager.Instance;
 			playerManager.TakeDamageRaw(Calculator.GetMineTrapDamageValue(playerManager.Data.HitPointMax), true);
 		}

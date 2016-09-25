@@ -347,5 +347,34 @@ namespace MineS
 			type == AbnormalStatusType.TrapMaster ||
 			type == AbnormalStatusType.Happiness;
 		}
+
+		public static GameDefine.AbnormalStatusType ConvertTrapTypeToAbnormalStatusType(GameDefine.TrapType type)
+		{
+			switch(type)
+			{
+			case GameDefine.TrapType.Poison:
+				return GameDefine.AbnormalStatusType.Poison;
+			case GameDefine.TrapType.Blur:
+				return GameDefine.AbnormalStatusType.Blur;
+			case GameDefine.TrapType.Dull:
+				return GameDefine.AbnormalStatusType.Dull;
+			case GameDefine.TrapType.Gout:
+				return GameDefine.AbnormalStatusType.Gout;
+			case GameDefine.TrapType.Headache:
+				return GameDefine.AbnormalStatusType.Headache;
+			default:
+				Debug.AssertFormat(false, "不正な値です. type = {0}", type);
+				return GameDefine.AbnormalStatusType.None;
+			}
+		}
+
+		public static bool IsAbnormalTrap(GameDefine.TrapType type)
+		{
+			return type == TrapType.Blur ||
+			type == TrapType.Dull ||
+			type == TrapType.Gout ||
+			type == TrapType.Headache ||
+			type == TrapType.Poison;
+		}
 	}
 }
