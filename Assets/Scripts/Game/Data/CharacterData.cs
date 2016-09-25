@@ -102,17 +102,22 @@ namespace MineS
 
 		public void Attack(CharacterData target)
 		{
-			var damage = target.TakeDamage(this.Strength, FindAbility(GameDefine.AbilityType.Penetoration));
+			var damage = target.TakeDamage(this, this.Strength, FindAbility(GameDefine.AbilityType.Penetoration));
 			if(this.FindAbility(GameDefine.AbilityType.Absorption))
 			{
 				this.RecoveryHitPoint(damage / 2, true);
 			}
 		}
 
-		public int TakeDamage(int value, bool onlyHitPoint)
+		public int TakeDamage(CharacterData attacker, int value, bool onlyHitPoint)
 		{
 			var resultDamage = Calculator.GetFinalDamage(value, this.AbnormalStatuses);
 			this.TakeDamageRaw(resultDamage, onlyHitPoint);
+
+			if(attacker != null && this.FindAbility(GameDefine.AbilityType.Splash))
+			{
+				attacker.TakeDamageRaw(resultDamage / 2, false);
+			}
 
 			return resultDamage;
 		}
