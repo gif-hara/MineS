@@ -33,16 +33,19 @@ namespace MineS
 			this.enemy = EnemyManager.Instance.Create(data);
 		}
 
-		public override void OnUseXray()
-		{
-			this.cellController.SetImage(this.enemy.Image);
-		}
-
 		public override GameDefine.EventType EventType
 		{
 			get
 			{
 				return GameDefine.EventType.Enemy;
+			}
+		}
+
+		public override Sprite Image
+		{
+			get
+			{
+				return this.enemy.Image;
 			}
 		}
 	}

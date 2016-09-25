@@ -22,5 +22,13 @@ namespace MineS
 				return GameDefine.EventType.Stair;
 			}
 		}
+
+		public override Sprite Image
+		{
+			get
+			{
+				return null;
+			}
+		}
 	}
 }

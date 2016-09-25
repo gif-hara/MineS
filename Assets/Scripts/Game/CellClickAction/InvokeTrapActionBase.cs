@@ -10,13 +10,6 @@ namespace MineS
 	/// </summary>
 	public abstract class InvokeTrapActionBase : CellClickActionBase
 	{
-		public abstract Sprite Image{ get; }
-
-		public override void OnUseXray()
-		{
-			this.cellController.SetImage(this.Image);
-		}
-
 		public override GameDefine.EventType EventType
 		{
 			get

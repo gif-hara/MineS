@@ -36,6 +36,12 @@ namespace MineS
 			}
 		}
 
-
+		public override Sprite Image
+		{
+			get
+			{
+				return this.item.InstanceData.Image;
+			}
+		}
 	}
 }

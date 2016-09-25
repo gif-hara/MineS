@@ -24,5 +24,13 @@ namespace MineS
 				return GameDefine.EventType.RecoveryItem;
 			}
 		}
+
+		public override Sprite Image
+		{
+			get
+			{
+				return DungeonManager.Instance.CurrentData.RecoveryItemImage;
+			}
+		}
 	}
 }

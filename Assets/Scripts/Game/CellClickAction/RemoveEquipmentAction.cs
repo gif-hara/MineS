@@ -44,5 +44,13 @@ namespace MineS
 				return GameDefine.EventType.Item;
 			}
 		}
+
+		public override Sprite Image
+		{
+			get
+			{
+				return this.item.InstanceData.Image;
+			}
+		}
 	}
 }

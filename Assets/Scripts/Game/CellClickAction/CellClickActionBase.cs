@@ -14,6 +14,8 @@ namespace MineS
 
 		public abstract GameDefine.EventType EventType{ get; }
 
+		public abstract Sprite Image{ get; }
+
 		public abstract void Invoke(CellData data);
 
 		public virtual void SetCellData(CellData data)
@@ -27,6 +29,7 @@ namespace MineS
 
 		public virtual void OnUseXray()
 		{
+			this.cellController.SetImage(this.Image);
 		}
 	}
 }

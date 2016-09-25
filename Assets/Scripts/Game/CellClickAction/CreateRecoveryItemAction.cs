@@ -18,16 +18,19 @@ namespace MineS
 			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("RecoveryItem"));
 		}
 
-		public override void OnUseXray()
-		{
-			this.cellController.SetImage(DungeonManager.Instance.CurrentData.RecoveryItemImage);
-		}
-
 		public override GameDefine.EventType EventType
 		{
 			get
 			{
 				return GameDefine.EventType.RecoveryItem;
+			}
+		}
+
+		public override Sprite Image
+		{
+			get
+			{
+				return DungeonManager.Instance.CurrentData.RecoveryItemImage;
 			}
 		}
 	}
