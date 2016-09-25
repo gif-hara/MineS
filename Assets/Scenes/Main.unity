@@ -10393,15 +10393,15 @@ MonoBehaviour:
     poison:
       element: {fileID: 21300000, guid: c44f054c49e265b4d941389f57d037bc, type: 3}
     gout:
-      element: {fileID: 0}
+      element: {fileID: 21300000, guid: 5e5eb660750823647801c18663c5578f, type: 3}
     blur:
-      element: {fileID: 0}
+      element: {fileID: 21300000, guid: fe4e56e134ae74240a636829c03350ce, type: 3}
     dull:
-      element: {fileID: 0}
+      element: {fileID: 21300000, guid: 38f14ed0d06af724182df51c5ee4ff07, type: 3}
     headache:
-      element: {fileID: 0}
+      element: {fileID: 21300000, guid: ca3632e1dfbe09949aa987ca97032b39, type: 3}
     mine:
-      element: {fileID: 0}
+      element: {fileID: 21300000, guid: 7492368233bb5ed419a174980f82a5c2, type: 3}
 --- !u!1 &1588900025
 GameObject:
   m_ObjectHideFlags: 0

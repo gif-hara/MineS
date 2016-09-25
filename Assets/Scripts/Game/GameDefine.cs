@@ -268,11 +268,24 @@ namespace MineS
 			Reinforcement,
 		}
 
+		/// <summary>
+		/// ターン経過タイプ.
+		/// </summary>
 		public enum TurnProgressType:int
 		{
 			CellClick,
 
 			EnemyAttack,
+		}
+
+		public enum TrapType:int
+		{
+			Poison,
+			Gout,
+			Blur,
+			Dull,
+			Headache,
+			Mine,
 		}
 
 		public const int AdjacentMax = 9;

@@ -188,7 +188,7 @@ namespace MineS
 			{
 				this.GetNullCellIndex(database, out y, out x);
 				cellData = new CellData(y, x);
-				cellData.BindCellClickAction(new InvokeAbnormalStatusTrapAction(GameDefine.AbnormalStatusType.Poison));
+				cellData.BindCellClickAction(new InvokeMineTrapAction());
 				database[y, x] = cellData;
 			}
 

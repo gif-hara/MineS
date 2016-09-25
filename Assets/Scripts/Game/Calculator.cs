@@ -50,5 +50,10 @@ namespace MineS
 
 			return Mathf.FloorToInt(baseExperience * rate);
 		}
+
+		public static int GetMineTrapDamageValue(int hitPointMax)
+		{
+			return (hitPointMax / 20);
+		}
 	}
 }

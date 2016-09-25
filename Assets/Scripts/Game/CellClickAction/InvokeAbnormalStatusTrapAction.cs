@@ -28,7 +28,22 @@ namespace MineS
 		{
 			get
 			{
-				return TextureManager.Instance.trap.poison.Element;
+				switch(this.type)
+				{
+				case GameDefine.AbnormalStatusType.Poison:
+					return TextureManager.Instance.trap.poison.Element;
+				case GameDefine.AbnormalStatusType.Blur:
+					return TextureManager.Instance.trap.blur.Element;
+				case GameDefine.AbnormalStatusType.Dull:
+					return TextureManager.Instance.trap.dull.Element;
+				case GameDefine.AbnormalStatusType.Gout:
+					return TextureManager.Instance.trap.gout.Element;
+				case GameDefine.AbnormalStatusType.Headache:
+					return TextureManager.Instance.trap.headache.Element;
+				default:
+					Debug.AssertFormat(false, "不正な値です. type = {0}", type);
+					return null;
+				}
 			}
 		}
 	}
