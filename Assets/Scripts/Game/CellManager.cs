@@ -145,67 +145,7 @@ namespace MineS
 
 		private CellData[,] CreateCellDatabaseFromDungeonData()
 		{
-			var database = new CellData[RowMax, CulumnMax];
-			var dungeonData = DungeonManager.Instance.CurrentData;
-			CellData cellData = null;
-			int y, x;
-
-			// 階段を作成.
-			this.GetNullCellIndex(database, out y, out x);
-			cellData = new CellData(y, x);
-			cellData.BindCellClickAction(new CreateStairAction());
-			database[y, x] = cellData;
-
-			// 回復アイテムを作成.
-			for(int i = 0, imax = dungeonData.CreateRecoveryItemRange.Random; i < imax; i++)
-			{
-				this.GetNullCellIndex(database, out y, out x);
-				cellData = new CellData(y, x);
-				cellData.BindCellClickAction(new CreateRecoveryItemAction());
-				database[y, x] = cellData;
-			}
-
-			// 敵を作成.
-			for(int i = 0, imax = dungeonData.CreateEnemyRange.Random; i < imax; i++)
-			{
-				this.GetNullCellIndex(database, out y, out x);
-				cellData = new CellData(y, x);
-				cellData.BindCellClickAction(new CreateEnemyAction());
-				database[y, x] = cellData;
-			}
-
-			// アイテムを作成.
-			for(int i = 0, imax = dungeonData.CreateItemRange.Random; i < imax; i++)
-			{
-				this.GetNullCellIndex(database, out y, out x);
-				cellData = new CellData(y, x);
-				cellData.BindCellClickAction(new CreateItemAction(dungeonData.CreateItem()));
-				database[y, x] = cellData;
-			}
-
-			// 罠を作成.
-			for(int i = 0, imax = dungeonData.CreateItemRange.Random; i < imax; i++)
-			{
-				this.GetNullCellIndex(database, out y, out x);
-				cellData = new CellData(y, x);
-				cellData.BindCellClickAction(InvokeTrapFactory.Create(GameDefine.TrapType.Mine));
-				database[y, x] = cellData;
-			}
-
-			for(y = 0; y < RowMax; y++)
-			{
-				for(x = 0; x < CulumnMax; x++)
-				{
-					if(database[y, x] != null)
-					{
-						continue;
-					}
-
-					database[y, x] = new CellData(y, x);
-				}
-			}
-
-			return database;
+			return new FieldCreator().Create(DungeonManager.Instance.CurrentData, RowMax, CulumnMax);
 		}
 
 		private void CheckCellData(CellData[,] database)
