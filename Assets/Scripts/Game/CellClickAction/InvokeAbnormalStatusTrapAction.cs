@@ -8,12 +8,20 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class InvokeTrapPoisonAction : InvokeTrapActionBase
+	public class InvokeAbnormalStatusTrapAction : InvokeTrapActionBase
 	{
+		private GameDefine.AbnormalStatusType type;
+
+		public InvokeAbnormalStatusTrapAction(GameDefine.AbnormalStatusType type)
+		{
+			this.type = type;
+		}
+
 		public override void Invoke(CellData data)
 		{
+			data.BindCellClickAction(null);
 			this.cellController.SetImage(this.Image);
-			PlayerManager.Instance.AddAbnormalStatus(GameDefine.AbnormalStatusType.Poison, 5);
+			PlayerManager.Instance.AddAbnormalStatus(this.type, GameDefine.AbnormalStatusTrapRemainingTurn);
 		}
 
 		public override Sprite Image

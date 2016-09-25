@@ -285,6 +285,8 @@ namespace MineS
 
 		public const int ArmorMax = 999;
 
+		public const int AbnormalStatusTrapRemainingTurn = 5;
+
 		public static int Lottery<P>(List<P> elements) where P : IProbability
 		{
 			int probabilityMax = 0;
