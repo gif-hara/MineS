@@ -53,3 +53,6 @@ MonoBehaviour:
   createItemRange:
     min: 10
     max: 10
+  createTrapRange:
+    min: 10
+    max: 10

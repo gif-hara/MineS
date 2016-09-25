@@ -3152,9 +3152,9 @@ RectTransform:
   - {fileID: 1968047632}
   m_Father: {fileID: 842027360}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 370, y: -210.25}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518210043
@@ -10389,6 +10389,19 @@ MonoBehaviour:
       element: {fileID: 21300000, guid: 523fc1f77b86c7d40ac6d0d90ccb20fd, type: 3}
     dull:
       element: {fileID: 21300000, guid: fc84e2ac5a39efb42aa20d654acb2576, type: 3}
+  trap:
+    poison:
+      element: {fileID: 21300000, guid: c44f054c49e265b4d941389f57d037bc, type: 3}
+    gout:
+      element: {fileID: 0}
+    blur:
+      element: {fileID: 0}
+    dull:
+      element: {fileID: 0}
+    headache:
+      element: {fileID: 0}
+    mine:
+      element: {fileID: 0}
 --- !u!1 &1588900025
 GameObject:
   m_ObjectHideFlags: 0

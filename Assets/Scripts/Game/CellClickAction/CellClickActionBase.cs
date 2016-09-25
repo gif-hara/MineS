@@ -10,6 +10,8 @@ namespace MineS
 	/// </summary>
 	public abstract class CellClickActionBase
 	{
+		protected CellController cellController;
+
 		public abstract GameDefine.EventType EventType{ get; }
 
 		public abstract void Invoke(CellData data);
@@ -20,6 +22,7 @@ namespace MineS
 
 		public virtual void SetCellController(CellController cellController)
 		{
+			this.cellController = cellController;
 		}
 
 		public virtual void OnUseXray()

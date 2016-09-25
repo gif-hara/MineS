@@ -38,7 +38,7 @@ namespace MineS
 				var parent = isBuff ? this.buffParent : this.debuffParent;
 				var cellController = Instantiate(this.cellControllerPrefab, parent, false) as CellController;
 				cellController.SetActiveStatusObject(false);
-				cellController.SetImage(IconManager.Instance.abnormalStatus.GetIcon(a.Type));
+				cellController.SetImage(TextureManager.Instance.abnormalStatus.GetIcon(a.Type));
 				dictionary.Add(a.Type, cellController);
 			});
 

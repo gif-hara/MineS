@@ -36,6 +36,11 @@ namespace MineS
 			/// アイテム.
 			/// </summary>
 			Item,
+
+			/// <summary>
+			/// 罠.
+			/// </summary>
+			Trap,
 		}
 
 		/// <summary>

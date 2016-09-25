@@ -10,8 +10,6 @@ namespace MineS
 	/// </summary>
 	public class CreateEnemyAction : CellClickActionBase
 	{
-		private CellController cellController;
-
 		private CharacterData enemy;
 
 		public override void Invoke(CellData data)
@@ -33,11 +31,6 @@ namespace MineS
 		public override void SetCellData(CellData data)
 		{
 			this.enemy = EnemyManager.Instance.Create(data);
-		}
-
-		public override void SetCellController(CellController cellController)
-		{
-			this.cellController = cellController;
 		}
 
 		public override void OnUseXray()

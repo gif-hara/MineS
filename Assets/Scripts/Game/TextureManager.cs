@@ -9,7 +9,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class IconManager : SingletonMonoBehaviour<IconManager>
+	public class TextureManager : SingletonMonoBehaviour<TextureManager>
 	{
 		[System.Serializable]
 		public class AbnormalStatus
@@ -78,6 +78,24 @@ namespace MineS
 			}
 		}
 
+		[System.Serializable]
+		public class Trap
+		{
+			public SerializeFieldGetter.Sprite poison;
+
+			public SerializeFieldGetter.Sprite gout;
+
+			public SerializeFieldGetter.Sprite blur;
+
+			public SerializeFieldGetter.Sprite dull;
+
+			public SerializeFieldGetter.Sprite headache;
+
+			public SerializeFieldGetter.Sprite mine;
+		}
+
 		public AbnormalStatus abnormalStatus;
+
+		public Trap trap;
 	}
 }

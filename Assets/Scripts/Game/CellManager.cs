@@ -143,21 +143,6 @@ namespace MineS
 			initialCell.Identification(false, isXray);
 		}
 
-		private CellData CreateDebugCellData(int y, int x)
-		{
-			var cellData = new CellData(y, x);
-			if(Random.value < 0.2f)
-			{
-				cellData.BindCellClickAction(new CreateRecoveryItemAction());
-			}
-			if(Random.value < 0.2f)
-			{
-				cellData.BindCellClickAction(new CreateEnemyAction());
-			}
-
-			return cellData;
-		}
-
 		private CellData[,] CreateCellDatabaseFromDungeonData()
 		{
 			var database = new CellData[RowMax, CulumnMax];
@@ -195,6 +180,15 @@ namespace MineS
 				this.GetNullCellIndex(database, out y, out x);
 				cellData = new CellData(y, x);
 				cellData.BindCellClickAction(new CreateItemAction(dungeonData.CreateItem()));
+				database[y, x] = cellData;
+			}
+
+			// 罠を作成.
+			for(int i = 0, imax = dungeonData.CreateItemRange.Random; i < imax; i++)
+			{
+				this.GetNullCellIndex(database, out y, out x);
+				cellData = new CellData(y, x);
+				cellData.BindCellClickAction(new InvokeTrapPoisonAction());
 				database[y, x] = cellData;
 			}
 

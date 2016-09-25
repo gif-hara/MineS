@@ -9,7 +9,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public class SerializeFieldGetter
+	public abstract class SerializeFieldGetter
 	{
 		[System.Serializable]
 		public abstract class Base<T>
