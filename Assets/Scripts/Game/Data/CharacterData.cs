@@ -26,7 +26,7 @@ namespace MineS
 		{
 			get
 			{
-				return Calculator.GetFinalStrength(this.baseStrength, this.AbnormalStatuses);
+				return Calculator.GetFinalStrength(this.baseStrength, this.AbnormalStatuses, this.Abilities);
 			}
 		}
 

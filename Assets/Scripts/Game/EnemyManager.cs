@@ -41,6 +41,20 @@ namespace MineS
 			this.Enemies.Remove(data);
 		}
 
+		public int IdentitiedEnemyNumber
+		{
+			get
+			{
+				var result = 0;
+				foreach(var e in this.Enemies)
+				{
+					result += e.Key.IsIdentification ? 1 : 0;
+				}
+
+				return result;
+			}
+		}
+
 		private void NextFloor()
 		{
 			this.Enemies.Clear();

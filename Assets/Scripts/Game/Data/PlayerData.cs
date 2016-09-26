@@ -59,7 +59,7 @@ namespace MineS
 		{
 			get
 			{
-				return Calculator.GetFinalStrength(this.baseStrength + this.Inventory.Equipment.TotalStrength, this.AbnormalStatuses);
+				return Calculator.GetFinalStrength(this.baseStrength + this.Inventory.Equipment.TotalStrength, this.AbnormalStatuses, this.Abilities);
 			}
 		}
 
