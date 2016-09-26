@@ -33,7 +33,7 @@ namespace MineS
 			{
 				this.inventory.SetExchangeItem(this.item, data);
 				PlayerManager.Instance.OpenInventoryUI();
-				Debug.LogWarning("道具袋が一杯で取得できませんでした.");
+				DescriptionManager.Instance.DeployEmergency("ExchangeItem");
 			}
 		}
 

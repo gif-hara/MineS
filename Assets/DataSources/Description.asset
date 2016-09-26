@@ -42,3 +42,13 @@ MonoBehaviour:
       value: "\u5012\u305B\uFF01"
       guid: 648fa34a-d435-469d-b32c-f8c11d5f07a6
     image: {fileID: 0}
+  - key: ExchangeItem
+    title:
+      target: {fileID: 0}
+      value: "\u6575"
+      guid: ccea8871-ab8d-40a4-9a77-df236c7e8cc2
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u9053\u5177\u888B\u304C\u4E00\u676F\u3067\u53D6\u5F97\u3067\u304D\u307E\u305B\u3093\u3067\u3057\u305F\u3002\n\u4EA4\u63DB\u3059\u308B\u30A2\u30A4\u30C6\u30E0\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002"
+      guid: 2d7b9aff-a72a-4889-9ca3-635c6c5dc8a4
+    image: {fileID: 0}

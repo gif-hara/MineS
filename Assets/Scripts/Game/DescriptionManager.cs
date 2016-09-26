@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using UnityEngine.UI;
 
 namespace MineS
 {
@@ -15,6 +16,12 @@ namespace MineS
 
 		[SerializeField]
 		private DescriptionData data;
+
+		[SerializeField]
+		private GameObject emergencyRoot;
+
+		[SerializeField]
+		private Text emergencyText;
 
 		public void Deploy(CharacterData data)
 		{
@@ -31,6 +38,12 @@ namespace MineS
 			{
 				this.observers[i].ModifiedData(data);
 			}
+		}
+
+		public void DeployEmergency(string key)
+		{
+			this.emergencyRoot.SetActive(true);
+			this.emergencyText.text = this.data.Get(key).Message;
 		}
 	}
 }
