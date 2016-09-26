@@ -103,6 +103,12 @@ namespace MineS
 			this.UpdateInventoryUI();
 		}
 
+		public void CloseInventoryUI()
+		{
+			this.Data.Inventory.SetExchangeItem(null, null);
+			this.inventoryUI.SetActive(false);
+		}
+
 		public void UpdateInventoryUI()
 		{
 			this.inventoryObservers.ForEach(i => i.ModifiedData(this.Data.Inventory));

@@ -15,6 +15,8 @@ namespace MineS
 
 		public Equipment Equipment{ private set; get; }
 
+		public ExchangeItemController ExchangeItemController{ private set; get; }
+
 		public Inventory()
 		{
 			this.Items = new List<Item>();
@@ -23,6 +25,7 @@ namespace MineS
 				this.Items.Add(null);
 			}
 			this.Equipment = new Equipment();
+			this.ExchangeItemController = new ExchangeItemController(this);
 		}
 
 		public bool AddItem(Item item)
@@ -48,6 +51,16 @@ namespace MineS
 		{
 			var index = this.Items.FindIndex(i => i == before);
 			this.Items[index] = after;
+		}
+
+		public void SetExchangeItem(Item exchangeItem, CellData fieldCell)
+		{
+			this.ExchangeItemController.Initialize(exchangeItem, fieldCell);
+		}
+
+		public void InvokeExchangeItem(Item inventoryItem)
+		{
+			this.ExchangeItemController.Invoke(inventoryItem);
 		}
 
 		public bool IsFreeSpace

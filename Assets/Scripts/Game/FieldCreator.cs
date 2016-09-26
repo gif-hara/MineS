@@ -89,7 +89,7 @@ namespace MineS
 			}
 
 			// 罠を作成.
-			for(int i = 0, imax = dungeonData.CreateItemRange.Random; i < imax; i++)
+			for(int i = 0, imax = dungeonData.CreateTrapRange.Random; i < imax; i++)
 			{
 				this.CreateCellData(database, dungeonData.CreateTrap());
 			}

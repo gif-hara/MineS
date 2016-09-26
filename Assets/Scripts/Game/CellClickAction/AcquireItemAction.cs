@@ -14,10 +14,11 @@ namespace MineS
 
 		private Item item;
 
-		public AcquireItemAction(Inventory inventory, Item item)
+		public AcquireItemAction(Inventory inventory, Item item, CellController cellController)
 		{
 			this.inventory = inventory;
 			this.item = item;
+			cellController.SetImage(this.item.InstanceData.Image);
 		}
 
 		public override void Invoke(CellData data)
@@ -30,6 +31,8 @@ namespace MineS
 			}
 			else
 			{
+				this.inventory.SetExchangeItem(this.item, data);
+				PlayerManager.Instance.OpenInventoryUI();
 				Debug.LogWarning("道具袋が一杯で取得できませんでした.");
 			}
 		}

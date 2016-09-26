@@ -8,23 +8,29 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class CreateItemAction : CellClickActionBase
+	public class ChangeItemAction : CellClickActionBase
 	{
 		private Item item;
 
-		public CreateItemAction(Item item)
+		public ChangeItemAction(Item item, CellController cellController)
 		{
 			this.item = item;
+			if(this.item != null)
+			{
+				cellController.SetImage(this.item.InstanceData.Image);
+			}
 		}
 
 		public override void Invoke(CellData data)
 		{
-			data.BindCellClickAction(new AcquireItemAction(PlayerManager.Instance.Data.Inventory, this.item, this.cellController));
-		}
+			if(this.item == null)
+			{
+				return;
+			}
 
-		public override void OnUseXray()
-		{
-			this.cellController.SetImage(this.item.InstanceData.Image);
+			var inventory = PlayerManager.Instance.Data.Inventory;
+			inventory.InvokeExchangeItem(this.item);
+			PlayerManager.Instance.CloseInventoryUI();
 		}
 
 		public override GameDefine.EventType EventType

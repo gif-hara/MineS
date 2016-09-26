@@ -19,8 +19,6 @@ namespace MineS
 
 		private List<CellController> cellControllers = null;
 
-#region IReceiveModifiedInventory implementation
-
 		public void OnModifiedInventory(Inventory data)
 		{
 			this.InitializeCellControllers();
@@ -48,10 +46,20 @@ namespace MineS
 				var cellController = this.cellControllers[i];
 				var cellData = new CellData();
 				this.cellControllers[i].SetCellData(cellData);
-				cellData.BindCellClickAction(new InvokeItemAction(item, cellController));
+				cellData.BindCellClickAction(this.GetAction(item, cellController));
 			}
 		}
 
-#endregion
+		private CellClickActionBase GetAction(Item item, CellController cellController)
+		{
+			if(!PlayerManager.Instance.Data.Inventory.ExchangeItemController.CanExchange)
+			{
+				return new InvokeItemAction(item, cellController);
+			}
+			else
+			{
+				return new ChangeItemAction(item, cellController);
+			}
+		}
 	}
 }
