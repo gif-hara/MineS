@@ -33,7 +33,7 @@ namespace MineS
 			case GameDefine.AbilityType.Absorption:
 				return new AbilityBase(type, holder);
 			case GameDefine.AbilityType.LongRangeAttack:
-				return new AbilityBase(type, holder);
+				return new AbilityLongRangeAttack(holder);
 			case GameDefine.AbilityType.Reinforcement:
 				return new AbilityBase(type, holder);
 			default:

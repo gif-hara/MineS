@@ -39,7 +39,8 @@ namespace MineS
 		void Start()
 		{
 			this.NotifyCharacterDataObservers();
-			TurnManager.Instance.AddEvent(this.OnTurnProgress);
+			TurnManager.Instance.AddEndTurnEvent(this.OnTurnProgress);
+			TurnManager.Instance.AddLateEndTurnEvent(this.OnLateTurnProgress);
 		}
 
 		public void RecoveryHitPoint(int value, bool isLimit)
@@ -152,6 +153,10 @@ namespace MineS
 		private void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			this.Data.OnTurnProgress(type, turnCount);
+		}
+
+		private void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
 			this.NotifyCharacterDataObservers();
 		}
 	}

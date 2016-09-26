@@ -13,7 +13,7 @@ namespace MineS
 		public override void Invoke(CellData data)
 		{
 			var enemyData = EnemyManager.Instance.Enemies[data];
-			CombatController.Combat(enemyData, data.Controller.CharacterDataObserver);
+			CombatController.Combat(enemyData);
 
 			if(enemyData.IsDead)
 			{

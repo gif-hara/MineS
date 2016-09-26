@@ -21,7 +21,8 @@ namespace MineS
 		void Start()
 		{
 			DungeonManager.Instance.AddNextFloorEvent(this.NextFloor);
-			TurnManager.Instance.AddEvent(this.OnTurnProgress);
+			TurnManager.Instance.AddEndTurnEvent(this.OnTurnProgress);
+			TurnManager.Instance.AddLateEndTurnEvent(this.OnLateTurnProgress);
 		}
 
 		public CharacterData Create(CellData data)
@@ -55,6 +56,18 @@ namespace MineS
 				}
 
 				e.Value.OnTurnProgress(type, turnCount);
+			}
+		}
+
+		private void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			foreach(var e in this.Enemies)
+			{
+				if(e.Value == null || !e.Key.IsIdentification)
+				{
+					continue;
+				}
+
 				e.Key.Controller.CharacterDataObserver.ModifiedData(e.Value);
 			}
 		}

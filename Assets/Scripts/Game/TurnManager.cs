@@ -16,19 +16,27 @@ namespace MineS
 			
 		}
 
-		private ProgressEvent progressEvent = new ProgressEvent();
+		private ProgressEvent endTurnProgressEvent = new ProgressEvent();
+
+		private ProgressEvent lateEndTurnProgressEvent = new ProgressEvent();
 
 		private int count = 0;
 
 		public void Progress(GameDefine.TurnProgressType type)
 		{
 			this.count++;
-			this.progressEvent.Invoke(type, this.count);
+			this.endTurnProgressEvent.Invoke(type, this.count);
+			this.lateEndTurnProgressEvent.Invoke(type, this.count);
 		}
 
-		public void AddEvent(UnityAction<GameDefine.TurnProgressType, int> action)
+		public void AddEndTurnEvent(UnityAction<GameDefine.TurnProgressType, int> action)
 		{
-			this.progressEvent.AddListener(action);
+			this.endTurnProgressEvent.AddListener(action);
+		}
+
+		public void AddLateEndTurnEvent(UnityAction<GameDefine.TurnProgressType, int> action)
+		{
+			this.lateEndTurnProgressEvent.AddListener(action);
 		}
 	}
 }

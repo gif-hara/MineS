@@ -10,7 +10,7 @@ namespace MineS
 	/// </summary>
 	public class CombatController
 	{
-		public static void Combat(CharacterData enemy, CharacterDataObserver enemyObserver)
+		public static void Combat(CharacterData enemy)
 		{
 			var player = PlayerManager.Instance.Data;
 			player.Attack(enemy);
@@ -20,13 +20,20 @@ namespace MineS
 				PlayerManager.Instance.AddExperience(enemy.Experience);
 				PlayerManager.Instance.AddMoney(enemy.Money);
 			}
-			else
+			else if(CanAttackEnemy(enemy))
 			{
 				enemy.Attack(player);
 			}
+		}
 
-			PlayerManager.Instance.NotifyCharacterDataObservers();
-			enemyObserver.ModifiedData(enemy);
+		public static void CombatLongRangeAttack(CharacterData enemy)
+		{
+			enemy.Attack(PlayerManager.Instance.Data);
+		}
+
+		private static bool CanAttackEnemy(CharacterData enemy)
+		{
+			return !enemy.FindAbility(GameDefine.AbilityType.LongRangeAttack);
 		}
 	}
 }
