@@ -33,7 +33,7 @@ namespace MineS
 			}
 			else
 			{
-				Debug.LogWarning("道具袋がいっぱいで外せませんでした.");
+				DescriptionManager.Instance.DeployEmergency("DoNotRemoveEquipment");
 			}
 		}
 
