@@ -10,7 +10,7 @@ namespace MineS
 	/// </summary>
 	public class InvokeMineTrapAction : InvokeTrapActionBase
 	{
-		public override void Invoke(CellData data)
+		public override void InternalInvoke(CellData data)
 		{
 			data.BindCellClickAction(null);
 			data.BindDeployDescription(null);

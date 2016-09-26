@@ -22,7 +22,7 @@ namespace MineS
 			this.type = GameDefine.ConvertTrapTypeToAbnormalStatusType(type);
 		}
 
-		public override void Invoke(CellData data)
+		public override void InternalInvoke(CellData data)
 		{
 			data.BindCellClickAction(null);
 			this.cellController.SetImage(this.Image);

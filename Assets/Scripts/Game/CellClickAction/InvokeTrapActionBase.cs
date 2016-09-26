@@ -10,6 +10,16 @@ namespace MineS
 	/// </summary>
 	public abstract class InvokeTrapActionBase : CellClickActionBase
 	{
+		public override void Invoke(CellData data)
+		{
+			if(PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.TrapMaster))
+			{
+				return;
+			}
+
+			this.InternalInvoke(data);
+		}
+
 		public override GameDefine.EventType EventType
 		{
 			get
@@ -18,5 +28,6 @@ namespace MineS
 			}
 		}
 
+		public abstract void InternalInvoke(CellData data);
 	}
 }
