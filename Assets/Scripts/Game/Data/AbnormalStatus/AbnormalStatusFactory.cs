@@ -20,8 +20,6 @@ namespace MineS
 				return new AbnormalStatusSharpness(remainingTurn);
 			case GameDefine.AbnormalStatusType.Curing:
 				return new AbnormalStatusCuring(remainingTurn);
-			case GameDefine.AbnormalStatusType.Spirit:
-				return new AbnormalStatusSpirit(remainingTurn);
 			case GameDefine.AbnormalStatusType.Xray:
 				return new AbnormalStatusXray(remainingTurn);
 			case GameDefine.AbnormalStatusType.TrapMaster:

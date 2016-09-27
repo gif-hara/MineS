@@ -21,8 +21,6 @@ namespace MineS
 			[SerializeField]
 			private SerializeFieldGetter.Sprite curing;
 			[SerializeField]
-			private SerializeFieldGetter.Sprite spirit;
-			[SerializeField]
 			private SerializeFieldGetter.Sprite xray;
 			[SerializeField]
 			private SerializeFieldGetter.Sprite trapMaster;
@@ -51,8 +49,6 @@ namespace MineS
 					return this.sharpness.Element;
 				case GameDefine.AbnormalStatusType.Curing:
 					return this.curing.Element;
-				case GameDefine.AbnormalStatusType.Spirit:
-					return this.spirit.Element;
 				case GameDefine.AbnormalStatusType.Xray:
 					return this.xray.Element;
 				case GameDefine.AbnormalStatusType.TrapMaster:

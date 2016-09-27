@@ -185,11 +185,6 @@ namespace MineS
 			Curing,
 
 			/// <summary>
-			/// 精霊：一定ターンマジックポイントを消費せずに魔法が使用出来る.
-			/// </summary>
-			Spirit,
-
-			/// <summary>
 			/// 透視：未識別のセルを透視する.
 			/// </summary>
 			Xray,
@@ -337,7 +332,6 @@ namespace MineS
 			return type == AbnormalStatusType.Regeneration ||
 			type == AbnormalStatusType.Sharpness ||
 			type == AbnormalStatusType.Curing ||
-			type == AbnormalStatusType.Spirit ||
 			type == AbnormalStatusType.Xray ||
 			type == AbnormalStatusType.TrapMaster ||
 			type == AbnormalStatusType.Happiness;

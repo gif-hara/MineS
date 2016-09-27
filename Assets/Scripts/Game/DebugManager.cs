@@ -59,17 +59,13 @@ namespace MineS
 			}
 			if(Input.GetKeyDown(KeyCode.F))
 			{
-				PlayerManager.Instance.AddAbnormalStatus(GameDefine.AbnormalStatusType.Spirit, abnormalStatusRemainingTurn);
+				PlayerManager.Instance.AddAbnormalStatus(GameDefine.AbnormalStatusType.TrapMaster, abnormalStatusRemainingTurn);
 			}
 			if(Input.GetKeyDown(KeyCode.G))
 			{
-				PlayerManager.Instance.AddAbnormalStatus(GameDefine.AbnormalStatusType.TrapMaster, abnormalStatusRemainingTurn);
-			}
-			if(Input.GetKeyDown(KeyCode.H))
-			{
 				PlayerManager.Instance.AddAbnormalStatus(GameDefine.AbnormalStatusType.Xray, abnormalStatusRemainingTurn);
 			}
-			if(Input.GetKeyDown(KeyCode.J))
+			if(Input.GetKeyDown(KeyCode.H))
 			{
 				PlayerManager.Instance.AddAbnormalStatus(GameDefine.AbnormalStatusType.Happiness, abnormalStatusRemainingTurn);
 			}
