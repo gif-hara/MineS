@@ -35,8 +35,6 @@ namespace MineS
 			[SerializeField]
 			private SerializeFieldGetter.Sprite gout;
 			[SerializeField]
-			private SerializeFieldGetter.Sprite headache;
-			[SerializeField]
 			private SerializeFieldGetter.Sprite dull;
 
 			private AbnormalStatus()
@@ -67,8 +65,6 @@ namespace MineS
 					return this.blur.Element;
 				case GameDefine.AbnormalStatusType.Gout:
 					return this.gout.Element;
-				case GameDefine.AbnormalStatusType.Headache:
-					return this.headache.Element;
 				case GameDefine.AbnormalStatusType.Dull:
 					return this.dull.Element;
 				default:
@@ -88,8 +84,6 @@ namespace MineS
 			public SerializeFieldGetter.Sprite blur;
 
 			public SerializeFieldGetter.Sprite dull;
-
-			public SerializeFieldGetter.Sprite headache;
 
 			public SerializeFieldGetter.Sprite mine;
 		}

@@ -220,11 +220,6 @@ namespace MineS
 			Gout,
 
 			/// <summary>
-			/// 頭痛：魔法使用時のMP消費量が2倍になる.
-			/// </summary>
-			Headache,
-
-			/// <summary>
 			/// 鈍ら：与えるダメージが半分になる.
 			/// </summary>
 			Dull,
@@ -360,8 +355,6 @@ namespace MineS
 				return GameDefine.AbnormalStatusType.Dull;
 			case GameDefine.TrapType.Gout:
 				return GameDefine.AbnormalStatusType.Gout;
-			case GameDefine.TrapType.Headache:
-				return GameDefine.AbnormalStatusType.Headache;
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = {0}", type);
 				return GameDefine.AbnormalStatusType.None;

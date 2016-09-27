@@ -87,10 +87,6 @@ namespace MineS
 			}
 			if(Input.GetKeyDown(KeyCode.V))
 			{
-				PlayerManager.Instance.AddAbnormalStatus(GameDefine.AbnormalStatusType.Headache, abnormalStatusRemainingTurn);
-			}
-			if(Input.GetKeyDown(KeyCode.B))
-			{
 				PlayerManager.Instance.AddAbnormalStatus(GameDefine.AbnormalStatusType.Dull, abnormalStatusRemainingTurn);
 			}
 		}

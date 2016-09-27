@@ -34,8 +34,6 @@ namespace MineS
 				return new AbnormalStatusBlur(remainingTurn);
 			case GameDefine.AbnormalStatusType.Gout:
 				return new AbnormalStatusGout(remainingTurn);
-			case GameDefine.AbnormalStatusType.Headache:
-				return new AbnormalStatusHeadache(remainingTurn);
 			case GameDefine.AbnormalStatusType.Dull:
 				return new AbnormalStatusDull(remainingTurn);
 			default:

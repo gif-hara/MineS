@@ -14,7 +14,6 @@ namespace MineS
 			: base(remainingTurn)
 		{
 			this.Type = GameDefine.AbnormalStatusType.Spirit;
-			this.OppositeType = GameDefine.AbnormalStatusType.Headache;
 		}
 	}
 }
