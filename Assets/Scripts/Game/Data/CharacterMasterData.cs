@@ -21,11 +21,6 @@ namespace MineS
 		[SerializeField]
 		private int hitPoint;
 
-		public int MagicPoint{ get { return this.magicPoint; } }
-
-		[SerializeField]
-		private int magicPoint;
-
 		public int Strength{ get { return this.strength; } }
 
 		[SerializeField]

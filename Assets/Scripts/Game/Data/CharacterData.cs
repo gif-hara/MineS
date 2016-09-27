@@ -18,10 +18,6 @@ namespace MineS
 
 		public int HitPoint{ protected set; get; }
 
-		public int MagicPointMax{ protected set; get; }
-
-		public int MagicPoint{ protected set; get; }
-
 		public virtual int Strength
 		{
 			get
@@ -51,8 +47,6 @@ namespace MineS
 			this.Name = name;
 			this.HitPointMax = hitPoint;
 			this.HitPoint = hitPoint;
-			this.MagicPointMax = magicPoint;
-			this.MagicPoint = magicPoint;
 			this.baseStrength = strength;
 			this.Armor = armor;
 			this.ArmorMax = GameDefine.ArmorMax;
@@ -68,8 +62,6 @@ namespace MineS
 			this.Name = masterData.Name;
 			this.HitPointMax = masterData.HitPoint;
 			this.HitPoint = masterData.HitPoint;
-			this.MagicPointMax = masterData.MagicPoint;
-			this.MagicPoint = masterData.MagicPoint;
 			this.baseStrength = masterData.Strength;
 			this.Armor = masterData.Armor;
 			this.Experience = masterData.Experience;

@@ -37,12 +37,6 @@ namespace MineS
 				this.HitPoint = this.HitPointMax;
 			}
 
-			this.MagicPointMax += growthData.MagicPoint;
-			if(this.MagicPoint <= this.MagicPointMax)
-			{
-				this.MagicPoint = this.MagicPointMax;
-			}
-
 			this.baseStrength += growthData.Strength;
 			this.Armor += growthData.Armor;
 		}
