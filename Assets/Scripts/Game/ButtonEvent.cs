@@ -35,6 +35,17 @@ namespace MineS
 			this.cellController.Action();
 		}
 
+		public void OnDeselect()
+		{
+			if(this.deployDescriptionCoroutine == null)
+			{
+				return;
+			}
+
+			StopCoroutine(this.deployDescriptionCoroutine);
+			this.deployDescriptionCoroutine = null;
+		}
+
 		private IEnumerator DeployDescription()
 		{
 			yield return new WaitForSecondsRealtime(WaitDeployDescriptionTime);
