@@ -33,26 +33,26 @@ namespace MineS
 
 		private List<GameObject> createdObjects = new List<GameObject>();
 
-		void OnDisable()
-		{
-		}
-
 		public void OnModifiedInventory(Inventory inventory)
 		{
 			this.createdObjects.ForEach(o => Destroy(o));
-			this.CreatePartition(this.equipmentPartitionName.Get);
-			this.CreateEquipment(inventory, inventory.Equipment.Weapon, GameDefine.ItemType.Weapon);
-			this.CreateEquipment(inventory, inventory.Equipment.Shield, GameDefine.ItemType.Shield);
-			this.CreateEquipment(inventory, inventory.Equipment.Accessory, GameDefine.ItemType.Accessory);
-			this.CreateEquipment(inventory, inventory.Equipment.Helmet, GameDefine.ItemType.Helmet);
-			this.CreateEquipment(inventory, inventory.Equipment.Body, GameDefine.ItemType.Body);
-			this.CreateEquipment(inventory, inventory.Equipment.Glove, GameDefine.ItemType.Glove);
-			this.CreateEquipment(inventory, inventory.Equipment.Leg, GameDefine.ItemType.Leg);
+
+			if(!inventory.ExchangeItemController.CanExchange)
+			{
+				this.CreatePartition(this.equipmentPartitionName.Get);
+				this.CreateCellController(inventory.Equipment.Weapon, GameDefine.ItemType.Weapon, this.GetEquipmentAction(inventory, inventory.Equipment.Weapon));
+				this.CreateCellController(inventory.Equipment.Shield, GameDefine.ItemType.Shield, this.GetEquipmentAction(inventory, inventory.Equipment.Shield));
+				this.CreateCellController(inventory.Equipment.Accessory, GameDefine.ItemType.Accessory, this.GetEquipmentAction(inventory, inventory.Equipment.Accessory));
+				this.CreateCellController(inventory.Equipment.Helmet, GameDefine.ItemType.Helmet, this.GetEquipmentAction(inventory, inventory.Equipment.Helmet));
+				this.CreateCellController(inventory.Equipment.Body, GameDefine.ItemType.Body, this.GetEquipmentAction(inventory, inventory.Equipment.Body));
+				this.CreateCellController(inventory.Equipment.Glove, GameDefine.ItemType.Glove, this.GetEquipmentAction(inventory, inventory.Equipment.Glove));
+				this.CreateCellController(inventory.Equipment.Leg, GameDefine.ItemType.Leg, this.GetEquipmentAction(inventory, inventory.Equipment.Leg));
+			}
 			this.CreatePartition(this.inventoryPartitionName.Get);
-			inventory.Items.ForEach(i => this.CreateCellController(this.GetImage(i, GameDefine.ItemType.UsableItem), this.GetMessage(i), this.GetUsableItemAction(inventory, i)));
+			inventory.Items.ForEach(i => this.CreateCellController(i, GameDefine.ItemType.UsableItem, this.GetUsableItemAction(inventory, i)));
 		}
 
-		private void CreateCellController(Sprite image, string message, CellClickActionBase action)
+		private void CreateCellController(Item item, GameDefine.ItemType itemType, CellClickActionBase action)
 		{
 			var cellController = Instantiate(this.cellPrefab, this.root, false) as CellController;
 			this.createdObjects.Add(cellController.gameObject);
@@ -60,22 +60,8 @@ namespace MineS
 			cellData.SetController(cellController);
 			cellController.SetCellData(cellData);
 			cellData.BindCellClickAction(action);
-			if(image != null)
-			{
-				cellController.SetImage(image);
-			}
-			if(!string.IsNullOrEmpty(message))
-			{
-				cellController.SetText(message);
-			}
-		}
-
-		private void CreateEquipment(Inventory inventory, Item equipment, GameDefine.ItemType itemType)
-		{
-			var image = equipment == null ? TextureManager.Instance.defaultEquipment.Get(itemType) : equipment.InstanceData.Image;
-			var message = equipment == null ? this.emptyMessage.Get : equipment.InstanceData.ItemName;
-			var action = equipment == null ? null : new RemoveEquipmentAction(inventory, equipment);
-			this.CreateCellController(image, message, action);
+			cellController.SetImage(this.GetImage(item, itemType));
+			cellController.SetText(this.GetMessage(item));
 		}
 
 		private void CreatePartition(string message)
@@ -118,6 +104,16 @@ namespace MineS
 			{
 				return new ChangeItemAction(item);
 			}
+		}
+
+		private CellClickActionBase GetEquipmentAction(Inventory inventory, Item item)
+		{
+			if(item == null)
+			{
+				return null;
+			}
+
+			return new RemoveEquipmentAction(inventory, item);
 		}
 	}
 }
