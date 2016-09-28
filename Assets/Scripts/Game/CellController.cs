@@ -3,6 +3,7 @@ using UnityEngine.Assertions;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using HK.Framework;
+using UnityEngine.Serialization;
 
 namespace MineS
 {
@@ -35,8 +36,8 @@ namespace MineS
 		[SerializeField]
 		private Image image;
 
-		[SerializeField]
-		private Text debugText;
+		[SerializeField][FormerlySerializedAs("text")]
+		private Text text;
 
 		public CellData Data{ private set; get; }
 
@@ -45,7 +46,7 @@ namespace MineS
 		public void SetCellData(CellData data)
 		{
 			this.SetActiveStatusObject(false);
-			this.SetDebugText("");
+			this.SetText("");
 			this.SetImage(null);
 			this.Data = data;
 			this.Data.BindEvent(
@@ -78,9 +79,9 @@ namespace MineS
 			this.Data.Description();
 		}
 
-		public void SetDebugText(string message)
+		public void SetText(string message)
 		{
-			this.debugText.text = message;
+			this.text.text = message;
 		}
 
 		public void SetImage(Sprite sprite)
@@ -91,9 +92,9 @@ namespace MineS
 
 		public void SetActiveStatusObject(bool isActive)
 		{
-			this.hitPointObject.SetActive(isActive);
-			this.armorObject.SetActive(isActive);
-			this.strengthObject.SetActive(isActive);
+			this.SetActive(this.hitPointObject, isActive);
+			this.SetActive(this.armorObject, isActive);
+			this.SetActive(this.strengthObject, isActive);
 		}
 
 		public void SetStatus(CharacterData data)
@@ -109,17 +110,27 @@ namespace MineS
 
 		private void ModifiedCanStep(bool canStep)
 		{
-			this.notStepObject.SetActive(!canStep);
+			this.SetActive(this.notStepObject, !canStep);
 		}
 
 		private void ModifiedIdentification(bool isIdentification)
 		{
-			this.identificationObject.SetActive(!isIdentification);
+			this.SetActive(this.identificationObject, !isIdentification);
 		}
 
 		private void ModifiedLockCount(int lockCount)
 		{
-			this.lockObject.SetActive(lockCount > 0);
+			this.SetActive(this.lockObject, lockCount > 0);
+		}
+
+		private void SetActive(GameObject gameObject, bool isActive)
+		{
+			if(gameObject == null)
+			{
+				return;
+			}
+
+			gameObject.SetActive(isActive);
 		}
 	}
 }

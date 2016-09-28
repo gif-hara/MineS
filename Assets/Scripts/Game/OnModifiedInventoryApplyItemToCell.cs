@@ -54,11 +54,11 @@ namespace MineS
 		{
 			if(!PlayerManager.Instance.Data.Inventory.ExchangeItemController.CanExchange)
 			{
-				return new InvokeItemAction(item, cellController);
+				return new InvokeItemAction(item);
 			}
 			else
 			{
-				return new ChangeItemAction(item, cellController);
+				return new ChangeItemAction(item);
 			}
 		}
 	}

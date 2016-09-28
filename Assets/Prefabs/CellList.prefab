@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -383,7 +383,7 @@ MonoBehaviour:
   strengthObject: {fileID: 0}
   armorObject: {fileID: 0}
   image: {fileID: 114000011994574438}
-  debugText: {fileID: 114000011292617798}
+  text: {fileID: 114000011292617798}
 --- !u!222 &222000011264393524
 CanvasRenderer:
   m_ObjectHideFlags: 1

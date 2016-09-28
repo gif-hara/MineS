@@ -12,13 +12,9 @@ namespace MineS
 	{
 		private Item item;
 
-		public ChangeItemAction(Item item, CellController cellController)
+		public ChangeItemAction(Item item)
 		{
 			this.item = item;
-			if(this.item != null)
-			{
-				cellController.SetImage(this.item.InstanceData.Image);
-			}
 		}
 
 		public override void Invoke(CellData data)
@@ -31,6 +27,15 @@ namespace MineS
 			var inventory = PlayerManager.Instance.Data.Inventory;
 			inventory.InvokeExchangeItem(this.item);
 			PlayerManager.Instance.CloseInventoryUI();
+		}
+
+		public override void SetCellController(CellController cellController)
+		{
+			base.SetCellController(cellController);
+			if(this.item != null)
+			{
+				cellController.SetImage(this.item.InstanceData.Image);
+			}
 		}
 
 		public override GameDefine.EventType EventType

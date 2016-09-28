@@ -55,7 +55,7 @@ namespace MineS
 			{
 				return;
 			}
-			cellData.BindCellClickAction(new RemoveEquipmentAction(PlayerManager.Instance.Data.Inventory, item, cellController));
+			cellData.BindCellClickAction(new RemoveEquipmentAction(PlayerManager.Instance.Data.Inventory, item));
 		}
 
 #endregion

@@ -14,11 +14,10 @@ namespace MineS
 
 		private Item item;
 
-		public RemoveEquipmentAction(Inventory inventory, Item item, CellController cellController)
+		public RemoveEquipmentAction(Inventory inventory, Item item)
 		{
 			this.inventory = inventory;
 			this.item = item;
-			cellController.SetImage(this.item.InstanceData.Image);
 		}
 
 		public override void Invoke(CellData data)
@@ -35,6 +34,12 @@ namespace MineS
 			{
 				DescriptionManager.Instance.DeployEmergency("DoNotRemoveEquipment");
 			}
+		}
+
+		public override void SetCellController(CellController cellController)
+		{
+			base.SetCellController(cellController);
+			this.cellController.SetImage(this.item.InstanceData.Image);
 		}
 
 		public override GameDefine.EventType EventType

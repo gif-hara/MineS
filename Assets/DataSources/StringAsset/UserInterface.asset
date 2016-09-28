@@ -144,4 +144,12 @@ MonoBehaviour:
       ja: "\u30A2\u30FC\u30DE\u30FC\u5168\u56DE\u5FA9"
       en: 
     guid: 386deeaf-af0f-41c7-b0db-d5e30bbdfaa9
+  - value:
+      ja: "\u306A\u3057"
+      en: 
+    guid: 56b4ec88-35c0-4455-b940-8dc944f760f8
+  - value:
+      ja: "\u88C5\u5099\u54C1"
+      en: 
+    guid: ab6c805a-757d-4b14-b317-352868e74ecd
   asset: []

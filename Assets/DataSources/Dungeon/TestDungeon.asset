@@ -56,11 +56,11 @@ MonoBehaviour:
     min: 0
     max: 0
   createEnemyRange:
-    min: 78
-    max: 78
-  createItemRange:
     min: 0
     max: 0
+  createItemRange:
+    min: 78
+    max: 78
   createTrapRange:
     min: 0
     max: 0
