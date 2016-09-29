@@ -13,7 +13,7 @@ namespace MineS
 		private int waitTurn = 1;
 
 		public AbilityLongRangeAttack(CharacterData holder)
-			: base(GameDefine.AbilityType.LongRangeAttack, holder)
+			: base(GameDefine.AbilityType.LongRangeAttack, holder, "LongRangeAttack")
 		{
 		}
 

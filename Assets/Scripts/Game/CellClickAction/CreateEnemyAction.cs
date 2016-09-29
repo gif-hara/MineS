@@ -15,7 +15,7 @@ namespace MineS
 		public override void Invoke(CellData data)
 		{
 			data.BindCellClickAction(new CombatEnemyAction());
-			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("Enemy"));
+			data.BindDeployDescription(new DeployDescriptionOnCharacterData(this.enemy));
 			data.Controller.SetStatus(this.enemy);
 			data.Controller.SetImage(this.enemy.Image);
 			var adjacentCells = data.AdjacentCellAll;

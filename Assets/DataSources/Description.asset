@@ -15,13 +15,13 @@ MonoBehaviour:
   - key: RecoveryItem
     title:
       target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
-      value: "\u56DE\u5FA9\u30A2\u30A4\u30C6\u30E0\uFF08\u4EEE\uFF09"
+      value: "\u30EA\u30AB\u30D0\u30EA\u30FC\u30CF\u30FC\u30C8"
       guid: a0b890c0-bb06-46c5-b5e2-f998209c1c93
     message:
       target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
       value: "\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u3092\u56DE\u5FA9\u3059\u308B\u3002"
       guid: 71000674-1464-46f8-b9af-b3a94b921f77
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: beab0bd6fda210d46ac503638a5818eb, type: 3}
   - key: NextFloor
     title:
       target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
@@ -61,4 +61,74 @@ MonoBehaviour:
       target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
       value: "\u9053\u5177\u888B\u304C\u4E00\u676F\u3067\u88C5\u5099\u3092\u5916\u305B\u307E\u305B\u3093\u3002"
       guid: 14aa3e3b-5abe-4ac6-be00-4e32d6e1b498
+    image: {fileID: 0}
+  - key: Penetoration
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u8CAB\u901A"
+      guid: d24e0a7c-0976-4e86-a7f1-42603189cdf7
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30A2\u30FC\u30DE\u30FC\u3092\u7121\u8996\u3057\u3066\u76F4\u63A5\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u306B\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B\u305E\uFF01"
+      guid: 1b7d5235-2812-4820-928f-81639960eb70
+    image: {fileID: 0}
+  - key: Mercy
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u6148\u60B2"
+      guid: 0e735e3e-c8ea-4763-a714-abca108f29f7
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u306B\u4ED6\u306E\u6575\u306E\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u3092\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
+      guid: cfa468c1-2439-4f54-a9b8-23ca7b59a73a
+    image: {fileID: 0}
+  - key: Regeneration
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u81EA\u5DF1\u518D\u751F"
+      guid: 2fb35e2b-ee08-4373-b1e5-889301a2b18f
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u306B\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u3092\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
+      guid: d4241051-0b1d-4b63-9d08-e3f8c1b5bbd7
+    image: {fileID: 0}
+  - key: Splash
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u8DF3\u8FD4"
+      guid: def9ae7a-ad9b-4e6b-8068-079db7f75fa7
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u53D7\u3051\u305F\u30C0\u30E1\u30FC\u30B8\u306E\u4E00\u90E8\u3092\u8DF3\u306D\u8FD4\u3059\u305E\uFF01"
+      guid: 8d4c7392-19b9-4a15-8bb7-c19dd79ba68e
+    image: {fileID: 0}
+  - key: Absorption
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5438\u53CE"
+      guid: efd19f88-a079-445a-a1a8-30549ea8eb82
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u4E0E\u3048\u305F\u30C0\u30E1\u30FC\u30B8\u306E\u4E00\u90E8\u3092\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
+      guid: eff31da3-070a-42c6-815d-3220d825323e
+    image: {fileID: 0}
+  - key: LongRangeAttack
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u9060\u8DDD\u96E2\u653B\u6483"
+      guid: 543bbd97-6941-4334-831e-017aaa110bec
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u306B\u653B\u6483\u3059\u308B\u305E\uFF01"
+      guid: 86f3c9c3-19e1-4e69-a675-eebd572b6003
+    image: {fileID: 0}
+  - key: Reinforcement
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u4E09\u5B50\u6559\u8A13"
+      guid: 23590ba0-3861-4785-b796-ae3d60260c40
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u4ED6\u306E\u6575\u306E\u6570\u3060\u3051\u653B\u6483\u529B\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01"
+      guid: fcfd4141-cdf6-445b-9146-01c972511a95
     image: {fileID: 0}

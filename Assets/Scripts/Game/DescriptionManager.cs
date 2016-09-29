@@ -12,7 +12,10 @@ namespace MineS
 	public class DescriptionManager : SingletonMonoBehaviour<DescriptionManager>
 	{
 		[SerializeField]
-		private List<DescriptionDataObserver> observers;
+		private List<DescriptionDataObserver> basicObservers;
+
+		[SerializeField]
+		private List<CharacterDataObserver> characterDataObservers;
 
 		[SerializeField]
 		private DescriptionData data;
@@ -25,19 +28,20 @@ namespace MineS
 
 		public void Deploy(CharacterData data)
 		{
-			for(int i = 0; i < this.observers.Count; i++)
+			this.characterDataObservers.ForEach(o =>
 			{
-				this.observers[i].ModifiedData(data);
-			}
+				o.gameObject.SetActive(true);
+				o.ModifiedData(data);
+			});
 		}
 
 		public void Deploy(string key)
 		{
-			var data = this.data.Get(key);
-			for(int i = 0; i < this.observers.Count; i++)
+			this.basicObservers.ForEach(o =>
 			{
-				this.observers[i].ModifiedData(data);
-			}
+				o.gameObject.SetActive(true);
+				o.ModifiedData(this.data.Get(key));
+			});
 		}
 
 		public void DeployEmergency(string key)
@@ -45,5 +49,7 @@ namespace MineS
 			this.emergencyRoot.SetActive(true);
 			this.emergencyText.text = this.data.Get(key).Message;
 		}
+
+		public DescriptionData Data{ get { return this.data; } }
 	}
 }

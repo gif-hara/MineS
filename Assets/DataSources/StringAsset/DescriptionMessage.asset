@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database:
   - value:
-      ja: "\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u3000\u30F2\u3000\u30AB\u30A4\u30D5\u30AF\u3000\u30B9\u30EB"
+      ja: "\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u304C\u5C11\u3057\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
       en: 
     guid: 71000674-1464-46f8-b9af-b3a94b921f77
   - value:
@@ -32,4 +32,36 @@ MonoBehaviour:
       ja: "\u9053\u5177\u888B\u304C\u4E00\u676F\u3067\u88C5\u5099\u3092\u5916\u305B\u307E\u305B\u3093\u3002"
       en: 
     guid: 14aa3e3b-5abe-4ac6-be00-4e32d6e1b498
+  - value:
+      ja: "\u5BFE\u8C61\u306E\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u304C\u5C11\u3057\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: 1ca30c71-7b1f-40ed-a889-a96e65fd8462
+  - value:
+      ja: "\u30A2\u30FC\u30DE\u30FC\u3092\u7121\u8996\u3057\u3066\u76F4\u63A5\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u306B\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B\u305E\uFF01"
+      en: 
+    guid: 1b7d5235-2812-4820-928f-81639960eb70
+  - value:
+      ja: "\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u306B\u4ED6\u306E\u6575\u306E\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u3092\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: cfa468c1-2439-4f54-a9b8-23ca7b59a73a
+  - value:
+      ja: "\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u306B\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u3092\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: d4241051-0b1d-4b63-9d08-e3f8c1b5bbd7
+  - value:
+      ja: "\u53D7\u3051\u305F\u30C0\u30E1\u30FC\u30B8\u306E\u4E00\u90E8\u3092\u8DF3\u306D\u8FD4\u3059\u305E\uFF01"
+      en: 
+    guid: 8d4c7392-19b9-4a15-8bb7-c19dd79ba68e
+  - value:
+      ja: "\u4E0E\u3048\u305F\u30C0\u30E1\u30FC\u30B8\u306E\u4E00\u90E8\u3092\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: eff31da3-070a-42c6-815d-3220d825323e
+  - value:
+      ja: "\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u306B\u653B\u6483\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: 86f3c9c3-19e1-4e69-a675-eebd572b6003
+  - value:
+      ja: "\u4ED6\u306E\u6575\u306E\u6570\u3060\u3051\u653B\u6483\u529B\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: fcfd4141-cdf6-445b-9146-01c972511a95
   asset: []

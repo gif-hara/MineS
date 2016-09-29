@@ -30,10 +30,10 @@ namespace MineS
 			[SerializeField]
 			private StringAsset.Finder message;
 
-			public Image Image{ get { return this.image; } }
+			public Sprite Image{ get { return this.image; } }
 
 			[SerializeField]
-			private Image image;
+			private Sprite image;
 		}
 
 		[SerializeField]

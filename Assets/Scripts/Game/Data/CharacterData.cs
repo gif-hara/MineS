@@ -85,7 +85,6 @@ namespace MineS
 			this.AbnormalStatuses = new List<AbnormalStatusBase>();
 			this.Abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
 			this.Image = masterData.Image;
-			this.AddAbnormalStatus(AbnormalStatusFactory.Create(GameDefine.AbnormalStatusType.Seal, 5));
 		}
 
 		public void RecoveryHitPoint(int value, bool isLimit)

@@ -36,6 +36,7 @@ namespace MineS
 		public void OnModifiedInventory(Inventory inventory)
 		{
 			this.createdObjects.ForEach(o => Destroy(o));
+			this.createdObjects.Clear();
 
 			if(!inventory.ExchangeItemController.CanExchange)
 			{

@@ -11,7 +11,7 @@ namespace MineS
 	public class AbilityRegeneration : AbilityBase
 	{
 		public AbilityRegeneration(CharacterData holder)
-			: base(GameDefine.AbilityType.Regeneration, holder)
+			: base(GameDefine.AbilityType.Regeneration, holder, "Regeneration")
 		{
 		}
 

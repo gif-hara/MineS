@@ -14,6 +14,11 @@ namespace MineS
 		[SerializeField]
 		private List<GameObject> receives;
 
+		public void ModifiedData(string key)
+		{
+			this.ModifiedData(DescriptionManager.Instance.Data.Get(key));
+		}
+
 		public void ModifiedData(DescriptionData.Element data)
 		{
 			ExecuteEventsExtensions.Execute<IReceiveModifiedDescriptionData>(this.receives, null, (handler, eventData) => handler.OnModifiedDescriptionData(data));

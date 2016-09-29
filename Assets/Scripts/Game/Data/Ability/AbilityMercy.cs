@@ -11,7 +11,7 @@ namespace MineS
 	public class AbilityMercy : AbilityBase
 	{
 		public AbilityMercy(CharacterData holder)
-			: base(GameDefine.AbilityType.Mercy, holder)
+			: base(GameDefine.AbilityType.Mercy, holder, "Mercy")
 		{
 		}
 

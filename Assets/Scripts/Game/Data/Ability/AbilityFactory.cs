@@ -23,19 +23,19 @@ namespace MineS
 			switch(type)
 			{
 			case GameDefine.AbilityType.Penetoration:
-				return new AbilityBase(type, holder);
+				return new AbilityBase(type, holder, "Penetoration");
 			case GameDefine.AbilityType.Mercy:
 				return new AbilityMercy(holder);
 			case GameDefine.AbilityType.Regeneration:
 				return new AbilityRegeneration(holder);
 			case GameDefine.AbilityType.Splash:
-				return new AbilityBase(type, holder);
+				return new AbilityBase(type, holder, "Splash");
 			case GameDefine.AbilityType.Absorption:
-				return new AbilityBase(type, holder);
+				return new AbilityBase(type, holder, "Absorption");
 			case GameDefine.AbilityType.LongRangeAttack:
 				return new AbilityLongRangeAttack(holder);
 			case GameDefine.AbilityType.Reinforcement:
-				return new AbilityBase(type, holder);
+				return new AbilityBase(type, holder, "Reinforcement");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;

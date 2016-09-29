@@ -14,10 +14,13 @@ namespace MineS
 
 		public CharacterData Holder{ protected set; get; }
 
-		public AbilityBase(GameDefine.AbilityType type, CharacterData holder)
+		public string DescriptionKey{ protected set; get; }
+
+		public AbilityBase(GameDefine.AbilityType type, CharacterData holder, string descriptionKey)
 		{
 			this.Type = type;
 			this.Holder = holder;
+			this.DescriptionKey = descriptionKey;
 		}
 
 		public virtual void OnTurnProgress()
