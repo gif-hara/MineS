@@ -15,7 +15,7 @@ namespace MineS
 
 		public int Y{ private set; get; }
 
-		private bool canStep = false;
+		public bool CanStep{ private set; get; }
 
 		public bool IsIdentification{ private set; get; }
 
@@ -41,7 +41,7 @@ namespace MineS
 			this.Y = -1;
 			this.IsIdentification = true;
 			this.lockCount = 0;
-			this.canStep = true;
+			this.CanStep = true;
 		}
 
 		public CellData(int y, int x)
@@ -118,7 +118,7 @@ namespace MineS
 			this.modifiedIdentificationEvent = modifiedIdentificationEvent;
 			this.modifiedLockCountEvent = modifiedLockCountEvent;
 
-			this.modifiedCanStepEvent(this.canStep);
+			this.modifiedCanStepEvent(this.CanStep);
 			this.modifiedIdentificationEvent(this.IsIdentification);
 			this.modifiedLockCountEvent(this.lockCount);
 		}
@@ -139,7 +139,7 @@ namespace MineS
 
 		public void Steppable(bool isXray)
 		{
-			if(this.canStep)
+			if(this.CanStep)
 			{
 				return;
 			}
@@ -149,10 +149,10 @@ namespace MineS
 				this.cellClickAction.OnUseXray();
 			}
 
-			this.canStep = true;
+			this.CanStep = true;
 			if(this.modifiedCanStepEvent != null)
 			{
-				this.modifiedCanStepEvent(this.canStep);
+				this.modifiedCanStepEvent(this.CanStep);
 			}
 		}
 
@@ -232,7 +232,7 @@ namespace MineS
 		{
 			get
 			{
-				if(!this.canStep)
+				if(!this.CanStep)
 				{
 					return GameDefine.ActionableType.NotStep;
 				}

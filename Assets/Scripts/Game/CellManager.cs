@@ -62,6 +62,12 @@ namespace MineS
 			this.CheckCellData(this.cellDatabase);
 		}
 
+		public void ActionFromConfusion()
+		{
+			var notIdentificationCellControllers = this.TurnProgressableCellControllers;
+			notIdentificationCellControllers[Random.Range(0, notIdentificationCellControllers.Count)].ActionFromConfusion();
+		}
+
 		private void NextFloor()
 		{
 			this.SetCell(this.CreateCellDatabaseFromDungeonData());
@@ -173,6 +179,32 @@ namespace MineS
 				y = Random.Range(0, RowMax);
 				x = Random.Range(0, CulumnMax);
 			} while(database[y, x].CurrentEventType != GameDefine.EventType.None);
+		}
+
+		private List<CellController> TurnProgressableCellControllers
+		{
+			get
+			{
+				var result = new List<CellController>();
+				for(int y = 0; y < RowMax; y++)
+				{
+					for(int x = 0; x < CulumnMax; x++)
+					{
+						var cellData = this.cellDatabase[y, x];
+						if(!cellData.CanStep || cellData.IsLock)
+						{
+							continue;
+						}
+
+						if(!cellData.IsIdentification || cellData.CurrentEventType == GameDefine.EventType.Enemy)
+						{
+							result.Add(this.cellControllers[y, x]);
+						}
+					}
+				}
+
+				return result;
+			}
 		}
 	}
 }

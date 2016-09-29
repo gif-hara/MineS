@@ -85,6 +85,10 @@ namespace MineS
 			{
 				PlayerManager.Instance.AddAbnormalStatus(GameDefine.AbnormalStatusType.Dull, abnormalStatusRemainingTurn);
 			}
+			if(Input.GetKeyDown(KeyCode.B))
+			{
+				PlayerManager.Instance.AddAbnormalStatus(GameDefine.AbnormalStatusType.Confusion, abnormalStatusRemainingTurn);
+			}
 		}
 
 		public void AddAbnormalStatusRemainingTurn(int value)

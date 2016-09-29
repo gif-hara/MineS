@@ -8,12 +8,12 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class AbnormalStatusSeal : AbnormalStatusBase
+	public class AbnormalStatusConfusion : AbnormalStatusBase
 	{
-		public AbnormalStatusSeal(int remainingTurn)
+		public AbnormalStatusConfusion(int remainingTurn)
 			: base(remainingTurn)
 		{
-			this.Type = GameDefine.AbnormalStatusType.Seal;
+			this.Type = GameDefine.AbnormalStatusType.Confusion;
 			this.OppositeType = GameDefine.AbnormalStatusType.None;
 		}
 	}

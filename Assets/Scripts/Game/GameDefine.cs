@@ -228,6 +228,11 @@ namespace MineS
 			/// 封印：特殊能力が発動しなくなる.
 			/// </summary>
 			Seal,
+
+			/// <summary>
+			/// 混乱：ターンを消費する行動がランダムに行われてしまう.
+			/// </summary>
+			Confusion,
 		}
 
 		public enum AbilityType:int

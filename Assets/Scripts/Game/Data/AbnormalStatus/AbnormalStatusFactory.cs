@@ -38,6 +38,8 @@ namespace MineS
 				return new AbnormalStatusFear(remainingTurn);
 			case GameDefine.AbnormalStatusType.Seal:
 				return new AbnormalStatusSeal(remainingTurn);
+			case GameDefine.AbnormalStatusType.Confusion:
+				return new AbnormalStatusConfusion(remainingTurn);
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = {0}", type);
 				return null;

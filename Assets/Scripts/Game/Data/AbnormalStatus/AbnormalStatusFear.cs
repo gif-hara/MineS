@@ -14,7 +14,7 @@ namespace MineS
 			: base(remainingTurn)
 		{
 			this.Type = GameDefine.AbnormalStatusType.Fear;
-			this.OppositeType = GameDefine.AbnormalStatusType.Dull;
+			this.OppositeType = GameDefine.AbnormalStatusType.None;
 		}
 	}
 }

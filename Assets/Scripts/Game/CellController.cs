@@ -66,6 +66,24 @@ namespace MineS
 				return;
 			}
 
+			if(PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Confusion) && (!this.Data.IsIdentification || this.Data.CurrentEventType == GameDefine.EventType.Enemy))
+			{
+				CellManager.Instance.ActionFromConfusion();
+			}
+			else
+			{
+				this.Data.Action();
+			}
+		}
+
+		public void ActionFromConfusion()
+		{
+			if(this.Data == null)
+			{
+				Debug.LogWarning("CellDataがありません.");
+				return;
+			}
+
 			this.Data.Action();
 		}
 
