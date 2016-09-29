@@ -69,6 +69,7 @@ namespace MineS
 			this.AbnormalStatuses = new List<AbnormalStatusBase>();
 			this.Abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
 			this.Image = masterData.Image;
+			this.AddAbnormalStatus(AbnormalStatusFactory.Create(GameDefine.AbnormalStatusType.Fear, 5));
 		}
 
 		public void RecoveryHitPoint(int value, bool isLimit)
@@ -94,6 +95,10 @@ namespace MineS
 
 		public void Attack(CharacterData target)
 		{
+			if(this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Fear))
+			{
+				return;
+			}
 			var damage = target.TakeDamage(this, this.Strength, FindAbility(GameDefine.AbilityType.Penetoration));
 			if(this.FindAbility(GameDefine.AbilityType.Absorption))
 			{

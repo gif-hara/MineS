@@ -218,6 +218,11 @@ namespace MineS
 			/// 鈍ら：与えるダメージが半分になる.
 			/// </summary>
 			Dull,
+
+			/// <summary>
+			/// 恐怖：攻撃できなくなる.
+			/// </summary>
+			Fear,
 		}
 
 		public enum AbilityType:int

@@ -34,6 +34,8 @@ namespace MineS
 				return new AbnormalStatusGout(remainingTurn);
 			case GameDefine.AbnormalStatusType.Dull:
 				return new AbnormalStatusDull(remainingTurn);
+			case GameDefine.AbnormalStatusType.Fear:
+				return new AbnormalStatusFear(remainingTurn);
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = {0}", type);
 				return null;
