@@ -20,7 +20,6 @@ namespace MineS
 
 		void Start()
 		{
-			DungeonManager.Instance.AddNextFloorEvent(this.NextFloor);
 			TurnManager.Instance.AddEndTurnEvent(this.OnTurnProgress);
 			TurnManager.Instance.AddLateEndTurnEvent(this.OnLateTurnProgress);
 		}
@@ -55,7 +54,7 @@ namespace MineS
 			}
 		}
 
-		private void NextFloor()
+		public void NextFloor()
 		{
 			this.Enemies.Clear();
 		}

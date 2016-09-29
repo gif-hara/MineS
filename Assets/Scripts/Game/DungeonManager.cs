@@ -28,6 +28,7 @@ namespace MineS
 		public void NextFloorEvent()
 		{
 			this.floorCount++;
+			EnemyManager.Instance.NextFloor();
 			this.nextFloorEvent.Invoke();
 		}
 
