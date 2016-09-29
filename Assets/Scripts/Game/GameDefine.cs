@@ -223,6 +223,11 @@ namespace MineS
 			/// 恐怖：攻撃できなくなる.
 			/// </summary>
 			Fear,
+
+			/// <summary>
+			/// 封印：特殊能力が発動しなくなる.
+			/// </summary>
+			Seal,
 		}
 
 		public enum AbilityType:int

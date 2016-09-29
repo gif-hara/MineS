@@ -10,7 +10,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public class CharacterData
+	public class CharacterData : IAttack
 	{
 		public string Name{ private set; get; }
 
@@ -18,11 +18,27 @@ namespace MineS
 
 		public int HitPoint{ protected set; get; }
 
+		public int FinalStrength
+		{
+			get
+			{
+				return Calculator.GetFinalStrength(this);
+			}
+		}
+
 		public virtual int Strength
 		{
 			get
 			{
-				return Calculator.GetFinalStrength(this.baseStrength, this.AbnormalStatuses, this.Abilities);
+				return this.baseStrength;
+			}
+		}
+
+		public int BaseStrength
+		{
+			get
+			{
+				return this.baseStrength;
 			}
 		}
 
@@ -69,7 +85,7 @@ namespace MineS
 			this.AbnormalStatuses = new List<AbnormalStatusBase>();
 			this.Abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
 			this.Image = masterData.Image;
-			this.AddAbnormalStatus(AbnormalStatusFactory.Create(GameDefine.AbnormalStatusType.Fear, 5));
+			this.AddAbnormalStatus(AbnormalStatusFactory.Create(GameDefine.AbnormalStatusType.Seal, 5));
 		}
 
 		public void RecoveryHitPoint(int value, bool isLimit)
@@ -99,7 +115,7 @@ namespace MineS
 			{
 				return;
 			}
-			var damage = target.TakeDamage(this, this.Strength, FindAbility(GameDefine.AbilityType.Penetoration));
+			var damage = target.TakeDamage(this, this.FinalStrength, FindAbility(GameDefine.AbilityType.Penetoration));
 			if(this.FindAbility(GameDefine.AbilityType.Absorption))
 			{
 				this.RecoveryHitPoint(damage / 2, true);
@@ -168,6 +184,12 @@ namespace MineS
 
 		public bool FindAbility(GameDefine.AbilityType type)
 		{
+			// 封印状態なら常にfalseを返す.
+			if(this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Seal))
+			{
+				return false;
+			}
+				
 			return this.Abilities.Find(a => a.Type == type) != null;
 		}
 

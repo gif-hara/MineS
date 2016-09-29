@@ -21,7 +21,7 @@ namespace MineS
 
 		public void OnModifiedCharacterData(CharacterData data)
 		{
-			this.target.text = this.format.Format(data.Strength);
+			this.target.text = this.format.Format(data.FinalStrength);
 		}
 
 #endregion

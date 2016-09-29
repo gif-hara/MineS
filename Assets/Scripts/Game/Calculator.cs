@@ -20,16 +20,17 @@ namespace MineS
 			return (hitPointMax / 50) + 1;
 		}
 
-		public static int GetFinalStrength(int baseStrength, List<AbnormalStatusBase> abnormalStatuses, List<AbilityBase> abilities)
+		public static int GetFinalStrength(IAttack attacker)
 		{
-			if(abilities.Find(a => a.Type == GameDefine.AbilityType.Reinforcement) != null)
+			var baseStrength = attacker.Strength;
+			if(attacker.FindAbility(GameDefine.AbilityType.Reinforcement))
 			{
 				baseStrength += EnemyManager.Instance.IdentitiedEnemyNumber - 1;
 			}
 
-			float rate = abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Sharpness) != null
+			float rate = attacker.FindAbnormalStatus(GameDefine.AbnormalStatusType.Sharpness)
 				? 2.0f
-				: abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Dull) != null
+				: attacker.FindAbnormalStatus(GameDefine.AbnormalStatusType.Dull)
 				? 0.5f
 				: 1.0f;
 			return Mathf.FloorToInt(baseStrength * rate);
