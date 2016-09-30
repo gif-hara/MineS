@@ -150,6 +150,10 @@ namespace MineS
 			this.HitPoint = this.HitPoint < 0 ? 0 : this.HitPoint;
 		}
 
+		public virtual void Defeat(CharacterData target)
+		{
+		}
+
 		public void AddMoney(int value)
 		{
 			this.Money += value;

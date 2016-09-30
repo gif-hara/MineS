@@ -15,16 +15,30 @@ namespace MineS
 
 		public Inventory Inventory{ private set; get; }
 
-		public PlayerData()
+		public CharacterMasterData growthData = null;
+
+		public PlayerData(CharacterMasterData growthData)
 		{
 			this.Initialize("", 100, 100, 4, 0, 0, 0, null);
 			this.Level = 1;
 			this.Inventory = new Inventory(this);
+			this.growthData = growthData;
 		}
 
 		public void AddExperience(int value)
 		{
 			this.Experience += value;
+		}
+
+		public override void Defeat(CharacterData target)
+		{
+			base.Defeat(target);
+			this.AddExperience(Calculator.GetFinalExperience(target.Experience, this));
+			this.AddMoney(Calculator.GetFinalMoney(target.Money, this));
+			while(this.CanLevelUp)
+			{
+				this.LevelUp(this.growthData);
+			}
 		}
 
 		public void LevelUp(CharacterMasterData growthData)

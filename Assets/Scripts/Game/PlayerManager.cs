@@ -33,7 +33,7 @@ namespace MineS
 		protected override void Awake()
 		{
 			base.Awake();
-			this.Data = new PlayerData();
+			this.Data = new PlayerData(this.growthData);
 		}
 
 		void Start()

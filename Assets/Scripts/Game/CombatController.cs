@@ -10,15 +10,13 @@ namespace MineS
 	/// </summary>
 	public class CombatController
 	{
-		public static void Combat(CharacterData enemy)
+		public static void Combat(CharacterData player, CharacterData enemy)
 		{
-			var player = PlayerManager.Instance.Data;
 			player.Attack(enemy);
 
 			if(enemy.IsDead)
 			{
-				PlayerManager.Instance.AddExperience(enemy.Experience);
-				PlayerManager.Instance.AddMoney(enemy.Money);
+				player.Defeat(enemy);
 			}
 			else if(CanAttackEnemy(enemy))
 			{
