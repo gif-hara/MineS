@@ -3,13 +3,14 @@ using UnityEngine.Assertions;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using HK.Framework;
+using UnityEngine.EventSystems;
 
 namespace MineS
 {
 	/// <summary>
 	/// .
 	/// </summary>
-	public class OnModifiedInventoryCreateList : MonoBehaviour, IReceiveModifiedInventory
+	public class OnModifiedInventoryCreateList : MonoBehaviour, IReceiveModifiedInventory, IBeginDragHandler
 	{
 		[SerializeField]
 		private Transform root;
@@ -33,6 +34,15 @@ namespace MineS
 
 		private List<GameObject> createdObjects = new List<GameObject>();
 
+#region IBeginDragHandler implementation
+
+		public void OnBeginDrag(PointerEventData eventData)
+		{
+			this.CancelDeployDescription();
+		}
+
+#endregion
+
 		public void OnModifiedInventory(Inventory inventory)
 		{
 			this.createdObjects.ForEach(o => Destroy(o));
@@ -51,6 +61,23 @@ namespace MineS
 				this.CreatePartition(this.inventoryPartitionName.Get);
 			}
 			inventory.Items.ForEach(i => this.CreateCellController(i, GameDefine.ItemType.UsableItem, this.GetUsableItemAction(inventory, i)));
+		}
+
+		private void CancelDeployDescription()
+		{
+			var selectedGameObject = EventSystem.current.currentSelectedGameObject;
+			if(selectedGameObject == null)
+			{
+				return;
+			}
+
+			var cellController = selectedGameObject.GetComponent(typeof(CellController)) as CellController;
+			if(cellController == null)
+			{
+				return;
+			}
+
+			cellController.CancelDeployDescription();
 		}
 
 		private void CreateCellController(Item item, GameDefine.ItemType itemType, CellClickActionBase action)

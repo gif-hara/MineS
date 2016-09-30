@@ -12,7 +12,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class CellController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+	public class CellController : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
 	{
 		[SerializeField]
 		private GameObject notStepObject;
@@ -58,9 +58,9 @@ namespace MineS
 
 #endregion
 
-#region IPointerUpHandler implementation
+#region IPointerClickHandler implementation
 
-		public void OnPointerUp(PointerEventData eventData)
+		public void OnPointerClick(PointerEventData eventData)
 		{
 			if(this.deployDescriptionCoroutine == null)
 			{
@@ -159,6 +159,17 @@ namespace MineS
 		{
 			this.SetActiveStatusObject(true);
 			this.characterDataObserver.ModifiedData(data);
+		}
+
+		public void CancelDeployDescription()
+		{
+			if(this.deployDescriptionCoroutine == null)
+			{
+				return;
+			}
+
+			StopCoroutine(this.deployDescriptionCoroutine);
+			this.deployDescriptionCoroutine = null;
 		}
 
 		private void Infeasible(GameDefine.ActionableType actionableType)

@@ -19,6 +19,10 @@ namespace MineS
 
 		public override void Deploy()
 		{
+			if(this.item == null)
+			{
+				return;
+			}
 			DescriptionManager.Instance.Deploy(this.item);
 		}
 	}
