@@ -38,6 +38,8 @@ namespace MineS
 				return new AbilityBase(type, holder, "Reinforcement");
 			case GameDefine.AbilityType.Proficiency:
 				return new AbilityBase(type, holder, "Proficiency");
+			case GameDefine.AbilityType.Hoist:
+				return new AbilityBase(type, holder, "Hoist");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;

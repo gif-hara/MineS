@@ -142,3 +142,13 @@ MonoBehaviour:
       value: "\u53D6\u5F97\u3059\u308B\u7D4C\u9A13\u5024\u304C\u5C11\u3057\u591A\u304F\u306A\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
       guid: 4bbb09fa-6e67-48d0-81dc-6aba303e62ec
     image: {fileID: 0}
+  - key: Hoist
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5DFB\u4E0A"
+      guid: 226d3120-dbb8-49e1-8069-e69d55d6a1c6
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u53D6\u5F97\u3059\u308B\u304A\u91D1\u304C\u5C11\u3057\u591A\u304F\u306A\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: ac09c63a-f638-4071-a83f-529150879cab
+    image: {fileID: 0}

@@ -85,7 +85,7 @@ namespace MineS
 
 		public void AddMoney(int value)
 		{
-			this.Data.AddMoney(value);
+			this.Data.AddMoney(Calculator.GetFinalMoney(value, this.Data));
 			this.NotifyCharacterDataObservers();
 		}
 
