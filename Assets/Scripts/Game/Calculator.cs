@@ -43,6 +43,8 @@ namespace MineS
 				baseStrength += EnemyManager.Instance.IdentitiedEnemyNumber - 1;
 			}
 
+			baseStrength += GetArtisanRate(attacker);
+
 			float rate = attacker.FindAbnormalStatus(GameDefine.AbnormalStatusType.Sharpness)
 				? 2.0f
 				: attacker.FindAbnormalStatus(GameDefine.AbnormalStatusType.Dull)
@@ -123,6 +125,11 @@ namespace MineS
 		public static float GetHoistRate(IAttack attacker)
 		{
 			return 1.0f + (float)attacker.GetAbilityNumber(GameDefine.AbilityType.Hoist) / 5.0f;
+		}
+
+		public static int GetArtisanRate(IAttack attacker)
+		{
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Artisan);
 		}
 	}
 }
