@@ -19,7 +19,7 @@ namespace MineS
 		{
 			this.Initialize("", 100, 100, 4, 0, 0, 0, null);
 			this.Level = 1;
-			this.Inventory = new Inventory();
+			this.Inventory = new Inventory(this);
 		}
 
 		public void AddExperience(int value)
@@ -67,6 +67,35 @@ namespace MineS
 			{
 				return this.Inventory.Equipment.TotalArmor;
 			}
+		}
+
+		public override List<AbilityBase> Abilities
+		{
+			get
+			{
+				var result = new List<AbilityBase>();
+				result.AddRange(this.abilities);
+				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Weapon));
+				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Shield));
+				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Accessory));
+				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Helmet));
+				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Body));
+				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Glove));
+				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Leg));
+
+				return result;
+			}
+		}
+
+		private List<AbilityBase> GetEquipmentAbilities(GameDefine.ItemType type)
+		{
+			var equipment = this.Inventory.Equipment.Get(type);
+			if(equipment == null)
+			{
+				return new List<AbilityBase>();
+			}
+
+			return (equipment.InstanceData as EquipmentData).Abilities;
 		}
 	}
 }

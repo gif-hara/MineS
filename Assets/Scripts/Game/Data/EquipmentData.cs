@@ -46,5 +46,10 @@ namespace MineS
 				return result;
 			}
 		}
+
+		public void SetAbilitiesHolder(CharacterData holder)
+		{
+			this.Abilities.ForEach(a => a.SetHolder(holder));
+		}
 	}
 }

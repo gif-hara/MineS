@@ -17,8 +17,11 @@ namespace MineS
 
 		public ExchangeItemController ExchangeItemController{ private set; get; }
 
-		public Inventory()
+		private CharacterData holder;
+
+		public Inventory(CharacterData holder)
 		{
+			this.holder = holder;
 			this.Items = new List<Item>();
 			for(int i = 0; i < GameDefine.InventoryItemMax; i++)
 			{
@@ -73,7 +76,7 @@ namespace MineS
 
 		public Item ChangeEquipment(Item item)
 		{
-			return this.Equipment.Change(item);
+			return this.Equipment.Change(item, this.holder);
 		}
 
 		public void RemoveEquipment(Item item)

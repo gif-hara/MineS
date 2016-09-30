@@ -271,6 +271,56 @@ namespace MineS
 			/// 三子教訓：他の敵の数だけ攻撃力が上昇する.
 			/// </summary>
 			Reinforcement,
+
+			/// <summary>
+			/// 連撃：攻撃した際に他に敵がいる場合は半分のダメージを与える.
+			/// </summary>
+			ContinuousAttack,
+
+			/// <summary>
+			/// 習熟：取得する経験値が上昇する.
+			/// </summary>
+			Proficiency,
+
+			/// <summary>
+			/// 巻上：取得するお金が上昇する.
+			/// </summary>
+			Hoist,
+
+			/// <summary>
+			/// 改修：敵を倒した際にアーマーが回復する.
+			/// </summary>
+			Repair,
+
+			/// <summary>
+			/// 幸運：敵を倒した際のアイテムドロップ率が上昇する.
+			/// </summary>
+			Fortune,
+
+			/// <summary>
+			/// 匠：攻撃力が上昇する.
+			/// </summary>
+			Artisan,
+
+			/// <summary>
+			/// 回避：回避率が上昇する.
+			/// </summary>
+			Evasion,
+
+			/// <summary>
+			/// 命中：命中率が上昇する.
+			/// </summary>
+			Hit,
+
+			/// <summary>
+			/// 五右衛門：与えたダメージから一定数のお金を取得する.
+			/// </summary>
+			Goemon,
+
+			/// <summary>
+			/// 窃盗：攻撃した際に道具袋に空きがある場合に一定確率でアイテムを取得する.
+			/// </summary>
+			theft,
 		}
 
 		/// <summary>

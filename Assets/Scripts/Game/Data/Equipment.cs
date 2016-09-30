@@ -25,9 +25,10 @@ namespace MineS
 
 		public Item Weapon{ private set; get; }
 
-		public Item Change(Item item)
+		public Item Change(Item item, CharacterData holder)
 		{
 			Item beforeItem = null;
+			(item.InstanceData as EquipmentData).SetAbilitiesHolder(holder);
 			switch(item.InstanceData.ItemType)
 			{
 			case GameDefine.ItemType.Accessory:
@@ -68,6 +69,8 @@ namespace MineS
 
 		public void Remove(Item item)
 		{
+			(item.InstanceData as EquipmentData).SetAbilitiesHolder(null);
+
 			switch(item.InstanceData.ItemType)
 			{
 			case GameDefine.ItemType.Accessory:
@@ -95,6 +98,11 @@ namespace MineS
 				Debug.AssertFormat(false, "不正な値です = {0}", item.InstanceData.ItemType);
 			break;
 			}
+		}
+
+		public Item Get(GameDefine.ItemType type)
+		{
+			return this.GetMatchEquipment(type);
 		}
 
 		private Item GetMatchEquipment(GameDefine.ItemType itemType)

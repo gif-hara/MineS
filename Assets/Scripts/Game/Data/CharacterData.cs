@@ -54,7 +54,9 @@ namespace MineS
 
 		public List<AbnormalStatusBase> AbnormalStatuses{ protected set; get; }
 
-		public List<AbilityBase> Abilities{ protected set; get; }
+		public virtual List<AbilityBase> Abilities{ get { return this.abilities; } }
+
+		protected List<AbilityBase> abilities;
 
 		public Sprite Image { protected set; get; }
 
@@ -69,7 +71,7 @@ namespace MineS
 			this.Experience = experience;
 			this.Money = money;
 			this.AbnormalStatuses = new List<AbnormalStatusBase>();
-			this.Abilities = new List<AbilityBase>();
+			this.abilities = new List<AbilityBase>();
 			this.Image = image;
 		}
 
@@ -83,7 +85,7 @@ namespace MineS
 			this.Experience = masterData.Experience;
 			this.Money = masterData.Money;
 			this.AbnormalStatuses = new List<AbnormalStatusBase>();
-			this.Abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
+			this.abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
 			this.Image = masterData.Image;
 		}
 
