@@ -144,8 +144,6 @@ GameObject:
   - 222: {fileID: 222000011700490784}
   - 114: {fileID: 114000012936415192}
   - 114: {fileID: 114000011757506738}
-  - 114: {fileID: 114000012333684302}
-  - 114: {fileID: 114000010246065994}
   - 114: {fileID: 114000013923721446}
   - 114: {fileID: 114000010162346604}
   - 114: {fileID: 114000011918036398}
@@ -259,18 +257,6 @@ MonoBehaviour:
   - {fileID: 1000013882071534}
   - {fileID: 1000014171187772}
   - {fileID: 1000012114953982}
---- !u!114 &114000010246065994
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013780669298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e8d8d5c3b2cd42a49d1d6aadd12b46c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cellController: {fileID: 114000013923721446}
 --- !u!114 &114000010618145300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -492,18 +478,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114000012936415192}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114000010246065994}
-        m_MethodName: OnButtonUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114000011918036398
@@ -551,36 +526,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114000012333684302
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013780669298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114000010246065994}
-          m_MethodName: OnButtonDown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &114000012642373220
 MonoBehaviour:
   m_ObjectHideFlags: 1

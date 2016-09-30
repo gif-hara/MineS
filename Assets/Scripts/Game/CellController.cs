@@ -4,13 +4,15 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using HK.Framework;
 using UnityEngine.Serialization;
+using UnityEngine.EventSystems;
+using System.Collections;
 
 namespace MineS
 {
 	/// <summary>
 	/// .
 	/// </summary>
-	public class CellController : MonoBehaviour
+	public class CellController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 	{
 		[SerializeField]
 		private GameObject notStepObject;
@@ -42,6 +44,44 @@ namespace MineS
 		public CellData Data{ private set; get; }
 
 		public CharacterDataObserver CharacterDataObserver{ get { return this.characterDataObserver; } }
+
+		private Coroutine deployDescriptionCoroutine = null;
+
+		private const float WaitDeployDescriptionTime = 0.5f;
+
+#region IPointerDownHandler implementation
+
+		public void OnPointerDown(PointerEventData eventData)
+		{
+			this.deployDescriptionCoroutine = StartCoroutine(this.DeployDescription());
+		}
+
+#endregion
+
+#region IPointerUpHandler implementation
+
+		public void OnPointerUp(PointerEventData eventData)
+		{
+			if(this.deployDescriptionCoroutine == null)
+			{
+				return;
+			}
+
+			StopCoroutine(this.deployDescriptionCoroutine);
+			this.deployDescriptionCoroutine = null;
+			this.Action();
+		}
+
+#endregion
+
+		private IEnumerator DeployDescription()
+		{
+			yield return new WaitForSecondsRealtime(WaitDeployDescriptionTime);
+
+			this.Description();
+			this.deployDescriptionCoroutine = null;
+		}
+
 
 		public void SetCellData(CellData data)
 		{

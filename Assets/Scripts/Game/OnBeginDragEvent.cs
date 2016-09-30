@@ -10,7 +10,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class OnDeselectEvent : MonoBehaviour, IBeginDragHandler
+	public class OnBeginDragEvent : MonoBehaviour, IBeginDragHandler
 	{
 		[SerializeField]
 		private UnityEvent otherEvent;
@@ -19,7 +19,7 @@ namespace MineS
 
 		public void OnBeginDrag(PointerEventData eventData)
 		{
-			Debug.Log("OnBeginDrag");
+			this.otherEvent.Invoke();
 		}
 
 #endregion

@@ -41,9 +41,6 @@ GameObject:
   - 222: {fileID: 222000011700490784}
   - 114: {fileID: 114000012936415192}
   - 114: {fileID: 114000011757506738}
-  - 114: {fileID: 114000012453045214}
-  - 114: {fileID: 114000011234902002}
-  - 114: {fileID: 114000010246065994}
   - 114: {fileID: 114000013923721446}
   - 114: {fileID: 114000011918036398}
   - 114: {fileID: 114000011668767212}
@@ -72,18 +69,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114000010246065994
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013780669298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e8d8d5c3b2cd42a49d1d6aadd12b46c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cellController: {fileID: 114000013923721446}
 --- !u!114 &114000010934015494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,33 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 1
   m_AspectRatio: 1
---- !u!114 &114000011234902002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013780669298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3155c6415eeea4426aafd16192b91b66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114000010246065994}
-        m_MethodName: OnDeselect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &114000011292617798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,18 +191,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114000012936415192}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114000010246065994}
-        m_MethodName: OnButtonUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114000011904453498
@@ -310,33 +257,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114000012453045214
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013780669298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 421acbe8502fd4c6db74df1d09df9fdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114000010246065994}
-        m_MethodName: OnButtonDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &114000012936415192
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -29,7 +29,7 @@ namespace MineS
 		[SerializeField]
 		private StringAsset.Finder inventoryPartitionName;
 
-		private List<CellController> cellControllers = null;
+		private List<CellController> cellControllers = new List<CellController>();
 
 		private List<GameObject> createdObjects = new List<GameObject>();
 
@@ -56,6 +56,7 @@ namespace MineS
 		private void CreateCellController(Item item, GameDefine.ItemType itemType, CellClickActionBase action)
 		{
 			var cellController = Instantiate(this.cellPrefab, this.root, false) as CellController;
+			this.cellControllers.Add(cellController);
 			this.createdObjects.Add(cellController.gameObject);
 			var cellData = new CellData();
 			cellData.SetController(cellController);
@@ -70,19 +71,6 @@ namespace MineS
 			var partition = Instantiate(this.partitionPrefab, this.root, false) as PartitionController;
 			partition.SetText(message);
 			this.createdObjects.Add(partition.gameObject);
-		}
-
-		private void InitializeCellControllers()
-		{
-			if(this.cellControllers != null)
-			{
-				return;
-			}
-			this.cellControllers = new List<CellController>();
-			for(int i = 0; i < GameDefine.InventoryItemMax; i++)
-			{
-				this.cellControllers.Add(Instantiate(this.cellPrefab, this.root, false) as CellController);
-			}
 		}
 
 		private Sprite GetImage(Item item, GameDefine.ItemType type)
