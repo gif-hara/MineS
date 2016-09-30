@@ -3627,7 +3627,6 @@ GameObject:
   - 224: {fileID: 420361882}
   - 222: {fileID: 420361886}
   - 114: {fileID: 420361885}
-  - 223: {fileID: 420361884}
   - 114: {fileID: 420361883}
   - 114: {fileID: 420361887}
   m_Layer: 5
@@ -3673,25 +3672,6 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
---- !u!223 &420361884
-Canvas:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 420361881}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 21
-  m_TargetDisplay: 0
 --- !u!114 &420361885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3724,7 +3704,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\u30C6\u30B9\u30C8"
 --- !u!222 &420361886
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8118,7 +8098,6 @@ GameObject:
   - 224: {fileID: 877054372}
   - 222: {fileID: 877054376}
   - 114: {fileID: 877054375}
-  - 223: {fileID: 877054374}
   - 114: {fileID: 877054373}
   - 114: {fileID: 877054377}
   m_Layer: 5
@@ -8164,25 +8143,6 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
---- !u!223 &877054374
-Canvas:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 877054371}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 21
-  m_TargetDisplay: 0
 --- !u!114 &877054375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8215,7 +8175,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\u30E1\u30C3\u30BB\u30FC\u30B8"
 --- !u!222 &877054376
 CanvasRenderer:
   m_ObjectHideFlags: 0
