@@ -63,7 +63,7 @@ namespace MineS
 
 		public void AddExperience(int value)
 		{
-			value = Calculator.GetFinalExperience(value, this.Data.AbnormalStatuses);
+			value = Calculator.GetFinalExperience(value, this.Data);
 			this.Data.AddExperience(value);
 			this.NotifyCharacterDataObservers();
 			while(this.Data.CanLevelUp)

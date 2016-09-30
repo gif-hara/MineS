@@ -185,13 +185,18 @@ namespace MineS
 
 		public bool FindAbility(GameDefine.AbilityType type)
 		{
+			return this.GetAbilityNumber(type) > 0;
+		}
+
+		public int GetAbilityNumber(GameDefine.AbilityType type)
+		{
 			// 封印状態なら常にfalseを返す.
 			if(this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Seal))
 			{
-				return false;
+				return 0;
 			}
-				
-			return this.Abilities.Find(a => a.Type == type) != null;
+
+			return this.Abilities.FindAll(a => a.Type == type).Count;
 		}
 
 		public bool IsDead

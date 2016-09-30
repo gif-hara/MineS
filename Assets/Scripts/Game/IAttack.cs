@@ -15,5 +15,7 @@ namespace MineS
 		bool FindAbility(GameDefine.AbilityType type);
 
 		bool FindAbnormalStatus(GameDefine.AbnormalStatusType type);
+
+		int GetAbilityNumber(GameDefine.AbilityType type);
 	}
 }

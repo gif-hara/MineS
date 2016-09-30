@@ -36,6 +36,8 @@ namespace MineS
 				return new AbilityLongRangeAttack(holder);
 			case GameDefine.AbilityType.Reinforcement:
 				return new AbilityBase(type, holder, "Reinforcement");
+			case GameDefine.AbilityType.Proficiency:
+				return new AbilityBase(type, holder, "Proficiency");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;

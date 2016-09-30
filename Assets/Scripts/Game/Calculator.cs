@@ -46,20 +46,25 @@ namespace MineS
 			return Mathf.FloorToInt(baseDamage * rate);
 		}
 
-		public static int GetFinalExperience(int baseExperience, List<AbnormalStatusBase> abnormalStatuses)
+		public static int GetFinalExperience(int baseExperience, IAttack attacker)
 		{
-			float rate = abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Happiness) != null
+			float rate = attacker.FindAbnormalStatus(GameDefine.AbnormalStatusType.Happiness)
 				? 2.0f
-				: abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Blur) != null
+				: attacker.FindAbnormalStatus(GameDefine.AbnormalStatusType.Blur)
 				? 0.5f
 				: 1.0f;
 
-			return Mathf.FloorToInt(baseExperience * rate);
+			return Mathf.FloorToInt(baseExperience * rate * GetProficiencyRate(attacker));
 		}
 
 		public static int GetMineTrapDamageValue(int hitPointMax)
 		{
 			return (hitPointMax / 20);
+		}
+
+		public static float GetProficiencyRate(IAttack attacker)
+		{
+			return 1.0f + (float)attacker.GetAbilityNumber(GameDefine.AbilityType.Proficiency) / 10.0f;
 		}
 	}
 }

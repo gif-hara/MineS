@@ -132,3 +132,13 @@ MonoBehaviour:
       value: "\u4ED6\u306E\u6575\u306E\u6570\u3060\u3051\u653B\u6483\u529B\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01"
       guid: fcfd4141-cdf6-445b-9146-01c972511a95
     image: {fileID: 0}
+  - key: Proficiency
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u7FD2\u719F"
+      guid: 0c0afc0f-41af-4206-90e3-0fef0c382e3e
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u53D6\u5F97\u3059\u308B\u7D4C\u9A13\u5024\u304C\u5C11\u3057\u591A\u304F\u306A\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: 4bbb09fa-6e67-48d0-81dc-6aba303e62ec
+    image: {fileID: 0}
