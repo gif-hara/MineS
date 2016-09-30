@@ -38,6 +38,12 @@ namespace MineS
 			}
 		}
 
+		public override void SetCellData(CellData data)
+		{
+			base.SetCellData(data);
+			data.BindDeployDescription(new DeployDescriptionOnItem(this.item));
+		}
+
 		public override GameDefine.EventType EventType
 		{
 			get

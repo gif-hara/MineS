@@ -23,6 +23,11 @@ namespace MineS
 			this.DescriptionKey = descriptionKey;
 		}
 
+		public void SetHolder(CharacterData holder)
+		{
+			this.Holder = holder;
+		}
+
 		public virtual void OnTurnProgress()
 		{
 			

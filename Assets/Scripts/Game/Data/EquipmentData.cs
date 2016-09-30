@@ -18,11 +18,11 @@ namespace MineS
 		private GameDefine.ItemType itemType;
 
 		[SerializeField]
-		private List<int> spells;
+		private List<GameDefine.AbilityType> abilities;
 
 		public int Power{ get { return this.power; } }
 
-		public List<int> Spells{ get { return this.spells; } }
+		public List<AbilityBase> Abilities{ private set; get; }
 
 		public override GameDefine.ItemType ItemType
 		{
@@ -40,7 +40,8 @@ namespace MineS
 				this.InternalClone(result);
 				result.power = this.power;
 				result.itemType = this.itemType;
-				result.spells = new List<int>(this.spells);
+				result.abilities = new List<GameDefine.AbilityType>(this.abilities);
+				result.Abilities = AbilityFactory.Create(this.abilities, null);
 
 				return result;
 			}

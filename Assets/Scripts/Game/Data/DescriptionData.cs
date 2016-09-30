@@ -34,6 +34,13 @@ namespace MineS
 
 			[SerializeField]
 			private Sprite image;
+
+			public Element(StringAsset.Finder title, StringAsset.Finder message, Sprite image)
+			{
+				this.title = title;
+				this.message = message;
+				this.image = image;
+			}
 		}
 
 		[SerializeField]

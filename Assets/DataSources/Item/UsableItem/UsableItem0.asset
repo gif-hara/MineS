@@ -20,3 +20,7 @@ MonoBehaviour:
   type: 0
   power0: 10
   power1: 10
+  description:
+    target: {fileID: 11400000, guid: 52f4471bdfc56429a97cf65a8afe840f, type: 2}
+    value: "\u5BFE\u8C61\u306E\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u3092\u5C11\u3057\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
+    guid: e17b177c-912c-455c-ad13-1b12ece9e68d

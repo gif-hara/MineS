@@ -17,6 +17,11 @@ namespace MineS
 
 		public override void OnTurnProgress()
 		{
+			if(this.Holder == null)
+			{
+				return;
+			}
+
 			this.Holder.RecoveryHitPoint(Calculator.GetRegenerationValue(this.Holder.HitPointMax), true);
 		}
 	}

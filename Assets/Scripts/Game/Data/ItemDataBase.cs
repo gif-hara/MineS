@@ -16,17 +16,12 @@ namespace MineS
 		protected StringAsset.Finder itemName;
 
 		[SerializeField]
-		private StringAsset.Finder description;
-
-		[SerializeField]
 		protected GameDefine.RareType rare;
 
 		[SerializeField]
 		private Sprite image;
 
 		public string ItemName{ get { return this.itemName.ToString(); } }
-
-		public string Description{ get { return this.description.ToString(); } }
 
 		public GameDefine.RareType RareType{ get { return this.rare; } }
 

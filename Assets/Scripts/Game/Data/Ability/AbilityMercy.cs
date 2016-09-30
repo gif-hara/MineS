@@ -17,6 +17,11 @@ namespace MineS
 
 		public override void OnTurnProgress()
 		{
+			if(this.Holder == null)
+			{
+				return;
+			}
+
 			var recoveryValue = Calculator.GetRegenerationValue(this.Holder.HitPointMax);
 			foreach(var e in EnemyManager.Instance.Enemies)
 			{

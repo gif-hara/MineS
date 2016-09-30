@@ -20,6 +20,9 @@ namespace MineS
 		[SerializeField]
 		private int power1;
 
+		[SerializeField]
+		private StringAsset.Finder description;
+
 		public GameDefine.UsableItemType UsableItemType{ get { return this.type; } }
 
 		public int Power0{ get { return this.power0; } }
@@ -27,6 +30,8 @@ namespace MineS
 		public int Power1{ get { return this.power1; } }
 
 		public int RandomPower{ get { return Random.Range(this.power0, this.power1 + 1); } }
+
+		public DescriptionData.Element DescriptionElement{ get { return new DescriptionData.Element(this.itemName, this.description, this.Image); } }
 
 		public override GameDefine.ItemType ItemType
 		{
@@ -45,6 +50,7 @@ namespace MineS
 				result.type = this.type;
 				result.power0 = this.power0;
 				result.power1 = this.power1;
+				result.description = this.description;
 
 				return result;
 			}

@@ -42,6 +42,12 @@ namespace MineS
 			this.cellController.SetImage(this.item.InstanceData.Image);
 		}
 
+		public override void SetCellData(CellData data)
+		{
+			base.SetCellData(data);
+			data.BindDeployDescription(new DeployDescriptionOnItem(this.item));
+		}
+
 		public override GameDefine.EventType EventType
 		{
 			get

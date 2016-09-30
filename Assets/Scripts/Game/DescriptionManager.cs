@@ -18,6 +18,9 @@ namespace MineS
 		private List<CharacterDataObserver> characterDataObservers;
 
 		[SerializeField]
+		private List<ItemObserver> itemObservers;
+
+		[SerializeField]
 		private DescriptionData data;
 
 		[SerializeField]
@@ -37,11 +40,36 @@ namespace MineS
 
 		public void Deploy(string key)
 		{
+			this.Deploy(this.data.Get(key));
+		}
+
+		public void Deploy(DescriptionData.Element element)
+		{
 			this.basicObservers.ForEach(o =>
 			{
 				o.gameObject.SetActive(true);
-				o.ModifiedData(this.data.Get(key));
+				o.ModifiedData(element);
 			});
+		}
+
+		public void Deploy(Item item)
+		{
+			if(item.InstanceData.ItemType == GameDefine.ItemType.UsableItem)
+			{
+				this.Deploy((item.InstanceData as UsableItemData).DescriptionElement);
+			}
+			else if(GameDefine.IsEquipment(item.InstanceData.ItemType))
+			{
+				this.itemObservers.ForEach(i =>
+				{
+					i.gameObject.SetActive(true);
+					i.ModifiedData(item);
+				});
+			}
+			else
+			{
+				Debug.AssertFormat(false, "未対応のアイテムです. itemType = {0}", item.InstanceData.ItemType);
+			}
 		}
 
 		public void DeployEmergency(string key)

@@ -138,7 +138,15 @@ namespace MineS
 		{
 			get
 			{
-				return this.GetPower(this.Helmet) + this.GetPower(this.Body) + this.GetPower(this.Glove) + this.GetPower(this.Shield);
+				return this.GetPower(this.Helmet) + this.GetPower(this.Body) + this.GetPower(this.Shield);
+			}
+		}
+
+		public int TotalHitProbability
+		{
+			get
+			{
+				return this.GetPower(this.Glove);
 			}
 		}
 
@@ -147,6 +155,14 @@ namespace MineS
 			get
 			{
 				return this.GetPower(this.Leg);
+			}
+		}
+
+		public int TotalLuck
+		{
+			get
+			{
+				return this.GetPower(this.Accessory);
 			}
 		}
 	}

@@ -19,6 +19,11 @@ namespace MineS
 
 		public override void OnTurnProgress()
 		{
+			if(this.Holder == null)
+			{
+				return;
+			}
+
 			if(this.waitTurn > 0)
 			{
 				this.waitTurn--;
