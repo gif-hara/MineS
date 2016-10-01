@@ -108,6 +108,22 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
+		public GameDefine.AcquireItemResultType AddItem(Item item, CellData cellData)
+		{
+			if(this.Data.Inventory.IsFreeSpace)
+			{
+				this.Data.Inventory.AddItem(item);
+				return GameDefine.AcquireItemResultType.Acquired;
+			}
+			else
+			{
+				this.Data.Inventory.SetExchangeItem(item, cellData);
+				PlayerManager.Instance.OpenInventoryUI();
+				DescriptionManager.Instance.DeployEmergency("ExchangeItem");
+				return GameDefine.AcquireItemResultType.Full;
+			}
+		}
+
 		public void DebugAddAbnormalStatus(int type)
 		{
 			this.Data.AddAbnormalStatus(AbnormalStatusFactory.Create((GameDefine.AbnormalStatusType)type, DebugManager.Instance.AbnormalStatusRemainingTurn));

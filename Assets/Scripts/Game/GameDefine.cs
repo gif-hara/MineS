@@ -62,6 +62,19 @@ namespace MineS
 			Lock,
 		}
 
+		public enum AcquireItemResultType:int
+		{
+			/// <summary>
+			/// 取得した.
+			/// </summary>
+			Acquired,
+
+			/// <summary>
+			/// インベントリに空きが無かった.
+			/// </summary>
+			Full,
+		}
+
 		public enum AdjacentType:int
 		{
 			Left,
@@ -333,6 +346,9 @@ namespace MineS
 			EnemyAttack,
 		}
 
+		/// <summary>
+		/// 罠タイプ.
+		/// </summary>
 		public enum TrapType:int
 		{
 			Poison,

@@ -23,17 +23,12 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			if(this.inventory.IsFreeSpace)
+			var acquiredType = PlayerManager.Instance.AddItem(this.item, data);
+			if(acquiredType == GameDefine.AcquireItemResultType.Acquired)
 			{
 				data.Controller.SetImage(null);
 				data.BindCellClickAction(null);
 				this.inventory.AddItem(this.item);
-			}
-			else
-			{
-				this.inventory.SetExchangeItem(this.item, data);
-				PlayerManager.Instance.OpenInventoryUI();
-				DescriptionManager.Instance.DeployEmergency("ExchangeItem");
 			}
 		}
 
