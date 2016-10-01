@@ -190,6 +190,7 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static bool CanDropItem(int probability, IAttack attacker)
 		{
+			probability += attacker.GetAbilityNumber(GameDefine.AbilityType.Fortune);
 			return probability > Random.Range(0, 100);
 		}
 	}

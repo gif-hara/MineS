@@ -30,7 +30,7 @@ namespace MineS
 		public void Invoke(Item inventoryItem)
 		{
 			this.inventory.ChangeItem(inventoryItem, this.exchangeItem);
-			this.fieldCell.BindCellClickAction(new AcquireItemAction(this.inventory, inventoryItem, this.fieldCell.Controller));
+			this.fieldCell.BindCellClickAction(new AcquireItemAction(inventoryItem, this.fieldCell.Controller));
 			this.fieldCell.BindDeployDescription(new DeployDescriptionOnItem(inventoryItem));
 			this.exchangeItem = null;
 		}

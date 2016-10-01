@@ -19,7 +19,7 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			data.BindCellClickAction(new AcquireItemAction(PlayerManager.Instance.Data.Inventory, this.item, this.cellController));
+			data.BindCellClickAction(new AcquireItemAction(this.item, this.cellController));
 			data.BindDeployDescription(new DeployDescriptionOnItem(this.item));
 		}
 

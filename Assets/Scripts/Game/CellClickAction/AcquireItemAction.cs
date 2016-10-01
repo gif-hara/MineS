@@ -10,13 +10,10 @@ namespace MineS
 	/// </summary>
 	public class AcquireItemAction : CellClickActionBase
 	{
-		private Inventory inventory;
-
 		private Item item;
 
-		public AcquireItemAction(Inventory inventory, Item item, CellController cellController)
+		public AcquireItemAction(Item item, CellController cellController)
 		{
-			this.inventory = inventory;
 			this.item = item;
 			cellController.SetImage(this.item.InstanceData.Image);
 		}

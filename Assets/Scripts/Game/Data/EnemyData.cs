@@ -32,7 +32,7 @@ namespace MineS
 				var item = this.OverrideDropItems.Count > 0
 					? new Item(this.OverrideDropItems[Random.Range(0, this.OverrideDropItems.Count)])
 					: DungeonManager.Instance.CurrentData.CreateItem();
-				cellData.BindCellClickAction(new AcquireItemAction(PlayerManager.Instance.Data.Inventory, item, cellData.Controller));
+				cellData.BindCellClickAction(new AcquireItemAction(item, cellData.Controller));
 				cellData.BindDeployDescription(new DeployDescriptionOnItem(item));
 			}
 		}
