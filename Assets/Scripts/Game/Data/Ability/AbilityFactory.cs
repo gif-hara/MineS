@@ -42,6 +42,8 @@ namespace MineS
 				return new AbilityBase(type, holder, "Hoist");
 			case GameDefine.AbilityType.Artisan:
 				return new AbilityBase(type, holder, "Artisan");
+			case GameDefine.AbilityType.ContinuousAttack:
+				return new AbilityBase(type, holder, "ContinuousAttack");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;

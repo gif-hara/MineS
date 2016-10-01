@@ -20,8 +20,8 @@ namespace MineS
 		public override void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			base.OnTurnProgress(type, turnCount);
-			var playerManager = PlayerManager.Instance;
-			playerManager.TakeDamageRaw(Calculator.GetPoisonValue(playerManager.Data.HitPointMax), true);
+			var player = PlayerManager.Instance.Data;
+			player.TakeDamageRaw(null, Calculator.GetPoisonValue(player.HitPointMax), true);
 		}
 	}
 }

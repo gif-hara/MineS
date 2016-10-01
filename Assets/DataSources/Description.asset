@@ -162,3 +162,13 @@ MonoBehaviour:
       value: "\u653B\u6483\u529B\u304C\u4E0A\u304C\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
       guid: cf33900b-e2c7-47e5-afdc-d0431d41e6c5
     image: {fileID: 0}
+  - key: ContinuousAttack
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u9023\u6483"
+      guid: 69835323-f79b-4745-812e-566cc55ad452
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u6575\u306B\u653B\u6483\u3057\u305F\u6642\u3001\u4ED6\u306B\u3082\u6575\u304C\u3044\u305F\u5834\u5408\u306B\u534A\u5206\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B\u305E\uFF01"
+      guid: 3a33e342-2b79-4448-ab5e-9f5d9820afe1
+    image: {fileID: 0}

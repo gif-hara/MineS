@@ -49,18 +49,6 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
-		public void TakeDamage(CharacterData attacker, int value, bool onlyHitPoint)
-		{
-			this.Data.TakeDamage(attacker, value, onlyHitPoint);
-			this.NotifyCharacterDataObservers();
-		}
-
-		public void TakeDamageRaw(int value, bool onlyHitPoint)
-		{
-			this.Data.TakeDamageRaw(value, onlyHitPoint);
-			this.NotifyCharacterDataObservers();
-		}
-
 		public void AddExperience(int value)
 		{
 			value = Calculator.GetFinalExperience(value, this.Data);

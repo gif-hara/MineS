@@ -59,6 +59,37 @@ namespace MineS
 			this.Enemies.Clear();
 		}
 
+		public CharacterData GetRandomEnemy(List<CharacterData> ignoreEnemy)
+		{
+			var target = new List<CharacterData>(this.VisibleEnemies);
+			target.RemoveAll(t => ignoreEnemy.Find(i => i == t) != null);
+
+			if(target.Count <= 0)
+			{
+				return null;
+			}
+
+			return target[Random.Range(0, target.Count)];
+		}
+
+		private List<CharacterData> VisibleEnemies
+		{
+			get
+			{
+				var result = new List<CharacterData>();
+				foreach(var e in this.Enemies)
+				{
+					if(!e.Key.IsIdentification)
+					{
+						continue;
+					}
+					result.Add(e.Value);
+				}
+
+				return result;
+			}
+		}
+
 		private void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			foreach(var e in this.Enemies)

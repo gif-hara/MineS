@@ -15,8 +15,8 @@ namespace MineS
 			data.BindCellClickAction(null);
 			data.BindDeployDescription(null);
 			this.cellController.SetImage(this.Image);
-			var playerManager = PlayerManager.Instance;
-			playerManager.TakeDamageRaw(Calculator.GetMineTrapDamageValue(playerManager.Data.HitPointMax), true);
+			var player = PlayerManager.Instance.Data;
+			player.TakeDamageRaw(null, Calculator.GetMineTrapDamageValue(player.HitPointMax), true);
 		}
 
 		public override Sprite Image

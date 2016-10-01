@@ -14,11 +14,7 @@ namespace MineS
 		{
 			player.Attack(enemy);
 
-			if(enemy.IsDead)
-			{
-				player.Defeat(enemy);
-			}
-			else if(CanAttackEnemy(enemy))
+			if(CanAttackEnemy(enemy))
 			{
 				enemy.Attack(player);
 			}
@@ -31,7 +27,7 @@ namespace MineS
 
 		private static bool CanAttackEnemy(CharacterData enemy)
 		{
-			return !enemy.FindAbility(GameDefine.AbilityType.LongRangeAttack);
+			return !enemy.IsDead && !enemy.FindAbility(GameDefine.AbilityType.LongRangeAttack);
 		}
 	}
 }

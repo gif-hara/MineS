@@ -116,27 +116,38 @@ namespace MineS
 			{
 				return;
 			}
+
 			var damage = target.TakeDamage(this, this.FinalStrength, FindAbility(GameDefine.AbilityType.Penetoration));
 			if(this.FindAbility(GameDefine.AbilityType.Absorption))
 			{
 				this.RecoveryHitPoint(damage / 2, true);
+			}
+			if(this.FindAbility(GameDefine.AbilityType.ContinuousAttack))
+			{
+				var ignoreEnemy = new List<CharacterData>();
+				ignoreEnemy.Add(target);
+				var otherTarget = EnemyManager.Instance.GetRandomEnemy(ignoreEnemy);
+				if(otherTarget != null)
+				{
+					otherTarget.TakeDamageRaw(this, damage / 2, false);
+				}
 			}
 		}
 
 		public int TakeDamage(CharacterData attacker, int value, bool onlyHitPoint)
 		{
 			var resultDamage = Calculator.GetFinalDamage(value, this.AbnormalStatuses);
-			this.TakeDamageRaw(resultDamage, onlyHitPoint);
+			this.TakeDamageRaw(this, resultDamage, onlyHitPoint);
 
 			if(attacker != null && this.FindAbility(GameDefine.AbilityType.Splash))
 			{
-				attacker.TakeDamageRaw(resultDamage / 2, false);
+				attacker.TakeDamageRaw(this, resultDamage / 2, false);
 			}
 
 			return resultDamage;
 		}
 
-		public void TakeDamageRaw(int value, bool onlyHitPoint)
+		public void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint)
 		{
 			if(!onlyHitPoint)
 			{
@@ -148,6 +159,11 @@ namespace MineS
 
 			this.HitPoint -= value;
 			this.HitPoint = this.HitPoint < 0 ? 0 : this.HitPoint;
+
+			if(this.IsDead && attacker != null)
+			{
+				attacker.Defeat(this);
+			}
 		}
 
 		public virtual void Defeat(CharacterData target)
