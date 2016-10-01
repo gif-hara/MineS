@@ -68,23 +68,6 @@ namespace MineS
 
 		public Sprite Image { protected set; get; }
 
-		public void Initialize(string name, int hitPoint, int magicPoint, int strength, int armor, int hitProbability, int evasion, int experience, int money, Sprite image)
-		{
-			this.Name = name;
-			this.HitPointMax = hitPoint;
-			this.HitPoint = hitPoint;
-			this.baseStrength = strength;
-			this.Armor = armor;
-			this.ArmorMax = armor;
-			this.baseHitProbability = hitProbability;
-			this.baseEvasion = evasion;
-			this.Experience = experience;
-			this.Money = money;
-			this.AbnormalStatuses = new List<AbnormalStatusBase>();
-			this.abilities = new List<AbilityBase>();
-			this.Image = image;
-		}
-
 		public void Initialize(CharacterMasterData masterData)
 		{
 			this.Name = masterData.Name;
