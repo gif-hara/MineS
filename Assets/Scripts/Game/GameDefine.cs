@@ -359,6 +359,13 @@ namespace MineS
 			Mine,
 		}
 
+		public enum AttackResultType:int
+		{
+			Hit,
+			Miss,
+			MissByFear
+		}
+
 		public const int AdjacentMax = 9;
 
 		public const int MoneyMax = 999999;

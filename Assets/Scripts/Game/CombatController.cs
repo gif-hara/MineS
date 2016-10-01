@@ -20,9 +20,9 @@ namespace MineS
 			}
 		}
 
-		public static void CombatLongRangeAttack(CharacterData enemy)
+		public static void CombatLongRangeAttack(CharacterData player, CharacterData enemy)
 		{
-			enemy.Attack(PlayerManager.Instance.Data);
+			enemy.Attack(player);
 		}
 
 		private static bool CanAttackEnemy(CharacterData enemy)

@@ -12,6 +12,10 @@ namespace MineS
 	{
 		int Strength{ get; }
 
+		int HitProbability{ get; }
+
+		int Evasion{ get; }
+
 		bool FindAbility(GameDefine.AbilityType type);
 
 		bool FindAbnormalStatus(GameDefine.AbnormalStatusType type);

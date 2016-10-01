@@ -48,6 +48,14 @@ namespace MineS
 
 		public virtual int ArmorMax{ protected set; get; }
 
+		public virtual int HitProbability{ get { return this.baseHitProbability; } }
+
+		protected int baseHitProbability = 0;
+
+		public virtual int Evasion{ get { return this.baseEvasion; } }
+
+		protected int baseEvasion = 0;
+
 		public int Experience{ protected set; get; }
 
 		public int Money{ protected set; get; }
@@ -60,14 +68,16 @@ namespace MineS
 
 		public Sprite Image { protected set; get; }
 
-		public void Initialize(string name, int hitPoint, int magicPoint, int strength, int armor, int experience, int money, Sprite image)
+		public void Initialize(string name, int hitPoint, int magicPoint, int strength, int armor, int hitProbability, int evasion, int experience, int money, Sprite image)
 		{
 			this.Name = name;
 			this.HitPointMax = hitPoint;
 			this.HitPoint = hitPoint;
 			this.baseStrength = strength;
 			this.Armor = armor;
-			this.ArmorMax = GameDefine.ArmorMax;
+			this.ArmorMax = armor;
+			this.baseHitProbability = hitProbability;
+			this.baseEvasion = evasion;
 			this.Experience = experience;
 			this.Money = money;
 			this.AbnormalStatuses = new List<AbnormalStatusBase>();
@@ -82,6 +92,9 @@ namespace MineS
 			this.HitPoint = masterData.HitPoint;
 			this.baseStrength = masterData.Strength;
 			this.Armor = masterData.Armor;
+			this.ArmorMax = masterData.Armor;
+			this.baseHitProbability = masterData.HitProbability;
+			this.baseEvasion = masterData.Evasion;
 			this.Experience = masterData.Experience;
 			this.Money = masterData.Money;
 			this.AbnormalStatuses = new List<AbnormalStatusBase>();
@@ -112,7 +125,7 @@ namespace MineS
 
 		public void Attack(CharacterData target)
 		{
-			if(this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Fear))
+			if(this.CanAttack(target) != GameDefine.AttackResultType.Hit)
 			{
 				return;
 			}
@@ -232,6 +245,17 @@ namespace MineS
 			{
 				return this.HitPoint <= 0;
 			}
+		}
+
+		private GameDefine.AttackResultType CanAttack(CharacterData target)
+		{
+			if(this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Fear))
+			{
+				return GameDefine.AttackResultType.MissByFear;
+			}
+
+			var success = this.HitProbability - target.Evasion;
+			return (success > UnityEngine.Random.Range(0, 100)) ? GameDefine.AttackResultType.Hit : GameDefine.AttackResultType.Miss;
 		}
 
 		public void PrintAbnormalStatus()

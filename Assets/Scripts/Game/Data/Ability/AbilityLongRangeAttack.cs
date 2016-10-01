@@ -30,7 +30,7 @@ namespace MineS
 				return;
 			}
 
-			CombatController.CombatLongRangeAttack(this.Holder);
+			CombatController.CombatLongRangeAttack(PlayerManager.Instance.Data, this.Holder);
 		}
 	}
 }

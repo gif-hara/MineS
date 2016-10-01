@@ -19,7 +19,7 @@ namespace MineS
 
 		public PlayerData(CharacterMasterData growthData)
 		{
-			this.Initialize("", 100, 100, 4, 0, 0, 0, null);
+			this.Initialize("", 100, 100, 4, 0, 100, 0, 0, 0, null);
 			this.Level = 1;
 			this.Inventory = new Inventory(this);
 			this.growthData = growthData;

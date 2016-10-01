@@ -31,6 +31,16 @@ namespace MineS
 		[SerializeField]
 		private int armor;
 
+		public int HitProbability{ get { return this.hitProbability; } }
+
+		[SerializeField]
+		private int hitProbability;
+
+		public int Evasion{ get { return this.evasion; } }
+
+		[SerializeField]
+		private int evasion;
+
 		public int Experience{ get { return this.experience; } }
 
 		[SerializeField]
