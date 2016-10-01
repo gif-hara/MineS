@@ -172,3 +172,13 @@ MonoBehaviour:
       value: "\u6575\u306B\u653B\u6483\u3057\u305F\u6642\u3001\u4ED6\u306B\u3082\u6575\u304C\u3044\u305F\u5834\u5408\u306B\u534A\u5206\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B\u305E\uFF01"
       guid: 3a33e342-2b79-4448-ab5e-9f5d9820afe1
     image: {fileID: 0}
+  - key: Repair
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u6539\u4FEE"
+      guid: 6dff7531-fcc0-4f79-b582-b7a3aed8dcdf
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u6575\u3092\u5012\u3057\u305F\u6642\u306B\u30A2\u30FC\u30DE\u30FC\u304C\u56DE\u5FA9\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: da20b5cd-18e1-484c-ab3f-1c987cc80bf9
+    image: {fileID: 0}

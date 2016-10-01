@@ -127,9 +127,25 @@ namespace MineS
 			return 1.0f + (float)attacker.GetAbilityNumber(GameDefine.AbilityType.Hoist) / 5.0f;
 		}
 
+		/// <summary>
+		/// 特殊能力の匠による攻撃力上昇値を返す.
+		/// </summary>
+		/// <returns>The artisan rate.</returns>
+		/// <param name="attacker">Attacker.</param>
 		public static int GetArtisanRate(IAttack attacker)
 		{
 			return attacker.GetAbilityNumber(GameDefine.AbilityType.Artisan);
+		}
+
+		public static int GetRepairValue(IAttack attacker)
+		{
+			var abilityNumber = attacker.GetAbilityNumber(GameDefine.AbilityType.Repair);
+			if(abilityNumber <= 0)
+			{
+				return 0;
+			}
+
+			return (abilityNumber * 2) + 1;
 		}
 	}
 }
