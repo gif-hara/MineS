@@ -153,6 +153,12 @@ namespace MineS
 			return (abilityNumber * 2) + 1;
 		}
 
+		/// <summary>
+		/// 特殊能力の五右衛門によるお金の獲得量を返す.
+		/// </summary>
+		/// <returns>The goemon value.</returns>
+		/// <param name="damage">Damage.</param>
+		/// <param name="attacker">Attacker.</param>
 		public static int GetGoemonValue(int damage, IAttack attacker)
 		{
 			var abilityNumber = attacker.GetAbilityNumber(GameDefine.AbilityType.Goemon);
@@ -162,6 +168,18 @@ namespace MineS
 			}
 
 			return Mathf.FloorToInt(damage * ((float)abilityNumber / 10.0f)) + 1;
+		}
+
+		/// <summary>
+		/// 特殊能力の窃盗が成功したか返す.
+		/// </summary>
+		/// <returns><c>true</c> if is success theft the specified attacker; otherwise, <c>false</c>.</returns>
+		/// <param name="attacker">Attacker.</param>
+		public static bool IsSuccessTheft(IAttack attacker)
+		{
+			var probability = attacker.GetAbilityNumber(GameDefine.AbilityType.Theft) + 3;
+
+			return probability > Random.Range(0, 100);
 		}
 	}
 }

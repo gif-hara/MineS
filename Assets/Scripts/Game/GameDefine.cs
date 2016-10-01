@@ -333,7 +333,7 @@ namespace MineS
 			/// <summary>
 			/// 窃盗：攻撃した際に道具袋に空きがある場合に一定確率でアイテムを取得する.
 			/// </summary>
-			theft,
+			Theft,
 
 			/// <summary>
 			/// 必中：攻撃が必ず当たる.

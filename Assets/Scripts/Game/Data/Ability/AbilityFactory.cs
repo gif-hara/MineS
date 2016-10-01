@@ -54,6 +54,8 @@ namespace MineS
 				return new AbilityBase(type, holder, "Evasion");
 			case GameDefine.AbilityType.InbariablyHit:
 				return new AbilityBase(type, holder, "InbariablyHit");
+			case GameDefine.AbilityType.Theft:
+				return new AbilityBase(type, holder, "Theft");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;

@@ -33,6 +33,11 @@ namespace MineS
 		protected override void OnAttacked(CharacterData target, int damage)
 		{
 			base.OnAttacked(target, damage);
+
+			if(this.Inventory.IsFreeSpace && this.FindAbility(GameDefine.AbilityType.Theft) && Calculator.IsSuccessTheft(this))
+			{
+				this.Inventory.AddItem(DungeonManager.Instance.CurrentData.CreateItem());
+			}
 		}
 
 		public override void Defeat(CharacterData target)

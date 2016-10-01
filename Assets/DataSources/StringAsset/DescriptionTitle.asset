@@ -84,4 +84,8 @@ MonoBehaviour:
       ja: "\u5FC5\u4E2D"
       en: 
     guid: 18978787-c04d-4945-9bdf-236c189b0da4
+  - value:
+      ja: "\u7A83\u76D7"
+      en: 
+    guid: 1b727d78-ddc7-49ac-8eb0-d34f168b9b98
   asset: []
