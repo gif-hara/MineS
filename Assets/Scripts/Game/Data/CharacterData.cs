@@ -48,11 +48,11 @@ namespace MineS
 
 		public virtual int ArmorMax{ protected set; get; }
 
-		public virtual int HitProbability{ get { return this.baseHitProbability; } }
+		public virtual int HitProbability{ get { return this.baseHitProbability + this.GetAbilityNumber(GameDefine.AbilityType.HitProbability); } }
 
 		protected int baseHitProbability = 0;
 
-		public virtual int Evasion{ get { return this.baseEvasion; } }
+		public virtual int Evasion{ get { return this.baseEvasion + this.GetAbilityNumber(GameDefine.AbilityType.Evasion); } }
 
 		protected int baseEvasion = 0;
 

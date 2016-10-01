@@ -192,3 +192,23 @@ MonoBehaviour:
       value: "\u6575\u306B\u653B\u6483\u3057\u305F\u6642\u306B\u3061\u3087\u3063\u3068\u3060\u3051\u304A\u91D1\u304C\u76D7\u3081\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
       guid: 0021a9c0-8ebf-4a13-8016-b26ff95485f9
     image: {fileID: 0}
+  - key: HitProbability
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u547D\u4E2D"
+      guid: 93a3e09c-1405-4b46-a3e5-c935adffc82c
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u547D\u4E2D\u7387\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: 8cd299fe-48b7-47cc-a624-3986f3c101ed
+    image: {fileID: 0}
+  - key: Evasion
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u56DE\u907F"
+      guid: 2de52656-c0af-4ccb-9be2-f1bf66e8387a
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u56DE\u907F\u7387\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: c402b233-160b-47b0-a937-deefe840af4b
+    image: {fileID: 0}

@@ -48,6 +48,10 @@ namespace MineS
 				return new AbilityBase(type, holder, "Repair");
 			case GameDefine.AbilityType.Goemon:
 				return new AbilityBase(type, holder, "Goemon");
+			case GameDefine.AbilityType.HitProbability:
+				return new AbilityBase(type, holder, "HitProbability");
+			case GameDefine.AbilityType.Evasion:
+				return new AbilityBase(type, holder, "Evasion");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;

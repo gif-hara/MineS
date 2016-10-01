@@ -323,7 +323,7 @@ namespace MineS
 			/// <summary>
 			/// 命中：命中率が上昇する.
 			/// </summary>
-			Hit,
+			HitProbability,
 
 			/// <summary>
 			/// 五右衛門：与えたダメージから一定数のお金を取得する.
