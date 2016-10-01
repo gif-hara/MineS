@@ -131,6 +131,11 @@ namespace MineS
 			}
 
 			var damage = target.TakeDamage(this, this.FinalStrength, FindAbility(GameDefine.AbilityType.Penetoration));
+			this.OnAttacked(target, damage);
+		}
+
+		protected virtual void OnAttacked(CharacterData target, int damage)
+		{
 			if(this.FindAbility(GameDefine.AbilityType.Absorption))
 			{
 				this.RecoveryHitPoint(damage / 2, true);

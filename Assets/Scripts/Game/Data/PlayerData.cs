@@ -17,9 +17,9 @@ namespace MineS
 
 		public CharacterMasterData growthData = null;
 
-		public PlayerData(CharacterMasterData growthData)
+		public PlayerData(CharacterMasterData masterData, CharacterMasterData growthData)
 		{
-			this.Initialize("", 100, 100, 4, 0, 100, 0, 0, 0, null);
+			this.Initialize(masterData);
 			this.Level = 1;
 			this.Inventory = new Inventory(this);
 			this.growthData = growthData;
@@ -28,6 +28,11 @@ namespace MineS
 		public void AddExperience(int value)
 		{
 			this.Experience += value;
+		}
+
+		protected override void OnAttacked(CharacterData target, int damage)
+		{
+			base.OnAttacked(target, damage);
 		}
 
 		public override void Defeat(CharacterData target)

@@ -24,6 +24,9 @@ namespace MineS
 		private ExperienceData experienceData;
 
 		[SerializeField]
+		private CharacterMasterData playerInitialStatus;
+
+		[SerializeField]
 		private CharacterMasterData growthData;
 
 		public PlayerData Data{ private set; get; }
@@ -33,7 +36,7 @@ namespace MineS
 		protected override void Awake()
 		{
 			base.Awake();
-			this.Data = new PlayerData(this.growthData);
+			this.Data = new PlayerData(this.playerInitialStatus, this.growthData);
 		}
 
 		void Start()
