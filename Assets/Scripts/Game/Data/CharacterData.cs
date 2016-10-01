@@ -122,6 +122,10 @@ namespace MineS
 			{
 				this.RecoveryHitPoint(damage / 2, true);
 			}
+			if(this.FindAbility(GameDefine.AbilityType.Goemon))
+			{
+				this.Money += Calculator.GetGoemonValue(damage, this);
+			}
 			if(this.FindAbility(GameDefine.AbilityType.ContinuousAttack))
 			{
 				var ignoreEnemy = new List<CharacterData>();

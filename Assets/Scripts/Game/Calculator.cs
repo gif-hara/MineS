@@ -137,6 +137,11 @@ namespace MineS
 			return attacker.GetAbilityNumber(GameDefine.AbilityType.Artisan);
 		}
 
+		/// <summary>
+		/// 特殊能力の改修によるアーマー回復量を返す.
+		/// </summary>
+		/// <returns>The repair value.</returns>
+		/// <param name="attacker">Attacker.</param>
 		public static int GetRepairValue(IAttack attacker)
 		{
 			var abilityNumber = attacker.GetAbilityNumber(GameDefine.AbilityType.Repair);
@@ -146,6 +151,17 @@ namespace MineS
 			}
 
 			return (abilityNumber * 2) + 1;
+		}
+
+		public static int GetGoemonValue(int damage, IAttack attacker)
+		{
+			var abilityNumber = attacker.GetAbilityNumber(GameDefine.AbilityType.Goemon);
+			if(abilityNumber <= 0)
+			{
+				return 0;
+			}
+
+			return Mathf.FloorToInt(damage * ((float)abilityNumber / 10.0f)) + 1;
 		}
 	}
 }
