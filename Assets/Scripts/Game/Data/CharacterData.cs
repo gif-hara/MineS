@@ -254,6 +254,11 @@ namespace MineS
 				return GameDefine.AttackResultType.MissByFear;
 			}
 
+			if(this.FindAbility(GameDefine.AbilityType.InbariablyHit))
+			{
+				return GameDefine.AttackResultType.Hit;
+			}
+
 			var success = this.HitProbability - target.Evasion;
 			return (success > UnityEngine.Random.Range(0, 100)) ? GameDefine.AttackResultType.Hit : GameDefine.AttackResultType.Miss;
 		}
