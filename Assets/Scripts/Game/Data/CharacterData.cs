@@ -10,7 +10,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public class CharacterData : IAttack
+	public abstract class CharacterData : IAttack
 	{
 		public string Name{ private set; get; }
 
@@ -137,7 +137,7 @@ namespace MineS
 		public int TakeDamage(CharacterData attacker, int value, bool onlyHitPoint)
 		{
 			var resultDamage = Calculator.GetFinalDamage(value, this.AbnormalStatuses);
-			this.TakeDamageRaw(this, resultDamage, onlyHitPoint);
+			this.TakeDamageRaw(attacker, resultDamage, onlyHitPoint);
 
 			if(attacker != null && this.FindAbility(GameDefine.AbilityType.Splash))
 			{
@@ -168,7 +168,10 @@ namespace MineS
 
 		public virtual void Defeat(CharacterData target)
 		{
+			target.Dead(this);
 		}
+
+		public abstract void Dead(CharacterData attacker);
 
 		public void AddMoney(int value)
 		{

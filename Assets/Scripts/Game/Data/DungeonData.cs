@@ -55,7 +55,7 @@ namespace MineS
 
 		public Range CreateTrapRange{ get { return this.createTrapRange; } }
 
-		public CharacterData CreateEnemy(int floor)
+		public EnemyData CreateEnemy(int floor)
 		{
 			return this.enemyTable.Create(floor);
 		}

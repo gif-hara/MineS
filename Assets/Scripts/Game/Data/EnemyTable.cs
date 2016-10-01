@@ -28,9 +28,9 @@ namespace MineS
 				return floor >= this.floorMin && floor <= this.floorMax;
 			}
 
-			public CharacterData Create()
+			public EnemyData Create()
 			{
-				var result = new CharacterData();
+				var result = new EnemyData();
 				var index = GameDefine.Lottery(this.enemies);
 				result.Initialize(this.enemies[index].MasterData);
 				return result;
@@ -40,7 +40,7 @@ namespace MineS
 		[SerializeField]
 		private List<Element> elements;
 
-		public CharacterData Create(int floor)
+		public EnemyData Create(int floor)
 		{
 #if DEBUG
 			Debug.AssertFormat(this.elements.FindAll(e => e.IsMatchFloor(floor)).Count == 1, "敵テーブルが無い、または複数ありました.");

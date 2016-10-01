@@ -41,6 +41,11 @@ namespace MineS
 			}
 		}
 
+		public override void Dead(CharacterData attacker)
+		{
+			throw new System.NotImplementedException();
+		}
+
 		public void LevelUp(CharacterMasterData growthData)
 		{
 			this.Level++;

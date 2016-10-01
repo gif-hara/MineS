@@ -32,7 +32,7 @@ namespace MineS
 			this.nextFloorEvent.Invoke();
 		}
 
-		public CharacterData CreateEnemy()
+		public EnemyData CreateEnemy()
 		{
 			return this.current.CreateEnemy(this.floorCount);
 		}

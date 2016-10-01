@@ -12,25 +12,7 @@ namespace MineS
 	{
 		public override void Invoke(CellData data)
 		{
-			var enemyData = EnemyManager.Instance.Enemies[data];
-			CombatController.Combat(PlayerManager.Instance.Data, enemyData);
-
-			if(enemyData.IsDead)
-			{
-				data.BindCellClickAction(null);
-				data.Controller.SetActiveStatusObject(false);
-				data.Controller.SetImage(null);
-				EnemyManager.Instance.Remove(data);
-				var adjacentCells = data.AdjacentCellAll;
-				for(int i = 0; i < adjacentCells.Count; i++)
-				{
-					if(adjacentCells[i].IsLock)
-					{
-						adjacentCells[i].ReleaseLock();
-					}
-				}
-			}
-
+			CombatController.Combat(PlayerManager.Instance.Data, EnemyManager.Instance.Enemies[data]);
 			TurnManager.Instance.Progress(GameDefine.TurnProgressType.EnemyAttack);
 		}
 

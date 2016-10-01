@@ -10,12 +10,15 @@ namespace MineS
 	/// </summary>
 	public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
 	{
-		public Dictionary<CellData, CharacterData> Enemies{ private set; get; }
+		public Dictionary<CellData, EnemyData> Enemies{ private set; get; }
+
+		public Dictionary<EnemyData, CellData> InEnemyCells{ private set; get; }
 
 		protected override void Awake()
 		{
 			base.Awake();
-			this.Enemies = new Dictionary<CellData, CharacterData>();
+			this.Enemies = new Dictionary<CellData, EnemyData>();
+			this.InEnemyCells = new Dictionary<EnemyData, CellData>();
 		}
 
 		void Start()
@@ -24,20 +27,23 @@ namespace MineS
 			TurnManager.Instance.AddLateEndTurnEvent(this.OnLateTurnProgress);
 		}
 
-		public CharacterData Create(CellData data)
+		public CharacterData Create(CellData cellData)
 		{
-			Debug.AssertFormat(!this.Enemies.ContainsKey(data), "既に敵が存在します.");
+			Debug.AssertFormat(!this.Enemies.ContainsKey(cellData), "既に敵が存在します.");
 
-			var characterData = DungeonManager.Instance.CreateEnemy();
+			var enemy = DungeonManager.Instance.CreateEnemy();
 
-			this.Enemies.Add(data, characterData);
+			this.Enemies.Add(cellData, enemy);
+			this.InEnemyCells.Add(enemy, cellData);
 
-			return characterData;
+			return enemy;
 		}
 
-		public void Remove(CellData data)
+		public void Remove(CellData cellData)
 		{
-			this.Enemies.Remove(data);
+			var enemy = this.Enemies[cellData];
+			this.Enemies.Remove(cellData);
+			this.InEnemyCells.Remove(enemy);
 		}
 
 		public int IdentitiedEnemyNumber
@@ -57,6 +63,7 @@ namespace MineS
 		public void NextFloor()
 		{
 			this.Enemies.Clear();
+			this.InEnemyCells.Clear();
 		}
 
 		public CharacterData GetRandomEnemy(List<CharacterData> ignoreEnemy)
