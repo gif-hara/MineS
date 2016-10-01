@@ -17,6 +17,7 @@ namespace MineS
 			cellData.Controller.SetActiveStatusObject(false);
 			cellData.Controller.SetImage(null);
 			EnemyManager.Instance.Remove(cellData);
+
 			var adjacentCells = cellData.AdjacentCellAll;
 			for(int i = 0; i < adjacentCells.Count; i++)
 			{
@@ -24,6 +25,15 @@ namespace MineS
 				{
 					adjacentCells[i].ReleaseLock();
 				}
+			}
+
+			if(Calculator.CanDropItem(this.DropItemProbability, attacker))
+			{
+				var item = this.OverrideDropItems.Count > 0
+					? new Item(this.OverrideDropItems[Random.Range(0, this.OverrideDropItems.Count)])
+					: DungeonManager.Instance.CurrentData.CreateItem();
+				cellData.BindCellClickAction(new AcquireItemAction(PlayerManager.Instance.Data.Inventory, item, cellData.Controller));
+				cellData.BindDeployDescription(new DeployDescriptionOnItem(item));
 			}
 		}
 	}

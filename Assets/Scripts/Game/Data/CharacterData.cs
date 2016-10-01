@@ -60,6 +60,10 @@ namespace MineS
 
 		public int Money{ protected set; get; }
 
+		public int DropItemProbability{ protected set; get; }
+
+		public List<ItemDataBase> OverrideDropItems{ protected set; get; }
+
 		public List<AbnormalStatusBase> AbnormalStatuses{ protected set; get; }
 
 		public virtual List<AbilityBase> Abilities{ get { return this.abilities; } }
@@ -80,6 +84,8 @@ namespace MineS
 			this.baseEvasion = masterData.Evasion;
 			this.Experience = masterData.Experience;
 			this.Money = masterData.Money;
+			this.DropItemProbability = masterData.DropItemProbability;
+			this.OverrideDropItems = new List<ItemDataBase>(masterData.OverrideDropItems);
 			this.AbnormalStatuses = new List<AbnormalStatusBase>();
 			this.abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
 			this.Image = masterData.Image;

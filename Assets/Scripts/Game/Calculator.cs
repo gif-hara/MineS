@@ -181,5 +181,16 @@ namespace MineS
 
 			return probability > Random.Range(0, 100);
 		}
+
+		/// <summary>
+		/// アイテムをドロップ可能か返す.
+		/// </summary>
+		/// <returns><c>true</c> if can drop item the specified probability attacker; otherwise, <c>false</c>.</returns>
+		/// <param name="probability">Probability.</param>
+		/// <param name="attacker">Attacker.</param>
+		public static bool CanDropItem(int probability, IAttack attacker)
+		{
+			return probability > Random.Range(0, 100);
+		}
 	}
 }

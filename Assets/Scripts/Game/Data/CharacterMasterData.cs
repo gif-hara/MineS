@@ -51,6 +51,16 @@ namespace MineS
 		[SerializeField]
 		private int money;
 
+		public int DropItemProbability{ get { return this.dropItemProbability; } }
+
+		[SerializeField]
+		private int dropItemProbability;
+
+		public List<ItemDataBase> OverrideDropItems{ get { return this.overrideDropItems; } }
+
+		[SerializeField]
+		private List<ItemDataBase> overrideDropItems;
+
 		public List<GameDefine.AbilityType> AbilityTypes{ get { return this.abilityTypes; } }
 
 		[SerializeField]

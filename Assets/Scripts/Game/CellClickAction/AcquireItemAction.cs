@@ -28,7 +28,6 @@ namespace MineS
 			{
 				data.Controller.SetImage(null);
 				data.BindCellClickAction(null);
-				this.inventory.AddItem(this.item);
 			}
 		}
 
