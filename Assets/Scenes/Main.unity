@@ -3833,9 +3833,9 @@ RectTransform:
   - {fileID: 912330559}
   m_Father: {fileID: 842027360}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 370, y: -210.25}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518210043
@@ -14280,7 +14280,6 @@ GameObject:
   - 114: {fileID: 1584263353}
   - 114: {fileID: 1584263354}
   - 114: {fileID: 1584263355}
-  - 114: {fileID: 1584263356}
   - 114: {fileID: 1584263357}
   - 114: {fileID: 1584263358}
   - 114: {fileID: 1584263359}
@@ -14379,19 +14378,6 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 5ad3402dbccfa4d6bb60195f689f5b44, type: 2}
   emergencyRoot: {fileID: 836248895}
   emergencyText: {fileID: 1094292512}
---- !u!114 &1584263356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1584263349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0fa586ddf7964ba19811206e07517da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  observers:
-  - {fileID: 0}
 --- !u!114 &1584263357
 MonoBehaviour:
   m_ObjectHideFlags: 0
