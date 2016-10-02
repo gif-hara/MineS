@@ -219,9 +219,24 @@ namespace MineS
 			return (attacker.GetAbilityNumber(GameDefine.AbilityType.RiskOfLife) / 2) + 1;
 		}
 
+		/// <summary>
+		/// 特殊能力の増進によるターン数上昇値を返す.
+		/// </summary>
+		/// <returns>The enhancement add turn.</returns>
+		/// <param name="attacker">Attacker.</param>
 		public static int GetEnhancementAddTurn(IAttack attacker)
 		{
 			return attacker.GetAbilityNumber(GameDefine.AbilityType.Enhancement) * 2;
+		}
+
+		/// <summary>
+		/// 特殊能力の免疫によるターン数減少値を返す.
+		/// </summary>
+		/// <returns>The immunity sub turn.</returns>
+		/// <param name="attacker">Attacker.</param>
+		public static int GetImmunitySubTurn(IAttack attacker)
+		{
+			return -attacker.GetAbilityNumber(GameDefine.AbilityType.Immunity) * 2;
 		}
 	}
 }

@@ -220,6 +220,10 @@ namespace MineS
 			{
 				newAbnormalStatus.AddRemainingTurn(Calculator.GetEnhancementAddTurn(this));
 			}
+			else if(!GameDefine.IsBuff(newAbnormalStatus.Type) && this.FindAbility(GameDefine.AbilityType.Immunity))
+			{
+				newAbnormalStatus.AddRemainingTurn(Calculator.GetImmunitySubTurn(this));
+			}
 
 			this.AbnormalStatuses.RemoveAll(a => a.Type == newAbnormalStatus.OppositeType);
 		}
