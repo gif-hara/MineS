@@ -216,6 +216,11 @@ namespace MineS
 				this.AbnormalStatuses.Add(newAbnormalStatus);
 			}
 
+			if(GameDefine.IsBuff(newAbnormalStatus.Type) && this.FindAbility(GameDefine.AbilityType.Enhancement))
+			{
+				newAbnormalStatus.AddRemainingTurn(Calculator.GetEnhancementAddTurn(this));
+			}
+
 			this.AbnormalStatuses.RemoveAll(a => a.Type == newAbnormalStatus.OppositeType);
 		}
 

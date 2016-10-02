@@ -27,6 +27,12 @@ namespace MineS
 			this.RemainingTurn--;
 		}
 
+		public void AddRemainingTurn(int value)
+		{
+			this.RemainingTurn += value;
+			this.RemainingTurn = this.RemainingTurn < 0 ? 0 : this.RemainingTurn;
+		}
+
 		public bool IsValid
 		{
 			get

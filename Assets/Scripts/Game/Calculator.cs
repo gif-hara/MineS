@@ -218,5 +218,10 @@ namespace MineS
 		{
 			return (attacker.GetAbilityNumber(GameDefine.AbilityType.RiskOfLife) / 2) + 1;
 		}
+
+		public static int GetEnhancementAddTurn(IAttack attacker)
+		{
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Enhancement) * 2;
+		}
 	}
 }

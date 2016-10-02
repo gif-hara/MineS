@@ -252,3 +252,13 @@ MonoBehaviour:
       value: "\u30A2\u30FC\u30DE\u30FC\u3092\u6D88\u8CBB\u3057\u3066\u653B\u6483\u529B\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01\n\u30A2\u30FC\u30DE\u30FC\u304C\u7121\u3044\u6642\u306F\u767A\u52D5\u3057\u306A\u3044\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
       guid: 8bb7bc3f-43bb-4ebe-bcae-6c5d9e5a0067
     image: {fileID: 0}
+  - key: Enhancement
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5897\u9032"
+      guid: a52aa2d5-2018-4a0d-9092-a28b6139e74b
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30D0\u30D5\u306E\u6709\u52B9\u30BF\u30FC\u30F3\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: 9d0fbe92-0173-4da3-b030-ebc62292d403
+    image: {fileID: 0}
