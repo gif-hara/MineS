@@ -242,3 +242,13 @@ MonoBehaviour:
       value: "\u6575\u3092\u5012\u3057\u305F\u6642\u306E\u30A2\u30A4\u30C6\u30E0\u30C9\u30ED\u30C3\u30D7\u78BA\u7387\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
       guid: 37ff930b-2b41-4583-b81c-b2f4c7aaf199
     image: {fileID: 0}
+  - key: RiskOfLife
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u6368\u8EAB"
+      guid: f8829cd9-30a0-4e20-b85f-41dfe41db636
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30A2\u30FC\u30DE\u30FC\u3092\u6D88\u8CBB\u3057\u3066\u653B\u6483\u529B\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01\n\u30A2\u30FC\u30DE\u30FC\u304C\u7121\u3044\u6642\u306F\u767A\u52D5\u3057\u306A\u3044\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: 8bb7bc3f-43bb-4ebe-bcae-6c5d9e5a0067
+    image: {fileID: 0}

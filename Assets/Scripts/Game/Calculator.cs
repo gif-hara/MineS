@@ -45,6 +45,11 @@ namespace MineS
 
 			baseStrength += GetArtisanRate(attacker);
 
+			if(attacker.FindAbility(GameDefine.AbilityType.RiskOfLife) && attacker.Armor > 0)
+			{
+				baseStrength += GetRiskOfLifeAddStrengthValue(attacker);
+			}
+
 			float rate = attacker.FindAbnormalStatus(GameDefine.AbnormalStatusType.Sharpness)
 				? 2.0f
 				: attacker.FindAbnormalStatus(GameDefine.AbnormalStatusType.Dull)
@@ -192,6 +197,26 @@ namespace MineS
 		{
 			probability += attacker.GetAbilityNumber(GameDefine.AbilityType.Fortune);
 			return probability > Random.Range(0, 100);
+		}
+
+		/// <summary>
+		/// 特殊能力の捨身による攻撃力上昇値を返す.
+		/// </summary>
+		/// <returns>The risk of life add strength value.</returns>
+		/// <param name="attacker">Attacker.</param>
+		public static int GetRiskOfLifeAddStrengthValue(IAttack attacker)
+		{
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.RiskOfLife) * 2;
+		}
+
+		/// <summary>
+		/// 特殊能力の捨身によるアーマー減少値を返す.
+		/// </summary>
+		/// <returns>The risk of life sub armor value.</returns>
+		/// <param name="attacker">Attacker.</param>
+		public static int GetRiskOfLifeSubArmorValue(IAttack attacker)
+		{
+			return (attacker.GetAbilityNumber(GameDefine.AbilityType.RiskOfLife) / 2) + 1;
 		}
 	}
 }

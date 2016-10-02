@@ -339,6 +339,66 @@ namespace MineS
 			/// 必中：攻撃が必ず当たる.
 			/// </summary>
 			InbariablyHit,
+
+			/// <summary>
+			/// 捨身：アーマーを消費して攻撃力を上昇する.
+			/// </summary>
+			RiskOfLife,
+
+			/// <summary>
+			/// 増進：バフの継続ターンを増やす.
+			/// </summary>
+			Enhancement,
+
+			/// <summary>
+			/// 免疫：デバフの継続ターンを減らす.
+			/// </summary>
+			Immunity,
+
+			/// <summary>
+			/// 罠避：罠に引っかからなくなる.
+			/// </summary>
+			AvoidTrap,
+
+			/// <summary>
+			/// 薬師：回復系アイテムの効果が上昇する.
+			/// </summary>
+			HealingBuddha,
+
+			/// <summary>
+			/// 毒塗：ダメージを与えた際に一定確率でデバフの毒を付与する.
+			/// </summary>
+			PoisonPainted,
+
+			/// <summary>
+			/// 放心：ダメージを与えた際に一定確率でデバフの呆けを付与する.
+			/// </summary>
+			Absentmindedness,
+
+			/// <summary>
+			/// 秘孔突き：ダメージを与えた際に一定確率でデバフの痛風を付与する.
+			/// </summary>
+			VitalsPoke,
+
+			/// <summary>
+			/// 刃毀：ダメージを与えた際に一定確率でデバフの鈍らを付与する.
+			/// </summary>
+			BladeBroken,
+
+			/// <summary>
+			/// 錯乱：ダメージを与えた際に一定確率でデバフの混乱を付与する.
+			/// </summary>
+			Derangement,
+
+			/// <summary>
+			/// 脅迫：ダメージを与えた際に一定確率でデバフの恐怖を付与する.
+			/// </summary>
+			Intimidation,
+
+			/// <summary>
+			/// 呪縛：ダメージを与えた際に一定確率でデバフの封印を付与する.
+			/// </summary>
+			Curse,
 		}
 
 		/// <summary>

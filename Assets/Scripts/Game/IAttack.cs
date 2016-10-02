@@ -16,6 +16,8 @@ namespace MineS
 
 		int Evasion{ get; }
 
+		int Armor{ get; }
+
 		bool FindAbility(GameDefine.AbilityType type);
 
 		bool FindAbnormalStatus(GameDefine.AbnormalStatusType type);

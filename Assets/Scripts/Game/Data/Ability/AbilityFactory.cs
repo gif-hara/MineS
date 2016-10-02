@@ -58,6 +58,8 @@ namespace MineS
 				return new AbilityBase(type, holder, "Theft");
 			case GameDefine.AbilityType.Fortune:
 				return new AbilityBase(type, holder, "Fortune");
+			case GameDefine.AbilityType.RiskOfLife:
+				return new AbilityBase(type, holder, "RiskOfLife");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;

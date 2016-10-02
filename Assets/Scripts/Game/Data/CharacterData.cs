@@ -143,6 +143,14 @@ namespace MineS
 					otherTarget.TakeDamageRaw(this, damage / 2, false);
 				}
 			}
+			if(this.FindAbility(GameDefine.AbilityType.RiskOfLife))
+			{
+				this.TakeDamageArmorOnly(Calculator.GetRiskOfLifeSubArmorValue(this));
+			}
+			if(target.IsDead && this.FindAbility(GameDefine.AbilityType.Repair))
+			{
+				this.RecoveryArmor(Calculator.GetRepairValue(this));
+			}
 		}
 
 		public int TakeDamage(CharacterData attacker, int value, bool onlyHitPoint)
@@ -175,6 +183,12 @@ namespace MineS
 			{
 				attacker.Defeat(this);
 			}
+		}
+
+		public void TakeDamageArmorOnly(int value)
+		{
+			this.Armor -= value;
+			this.Armor = this.Armor < 0 ? 0 : this.Armor;
 		}
 
 		public virtual void Defeat(CharacterData target)

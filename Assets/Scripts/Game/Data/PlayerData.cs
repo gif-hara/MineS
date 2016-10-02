@@ -46,11 +46,6 @@ namespace MineS
 			this.AddExperience(Calculator.GetFinalExperience(target.Experience, this));
 			this.AddMoney(Calculator.GetFinalMoney(target.Money, this));
 
-			if(this.FindAbility(GameDefine.AbilityType.Repair))
-			{
-				this.RecoveryArmor(Calculator.GetRepairValue(this));
-			}
-
 			while(this.CanLevelUp)
 			{
 				this.LevelUp(this.growthData);
