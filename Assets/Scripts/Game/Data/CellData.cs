@@ -61,16 +61,21 @@ namespace MineS
 				return;
 			}
 
-			this.Identification(true, PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray));
+			var isIdentification = this.Identification(PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray));
 			if(this.cellClickAction != null)
 			{
 				this.cellClickAction.Invoke(this);
+			}
+
+			if(isIdentification)
+			{
+				TurnManager.Instance.Progress(GameDefine.TurnProgressType.CellClick);
 			}
 		}
 
 		public void DebugAction()
 		{
-			this.Identification(false, false);
+			this.Identification(false);
 			if(this.cellClickAction != null)
 			{
 				this.cellClickAction.Invoke(this);
@@ -174,11 +179,11 @@ namespace MineS
 			}
 		}
 
-		public void Identification(bool progressTurn, bool isXray)
+		public bool Identification(bool isXray)
 		{
 			if(this.IsIdentification)
 			{
-				return;
+				return false;
 			}
 
 			var adjacentCells = CellManager.Instance.GetAdjacentCellDataLeftTopRightBottom(this.Y, this.X);
@@ -193,10 +198,7 @@ namespace MineS
 				this.modifiedIdentificationEvent(this.IsIdentification);
 			}
 
-			if(progressTurn)
-			{
-				TurnManager.Instance.Progress(GameDefine.TurnProgressType.CellClick);
-			}
+			return true;
 		}
 
 		public List<CellData> AdjacentCellAll

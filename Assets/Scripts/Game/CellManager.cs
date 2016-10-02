@@ -146,7 +146,7 @@ namespace MineS
 			var initialCell = this.cellDatabase[y, x];
 			var isXray = PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray);
 			initialCell.Steppable(isXray);
-			initialCell.Identification(false, isXray);
+			initialCell.Identification(isXray);
 		}
 
 		private CellData[,] CreateCellDatabaseFromDungeonData()

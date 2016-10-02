@@ -12,7 +12,10 @@ namespace MineS
 	{
 		public override void Invoke(CellData data)
 		{
-			if(PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.TrapMaster))
+			this.cellController.SetImage(this.Image);
+
+			var player = PlayerManager.Instance.Data;
+			if(player.FindAbnormalStatus(GameDefine.AbnormalStatusType.TrapMaster) || player.FindAbility(GameDefine.AbilityType.AvoidTrap))
 			{
 				return;
 			}

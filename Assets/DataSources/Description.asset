@@ -272,3 +272,13 @@ MonoBehaviour:
       value: "\u30C7\u30D0\u30D5\u306E\u6709\u52B9\u30BF\u30FC\u30F3\u304C\u6E1B\u5C11\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E"
       guid: 39057dc5-cca9-4736-bfdb-7cda3cefb5d5
     image: {fileID: 0}
+  - key: AvoidTrap
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u7F60\u907F"
+      guid: e6fd2211-b8f8-4e58-a285-b52747d24260
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u7F60\u306B\u5F15\u3063\u304B\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: afd21b64-7f02-4889-a5c5-f124dd7563b9
+    image: {fileID: 0}

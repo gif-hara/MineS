@@ -14,7 +14,6 @@ namespace MineS
 		{
 			data.BindCellClickAction(null);
 			data.BindDeployDescription(null);
-			this.cellController.SetImage(this.Image);
 			var player = PlayerManager.Instance.Data;
 			player.TakeDamageRaw(null, Calculator.GetMineTrapDamageValue(player.HitPointMax), true);
 		}
