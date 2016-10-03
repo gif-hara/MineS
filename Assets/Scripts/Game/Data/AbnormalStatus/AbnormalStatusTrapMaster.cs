@@ -10,8 +10,8 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusTrapMaster : AbnormalStatusBase
 	{
-		public AbnormalStatusTrapMaster(int remainingTurn)
-			: base(remainingTurn)
+		public AbnormalStatusTrapMaster(int remainingTurn, int waitTurn)
+			: base(remainingTurn, waitTurn)
 		{
 			this.Type = GameDefine.AbnormalStatusType.TrapMaster;
 			this.OppositeType = GameDefine.AbnormalStatusType.None;

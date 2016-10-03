@@ -26,7 +26,7 @@ namespace MineS
 		{
 			data.BindCellClickAction(null);
 			this.cellController.SetImage(this.Image);
-			PlayerManager.Instance.AddAbnormalStatus(this.type, GameDefine.AbnormalStatusTrapRemainingTurn);
+			PlayerManager.Instance.AddAbnormalStatus(this.type, GameDefine.AbnormalStatusTrapRemainingTurn, 1);
 		}
 
 		public override Sprite Image

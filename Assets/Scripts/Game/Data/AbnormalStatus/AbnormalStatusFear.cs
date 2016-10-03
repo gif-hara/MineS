@@ -10,8 +10,8 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusFear : AbnormalStatusBase
 	{
-		public AbnormalStatusFear(int remainingTurn)
-			: base(remainingTurn)
+		public AbnormalStatusFear(int remainingTurn, int waitTurn)
+			: base(remainingTurn, waitTurn)
 		{
 			this.Type = GameDefine.AbnormalStatusType.Fear;
 			this.OppositeType = GameDefine.AbnormalStatusType.None;

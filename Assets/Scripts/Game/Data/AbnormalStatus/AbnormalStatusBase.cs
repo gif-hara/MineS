@@ -13,18 +13,28 @@ namespace MineS
 	{
 		public int RemainingTurn{ protected set; get; }
 
+		public int WaitTurn{ protected set; get; }
+
 		public GameDefine.AbnormalStatusType Type{ protected set; get; }
 
 		public GameDefine.AbnormalStatusType OppositeType{ protected set; get; }
 
-		public AbnormalStatusBase(int remainingTurn)
+		public AbnormalStatusBase(int remainingTurn, int waitTurn)
 		{
 			this.RemainingTurn = remainingTurn;
+			this.WaitTurn = waitTurn;
 		}
 
 		public virtual void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
+			if(this.WaitTurn > 0)
+			{
+				this.WaitTurn--;
+				return;
+			}
+
 			this.RemainingTurn--;
+			this.InternalTurnProgress(type, turnCount);
 		}
 
 		public void AddRemainingTurn(int value)
@@ -39,6 +49,10 @@ namespace MineS
 			{
 				return this.RemainingTurn > 0;
 			}
+		}
+
+		protected virtual void InternalTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
 		}
 	}
 }

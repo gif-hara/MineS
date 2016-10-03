@@ -10,8 +10,8 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusCuring : AbnormalStatusBase
 	{
-		public AbnormalStatusCuring(int remainingTurn)
-			: base(remainingTurn)
+		public AbnormalStatusCuring(int remainingTurn, int waitTurn)
+			: base(remainingTurn, waitTurn)
 		{
 			this.Type = GameDefine.AbnormalStatusType.Curing;
 			this.OppositeType = GameDefine.AbnormalStatusType.Gout;

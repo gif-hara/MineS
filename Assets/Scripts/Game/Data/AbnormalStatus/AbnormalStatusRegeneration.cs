@@ -10,8 +10,8 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusRegeneration : AbnormalStatusBase
 	{
-		public AbnormalStatusRegeneration(int remainingTurn)
-			: base(remainingTurn)
+		public AbnormalStatusRegeneration(int remainingTurn, int waitTurn)
+			: base(remainingTurn, waitTurn)
 		{
 			this.Type = GameDefine.AbnormalStatusType.Regeneration;
 			this.OppositeType = GameDefine.AbnormalStatusType.Poison;

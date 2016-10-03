@@ -10,8 +10,8 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusSeal : AbnormalStatusBase
 	{
-		public AbnormalStatusSeal(int remainingTurn)
-			: base(remainingTurn)
+		public AbnormalStatusSeal(int remainingTurn, int waitTurn)
+			: base(remainingTurn, waitTurn)
 		{
 			this.Type = GameDefine.AbnormalStatusType.Seal;
 			this.OppositeType = GameDefine.AbnormalStatusType.None;

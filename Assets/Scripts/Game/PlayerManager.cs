@@ -105,9 +105,9 @@ namespace MineS
 			this.inventoryObservers.ForEach(i => i.ModifiedData(this.Data.Inventory));
 		}
 
-		public void AddAbnormalStatus(GameDefine.AbnormalStatusType type, int remainingTurn)
+		public void AddAbnormalStatus(GameDefine.AbnormalStatusType type, int remainingTurn, int waitTurn)
 		{
-			this.Data.AddAbnormalStatus(AbnormalStatusFactory.Create(type, remainingTurn));
+			this.Data.AddAbnormalStatus(AbnormalStatusFactory.Create(type, remainingTurn, waitTurn));
 			this.NotifyCharacterDataObservers();
 		}
 
@@ -129,7 +129,7 @@ namespace MineS
 
 		public void DebugAddAbnormalStatus(int type)
 		{
-			this.Data.AddAbnormalStatus(AbnormalStatusFactory.Create((GameDefine.AbnormalStatusType)type, DebugManager.Instance.AbnormalStatusRemainingTurn));
+			this.Data.AddAbnormalStatus(AbnormalStatusFactory.Create((GameDefine.AbnormalStatusType)type, DebugManager.Instance.AbnormalStatusRemainingTurn, 0));
 			this.NotifyCharacterDataObservers();
 		}
 

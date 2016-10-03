@@ -10,8 +10,8 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusXray : AbnormalStatusBase
 	{
-		public AbnormalStatusXray(int remainingTurn)
-			: base(remainingTurn)
+		public AbnormalStatusXray(int remainingTurn, int waitTurn)
+			: base(remainingTurn, waitTurn)
 		{
 			this.Type = GameDefine.AbnormalStatusType.Xray;
 			this.OppositeType = GameDefine.AbnormalStatusType.None;

@@ -10,8 +10,8 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusConfusion : AbnormalStatusBase
 	{
-		public AbnormalStatusConfusion(int remainingTurn)
-			: base(remainingTurn)
+		public AbnormalStatusConfusion(int remainingTurn, int waitTurn)
+			: base(remainingTurn, waitTurn)
 		{
 			this.Type = GameDefine.AbnormalStatusType.Confusion;
 			this.OppositeType = GameDefine.AbnormalStatusType.None;
