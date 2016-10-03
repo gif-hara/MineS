@@ -269,6 +269,12 @@ namespace MineS
 			return attacker.GetAbilityNumber(GameDefine.AbilityType.Exquisite);
 		}
 
+		/// <summary>
+		/// 回復系アイテムの回復量を返す.
+		/// </summary>
+		/// <returns>The usable item recovery value.</returns>
+		/// <param name="baseValue">Base value.</param>
+		/// <param name="user">User.</param>
 		public static int GetUsableItemRecoveryValue(int baseValue, IAttack user)
 		{
 			if(user.FindAbility(GameDefine.AbilityType.HealingBuddha))
