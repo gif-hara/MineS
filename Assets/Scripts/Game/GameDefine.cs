@@ -448,7 +448,7 @@ namespace MineS
 
 		public const int AdjacentMax = 9;
 
-		public const int MoneyMax = 999999;
+		public const int MoneyMax = 9999999;
 
 		public const int InventoryItemMax = 8;
 
