@@ -14566,6 +14566,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1584263351}
+  - 114: {fileID: 1584263356}
   - 114: {fileID: 1584263350}
   - 114: {fileID: 1584263352}
   - 114: {fileID: 1584263353}
@@ -14671,6 +14672,17 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 5ad3402dbccfa4d6bb60195f689f5b44, type: 2}
   emergencyRoot: {fileID: 836248895}
   emergencyText: {fileID: 1094292512}
+--- !u!114 &1584263356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1584263349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2f5d449fc7e4c5bbdf899186535cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1584263357
 MonoBehaviour:
   m_ObjectHideFlags: 0
