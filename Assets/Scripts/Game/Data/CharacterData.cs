@@ -121,13 +121,8 @@ namespace MineS
 				return;
 			}
 
-			var damage = target.TakeDamage(this, this.FinalStrength, FindAbility(GameDefine.AbilityType.Penetoration));
+			var damage = this.GiveDamage(target, FindAbility(GameDefine.AbilityType.Penetoration));
 			this.OnAttacked(target, damage);
-
-			if(target.IsDead)
-			{
-				this.Defeat(target);
-			}
 		}
 
 		protected virtual void OnAttacked(CharacterData target, int damage)
@@ -147,7 +142,7 @@ namespace MineS
 				var otherTarget = EnemyManager.Instance.GetRandomEnemy(ignoreEnemy);
 				if(otherTarget != null)
 				{
-					otherTarget.TakeDamageRaw(this, damage / 2, false);
+					this.GiveDamageRaw(otherTarget, damage / 2, false);
 				}
 			}
 			if(this.FindAbility(GameDefine.AbilityType.RiskOfLife))
@@ -166,6 +161,26 @@ namespace MineS
 			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Derangement, GameDefine.AbnormalStatusType.Confusion);
 			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Intimidation, GameDefine.AbnormalStatusType.Fear);
 			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Curse, GameDefine.AbnormalStatusType.Seal);
+		}
+
+		protected int GiveDamage(CharacterData target, bool onlyHitPoint)
+		{
+			var damage = target.TakeDamage(this, this.FinalStrength, onlyHitPoint);
+			if(target.IsDead)
+			{
+				this.Defeat(target);
+			}
+
+			return damage;
+		}
+
+		protected void GiveDamageRaw(CharacterData target, int damage, bool onlyHitPoint)
+		{
+			target.TakeDamageRaw(this, damage, onlyHitPoint);
+			if(target.IsDead)
+			{
+				this.Defeat(target);
+			}
 		}
 
 		public int TakeDamage(CharacterData attacker, int value, bool onlyHitPoint)
