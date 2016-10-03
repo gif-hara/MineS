@@ -71,8 +71,7 @@ namespace MineS
 
 		public CharacterData GetRandomEnemy(List<CharacterData> ignoreEnemy)
 		{
-			var target = new List<CharacterData>(this.VisibleEnemies);
-			target.RemoveAll(t => ignoreEnemy.Find(i => i == t) != null);
+			var target = this.VisibleEnemies.Where(e => ignoreEnemy.Find(i => i == e) == null).ToList();
 
 			if(target.Count <= 0)
 			{
@@ -82,21 +81,11 @@ namespace MineS
 			return target[Random.Range(0, target.Count)];
 		}
 
-		private List<CharacterData> VisibleEnemies
+		private List<EnemyData> VisibleEnemies
 		{
 			get
 			{
-				var result = new List<CharacterData>();
-				foreach(var e in this.Enemies)
-				{
-					if(!e.Key.IsIdentification)
-					{
-						continue;
-					}
-					result.Add(e.Value);
-				}
-
-				return result;
+				return this.Enemies.Where(e => e.Key.IsIdentification).Select(e => e.Value).ToList();
 			}
 		}
 
