@@ -3909,9 +3909,9 @@ RectTransform:
   - {fileID: 1551173470}
   m_Father: {fileID: 842027360}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 370, y: -130}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518210043
@@ -11539,6 +11539,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 69ac979cd38a5465ba509d8648d23978, type: 2}
   - {fileID: 11400000, guid: 03055eecd9a714359b1f7886ca160f7c, type: 2}
   - {fileID: 11400000, guid: ed98dc1bd6db54ed69d71eed525b8b96, type: 2}
+  - {fileID: 11400000, guid: 296598321c52d4e22b1d417988c1b533, type: 2}
 --- !u!1 &1313318905
 GameObject:
   m_ObjectHideFlags: 0

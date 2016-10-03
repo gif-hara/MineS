@@ -120,4 +120,8 @@ MonoBehaviour:
       ja: "\u4F1D\u67D3"
       en: 
     guid: 8158f5b9-0430-4a09-866e-325dffdff782
+  - value:
+      ja: "\u85AC\u5E2B"
+      en: 
+    guid: 16e05c0b-df2b-44aa-ba6d-24a4964b2614
   asset: []

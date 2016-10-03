@@ -268,5 +268,16 @@ namespace MineS
 		{
 			return attacker.GetAbilityNumber(GameDefine.AbilityType.Exquisite);
 		}
+
+		public static int GetUsableItemRecoveryValue(int baseValue, IAttack user)
+		{
+			if(user.FindAbility(GameDefine.AbilityType.HealingBuddha))
+			{
+				float rate = 0.10f + user.GetAbilityNumber(GameDefine.AbilityType.HealingBuddha) * 0.15f;
+				baseValue += Mathf.FloorToInt(baseValue * rate);
+			}
+
+			return baseValue;
+		}
 	}
 }

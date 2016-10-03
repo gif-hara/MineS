@@ -18,7 +18,7 @@ namespace MineS
 			this.InstanceData = masterData.Clone;
 		}
 
-		public void Use()
+		public void Use(IAttack user)
 		{
 			if(GameDefine.IsEquipment(InstanceData.ItemType))
 			{
@@ -27,7 +27,7 @@ namespace MineS
 			}
 			else if(this.InstanceData.ItemType == GameDefine.ItemType.UsableItem)
 			{
-				this.UseUsableItem();
+				this.UseUsableItem(user);
 			}
 			else
 			{
@@ -35,14 +35,14 @@ namespace MineS
 			}
 		}
 
-		public void UseUsableItem()
+		private void UseUsableItem(IAttack user)
 		{
 			var playerManager = PlayerManager.Instance;
 			var usableItem = this.InstanceData as UsableItemData;
 			switch(usableItem.UsableItemType)
 			{
 			case GameDefine.UsableItemType.RecoveryHitPointLimit:
-				playerManager.RecoveryHitPoint(usableItem.RandomPower, true);
+				playerManager.RecoveryHitPoint(Calculator.GetUsableItemRecoveryValue(usableItem.RandomPower, user), true);
 				playerManager.RemoveInventoryItem(this);
 			break;
 			default:

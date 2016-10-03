@@ -72,6 +72,8 @@ namespace MineS
 				return new AbilityBase(type, holder, "Weak");
 			case GameDefine.AbilityType.Infection:
 				return new AbilityBase(type, holder, "Infection");
+			case GameDefine.AbilityType.HealingBuddha:
+				return new AbilityBase(type, holder, "HealingBuddha");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;

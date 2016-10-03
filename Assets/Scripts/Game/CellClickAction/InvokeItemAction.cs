@@ -23,8 +23,8 @@ namespace MineS
 			{
 				return;
 			}
-			item.Use();
 			var playerManager = PlayerManager.Instance;
+			item.Use(playerManager.Data);
 			playerManager.NotifyCharacterDataObservers();
 			playerManager.UpdateInventoryUI();
 		}

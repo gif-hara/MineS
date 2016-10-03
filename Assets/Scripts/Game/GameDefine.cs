@@ -120,11 +120,6 @@ namespace MineS
 			RecoveryHitPointUnlimit,
 
 			/// <summary>
-			/// マジックポイント回復.
-			/// </summary>
-			RecoveryMagicPoint,
-
-			/// <summary>
 			/// アーマー回復.
 			/// </summary>
 			RecoveryArmor,

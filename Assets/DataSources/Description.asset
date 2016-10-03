@@ -312,3 +312,13 @@ MonoBehaviour:
       value: "\u30C7\u30D0\u30D5\u306E\u6709\u52B9\u30BF\u30FC\u30F3\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
       guid: 9b05b7e7-12ee-4ff4-afa0-270621dc3d2a
     image: {fileID: 0}
+  - key: HealingBuddha
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u85AC\u5E2B"
+      guid: 16e05c0b-df2b-44aa-ba6d-24a4964b2614
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u56DE\u5FA9\u7CFB\u30A2\u30A4\u30C6\u30E0\u306E\u52B9\u679C\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: 582757cb-bb36-43a6-bb2f-7963582e1a8c
+    image: {fileID: 0}
