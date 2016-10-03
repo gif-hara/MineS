@@ -238,5 +238,10 @@ namespace MineS
 		{
 			return -attacker.GetAbilityNumber(GameDefine.AbilityType.Immunity) * 2;
 		}
+
+		public static int GetExquisiteArmorValue(IAttack attacker)
+		{
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Exquisite);
+		}
 	}
 }

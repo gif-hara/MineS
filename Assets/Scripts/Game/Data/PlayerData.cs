@@ -89,13 +89,9 @@ namespace MineS
 
 		public override int ArmorMax
 		{
-			protected set
-			{
-				base.ArmorMax = value;
-			}
 			get
 			{
-				return this.Inventory.Equipment.TotalArmor;
+				return base.ArmorMax + this.Inventory.Equipment.TotalArmor;
 			}
 		}
 

@@ -46,7 +46,9 @@ namespace MineS
 
 		public int Armor{ protected set; get; }
 
-		public virtual int ArmorMax{ protected set; get; }
+		public virtual int ArmorMax{ get { return this.baseArmorMax + Calculator.GetExquisiteArmorValue(this); } }
+
+		protected int baseArmorMax;
 
 		public virtual int HitProbability{ get { return this.baseHitProbability + this.GetAbilityNumber(GameDefine.AbilityType.HitProbability); } }
 
@@ -79,7 +81,7 @@ namespace MineS
 			this.HitPoint = masterData.HitPoint;
 			this.baseStrength = masterData.Strength;
 			this.Armor = masterData.Armor;
-			this.ArmorMax = masterData.Armor;
+			this.baseArmorMax = masterData.Armor;
 			this.baseHitProbability = masterData.HitProbability;
 			this.baseEvasion = masterData.Evasion;
 			this.Experience = masterData.Experience;

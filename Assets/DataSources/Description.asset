@@ -282,3 +282,13 @@ MonoBehaviour:
       value: "\u7F60\u306B\u5F15\u3063\u304B\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
       guid: afd21b64-7f02-4889-a5c5-f124dd7563b9
     image: {fileID: 0}
+  - key: Exquisite
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u7CBE\u5DE7"
+      guid: 55235497-b9db-480d-b9f9-eee37ba6893f
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30A2\u30FC\u30DE\u30FC\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E"
+      guid: 6ba60b6c-d1db-4cd6-acf9-437d530ee1fa
+    image: {fileID: 0}

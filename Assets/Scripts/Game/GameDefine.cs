@@ -316,6 +316,11 @@ namespace MineS
 			Artisan,
 
 			/// <summary>
+			/// 精巧：アーマーが上昇する.
+			/// </summary>
+			Exquisite,
+
+			/// <summary>
 			/// 回避：回避率が上昇する.
 			/// </summary>
 			Evasion,
@@ -351,9 +356,19 @@ namespace MineS
 			Enhancement,
 
 			/// <summary>
+			/// 減退：バフの継続ターンが減少する.
+			/// </summary>
+			Weak,
+
+			/// <summary>
 			/// 免疫：デバフの継続ターンを減らす.
 			/// </summary>
 			Immunity,
+
+			/// <summary>
+			/// 伝染：デバフの継続ターンを増やす.
+			/// </summary>
+			Infection,
 
 			/// <summary>
 			/// 罠避：罠に引っかからなくなる.
