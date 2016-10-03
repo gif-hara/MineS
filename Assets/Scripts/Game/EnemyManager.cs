@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using System.Linq;
 
 namespace MineS
 {
@@ -39,11 +40,13 @@ namespace MineS
 			return enemy;
 		}
 
-		public void Remove(CellData cellData)
+		private void RemoveFromDead()
 		{
-			var enemy = this.Enemies[cellData];
-			this.Enemies.Remove(cellData);
-			this.InEnemyCells.Remove(enemy);
+			var deadEnemies = this.Enemies.Where(e => e.Value.IsDead).Select(e => e.Key).ToList();
+			foreach(var k in deadEnemies)
+			{
+				this.Enemies.Remove(k);
+			}
 		}
 
 		public int IdentitiedEnemyNumber
@@ -108,6 +111,8 @@ namespace MineS
 
 				e.Value.OnTurnProgress(type, turnCount);
 			}
+
+			this.RemoveFromDead();
 		}
 
 		private void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)

@@ -10,8 +10,8 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusSharpness : AbnormalStatusBase
 	{
-		public AbnormalStatusSharpness(int remainingTurn, int waitTurn)
-			: base(remainingTurn, waitTurn)
+		public AbnormalStatusSharpness(CharacterData holder, int remainingTurn, int waitTurn)
+			: base(holder, remainingTurn, waitTurn)
 		{
 			this.Type = GameDefine.AbnormalStatusType.Sharpness;
 			this.OppositeType = GameDefine.AbnormalStatusType.Dull;

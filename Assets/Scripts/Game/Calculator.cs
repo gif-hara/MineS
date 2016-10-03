@@ -195,7 +195,10 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static bool CanDropItem(int probability, IAttack attacker)
 		{
-			probability += attacker.GetAbilityNumber(GameDefine.AbilityType.Fortune);
+			if(attacker != null)
+			{
+				probability += attacker.GetAbilityNumber(GameDefine.AbilityType.Fortune);
+			}
 			return probability > Random.Range(0, 100);
 		}
 
@@ -284,6 +287,24 @@ namespace MineS
 			}
 
 			return baseValue;
+		}
+
+		/// <summary>
+		/// 特殊能力による状態異常付与が行えるか返す.
+		/// </summary>
+		/// <returns><c>true</c> if can add abnormal status from ability the specified abilityType attacker; otherwise, <c>false</c>.</returns>
+		/// <param name="abilityType">Ability type.</param>
+		/// <param name="attacker">Attacker.</param>
+		public static bool CanAddAbnormalStatusFromAbility(GameDefine.AbilityType abilityType, IAttack attacker)
+		{
+			if(!attacker.FindAbility(abilityType))
+			{
+				return false;
+			}
+
+			var probability = 10 + attacker.GetAbilityNumber(abilityType) * 2;
+
+			return probability > Random.Range(0, 100);
 		}
 	}
 }

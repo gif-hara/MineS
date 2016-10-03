@@ -16,7 +16,6 @@ namespace MineS
 			cellData.BindCellClickAction(null);
 			cellData.Controller.SetActiveStatusObject(false);
 			cellData.Controller.SetImage(null);
-			EnemyManager.Instance.Remove(cellData);
 
 			var adjacentCells = cellData.AdjacentCellAll;
 			for(int i = 0; i < adjacentCells.Count; i++)

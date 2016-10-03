@@ -10,8 +10,8 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusPoison : AbnormalStatusBase
 	{
-		public AbnormalStatusPoison(int remainingTurn, int waitTurn)
-			: base(remainingTurn, waitTurn)
+		public AbnormalStatusPoison(CharacterData holder, int remainingTurn, int waitTurn)
+			: base(holder, remainingTurn, waitTurn)
 		{
 			this.Type = GameDefine.AbnormalStatusType.Poison;
 			this.OppositeType = GameDefine.AbnormalStatusType.Regeneration;
@@ -19,8 +19,7 @@ namespace MineS
 
 		protected override void InternalTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
-			var player = PlayerManager.Instance.Data;
-			player.TakeDamageRaw(null, Calculator.GetPoisonValue(player.HitPointMax), true);
+			this.Holder.TakeDamageRaw(null, Calculator.GetPoisonValue(this.Holder.HitPointMax), true);
 		}
 	}
 }

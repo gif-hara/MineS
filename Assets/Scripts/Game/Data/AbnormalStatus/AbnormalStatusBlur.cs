@@ -10,8 +10,8 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusBlur : AbnormalStatusBase
 	{
-		public AbnormalStatusBlur(int remainingTurn, int waitTurn)
-			: base(remainingTurn, waitTurn)
+		public AbnormalStatusBlur(CharacterData holder, int remainingTurn, int waitTurn)
+			: base(holder, remainingTurn, waitTurn)
 		{
 			this.Type = GameDefine.AbnormalStatusType.Blur;
 			this.OppositeType = GameDefine.AbnormalStatusType.Happiness;

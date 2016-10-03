@@ -11,6 +11,8 @@ namespace MineS
 	[System.Serializable]
 	public abstract class AbnormalStatusBase
 	{
+		public CharacterData Holder{ protected set; get; }
+
 		public int RemainingTurn{ protected set; get; }
 
 		public int WaitTurn{ protected set; get; }
@@ -19,8 +21,9 @@ namespace MineS
 
 		public GameDefine.AbnormalStatusType OppositeType{ protected set; get; }
 
-		public AbnormalStatusBase(int remainingTurn, int waitTurn)
+		public AbnormalStatusBase(CharacterData holder, int remainingTurn, int waitTurn)
 		{
+			this.Holder = holder;
 			this.RemainingTurn = remainingTurn;
 			this.WaitTurn = waitTurn;
 		}

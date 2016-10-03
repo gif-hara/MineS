@@ -123,6 +123,11 @@ namespace MineS
 
 			var damage = target.TakeDamage(this, this.FinalStrength, FindAbility(GameDefine.AbilityType.Penetoration));
 			this.OnAttacked(target, damage);
+
+			if(target.IsDead)
+			{
+				this.Defeat(target);
+			}
 		}
 
 		protected virtual void OnAttacked(CharacterData target, int damage)
@@ -153,6 +158,14 @@ namespace MineS
 			{
 				this.RecoveryArmor(Calculator.GetRepairValue(this));
 			}
+
+			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.PoisonPainted, GameDefine.AbnormalStatusType.Poison);
+			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Absentmindedness, GameDefine.AbnormalStatusType.Blur);
+			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.VitalsPoke, GameDefine.AbnormalStatusType.Gout);
+			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.BladeBroken, GameDefine.AbnormalStatusType.Dull);
+			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Derangement, GameDefine.AbnormalStatusType.Confusion);
+			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Intimidation, GameDefine.AbnormalStatusType.Fear);
+			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Curse, GameDefine.AbnormalStatusType.Seal);
 		}
 
 		public int TakeDamage(CharacterData attacker, int value, bool onlyHitPoint)
@@ -181,9 +194,9 @@ namespace MineS
 			this.HitPoint -= value;
 			this.HitPoint = this.HitPoint < 0 ? 0 : this.HitPoint;
 
-			if(this.IsDead && attacker != null)
+			if(this.IsDead)
 			{
-				attacker.Defeat(this);
+				this.Dead(attacker);
 			}
 		}
 
@@ -195,7 +208,6 @@ namespace MineS
 
 		public virtual void Defeat(CharacterData target)
 		{
-			target.Dead(this);
 		}
 
 		public abstract void Dead(CharacterData attacker);
@@ -208,10 +220,9 @@ namespace MineS
 
 		public void AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{
-			var oldIndex = this.AbnormalStatuses.FindIndex(a => a.Type == newAbnormalStatus.Type);
-			if(oldIndex >= 0)
+			if(this.AbnormalStatuses.FindIndex(a => a.Type == newAbnormalStatus.Type) >= 0)
 			{
-				this.AbnormalStatuses[oldIndex] = newAbnormalStatus;
+				return;
 			}
 			else
 			{
@@ -289,6 +300,16 @@ namespace MineS
 			string log = "";
 			this.AbnormalStatuses.ForEach(a => log += " " + a.Type.ToString());
 			Debug.Log("Abnormal Status = " + log);
+		}
+
+		private void AddAbnormalStatusFromAbility(CharacterData target, GameDefine.AbilityType abilityType, GameDefine.AbnormalStatusType abnormalStatusType)
+		{
+			if(!Calculator.CanAddAbnormalStatusFromAbility(abilityType, this))
+			{
+				return;
+			}
+
+			target.AddAbnormalStatus(AbnormalStatusFactory.Create(abnormalStatusType, target, 5, 1));
 		}
 	}
 }
