@@ -218,12 +218,14 @@ namespace MineS
 				this.AbnormalStatuses.Add(newAbnormalStatus);
 			}
 
-			if(GameDefine.IsBuff(newAbnormalStatus.Type) && this.FindAbility(GameDefine.AbilityType.Enhancement))
+			if(GameDefine.IsBuff(newAbnormalStatus.Type))
 			{
 				newAbnormalStatus.AddRemainingTurn(Calculator.GetEnhancementAddTurn(this));
+				newAbnormalStatus.AddRemainingTurn(Calculator.GetWeakSubTurn(this));
 			}
-			else if(!GameDefine.IsBuff(newAbnormalStatus.Type) && this.FindAbility(GameDefine.AbilityType.Immunity))
+			else if(!GameDefine.IsBuff(newAbnormalStatus.Type))
 			{
+				newAbnormalStatus.AddRemainingTurn(Calculator.GetInfectionAddTurn(this));
 				newAbnormalStatus.AddRemainingTurn(Calculator.GetImmunitySubTurn(this));
 			}
 

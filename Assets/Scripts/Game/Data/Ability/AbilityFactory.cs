@@ -68,6 +68,10 @@ namespace MineS
 				return new AbilityBase(type, holder, "AvoidTrap");
 			case GameDefine.AbilityType.Exquisite:
 				return new AbilityBase(type, holder, "Exquisite");
+			case GameDefine.AbilityType.Weak:
+				return new AbilityBase(type, holder, "Weak");
+			case GameDefine.AbilityType.Infection:
+				return new AbilityBase(type, holder, "Infection");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;

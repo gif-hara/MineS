@@ -230,6 +230,16 @@ namespace MineS
 		}
 
 		/// <summary>
+		/// 特殊能力の減退によるターン数減少値を返す.
+		/// </summary>
+		/// <returns>The weal sub turn.</returns>
+		/// <param name="attacker">Attacker.</param>
+		public static int GetWeakSubTurn(IAttack attacker)
+		{
+			return -attacker.GetAbilityNumber(GameDefine.AbilityType.Weak) * 2;
+		}
+
+		/// <summary>
 		/// 特殊能力の免疫によるターン数減少値を返す.
 		/// </summary>
 		/// <returns>The immunity sub turn.</returns>
@@ -239,6 +249,21 @@ namespace MineS
 			return -attacker.GetAbilityNumber(GameDefine.AbilityType.Immunity) * 2;
 		}
 
+		/// <summary>
+		/// 特殊能力の伝染によるターン数上昇値を返す.
+		/// </summary>
+		/// <returns>The infection add turn.</returns>
+		/// <param name="attacker">Attacker.</param>
+		public static int GetInfectionAddTurn(IAttack attacker)
+		{
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Infection) * 2;
+		}
+
+		/// <summary>
+		/// 特殊能力の精巧いよるアーマー上昇値を返す.
+		/// </summary>
+		/// <returns>The exquisite armor value.</returns>
+		/// <param name="attacker">Attacker.</param>
 		public static int GetExquisiteArmorValue(IAttack attacker)
 		{
 			return attacker.GetAbilityNumber(GameDefine.AbilityType.Exquisite);

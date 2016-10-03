@@ -292,3 +292,23 @@ MonoBehaviour:
       value: "\u30A2\u30FC\u30DE\u30FC\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E"
       guid: 6ba60b6c-d1db-4cd6-acf9-437d530ee1fa
     image: {fileID: 0}
+  - key: Weak
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u6E1B\u9000"
+      guid: b3de210c-dcac-40c0-b037-b6c43e7b11ce
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30D0\u30D5\u306E\u6709\u52B9\u30BF\u30FC\u30F3\u304C\u6E1B\u5C11\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: 981bc905-0c87-4674-9e99-39b6d361ea0b
+    image: {fileID: 0}
+  - key: Infection
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u4F1D\u67D3"
+      guid: 8158f5b9-0430-4a09-866e-325dffdff782
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30C7\u30D0\u30D5\u306E\u6709\u52B9\u30BF\u30FC\u30F3\u304C\u4E0A\u6607\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: 9b05b7e7-12ee-4ff4-afa0-270621dc3d2a
+    image: {fileID: 0}
