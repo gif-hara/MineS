@@ -74,7 +74,20 @@ namespace MineS
 
 		private void OnRemove()
 		{
-			
+			var playerManager = PlayerManager.Instance;
+			var inventory = playerManager.Data.Inventory;
+			if(inventory.IsFreeSpace)
+			{
+				inventory.RemoveEquipment(this.selectItem);
+				inventory.AddItem(this.selectItem);
+				playerManager.NotifyCharacterDataObservers();
+				playerManager.UpdateInventoryUI();
+				playerManager.CloseConfirmSelectItemUI();
+			}
+			else
+			{
+				DescriptionManager.Instance.DeployEmergency("DoNotRemoveEquipment");
+			}
 		}
 
 		private void OnThrow()
