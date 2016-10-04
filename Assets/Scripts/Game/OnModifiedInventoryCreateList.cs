@@ -114,7 +114,7 @@ namespace MineS
 		{
 			if(!inventory.ExchangeItemController.CanExchange)
 			{
-				return new InvokeItemAction(item);
+				return new SelectItemAction(item);
 			}
 			else
 			{

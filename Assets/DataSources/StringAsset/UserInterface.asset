@@ -160,4 +160,28 @@ MonoBehaviour:
       ja: '{0}F'
       en: 
     guid: 3b69729b-6037-4c6b-8ff2-191ef46a4c01
+  - value:
+      ja: "\u4F7F\u3046"
+      en: 
+    guid: 56ae6b0a-cc00-4987-97d3-51bed663a40b
+  - value:
+      ja: "\u6295\u3052\u308B"
+      en: 
+    guid: a0ac1576-69a6-4b76-9671-bfc749caec38
+  - value:
+      ja: "\u7F6E\u304F"
+      en: 
+    guid: a692f10b-4765-4963-b8b3-4741f7027b9a
+  - value:
+      ja: "\u88C5\u5099"
+      en: 
+    guid: 154c2a4b-626b-4966-a6b7-26939536003c
+  - value:
+      ja: "\u5916\u3059"
+      en: 
+    guid: 83b92879-1c54-4f32-88e5-f174483d047f
+  - value:
+      ja: "\u8AAC\u660E"
+      en: 
+    guid: b0439ec0-e8df-4e2f-92f4-6b91b05ff612
   asset: []

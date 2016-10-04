@@ -54,7 +54,7 @@ namespace MineS
 		{
 			if(!PlayerManager.Instance.Data.Inventory.ExchangeItemController.CanExchange)
 			{
-				return new InvokeItemAction(item);
+				return new SelectItemAction(item);
 			}
 			else
 			{

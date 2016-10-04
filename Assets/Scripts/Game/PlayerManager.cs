@@ -18,7 +18,13 @@ namespace MineS
 		private List<InventoryObserver> inventoryObservers;
 
 		[SerializeField]
+		private List<ItemObserver> selectItemObservers;
+
+		[SerializeField]
 		private GameObject inventoryUI;
+
+		[SerializeField]
+		private GameObject confirmSelectItemUI;
 
 		[SerializeField]
 		private ExperienceData experienceData;
@@ -98,6 +104,19 @@ namespace MineS
 		{
 			this.Data.Inventory.SetExchangeItem(null, null);
 			this.inventoryUI.SetActive(false);
+		}
+
+		public void SelectItem(Item item)
+		{
+			this.Data.Inventory.SetSelectItem(item);
+			this.confirmSelectItemUI.SetActive(true);
+			this.selectItemObservers.ForEach(i => i.ModifiedData(item));
+		}
+
+		public void CloseConfirmSelectItemUI()
+		{
+			this.Data.Inventory.SetSelectItem(null);
+			this.confirmSelectItemUI.SetActive(false);
 		}
 
 		public void UpdateInventoryUI()

@@ -115,11 +115,6 @@ namespace MineS
 			RecoveryHitPointLimit,
 
 			/// <summary>
-			/// ヒットポイント最大値を超えて回復.
-			/// </summary>
-			RecoveryHitPointUnlimit,
-
-			/// <summary>
 			/// アーマー回復.
 			/// </summary>
 			RecoveryArmor,
@@ -128,6 +123,11 @@ namespace MineS
 			/// バフの効果を付与する.
 			/// </summary>
 			AddBuff,
+
+			/// <summary>
+			/// デバフの効果を付与する.
+			/// </summary>
+			AddDebuff,
 
 			/// <summary>
 			/// デバフの効果を削除する.
@@ -439,6 +439,44 @@ namespace MineS
 			Hit,
 			Miss,
 			MissByFear
+		}
+
+		public enum SelectItemDecideType:int
+		{
+			/// <summary>
+			/// 使う.
+			/// </summary>
+			Use,
+
+			/// <summary>
+			/// 装備する.
+			/// </summary>
+			Equipment,
+
+			/// <summary>
+			/// 外す.
+			/// </summary>
+			Remove,
+
+			/// <summary>
+			/// 投げる.
+			/// </summary>
+			Throw,
+
+			/// <summary>
+			/// 置く.
+			/// </summary>
+			Put,
+
+			/// <summary>
+			/// 説明.
+			/// </summary>
+			Description,
+
+			/// <summary>
+			/// キャンセル.
+			/// </summary>
+			Cancel,
 		}
 
 		public const int AdjacentMax = 9;

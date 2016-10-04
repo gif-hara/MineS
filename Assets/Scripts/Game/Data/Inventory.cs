@@ -19,6 +19,8 @@ namespace MineS
 
 		private CharacterData holder;
 
+		private Item selectItem;
+
 		public Inventory(CharacterData holder)
 		{
 			this.holder = holder;
@@ -66,6 +68,16 @@ namespace MineS
 			this.ExchangeItemController.Invoke(inventoryItem);
 		}
 
+		public void SetSelectItem(Item item)
+		{
+			this.selectItem = item;
+		}
+
+		public void UseSelectItem()
+		{
+			this.selectItem.Use(this.holder);
+		}
+
 		public bool IsFreeSpace
 		{
 			get
@@ -77,6 +89,11 @@ namespace MineS
 		public Item ChangeEquipment(Item item)
 		{
 			return this.Equipment.Change(item, this.holder);
+		}
+
+		public Item ChangeEquipmentFromSelectItem()
+		{
+			return this.Equipment.Change(this.selectItem, this.holder);
 		}
 
 		public void RemoveEquipment(Item item)

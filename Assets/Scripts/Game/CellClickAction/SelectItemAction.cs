@@ -8,11 +8,11 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class InvokeItemAction : CellClickActionBase
+	public class SelectItemAction : CellClickActionBase
 	{
 		private Item item;
 
-		public InvokeItemAction(Item item)
+		public SelectItemAction(Item item)
 		{
 			this.item = item;
 		}
@@ -24,9 +24,7 @@ namespace MineS
 				return;
 			}
 			var playerManager = PlayerManager.Instance;
-			item.Use(playerManager.Data);
-			playerManager.NotifyCharacterDataObservers();
-			playerManager.UpdateInventoryUI();
+			playerManager.SelectItem(this.item);
 		}
 
 		public override void SetCellController(CellController cellController)

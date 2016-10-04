@@ -105,6 +105,16 @@ namespace MineS
 			return this.GetMatchEquipment(type);
 		}
 
+		/// <summary>
+		/// 引数のアイテムが装備中であるか返す.
+		/// </summary>
+		/// <returns><c>true</c> if this instance is in equipment the specified item; otherwise, <c>false</c>.</returns>
+		/// <param name="item">Item.</param>
+		public bool IsInEquipment(Item item)
+		{
+			return this.Get(item.InstanceData.ItemType) == item;
+		}
+
 		private Item GetMatchEquipment(GameDefine.ItemType itemType)
 		{
 			switch(itemType)
