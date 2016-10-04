@@ -92,18 +92,17 @@ namespace MineS
 
 		private void OnThrow()
 		{
-			
+			Debug.Log("「投げる」は未実装だよ！");
 		}
 
 		private void OnPut()
 		{
-			
+			Debug.Log("「置く」は未実装だよ！");
 		}
 
 		private void OnDescription()
 		{
 			DescriptionManager.Instance.Deploy(this.selectItem);
-			//PlayerManager.Instance.CloseConfirmSelectItemUI();
 		}
 
 		private void OnCancel()
