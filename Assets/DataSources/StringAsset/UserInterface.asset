@@ -184,4 +184,20 @@ MonoBehaviour:
       ja: "\u8AAC\u660E"
       en: 
     guid: b0439ec0-e8df-4e2f-92f4-6b91b05ff612
+  - value:
+      ja: "\u9000\u5E97"
+      en: 
+    guid: 76e7826d-a2bd-49b0-bfa8-c6ba73c13ee1
+  - value:
+      ja: "\u713C\u5370"
+      en: 
+    guid: 984b8717-b997-421f-a236-096120e23e4f
+  - value:
+      ja: "\u62BD\u51FA"
+      en: 
+    guid: 5c128020-77ca-4780-ac0f-3f701607edd1
+  - value:
+      ja: "\u5F37\u5316"
+      en: 
+    guid: 9505724b-3af9-4996-9a66-acb3b51720d7
   asset: []
