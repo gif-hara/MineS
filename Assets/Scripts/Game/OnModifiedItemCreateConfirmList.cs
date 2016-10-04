@@ -85,6 +85,7 @@ namespace MineS
 		private void CreateOnEquipmentFromInventory(Item selectItem)
 		{
 			this.Create(selectItem, this.equipmentFormat.Get, GameDefine.SelectItemDecideType.Equipment);
+			this.Create(selectItem, this.putFormat.Get, GameDefine.SelectItemDecideType.Put);
 			this.Create(selectItem, this.descriptionFormat.Get, GameDefine.SelectItemDecideType.Description);
 			this.Create(selectItem, this.cancelFormat.Get, GameDefine.SelectItemDecideType.Cancel);
 		}
@@ -92,6 +93,7 @@ namespace MineS
 		private void CreateOnEquipmentFromEquipment(Item selectItem)
 		{
 			this.Create(selectItem, this.removeFormat.Get, GameDefine.SelectItemDecideType.Remove);
+			this.Create(selectItem, this.putFormat.Get, GameDefine.SelectItemDecideType.Put);
 			this.Create(selectItem, this.descriptionFormat.Get, GameDefine.SelectItemDecideType.Description);
 			this.Create(selectItem, this.cancelFormat.Get, GameDefine.SelectItemDecideType.Cancel);
 		}
