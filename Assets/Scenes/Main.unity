@@ -3909,9 +3909,9 @@ RectTransform:
   - {fileID: 1551173470}
   m_Father: {fileID: 842027360}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 370, y: -130}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518210043
@@ -6871,8 +6871,9 @@ GameObject:
   - 224: {fileID: 842027360}
   - 222: {fileID: 842027362}
   - 114: {fileID: 842027361}
-  - 114: {fileID: 842027364}
   - 114: {fileID: 842027363}
+  - 114: {fileID: 842027364}
+  - 114: {fileID: 842027365}
   m_Layer: 5
   m_Name: PlayerData
   m_TagString: Untagged
@@ -6972,9 +6973,20 @@ MonoBehaviour:
   - {fileID: 427700588}
   - {fileID: 549576037}
   - {fileID: 1483331784}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 1224795333}
+--- !u!114 &842027365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 842027359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54fac42c454bf47d0a16191ab9223dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivers:
+  - {fileID: 1551173469}
 --- !u!1 &850855507
 GameObject:
   m_ObjectHideFlags: 0
@@ -14155,6 +14167,7 @@ GameObject:
   - 114: {fileID: 1551173473}
   - 114: {fileID: 1551173472}
   - 114: {fileID: 1551173471}
+  - 114: {fileID: 1551173476}
   m_Layer: 5
   m_Name: FloorNumber
   m_TagString: Untagged
@@ -14263,6 +14276,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1551173469}
+--- !u!114 &1551173476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1551173469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96da3605004224cc7b470752e99025fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1313318908}
+  format:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: '{0}F'
+    guid: 3b69729b-6037-4c6b-8ff2-191ef46a4c01
 --- !u!1 &1553876577
 GameObject:
   m_ObjectHideFlags: 0
@@ -14653,6 +14682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current: {fileID: 11400000, guid: fb7414cd5676941249068426b7a00398, type: 2}
+  observers: []
 --- !u!114 &1584263355
 MonoBehaviour:
   m_ObjectHideFlags: 0

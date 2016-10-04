@@ -14,11 +14,16 @@ namespace MineS
 		[SerializeField]
 		private DungeonData current;
 
+		[SerializeField]
+		private List<DungeonDataObserver> observers;
+
 		private int floorCount = 1;
 
 		private UnityEvent nextFloorEvent = new UnityEvent();
 
 		public DungeonData CurrentData{ get { return this.current; } }
+
+		public int Floor{ get { return this.floorCount; } }
 
 		public void AddNextFloorEvent(UnityAction otherEvent)
 		{
@@ -30,6 +35,7 @@ namespace MineS
 			this.floorCount++;
 			EnemyManager.Instance.NextFloor();
 			this.nextFloorEvent.Invoke();
+			this.observers.ForEach(o => o.ModifiedData(this.CurrentData));
 		}
 
 		public EnemyData CreateEnemy()
