@@ -26,7 +26,10 @@ namespace MineS
 		[SerializeField]
 		private CharacterDataObserver characterDataObserver;
 
-		[SerializeField]
+        [SerializeField]
+        private ItemObserver itemObserver;
+
+        [SerializeField]
 		private GameObject hitPointObject;
 
 		[SerializeField]
@@ -155,13 +158,18 @@ namespace MineS
 			this.SetActive(this.strengthObject, isActive);
 		}
 
-		public void SetStatus(CharacterData data)
+		public void SetCharacterData(CharacterData data)
 		{
 			this.SetActiveStatusObject(true);
 			this.characterDataObserver.ModifiedData(data);
 		}
 
-		public void CancelDeployDescription()
+        public void SetItemData(Item item)
+        {
+            this.itemObserver.ModifiedData(item);
+        }
+
+        public void CancelDeployDescription()
 		{
 			if(this.deployDescriptionCoroutine == null)
 			{

@@ -16,7 +16,7 @@ namespace MineS
 		{
 			data.BindCellClickAction(new CombatEnemyAction());
 			data.BindDeployDescription(new DeployDescriptionOnCharacterData(this.enemy));
-			data.Controller.SetStatus(this.enemy);
+			data.Controller.SetCharacterData(this.enemy);
 			data.Controller.SetImage(this.enemy.Image);
 			var adjacentCells = data.AdjacentCellAll;
 			for(int i = 0; i < adjacentCells.Count; i++)

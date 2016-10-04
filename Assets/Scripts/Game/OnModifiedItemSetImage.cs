@@ -18,8 +18,8 @@ namespace MineS
 
 		public void OnModifiedItem(Item item)
 		{
-			this.target.sprite = item.InstanceData.Image;
-		}
+            this.target.sprite = item.InstanceData.Image;
+        }
 
 #endregion
 	}
