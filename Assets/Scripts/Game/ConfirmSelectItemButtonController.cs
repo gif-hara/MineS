@@ -102,7 +102,8 @@ namespace MineS
 
 		private void OnDescription()
 		{
-			
+			DescriptionManager.Instance.Deploy(this.selectItem);
+			//PlayerManager.Instance.CloseConfirmSelectItemUI();
 		}
 
 		private void OnCancel()
