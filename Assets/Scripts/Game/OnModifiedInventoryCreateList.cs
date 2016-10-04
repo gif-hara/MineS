@@ -121,15 +121,5 @@ namespace MineS
 				return new ChangeItemAction(item);
 			}
 		}
-
-		private CellClickActionBase GetEquipmentAction(Inventory inventory, Item item)
-		{
-			if(item == null)
-			{
-				return null;
-			}
-
-			return new RemoveEquipmentAction(inventory, item);
-		}
 	}
 }
