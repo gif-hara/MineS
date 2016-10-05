@@ -28,7 +28,7 @@ namespace MineS
 			TurnManager.Instance.AddLateEndTurnEvent(this.OnLateTurnProgress);
 		}
 
-		public CharacterData Create(CellData cellData)
+		public EnemyData Create(CellData cellData)
 		{
 			Debug.AssertFormat(!this.Enemies.ContainsKey(cellData), "既に敵が存在します.");
 
@@ -81,14 +81,6 @@ namespace MineS
 			return target[Random.Range(0, target.Count)];
 		}
 
-		private List<EnemyData> VisibleEnemies
-		{
-			get
-			{
-				return this.Enemies.Where(e => e.Key.IsIdentification).Select(e => e.Value).ToList();
-			}
-		}
-
 		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			foreach(var e in this.Enemies)
@@ -102,6 +94,22 @@ namespace MineS
 			}
 
 			this.RemoveFromDead();
+		}
+
+		public List<CellData> NotIdentifications
+		{
+			get
+			{
+				return this.Enemies.Where(e => !e.Key.IsIdentification).Select(e => e.Key).ToList();
+			}
+		}
+
+		private List<EnemyData> VisibleEnemies
+		{
+			get
+			{
+				return this.Enemies.Where(e => e.Key.IsIdentification).Select(e => e.Value).ToList();
+			}
 		}
 
 		private void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)

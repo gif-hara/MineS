@@ -409,6 +409,21 @@ namespace MineS
 			/// 呪縛：ダメージを与えた際に一定確率でデバフの封印を付与する.
 			/// </summary>
 			Curse,
+
+			/// <summary>
+			/// 雄叫び：識別状態になった際に他の敵も識別されてしまう（敵のみ）.
+			/// </summary>
+			WarCry,
+
+			/// <summary>
+			/// 回復：ダメージを与えた際にヒットポイントが回復する.
+			/// </summary>
+			Recovery,
+
+			/// <summary>
+			/// 防護：受けるダメージを軽減する.
+			/// </summary>
+			Protection,
 		}
 
 		/// <summary>

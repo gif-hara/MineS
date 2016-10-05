@@ -8,7 +8,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class EnemyData : CharacterData
+	public class EnemyData : CharacterData, IIdentification
 	{
 		public override void Dead(CharacterData attacker)
 		{
@@ -34,6 +34,11 @@ namespace MineS
 				cellData.BindCellClickAction(new AcquireItemAction(item, cellData.Controller));
 				cellData.BindDeployDescription(new DeployDescriptionOnItem(item));
 			}
+		}
+
+		public void OnIdentification(CellData cellData)
+		{
+			this.Abilities.ForEach(a => a.OnIdentification(cellData));
 		}
 	}
 }

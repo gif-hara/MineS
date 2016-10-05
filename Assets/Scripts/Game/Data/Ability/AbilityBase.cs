@@ -8,7 +8,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class AbilityBase : ITurnProgress
+	public class AbilityBase : ITurnProgress, IIdentification
 	{
 		public GameDefine.AbilityType Type{ protected set; get; }
 
@@ -29,6 +29,11 @@ namespace MineS
 		}
 
 		public virtual void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			
+		}
+
+		public virtual void OnIdentification(CellData cellData)
 		{
 			
 		}

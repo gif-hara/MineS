@@ -8,7 +8,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public abstract class CellClickActionBase
+	public abstract class CellClickActionBase : IIdentification
 	{
 		protected CellController cellController;
 
@@ -30,6 +30,11 @@ namespace MineS
 		public virtual void OnUseXray()
 		{
 			this.cellController.SetImage(this.Image);
+		}
+
+		public virtual void OnIdentification(CellData cellData)
+		{
+			
 		}
 	}
 }

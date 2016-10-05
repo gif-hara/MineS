@@ -10,7 +10,7 @@ namespace MineS
 	/// </summary>
 	public class CreateEnemyAction : CellClickActionBase
 	{
-		private CharacterData enemy;
+		private EnemyData enemy;
 
 		public override void Invoke(CellData data)
 		{
@@ -26,6 +26,11 @@ namespace MineS
 					adjacentCells[i].AddLock();
 				}
 			}
+		}
+
+		public override void OnIdentification(CellData cellData)
+		{
+			this.enemy.OnIdentification(cellData);
 		}
 
 		public override void SetCellData(CellData data)

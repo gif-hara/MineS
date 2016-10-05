@@ -64,7 +64,12 @@ namespace MineS
 			var isIdentification = this.Identification(PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray));
 			if(this.cellClickAction != null)
 			{
-				this.cellClickAction.Invoke(this);
+				var currentCellClickAction = this.cellClickAction;
+				currentCellClickAction.Invoke(this);
+				if(isIdentification)
+				{
+					currentCellClickAction.OnIdentification(this);
+				}
 			}
 
 			if(isIdentification)

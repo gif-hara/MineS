@@ -392,3 +392,13 @@ MonoBehaviour:
       value: "\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u305F\u6642\u306B\u4E00\u5B9A\u78BA\u7387\u3067\u30C7\u30D0\u30D5\u306E\u5C01\u5370\u306B\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
       guid: bfbd2940-1a1d-4ef3-b469-7ed1d7e9232d
     image: {fileID: 0}
+  - key: WarCry
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u96C4\u53EB\u3073"
+      guid: 556e457b-0b85-4928-8c72-cf26a5aba8e9
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u767A\u898B\u3055\u308C\u305F\u6642\u306B\u4ED6\u306E\u6575\u3082\u767A\u898B\u3055\u308C\u308B\u305E\uFF01"
+      guid: e7c346d0-227f-457c-9353-c7eb66ef220b
+    image: {fileID: 0}

@@ -88,6 +88,8 @@ namespace MineS
 				return new AbilityBase(type, holder, "Intimidation");
 			case GameDefine.AbilityType.Curse:
 				return new AbilityBase(type, holder, "Curse");
+			case GameDefine.AbilityType.WarCry:
+				return new AbilityWarCry(holder);
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;
