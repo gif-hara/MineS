@@ -92,18 +92,12 @@ namespace MineS
 
 			[SerializeField]
 			private SerializeFieldGetter.Sprite weapon;
+
 			[SerializeField]
 			private SerializeFieldGetter.Sprite shield;
+
 			[SerializeField]
 			private SerializeFieldGetter.Sprite accessory;
-			[SerializeField]
-			private SerializeFieldGetter.Sprite helmet;
-			[SerializeField]
-			private SerializeFieldGetter.Sprite body;
-			[SerializeField]
-			private SerializeFieldGetter.Sprite glove;
-			[SerializeField]
-			private SerializeFieldGetter.Sprite leg;
 
 			public Sprite Get(GameDefine.ItemType type)
 			{
@@ -117,14 +111,6 @@ namespace MineS
 					return this.shield.Element;
 				case GameDefine.ItemType.Accessory:
 					return this.accessory.Element;
-				case GameDefine.ItemType.Helmet:
-					return this.helmet.Element;
-				case GameDefine.ItemType.Body:
-					return this.body.Element;
-				case GameDefine.ItemType.Glove:
-					return this.glove.Element;
-				case GameDefine.ItemType.Leg:
-					return this.leg.Element;
 				default:
 					Debug.AssertFormat(false, "不正な値です. type = {0}", type);
 					return null;

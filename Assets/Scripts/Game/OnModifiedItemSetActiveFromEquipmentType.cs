@@ -42,18 +42,12 @@ namespace MineS
 		{
 			switch(itemType)
 			{
-			case GameDefine.ItemType.Accessory:
-				return this.luckObject;
-			case GameDefine.ItemType.Body:
-			case GameDefine.ItemType.Helmet:
-			case GameDefine.ItemType.Shield:
-				return this.armorObject;
 			case GameDefine.ItemType.Weapon:
 				return this.strengthObject;
-			case GameDefine.ItemType.Leg:
-				return this.evasionObject;
-			case GameDefine.ItemType.Glove:
-				return this.hitProbabilityObject;
+			case GameDefine.ItemType.Shield:
+				return this.armorObject;
+			case GameDefine.ItemType.Accessory:
+				return this.luckObject;
 			default:
 				Debug.AssertFormat(false, "不正な値です. itemType = {0}", itemType);
 				return null;

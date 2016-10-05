@@ -54,10 +54,6 @@ namespace MineS
 				this.CreateCellController(inventory.Equipment.Weapon, GameDefine.ItemType.Weapon, new SelectItemAction(inventory.Equipment.Weapon));
 				this.CreateCellController(inventory.Equipment.Shield, GameDefine.ItemType.Shield, new SelectItemAction(inventory.Equipment.Shield));
 				this.CreateCellController(inventory.Equipment.Accessory, GameDefine.ItemType.Accessory, new SelectItemAction(inventory.Equipment.Accessory));
-				this.CreateCellController(inventory.Equipment.Helmet, GameDefine.ItemType.Helmet, new SelectItemAction(inventory.Equipment.Helmet));
-				this.CreateCellController(inventory.Equipment.Body, GameDefine.ItemType.Body, new SelectItemAction(inventory.Equipment.Body));
-				this.CreateCellController(inventory.Equipment.Glove, GameDefine.ItemType.Glove, new SelectItemAction(inventory.Equipment.Glove));
-				this.CreateCellController(inventory.Equipment.Leg, GameDefine.ItemType.Leg, new SelectItemAction(inventory.Equipment.Leg));
 				this.CreatePartition(this.inventoryPartitionName.Get);
 			}
 			inventory.Items.ForEach(i => this.CreateCellController(i, GameDefine.ItemType.UsableItem, this.GetUsableItemAction(inventory, i)));

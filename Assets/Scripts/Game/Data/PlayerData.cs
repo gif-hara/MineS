@@ -104,10 +104,6 @@ namespace MineS
 				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Weapon));
 				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Shield));
 				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Accessory));
-				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Helmet));
-				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Body));
-				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Glove));
-				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Leg));
 
 				return result;
 			}

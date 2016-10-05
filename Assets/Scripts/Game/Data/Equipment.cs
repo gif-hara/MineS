@@ -11,19 +11,11 @@ namespace MineS
 	[System.Serializable]
 	public class Equipment
 	{
-		public Item Accessory{ private set; get; }
-
-		public Item Body{ private set; get; }
-
-		public Item Glove{ private set; get; }
-
-		public Item Helmet{ private set; get; }
-
-		public Item Leg{ private set; get; }
+		public Item Weapon{ private set; get; }
 
 		public Item Shield{ private set; get; }
 
-		public Item Weapon{ private set; get; }
+		public Item Accessory{ private set; get; }
 
 		public Item Change(Item item, CharacterData holder)
 		{
@@ -31,33 +23,17 @@ namespace MineS
 			(item.InstanceData as EquipmentData).SetAbilitiesHolder(holder);
 			switch(item.InstanceData.ItemType)
 			{
-			case GameDefine.ItemType.Accessory:
-				beforeItem = this.Accessory;
-				this.Accessory = item;
-			break;
-			case GameDefine.ItemType.Body:
-				beforeItem = this.Body;
-				this.Body = item;
-			break;
-			case GameDefine.ItemType.Glove:
-				beforeItem = this.Glove;
-				this.Glove = item;
-			break;
-			case GameDefine.ItemType.Helmet:
-				beforeItem = this.Helmet;
-				this.Helmet = item;
-			break;
-			case GameDefine.ItemType.Leg:
-				beforeItem = this.Leg;
-				this.Leg = item;
+			case GameDefine.ItemType.Weapon:
+				beforeItem = this.Weapon;
+				this.Weapon = item;
 			break;
 			case GameDefine.ItemType.Shield:
 				beforeItem = this.Shield;
 				this.Shield = item;
 			break;
-			case GameDefine.ItemType.Weapon:
-				beforeItem = this.Weapon;
-				this.Weapon = item;
+			case GameDefine.ItemType.Accessory:
+				beforeItem = this.Accessory;
+				this.Accessory = item;
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です = {0}", item.InstanceData.ItemType);
@@ -73,26 +49,14 @@ namespace MineS
 
 			switch(item.InstanceData.ItemType)
 			{
-			case GameDefine.ItemType.Accessory:
-				this.Accessory = null;
-			break;
-			case GameDefine.ItemType.Body:
-				this.Body = null;
-			break;
-			case GameDefine.ItemType.Glove:
-				this.Glove = null;
-			break;
-			case GameDefine.ItemType.Helmet:
-				this.Helmet = null;
-			break;
-			case GameDefine.ItemType.Leg:
-				this.Leg = null;
+			case GameDefine.ItemType.Weapon:
+				this.Weapon = null;
 			break;
 			case GameDefine.ItemType.Shield:
 				this.Shield = null;
 			break;
-			case GameDefine.ItemType.Weapon:
-				this.Weapon = null;
+			case GameDefine.ItemType.Accessory:
+				this.Accessory = null;
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です = {0}", item.InstanceData.ItemType);
@@ -119,20 +83,12 @@ namespace MineS
 		{
 			switch(itemType)
 			{
-			case GameDefine.ItemType.Accessory:
-				return this.Accessory;
-			case GameDefine.ItemType.Body:
-				return this.Body;
-			case GameDefine.ItemType.Glove:
-				return this.Glove;
-			case GameDefine.ItemType.Helmet:
-				return this.Helmet;
-			case GameDefine.ItemType.Leg:
-				return this.Leg;
-			case GameDefine.ItemType.Shield:
-				return this.Shield;
 			case GameDefine.ItemType.Weapon:
 				return this.Weapon;
+			case GameDefine.ItemType.Shield:
+				return this.Shield;
+			case GameDefine.ItemType.Accessory:
+				return this.Accessory;
 			}
 
 			Debug.AssertFormat(false, "不正な値です = {0}", itemType);
@@ -156,23 +112,7 @@ namespace MineS
 		{
 			get
 			{
-				return this.GetPower(this.Helmet) + this.GetPower(this.Body) + this.GetPower(this.Shield);
-			}
-		}
-
-		public int TotalHitProbability
-		{
-			get
-			{
-				return this.GetPower(this.Glove);
-			}
-		}
-
-		public int TotalEvasion
-		{
-			get
-			{
-				return this.GetPower(this.Leg);
+				return this.GetPower(this.Shield);
 			}
 		}
 
