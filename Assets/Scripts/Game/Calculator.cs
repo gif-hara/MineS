@@ -306,5 +306,15 @@ namespace MineS
 
 			return probability > Random.Range(0, 100);
 		}
+
+		/// <summary>
+		/// 特殊能力の回復による回復値を返す.
+		/// </summary>
+		/// <returns>The ability recovery value.</returns>
+		/// <param name="attacker">Attacker.</param>
+		public static int GetAbilityRecoveryValue(IAttack attacker)
+		{
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Recovery);
+		}
 	}
 }

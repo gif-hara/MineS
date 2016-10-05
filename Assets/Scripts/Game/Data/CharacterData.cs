@@ -131,6 +131,10 @@ namespace MineS
 			{
 				this.RecoveryHitPoint(damage / 2, true);
 			}
+			if(this.FindAbility(GameDefine.AbilityType.Recovery))
+			{
+				this.RecoveryHitPoint(Calculator.GetAbilityRecoveryValue(this), true);
+			}
 			if(this.FindAbility(GameDefine.AbilityType.Goemon))
 			{
 				this.Money += Calculator.GetGoemonValue(damage, this);
