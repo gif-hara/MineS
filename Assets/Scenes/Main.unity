@@ -12676,10 +12676,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1ab0dfc4e59d541079108d50ebe08fa8, type: 2}
   - {fileID: 11400000, guid: 2102122846e0c4ce2b0db6f9cde11012, type: 2}
   - {fileID: 11400000, guid: 3615f141ac4f247e998653f603536117, type: 2}
-  - {fileID: 11400000, guid: 970afb3fc636246119f85a354278989f, type: 2}
-  - {fileID: 11400000, guid: 69ac979cd38a5465ba509d8648d23978, type: 2}
-  - {fileID: 11400000, guid: 03055eecd9a714359b1f7886ca160f7c, type: 2}
-  - {fileID: 11400000, guid: ed98dc1bd6db54ed69d71eed525b8b96, type: 2}
   - {fileID: 11400000, guid: 296598321c52d4e22b1d417988c1b533, type: 2}
 --- !u!1 &1313318905
 GameObject:
@@ -16263,14 +16259,6 @@ MonoBehaviour:
       element: {fileID: 21300000, guid: d1a82eb3447d6a443b7fdf954e8eca53, type: 3}
     accessory:
       element: {fileID: 21300000, guid: 2dfe281539de17b4f948f65428065e47, type: 3}
-    helmet:
-      element: {fileID: 21300000, guid: 3f384b6563717a846893a896c5c49e63, type: 3}
-    body:
-      element: {fileID: 21300000, guid: ef42510a88efffc47b95de6823f65dd0, type: 3}
-    glove:
-      element: {fileID: 21300000, guid: 8a38ea6366836764a87dd2bd82924fbf, type: 3}
-    leg:
-      element: {fileID: 21300000, guid: ef2d2f1e4f38a544485dde1991de38a9, type: 3}
 --- !u!1 &1588900025
 GameObject:
   m_ObjectHideFlags: 0
