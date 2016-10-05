@@ -19,6 +19,6 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: d1a82eb3447d6a443b7fdf954e8eca53, type: 3}
   power: 5
   brandingLimit: 7
-  canExtraction: 0
+  canExtraction: 1
   itemType: 2
   abilities: 03000000

@@ -17,6 +17,8 @@ MonoBehaviour:
     guid: a5a560ee-fa1f-4ac9-a8f3-6f286206bb5d
   rare: 0
   image: {fileID: 21300000, guid: 2dfe281539de17b4f948f65428065e47, type: 3}
-  power: 3
-  itemType: 7
-  spells: 
+  power: 2
+  brandingLimit: 0
+  canExtraction: 0
+  itemType: 3
+  abilities: 

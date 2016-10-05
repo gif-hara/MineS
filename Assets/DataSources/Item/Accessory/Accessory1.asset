@@ -9,16 +9,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f7e9d515b0e649779991d3ea5e7d149, type: 3}
-  m_Name: Shield2
+  m_Name: Accessory1
   m_EditorClassIdentifier: 
   itemName:
-    target: {fileID: 11400000, guid: 0a5dcdf265a75423b9e147773b4c020e, type: 2}
-    value: "\u92FC\u306E\u76FE"
-    guid: 0fc81048-c33b-4cfb-99ff-c40058232b52
-  rare: 0
-  image: {fileID: 21300000, guid: d1a82eb3447d6a443b7fdf954e8eca53, type: 3}
-  power: 5
-  brandingLimit: 5
-  canExtraction: 1
-  itemType: 2
+    target: {fileID: 11400000, guid: 38061fe1c17e64321bea8e24561a537d, type: 2}
+    value: "\u30EB\u30D3\u30FC\u306E\u30CD\u30C3\u30AF\u30EC\u30B9"
+    guid: e71e95fa-ff52-4b8e-ab79-ad59191d17ad
+  rare: 1
+  image: {fileID: 21300000, guid: 2dfe281539de17b4f948f65428065e47, type: 3}
+  power: 4
+  brandingLimit: 0
+  canExtraction: 0
+  itemType: 3
   abilities: 
