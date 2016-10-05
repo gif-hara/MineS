@@ -15,6 +15,15 @@ namespace MineS
 		private int power;
 
 		[SerializeField]
+		private int brandingLimit;
+
+		/// <summary>
+		/// 抽出可能か.
+		/// </summary>
+		[SerializeField]
+		private bool canExtraction;
+
+		[SerializeField]
 		private GameDefine.ItemType itemType;
 
 		[SerializeField]

@@ -15,7 +15,7 @@ namespace MineS
 		{
 		}
 
-		public override void OnTurnProgress()
+		public override void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			if(this.Holder == null)
 			{

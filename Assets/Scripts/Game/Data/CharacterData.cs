@@ -10,7 +10,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public abstract class CharacterData : IAttack
+	public abstract class CharacterData : IAttack, ITurnProgress
 	{
 		public string Name{ private set; get; }
 
@@ -262,7 +262,7 @@ namespace MineS
 		{
 			this.AbnormalStatuses.ForEach(a => a.OnTurnProgress(type, turnCount));
 			this.AbnormalStatuses.RemoveAll(a => !a.IsValid);
-			this.Abilities.ForEach(a => a.OnTurnProgress());
+			this.Abilities.ForEach(a => a.OnTurnProgress(type, turnCount));
 		}
 
 		public bool FindAbnormalStatus(GameDefine.AbnormalStatusType type)

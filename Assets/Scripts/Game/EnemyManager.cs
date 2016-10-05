@@ -9,7 +9,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
+	public class EnemyManager : SingletonMonoBehaviour<EnemyManager>, ITurnProgress
 	{
 		public Dictionary<CellData, EnemyData> Enemies{ private set; get; }
 
@@ -89,7 +89,7 @@ namespace MineS
 			}
 		}
 
-		private void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			foreach(var e in this.Enemies)
 			{

@@ -9,16 +9,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f7e9d515b0e649779991d3ea5e7d149, type: 3}
-  m_Name: Weapon2
+  m_Name: Weapon4
   m_EditorClassIdentifier: 
   itemName:
     target: {fileID: 11400000, guid: b07e9e1f8c7b04b0aa8f827506c560be, type: 2}
-    value: "\u92FC\u306E\u5263"
-    guid: 715c5319-8627-4405-b615-e4dd96797083
+    value: "\u86C7\u306E\u5263"
+    guid: be367523-1dfd-4a59-b3e4-ca1b91e5efe9
   rare: 0
   image: {fileID: 21300000, guid: 3b24933fa912dc74aa1e86dc1626a9c2, type: 3}
-  power: 5
-  brandingLimit: 4
+  power: 4
+  brandingLimit: 5
   canExtraction: 1
   itemType: 1
-  abilities: 
+  abilities: 1a000000

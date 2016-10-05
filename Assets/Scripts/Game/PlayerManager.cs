@@ -9,7 +9,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class PlayerManager : SingletonMonoBehaviour<PlayerManager>
+	public class PlayerManager : SingletonMonoBehaviour<PlayerManager>, ITurnProgress
 	{
 		[SerializeField]
 		private List<CharacterDataObserver> characterDataObservers;
@@ -182,7 +182,7 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
-		private void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			this.Data.OnTurnProgress(type, turnCount);
 		}
