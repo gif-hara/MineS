@@ -189,7 +189,7 @@ namespace MineS
 
 		public int TakeDamage(CharacterData attacker, int value, bool onlyHitPoint)
 		{
-			var resultDamage = Calculator.GetFinalDamage(value, this.AbnormalStatuses);
+			var resultDamage = Calculator.GetFinalDamage(value, this);
 			this.TakeDamageRaw(attacker, resultDamage, onlyHitPoint);
 
 			if(attacker != null && this.FindAbility(GameDefine.AbilityType.Splash))

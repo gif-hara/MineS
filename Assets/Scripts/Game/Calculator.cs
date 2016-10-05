@@ -63,15 +63,18 @@ namespace MineS
 		/// </summary>
 		/// <returns>The final damage.</returns>
 		/// <param name="baseDamage">Base damage.</param>
-		/// <param name="abnormalStatuses">Abnormal statuses.</param>
-		public static int GetFinalDamage(int baseDamage, List<AbnormalStatusBase> abnormalStatuses)
+		/// <param name="receiver">Receiver.</param>
+		public static int GetFinalDamage(int baseDamage, IAttack receiver)
 		{
-			float rate = abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Gout) != null
+			float rate = receiver.FindAbnormalStatus(GameDefine.AbnormalStatusType.Gout)
 				? 2.0f
-				: abnormalStatuses.Find(a => a.Type == GameDefine.AbnormalStatusType.Curing) != null
+				: receiver.FindAbnormalStatus(GameDefine.AbnormalStatusType.Curing)
 				? 0.5f
 				: 1.0f;
-			return Mathf.FloorToInt(baseDamage * rate);
+			int result = Mathf.FloorToInt(baseDamage * rate) - receiver.GetAbilityNumber(GameDefine.AbilityType.Protection);
+			result = result < 0 ? 0 : result;
+
+			return result;
 		}
 
 		/// <summary>

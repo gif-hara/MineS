@@ -92,6 +92,8 @@ namespace MineS
 				return new AbilityWarCry(holder);
 			case GameDefine.AbilityType.Recovery:
 				return new AbilityBase(type, holder, "Recovery");
+			case GameDefine.AbilityType.Protection:
+				return new AbilityBase(type, holder, "Protection");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;
