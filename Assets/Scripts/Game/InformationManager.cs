@@ -25,7 +25,10 @@ namespace MineS
 			onLevelUpPlayer = null,
 			onContinuousAttack = null,
 			onAcquiredItem = null,
-			onRecovery = null;
+			onRecovery = null,
+			onNotPossessionEquipment = null,
+			confirmReinforceMessage = null,
+			notEquipmentLevelUpMessage = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -89,6 +92,30 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.onRecovery.Format(value));
+		}
+
+		public static void OnNotPossessionEquipment()
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.onNotPossessionEquipment.Get);
+		}
+
+		public static void OnConfirmReinforcement(int needMoney)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.confirmReinforceMessage.Format(needMoney));
+		}
+
+		public static void OnNotEquipmentLevelUp()
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.notEquipmentLevelUpMessage.Get);
+		}
+
+		public static void AddMessage(string message)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(message);
 		}
 
 		private void _AddMessage(string message)

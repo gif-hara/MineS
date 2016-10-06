@@ -38,6 +38,9 @@ namespace MineS
 		[SerializeField]
 		private StringAsset.Finder cancelFormat;
 
+		[SerializeField]
+		private StringAsset.Finder reinforcementFormat;
+
 		private List<GameObject> createdObjects = new List<GameObject>();
 
 		void OnDisable()
@@ -49,6 +52,21 @@ namespace MineS
 #region IReceiveModifiedItem implementation
 
 		public void OnModifiedItem(Item item)
+		{
+			var openType = PlayerManager.Instance.Data.Inventory.OpenType;
+			if(openType == GameDefine.InventoryModeType.Use)
+			{
+				this.OnUseMode(item);
+			}
+			else if(openType == GameDefine.InventoryModeType.BlackSmith_Reinforcement)
+			{
+				this.OnBlackSmithReinforcement(item);
+			}
+		}
+
+#endregion
+
+		private void OnUseMode(Item item)
 		{
 			if(item.InstanceData.ItemType == GameDefine.ItemType.UsableItem)
 			{
@@ -71,7 +89,11 @@ namespace MineS
 			}
 		}
 
-#endregion
+		private void OnBlackSmithReinforcement(Item item)
+		{
+			this.Create(item, this.reinforcementFormat.Get, GameDefine.SelectItemDecideType.Reinforcement);
+			this.Create(item, this.cancelFormat.Get, GameDefine.SelectItemDecideType.Cancel);
+		}
 
 		private void CreateOnUsableItem(Item selectItem)
 		{

@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using System.Linq;
 
 namespace MineS
 {
@@ -20,6 +21,8 @@ namespace MineS
 		private CharacterData holder;
 
 		private Item selectItem;
+
+		public GameDefine.InventoryModeType OpenType{ private set; get; }
 
 		public Inventory(CharacterData holder)
 		{
@@ -78,6 +81,11 @@ namespace MineS
 			this.selectItem.Use(this.holder);
 		}
 
+		public void SetMode(GameDefine.InventoryModeType type)
+		{
+			this.OpenType = type;
+		}
+
 		public bool IsFreeSpace
 		{
 			get
@@ -99,6 +107,27 @@ namespace MineS
 		public void RemoveEquipment(Item item)
 		{
 			this.Equipment.Remove(item);
+		}
+
+		public List<Item> AllItem
+		{
+			get
+			{
+				var result = new List<Item>();
+				result.AddRange(this.Items.Where(i => i != null));
+				result.AddRange(this.Equipment.ToList.Where(i => i != null));
+
+				return result;
+			}
+		}
+
+		public bool IsPossessionEquipment
+		{
+			get
+			{
+				var list = this.AllItem;
+				return list.Exists(i => GameDefine.IsEquipment(i.InstanceData.ItemType));
+			}
 		}
 	}
 }

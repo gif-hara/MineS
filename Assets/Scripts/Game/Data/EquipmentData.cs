@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using UnityEngine.Serialization;
 
 namespace MineS
 {
@@ -12,7 +13,7 @@ namespace MineS
 	public class EquipmentData : ItemDataBase
 	{
 		[SerializeField]
-		private int power;
+		private int basePower;
 
 		[SerializeField]
 		private int brandingLimit;
@@ -29,7 +30,26 @@ namespace MineS
 		[SerializeField]
 		private List<GameDefine.AbilityType> abilities;
 
-		public int Power{ get { return this.power; } }
+		[SerializeField]
+		private EquipmentLevelElement reinforcementPurchase;
+
+		[SerializeField]
+		private EquipmentLevelElement levelPower;
+
+		private int level = 0;
+
+		public int Power
+		{
+			get
+			{
+				if(this.level <= 0)
+				{
+					return this.basePower;
+				}
+
+				return Mathf.FloorToInt(this.basePower + this.levelPower.Get(this.level - 1));
+			}
+		}
 
 		public List<AbilityBase> Abilities{ private set; get; }
 
@@ -47,9 +67,12 @@ namespace MineS
 			{
 				var result = ScriptableObject.CreateInstance<EquipmentData>();
 				this.InternalClone(result);
-				result.power = this.power;
+				result.basePower = this.basePower;
 				result.itemType = this.itemType;
 				result.abilities = new List<GameDefine.AbilityType>(this.abilities);
+				result.reinforcementPurchase = this.reinforcementPurchase;
+				result.levelPower = this.levelPower;
+				result.level = this.level;
 				result.Abilities = AbilityFactory.Create(this.abilities, null);
 
 				return result;
@@ -59,6 +82,27 @@ namespace MineS
 		public void SetAbilitiesHolder(CharacterData holder)
 		{
 			this.Abilities.ForEach(a => a.SetHolder(holder));
+		}
+
+		public void LevelUp()
+		{
+			this.level++;
+		}
+
+		public bool CanLevelUp
+		{
+			get
+			{
+				return this.level < GameDefine.EquipmentLevelMax;
+			}
+		}
+
+		public int NeedLevelUpMoney
+		{
+			get
+			{
+				return Mathf.FloorToInt(this.purchasePrice * this.reinforcementPurchase.Get(this.level));
+			}
 		}
 	}
 }

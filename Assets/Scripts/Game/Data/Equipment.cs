@@ -100,6 +100,19 @@ namespace MineS
 			return item == null ? 0 : (item.InstanceData as EquipmentData).Power;
 		}
 
+		public List<Item> ToList
+		{
+			get
+			{
+				var result = new List<Item>();
+				result.Add(this.Weapon);
+				result.Add(this.Shield);
+				result.Add(this.Accessory);
+
+				return result;
+			}
+		}
+
 		public int TotalStrength
 		{
 			get

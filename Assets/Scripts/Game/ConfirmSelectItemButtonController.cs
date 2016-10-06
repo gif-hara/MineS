@@ -53,6 +53,9 @@ namespace MineS
 			case GameDefine.SelectItemDecideType.Cancel:
 				this.OnCancel();
 			break;
+			case GameDefine.SelectItemDecideType.Reinforcement:
+				this.OnReinforcement();
+			break;
 			}
 		}
 
@@ -107,6 +110,12 @@ namespace MineS
 
 		private void OnCancel()
 		{
+			PlayerManager.Instance.CloseConfirmSelectItemUI();
+		}
+
+		private void OnReinforcement()
+		{
+			BlackSmithManager.Instance.Reinforcement(this.selectItem);
 			PlayerManager.Instance.CloseConfirmSelectItemUI();
 		}
 	}

@@ -23,8 +23,27 @@ namespace MineS
 			{
 				return;
 			}
+
 			var playerManager = PlayerManager.Instance;
-			playerManager.SelectItem(this.item);
+
+			if(playerManager.Data.Inventory.OpenType == GameDefine.InventoryModeType.BlackSmith_Reinforcement)
+			{
+				var equipmentData = this.item.InstanceData as EquipmentData;
+				if(equipmentData.CanLevelUp)
+				{
+					InformationManager.OnConfirmReinforcement(equipmentData.NeedLevelUpMoney);
+				}
+				else
+				{
+					InformationManager.OnNotEquipmentLevelUp();
+				}
+			}
+
+			if(this.CanSelect)
+			{
+				playerManager.SelectItem(this.item);
+			}
+
 		}
 
 		public override void SetCellController(CellController cellController)
@@ -55,6 +74,20 @@ namespace MineS
 			get
 			{
 				return this.item.InstanceData.Image;
+			}
+		}
+
+		private bool CanSelect
+		{
+			get
+			{
+				var openType = PlayerManager.Instance.Data.Inventory.OpenType;
+				if(openType == GameDefine.InventoryModeType.BlackSmith_Reinforcement)
+				{
+					return (this.item.InstanceData as EquipmentData).CanLevelUp;
+				}
+
+				return true;
 			}
 		}
 	}

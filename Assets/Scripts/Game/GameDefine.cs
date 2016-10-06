@@ -487,6 +487,11 @@ namespace MineS
 			/// キャンセル.
 			/// </summary>
 			Cancel,
+
+			/// <summary>
+			/// 強化する.
+			/// </summary>
+			Reinforcement,
 		}
 
 		public enum InventoryModeType:int
@@ -516,13 +521,15 @@ namespace MineS
 
 		public const int MoneyMax = 9999999;
 
-		public const int InventoryItemMax = 8;
+		public const int InventoryItemMax = 16;
 
 		public const int RecoveryItemRecovery = 5;
 
 		public const int ArmorMax = 999;
 
 		public const int AbnormalStatusTrapRemainingTurn = 5;
+
+		public const int EquipmentLevelMax = 3;
 
 		public static int Lottery<P>(List<P> elements) where P : IProbability
 		{

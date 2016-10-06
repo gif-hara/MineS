@@ -3,6 +3,7 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
 using UnityEngine.Serialization;
+using UnityEngine.Events;
 
 namespace MineS
 {
@@ -27,6 +28,9 @@ namespace MineS
 		private GameObject confirmSelectItemUI;
 
 		[SerializeField]
+		private GameObject blackSmithConfirmUI;
+
+		[SerializeField]
 		private ExperienceData experienceData;
 
 		[SerializeField]
@@ -34,6 +38,10 @@ namespace MineS
 
 		[SerializeField]
 		private CharacterMasterData growthData;
+
+		private UnityEvent onOpenInventoryUI = new UnityEvent();
+
+		private UnityEvent onCloseInventoryUI = new UnityEvent();
 
 		public PlayerData Data{ private set; get; }
 
@@ -94,16 +102,19 @@ namespace MineS
 			}
 		}
 
-		public void OpenInventoryUI()
+		public void OpenInventoryUI(GameDefine.InventoryModeType type)
 		{
+			this.Data.Inventory.SetMode(type);
 			this.inventoryUI.SetActive(true);
 			this.UpdateInventoryUI();
+			this.onOpenInventoryUI.Invoke();
 		}
 
 		public void CloseInventoryUI()
 		{
 			this.Data.Inventory.SetExchangeItem(null, null);
 			this.inventoryUI.SetActive(false);
+			this.onCloseInventoryUI.Invoke();
 		}
 
 		public void SelectItem(Item item)
@@ -141,10 +152,20 @@ namespace MineS
 			else
 			{
 				this.Data.Inventory.SetExchangeItem(item, cellData);
-				PlayerManager.Instance.OpenInventoryUI();
+				PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.Exchange);
 				DescriptionManager.Instance.DeployEmergency("ExchangeItem");
 				return GameDefine.AcquireItemResultType.Full;
 			}
+		}
+
+		public void AddOpenInventoryUIEvent(UnityAction call)
+		{
+			this.onOpenInventoryUI.AddListener(call);
+		}
+
+		public void AddCloseInventoryUIEvent(UnityAction call)
+		{
+			this.onCloseInventoryUI.AddListener(call);
 		}
 
 		public void DebugAddAbnormalStatus(int type)

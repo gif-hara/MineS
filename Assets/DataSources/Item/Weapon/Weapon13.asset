@@ -16,9 +16,14 @@ MonoBehaviour:
     value: "\u30AF\u30AF\u30EA"
     guid: 0dbcb085-dbb2-40f5-b6b7-91b0c6de0227
   rare: 1
+  purchasePrice: 10000
+  sellingPrice: 5000
   image: {fileID: 21300000, guid: 3b24933fa912dc74aa1e86dc1626a9c2, type: 3}
-  power: 8
+  basePower: 8
   brandingLimit: 5
   canExtraction: 1
   itemType: 1
   abilities: 07000000
+  reinforcementPurchase: {fileID: 11400000, guid: 487bb6b95396243b79a1875acb5e32c1,
+    type: 2}
+  levelPower: {fileID: 11400000, guid: 7c15e29a15dec4090ba7e99466eca925, type: 2}
