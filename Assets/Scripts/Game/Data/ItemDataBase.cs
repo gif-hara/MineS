@@ -27,7 +27,7 @@ namespace MineS
 		[SerializeField]
 		private Sprite image;
 
-		public string ItemName{ get { return this.itemName.ToString(); } }
+		public virtual string ItemName{ get { return this.itemName.ToString(); } }
 
 		public GameDefine.RareType RareType{ get { return this.rare; } }
 

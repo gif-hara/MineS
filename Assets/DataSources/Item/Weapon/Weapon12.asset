@@ -23,7 +23,7 @@ MonoBehaviour:
   brandingLimit: 4
   canExtraction: 1
   itemType: 1
-  abilities: 0c0000000c000000
+  abilities: 0c000000
   reinforcementPurchase: {fileID: 11400000, guid: 487bb6b95396243b79a1875acb5e32c1,
     type: 2}
   levelPower: {fileID: 11400000, guid: 7c15e29a15dec4090ba7e99466eca925, type: 2}

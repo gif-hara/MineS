@@ -36,22 +36,30 @@ namespace MineS
 		[SerializeField]
 		private EquipmentLevelElement levelPower;
 
-		private int level = 0;
+		public int Level{ private set; get; }
 
 		public int Power
 		{
 			get
 			{
-				if(this.level <= 0)
+				if(this.Level <= 0)
 				{
 					return this.basePower;
 				}
 
-				return Mathf.FloorToInt(this.basePower + this.levelPower.Get(this.level - 1));
+				return Mathf.FloorToInt(this.basePower + this.levelPower.Get(this.Level - 1));
 			}
 		}
 
 		public List<AbilityBase> Abilities{ private set; get; }
+
+		public override string ItemName
+		{
+			get
+			{
+				return EquipmentManager.Instance.GetStreetName(this) + base.ItemName;
+			}
+		}
 
 		public override GameDefine.ItemType ItemType
 		{
@@ -72,7 +80,7 @@ namespace MineS
 				result.abilities = new List<GameDefine.AbilityType>(this.abilities);
 				result.reinforcementPurchase = this.reinforcementPurchase;
 				result.levelPower = this.levelPower;
-				result.level = this.level;
+				result.Level = this.Level;
 				result.Abilities = AbilityFactory.Create(this.abilities, null);
 
 				return result;
@@ -86,14 +94,14 @@ namespace MineS
 
 		public void LevelUp()
 		{
-			this.level++;
+			this.Level++;
 		}
 
 		public bool CanLevelUp
 		{
 			get
 			{
-				return this.level < GameDefine.EquipmentLevelMax;
+				return this.Level < GameDefine.EquipmentLevelMax;
 			}
 		}
 
@@ -101,7 +109,7 @@ namespace MineS
 		{
 			get
 			{
-				return Mathf.FloorToInt(this.purchasePrice * this.reinforcementPurchase.Get(this.level));
+				return Mathf.FloorToInt(this.purchasePrice * this.reinforcementPurchase.Get(this.Level));
 			}
 		}
 	}

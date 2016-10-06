@@ -16,8 +16,8 @@ MonoBehaviour:
     value: "\u546A\u5263\u30CF\u30FC\u30DF\u30C3\u30C8"
     guid: 0e37536b-76c6-4d32-9053-7cb48970427d
   rare: 3
-  purchasePrice: 0
-  sellingPrice: 0
+  purchasePrice: 20000
+  sellingPrice: 10000
   image: {fileID: 21300000, guid: 3b24933fa912dc74aa1e86dc1626a9c2, type: 3}
   basePower: 35
   brandingLimit: 7

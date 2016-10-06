@@ -33,8 +33,11 @@ namespace MineS
 			var playerData = PlayerManager.Instance.Data;
 			if(playerData.Money > equipmentData.NeedLevelUpMoney)
 			{
+				playerData.AddMoney(-equipmentData.NeedLevelUpMoney);
 				equipmentData.LevelUp();
 				InformationManager.AddMessage(this.levelUpMessage.Get);
+				PlayerManager.instance.UpdateInventoryUI();
+				PlayerManager.instance.NotifyCharacterDataObservers();
 			}
 			else
 			{
