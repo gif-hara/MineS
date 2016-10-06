@@ -53,13 +53,7 @@ namespace MineS
 		{
 			get
 			{
-				var result = 0;
-				foreach(var e in this.Enemies)
-				{
-					result += e.Key.IsIdentification ? 1 : 0;
-				}
-
-				return result;
+				return this.Enemies.Count(e => e.Key.IsIdentification);
 			}
 		}
 
@@ -83,14 +77,10 @@ namespace MineS
 
 		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
-			foreach(var e in this.Enemies)
+			var visibleEnemies = this.VisibleEnemies;
+			foreach(var e in visibleEnemies)
 			{
-				if(e.Value == null || !e.Key.IsIdentification)
-				{
-					continue;
-				}
-
-				e.Value.OnTurnProgress(type, turnCount);
+				e.OnTurnProgress(type, turnCount);
 			}
 
 			this.RemoveFromDead();

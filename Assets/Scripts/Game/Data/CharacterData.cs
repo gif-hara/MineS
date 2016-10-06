@@ -3,6 +3,7 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
 using System;
+using System.Linq;
 
 namespace MineS
 {
@@ -295,7 +296,7 @@ namespace MineS
 				return 0;
 			}
 
-			return this.Abilities.FindAll(a => a.Type == type).Count;
+			return this.Abilities.Count(a => a.Type == type);
 		}
 
 		public bool IsDead
