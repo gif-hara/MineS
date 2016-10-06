@@ -80,7 +80,7 @@ namespace MineS
 		private void OpenBlackSmith_Reinforcement(Inventory inventory)
 		{
 			var list = inventory.AllItem;
-			list.Where(i => GameDefine.IsEquipment(i.InstanceData.ItemType));
+			list = list.Where(i => i.InstanceData.ItemType == GameDefine.ItemType.Weapon || i.InstanceData.ItemType == GameDefine.ItemType.Shield).ToList();
 			list.ForEach(i => this.CreateCellController(i, GameDefine.ItemType.Weapon, new SelectItemAction(i)));
 		}
 
