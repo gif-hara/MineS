@@ -116,8 +116,17 @@ namespace MineS
 
 		public void Attack(CharacterData target)
 		{
-			if(this.CanAttack(target) != GameDefine.AttackResultType.Hit)
+			var hitResult = this.CanAttack(target);
+			if(hitResult != GameDefine.AttackResultType.Hit)
 			{
+				if(hitResult == GameDefine.AttackResultType.Miss)
+				{
+					InformationManager.OnMiss(this.Name);
+				}
+				else if(hitResult == GameDefine.AttackResultType.MissByFear)
+				{
+					InformationManager.OnMissByFear(this.Name);
+				}
 				return;
 			}
 

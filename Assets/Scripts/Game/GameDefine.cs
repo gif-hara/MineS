@@ -490,6 +490,29 @@ namespace MineS
 			Cancel,
 		}
 
+		public enum InventoryModeType:int
+		{
+			/// <summary>
+			/// 通常の開いているモード.
+			/// </summary>
+			Use,
+
+			/// <summary>
+			/// 交換モード.
+			/// </summary>
+			Exchange,
+
+			/// <summary>
+			/// 鍛冶屋の強化モード.
+			/// </summary>
+			BlackSmith_Reinforcement,
+
+			/// <summary>
+			/// 鍛冶屋の焼印モード.
+			/// </summary>
+			BlackSmith_Branding,
+		}
+
 		public const int AdjacentMax = 9;
 
 		public const int MoneyMax = 9999999;

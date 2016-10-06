@@ -32,6 +32,11 @@ namespace MineS
 
 		protected override void OnAttacked(CharacterData target, int damage)
 		{
+			InformationManager.OnAttackByPlayer(this.Name, target.Name, damage);
+			if(target.IsDead)
+			{
+				InformationManager.OnDefeatByPlayer(target.Name);
+			}
 			base.OnAttacked(target, damage);
 
 			if(this.Inventory.IsFreeSpace && this.FindAbility(GameDefine.AbilityType.Theft) && Calculator.IsSuccessTheft(this))

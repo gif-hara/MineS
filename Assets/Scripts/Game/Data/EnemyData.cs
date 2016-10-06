@@ -10,6 +10,12 @@ namespace MineS
 	/// </summary>
 	public class EnemyData : CharacterData, IIdentification
 	{
+		protected override void OnAttacked(CharacterData target, int damage)
+		{
+			InformationManager.OnAttackByEnemy(this.Name, target.Name, damage);
+			base.OnAttacked(target, damage);
+		}
+
 		public override void Dead(CharacterData attacker)
 		{
 			var cellData = EnemyManager.Instance.InEnemyCells[this];
