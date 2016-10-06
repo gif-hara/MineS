@@ -49,5 +49,26 @@ namespace MineS
 				}
 			}
 		}
+
+		public override string DescriptionKey
+		{
+			get
+			{
+				switch(this.type)
+				{
+				case GameDefine.AbnormalStatusType.Poison:
+					return "TrapPoison";
+				case GameDefine.AbnormalStatusType.Blur:
+					return "TrapBlur";
+				case GameDefine.AbnormalStatusType.Dull:
+					return "TrapDull";
+				case GameDefine.AbnormalStatusType.Gout:
+					return "TrapGout";
+				default:
+					Debug.AssertFormat(false, "不正な値です. type = {0}", type);
+					return "";
+				}
+			}
+		}
 	}
 }

@@ -20,7 +20,12 @@ namespace MineS
 		private StringAsset.Finder
 			onAttackByPlayer = null, onAttackByEnemy = null,
 			onMiss = null, onMissByFear = null,
-			onDefeatByPlayer = null;
+			onDefeatByPlayer = null,
+			onVisibleEnemy = null,
+			onLevelUpPlayer = null,
+			onContinuousAttack = null,
+			onAcquiredItem = null,
+			onRecovery = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -54,6 +59,36 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.onDefeatByPlayer.Format(targetName));
+		}
+
+		public static void OnVisibleEnemy(string enemyName)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.onVisibleEnemy.Format(enemyName));
+		}
+
+		public static void OnLevelUpPlayer(int level)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.onLevelUpPlayer.Format(level));
+		}
+
+		public static void OnContinuousAttack(string targetName, int damage)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.onContinuousAttack.Format(targetName, damage));
+		}
+
+		public static void OnAcquiredItem(string itemName)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.onAcquiredItem.Format(itemName));
+		}
+
+		public static void OnRecovery(int value)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.onRecovery.Format(value));
 		}
 
 		private void _AddMessage(string message)

@@ -33,10 +33,6 @@ namespace MineS
 		protected override void OnAttacked(CharacterData target, int damage)
 		{
 			InformationManager.OnAttackByPlayer(this.Name, target.Name, damage);
-			if(target.IsDead)
-			{
-				InformationManager.OnDefeatByPlayer(target.Name);
-			}
 			base.OnAttacked(target, damage);
 
 			if(this.Inventory.IsFreeSpace && this.FindAbility(GameDefine.AbilityType.Theft) && Calculator.IsSuccessTheft(this))
@@ -47,6 +43,7 @@ namespace MineS
 
 		public override void Defeat(CharacterData target)
 		{
+			InformationManager.OnDefeatByPlayer(target.Name);
 			base.Defeat(target);
 			this.AddExperience(Calculator.GetFinalExperience(target.Experience, this));
 			this.AddMoney(Calculator.GetFinalMoney(target.Money, this));
@@ -59,13 +56,12 @@ namespace MineS
 
 		public override void Dead(CharacterData attacker)
 		{
-			throw new System.NotImplementedException();
 		}
 
 		public void LevelUp(CharacterMasterData growthData)
 		{
 			this.Level++;
-
+			InformationManager.OnLevelUpPlayer(this.Level);
 			this.HitPointMax += growthData.HitPoint;
 			if(this.HitPoint <= this.HitPointMax)
 			{

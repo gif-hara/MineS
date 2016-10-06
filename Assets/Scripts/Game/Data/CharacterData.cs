@@ -130,8 +130,7 @@ namespace MineS
 				return;
 			}
 
-			var damage = this.GiveDamage(target, FindAbility(GameDefine.AbilityType.Penetoration));
-			this.OnAttacked(target, damage);
+			this.GiveDamage(target, FindAbility(GameDefine.AbilityType.Penetoration));
 		}
 
 		protected virtual void OnAttacked(CharacterData target, int damage)
@@ -156,6 +155,7 @@ namespace MineS
 				if(otherTarget != null)
 				{
 					this.GiveDamageRaw(otherTarget, damage / 2, false);
+					InformationManager.OnContinuousAttack(target.Name, (damage / 2));
 				}
 			}
 			if(this.FindAbility(GameDefine.AbilityType.RiskOfLife))
@@ -176,15 +176,14 @@ namespace MineS
 			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Curse, GameDefine.AbnormalStatusType.Seal);
 		}
 
-		protected int GiveDamage(CharacterData target, bool onlyHitPoint)
+		protected void GiveDamage(CharacterData target, bool onlyHitPoint)
 		{
 			var damage = target.TakeDamage(this, this.FinalStrength, onlyHitPoint);
+			this.OnAttacked(target, damage);
 			if(target.IsDead)
 			{
 				this.Defeat(target);
 			}
-
-			return damage;
 		}
 
 		protected void GiveDamageRaw(CharacterData target, int damage, bool onlyHitPoint)

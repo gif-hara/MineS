@@ -422,3 +422,53 @@ MonoBehaviour:
       value: "\u53D7\u3051\u308B\u30C0\u30E1\u30FC\u30B8\u306E\u91CF\u304C\u6E1B\u5C11\u3059\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
       guid: ac7ae0ee-c4bc-45ee-bcec-8b48026f056e
     image: {fileID: 0}
+  - key: TrapPoison
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u6BD2\u306E\u5E8A"
+      guid: 78759e3d-8757-4ae4-b73d-ad2629406129
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u8E0F\u3080\u3068\u30C7\u30D0\u30D5\u306E<color=red>\u6BD2</color>\u306B\u306A\u3063\u3066\u3057\u307E\u3046\u305E\uFF01"
+      guid: 3364190a-8332-4261-83dd-7658ee00caab
+    image: {fileID: 21300000, guid: c44f054c49e265b4d941389f57d037bc, type: 3}
+  - key: TrapGout
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u75DB\u98A8\u306E\u5E8A"
+      guid: 9e489725-0da8-4283-9d6f-295e5e93eaf8
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u8E0F\u3080\u3068\u30C7\u30D0\u30D5\u306E<color=red>\u75DB\u98A8</color>\u306B\u306A\u3063\u3066\u3057\u307E\u3046\u305E\uFF01"
+      guid: 80ff8385-18ff-4057-9fee-7395c262c9a3
+    image: {fileID: 21300000, guid: 5e5eb660750823647801c18663c5578f, type: 3}
+  - key: TrapBlur
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5446\u3051\u306E\u5E8A"
+      guid: 780dc671-0c87-4fc5-96f2-453291870aa2
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u8E0F\u3080\u3068\u30C7\u30D0\u30D5\u306E<color=red>\u5446\u3051</color>\u306B\u306A\u3063\u3066\u3057\u307E\u3046\u305E\uFF01"
+      guid: 54cc8eed-3be9-40bd-a977-f3dd1f576e70
+    image: {fileID: 21300000, guid: fe4e56e134ae74240a636829c03350ce, type: 3}
+  - key: TrapDull
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u920D\u3089\u306E\u5E8A"
+      guid: c7d3b4f5-0322-4629-88a1-14cfc80572ee
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u8E0F\u3080\u3068\u30C7\u30D0\u30D5\u306E<color=red>\u920D\u3089</color>\u306B\u306A\u3063\u3066\u3057\u307E\u3046\u305E\uFF01"
+      guid: 8f25def7-8b8c-4c95-83a9-47e6d42cab1a
+    image: {fileID: 21300000, guid: 38f14ed0d06af724182df51c5ee4ff07, type: 3}
+  - key: TrapMine
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5730\u96F7"
+      guid: f9f7b235-675b-4a02-9f2a-c83da01ef909
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u8E0F\u3080\u3068\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u3051\u308B\u305E\uFF01"
+      guid: 3d66172a-76c5-4225-8baf-6fb7df846c2c
+    image: {fileID: 21300000, guid: 7492368233bb5ed419a174980f82a5c2, type: 3}

@@ -13,7 +13,6 @@ namespace MineS
 		public override void InternalInvoke(CellData data)
 		{
 			data.BindCellClickAction(null);
-			data.BindDeployDescription(null);
 			var player = PlayerManager.Instance.Data;
 			player.TakeDamageRaw(null, Calculator.GetMineTrapDamageValue(player.HitPointMax), true);
 		}
@@ -23,6 +22,14 @@ namespace MineS
 			get
 			{
 				return TextureManager.Instance.trap.mine.Element;
+			}
+		}
+
+		public override string DescriptionKey
+		{
+			get
+			{
+				return "TrapMine";
 			}
 		}
 	}

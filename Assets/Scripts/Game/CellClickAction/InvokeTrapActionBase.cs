@@ -20,6 +20,7 @@ namespace MineS
 				return;
 			}
 
+			data.BindDeployDescription(new DeployDescriptionOnDescriptionData(this.DescriptionKey));
 			this.InternalInvoke(data);
 		}
 
@@ -32,5 +33,7 @@ namespace MineS
 		}
 
 		public abstract void InternalInvoke(CellData data);
+
+		public abstract string DescriptionKey{ get; }
 	}
 }

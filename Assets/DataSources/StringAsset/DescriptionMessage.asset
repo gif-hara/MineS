@@ -176,4 +176,24 @@ MonoBehaviour:
       ja: "\u9053\u5177\u888B\u304C\u4E00\u676F\u3067\u88C5\u5099\u3092\u5916\u305B\u307E\u305B\u3093\u3002"
       en: 
     guid: 14aa3e3b-5abe-4ac6-be00-4e32d6e1b498
+  - value:
+      ja: "\u8E0F\u3080\u3068\u30C7\u30D0\u30D5\u306E<color=red>\u6BD2</color>\u306B\u306A\u3063\u3066\u3057\u307E\u3046\u305E\uFF01"
+      en: 
+    guid: 3364190a-8332-4261-83dd-7658ee00caab
+  - value:
+      ja: "\u8E0F\u3080\u3068\u30C7\u30D0\u30D5\u306E<color=red>\u75DB\u98A8</color>\u306B\u306A\u3063\u3066\u3057\u307E\u3046\u305E\uFF01"
+      en: 
+    guid: 80ff8385-18ff-4057-9fee-7395c262c9a3
+  - value:
+      ja: "\u8E0F\u3080\u3068\u30C7\u30D0\u30D5\u306E<color=red>\u5446\u3051</color>\u306B\u306A\u3063\u3066\u3057\u307E\u3046\u305E\uFF01"
+      en: 
+    guid: 54cc8eed-3be9-40bd-a977-f3dd1f576e70
+  - value:
+      ja: "\u8E0F\u3080\u3068\u30C7\u30D0\u30D5\u306E<color=red>\u920D\u3089</color>\u306B\u306A\u3063\u3066\u3057\u307E\u3046\u305E\uFF01"
+      en: 
+    guid: 8f25def7-8b8c-4c95-83a9-47e6d42cab1a
+  - value:
+      ja: "\u8E0F\u3080\u3068\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u3051\u308B\u305E\uFF01"
+      en: 
+    guid: 3d66172a-76c5-4225-8baf-6fb7df846c2c
   asset: []

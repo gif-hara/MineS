@@ -441,7 +441,6 @@ namespace MineS
 			Gout,
 			Blur,
 			Dull,
-			Headache,
 			Mine,
 		}
 
@@ -591,7 +590,6 @@ namespace MineS
 			return type == TrapType.Blur ||
 			type == TrapType.Dull ||
 			type == TrapType.Gout ||
-			type == TrapType.Headache ||
 			type == TrapType.Poison;
 		}
 	}

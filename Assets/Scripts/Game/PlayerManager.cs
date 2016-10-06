@@ -135,6 +135,7 @@ namespace MineS
 			if(this.Data.Inventory.IsFreeSpace)
 			{
 				this.Data.Inventory.AddItem(item);
+				InformationManager.OnAcquiredItem(item.InstanceData.ItemName);
 				return GameDefine.AcquireItemResultType.Acquired;
 			}
 			else
