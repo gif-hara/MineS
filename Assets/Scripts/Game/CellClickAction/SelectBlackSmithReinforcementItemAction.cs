@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using UnityEngine.Events;
 
 namespace MineS
 {
@@ -24,8 +25,6 @@ namespace MineS
 				return;
 			}
 
-			var playerManager = PlayerManager.Instance;
-
 			var equipmentData = this.item.InstanceData as EquipmentData;
 			if(equipmentData.CanLevelUp)
 			{
@@ -37,7 +36,9 @@ namespace MineS
 				return;
 			}
 
-			playerManager.SelectItem(this.item);
+			var confirmManager = ConfirmManager.Instance;
+			confirmManager.Add(confirmManager.decideReinforcement, new UnityAction(() => BlackSmithManager.Instance.InvokeReinforcement(this.item)), true);
+			confirmManager.Add(confirmManager.cancel, null, true);
 		}
 
 		public override void SetCellController(CellController cellController)

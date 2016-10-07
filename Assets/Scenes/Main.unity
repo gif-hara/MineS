@@ -16037,11 +16037,16 @@ MonoBehaviour:
   content: {fileID: 223910144}
   buttonPrefab: {fileID: 114000013387887958, guid: 619cad36206b3459b84d2bbb0a5d60a9,
     type: 2}
+  decideReinforcement:
+    element:
+      target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+      value: "\u5F37\u5316"
+      guid: 9505724b-3af9-4996-9a66-acb3b51720d7
   decideSynthesis:
     element:
       target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
-      value: "\u5408\u6210\u3059\u308B"
-      guid: cc650dc7-c405-4fed-8d4c-67d6d2482554
+      value: "\u5408\u6210"
+      guid: 984b8717-b997-421f-a236-096120e23e4f
   cancel:
     element:
       target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
@@ -21285,10 +21290,6 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u623B\u308B"
     guid: f5506e32-2a6b-4e08-9816-df9ad5f6c01f
-  reinforcementFormat:
-    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
-    value: "\u5F37\u5316"
-    guid: 9505724b-3af9-4996-9a66-acb3b51720d7
 --- !u!4 &2061042064
 Transform:
   m_ObjectHideFlags: 0

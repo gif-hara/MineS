@@ -33,9 +33,6 @@ namespace MineS
 		[SerializeField]
 		private StringAsset.Finder cancelFormat;
 
-		[SerializeField]
-		private StringAsset.Finder reinforcementFormat;
-
 		private List<GameObject> createdObjects = new List<GameObject>();
 
 		void OnDisable()
@@ -52,10 +49,6 @@ namespace MineS
 			if(openType == GameDefine.InventoryModeType.Use)
 			{
 				this.OnUseMode(item);
-			}
-			else if(openType == GameDefine.InventoryModeType.BlackSmith_Reinforcement)
-			{
-				this.OnBlackSmithReinforcement(item);
 			}
 		}
 
@@ -82,12 +75,6 @@ namespace MineS
 			{
 				Debug.AssertFormat(false, "不正な値です. ItemType = {0}", item.InstanceData.ItemType);
 			}
-		}
-
-		private void OnBlackSmithReinforcement(Item item)
-		{
-			ConfirmManager.Instance.Add(this.reinforcementFormat.Get, new UnityAction(() => this.OnReinforcement(item)), true);
-			ConfirmManager.Instance.Add(this.cancelFormat.Get, this.OnCancel, true);
 		}
 
 		private void CreateOnUsableItem(Item selectItem)
@@ -165,12 +152,5 @@ namespace MineS
 		private void OnCancel()
 		{
 		}
-
-		private void OnReinforcement(Item item)
-		{
-			BlackSmithManager.Instance.InvokeReinforcement(item);
-			PlayerManager.Instance.CloseConfirmSelectItemUI();
-		}
-
 	}
 }

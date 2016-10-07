@@ -20,6 +20,8 @@ namespace MineS
 		[SerializeField]
 		private ConfirmButtonController buttonPrefab;
 
+		public SerializeFieldGetter.StringAssetFinder decideReinforcement;
+
 		public SerializeFieldGetter.StringAssetFinder decideSynthesis;
 
 		public SerializeFieldGetter.StringAssetFinder cancel;
