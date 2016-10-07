@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using HK.Framework;
 using UnityEngine.EventSystems;
 using System.Linq;
+using UnityEngine.Serialization;
 
 namespace MineS
 {
@@ -17,7 +18,10 @@ namespace MineS
 		private Transform root;
 
 		[SerializeField]
-		private CellController cellPrefab;
+		private CellController basicCellPrefab;
+
+		[SerializeField]
+		private CellController descriptionCellPrefab;
 
 		[SerializeField]
 		private PartitionController partitionPrefab;
@@ -60,6 +64,15 @@ namespace MineS
 			case GameDefine.InventoryModeType.BlackSmith_Reinforcement:
 				this.OpenBlackSmith_Reinforcement(inventory);
 			break;
+			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment:
+				this.OpenBlackSmith_BrandingSelectBaseEquipment(inventory);
+			break;
+			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectTargetEquipment:
+				this.OpenBlackSmith_BrandingSelectTargetEquipment(inventory);
+			break;
+			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectAbility:
+				this.OpenBlackSmith_BrandingSelectAbility(inventory);
+			break;
 			default:
 				Debug.AssertFormat(false, "未実装です. openType = {0}", inventory.OpenType);
 			break;
@@ -81,7 +94,27 @@ namespace MineS
 		{
 			var list = inventory.AllItem;
 			list = list.Where(i => i.InstanceData.ItemType == GameDefine.ItemType.Weapon || i.InstanceData.ItemType == GameDefine.ItemType.Shield).ToList();
-			list.ForEach(i => this.CreateCellController(i, GameDefine.ItemType.Weapon, new SelectItemAction(i)));
+			list.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.Weapon, this.GetAction(inventory, i)));
+		}
+
+		private void OpenBlackSmith_BrandingSelectBaseEquipment(Inventory inventory)
+		{
+			var list = inventory.AllItem;
+			list = list.Where(i => i.InstanceData.ItemType == GameDefine.ItemType.Weapon || i.InstanceData.ItemType == GameDefine.ItemType.Shield).ToList();
+			list.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.Weapon, this.GetAction(inventory, i)));
+		}
+
+		private void OpenBlackSmith_BrandingSelectTargetEquipment(Inventory inventory)
+		{
+			var list = inventory.AllItem;
+			list = list.Where(i => (i.InstanceData.ItemType == GameDefine.ItemType.Weapon || i.InstanceData.ItemType == GameDefine.ItemType.Shield) && i != inventory.SelectItem).ToList();
+			list.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.Weapon, this.GetAction(inventory, i)));
+		}
+
+		private void OpenBlackSmith_BrandingSelectAbility(Inventory inventory)
+		{
+			var brandingTargetEquipment = BlackSmithManager.Instance.BrandingTargetEquipment;
+			(brandingTargetEquipment.InstanceData as EquipmentData).Abilities.ForEach(a => this.CreateAbilityCellController(a, null));
 		}
 
 		private void CreateEquipmentCells(Inventory inventory, bool createPartition)
@@ -90,9 +123,9 @@ namespace MineS
 			{
 				this.CreatePartition(this.equipmentPartitionName.Get);
 			}
-			this.CreateCellController(inventory.Equipment.Weapon, GameDefine.ItemType.Weapon, new SelectItemAction(inventory.Equipment.Weapon));
-			this.CreateCellController(inventory.Equipment.Shield, GameDefine.ItemType.Shield, new SelectItemAction(inventory.Equipment.Shield));
-			this.CreateCellController(inventory.Equipment.Accessory, GameDefine.ItemType.Accessory, new SelectItemAction(inventory.Equipment.Accessory));
+			this.CreateItemCellController(inventory.Equipment.Weapon, GameDefine.ItemType.Weapon, this.GetAction(inventory, inventory.Equipment.Weapon));
+			this.CreateItemCellController(inventory.Equipment.Shield, GameDefine.ItemType.Shield, this.GetAction(inventory, inventory.Equipment.Shield));
+			this.CreateItemCellController(inventory.Equipment.Accessory, GameDefine.ItemType.Accessory, this.GetAction(inventory, inventory.Equipment.Accessory));
 		}
 
 		private void CreateInventoryItemCells(Inventory inventory, bool createPartition)
@@ -101,7 +134,7 @@ namespace MineS
 			{
 				this.CreatePartition(this.inventoryPartitionName.Get);
 			}
-			inventory.Items.ForEach(i => this.CreateCellController(i, GameDefine.ItemType.UsableItem, this.GetUsableItemAction(inventory, i)));
+			inventory.Items.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.UsableItem, this.GetAction(inventory, i)));
 		}
 
 		private void CancelDeployDescription()
@@ -121,9 +154,9 @@ namespace MineS
 			cellController.CancelDeployDescription();
 		}
 
-		private void CreateCellController(Item item, GameDefine.ItemType itemType, CellClickActionBase action)
+		private void CreateItemCellController(Item item, GameDefine.ItemType itemType, CellClickActionBase action)
 		{
-			var cellController = Instantiate(this.cellPrefab, this.root, false) as CellController;
+			var cellController = Instantiate(this.basicCellPrefab, this.root, false) as CellController;
 			this.cellControllers.Add(cellController);
 			this.createdObjects.Add(cellController.gameObject);
 			var cellData = new CellData();
@@ -132,6 +165,18 @@ namespace MineS
 			cellData.BindCellClickAction(action);
 			cellController.SetImage(this.GetImage(item, itemType));
 			cellController.SetText(this.GetMessage(item));
+		}
+
+		private void CreateAbilityCellController(AbilityBase ability, CellClickActionBase action)
+		{
+			var cellController = Instantiate(this.descriptionCellPrefab, this.root, false) as CellController;
+			this.cellControllers.Add(cellController);
+			this.createdObjects.Add(cellController.gameObject);
+			var cellData = new CellData();
+			cellData.SetController(cellController);
+			cellController.SetCellData(cellData);
+			cellController.SetDescriptionData(ability.DescriptionKey);
+			cellData.BindCellClickAction(action);
 		}
 
 		private void CreatePartition(string message)
@@ -151,15 +196,26 @@ namespace MineS
 			return item == null ? this.emptyMessage.Get : item.InstanceData.ItemName;
 		}
 
-		private CellClickActionBase GetUsableItemAction(Inventory inventory, Item item)
+		private CellClickActionBase GetAction(Inventory inventory, Item item)
 		{
-			if(!inventory.ExchangeItemController.CanExchange)
+			switch(inventory.OpenType)
 			{
+			case GameDefine.InventoryModeType.Use:
 				return new SelectItemAction(item);
-			}
-			else
-			{
+			case GameDefine.InventoryModeType.Exchange:
 				return new ChangeItemAction(item);
+			case GameDefine.InventoryModeType.BlackSmith_Reinforcement:
+				return new SelectBlackSmithReinforcementItemAction(item);
+			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment:
+				return new SelectBlackSmithBlandingSelectBaseEquipmentAction(item);
+			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectTargetEquipment:
+				return new SelectBlackSmithBlandingSelectTargetEquipmentAction(item);
+			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectAbility:
+				Debug.AssertFormat(false, "アビリティを選択中はここでActionを返しません.");
+				return null;
+			default:
+				Debug.AssertFormat(false, "未実装です. openType = {0}", inventory.OpenType);
+				return null;
 			}
 		}
 	}

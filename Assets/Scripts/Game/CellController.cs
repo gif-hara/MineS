@@ -26,10 +26,13 @@ namespace MineS
 		[SerializeField]
 		private CharacterDataObserver characterDataObserver;
 
-        [SerializeField]
-        private ItemObserver itemObserver;
+		[SerializeField]
+		private ItemObserver itemObserver;
 
-        [SerializeField]
+		[SerializeField]
+		private DescriptionDataObserver descriptionDataObserver;
+
+		[SerializeField]
 		private GameObject hitPointObject;
 
 		[SerializeField]
@@ -142,11 +145,19 @@ namespace MineS
 
 		public void SetText(string message)
 		{
+			if(this.text == null)
+			{
+				return;
+			}
 			this.text.text = message;
 		}
 
 		public void SetImage(Sprite sprite)
 		{
+			if(this.image == null)
+			{
+				return;
+			}
 			this.image.sprite = sprite;
 			this.image.enabled = sprite != null;
 		}
@@ -164,12 +175,22 @@ namespace MineS
 			this.characterDataObserver.ModifiedData(data);
 		}
 
-        public void SetItemData(Item item)
-        {
-            this.itemObserver.ModifiedData(item);
-        }
+		public void SetItemData(Item item)
+		{
+			this.itemObserver.ModifiedData(item);
+		}
 
-        public void CancelDeployDescription()
+		public void SetDescriptionData(DescriptionData.Element data)
+		{
+			this.descriptionDataObserver.ModifiedData(data);
+		}
+
+		public void SetDescriptionData(string key)
+		{
+			this.descriptionDataObserver.ModifiedData(key);
+		}
+
+		public void CancelDeployDescription()
 		{
 			if(this.deployDescriptionCoroutine == null)
 			{

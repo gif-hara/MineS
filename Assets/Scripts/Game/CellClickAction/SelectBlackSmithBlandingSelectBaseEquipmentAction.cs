@@ -8,24 +8,33 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class SelectItemAction : CellClickActionBase
+	public class SelectBlackSmithBlandingSelectBaseEquipmentAction : CellClickActionBase
 	{
 		private Item item;
 
-		public SelectItemAction(Item item)
+		public SelectBlackSmithBlandingSelectBaseEquipmentAction(Item item)
 		{
 			this.item = item;
 		}
 
 		public override void Invoke(CellData data)
 		{
-			if(this.item == null)
+			Debug.AssertFormat(this.item != null, "アイテムがありません.");
+			var playerManager = PlayerManager.Instance;
+
+			var equipmentData = this.item.InstanceData as EquipmentData;
+			if(equipmentData.CanBranding)
 			{
+				InformationManager.OnConfirmBrandingSelectTargetEquipment();
+			}
+			else
+			{
+				InformationManager.OnNotEquipmentBranding();
 				return;
 			}
 
-			var playerManager = PlayerManager.Instance;
-			playerManager.SelectItem(this.item);
+			playerManager.Data.Inventory.SetSelectItem(this.item);
+			playerManager.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_BrandingSelectTargetEquipment);
 		}
 
 		public override void SetCellController(CellController cellController)

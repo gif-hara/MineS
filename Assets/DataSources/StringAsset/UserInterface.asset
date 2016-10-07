@@ -185,7 +185,7 @@ MonoBehaviour:
       en: 
     guid: 76e7826d-a2bd-49b0-bfa8-c6ba73c13ee1
   - value:
-      ja: "\u713C\u5370"
+      ja: "\u5408\u6210"
       en: 
     guid: 984b8717-b997-421f-a236-096120e23e4f
   - value:
@@ -245,7 +245,7 @@ MonoBehaviour:
       en: 
     guid: b8ed203d-4e1c-497d-97a1-f40f7d978fd2
   - value:
-      ja: "\u307E\u305A\u306F\u713C\u5370\u3059\u308B\u88C5\u5099\u54C1\u3092\u9078\u3093\u3067\u304F\u308C\uFF01"
+      ja: "\u307E\u305A\u306F\u5408\u6210\u306E\u5143\u3068\u306A\u308B\u88C5\u5099\u54C1\u3092\u9078\u3093\u3067\u304F\u308C\uFF01"
       en: 
     guid: b9cb9613-4bb5-4afd-ae0f-a7137c963cc8
   - value:
@@ -264,4 +264,32 @@ MonoBehaviour:
       ja: "\u91D1\u8DB3\u308A\u306D\u3047\u3058\u3083\u306D\u3048\u304B\uFF01"
       en: 
     guid: e54bd22b-04a3-452f-b6f0-2d893233b6c2
+  - value:
+      ja: "\u3053\u3044\u3064\u306B\u5408\u6210\u306F\u3082\u3046\u7121\u7406\u3060\u306A\u3002\u4ED6\u3092\u9078\u3093\u3067\u304F\u308C\u3002"
+      en: 
+    guid: 373f0c36-43a0-47ff-ac55-7b9dc2040e2b
+  - value:
+      ja: "\u6B21\u306F\u713C\u5370\u3092\u79FB\u3059\u88C5\u5099\u54C1\u3092\u9078\u3093\u3067\u304F\u308C\uFF01"
+      en: 
+    guid: 99eba30d-9c8c-4af5-9c8c-86bb7da663f5
+  - value:
+      ja: "<color=aqua>{0}</color>\u306E\u3069\u306E\u713C\u5370\u304C\u6B32\u3057\u3044\u3093\u3060\uFF1F"
+      en: 
+    guid: 03e341d8-73a3-4b0b-b048-972de20a97b9
+  - value:
+      ja: "\u3053\u3044\u3064\u306B\u306F\u713C\u5370\u304C\u4ED8\u3044\u3066\u306A\u3044\u305E\uFF1F"
+      en: 
+    guid: 9d55f824-e902-450c-9399-82a2b2697d55
+  - value:
+      ja: "<color=aqua>{0}</color>\u306B<color=aqua>{1}</color>\u3092\u5408\u6210\u3059\u308B\u3093\u3060\u306A\uFF1F\u305D\u308C\u306A\u3089<color=orange>{2}G</color>\u306B\u306A\u308B\u306A\u3002"
+      en: 
+    guid: 3b1041a7-6273-455a-b092-499f2605de9c
+  - value:
+      ja: "\u5408\u6210\u3059\u308B"
+      en: 
+    guid: cc650dc7-c405-4fed-8d4c-67d6d2482554
+  - value:
+      ja: "\u3084\u3081\u308B"
+      en: 
+    guid: dc5c761b-533f-456a-a171-30d3cd40a23a
   asset: []

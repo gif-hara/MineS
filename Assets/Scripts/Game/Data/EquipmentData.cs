@@ -76,6 +76,7 @@ namespace MineS
 				var result = ScriptableObject.CreateInstance<EquipmentData>();
 				this.InternalClone(result);
 				result.basePower = this.basePower;
+				result.brandingLimit = this.brandingLimit;
 				result.itemType = this.itemType;
 				result.abilities = new List<GameDefine.AbilityType>(this.abilities);
 				result.reinforcementPurchase = this.reinforcementPurchase;
@@ -92,6 +93,16 @@ namespace MineS
 			this.Abilities.ForEach(a => a.SetHolder(holder));
 		}
 
+		public void Synthesis(Item target)
+		{
+			var targetEquipmentData = target.InstanceData as EquipmentData;
+			this.Abilities.AddRange(targetEquipmentData.Abilities);
+			if(this.Abilities.Count > this.brandingLimit)
+			{
+				this.Abilities.RemoveRange(this.brandingLimit, this.Abilities.Count - this.brandingLimit);
+			}
+		}
+
 		public void LevelUp()
 		{
 			this.Level++;
@@ -102,6 +113,22 @@ namespace MineS
 			get
 			{
 				return this.Level < GameDefine.EquipmentLevelMax;
+			}
+		}
+
+		public bool CanBranding
+		{
+			get
+			{
+				return this.Abilities.Count < this.brandingLimit;
+			}
+		}
+
+		public bool ExistBranding
+		{
+			get
+			{
+				return this.Abilities.Count > 0;
 			}
 		}
 

@@ -20,7 +20,7 @@ namespace MineS
 
 		private CharacterData holder;
 
-		private Item selectItem;
+		public Item SelectItem{ private set; get; }
 
 		public GameDefine.InventoryModeType OpenType{ private set; get; }
 
@@ -73,12 +73,12 @@ namespace MineS
 
 		public void SetSelectItem(Item item)
 		{
-			this.selectItem = item;
+			this.SelectItem = item;
 		}
 
 		public void UseSelectItem()
 		{
-			this.selectItem.Use(this.holder);
+			this.SelectItem.Use(this.holder);
 		}
 
 		public void SetMode(GameDefine.InventoryModeType type)
@@ -101,12 +101,24 @@ namespace MineS
 
 		public Item ChangeEquipmentFromSelectItem()
 		{
-			return this.Equipment.Change(this.selectItem, this.holder);
+			return this.Equipment.Change(this.SelectItem, this.holder);
 		}
 
 		public void RemoveEquipment(Item item)
 		{
 			this.Equipment.Remove(item);
+		}
+
+		public void RemoveItemOrEquipment(Item item)
+		{
+			if(this.Equipment.IsInEquipment(item))
+			{
+				this.Equipment.Remove(item);
+			}
+			else
+			{
+				this.RemoveItem(item);
+			}
 		}
 
 		public List<Item> AllItem

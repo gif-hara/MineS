@@ -31,6 +31,10 @@ namespace MineS
 
 		public GameDefine.RareType RareType{ get { return this.rare; } }
 
+		public int PurchasePrice{ get { return this.purchasePrice; } }
+
+		public int SellingPrice{ get { return this.sellingPrice; } }
+
 		public Sprite Image{ get { return this.image; } }
 
 		public abstract GameDefine.ItemType ItemType{ get; }

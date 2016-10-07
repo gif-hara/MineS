@@ -8,11 +8,11 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class SelectItemAction : CellClickActionBase
+	public class SelectBlackSmithReinforcementItemAction : CellClickActionBase
 	{
 		private Item item;
 
-		public SelectItemAction(Item item)
+		public SelectBlackSmithReinforcementItemAction(Item item)
 		{
 			this.item = item;
 		}
@@ -25,6 +25,18 @@ namespace MineS
 			}
 
 			var playerManager = PlayerManager.Instance;
+
+			var equipmentData = this.item.InstanceData as EquipmentData;
+			if(equipmentData.CanLevelUp)
+			{
+				InformationManager.OnConfirmReinforcement(equipmentData.NeedLevelUpMoney);
+			}
+			else
+			{
+				InformationManager.OnNotEquipmentLevelUp();
+				return;
+			}
+
 			playerManager.SelectItem(this.item);
 		}
 
@@ -56,6 +68,20 @@ namespace MineS
 			get
 			{
 				return this.item.InstanceData.Image;
+			}
+		}
+
+		private bool CanSelect
+		{
+			get
+			{
+				var openType = PlayerManager.Instance.Data.Inventory.OpenType;
+				if(openType == GameDefine.InventoryModeType.BlackSmith_Reinforcement)
+				{
+					return (this.item.InstanceData as EquipmentData).CanLevelUp;
+				}
+
+				return true;
 			}
 		}
 	}

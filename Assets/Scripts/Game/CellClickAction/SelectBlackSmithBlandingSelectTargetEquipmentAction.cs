@@ -8,24 +8,33 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class SelectItemAction : CellClickActionBase
+	public class SelectBlackSmithBlandingSelectTargetEquipmentAction : CellClickActionBase
 	{
 		private Item item;
 
-		public SelectItemAction(Item item)
+		public SelectBlackSmithBlandingSelectTargetEquipmentAction(Item item)
 		{
 			this.item = item;
 		}
 
 		public override void Invoke(CellData data)
 		{
-			if(this.item == null)
+			Debug.AssertFormat(this.item != null, "アイテムがありません.");
+			var equipmentData = this.item.InstanceData as EquipmentData;
+			if(equipmentData.ExistBranding)
 			{
+				var baseEquipment = PlayerManager.Instance.Data.Inventory.SelectItem;
+				InformationManager.OnConfirmSynthesisFinalCheck(baseEquipment, this.item, Calculator.GetSynthesisNeedMoney(baseEquipment, this.item));
+			}
+			else
+			{
+				InformationManager.OnNotEquipmentBrandingTarget();
 				return;
 			}
 
-			var playerManager = PlayerManager.Instance;
-			playerManager.SelectItem(this.item);
+			BlackSmithManager.Instance.SetBrandingTargetEquipment(this.item);
+			ConfirmManager.Instance.Add(ConfirmManager.Instance.decideSynthesis, BlackSmithManager.Instance.InvokeSynthesis);
+			ConfirmManager.Instance.Add(ConfirmManager.Instance.cancel, null);
 		}
 
 		public override void SetCellController(CellController cellController)

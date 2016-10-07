@@ -319,5 +319,10 @@ namespace MineS
 		{
 			return attacker.GetAbilityNumber(GameDefine.AbilityType.Recovery);
 		}
+
+		public static int GetSynthesisNeedMoney(Item baseEquipment, Item targetEquipment)
+		{
+			return (baseEquipment.InstanceData.PurchasePrice + targetEquipment.InstanceData.PurchasePrice) / 2;
+		}
 	}
 }

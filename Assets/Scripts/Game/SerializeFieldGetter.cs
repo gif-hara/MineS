@@ -33,5 +33,11 @@ namespace MineS
 		public class Int : Base<UnityEngine.Sprite>
 		{
 		}
+
+		[System.Serializable]
+		public class StringAssetFinder : Base<StringAsset.Finder>
+		{
+			
+		}
 	}
 }
