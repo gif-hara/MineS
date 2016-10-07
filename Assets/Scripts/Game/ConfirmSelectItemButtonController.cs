@@ -115,7 +115,7 @@ namespace MineS
 
 		private void OnReinforcement()
 		{
-			BlackSmithManager.Instance.Reinforcement(this.selectItem);
+			BlackSmithManager.Instance.InvokeReinforcement(this.selectItem);
 			PlayerManager.Instance.CloseConfirmSelectItemUI();
 		}
 	}

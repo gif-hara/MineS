@@ -2,6 +2,8 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using UnityEngine.Serialization;
+using UnityEngine.Events;
 
 namespace MineS
 {
@@ -11,7 +13,16 @@ namespace MineS
 	public class BlackSmithManager : SingletonMonoBehaviour<BlackSmithManager>
 	{
 		[SerializeField]
-		private GameObject confirmUI;
+		private GameObject ui;
+
+		[SerializeField]
+		private StringAsset.Finder reinforcementMessage;
+
+		[SerializeField]
+		private StringAsset.Finder synthesisMessage;
+		
+		[SerializeField]
+		private StringAsset.Finder closedMessage;
 
 		[SerializeField]
 		private StringAsset.Finder levelUpMessage;
@@ -20,26 +31,42 @@ namespace MineS
 		private StringAsset.Finder notLevelUpMessage;
 
 		[SerializeField]
-		private StringAsset.Finder synthesisMessage;
+		private StringAsset.Finder successSynthesisMessage;
 
 		[SerializeField]
 		private StringAsset.Finder notSynthesisMessage;
 
-		public Item BrandingTargetEquipment{ private set; get; }
+		[SerializeField]
+		private StringAsset.Finder notPossessionEquipmentMessage;
+
+		[SerializeField]
+		private StringAsset.Finder startReinforcementMessage;
+
+		[SerializeField]
+		private StringAsset.Finder startSynthesisMessage;
+
+		public Item SynthesisTargetEquipment{ private set; get; }
 
 		void Start()
 		{
 			var playerManager = PlayerManager.Instance;
-			playerManager.AddOpenInventoryUIEvent(this.OnOpenInventoryUI);
 			playerManager.AddCloseInventoryUIEvent(this.OnCloseInventoryUI);
+			this.OpenUI();
 		}
 
-		public void Reinforcement(Item item)
+		public void OpenUI()
+		{
+			this.ui.SetActive(true);
+			this.CreateConfirm();
+			PlayerManager.Instance.NotifyCharacterDataObservers();
+		}
+
+		public void InvokeReinforcement(Item item)
 		{
 			var equipmentData = item.InstanceData as EquipmentData;
 
 			var playerData = PlayerManager.Instance.Data;
-			if(playerData.Money > equipmentData.NeedLevelUpMoney)
+			if(playerData.Money >= equipmentData.NeedLevelUpMoney)
 			{
 				playerData.AddMoney(-equipmentData.NeedLevelUpMoney);
 				equipmentData.LevelUp();
@@ -55,17 +82,18 @@ namespace MineS
 
 		public void InvokeSynthesis()
 		{
+			
 			var playerData = PlayerManager.Instance.Data;
 			var baseEquipment = playerData.Inventory.SelectItem;
-			var needMoney = Calculator.GetSynthesisNeedMoney(baseEquipment, this.BrandingTargetEquipment);
-			if(playerData.Money > needMoney)
+			var needMoney = Calculator.GetSynthesisNeedMoney(baseEquipment, this.SynthesisTargetEquipment);
+			if(playerData.Money >= needMoney)
 			{
 				playerData.AddMoney(-needMoney);
-				(baseEquipment.InstanceData as EquipmentData).Synthesis(this.BrandingTargetEquipment);
-				InformationManager.AddMessage(this.synthesisMessage.Get);
-				playerData.Inventory.RemoveItemOrEquipment(this.BrandingTargetEquipment);
+				(baseEquipment.InstanceData as EquipmentData).Synthesis(this.SynthesisTargetEquipment);
+				InformationManager.AddMessage(this.successSynthesisMessage.Get);
+				playerData.Inventory.RemoveItemOrEquipment(this.SynthesisTargetEquipment);
 				playerData.Inventory.SetSelectItem(null);
-				PlayerManager.Instance.UpdateInventoryUI();
+				PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment);
 				PlayerManager.Instance.NotifyCharacterDataObservers();
 			}
 			else
@@ -74,24 +102,47 @@ namespace MineS
 			}
 		}
 
-		public void SetBrandingTargetEquipment(Item item)
+		public void SetSynthesisTargetEquipment(Item item)
 		{
-			this.BrandingTargetEquipment = item;
-		}
-
-		private void OnOpenInventoryUI()
-		{
-			this.confirmUI.SetActive(false);
+			this.SynthesisTargetEquipment = item;
 		}
 
 		private void OnCloseInventoryUI()
 		{
 			var inventoryOpenType = PlayerManager.Instance.Data.Inventory.OpenType;
-			this.confirmUI.SetActive(
-				inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment
-				|| inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_BrandingSelectTargetEquipment
-				|| inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_BrandingSelectAbility
-				|| inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_Reinforcement);
+			if(inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment
+			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_BrandingSelectTargetEquipment
+			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_BrandingSelectAbility
+			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_Reinforcement)
+			{
+				this.CreateConfirm();
+			}
 		}
+
+		private void CreateConfirm()
+		{
+			ConfirmManager.Instance.Add(this.reinforcementMessage, new UnityAction(() => this.OnStartJob(this.startReinforcementMessage, GameDefine.InventoryModeType.BlackSmith_Reinforcement)), true);
+			ConfirmManager.Instance.Add(this.synthesisMessage, new UnityAction(() => this.OnStartJob(this.startSynthesisMessage, GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment)), true);
+			ConfirmManager.Instance.Add(this.closedMessage, this.OnClosed, true);
+		}
+
+		private void OnStartJob(StringAsset.Finder message, GameDefine.InventoryModeType inventoryMode)
+		{
+			var playerManager = PlayerManager.Instance;
+			if(!playerManager.Data.Inventory.IsPossessionEquipment)
+			{
+				InformationManager.AddMessage(this.notPossessionEquipmentMessage.Get);
+				return;
+			}
+
+			InformationManager.AddMessage(message.Get);
+			PlayerManager.Instance.OpenInventoryUI(inventoryMode);
+		}
+
+		private void OnClosed()
+		{
+			this.ui.SetActive(false);
+		}
+
 	}
 }

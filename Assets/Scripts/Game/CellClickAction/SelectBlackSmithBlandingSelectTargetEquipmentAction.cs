@@ -32,7 +32,7 @@ namespace MineS
 				return;
 			}
 
-			BlackSmithManager.Instance.SetBrandingTargetEquipment(this.item);
+			BlackSmithManager.Instance.SetSynthesisTargetEquipment(this.item);
 			ConfirmManager.Instance.Add(ConfirmManager.Instance.decideSynthesis, BlackSmithManager.Instance.InvokeSynthesis, true);
 			ConfirmManager.Instance.Add(ConfirmManager.Instance.cancel, null, true);
 		}

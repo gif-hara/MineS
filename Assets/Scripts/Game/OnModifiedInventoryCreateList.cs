@@ -65,13 +65,10 @@ namespace MineS
 				this.OpenBlackSmith_Reinforcement(inventory);
 			break;
 			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment:
-				this.OpenBlackSmith_BrandingSelectBaseEquipment(inventory);
+				this.OpenBlackSmith_SynthesisSelectBaseEquipment(inventory);
 			break;
 			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectTargetEquipment:
-				this.OpenBlackSmith_BrandingSelectTargetEquipment(inventory);
-			break;
-			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectAbility:
-				this.OpenBlackSmith_BrandingSelectAbility(inventory);
+				this.OpenBlackSmith_SynthesisSelectTargetEquipment(inventory);
 			break;
 			default:
 				Debug.AssertFormat(false, "未実装です. openType = {0}", inventory.OpenType);
@@ -97,24 +94,19 @@ namespace MineS
 			list.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.Weapon, this.GetAction(inventory, i)));
 		}
 
-		private void OpenBlackSmith_BrandingSelectBaseEquipment(Inventory inventory)
+		private void OpenBlackSmith_SynthesisSelectBaseEquipment(Inventory inventory)
 		{
 			var list = inventory.AllItem;
 			list = list.Where(i => i.InstanceData.ItemType == GameDefine.ItemType.Weapon || i.InstanceData.ItemType == GameDefine.ItemType.Shield).ToList();
 			list.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.Weapon, this.GetAction(inventory, i)));
 		}
 
-		private void OpenBlackSmith_BrandingSelectTargetEquipment(Inventory inventory)
+		private void OpenBlackSmith_SynthesisSelectTargetEquipment(Inventory inventory)
 		{
+			var baseEquipment = inventory.SelectItem;
 			var list = inventory.AllItem;
-			list = list.Where(i => (i.InstanceData.ItemType == GameDefine.ItemType.Weapon || i.InstanceData.ItemType == GameDefine.ItemType.Shield) && i != inventory.SelectItem).ToList();
+			list = list.Where(i => (i.InstanceData.ItemType == baseEquipment.InstanceData.ItemType) && i != inventory.SelectItem).ToList();
 			list.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.Weapon, this.GetAction(inventory, i)));
-		}
-
-		private void OpenBlackSmith_BrandingSelectAbility(Inventory inventory)
-		{
-			var brandingTargetEquipment = BlackSmithManager.Instance.BrandingTargetEquipment;
-			(brandingTargetEquipment.InstanceData as EquipmentData).Abilities.ForEach(a => this.CreateAbilityCellController(a, null));
 		}
 
 		private void CreateEquipmentCells(Inventory inventory, bool createPartition)
@@ -210,9 +202,6 @@ namespace MineS
 				return new SelectBlackSmithBlandingSelectBaseEquipmentAction(item);
 			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectTargetEquipment:
 				return new SelectBlackSmithBlandingSelectTargetEquipmentAction(item);
-			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectAbility:
-				Debug.AssertFormat(false, "アビリティを選択中はここでActionを返しません.");
-				return null;
 			default:
 				Debug.AssertFormat(false, "未実装です. openType = {0}", inventory.OpenType);
 				return null;
