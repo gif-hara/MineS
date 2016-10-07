@@ -25,12 +25,6 @@ namespace MineS
 		private GameObject inventoryUI;
 
 		[SerializeField]
-		private GameObject confirmSelectItemUI;
-
-		[SerializeField]
-		private GameObject blackSmithConfirmUI;
-
-		[SerializeField]
 		private ExperienceData experienceData;
 
 		[SerializeField]
@@ -120,14 +114,12 @@ namespace MineS
 		public void SelectItem(Item item)
 		{
 			this.Data.Inventory.SetSelectItem(item);
-			this.confirmSelectItemUI.SetActive(true);
 			this.selectItemObservers.ForEach(i => i.ModifiedData(item));
 		}
 
 		public void CloseConfirmSelectItemUI()
 		{
 			this.Data.Inventory.SetSelectItem(null);
-			this.confirmSelectItemUI.SetActive(false);
 		}
 
 		public void UpdateInventoryUI()

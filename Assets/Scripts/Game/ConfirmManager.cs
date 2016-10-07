@@ -26,22 +26,22 @@ namespace MineS
 
 		private List<GameObject> createdObjects = new List<GameObject>();
 
-		public void Add(string message, UnityAction action)
+		public void Add(string message, UnityAction action, bool closeConfirmUI)
 		{
 			this.root.SetActive(true);
 			var button = Instantiate(this.buttonPrefab, this.content, false) as ConfirmButtonController;
-			button.Initialize(message, action);
+			button.Initialize(message, action, closeConfirmUI);
 			this.createdObjects.Add(button.gameObject);
 		}
 
-		public void Add(SerializeFieldGetter.StringAssetFinder finder, UnityAction action)
+		public void Add(SerializeFieldGetter.StringAssetFinder finder, UnityAction action, bool closeConfirmUI)
 		{
-			this.Add(finder.Element.Get, action);
+			this.Add(finder.Element.Get, action, closeConfirmUI);
 		}
 
-		public void Add(StringAsset.Finder finder, UnityAction action)
+		public void Add(StringAsset.Finder finder, UnityAction action, bool closeConfirmUI)
 		{
-			this.Add(finder.Get, action);
+			this.Add(finder.Get, action, closeConfirmUI);
 		}
 
 		public void Close()

@@ -18,10 +18,13 @@ namespace MineS
 
 		private UnityAction action;
 
-		public void Initialize(string message, UnityAction action)
+		private bool closeConfirmUI;
+
+		public void Initialize(string message, UnityAction action, bool closeConfirmUI)
 		{
 			this.text.text = message;
 			this.action = action;
+			this.closeConfirmUI = closeConfirmUI;
 		}
 
 #region IPointerClickHandler implementation
@@ -32,7 +35,11 @@ namespace MineS
 			{
 				this.action.Invoke();
 			}
-			ConfirmManager.Instance.Close();
+
+			if(this.closeConfirmUI)
+			{
+				ConfirmManager.Instance.Close();
+			}
 		}
 
 #endregion

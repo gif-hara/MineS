@@ -33,8 +33,8 @@ namespace MineS
 			}
 
 			BlackSmithManager.Instance.SetBrandingTargetEquipment(this.item);
-			ConfirmManager.Instance.Add(ConfirmManager.Instance.decideSynthesis, BlackSmithManager.Instance.InvokeSynthesis);
-			ConfirmManager.Instance.Add(ConfirmManager.Instance.cancel, null);
+			ConfirmManager.Instance.Add(ConfirmManager.Instance.decideSynthesis, BlackSmithManager.Instance.InvokeSynthesis, true);
+			ConfirmManager.Instance.Add(ConfirmManager.Instance.cancel, null, true);
 		}
 
 		public override void SetCellController(CellController cellController)
