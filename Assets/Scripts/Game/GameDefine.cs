@@ -514,12 +514,12 @@ namespace MineS
 			/// <summary>
 			/// 鍛冶屋の焼印モードのベース装備品選択.
 			/// </summary>
-			BlackSmith_BrandingSelectBaseEquipment,
+			BlackSmith_SynthesisSelectBaseEquipment,
 
 			/// <summary>
 			/// 鍛冶屋の焼印モードの対象装備品選択.
 			/// </summary>
-			BlackSmith_BrandingSelectTargetEquipment,
+			BlackSmith_SynthesisSelectTargetEquipment,
 		}
 
 		public const int AdjacentMax = 9;

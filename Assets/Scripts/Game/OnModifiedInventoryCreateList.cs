@@ -64,10 +64,10 @@ namespace MineS
 			case GameDefine.InventoryModeType.BlackSmith_Reinforcement:
 				this.OpenBlackSmith_Reinforcement(inventory);
 			break;
-			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment:
+			case GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment:
 				this.OpenBlackSmith_SynthesisSelectBaseEquipment(inventory);
 			break;
-			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectTargetEquipment:
+			case GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment:
 				this.OpenBlackSmith_SynthesisSelectTargetEquipment(inventory);
 			break;
 			default:
@@ -198,10 +198,10 @@ namespace MineS
 				return new ChangeItemAction(item);
 			case GameDefine.InventoryModeType.BlackSmith_Reinforcement:
 				return new SelectBlackSmithReinforcementItemAction(item);
-			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment:
-				return new SelectBlackSmithBlandingSelectBaseEquipmentAction(item);
-			case GameDefine.InventoryModeType.BlackSmith_BrandingSelectTargetEquipment:
-				return new SelectBlackSmithBlandingSelectTargetEquipmentAction(item);
+			case GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment:
+				return new SelectBlackSmithSynthesisSelectBaseEquipmentAction(item);
+			case GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment:
+				return new SelectBlackSmithSynthesisSelectTargetEquipmentAction(item);
 			default:
 				Debug.AssertFormat(false, "未実装です. openType = {0}", inventory.OpenType);
 				return null;

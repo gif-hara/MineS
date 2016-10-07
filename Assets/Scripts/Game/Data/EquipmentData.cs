@@ -116,7 +116,7 @@ namespace MineS
 			}
 		}
 
-		public bool CanBranding
+		public bool CanSynthesis
 		{
 			get
 			{

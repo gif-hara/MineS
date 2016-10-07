@@ -8,11 +8,11 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class SelectBlackSmithBlandingSelectTargetEquipmentAction : CellClickActionBase
+	public class SelectBlackSmithSynthesisSelectBaseEquipmentAction : CellClickActionBase
 	{
 		private Item item;
 
-		public SelectBlackSmithBlandingSelectTargetEquipmentAction(Item item)
+		public SelectBlackSmithSynthesisSelectBaseEquipmentAction(Item item)
 		{
 			this.item = item;
 		}
@@ -20,21 +20,21 @@ namespace MineS
 		public override void Invoke(CellData data)
 		{
 			Debug.AssertFormat(this.item != null, "アイテムがありません.");
+			var playerManager = PlayerManager.Instance;
+
 			var equipmentData = this.item.InstanceData as EquipmentData;
-			if(equipmentData.ExistBranding)
+			if(equipmentData.CanSynthesis)
 			{
-				var baseEquipment = PlayerManager.Instance.Data.Inventory.SelectItem;
-				InformationManager.OnConfirmSynthesisFinalCheck(baseEquipment, this.item, Calculator.GetSynthesisNeedMoney(baseEquipment, this.item));
+				InformationManager.OnConfirmBrandingSelectTargetEquipment();
 			}
 			else
 			{
-				InformationManager.OnNotEquipmentBrandingTarget();
+				InformationManager.OnNotEquipmentBranding();
 				return;
 			}
 
-			BlackSmithManager.Instance.SetSynthesisTargetEquipment(this.item);
-			ConfirmManager.Instance.Add(ConfirmManager.Instance.decideSynthesis, BlackSmithManager.Instance.InvokeSynthesis, true);
-			ConfirmManager.Instance.Add(ConfirmManager.Instance.cancel, null, true);
+			playerManager.Data.Inventory.SetSelectItem(this.item);
+			playerManager.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment);
 		}
 
 		public override void SetCellController(CellController cellController)

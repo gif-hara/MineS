@@ -29,9 +29,9 @@ namespace MineS
 			onNotPossessionEquipment = null,
 			confirmReinforceMessage = null,
 			notEquipmentLevelUpMessage = null,
-			confirmBrandingSelectTargetEquipment = null,
-			notEquipmentBranding = null,
-			notEquipmentBrandingTarget = null,
+			confirmSynthesisSelectTargetEquipment = null,
+			notEquipmentSynthesis = null,
+			notEquipmentSynthesisTarget = null,
 			confirmSynthesisFinalCheck = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
@@ -119,13 +119,13 @@ namespace MineS
 		public static void OnConfirmBrandingSelectTargetEquipment()
 		{
 			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.confirmBrandingSelectTargetEquipment.Get);
+			instance._AddMessage(instance.confirmSynthesisSelectTargetEquipment.Get);
 		}
 
 		public static void OnNotEquipmentBranding()
 		{
 			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.notEquipmentBranding.Get);
+			instance._AddMessage(instance.notEquipmentSynthesis.Get);
 		}
 
 		public static void OnConfirmSynthesisFinalCheck(Item baseEquipment, Item targetEquipment, int money)
@@ -137,7 +137,7 @@ namespace MineS
 		public static void OnNotEquipmentBrandingTarget()
 		{
 			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.notEquipmentBrandingTarget.Get);
+			instance._AddMessage(instance.notEquipmentSynthesisTarget.Get);
 		}
 
 		public static void AddMessage(string message)

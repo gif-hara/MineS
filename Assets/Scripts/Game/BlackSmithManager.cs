@@ -93,7 +93,7 @@ namespace MineS
 				InformationManager.AddMessage(this.successSynthesisMessage.Get);
 				playerData.Inventory.RemoveItemOrEquipment(this.SynthesisTargetEquipment);
 				playerData.Inventory.SetSelectItem(null);
-				PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment);
+				PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment);
 				PlayerManager.Instance.NotifyCharacterDataObservers();
 			}
 			else
@@ -110,8 +110,8 @@ namespace MineS
 		private void OnCloseInventoryUI()
 		{
 			var inventoryOpenType = PlayerManager.Instance.Data.Inventory.OpenType;
-			if(inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment
-			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_BrandingSelectTargetEquipment
+			if(inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment
+			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment
 			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_Reinforcement)
 			{
 				this.CreateConfirm();
@@ -121,7 +121,7 @@ namespace MineS
 		private void CreateConfirm()
 		{
 			ConfirmManager.Instance.Add(this.reinforcementMessage, new UnityAction(() => this.OnStartJob(this.startReinforcementMessage, GameDefine.InventoryModeType.BlackSmith_Reinforcement)), true);
-			ConfirmManager.Instance.Add(this.synthesisMessage, new UnityAction(() => this.OnStartJob(this.startSynthesisMessage, GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment)), true);
+			ConfirmManager.Instance.Add(this.synthesisMessage, new UnityAction(() => this.OnStartJob(this.startSynthesisMessage, GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment)), true);
 			ConfirmManager.Instance.Add(this.closedMessage, this.OnClosed, true);
 		}
 
