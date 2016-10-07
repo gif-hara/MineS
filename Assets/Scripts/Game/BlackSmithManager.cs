@@ -112,7 +112,6 @@ namespace MineS
 			var inventoryOpenType = PlayerManager.Instance.Data.Inventory.OpenType;
 			if(inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_BrandingSelectBaseEquipment
 			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_BrandingSelectTargetEquipment
-			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_BrandingSelectAbility
 			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_Reinforcement)
 			{
 				this.CreateConfirm();
