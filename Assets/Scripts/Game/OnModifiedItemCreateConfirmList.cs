@@ -107,7 +107,7 @@ namespace MineS
 			var playerManager = PlayerManager.Instance;
 			item.Use(playerManager.Data);
 			playerManager.NotifyCharacterDataObservers();
-			playerManager.UpdateInventoryUI();
+			playerManager.UpdateInventoryUI(playerManager.Data.Inventory);
 			playerManager.CloseConfirmSelectItemUI();
 		}
 
@@ -125,7 +125,7 @@ namespace MineS
 				inventory.RemoveEquipment(item);
 				inventory.AddItem(item);
 				playerManager.NotifyCharacterDataObservers();
-				playerManager.UpdateInventoryUI();
+				playerManager.UpdateInventoryUI(inventory);
 				playerManager.CloseConfirmSelectItemUI();
 			}
 			else

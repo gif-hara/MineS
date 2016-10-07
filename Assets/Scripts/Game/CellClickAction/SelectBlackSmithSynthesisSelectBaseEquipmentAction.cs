@@ -34,7 +34,7 @@ namespace MineS
 			}
 
 			playerManager.Data.Inventory.SetSelectItem(this.item);
-			playerManager.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment);
+			playerManager.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment, playerManager.Data.Inventory);
 		}
 
 		public override void SetCellController(CellController cellController)

@@ -71,7 +71,7 @@ namespace MineS
 				playerData.AddMoney(-equipmentData.NeedLevelUpMoney);
 				equipmentData.LevelUp();
 				InformationManager.AddMessage(this.levelUpMessage.Get);
-				PlayerManager.instance.UpdateInventoryUI();
+				PlayerManager.instance.UpdateInventoryUI(playerData.Inventory);
 				PlayerManager.instance.NotifyCharacterDataObservers();
 			}
 			else
@@ -93,7 +93,7 @@ namespace MineS
 				InformationManager.AddMessage(this.successSynthesisMessage.Get);
 				playerData.Inventory.RemoveItemOrEquipment(this.SynthesisTargetEquipment);
 				playerData.Inventory.SetSelectItem(null);
-				PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment);
+				PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment, playerData.Inventory);
 				PlayerManager.Instance.NotifyCharacterDataObservers();
 			}
 			else
@@ -135,7 +135,7 @@ namespace MineS
 			}
 
 			InformationManager.AddMessage(message.Get);
-			PlayerManager.Instance.OpenInventoryUI(inventoryMode);
+			playerManager.OpenInventoryUI(inventoryMode, playerManager.Data.Inventory);
 		}
 
 		private void OnClosed()

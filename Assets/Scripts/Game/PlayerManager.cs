@@ -96,11 +96,11 @@ namespace MineS
 			}
 		}
 
-		public void OpenInventoryUI(GameDefine.InventoryModeType type)
+		public void OpenInventoryUI(GameDefine.InventoryModeType type, Inventory inventory)
 		{
 			this.Data.Inventory.SetMode(type);
 			this.inventoryUI.SetActive(true);
-			this.UpdateInventoryUI();
+			this.UpdateInventoryUI(inventory);
 			this.onOpenInventoryUI.Invoke();
 		}
 
@@ -122,9 +122,9 @@ namespace MineS
 			this.Data.Inventory.SetSelectItem(null);
 		}
 
-		public void UpdateInventoryUI()
+		public void UpdateInventoryUI(Inventory inventory)
 		{
-			this.inventoryObservers.ForEach(i => i.ModifiedData(this.Data.Inventory));
+			this.inventoryObservers.ForEach(i => i.ModifiedData(inventory));
 		}
 
 		public void AddAbnormalStatus(GameDefine.AbnormalStatusType type, int remainingTurn, int waitTurn)
@@ -144,7 +144,7 @@ namespace MineS
 			else
 			{
 				this.Data.Inventory.SetExchangeItem(item, cellData);
-				PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.Exchange);
+				this.OpenInventoryUI(GameDefine.InventoryModeType.Exchange, this.Data.Inventory);
 				DescriptionManager.Instance.DeployEmergency("ExchangeItem");
 				return GameDefine.AcquireItemResultType.Full;
 			}

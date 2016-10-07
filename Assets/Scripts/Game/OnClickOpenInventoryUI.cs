@@ -18,7 +18,8 @@ namespace MineS
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			PlayerManager.Instance.OpenInventoryUI(this.openType);
+			var playerManager = PlayerManager.Instance;
+			playerManager.OpenInventoryUI(this.openType, playerManager.Data.Inventory);
 		}
 
 #endregion
