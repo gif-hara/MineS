@@ -63,8 +63,9 @@ namespace MineS
 			}
 		}
 
-		public CellData[,] Create(DungeonData dungeonData, int rowNumber, int culumnNumber)
+		public CellData[,] Create(DungeonManager dungeonManager, int rowNumber, int culumnNumber)
 		{
+			var dungeonData = dungeonManager.CurrentData;
 			var database = new Database(rowNumber, culumnNumber);
 
 			// 階段を作成.
@@ -92,6 +93,12 @@ namespace MineS
 			for(int i = 0, imax = dungeonData.CreateTrapRange.Random; i < imax; i++)
 			{
 				this.CreateCellData(database, dungeonData.CreateTrap());
+			}
+
+			// 鍛冶屋を作成.
+			if(dungeonData.CanCreateBlackSmith(dungeonManager.Floor))
+			{
+				this.CreateCellData(database, new CreateBlackSmithAction());
 			}
 
 			// 空白を作成.

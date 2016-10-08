@@ -24,11 +24,11 @@ namespace MineS
 
 		public GameDefine.InventoryModeType OpenType{ private set; get; }
 
-		public Inventory(CharacterData holder)
+		public Inventory(CharacterData holder, int itemMax)
 		{
 			this.holder = holder;
 			this.Items = new List<Item>();
-			for(int i = 0; i < GameDefine.InventoryItemMax; i++)
+			for(int i = 0; i < itemMax; i++)
 			{
 				this.Items.Add(null);
 			}

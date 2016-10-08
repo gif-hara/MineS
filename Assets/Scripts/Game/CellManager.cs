@@ -151,7 +151,8 @@ namespace MineS
 
 		private CellData[,] CreateCellDatabaseFromDungeonData()
 		{
-			return new FieldCreator().Create(DungeonManager.Instance.CurrentData, RowMax, CulumnMax);
+			var dungeonManager = DungeonManager.Instance;
+			return new FieldCreator().Create(dungeonManager, RowMax, CulumnMax);
 		}
 
 		private void CheckCellData(CellData[,] database)

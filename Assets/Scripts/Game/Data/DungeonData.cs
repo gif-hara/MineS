@@ -30,6 +30,9 @@ namespace MineS
 		private TrapTable trapTable;
 
 		[SerializeField]
+		private BlackSmithTable blackSmithTable;
+
+		[SerializeField]
 		private Range createRecoveryItemRange;
 
 		[SerializeField]
@@ -69,5 +72,11 @@ namespace MineS
 		{
 			return this.trapTable.Create();
 		}
+
+		public bool CanCreateBlackSmith(int floor)
+		{
+			return this.blackSmithTable.CanCreate(floor);
+		}
+
 	}
 }

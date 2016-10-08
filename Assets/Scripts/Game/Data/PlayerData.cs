@@ -21,7 +21,7 @@ namespace MineS
 		{
 			this.Initialize(masterData);
 			this.Level = 1;
-			this.Inventory = new Inventory(this);
+			this.Inventory = new Inventory(this, GameDefine.InventoryItemMax);
 			this.growthData = growthData;
 		}
 

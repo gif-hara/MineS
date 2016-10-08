@@ -123,5 +123,7 @@ namespace MineS
 		public Trap trap;
 
 		public Item defaultEquipment;
+
+		public SerializeFieldGetter.Sprite blackSmith;
 	}
 }

@@ -41,6 +41,16 @@ namespace MineS
 			/// 罠.
 			/// </summary>
 			Trap,
+
+			/// <summary>
+			/// 鍛冶屋.
+			/// </summary>
+			BlackSmith,
+
+			/// <summary>
+			/// 店.
+			/// </summary>
+			Shop,
 		}
 
 		/// <summary>

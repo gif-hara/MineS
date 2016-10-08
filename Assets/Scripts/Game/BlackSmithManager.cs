@@ -51,7 +51,6 @@ namespace MineS
 		{
 			var playerManager = PlayerManager.Instance;
 			playerManager.AddCloseInventoryUIEvent(this.OnCloseInventoryUI);
-			this.OpenUI();
 		}
 
 		public void OpenUI()
@@ -120,8 +119,9 @@ namespace MineS
 
 		private void CreateConfirm()
 		{
-			ConfirmManager.Instance.Add(this.reinforcementMessage, new UnityAction(() => this.OnStartJob(this.startReinforcementMessage, GameDefine.InventoryModeType.BlackSmith_Reinforcement)), true);
-			ConfirmManager.Instance.Add(this.synthesisMessage, new UnityAction(() => this.OnStartJob(this.startSynthesisMessage, GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment)), true);
+			var existEquipment = PlayerManager.Instance.Data.Inventory.IsPossessionEquipment;
+			ConfirmManager.Instance.Add(this.reinforcementMessage, new UnityAction(() => this.OnStartJob(this.startReinforcementMessage, GameDefine.InventoryModeType.BlackSmith_Reinforcement)), existEquipment);
+			ConfirmManager.Instance.Add(this.synthesisMessage, new UnityAction(() => this.OnStartJob(this.startSynthesisMessage, GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment)), existEquipment);
 			ConfirmManager.Instance.Add(this.closedMessage, this.OnClosed, true);
 		}
 
