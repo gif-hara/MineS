@@ -106,9 +106,9 @@ namespace MineS
 			this.SynthesisTargetEquipment = item;
 		}
 
-		private void OnCloseInventoryUI()
+		private void OnCloseInventoryUI(Inventory inventory)
 		{
-			var inventoryOpenType = PlayerManager.Instance.Data.Inventory.OpenType;
+			var inventoryOpenType = inventory.OpenType;
 			if(inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment
 			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment
 			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_Reinforcement)

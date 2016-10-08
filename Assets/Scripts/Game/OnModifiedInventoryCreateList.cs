@@ -70,6 +70,12 @@ namespace MineS
 			case GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment:
 				this.OpenBlackSmith_SynthesisSelectTargetEquipment(inventory);
 			break;
+			case GameDefine.InventoryModeType.Shop_Buy:
+				this.OpenShop_Buy(inventory);
+			break;
+			case GameDefine.InventoryModeType.Shop_Sell:
+				this.OpenShop_Sell(inventory);
+			break;
 			default:
 				Debug.AssertFormat(false, "未実装です. openType = {0}", inventory.OpenType);
 			break;
@@ -107,6 +113,16 @@ namespace MineS
 			var list = inventory.AllItem;
 			list = list.Where(i => (i.InstanceData.ItemType == baseEquipment.InstanceData.ItemType) && i != inventory.SelectItem).ToList();
 			list.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.Weapon, this.GetAction(inventory, i)));
+		}
+
+		private void OpenShop_Buy(Inventory inventory)
+		{
+			inventory.Items.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.UsableItem, this.GetAction(inventory, i)));
+		}
+
+		private void OpenShop_Sell(Inventory inventory)
+		{
+			inventory.Items.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.UsableItem, this.GetAction(inventory, i)));
 		}
 
 		private void CreateEquipmentCells(Inventory inventory, bool createPartition)
@@ -202,6 +218,10 @@ namespace MineS
 				return new SelectBlackSmithSynthesisSelectBaseEquipmentAction(item);
 			case GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment:
 				return new SelectBlackSmithSynthesisSelectTargetEquipmentAction(item);
+			case GameDefine.InventoryModeType.Shop_Buy:
+				return new SelectShopBuyItemAction(item);
+			case GameDefine.InventoryModeType.Shop_Sell:
+				return new SelectShopSellItemAction(item);
 			default:
 				Debug.AssertFormat(false, "未実装です. openType = {0}", inventory.OpenType);
 				return null;

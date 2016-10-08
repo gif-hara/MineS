@@ -530,6 +530,16 @@ namespace MineS
 			/// 鍛冶屋の焼印モードの対象装備品選択.
 			/// </summary>
 			BlackSmith_SynthesisSelectTargetEquipment,
+
+			/// <summary>
+			/// 店の購入モード.
+			/// </summary>
+			Shop_Buy,
+
+			/// <summary>
+			/// 店の売却モード.
+			/// </summary>
+			Shop_Sell,
 		}
 
 		public const int AdjacentMax = 9;

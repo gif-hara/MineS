@@ -12,6 +12,11 @@ namespace MineS
 	/// </summary>
 	public class PlayerManager : SingletonMonoBehaviour<PlayerManager>, ITurnProgress
 	{
+		public class InventoryEvenr : UnityEvent<Inventory>
+		{
+			
+		}
+
 		[SerializeField]
 		private List<CharacterDataObserver> characterDataObservers;
 
@@ -33,9 +38,11 @@ namespace MineS
 		[SerializeField]
 		private CharacterMasterData growthData;
 
-		private UnityEvent onOpenInventoryUI = new UnityEvent();
+		private InventoryEvenr onOpenInventoryUI = new InventoryEvenr();
 
-		private UnityEvent onCloseInventoryUI = new UnityEvent();
+		private InventoryEvenr onCloseInventoryUI = new InventoryEvenr();
+
+		private Inventory currentOpenInventory = null;
 
 		public PlayerData Data{ private set; get; }
 
@@ -98,17 +105,18 @@ namespace MineS
 
 		public void OpenInventoryUI(GameDefine.InventoryModeType type, Inventory inventory)
 		{
-			this.Data.Inventory.SetMode(type);
+			this.currentOpenInventory = inventory;
+			this.currentOpenInventory.SetMode(type);
 			this.inventoryUI.SetActive(true);
 			this.UpdateInventoryUI(inventory);
-			this.onOpenInventoryUI.Invoke();
+			this.onOpenInventoryUI.Invoke(inventory);
 		}
 
 		public void CloseInventoryUI()
 		{
-			this.Data.Inventory.SetExchangeItem(null, null);
+			this.currentOpenInventory.SetExchangeItem(null, null);
 			this.inventoryUI.SetActive(false);
-			this.onCloseInventoryUI.Invoke();
+			this.onCloseInventoryUI.Invoke(this.currentOpenInventory);
 		}
 
 		public void SelectItem(Item item)
@@ -124,6 +132,7 @@ namespace MineS
 
 		public void UpdateInventoryUI(Inventory inventory)
 		{
+			this.currentOpenInventory = inventory;
 			this.inventoryObservers.ForEach(i => i.ModifiedData(inventory));
 		}
 
@@ -150,12 +159,12 @@ namespace MineS
 			}
 		}
 
-		public void AddOpenInventoryUIEvent(UnityAction call)
+		public void AddOpenInventoryUIEvent(UnityAction<Inventory> call)
 		{
 			this.onOpenInventoryUI.AddListener(call);
 		}
 
-		public void AddCloseInventoryUIEvent(UnityAction call)
+		public void AddCloseInventoryUIEvent(UnityAction<Inventory> call)
 		{
 			this.onCloseInventoryUI.AddListener(call);
 		}
