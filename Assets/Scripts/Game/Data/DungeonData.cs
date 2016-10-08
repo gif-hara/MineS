@@ -33,6 +33,9 @@ namespace MineS
 		private BlackSmithTable blackSmithTable;
 
 		[SerializeField]
+		private ShopTable shopTable;
+
+		[SerializeField]
 		private Range createRecoveryItemRange;
 
 		[SerializeField]

@@ -49,6 +49,14 @@ namespace MineS
 			return true;
 		}
 
+		public void AddItemNoLimit(Item item)
+		{
+			if(!this.AddItem(item))
+			{
+				this.Items.Add(item);
+			}
+		}
+
 		public void RemoveItem(Item item)
 		{
 			var index = this.Items.FindIndex(i => i == item);

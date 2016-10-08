@@ -9,7 +9,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public class BlackSmithTable
+	public class ShopTable
 	{
 		[System.Serializable]
 		public class Element
@@ -23,17 +23,12 @@ namespace MineS
 			[SerializeField][Range(0, 100)]
 			private int probability;
 
+			[SerializeField]
+			private ItemTable itemTable;
+
 			public bool IsMatchFloor(int floor)
 			{
 				return floor >= this.floorMin && floor <= this.floorMax;
-			}
-
-			public bool CanCreate
-			{
-				get
-				{
-					return this.probability > Random.Range(0, 100);
-				}
 			}
 		}
 
@@ -42,13 +37,7 @@ namespace MineS
 
 		public bool CanCreate(int floor)
 		{
-			var element = this.elements.Find(e => e.IsMatchFloor(floor));
-			if(element == null)
-			{
-				return false;
-			}
-
-			return element.CanCreate;
+			return this.elements.Exists(e => e.IsMatchFloor(floor));
 		}
 	}
 }
