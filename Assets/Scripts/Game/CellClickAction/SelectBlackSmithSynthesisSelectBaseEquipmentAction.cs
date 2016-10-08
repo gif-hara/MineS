@@ -20,21 +20,7 @@ namespace MineS
 		public override void Invoke(CellData data)
 		{
 			Debug.AssertFormat(this.item != null, "アイテムがありません.");
-			var playerManager = PlayerManager.Instance;
-
-			var equipmentData = this.item.InstanceData as EquipmentData;
-			if(equipmentData.CanSynthesis)
-			{
-				InformationManager.OnConfirmBrandingSelectTargetEquipment();
-			}
-			else
-			{
-				InformationManager.OnNotEquipmentBranding();
-				return;
-			}
-
-			playerManager.Data.Inventory.SetSelectItem(this.item);
-			playerManager.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment, playerManager.Data.Inventory);
+			BlackSmithManager.Instance.SetSynthesisBaseEquipment(this.item);
 		}
 
 		public override void SetCellController(CellController cellController)

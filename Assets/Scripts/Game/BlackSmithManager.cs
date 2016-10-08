@@ -54,6 +54,18 @@ namespace MineS
 		[SerializeField]
 		private StringAsset.Finder notLevelUpFromLimitMessage;
 
+		[SerializeField]
+		private StringAsset.Finder selectSynthesisTargetEquipmentMessage;
+
+		[SerializeField]
+		private StringAsset.Finder notSynthesisBaseEquipmentMessage;
+
+		[SerializeField]
+		private StringAsset.Finder confirmSynthesisMessage;
+
+		[SerializeField]
+		private StringAsset.Finder notExistBrandingEquipmentMessage;
+
 		public Item SynthesisTargetEquipment{ private set; get; }
 
 		void Start()
@@ -102,31 +114,61 @@ namespace MineS
 			confirmManager.Add(this.cancelMessage, null, true);
 		}
 
-		public void InvokeSynthesis()
+		public void InvokeSynthesis(Item targetEquipment)
 		{
-			
-			var playerData = PlayerManager.Instance.Data;
-			var baseEquipment = playerData.Inventory.SelectItem;
-			var needMoney = Calculator.GetSynthesisNeedMoney(baseEquipment, this.SynthesisTargetEquipment);
-			if(playerData.Money >= needMoney)
+			var equipmentData = targetEquipment.InstanceData as EquipmentData;
+			var baseEquipment = PlayerManager.Instance.Data.Inventory.SelectItem;
+			if(equipmentData.ExistBranding)
 			{
-				playerData.AddMoney(-needMoney);
-				(baseEquipment.InstanceData as EquipmentData).Synthesis(this.SynthesisTargetEquipment);
-				InformationManager.AddMessage(this.successSynthesisMessage.Get);
-				playerData.Inventory.RemoveItemOrEquipment(this.SynthesisTargetEquipment);
-				playerData.Inventory.SetSelectItem(null);
-				PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment, playerData.Inventory);
-				PlayerManager.Instance.NotifyCharacterDataObservers();
+				InformationManager.AddMessage(this.confirmSynthesisMessage.Format(baseEquipment.InstanceData.ItemName, targetEquipment.InstanceData.ItemName, Calculator.GetSynthesisNeedMoney(baseEquipment, targetEquipment)));
 			}
 			else
 			{
-				InformationManager.AddMessage(this.notSynthesisMessage.Get);
+				InformationManager.AddMessage(this.notExistBrandingEquipmentMessage.Get);
+				return;
 			}
+			this.SynthesisTargetEquipment = targetEquipment;
+
+			var confirmManager = ConfirmManager.Instance;
+			confirmManager.Add(this.synthesisMessage, () =>
+			{
+				var playerData = PlayerManager.Instance.Data;
+				var needMoney = Calculator.GetSynthesisNeedMoney(baseEquipment, this.SynthesisTargetEquipment);
+				if(playerData.Money >= needMoney)
+				{
+					playerData.AddMoney(-needMoney);
+					(baseEquipment.InstanceData as EquipmentData).Synthesis(this.SynthesisTargetEquipment);
+					InformationManager.AddMessage(this.successSynthesisMessage.Get);
+					playerData.Inventory.RemoveItemOrEquipment(this.SynthesisTargetEquipment);
+					playerData.Inventory.SetSelectItem(null);
+					PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment, playerData.Inventory);
+					PlayerManager.Instance.NotifyCharacterDataObservers();
+				}
+				else
+				{
+					InformationManager.AddMessage(this.notSynthesisMessage.Get);
+				}
+			}, true);
+			confirmManager.Add(this.cancelMessage, null, true);
 		}
 
-		public void SetSynthesisTargetEquipment(Item item)
+		public void SetSynthesisBaseEquipment(Item item)
 		{
-			this.SynthesisTargetEquipment = item;
+			var equipmentData = item.InstanceData as EquipmentData;
+			if(equipmentData.CanSynthesis)
+			{
+				InformationManager.AddMessage(this.selectSynthesisTargetEquipmentMessage.Get);
+			}
+			else
+			{
+				InformationManager.AddMessage(this.notSynthesisBaseEquipmentMessage.Get);
+				return;
+			}
+
+			var playerManager = PlayerManager.Instance;
+			playerManager.Data.Inventory.SetSelectItem(item);
+			playerManager.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment, playerManager.Data.Inventory);
+
 		}
 
 		private void OnCloseInventoryUI(Inventory inventory)

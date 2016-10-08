@@ -25,14 +25,7 @@ namespace MineS
 			onLevelUpPlayer = null,
 			onContinuousAttack = null,
 			onAcquiredItem = null,
-			onRecovery = null,
-			onNotPossessionEquipment = null,
-			confirmReinforceMessage = null,
-			notEquipmentLevelUpMessage = null,
-			confirmSynthesisSelectTargetEquipment = null,
-			notEquipmentSynthesis = null,
-			notEquipmentSynthesisTarget = null,
-			confirmSynthesisFinalCheck = null;
+			onRecovery = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -96,48 +89,6 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.onRecovery.Format(value));
-		}
-
-		public static void OnNotPossessionEquipment()
-		{
-			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.onNotPossessionEquipment.Get);
-		}
-
-		public static void OnConfirmReinforcement(int needMoney)
-		{
-			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.confirmReinforceMessage.Format(needMoney));
-		}
-
-		public static void OnNotEquipmentLevelUp()
-		{
-			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.notEquipmentLevelUpMessage.Get);
-		}
-
-		public static void OnConfirmBrandingSelectTargetEquipment()
-		{
-			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.confirmSynthesisSelectTargetEquipment.Get);
-		}
-
-		public static void OnNotEquipmentBranding()
-		{
-			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.notEquipmentSynthesis.Get);
-		}
-
-		public static void OnConfirmSynthesisFinalCheck(Item baseEquipment, Item targetEquipment, int money)
-		{
-			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.confirmSynthesisFinalCheck.Format(baseEquipment.InstanceData.ItemName, targetEquipment.InstanceData.ItemName, money));
-		}
-
-		public static void OnNotEquipmentBrandingTarget()
-		{
-			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.notEquipmentSynthesisTarget.Get);
 		}
 
 		public static void AddMessage(string message)
