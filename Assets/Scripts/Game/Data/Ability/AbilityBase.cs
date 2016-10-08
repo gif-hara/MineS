@@ -28,6 +28,14 @@ namespace MineS
 			this.Holder = holder;
 		}
 
+		public string Name
+		{
+			get
+			{
+				return DescriptionManager.Instance.Data.Get(this.DescriptionKey).Title;
+			}
+		}
+
 		public virtual void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			

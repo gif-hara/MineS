@@ -16502,26 +16502,6 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u304C<color=lime>{0}</color>\u56DE\u5FA9\u3057\u305F\uFF01"
     guid: 6c012b1a-6507-4690-9b9b-85efb0889262
-  onNotPossessionEquipment:
-    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
-    value: "\u304A\u3044\u304A\u3044\uFF01\u88C5\u5099\u54C1\u3092\u6301\u3063\u3066\u306A\u3044\u3058\u3083\u306A\u3044\u304B\uFF01"
-    guid: a76705f3-bac6-4103-b5df-95b21a1545b2
-  confirmSynthesisSelectTargetEquipment:
-    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
-    value: "\u6B21\u306F\u713C\u5370\u3092\u79FB\u3059\u88C5\u5099\u54C1\u3092\u9078\u3093\u3067\u304F\u308C\uFF01"
-    guid: 99eba30d-9c8c-4af5-9c8c-86bb7da663f5
-  notEquipmentSynthesis:
-    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
-    value: "\u3053\u3044\u3064\u306B\u5408\u6210\u306F\u3082\u3046\u7121\u7406\u3060\u306A\u3002\u4ED6\u3092\u9078\u3093\u3067\u304F\u308C\u3002"
-    guid: 373f0c36-43a0-47ff-ac55-7b9dc2040e2b
-  notEquipmentSynthesisTarget:
-    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
-    value: "\u3053\u3044\u3064\u306B\u306F\u713C\u5370\u304C\u4ED8\u3044\u3066\u306A\u3044\u305E\uFF1F"
-    guid: 9d55f824-e902-450c-9399-82a2b2697d55
-  confirmSynthesisFinalCheck:
-    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
-    value: "<color=aqua>{0}</color>\u306B<color=aqua>{1}</color>\u3092\u5408\u6210\u3059\u308B\u3093\u3060\u306A\uFF1F\u305D\u308C\u306A\u3089<color=orange>{2}G</color>\u306B\u306A\u308B\u306A\u3002"
-    guid: 3b1041a7-6273-455a-b092-499f2605de9c
 --- !u!114 &1584263361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16534,6 +16514,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 192200996}
+  welcomeMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u304A\u3046\uFF01\u3044\u3089\u3063\u3057\u3083\u3044\uFF01"
+    guid: 41da225f-2145-43b4-9032-41db495f228e
+  goodbyeMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u307E\u305F\u6765\u3044\u3088\uFF01"
+    guid: 698bb961-d327-4a35-9495-dfdb9b43693b
   reinforcementMessage:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u5F37\u5316"
@@ -16542,6 +16530,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u5408\u6210"
     guid: 984b8717-b997-421f-a236-096120e23e4f
+  removeAbilityMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u6D88\u5370"
+    guid: 5c128020-77ca-4780-ac0f-3f701607edd1
   closedMessage:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u9000\u5E97"
@@ -16578,6 +16570,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u307E\u305A\u306F\u5408\u6210\u306E\u5143\u3068\u306A\u308B\u88C5\u5099\u54C1\u3092\u9078\u3093\u3067\u304F\u308C\uFF01"
     guid: b9cb9613-4bb5-4afd-ae0f-a7137c963cc8
+  startRemoveAbilityMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u307E\u305A\u306F\u88C5\u5099\u54C1\u3092\u9078\u3093\u3067\u304F\u308C\uFF01"
+    guid: 9623c060-239d-40f4-a51a-4d60bc6fab75
   confirmReinforceMessage:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u3053\u3044\u3064\u306A\u3089<color=orange>{0}G</color>\u3067\u5F37\u5316\u51FA\u6765\u308B\u305E\uFF1F"
@@ -16602,6 +16598,18 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u3053\u3044\u3064\u306B\u306F\u713C\u5370\u304C\u4ED8\u3044\u3066\u306A\u3044\u305E\uFF1F"
     guid: 9d55f824-e902-450c-9399-82a2b2697d55
+  selectRemoveAbilityMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u6B21\u306F\u6D88\u3057\u305F\u3044\u713C\u5370\u3092\u9078\u3093\u3067\u304F\u308C\uFF01"
+    guid: d021f075-82c9-493a-841a-9642aea4ed55
+  successRemoveAbilityMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u304A\u3089\u3001\u7D42\u308F\u3063\u305F\u3088\u3002"
+    guid: 79e554df-9e72-4231-ae1d-471f10bccd1b
+  notRemoveAbilityMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u91D1\u8DB3\u308A\u306D\u3047\u3058\u3083\u306D\u3048\u304B\uFF01"
+    guid: e54bd22b-04a3-452f-b6f0-2d893233b6c2
 --- !u!114 &1584263362
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,10 +16,19 @@ namespace MineS
 		private GameObject ui;
 
 		[SerializeField]
+		private StringAsset.Finder welcomeMessage;
+
+		[SerializeField]
+		private StringAsset.Finder goodbyeMessage;
+
+		[SerializeField]
 		private StringAsset.Finder reinforcementMessage;
 
 		[SerializeField]
 		private StringAsset.Finder synthesisMessage;
+
+		[SerializeField]
+		private StringAsset.Finder removeAbilityMessage;
 		
 		[SerializeField]
 		private StringAsset.Finder closedMessage;
@@ -49,6 +58,9 @@ namespace MineS
 		private StringAsset.Finder startSynthesisMessage;
 
 		[SerializeField]
+		private StringAsset.Finder startRemoveAbilityMessage;
+
+		[SerializeField]
 		private StringAsset.Finder confirmReinforceMessage;
 
 		[SerializeField]
@@ -66,6 +78,18 @@ namespace MineS
 		[SerializeField]
 		private StringAsset.Finder notExistBrandingEquipmentMessage;
 
+		[SerializeField]
+		private StringAsset.Finder selectRemoveAbilityMessage;
+
+		[SerializeField]
+		private StringAsset.Finder confirmRemoveAbilityMessage;
+
+		[SerializeField]
+		private StringAsset.Finder successRemoveAbilityMessage;
+
+		[SerializeField]
+		private StringAsset.Finder notRemoveAbilityMessage;
+
 		public Item SynthesisTargetEquipment{ private set; get; }
 
 		void Start()
@@ -76,6 +100,7 @@ namespace MineS
 
 		public void OpenUI()
 		{
+			InformationManager.AddMessage(this.welcomeMessage.Get);
 			this.ui.SetActive(true);
 			this.CreateConfirm();
 			PlayerManager.Instance.NotifyCharacterDataObservers();
@@ -152,6 +177,32 @@ namespace MineS
 			confirmManager.Add(this.cancelMessage, null, true);
 		}
 
+		public void InvokeRemoveAbility(int index)
+		{
+			var playerData = PlayerManager.Instance.Data;
+			var removeItem = playerData.Inventory.SelectItem;
+			var needMoney = Calculator.GetRemoveAbilityNeedMoney(removeItem);
+			var equipmentData = removeItem.InstanceData as EquipmentData;
+			InformationManager.AddMessage(this.confirmRemoveAbilityMessage.Format(needMoney, equipmentData.Abilities[index].Name));
+			var confirmManager = ConfirmManager.Instance;
+			confirmManager.Add(this.removeAbilityMessage, () =>
+			{
+				if(playerData.Money >= needMoney)
+				{
+					InformationManager.AddMessage(this.successRemoveAbilityMessage.Get);
+					equipmentData.RemoveAbility(index);
+					playerData.AddMoney(-needMoney);
+					PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_RemoveAbilitySelectBaseEquipment, playerData.Inventory);
+					PlayerManager.Instance.NotifyCharacterDataObservers();
+				}
+				else
+				{
+					InformationManager.AddMessage(this.notRemoveAbilityMessage.Get);
+				}
+			}, true);
+			confirmManager.Add(this.cancelMessage, null, true);
+		}
+
 		public void SetSynthesisBaseEquipment(Item item)
 		{
 			var equipmentData = item.InstanceData as EquipmentData;
@@ -168,7 +219,24 @@ namespace MineS
 			var playerManager = PlayerManager.Instance;
 			playerManager.Data.Inventory.SetSelectItem(item);
 			playerManager.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment, playerManager.Data.Inventory);
+		}
 
+		public void SetRemoveAbilityBaseEquipment(Item item)
+		{
+			var equipmentData = item.InstanceData as EquipmentData;
+			if(equipmentData.ExistBranding)
+			{
+				InformationManager.AddMessage(this.selectRemoveAbilityMessage.Get);
+			}
+			else
+			{
+				InformationManager.AddMessage(this.notExistBrandingEquipmentMessage.Get);
+				return;
+			}
+
+			var playerManager = PlayerManager.Instance;
+			playerManager.Data.Inventory.SetSelectItem(item);
+			playerManager.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_RemoveAbilitySelectAbility, playerManager.Data.Inventory);
 		}
 
 		private void OnCloseInventoryUI(Inventory inventory)
@@ -176,7 +244,9 @@ namespace MineS
 			var inventoryOpenType = inventory.OpenType;
 			if(inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment
 			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment
-			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_Reinforcement)
+			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_Reinforcement
+			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_RemoveAbilitySelectAbility
+			   || inventoryOpenType == GameDefine.InventoryModeType.BlackSmith_RemoveAbilitySelectBaseEquipment)
 			{
 				this.CreateConfirm();
 			}
@@ -187,6 +257,7 @@ namespace MineS
 			var existEquipment = PlayerManager.Instance.Data.Inventory.IsPossessionEquipment;
 			ConfirmManager.Instance.Add(this.reinforcementMessage, new UnityAction(() => this.OnStartJob(this.startReinforcementMessage, GameDefine.InventoryModeType.BlackSmith_Reinforcement)), existEquipment);
 			ConfirmManager.Instance.Add(this.synthesisMessage, new UnityAction(() => this.OnStartJob(this.startSynthesisMessage, GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment)), existEquipment);
+			ConfirmManager.Instance.Add(this.removeAbilityMessage, new UnityAction(() => this.OnStartJob(this.startRemoveAbilityMessage, GameDefine.InventoryModeType.BlackSmith_RemoveAbilitySelectBaseEquipment)), existEquipment);
 			ConfirmManager.Instance.Add(this.closedMessage, this.OnClosed, true);
 		}
 
@@ -205,6 +276,7 @@ namespace MineS
 
 		private void OnClosed()
 		{
+			InformationManager.AddMessage(this.goodbyeMessage.Get);
 			this.ui.SetActive(false);
 		}
 

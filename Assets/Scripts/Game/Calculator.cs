@@ -320,9 +320,25 @@ namespace MineS
 			return attacker.GetAbilityNumber(GameDefine.AbilityType.Recovery);
 		}
 
+		/// <summary>
+		/// 合成に必要なお金を返す.
+		/// </summary>
+		/// <returns>The synthesis need money.</returns>
+		/// <param name="baseEquipment">Base equipment.</param>
+		/// <param name="targetEquipment">Target equipment.</param>
 		public static int GetSynthesisNeedMoney(Item baseEquipment, Item targetEquipment)
 		{
 			return (baseEquipment.InstanceData.PurchasePrice + targetEquipment.InstanceData.PurchasePrice) / 2;
+		}
+
+		/// <summary>
+		/// 消印に必要なお金を返す.
+		/// </summary>
+		/// <returns>The remove ability need money.</returns>
+		/// <param name="item">Item.</param>
+		public static int GetRemoveAbilityNeedMoney(Item item)
+		{
+			return item.InstanceData.SellingPrice;
 		}
 	}
 }

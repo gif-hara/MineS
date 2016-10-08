@@ -70,6 +70,12 @@ namespace MineS
 			case GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment:
 				this.OpenBlackSmith_SynthesisSelectTargetEquipment(inventory);
 			break;
+			case GameDefine.InventoryModeType.BlackSmith_RemoveAbilitySelectBaseEquipment:
+				this.OpenBlackSmith_RemoveAbilitySelectBaseEquipment(inventory);
+			break;
+			case GameDefine.InventoryModeType.BlackSmith_RemoveAbilitySelectAbility:
+				this.OpenBlackSmith_RemoveAbilitySelectAbility(inventory);
+			break;
 			case GameDefine.InventoryModeType.Shop_Buy:
 				this.OpenShop_Buy(inventory);
 			break;
@@ -113,6 +119,23 @@ namespace MineS
 			var list = inventory.AllItem;
 			list = list.Where(i => (i.InstanceData.ItemType == baseEquipment.InstanceData.ItemType) && i != inventory.SelectItem).ToList();
 			list.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.Weapon, this.GetAction(inventory, i)));
+		}
+
+		private void OpenBlackSmith_RemoveAbilitySelectBaseEquipment(Inventory inventory)
+		{
+			var list = inventory.AllItem;
+			list = list.Where(i => i.InstanceData.ItemType == GameDefine.ItemType.Weapon || i.InstanceData.ItemType == GameDefine.ItemType.Shield).ToList();
+			list.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.Weapon, this.GetAction(inventory, i)));
+		}
+
+		private void OpenBlackSmith_RemoveAbilitySelectAbility(Inventory inventory)
+		{
+			var item = inventory.SelectItem;
+			var abilities = (item.InstanceData as EquipmentData).Abilities;
+			for(int i = 0; i < abilities.Count; i++)
+			{
+				this.CreateAbilityCellController(abilities[i], new SelectBlackSmithRemoveAbilitySelectAbilityAction(i));
+			}
 		}
 
 		private void OpenShop_Buy(Inventory inventory)
@@ -218,6 +241,8 @@ namespace MineS
 				return new SelectBlackSmithSynthesisSelectBaseEquipmentAction(item);
 			case GameDefine.InventoryModeType.BlackSmith_SynthesisSelectTargetEquipment:
 				return new SelectBlackSmithSynthesisSelectTargetEquipmentAction(item);
+			case GameDefine.InventoryModeType.BlackSmith_RemoveAbilitySelectBaseEquipment:
+				return new SelectBlackSmithRemoveAbilitySelectBaseEquipmentAction(item);
 			case GameDefine.InventoryModeType.Shop_Buy:
 				return new SelectShopBuyItemAction(item);
 			case GameDefine.InventoryModeType.Shop_Sell:

@@ -522,14 +522,24 @@ namespace MineS
 			BlackSmith_Reinforcement,
 
 			/// <summary>
-			/// 鍛冶屋の焼印モードのベース装備品選択.
+			/// 鍛冶屋の合成モードのベース装備品選択.
 			/// </summary>
 			BlackSmith_SynthesisSelectBaseEquipment,
 
 			/// <summary>
-			/// 鍛冶屋の焼印モードの対象装備品選択.
+			/// 鍛冶屋の合成モードの対象装備品選択.
 			/// </summary>
 			BlackSmith_SynthesisSelectTargetEquipment,
+
+			/// <summary>
+			/// 鍛冶屋の焼印消去モードの対象装備品選択.
+			/// </summary>
+			BlackSmith_RemoveAbilitySelectBaseEquipment,
+
+			/// <summary>
+			/// 鍛冶屋の焼印消去モードの対象アビリティ選択.
+			/// </summary>
+			BlackSmith_RemoveAbilitySelectAbility,
 
 			/// <summary>
 			/// 店の購入モード.

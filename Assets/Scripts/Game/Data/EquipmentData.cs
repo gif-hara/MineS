@@ -103,6 +103,11 @@ namespace MineS
 			}
 		}
 
+		public void RemoveAbility(int index)
+		{
+			this.Abilities.RemoveAt(index);
+		}
+
 		public void LevelUp()
 		{
 			this.Level++;
