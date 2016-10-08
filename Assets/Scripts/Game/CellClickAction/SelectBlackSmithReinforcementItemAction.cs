@@ -24,21 +24,7 @@ namespace MineS
 			{
 				return;
 			}
-
-			var equipmentData = this.item.InstanceData as EquipmentData;
-			if(equipmentData.CanLevelUp)
-			{
-				InformationManager.OnConfirmReinforcement(equipmentData.NeedLevelUpMoney);
-			}
-			else
-			{
-				InformationManager.OnNotEquipmentLevelUp();
-				return;
-			}
-
-			var confirmManager = ConfirmManager.Instance;
-			confirmManager.Add(confirmManager.decideReinforcement, new UnityAction(() => BlackSmithManager.Instance.InvokeReinforcement(this.item)), true);
-			confirmManager.Add(confirmManager.cancel, null, true);
+			BlackSmithManager.Instance.InvokeReinforcement(this.item);
 		}
 
 		public override void SetCellController(CellController cellController)

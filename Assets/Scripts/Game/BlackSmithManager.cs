@@ -25,6 +25,9 @@ namespace MineS
 		private StringAsset.Finder closedMessage;
 
 		[SerializeField]
+		private StringAsset.Finder cancelMessage;
+
+		[SerializeField]
 		private StringAsset.Finder levelUpMessage;
 
 		[SerializeField]
@@ -45,6 +48,12 @@ namespace MineS
 		[SerializeField]
 		private StringAsset.Finder startSynthesisMessage;
 
+		[SerializeField]
+		private StringAsset.Finder confirmReinforceMessage;
+
+		[SerializeField]
+		private StringAsset.Finder notLevelUpFromLimitMessage;
+
 		public Item SynthesisTargetEquipment{ private set; get; }
 
 		void Start()
@@ -63,20 +72,34 @@ namespace MineS
 		public void InvokeReinforcement(Item item)
 		{
 			var equipmentData = item.InstanceData as EquipmentData;
-
-			var playerData = PlayerManager.Instance.Data;
-			if(playerData.Money >= equipmentData.NeedLevelUpMoney)
+			if(equipmentData.CanLevelUp)
 			{
-				playerData.AddMoney(-equipmentData.NeedLevelUpMoney);
-				equipmentData.LevelUp();
-				InformationManager.AddMessage(this.levelUpMessage.Get);
-				PlayerManager.instance.UpdateInventoryUI(playerData.Inventory);
-				PlayerManager.instance.NotifyCharacterDataObservers();
+				InformationManager.AddMessage(this.confirmReinforceMessage.Format(equipmentData.NeedLevelUpMoney));
 			}
 			else
 			{
-				InformationManager.AddMessage(this.notLevelUpMessage.Get);
+				InformationManager.AddMessage(this.notLevelUpFromLimitMessage.Get);
+				return;
 			}
+
+			var confirmManager = ConfirmManager.Instance;
+			confirmManager.Add(this.reinforcementMessage, () =>
+			{
+				var playerData = PlayerManager.Instance.Data;
+				if(playerData.Money >= equipmentData.NeedLevelUpMoney)
+				{
+					playerData.AddMoney(-equipmentData.NeedLevelUpMoney);
+					equipmentData.LevelUp();
+					InformationManager.AddMessage(this.levelUpMessage.Get);
+					PlayerManager.instance.UpdateInventoryUI(playerData.Inventory);
+					PlayerManager.instance.NotifyCharacterDataObservers();
+				}
+				else
+				{
+					InformationManager.AddMessage(this.notLevelUpMessage.Get);
+				}
+			}, true);
+			confirmManager.Add(this.cancelMessage, null, true);
 		}
 
 		public void InvokeSynthesis()
