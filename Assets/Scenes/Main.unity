@@ -16448,6 +16448,8 @@ MonoBehaviour:
       element: {fileID: 21300000, guid: 2dfe281539de17b4f948f65428065e47, type: 3}
   blackSmith:
     element: {fileID: 21300000, guid: 7abbfe895bca44e07b147b5f85c64936, type: 3}
+  shop:
+    element: {fileID: 21300000, guid: c8815581dbc3b468a9ba3236bbac9a5a, type: 3}
 --- !u!114 &1584263360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16679,6 +16681,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u3044\u3089\u3063\u3057\u3083\u3044\u307E\u305B\u3002"
     guid: e855d0db-4f84-44c5-8128-c6f8b0982495
+  goodbyeMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3057\u305F\u3002"
+    guid: dd6f4e3c-e35e-48cf-a9ef-5ffc01f15e4e
   confirmBuyItemMessage:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "<color=aqua>{0}</color>\u306F<color=orange>{1}</color>\u3067\u3059\u306D\u3002\u3044\u304B\u304C\u3067\u3057\u3087\u3046\u304B\uFF1F"

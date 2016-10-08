@@ -101,6 +101,12 @@ namespace MineS
 				this.CreateCellData(database, new CreateBlackSmithAction());
 			}
 
+			// 店を作成.
+			if(dungeonData.CanCreateShop(dungeonManager.Floor))
+			{
+				this.CreateCellData(database, new CreateShopAction());
+			}
+
 			// 空白を作成.
 			for(int i = 0, imax = database.Rest; i < imax; i++)
 			{

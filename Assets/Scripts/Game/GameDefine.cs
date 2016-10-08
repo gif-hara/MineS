@@ -548,6 +548,8 @@ namespace MineS
 
 		public const int InventoryItemMax = 16;
 
+		public const int ShopInventoryMax = 5;
+
 		public const int RecoveryItemRecovery = 5;
 
 		public const int ArmorMax = 999;

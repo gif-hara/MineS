@@ -81,5 +81,14 @@ namespace MineS
 			return this.blackSmithTable.CanCreate(floor);
 		}
 
+		public bool CanCreateShop(int floor)
+		{
+			return this.shopTable.CanCreate(floor);
+		}
+
+		public Inventory CreateShopInventory(int floor)
+		{
+			return this.shopTable.CreateInventory(floor);
+		}
 	}
 }

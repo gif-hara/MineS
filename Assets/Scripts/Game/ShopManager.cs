@@ -29,6 +29,9 @@ namespace MineS
 		private StringAsset.Finder welcomeMessage;
 
 		[SerializeField]
+		private StringAsset.Finder goodbyeMessage;
+
+		[SerializeField]
 		private StringAsset.Finder confirmBuyItemMessage;
 
 		[SerializeField]
@@ -54,9 +57,6 @@ namespace MineS
 		void Start()
 		{
 			PlayerManager.Instance.AddCloseInventoryUIEvent(this.OnCloseInventoryUI);
-			var inventory = new Inventory(null, 0);
-			this.debugItems.ForEach(i => inventory.AddItemNoLimit(new Item(i)));
-			this.OpenUI(inventory);
 		}
 
 		public void OpenUI(Inventory goods)
@@ -142,6 +142,7 @@ namespace MineS
 
 		private void OnClosed()
 		{
+			InformationManager.AddMessage(this.goodbyeMessage.Get);
 			this.ui.SetActive(false);
 		}
 	}

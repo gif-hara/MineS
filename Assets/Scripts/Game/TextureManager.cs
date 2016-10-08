@@ -125,5 +125,7 @@ namespace MineS
 		public Item defaultEquipment;
 
 		public SerializeFieldGetter.Sprite blackSmith;
+
+		public SerializeFieldGetter.Sprite shop;
 	}
 }
