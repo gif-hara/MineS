@@ -33,11 +33,15 @@ namespace MineS
 			Debug.AssertFormat(!this.Enemies.ContainsKey(cellData), "既に敵が存在します.");
 
 			var enemy = DungeonManager.Instance.CreateEnemy();
-
-			this.Enemies.Add(cellData, enemy);
-			this.InEnemyCells.Add(enemy, cellData);
+			this.Add(cellData, enemy);
 
 			return enemy;
+		}
+
+		public void Add(CellData cellData, EnemyData enemy)
+		{
+			this.Enemies.Add(cellData, enemy);
+			this.InEnemyCells.Add(enemy, cellData);
 		}
 
 		private void RemoveFromDead()

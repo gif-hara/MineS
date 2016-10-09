@@ -75,8 +75,11 @@ namespace MineS
 
 		public Sprite Image { protected set; get; }
 
+		protected CharacterMasterData masterData = null;
+
 		public void Initialize(CharacterMasterData masterData)
 		{
+			this.masterData = masterData;
 			this.Name = masterData.Name;
 			this.HitPointMax = masterData.HitPoint;
 			this.HitPoint = masterData.HitPoint;
@@ -203,11 +206,7 @@ namespace MineS
 		{
 			var resultDamage = Calculator.GetFinalDamage(value, this);
 			this.TakeDamageRaw(attacker, resultDamage, onlyHitPoint);
-
-			if(attacker != null && this.FindAbility(GameDefine.AbilityType.Splash))
-			{
-				attacker.TakeDamageRaw(this, resultDamage / 2, false);
-			}
+			this.OnTakedDamage(attacker, resultDamage, onlyHitPoint);
 
 			return resultDamage;
 		}
@@ -228,6 +227,14 @@ namespace MineS
 			if(this.IsDead)
 			{
 				this.Dead(attacker);
+			}
+		}
+
+		protected virtual void OnTakedDamage(CharacterData attacker, int value, bool onlyHitPoint)
+		{
+			if(attacker != null && this.FindAbility(GameDefine.AbilityType.Splash))
+			{
+				attacker.TakeDamageRaw(this, value / 2, false);
 			}
 		}
 

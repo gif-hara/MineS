@@ -442,16 +442,6 @@ namespace MineS
 			Clairvoyance,
 
 			/// <summary>
-			/// 脆弱：常にデバフの負傷の効果を得る.
-			/// </summary>
-			Vulnerable,
-
-			/// <summary>
-			/// 弱化：常にデバフの鈍らの効果を得る.
-			/// </summary>
-			Weakening,
-
-			/// <summary>
 			/// 分裂：ダメージを受けた際に同じ敵を何処かに生成する（敵のみ）.
 			/// </summary>
 			Division,

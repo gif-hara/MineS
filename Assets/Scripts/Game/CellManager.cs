@@ -82,7 +82,7 @@ namespace MineS
 
 		public void OnUseXray()
 		{
-			var notIdentificationCells = this.ToList.Where(c => !c.IsIdentification && c.CanStep).ToList();
+			var notIdentificationCells = this.ToListCellData.Where(c => !c.IsIdentification && c.CanStep).ToList();
 			notIdentificationCells.ForEach(c => c.OnUseXray());
 		}
 
@@ -195,33 +195,20 @@ namespace MineS
 			} while(database[y, x].CurrentEventType != GameDefine.EventType.None);
 		}
 
+		/// <summary>
+		/// ターン経過可能なセルコントローラーを返す.
+		/// </summary>
+		/// <value>The turn progressable cell controllers.</value>
 		private List<CellController> TurnProgressableCellControllers
 		{
 			get
 			{
-				var result = new List<CellController>();
-				for(int y = 0; y < RowMax; y++)
-				{
-					for(int x = 0; x < CulumnMax; x++)
-					{
-						var cellData = this.cellDatabase[y, x];
-						if(!cellData.CanStep || cellData.IsLock)
-						{
-							continue;
-						}
-
-						if(!cellData.IsIdentification || cellData.CurrentEventType == GameDefine.EventType.Enemy)
-						{
-							result.Add(this.cellControllers[y, x]);
-						}
-					}
-				}
-
-				return result;
+				var result = this.ToListCellData;
+				return result.Where(c => c.CanStep && !c.IsLock && !c.IsIdentification && c.CurrentEventType == GameDefine.EventType.Enemy).Select(c => c.Controller).ToList();
 			}
 		}
 
-		private List<CellData> ToList
+		public List<CellData> ToListCellData
 		{
 			get
 			{
