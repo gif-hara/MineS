@@ -455,6 +455,11 @@ namespace MineS
 			/// 転生：死亡した際にその階数に出現する敵を生成する（敵のみ）.
 			/// </summary>
 			Reincarnation,
+
+			/// <summary>
+			/// 挑発：他の敵がダメージを受ける時に肩代わりする.
+			/// </summary>
+			Provocation,
 		}
 
 		/// <summary>

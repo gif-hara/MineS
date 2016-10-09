@@ -111,6 +111,21 @@ namespace MineS
 			}
 		}
 
+		public EnemyData FindProvocationEnemy
+		{
+			get
+			{
+				var enemies = this.VisibleEnemies;
+				enemies.Where(e => e.FindAbility(GameDefine.AbilityType.Provocation)).ToList();
+				if(enemies.Count <= 0)
+				{
+					return null;
+				}
+
+				return enemies[Random.Range(0, enemies.Count)];
+			}
+		}
+
 		private List<EnemyData> VisibleEnemies
 		{
 			get

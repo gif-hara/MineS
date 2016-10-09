@@ -12,7 +12,13 @@ namespace MineS
 	{
 		public static void Combat(CharacterData player, CharacterData enemy)
 		{
-			player.Attack(enemy);
+			CharacterData playerTarget = EnemyManager.Instance.FindProvocationEnemy;
+			if(playerTarget == null)
+			{
+				playerTarget = enemy;
+			}
+
+			player.Attack(playerTarget);
 
 			if(CanAttackEnemy(enemy))
 			{

@@ -104,6 +104,8 @@ namespace MineS
 				return new AbilityBase(type, holder, "Summon");
 			case GameDefine.AbilityType.Reincarnation:
 				return new AbilityBase(type, holder, "Reincarnation");
+			case GameDefine.AbilityType.Provocation:
+				return new AbilityBase(type, holder, "Provocation");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;
