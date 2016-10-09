@@ -340,5 +340,10 @@ namespace MineS
 		{
 			return item.InstanceData.SellingPrice;
 		}
+
+		public static int GetInitiativeDamage(IAttack attacker)
+		{
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Initiative) * 2;
+		}
 	}
 }

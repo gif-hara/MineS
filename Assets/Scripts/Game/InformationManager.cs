@@ -25,7 +25,8 @@ namespace MineS
 			onLevelUpPlayer = null,
 			onContinuousAttack = null,
 			onAcquiredItem = null,
-			onRecovery = null;
+			onRecovery = null,
+			onInitiativeDamage = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -100,6 +101,15 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.onRecovery.Format(value));
+		}
+
+		public static void OnInitiativeDamage(IAttack attacker, IAttack receiver, int damage)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.onInitiativeDamage.Format(receiver.Name, damage)
+				.Replace(AttackerColor, attacker.ColorCode)
+				.Replace(ReceiverColor, receiver.ColorCode);
+			instance._AddMessage(message);
 		}
 
 		public static void AddMessage(string message)

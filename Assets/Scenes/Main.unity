@@ -16512,6 +16512,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u304C<color=lime>{0}</color>\u56DE\u5FA9\u3057\u305F\uFF01"
     guid: 6c012b1a-6507-4690-9b9b-85efb0889262
+  onInitiativeDamage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u5148\u624B\u3067<color=receiverColor>{0}</color>\u306B<color=attackerColor>{1}</color>\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u305F\uFF01"
+    guid: ee6c8b51-0367-4ab9-ba18-48362580920c
 --- !u!114 &1584263361
 MonoBehaviour:
   m_ObjectHideFlags: 0

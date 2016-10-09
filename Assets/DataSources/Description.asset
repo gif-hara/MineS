@@ -472,3 +472,13 @@ MonoBehaviour:
       value: "\u8E0F\u3080\u3068\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u3051\u308B\u305E\uFF01"
       guid: 3d66172a-76c5-4225-8baf-6fb7df846c2c
     image: {fileID: 21300000, guid: 7492368233bb5ed419a174980f82a5c2, type: 3}
+  - key: Initiative
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5148\u624B"
+      guid: 7302f1ab-9e5e-4f55-9ace-631e04396083
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u6575\u3092\u898B\u3064\u3051\u305F\u6642\u306B\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: 028f75e1-16f3-44d0-ac90-622364404081
+    image: {fileID: 0}

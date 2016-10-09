@@ -20,6 +20,16 @@ namespace MineS
 			}
 		}
 
+		/// <summary>
+		/// 特殊能力の先手による先制攻撃処理.
+		/// </summary>
+		/// <param name="player">Player.</param>
+		/// <param name="enemy">Enemy.</param>
+		public static void CombatInitiative(CharacterData player, CharacterData enemy)
+		{
+			player.Attack(enemy);
+		}
+
 		public static void CombatLongRangeAttack(CharacterData player, CharacterData enemy)
 		{
 			enemy.Attack(player);

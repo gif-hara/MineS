@@ -190,7 +190,7 @@ namespace MineS
 			}
 		}
 
-		protected void GiveDamageRaw(CharacterData target, int damage, bool onlyHitPoint)
+		public void GiveDamageRaw(CharacterData target, int damage, bool onlyHitPoint)
 		{
 			target.TakeDamageRaw(this, damage, onlyHitPoint);
 			if(target.IsDead)

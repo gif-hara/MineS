@@ -348,4 +348,8 @@ MonoBehaviour:
       ja: "<color=orange>{0}G</color>\u3060\u304C\u3001\u672C\u5F53\u306B<color=aqua>{1}</color>\u3092\u6D88\u3059\u3093\u3060\u306A\uFF1F"
       en: 
     guid: a32f64a4-a4b7-423c-937a-e2575ed2fb7b
+  - value:
+      ja: "\u5148\u624B\u3067<color=receiverColor>{0}</color>\u306B<color=attackerColor>{1}</color>\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u305F\uFF01"
+      en: 
+    guid: ee6c8b51-0367-4ab9-ba18-48362580920c
   asset: []

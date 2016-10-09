@@ -65,6 +65,17 @@ namespace MineS
 			}
 		}
 
+		public void OnInitiative(CharacterData enemy)
+		{
+			if(!this.FindAbility(GameDefine.AbilityType.Initiative))
+			{
+				return;
+			}
+			var damage = Calculator.GetInitiativeDamage(this);
+			InformationManager.OnInitiativeDamage(this, enemy, damage);
+			this.GiveDamageRaw(enemy, damage, false);
+		}
+
 		public void LevelUp(CharacterMasterData growthData)
 		{
 			this.Level++;

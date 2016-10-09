@@ -27,6 +27,8 @@ namespace MineS
 					adjacentCells[i].AddLock();
 				}
 			}
+
+			PlayerManager.Instance.Data.OnInitiative(this.enemy);
 		}
 
 		public override void OnIdentification(CellData cellData)
