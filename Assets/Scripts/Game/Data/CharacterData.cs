@@ -283,11 +283,16 @@ namespace MineS
 			this.AbnormalStatuses.RemoveAll(a => a.Type == newAbnormalStatus.OppositeType);
 		}
 
-		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		public virtual void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			this.AbnormalStatuses.ForEach(a => a.OnTurnProgress(type, turnCount));
 			this.AbnormalStatuses.RemoveAll(a => !a.IsValid);
 			this.Abilities.ForEach(a => a.OnTurnProgress(type, turnCount));
+		}
+
+		public virtual void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			
 		}
 
 		public bool FindAbnormalStatus(GameDefine.AbnormalStatusType type)

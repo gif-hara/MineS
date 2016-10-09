@@ -100,6 +100,8 @@ namespace MineS
 				return new AbilityClairvoyance(holder);
 			case GameDefine.AbilityType.Division:
 				return new AbilityBase(type, holder, "Division");
+			case GameDefine.AbilityType.Summon:
+				return new AbilityBase(type, holder, "Summon");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;

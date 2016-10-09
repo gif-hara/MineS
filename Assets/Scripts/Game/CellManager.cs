@@ -224,5 +224,19 @@ namespace MineS
 				return result;
 			}
 		}
+
+		public CellData RandomBlankCell
+		{
+			get
+			{
+				var blankCells = this.ToListCellData;
+				blankCells = blankCells.Where(c => c.IsIdentification && c.CurrentEventType == GameDefine.EventType.None).ToList();
+				if(blankCells.Count <= 0)
+				{
+					return null;
+				}
+				return blankCells[Random.Range(0, blankCells.Count)];
+			}
+		}
 	}
 }

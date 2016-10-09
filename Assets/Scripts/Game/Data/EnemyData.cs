@@ -50,33 +50,55 @@ namespace MineS
 			this.Abilities.ForEach(a => a.OnIdentification(cellData));
 		}
 
+		public override void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			base.OnTurnProgress(type, turnCount);
+			if(this.FindAbility(GameDefine.AbilityType.Summon) && !this.IsDead && Calculator.CanInvokeSummon)
+			{
+				var blankCell = CellManager.Instance.RandomBlankCell;
+				if(blankCell != null)
+				{
+					var enemy = EnemyManager.Instance.Create(blankCell);
+					this.BindCombatEnemyAction(blankCell, enemy);
+				}
+			}
+		}
+
+		public override void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			base.OnLateTurnProgress(type, turnCount);
+		}
+
 		protected override void OnTakedDamage(CharacterData attacker, int value, bool onlyHitPoint)
 		{
 			base.OnTakedDamage(attacker, value, onlyHitPoint);
 			if(this.FindAbility(GameDefine.AbilityType.Division) && !this.IsDead)
 			{
-				var blankCells = CellManager.Instance.ToListCellData;
-				blankCells = blankCells.Where(c => c.IsIdentification && c.CurrentEventType == GameDefine.EventType.None).ToList();
-				if(blankCells.Count > 0)
+				var blankCell = CellManager.Instance.RandomBlankCell;
+				if(blankCell != null)
 				{
 					var clone = new EnemyData();
 					clone.Initialize(this.masterData);
 					clone.HitPoint = this.HitPoint;
-					var blankCell = blankCells[Random.Range(0, blankCells.Count)];
-					blankCell.BindCellClickAction(new CombatEnemyAction());
-					blankCell.BindDeployDescription(new DeployDescriptionOnCharacterData(clone));
-					blankCell.Controller.SetCharacterData(clone);
-					blankCell.Controller.SetImage(clone.Image);
+					this.BindCombatEnemyAction(blankCell, clone);
 					EnemyManager.Instance.Add(blankCell, clone);
+				}
 
-					var adjacentCells = blankCell.AdjacentCellAll;
-					for(int i = 0; i < adjacentCells.Count; i++)
-					{
-						if(!adjacentCells[i].IsIdentification)
-						{
-							adjacentCells[i].AddLock();
-						}
-					}
+			}
+		}
+
+		private void BindCombatEnemyAction(CellData cellData, EnemyData enemy)
+		{
+			cellData.BindCellClickAction(new CombatEnemyAction());
+			cellData.BindDeployDescription(new DeployDescriptionOnCharacterData(enemy));
+			cellData.Controller.SetCharacterData(enemy);
+			cellData.Controller.SetImage(enemy.Image);
+			var adjacentCells = cellData.AdjacentCellAll;
+			for(int i = 0; i < adjacentCells.Count; i++)
+			{
+				if(!adjacentCells[i].IsIdentification)
+				{
+					adjacentCells[i].AddLock();
 				}
 			}
 		}

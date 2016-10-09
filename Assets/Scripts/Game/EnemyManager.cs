@@ -81,13 +81,26 @@ namespace MineS
 
 		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
+			this.RemoveFromDead();
 			var visibleEnemies = this.VisibleEnemies;
 			foreach(var e in visibleEnemies)
 			{
 				e.OnTurnProgress(type, turnCount);
 			}
+		}
 
-			this.RemoveFromDead();
+		private void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			foreach(var e in this.Enemies)
+			{
+				if(e.Value == null || !e.Key.IsIdentification)
+				{
+					continue;
+				}
+
+				e.Value.OnLateTurnProgress(type, turnCount);
+				e.Key.Controller.CharacterDataObserver.ModifiedData(e.Value);
+			}
 		}
 
 		public List<CellData> NotIdentifications
@@ -103,19 +116,6 @@ namespace MineS
 			get
 			{
 				return this.Enemies.Where(e => e.Key.IsIdentification).Select(e => e.Value).ToList();
-			}
-		}
-
-		private void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
-		{
-			foreach(var e in this.Enemies)
-			{
-				if(e.Value == null || !e.Key.IsIdentification)
-				{
-					continue;
-				}
-
-				e.Key.Controller.CharacterDataObserver.ModifiedData(e.Value);
 			}
 		}
 	}

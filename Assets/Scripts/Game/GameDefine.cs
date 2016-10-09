@@ -445,6 +445,16 @@ namespace MineS
 			/// 分裂：ダメージを受けた際に同じ敵を何処かに生成する（敵のみ）.
 			/// </summary>
 			Division,
+
+			/// <summary>
+			/// 召喚：その階数に出現する敵を生成する（敵のみ）.
+			/// </summary>
+			Summon,
+
+			/// <summary>
+			/// 転生：死亡した際にその階数に出現する敵を生成する（敵のみ）.
+			/// </summary>
+			Reincarnation,
 		}
 
 		/// <summary>

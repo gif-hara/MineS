@@ -341,9 +341,26 @@ namespace MineS
 			return item.InstanceData.SellingPrice;
 		}
 
+		/// <summary>
+		/// 特殊能力の先手のダメージを返す.
+		/// </summary>
+		/// <returns>The initiative damage.</returns>
+		/// <param name="attacker">Attacker.</param>
 		public static int GetInitiativeDamage(IAttack attacker)
 		{
 			return attacker.GetAbilityNumber(GameDefine.AbilityType.Initiative) * 2;
+		}
+
+		/// <summary>
+		/// 特殊能力の召喚の成功確率を返す.
+		/// </summary>
+		/// <value><c>true</c> if can invoke summon; otherwise, <c>false</c>.</value>
+		public static bool CanInvokeSummon
+		{
+			get
+			{
+				return Random.value < 0.3f;
+			}
 		}
 	}
 }
