@@ -522,3 +522,23 @@ MonoBehaviour:
       value: "\u5012\u3055\u308C\u305F\u6642\u306B\u6575\u3092\u751F\u6210\u3059\u308B\u305E\uFF01"
       guid: 6bcd1683-9e7c-489e-a740-3f2e1288a1f4
     image: {fileID: 0}
+  - key: Shop
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u30B7\u30E7\u30C3\u30D7"
+      guid: 79ba2e6b-4062-4bb1-b88d-ebe13138341a
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u8272\u3005\u306A\u30A2\u30A4\u30C6\u30E0\u304C\u8CB7\u3048\u308B\u305E\uFF01"
+      guid: 16668388-c8db-4340-a063-a32a82a9a1b9
+    image: {fileID: 21300000, guid: c8815581dbc3b468a9ba3236bbac9a5a, type: 3}
+  - key: BlackSmith
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u935B\u51B6\u5C4B"
+      guid: 03b236f1-37a7-4e46-b7be-ee2034a4e216
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u88C5\u5099\u54C1\u306E\u5F37\u5316\u3084\u5408\u6210\u304C\u51FA\u6765\u308B\u305E\uFF01"
+      guid: 624143be-8c75-420e-9246-22f9676d5c98
+    image: {fileID: 21300000, guid: 7abbfe895bca44e07b147b5f85c64936, type: 3}

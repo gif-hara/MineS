@@ -18,6 +18,7 @@ namespace MineS
 		{
 			this.cellController.SetImage(this.Image);
 			data.BindCellClickAction(new VisitShopAction());
+			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("Shop"));
 		}
 
 		public override GameDefine.EventType EventType

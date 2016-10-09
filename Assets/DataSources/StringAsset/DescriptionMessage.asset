@@ -216,4 +216,12 @@ MonoBehaviour:
       ja: "\u5012\u3055\u308C\u305F\u6642\u306B\u6575\u3092\u751F\u6210\u3059\u308B\u305E\uFF01"
       en: 
     guid: 6bcd1683-9e7c-489e-a740-3f2e1288a1f4
+  - value:
+      ja: "\u8272\u3005\u306A\u30A2\u30A4\u30C6\u30E0\u304C\u8CB7\u3048\u308B\u305E\uFF01"
+      en: 
+    guid: 16668388-c8db-4340-a063-a32a82a9a1b9
+  - value:
+      ja: "\u88C5\u5099\u54C1\u306E\u5F37\u5316\u3084\u5408\u6210\u304C\u51FA\u6765\u308B\u305E\uFF01"
+      en: 
+    guid: 624143be-8c75-420e-9246-22f9676d5c98
   asset: []
