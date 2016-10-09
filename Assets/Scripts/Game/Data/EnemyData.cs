@@ -13,6 +13,16 @@ namespace MineS
 	{
 		public override void Dead(CharacterData attacker)
 		{
+			if(this.FindAbility(GameDefine.AbilityType.Reincarnation))
+			{
+				var blankCell = CellManager.Instance.RandomBlankCell;
+				if(blankCell != null)
+				{
+					var enemy = EnemyManager.Instance.Create(blankCell);
+					this.BindCombatEnemyAction(blankCell, enemy);
+				}
+			}
+
 			var cellData = EnemyManager.Instance.InEnemyCells[this];
 			cellData.BindCellClickAction(null);
 			cellData.Controller.SetActiveStatusObject(false);

@@ -512,3 +512,13 @@ MonoBehaviour:
       value: "\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u306B\u5225\u306E\u6575\u3092\u53EC\u559A\u3059\u308B\u6642\u304C\u3042\u308B\u305E\uFF01"
       guid: 4eb30df6-e009-4e2b-bcb4-6ccb9c010861
     image: {fileID: 0}
+  - key: Reincarnation
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u8EE2\u751F"
+      guid: 0637303b-844c-4214-8eb0-935c16ec9bc1
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u5012\u3055\u308C\u305F\u6642\u306B\u6575\u3092\u751F\u6210\u3059\u308B\u305E\uFF01"
+      guid: 6bcd1683-9e7c-489e-a740-3f2e1288a1f4
+    image: {fileID: 0}
