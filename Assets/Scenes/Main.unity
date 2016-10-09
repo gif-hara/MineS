@@ -16476,14 +16476,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 375424681}
-  onAttackByPlayer:
+  onAttack:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
-    value: "<color=aqua>{0}</color>\u306F<color=red>{1}</color>\u306B<color=aqua>{2}</color>\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u305F\uFF01"
+    value: "<color=attackerColor>{0}</color>\u306F<color=receiverColor>{1}</color>\u306B<color=attackerColor>{2}</color>\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u305F\uFF01"
     guid: 56f21bf3-0c7e-445f-8e37-414fd3755707
-  onAttackByEnemy:
-    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
-    value: "<color=red>{0}</color>\u306F<color=aqua>{1}</color>\u306B<color=red>{2}</color>\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u305F\uFF01"
-    guid: 9db59081-a855-4bef-808d-50e7e4c0ec99
   onMiss:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "{0}\u306E\u653B\u6483\u306F\u5916\u308C\u305F\uFF01"

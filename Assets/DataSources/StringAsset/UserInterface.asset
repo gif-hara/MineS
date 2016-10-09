@@ -121,7 +121,7 @@ MonoBehaviour:
       en: 
     guid: 9be0c5ec-b236-44a1-b050-e5082a028905
   - value:
-      ja: "\u75DB\u98A8"
+      ja: "\u8CA0\u50B7"
       en: 
     guid: 62411d61-30b4-4c2e-917c-be9b6ab24694
   - value:
@@ -205,27 +205,27 @@ MonoBehaviour:
       en: 
     guid: 9db59081-a855-4bef-808d-50e7e4c0ec99
   - value:
-      ja: "{0}\u306E\u653B\u6483\u306F\u5916\u308C\u305F\uFF01"
+      ja: "<color=attackerColor>{0}</color>\u306E\u653B\u6483\u306F\u5916\u308C\u305F\uFF01"
       en: 
     guid: 079821f3-62f2-40c5-9abc-dc06d9a44e7d
   - value:
-      ja: "{0}\u306F\u6050\u6016\u3067\u653B\u6483\u3067\u304D\u306A\u3044\uFF01"
+      ja: "<color=attackerColor>{0}</color>\u306F\u6050\u6016\u3067\u653B\u6483\u3067\u304D\u306A\u3044\uFF01"
       en: 
     guid: 977d03b4-aed3-4efe-aa83-9bb175bd6930
   - value:
-      ja: "<color=red>{0}</color>\u3092\u5012\u3057\u305F\uFF01"
+      ja: "<color=targetColor>{0}</color>\u3092\u5012\u3057\u305F\uFF01<color=aqua>{1}</color>\u306E\u7D4C\u9A13\u5024\u3092\u5F97\u305F\uFF01<color=orange>{2}G</color>\u3092\u5F97\u305F\uFF01"
       en: 
     guid: 9735b6c3-4ec1-4325-b286-34c432e49c58
   - value:
-      ja: "<color=red>{0}</color>\u304C\u51FA\u73FE\u3057\u305F\uFF01"
+      ja: "<color=targetColor>{0}</color>\u304C\u51FA\u73FE\u3057\u305F\uFF01"
       en: 
     guid: 4ff54f9a-592b-416b-8239-711ac4873913
   - value:
-      ja: "<color=aqua>{0}</color>\u306B\u30EC\u30D9\u30EB\u30A2\u30C3\u30D7\uFF01"
+      ja: "<color=targetColor>{0}</color>\u306F<color=targetColor>{1}</color>\u306B\u30EC\u30D9\u30EB\u30A2\u30C3\u30D7\u3057\u305F\uFF01"
       en: 
     guid: 53709aeb-7740-4a02-9351-f9f835cbf702
   - value:
-      ja: "\u3064\u3044\u3067\u306B<color=red>{0}</color>\u306B<color=aqua>{1}</color>\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u305F\uFF01"
+      ja: "\u3064\u3044\u3067\u306B<color=receiverColor>{0}</color>\u306B<color=attackerColor>{1}</color>\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u305F\uFF01"
       en: 
     guid: 94e17d2b-ca98-4663-b16f-da8d6efade9a
   - value:

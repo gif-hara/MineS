@@ -224,7 +224,7 @@ namespace MineS
 			Blur,
 
 			/// <summary>
-			/// 痛風：受けるダメージが2倍になる.
+			/// 負傷：受けるダメージが2倍になる.
 			/// </summary>
 			Gout,
 
@@ -392,7 +392,7 @@ namespace MineS
 			Absentmindedness,
 
 			/// <summary>
-			/// 秘孔突き：ダメージを与えた際に一定確率でデバフの痛風を付与する.
+			/// 秘孔突き：ダメージを与えた際に一定確率でデバフの負傷を付与する.
 			/// </summary>
 			VitalsPoke,
 
