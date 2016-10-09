@@ -10,12 +10,6 @@ namespace MineS
 	/// </summary>
 	public class EnemyData : CharacterData, IIdentification
 	{
-		protected override void OnAttacked(CharacterData target, int damage)
-		{
-			InformationManager.OnAttackByEnemy(this.Name, target.Name, damage);
-			base.OnAttacked(target, damage);
-		}
-
 		public override void Dead(CharacterData attacker)
 		{
 			var cellData = EnemyManager.Instance.InEnemyCells[this];
@@ -39,6 +33,14 @@ namespace MineS
 					: DungeonManager.Instance.CurrentData.CreateItem();
 				cellData.BindCellClickAction(new AcquireItemAction(item, cellData.Controller));
 				cellData.BindDeployDescription(new DeployDescriptionOnItem(item));
+			}
+		}
+
+		public override string ColorCode
+		{
+			get
+			{
+				return "#FF4E4E";
 			}
 		}
 

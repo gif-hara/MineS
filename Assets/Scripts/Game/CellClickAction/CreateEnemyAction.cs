@@ -14,7 +14,7 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			InformationManager.OnVisibleEnemy(this.enemy.Name);
+			InformationManager.OnVisibleEnemy(this.enemy);
 			data.BindCellClickAction(new CombatEnemyAction());
 			data.BindDeployDescription(new DeployDescriptionOnCharacterData(this.enemy));
 			data.Controller.SetCharacterData(this.enemy);

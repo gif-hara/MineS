@@ -10,6 +10,8 @@ namespace MineS
 	/// </summary>
 	public interface IAttack
 	{
+		string Name{ get; }
+
 		int Strength{ get; }
 
 		int HitProbability{ get; }
@@ -17,6 +19,12 @@ namespace MineS
 		int Evasion{ get; }
 
 		int Armor{ get; }
+
+		int Experience{ get; }
+
+		int Money{ get; }
+
+		string ColorCode{ get; }
 
 		bool FindAbility(GameDefine.AbilityType type);
 

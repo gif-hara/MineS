@@ -197,7 +197,7 @@ MonoBehaviour:
       en: 
     guid: 9505724b-3af9-4996-9a66-acb3b51720d7
   - value:
-      ja: "<color=aqua>{0}</color>\u306F<color=red>{1}</color>\u306B<color=aqua>{2}</color>\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u305F\uFF01"
+      ja: "<color=attackerColor>{0}</color>\u306F<color=receiverColor>{1}</color>\u306B<color=attackerColor>{2}</color>\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u305F\uFF01"
       en: 
     guid: 56f21bf3-0c7e-445f-8e37-414fd3755707
   - value:
@@ -344,4 +344,8 @@ MonoBehaviour:
       ja: "\u6B21\u306F\u6D88\u3057\u305F\u3044\u713C\u5370\u3092\u9078\u3093\u3067\u304F\u308C\uFF01"
       en: 
     guid: d021f075-82c9-493a-841a-9642aea4ed55
+  - value:
+      ja: "<color=orange>{0}G</color>\u3060\u304C\u3001\u672C\u5F53\u306B<color=aqua>{1}</color>\u3092\u6D88\u3059\u3093\u3060\u306A\uFF1F"
+      en: 
+    guid: a32f64a4-a4b7-423c-937a-e2575ed2fb7b
   asset: []

@@ -32,7 +32,6 @@ namespace MineS
 
 		protected override void OnAttacked(CharacterData target, int damage)
 		{
-			InformationManager.OnAttackByPlayer(this.Name, target.Name, damage);
 			base.OnAttacked(target, damage);
 
 			if(this.Inventory.IsFreeSpace && this.FindAbility(GameDefine.AbilityType.Theft) && Calculator.IsSuccessTheft(this))
@@ -43,7 +42,7 @@ namespace MineS
 
 		public override void Defeat(CharacterData target)
 		{
-			InformationManager.OnDefeatByPlayer(target.Name);
+			InformationManager.OnDefeat(target);
 			base.Defeat(target);
 			this.AddExperience(Calculator.GetFinalExperience(target.Experience, this));
 			this.AddMoney(Calculator.GetFinalMoney(target.Money, this));
@@ -58,10 +57,18 @@ namespace MineS
 		{
 		}
 
+		public override string ColorCode
+		{
+			get
+			{
+				return "#00FFE9";
+			}
+		}
+
 		public void LevelUp(CharacterMasterData growthData)
 		{
 			this.Level++;
-			InformationManager.OnLevelUpPlayer(this.Level);
+			InformationManager.OnLevelUpPlayer(this, this.Level);
 			this.HitPointMax += growthData.HitPoint;
 			if(this.HitPoint <= this.HitPointMax)
 			{

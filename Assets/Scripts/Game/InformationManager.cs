@@ -18,7 +18,7 @@ namespace MineS
 
 		[SerializeField]
 		private StringAsset.Finder
-			onAttackByPlayer = null, onAttackByEnemy = null,
+			onAttack = null,
 			onMiss = null, onMissByFear = null,
 			onDefeatByPlayer = null,
 			onVisibleEnemy = null,
@@ -31,52 +31,63 @@ namespace MineS
 
 		private Coroutine currentMessageCoroutine = null;
 
-		public static void OnAttackByPlayer(string attackerName, string receiverName, int damage)
+		private static string AttackerColor = "attackerColor";
+
+		private static string ReceiverColor = "receiverColor";
+
+		private static string TargetColor = "targetColor";
+
+		public static void OnAttack(IAttack attacker, IAttack receiver, int damage)
 		{
 			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.onAttackByPlayer.Format(attackerName, receiverName, damage));
+			var message = instance.onAttack.Format(attacker.Name, receiver.Name, damage)
+				.Replace(AttackerColor, attacker.ColorCode)
+				.Replace(ReceiverColor, receiver.ColorCode);
+			instance._AddMessage(message);
 		}
 
-		public static void OnAttackByEnemy(string attackerName, string receiverName, int damage)
+		public static void OnMiss(IAttack attacker)
 		{
 			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.onAttackByEnemy.Format(attackerName, receiverName, damage));
+			var message = instance.onMiss.Format(attacker.Name).Replace(AttackerColor, attacker.ColorCode);
+			instance._AddMessage(message);
 		}
 
-		public static void OnMiss(string attackerName)
+		public static void OnMissByFear(IAttack attacker)
 		{
 			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.onMiss.Format(attackerName));
+			var message = instance.onMissByFear.Format(attacker.Name).Replace(AttackerColor, attacker.ColorCode);
+			instance._AddMessage(message);
 		}
 
-		public static void OnMissByFear(string attackerName)
+		public static void OnDefeat(IAttack target)
 		{
 			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.onMissByFear.Format(attackerName));
+			var message = instance.onDefeatByPlayer.Format(target.Name, target.Experience, target.Money).Replace(TargetColor, target.ColorCode);
+			instance._AddMessage(message);
 		}
 
-		public static void OnDefeatByPlayer(string targetName)
+		public static void OnVisibleEnemy(IAttack enemy)
 		{
 			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.onDefeatByPlayer.Format(targetName));
+			var message = instance.onVisibleEnemy.Format(enemy.Name).Replace(TargetColor, enemy.ColorCode);
+			instance._AddMessage(message);
 		}
 
-		public static void OnVisibleEnemy(string enemyName)
+		public static void OnLevelUpPlayer(IAttack attacker, int level)
 		{
 			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.onVisibleEnemy.Format(enemyName));
+			var message = instance.onLevelUpPlayer.Format(attacker.Name, level).Replace(TargetColor, attacker.ColorCode);
+			instance._AddMessage(message);
 		}
 
-		public static void OnLevelUpPlayer(int level)
+		public static void OnContinuousAttack(IAttack attacker, IAttack receiver, int damage)
 		{
 			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.onLevelUpPlayer.Format(level));
-		}
-
-		public static void OnContinuousAttack(string targetName, int damage)
-		{
-			var instance = InformationManager.Instance;
-			instance._AddMessage(instance.onContinuousAttack.Format(targetName, damage));
+			var message = instance.onContinuousAttack.Format(receiver.Name, damage)
+				.Replace(AttackerColor, attacker.ColorCode)
+				.Replace(ReceiverColor, receiver.ColorCode);
+			instance._AddMessage(message);
 		}
 
 		public static void OnAcquiredItem(string itemName)

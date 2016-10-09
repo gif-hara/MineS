@@ -122,11 +122,11 @@ namespace MineS
 			{
 				if(hitResult == GameDefine.AttackResultType.Miss)
 				{
-					InformationManager.OnMiss(this.Name);
+					InformationManager.OnMiss(this);
 				}
 				else if(hitResult == GameDefine.AttackResultType.MissByFear)
 				{
-					InformationManager.OnMissByFear(this.Name);
+					InformationManager.OnMissByFear(this);
 				}
 				return;
 			}
@@ -136,6 +136,8 @@ namespace MineS
 
 		protected virtual void OnAttacked(CharacterData target, int damage)
 		{
+			InformationManager.OnAttack(this, target, damage);
+
 			if(this.FindAbility(GameDefine.AbilityType.Absorption))
 			{
 				this.RecoveryHitPoint(damage / 2, true);
@@ -155,8 +157,9 @@ namespace MineS
 				var otherTarget = EnemyManager.Instance.GetRandomEnemy(ignoreEnemy);
 				if(otherTarget != null)
 				{
-					this.GiveDamageRaw(otherTarget, damage / 2, false);
-					InformationManager.OnContinuousAttack(target.Name, (damage / 2));
+					var continuousDamage = damage / 2;
+					this.GiveDamageRaw(otherTarget, continuousDamage, false);
+					InformationManager.OnContinuousAttack(this, target, continuousDamage);
 				}
 			}
 			if(this.FindAbility(GameDefine.AbilityType.RiskOfLife))
@@ -239,6 +242,8 @@ namespace MineS
 		}
 
 		public abstract void Dead(CharacterData attacker);
+
+		public abstract string ColorCode{ get; }
 
 		public void AddMoney(int value)
 		{
