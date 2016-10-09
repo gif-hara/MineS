@@ -19,11 +19,11 @@ namespace MineS
 		public AbilityBase(GameDefine.AbilityType type, CharacterData holder, string descriptionKey)
 		{
 			this.Type = type;
-			this.Holder = holder;
+			this.SetHolder(holder);
 			this.DescriptionKey = descriptionKey;
 		}
 
-		public void SetHolder(CharacterData holder)
+		public virtual void SetHolder(CharacterData holder)
 		{
 			this.Holder = holder;
 		}

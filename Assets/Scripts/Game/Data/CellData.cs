@@ -154,9 +154,9 @@ namespace MineS
 				return;
 			}
 
-			if(isXray && this.cellClickAction != null)
+			if(isXray)
 			{
-				this.cellClickAction.OnUseXray();
+				this.OnUseXray();
 			}
 
 			this.CanStep = true;

@@ -96,6 +96,8 @@ namespace MineS
 				return new AbilityBase(type, holder, "Protection");
 			case GameDefine.AbilityType.Initiative:
 				return new AbilityBase(type, holder, "Initiative");
+			case GameDefine.AbilityType.Clairvoyance:
+				return new AbilityClairvoyance(holder);
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;

@@ -23,11 +23,6 @@ namespace MineS
 			data.BindDeployDescription(new DeployDescriptionOnItem(this.item));
 		}
 
-		public override void OnUseXray()
-		{
-			this.cellController.SetImage(this.item.InstanceData.Image);
-		}
-
 		public override GameDefine.EventType EventType
 		{
 			get

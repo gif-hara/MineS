@@ -15,6 +15,7 @@ namespace MineS
 		{
 			this.Type = GameDefine.AbnormalStatusType.Xray;
 			this.OppositeType = GameDefine.AbnormalStatusType.None;
+			CellManager.Instance.OnUseXray();
 		}
 	}
 }

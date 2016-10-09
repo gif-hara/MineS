@@ -3,6 +3,7 @@ using UnityEngine.Assertions;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using HK.Framework;
+using System.Linq;
 
 namespace MineS
 {
@@ -27,11 +28,6 @@ namespace MineS
 
 		private const int CellMax = CulumnMax * CulumnMax;
 
-		protected override void Awake()
-		{
-			base.Awake();
-		}
-
 		void Start()
 		{
 			var database = this.CreateCellDatabaseFromDungeonData();
@@ -47,6 +43,7 @@ namespace MineS
 			this.InitializeStep();
 
 			DungeonManager.Instance.AddNextFloorEvent(this.NextFloor);
+			TurnManager.Instance.AddLateEndTurnEvent(this.OnLateTurnProgress);
 		}
 
 		public void SetCell(CellData[,] database)
@@ -72,6 +69,21 @@ namespace MineS
 		{
 			this.SetCell(this.CreateCellDatabaseFromDungeonData());
 			this.InitializeStep();
+		}
+
+		private void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			var playerData = PlayerManager.Instance.Data;
+			if(playerData.FindAbility(GameDefine.AbilityType.Clairvoyance) || playerData.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray))
+			{
+				this.OnUseXray();
+			}
+		}
+
+		public void OnUseXray()
+		{
+			var notIdentificationCells = this.ToList.Where(c => !c.IsIdentification && c.CanStep).ToList();
+			notIdentificationCells.ForEach(c => c.OnUseXray());
 		}
 
 		public CellData GetAdjacentCellData(int y, int x, GameDefine.AdjacentType type)
@@ -144,7 +156,8 @@ namespace MineS
 			int y, x;
 			this.GetBlankCellIndex(this.cellDatabase, out y, out x);
 			var initialCell = this.cellDatabase[y, x];
-			var isXray = PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray);
+			var playerData = PlayerManager.Instance.Data;
+			var isXray = playerData.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray) || playerData.FindAbility(GameDefine.AbilityType.Clairvoyance);
 			initialCell.Steppable(isXray);
 			initialCell.Identification(isXray);
 		}
@@ -201,6 +214,23 @@ namespace MineS
 						{
 							result.Add(this.cellControllers[y, x]);
 						}
+					}
+				}
+
+				return result;
+			}
+		}
+
+		private List<CellData> ToList
+		{
+			get
+			{
+				var result = new List<CellData>();
+				for(int y = 0; y < RowMax; y++)
+				{
+					for(int x = 0; x < CulumnMax; x++)
+					{
+						result.Add(this.cellDatabase[y, x]);
 					}
 				}
 

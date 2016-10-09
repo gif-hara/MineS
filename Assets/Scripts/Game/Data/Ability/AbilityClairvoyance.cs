@@ -9,10 +9,10 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class AbilityWarCry : AbilityBase
+	public class AbilityClairvoyance : AbilityBase
 	{
-		public AbilityWarCry(CharacterData holder)
-			: base(GameDefine.AbilityType.WarCry, holder, "WarCry")
+		public AbilityClairvoyance(CharacterData holder)
+			: base(GameDefine.AbilityType.Clairvoyance, holder, "Clairvoyance")
 		{
 		}
 
@@ -27,6 +27,15 @@ namespace MineS
 			var randomCellData = cellDatas[Random.Range(0, cellDatas.Count)];
 			randomCellData.Steppable(false);
 			randomCellData.Action();
+		}
+
+		public override void SetHolder(CharacterData holder)
+		{
+			base.SetHolder(holder);
+			if(holder != null)
+			{
+				CellManager.Instance.OnUseXray();
+			}
 		}
 	}
 }

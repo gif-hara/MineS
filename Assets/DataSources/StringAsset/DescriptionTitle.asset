@@ -188,4 +188,8 @@ MonoBehaviour:
       ja: "\u5148\u624B"
       en: 
     guid: 7302f1ab-9e5e-4f55-9ace-631e04396083
+  - value:
+      ja: "\u5343\u91CC\u773C"
+      en: 
+    guid: 3b0af61f-b1ce-4ffb-96f4-6cfd4962de62
   asset: []
