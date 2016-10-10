@@ -9,20 +9,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
-  m_Name: Enemy1_0
+  m_Name: Enemy0_2
   m_EditorClassIdentifier: 
   characterName:
     target: {fileID: 11400000, guid: a8e6522489de546748523ec38c24f3d6, type: 2}
-    value: "\u65751_0"
-    guid: d10dbbac-ff2d-46b1-94b1-d8dd8874d1a2
-  hitPoint: 6
-  strength: 2
-  armor: 1
+    value: "\u30B9\u30E9\u30A4\u30E0Lv.3"
+    guid: eab1582c-6172-4217-b45e-f9611762fd35
+  hitPoint: 80
+  strength: 19
+  armor: 0
   hitProbability: 90
   evasion: 0
-  experience: 3
-  money: 6
+  experience: 12
+  money: 55
   dropItemProbability: 2
   overrideDropItems: []
-  abilityTypes: 
+  abilityTypes: 26000000
   image: {fileID: 21300000, guid: 1da21eb40bbdd06438649b1b56b992a6, type: 3}

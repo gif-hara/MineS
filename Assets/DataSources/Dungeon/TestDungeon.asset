@@ -30,14 +30,6 @@ MonoBehaviour:
     elements:
     - masterData: {fileID: 11400000, guid: efe88658878e94286a9c64db374a9252, type: 2}
       probability: 100
-    - masterData: {fileID: 11400000, guid: c10b570e6a2ea4fefa0ad5ba03f448f7, type: 2}
-      probability: 100
-    - masterData: {fileID: 11400000, guid: c46fb33f7f16146308fa3ab4db593666, type: 2}
-      probability: 100
-    - masterData: {fileID: 11400000, guid: c422f2a34a347456fbf39daf4df68e1f, type: 2}
-      probability: 100
-    - masterData: {fileID: 11400000, guid: dd1a2760df01041b7b3aee5425bf56c2, type: 2}
-      probability: 100
     - masterData: {fileID: 11400000, guid: 3ecaaef1a2b9443e0b96ed675bd10d2a, type: 2}
       probability: 100
     - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
@@ -50,17 +42,35 @@ MonoBehaviour:
       probability: 100
     - type: 1
       probability: 100
-    - type: 5
+    - type: 2
       probability: 100
+    - type: 3
+      probability: 100
+    - type: 4
+      probability: 100
+  blackSmithTable:
+    elements:
+    - floorMin: 1
+      floorMax: 99
+      probability: 100
+  shopTable:
+    elements:
+    - floorMin: 1
+      floorMax: 99
+      probability: 100
+      itemTable:
+        elements:
+        - masterData: {fileID: 11400000, guid: 3ecaaef1a2b9443e0b96ed675bd10d2a, type: 2}
+          probability: 100
   createRecoveryItemRange:
     min: 0
     max: 0
   createEnemyRange:
+    min: 76
+    max: 76
+  createItemRange:
     min: 0
     max: 0
-  createItemRange:
-    min: 78
-    max: 78
   createTrapRange:
     min: 0
     max: 0

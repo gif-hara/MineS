@@ -35,5 +35,15 @@ namespace MineS
 				this.experiences.Add((i * 2) + (i * i) + ((i * i) / 3));
 			}
 		}
+
+		[ContextMenu("Algorithm 1")]
+		private void Alrorithm1()
+		{
+			this.experiences = new List<int>();
+			for(int i = 0; i < 100; i++)
+			{
+				this.experiences.Add(Mathf.FloorToInt((i * i * i) + (i * i)));
+			}
+		}
 	}
 }
