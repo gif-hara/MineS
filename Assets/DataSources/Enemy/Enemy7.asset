@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
   m_Name: Enemy7
   m_EditorClassIdentifier: 
-  characterName: "\u5F13\u30B4\u30D6\u30EA\u30F3Lv.2"
+  characterName: "\u30D0\u30C3\u30C8Lv.2"
   hitPoint: 60
   strength: 10
   armor: 0
@@ -21,5 +21,5 @@ MonoBehaviour:
   money: 129
   dropItemProbability: 2
   overrideDropItems: []
-  abilityTypes: 
-  image: {fileID: 0}
+  abilityTypes: 05000000
+  image: {fileID: 21300000, guid: e8b388ad4e7ee47bf9b6216923d772fb, type: 3}

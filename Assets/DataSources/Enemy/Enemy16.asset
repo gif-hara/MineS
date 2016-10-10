@@ -21,5 +21,5 @@ MonoBehaviour:
   money: 935
   dropItemProbability: 2
   overrideDropItems: []
-  abilityTypes: 
-  image: {fileID: 0}
+  abilityTypes: 1200000005000000
+  image: {fileID: 21300000, guid: 370990658c8f348a28f6e8f4f819b36e, type: 3}

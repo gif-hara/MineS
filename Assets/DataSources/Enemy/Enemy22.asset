@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
   m_Name: Enemy22
   m_EditorClassIdentifier: 
-  characterName: "\u72FC\u7537Lv.2"
+  characterName: "\u72FCLv.2"
   hitPoint: 91
   strength: 12
   armor: 0
@@ -22,4 +22,4 @@ MonoBehaviour:
   dropItemProbability: 2
   overrideDropItems: []
   abilityTypes: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 3e7f6e630e92346928e45514c697a0f8, type: 3}

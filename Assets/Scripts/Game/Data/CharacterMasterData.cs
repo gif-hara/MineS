@@ -71,6 +71,7 @@ namespace MineS
 		[SerializeField]
 		private Sprite image;
 
+#if UNITY_EDITOR
 		public static CharacterMasterData CreateFromCsv(List<string> csv)
 		{
 			var instance = ScriptableObject.CreateInstance<CharacterMasterData>();
@@ -84,9 +85,11 @@ namespace MineS
 			instance.money = int.Parse(csv[8]);
 			instance.dropItemProbability = int.Parse(csv[9]);
 			// overrideDropItems.
-			// ability.
+			instance.abilityTypes = AbilityParser.Parse(csv[11]);
+			instance.image = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/Textures/Enemy/Enemy" + int.Parse(csv[0]) + ".png", typeof(Sprite)) as Sprite;
 
 			return instance;
 		}
+#endif
 	}
 }
