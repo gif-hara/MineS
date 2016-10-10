@@ -20,10 +20,10 @@ MonoBehaviour:
   enemyTable:
     elements:
     - floorMin: 1
-      floorMax: 99
+      floorMax: 1
       enemies:
       - masterData: {fileID: 11400000, guid: 89ddd07b1d8464f87b59b2a06f218de2, type: 2}
-        probability: 999
+        probability: 100
       - masterData: {fileID: 11400000, guid: b3a3efd385d854a3984c92bfbac270a1, type: 2}
         probability: 100
   itemTable:
