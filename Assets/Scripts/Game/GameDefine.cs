@@ -254,211 +254,253 @@ namespace MineS
 			/// <summary>
 			/// 貫通：アーマーを無視して攻撃する.
 			/// </summary>
+			[EnumLabel("貫通：アーマーを無視して攻撃する")]
 			Penetoration,
 
 			/// <summary>
 			/// 慈悲：ターン終了時に他の敵のHPを回復する.
 			/// </summary>
+			[EnumLabel("慈悲：ターン終了時に他の敵のHPを回復する")]
 			Mercy,
 
 			/// <summary>
 			/// 自己再生：ターン終了時にHPを回復する.
 			/// </summary>
+			[EnumLabel("自己再生：ターン終了時にHPを回復する")]
 			Regeneration,
 
 			/// <summary>
 			/// 跳返：受けたダメージの半分を相手に返す.
 			/// </summary>
+			[EnumLabel("跳返：受けたダメージの半分を相手に返す")]
 			Splash,
 
 			/// <summary>
 			/// 吸収：与えたダメージの半分を吸収する.
 			/// </summary>
+			[EnumLabel("吸収：与えたダメージの半分を吸収する")]
 			Absorption,
 
 			/// <summary>
 			/// 遠距離攻撃：ターン終了時に攻撃する.
 			/// </summary>
+			[EnumLabel("遠距離攻撃：ターン終了時に攻撃する")]
 			LongRangeAttack,
 
 			/// <summary>
 			/// 三子教訓：他の敵の数だけ攻撃力が上昇する.
 			/// </summary>
+			[EnumLabel("三子教訓：他の敵の数だけ攻撃力が上昇する")]
 			Reinforcement,
 
 			/// <summary>
 			/// 連撃：攻撃した際に他に敵がいる場合は半分のダメージを与える.
 			/// </summary>
+			[EnumLabel("連撃：攻撃した際に他に敵がいる場合は半分のダメージを与える")]
 			ContinuousAttack,
 
 			/// <summary>
 			/// 習熟：取得する経験値が上昇する.
 			/// </summary>
+			[EnumLabel("習熟：取得する経験値が上昇する")]
 			Proficiency,
 
 			/// <summary>
 			/// 巻上：取得するお金が上昇する.
 			/// </summary>
+			[EnumLabel("巻上：取得するお金が上昇する")]
 			Hoist,
 
 			/// <summary>
 			/// 改修：敵を倒した際にアーマーが回復する.
 			/// </summary>
+			[EnumLabel("改修：敵を倒した際にアーマーが回復する")]
 			Repair,
 
 			/// <summary>
 			/// 幸運：敵を倒した際のアイテムドロップ率が上昇する.
 			/// </summary>
+			[EnumLabel("幸運：敵を倒した際のアイテムドロップ率が上昇する")]
 			Fortune,
 
 			/// <summary>
 			/// 匠：攻撃力が上昇する.
 			/// </summary>
+			[EnumLabel("匠：攻撃力が上昇する")]
 			Artisan,
 
 			/// <summary>
 			/// 精巧：アーマーが上昇する.
 			/// </summary>
+			[EnumLabel("精巧：アーマーが上昇する")]
 			Exquisite,
 
 			/// <summary>
 			/// 回避：回避率が上昇する.
 			/// </summary>
+			[EnumLabel("回避：回避率が上昇する")]
 			Evasion,
 
 			/// <summary>
 			/// 命中：命中率が上昇する.
 			/// </summary>
+			[EnumLabel("命中：命中率が上昇する")]
 			HitProbability,
 
 			/// <summary>
 			/// 五右衛門：与えたダメージから一定数のお金を取得する.
 			/// </summary>
+			[EnumLabel("五右衛門：与えたダメージから一定数のお金を取得する")]
 			Goemon,
 
 			/// <summary>
 			/// 窃盗：攻撃した際に道具袋に空きがある場合に一定確率でアイテムを取得する.
 			/// </summary>
+			[EnumLabel("窃盗：攻撃した際に道具袋に空きがある場合に一定確率でアイテムを取得する")]
 			Theft,
 
 			/// <summary>
 			/// 必中：攻撃が必ず当たる.
 			/// </summary>
+			[EnumLabel("必中：攻撃が必ず当たる")]
 			InbariablyHit,
 
 			/// <summary>
 			/// 捨身：アーマーを消費して攻撃力を上昇する.
 			/// </summary>
+			[EnumLabel("捨身：アーマーを消費して攻撃力を上昇する")]
 			RiskOfLife,
 
 			/// <summary>
 			/// 増進：バフの継続ターンを増やす.
 			/// </summary>
+			[EnumLabel("増進：バフの継続ターンを増やす")]
 			Enhancement,
 
 			/// <summary>
 			/// 減退：バフの継続ターンが減少する.
 			/// </summary>
+			[EnumLabel("減退：バフの継続ターンが減少する")]
 			Weak,
 
 			/// <summary>
 			/// 免疫：デバフの継続ターンを減らす.
 			/// </summary>
+			[EnumLabel("免疫：デバフの継続ターンを減らす")]
 			Immunity,
 
 			/// <summary>
 			/// 伝染：デバフの継続ターンを増やす.
 			/// </summary>
+			[EnumLabel("伝染：デバフの継続ターンを増やす")]
 			Infection,
 
 			/// <summary>
 			/// 罠避：罠に引っかからなくなる.
 			/// </summary>
+			[EnumLabel("罠避：罠に引っかからなくなる")]
 			AvoidTrap,
 
 			/// <summary>
 			/// 薬師：回復系アイテムの効果が上昇する.
 			/// </summary>
+			[EnumLabel("薬師：回復系アイテムの効果が上昇する")]
 			HealingBuddha,
 
 			/// <summary>
 			/// 毒塗：ダメージを与えた際に一定確率でデバフの毒を付与する.
 			/// </summary>
+			[EnumLabel("毒塗：ダメージを与えた際に一定確率でデバフの毒を付与する")]
 			PoisonPainted,
 
 			/// <summary>
 			/// 放心：ダメージを与えた際に一定確率でデバフの呆けを付与する.
 			/// </summary>
+			[EnumLabel("放心：ダメージを与えた際に一定確率でデバフの呆けを付与する")]
 			Absentmindedness,
 
 			/// <summary>
 			/// 秘孔突き：ダメージを与えた際に一定確率でデバフの負傷を付与する.
 			/// </summary>
+			[EnumLabel("秘孔突き：ダメージを与えた際に一定確率でデバフの負傷を付与する")]
 			VitalsPoke,
 
 			/// <summary>
 			/// 刃毀：ダメージを与えた際に一定確率でデバフの鈍らを付与する.
 			/// </summary>
+			[EnumLabel("刃毀：ダメージを与えた際に一定確率でデバフの鈍らを付与する")]
 			BladeBroken,
 
 			/// <summary>
 			/// 錯乱：ダメージを与えた際に一定確率でデバフの混乱を付与する.
 			/// </summary>
+			[EnumLabel("錯乱：ダメージを与えた際に一定確率でデバフの混乱を付与する")]
 			Derangement,
 
 			/// <summary>
 			/// 脅迫：ダメージを与えた際に一定確率でデバフの恐怖を付与する.
 			/// </summary>
+			[EnumLabel("脅迫：ダメージを与えた際に一定確率でデバフの恐怖を付与する")]
 			Intimidation,
 
 			/// <summary>
 			/// 呪縛：ダメージを与えた際に一定確率でデバフの封印を付与する.
 			/// </summary>
+			[EnumLabel("呪縛：ダメージを与えた際に一定確率でデバフの封印を付与する")]
 			Curse,
 
 			/// <summary>
 			/// 雄叫び：識別状態になった際に他の敵も識別されてしまう（敵のみ）.
 			/// </summary>
+			[EnumLabel("雄叫び：識別状態になった際に他の敵も識別されてしまう（敵のみ）")]
 			WarCry,
 
 			/// <summary>
 			/// 回復：ダメージを与えた際にヒットポイントが回復する.
 			/// </summary>
+			[EnumLabel("回復：ダメージを与えた際にヒットポイントが回復する")]
 			Recovery,
 
 			/// <summary>
 			/// 防護：受けるダメージを軽減する.
 			/// </summary>
+			[EnumLabel("防護：受けるダメージを軽減する")]
 			Protection,
 
 			/// <summary>
 			/// 先手：識別した際にダメージを与える.
 			/// </summary>
+			[EnumLabel("先手：識別した際にダメージを与える")]
 			Initiative,
 
 			/// <summary>
 			/// 千里眼：常にバフの透視の効果を得る.
 			/// </summary>
+			[EnumLabel("千里眼：常にバフの透視の効果を得る")]
 			Clairvoyance,
 
 			/// <summary>
 			/// 分裂：ダメージを受けた際に同じ敵を何処かに生成する（敵のみ）.
 			/// </summary>
+			[EnumLabel("分裂：ダメージを受けた際に同じ敵を何処かに生成する（敵のみ）")]
 			Division,
 
 			/// <summary>
 			/// 召喚：その階数に出現する敵を生成する（敵のみ）.
 			/// </summary>
+			[EnumLabel("召喚：その階数に出現する敵を生成する（敵のみ）")]
 			Summon,
 
 			/// <summary>
 			/// 転生：死亡した際にその階数に出現する敵を生成する（敵のみ）.
 			/// </summary>
+			[EnumLabel("転生：死亡した際にその階数に出現する敵を生成する（敵のみ）")]
 			Reincarnation,
 
 			/// <summary>
 			/// 挑発：他の敵がダメージを受ける時に肩代わりする.
 			/// </summary>
+			[EnumLabel("挑発：他の敵がダメージを受ける時に肩代わりする")]
 			Provocation,
 		}
 

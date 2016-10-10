@@ -11,10 +11,10 @@ namespace MineS
 	[CreateAssetMenu()]
 	public class CharacterMasterData : ScriptableObject
 	{
-		public string Name{ get { return this.characterName.ToString(); } }
+		public string Name{ get { return this.characterName; } }
 
 		[SerializeField]
-		private StringAsset.Finder characterName;
+		private string characterName;
 
 		public int HitPoint{ get { return this.hitPoint; } }
 
@@ -63,12 +63,30 @@ namespace MineS
 
 		public List<GameDefine.AbilityType> AbilityTypes{ get { return this.abilityTypes; } }
 
-		[SerializeField]
-		private List<GameDefine.AbilityType> abilityTypes;
+		[EnumLabel("アビリティ", typeof(GameDefine.AbilityType))]
+		public List<GameDefine.AbilityType> abilityTypes;
 
 		public Sprite Image { get { return this.image; } }
 
 		[SerializeField]
 		private Sprite image;
+
+		public static CharacterMasterData CreateFromCsv(List<string> csv)
+		{
+			var instance = ScriptableObject.CreateInstance<CharacterMasterData>();
+			instance.characterName = csv[1];
+			instance.hitPoint = int.Parse(csv[2]);
+			instance.armor = int.Parse(csv[3]);
+			instance.strength = int.Parse(csv[4]);
+			instance.hitProbability = int.Parse(csv[5]);
+			instance.evasion = int.Parse(csv[6]);
+			instance.experience = int.Parse(csv[7]);
+			instance.money = int.Parse(csv[8]);
+			instance.dropItemProbability = int.Parse(csv[9]);
+			// overrideDropItems.
+			// ability.
+
+			return instance;
+		}
 	}
 }
