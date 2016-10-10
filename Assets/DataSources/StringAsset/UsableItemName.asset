@@ -13,7 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database:
   - value:
-      ja: "\u30DD\u30FC\u30B7\u30E7\u30F3"
+      ja: "\u30D2\u30FC\u30EB\u30DD\u30FC\u30B7\u30E7\u30F3"
       en: 
     guid: b11ad3e9-6048-4a22-a5e5-d0464f5a3568
+  - value:
+      ja: "\u30A2\u30FC\u30DE\u30FC\u30DD\u30FC\u30B7\u30E7\u30F3"
+      en: 
+    guid: d5ba770f-1619-4082-8b2a-75a89a24ba34
   asset: []

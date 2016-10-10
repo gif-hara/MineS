@@ -67,6 +67,12 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
+		public void RecoveryArmor(int value)
+		{
+			this.Data.RecoveryArmor(value);
+			this.NotifyCharacterDataObservers();
+		}
+
 		public void AddExperience(int value)
 		{
 			value = Calculator.GetFinalExperience(value, this.Data);

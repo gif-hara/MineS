@@ -45,6 +45,10 @@ namespace MineS
 				playerManager.RecoveryHitPoint(Calculator.GetUsableItemRecoveryValue(usableItem.RandomPower, user), true);
 				playerManager.RemoveInventoryItem(this);
 			break;
+			case GameDefine.UsableItemType.RecoveryArmor:
+				playerManager.RecoveryArmor(Calculator.GetUsableItemRecoveryValue(usableItem.RandomPower, user));
+				playerManager.RemoveInventoryItem(this);
+			break;
 			default:
 				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
 			break;
