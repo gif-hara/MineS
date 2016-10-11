@@ -47,6 +47,11 @@ namespace MineS
 
 		private const string AbnormalStatusColor = "abnormalStatusColor";
 
+		void Start()
+		{
+			DungeonManager.Instance.AddNextFloorEvent(this.OnNextFloor);
+		}
+
 		public static void OnAttack(IAttack attacker, IAttack receiver, int damage)
 		{
 			var instance = InformationManager.Instance;
@@ -213,6 +218,13 @@ namespace MineS
 			{
 				this.currentMessageCoroutine = null;
 			}
+		}
+
+		private void OnNextFloor()
+		{
+			this.text.text = "";
+			StopCoroutine(this.currentMessageCoroutine);
+			this.messageQueue.Clear();
 		}
 	}
 }
