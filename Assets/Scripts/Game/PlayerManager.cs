@@ -12,7 +12,7 @@ namespace MineS
 	/// </summary>
 	public class PlayerManager : SingletonMonoBehaviour<PlayerManager>, ITurnProgress
 	{
-		public class InventoryEvenr : UnityEvent<Inventory>
+		public class InventoryEvent : UnityEvent<Inventory>
 		{
 			
 		}
@@ -38,9 +38,9 @@ namespace MineS
 		[SerializeField]
 		private CharacterMasterData growthData;
 
-		private InventoryEvenr onOpenInventoryUI = new InventoryEvenr();
+		private InventoryEvent onOpenInventoryUI = new InventoryEvent();
 
-		private InventoryEvenr onCloseInventoryUI = new InventoryEvenr();
+		private InventoryEvent onCloseInventoryUI = new InventoryEvent();
 
 		private Inventory currentOpenInventory = null;
 
