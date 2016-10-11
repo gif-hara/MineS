@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9c71d054e3984e2cb2e609f86581f13, type: 3}
-  m_Name: UsableItem32
+  m_Name: UsableItem34
   m_EditorClassIdentifier: 
-  itemName: "\u30D5\u30A1\u30A4\u30A2\u30DD\u30FC\u30B7\u30E7\u30F3"
-  purchasePrice: 700
-  sellingPrice: 350
+  itemName: "\u30C7\u30B9\u30DD\u30FC\u30B7\u30E7\u30F3"
+  purchasePrice: 1200
+  sellingPrice: 600
   image: {fileID: 21300000, guid: 5b3676b45a4310a49a3eeeff33b48b21, type: 3}
   type: 4
-  power0: 10
-  power1: 15
-  description: "\u5BFE\u8C61\u306B\u5C11\u3057\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B\u305E\uFF01"
+  power0: 400
+  power1: 450
+  description: "\u5BFE\u8C61\u306B\u305F\u304F\u3055\u3093\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u308B\u305E\uFF01"

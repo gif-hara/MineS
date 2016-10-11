@@ -57,7 +57,7 @@ namespace MineS
 				{
 					var value = Calculator.GetUsableItemRecoveryValue(usableItem.RandomPower, user);
 					user.RecoveryHitPoint(value, true);
-					inventory.RemoveItemOrEquipment(this);
+					inventory.RemoveItem(this);
 					InformationManager.OnUseRecoveryHitPointItem(user, value);
 				}
 			break;
@@ -65,7 +65,7 @@ namespace MineS
 				{
 					var value = Calculator.GetUsableItemRecoveryValue(usableItem.RandomPower, user);
 					user.RecoveryArmor(value);
-					inventory.RemoveItemOrEquipment(this);
+					inventory.RemoveItem(this);
 					InformationManager.OnUseRecoveryArmorItem(user, value);
 				}
 			break;
@@ -73,7 +73,7 @@ namespace MineS
 				{
 					var type = (GameDefine.AbnormalStatusType)usableItem.Power0;
 					var addAbnormalResultType = user.AddAbnormalStatus(AbnormalStatusFactory.Create(type, user, usableItem.Power1, 0));
-					inventory.RemoveItemOrEquipment(this);
+					inventory.RemoveItem(this);
 					InformationManager.OnUseAddAbnormalStatusItem(user, type, addAbnormalResultType);
 				}
 			break;
@@ -81,8 +81,20 @@ namespace MineS
 				{
 					var type = (GameDefine.AbnormalStatusType)usableItem.Power0;
 					user.RemoveAbnormalStatus(type);
-					inventory.RemoveItemOrEquipment(this);
+					inventory.RemoveItem(this);
 					InformationManager.OnUseRemoveAbnormalStatusItem(user, type);
+				}
+			break;
+			case GameDefine.UsableItemType.Damage:
+				{
+					var damage = usableItem.RandomPower;
+					user.TakeDamageRaw(null, damage, false);
+					InformationManager.OnUseDamageItem(user, damage);
+					if(user.CharacterType == GameDefine.CharacterType.Enemy && user.IsDead)
+					{
+						PlayerManager.Instance.Data.Defeat(user);
+					}
+					inventory.RemoveItem(this);
 				}
 			break;
 			default:

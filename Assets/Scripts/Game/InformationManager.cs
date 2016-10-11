@@ -31,6 +31,7 @@ namespace MineS
 			onUseRecoveryArmorItem = null,
 			onUseAddAbnormalStatusItem = null,
 			onUseRemoveAbnormalStatusItem = null,
+			onUseDamageItem = null,
 			onAlsoAddAbnormalStatus = null,
 			invalidateAddAbnormalStatus = null;
 
@@ -160,6 +161,14 @@ namespace MineS
 			var message = instance.onUseRemoveAbnormalStatusItem.Format(user.Name, descriptionData.Title)
 				.Replace(TargetColor, user.ColorCode)
 				.Replace(AbnormalStatusColor, GameDefine.GetAbnormalStatusColor(abnormalStatusType));
+			instance._AddMessage(message);
+		}
+
+		public static void OnUseDamageItem(IAttack user, int value)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.onUseDamageItem.Format(user.Name, value)
+				.Replace(TargetColor, user.ColorCode);
 			instance._AddMessage(message);
 		}
 
