@@ -145,6 +145,7 @@ namespace MineS
 		{
 			if(this.Data.CurrentEventType != GameDefine.EventType.None || this.Data.IsLock || !this.Data.IsIdentification || !this.Data.CanStep)
 			{
+				DescriptionManager.Instance.DeployEmergency("CanNotPutItem");
 				return;
 			}
 
@@ -162,6 +163,7 @@ namespace MineS
 		{
 			if(this.Data.CurrentEventType != GameDefine.EventType.Enemy || this.Data.IsLock || !this.Data.IsIdentification || !this.Data.CanStep)
 			{
+				DescriptionManager.Instance.DeployEmergency("CanNotThrowItem");
 				return;
 			}
 
