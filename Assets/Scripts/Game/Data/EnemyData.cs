@@ -79,6 +79,14 @@ namespace MineS
 			base.OnLateTurnProgress(type, turnCount);
 		}
 
+		public override GameDefine.CharacterType CharacterType
+		{
+			get
+			{
+				return GameDefine.CharacterType.Enemy;
+			}
+		}
+
 		protected override void OnTakedDamage(CharacterData attacker, int value, bool onlyHitPoint)
 		{
 			base.OnTakedDamage(attacker, value, onlyHitPoint);

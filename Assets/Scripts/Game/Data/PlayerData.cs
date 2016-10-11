@@ -40,7 +40,7 @@ namespace MineS
 			}
 		}
 
-		public override void Defeat(CharacterData target)
+		public override void Defeat(IAttack target)
 		{
 			InformationManager.OnDefeat(target);
 			base.Defeat(target);
@@ -125,6 +125,14 @@ namespace MineS
 				result.AddRange(this.GetEquipmentAbilities(GameDefine.ItemType.Accessory));
 
 				return result;
+			}
+		}
+
+		public override GameDefine.CharacterType CharacterType
+		{
+			get
+			{
+				return GameDefine.CharacterType.Player;
 			}
 		}
 

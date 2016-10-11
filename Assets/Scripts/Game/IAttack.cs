@@ -28,6 +28,10 @@ namespace MineS
 
 		int Money{ get; }
 
+		bool IsDead{ get; }
+
+		GameDefine.CharacterType CharacterType{ get; }
+
 		string ColorCode{ get; }
 
 		bool FindAbility(GameDefine.AbilityType type);

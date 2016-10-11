@@ -75,6 +75,8 @@ namespace MineS
 
 		public Sprite Image { protected set; get; }
 
+		public abstract GameDefine.CharacterType CharacterType{ get; }
+
 		protected CharacterMasterData masterData = null;
 
 		public void Initialize(CharacterMasterData masterData)
@@ -244,7 +246,7 @@ namespace MineS
 			this.Armor = this.Armor < 0 ? 0 : this.Armor;
 		}
 
-		public virtual void Defeat(CharacterData target)
+		public virtual void Defeat(IAttack target)
 		{
 		}
 

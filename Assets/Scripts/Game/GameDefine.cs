@@ -702,6 +702,12 @@ namespace MineS
 			ThrowItem,
 		}
 
+		public enum CharacterType:int
+		{
+			Player,
+			Enemy,
+		}
+
 		public const int AdjacentMax = 9;
 
 		public const int MoneyMax = 9999999;
