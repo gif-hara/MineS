@@ -126,19 +126,14 @@ namespace MineS
 			RecoveryArmor,
 
 			/// <summary>
-			/// バフの効果を付与する.
+			/// 状態異常を付与する.
 			/// </summary>
-			AddBuff,
+			AddAbnormalStatus,
 
 			/// <summary>
-			/// デバフの効果を付与する.
+			/// 状態異常を削除する.
 			/// </summary>
-			AddDebuff,
-
-			/// <summary>
-			/// デバフの効果を削除する.
-			/// </summary>
-			RemoveDebuff,
+			RemoveAbnormalStatus,
 
 			/// <summary>
 			/// ファイアボール：敵にダメージを与える.
@@ -681,6 +676,42 @@ namespace MineS
 			type == AbnormalStatusType.Xray ||
 			type == AbnormalStatusType.TrapMaster ||
 			type == AbnormalStatusType.Happiness;
+		}
+
+		public static string GetAbnormalStatusDescriptionKey(GameDefine.AbnormalStatusType type)
+		{
+			switch(type)
+			{
+			case AbnormalStatusType.Regeneration:
+				return "AbnormalStatusType.Regeneration";
+			case AbnormalStatusType.Sharpness:
+				return "AbnormalStatusType.Sharpness";
+			case AbnormalStatusType.Blur:
+				return "AbnormalStatusType.Blur";
+			case AbnormalStatusType.Confusion:
+				return "AbnormalStatusType.Confusion";
+			case AbnormalStatusType.Curing:
+				return "AbnormalStatusType.Curing";
+			case AbnormalStatusType.Dull:
+				return "AbnormalStatusType.Dull";
+			case AbnormalStatusType.Fear:
+				return "AbnormalStatusType.Fear";
+			case AbnormalStatusType.Gout:
+				return "AbnormalStatusType.Gout";
+			case AbnormalStatusType.Happiness:
+				return "AbnormalStatusType.Happiness";
+			case AbnormalStatusType.Poison:
+				return "AbnormalStatusType.Poison";
+			case AbnormalStatusType.Seal:
+				return "AbnormalStatusType.Seal";
+			case AbnormalStatusType.TrapMaster:
+				return "AbnormalStatusType.TrapMaster";
+			case AbnormalStatusType.Xray:
+				return "AbnormalStatusType.Xray";
+			default:
+				Debug.AssertFormat(false, "不正な値です. type = {0}", type);
+				return "";
+			}
 		}
 
 		public static GameDefine.AbnormalStatusType ConvertTrapTypeToAbnormalStatusType(GameDefine.TrapType type)

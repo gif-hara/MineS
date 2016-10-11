@@ -216,4 +216,56 @@ MonoBehaviour:
       ja: "\u6311\u767A"
       en: 
     guid: c537cb7d-7eea-4457-ba67-0689a277d3f4
+  - value:
+      ja: "\u518D\u751F"
+      en: 
+    guid: 91b5d512-e344-4aac-8971-060d229a8646
+  - value:
+      ja: "\u92ED\u5229"
+      en: 
+    guid: 552ade6b-de3e-4c01-95e2-5f2a7eda3431
+  - value:
+      ja: "\u786C\u5316"
+      en: 
+    guid: bc17d8cc-1b3a-4ce0-95fd-a0932e19c530
+  - value:
+      ja: "\u900F\u8996"
+      en: 
+    guid: 9d630085-a69d-483d-9597-417390c4febf
+  - value:
+      ja: "\u7F60\u5E2B"
+      en: 
+    guid: 8e6e178a-99fd-4daa-887e-5c0273189019
+  - value:
+      ja: "\u5E78\u798F"
+      en: 
+    guid: 0ca19e10-fef0-4404-aad9-bcc15c987538
+  - value:
+      ja: "\u6BD2"
+      en: 
+    guid: 13c59037-0012-4ceb-84e0-e67d67089305
+  - value:
+      ja: "\u5446\u3051"
+      en: 
+    guid: 43320591-f317-4616-a48e-f24b7638ae2e
+  - value:
+      ja: "\u8CA0\u50B7"
+      en: 
+    guid: d8e32225-b6de-4013-be99-0a9ea8a6bb9e
+  - value:
+      ja: "\u920D\u3089"
+      en: 
+    guid: 841f10e6-e58d-4ace-a4e6-d0f739f525b6
+  - value:
+      ja: "\u6050\u6016"
+      en: 
+    guid: 90570d8d-f38c-46d5-9cdd-a235d6d18f6c
+  - value:
+      ja: "\u5C01\u5370"
+      en: 
+    guid: 4ee55ef1-f0aa-4673-9884-20c7b01c209d
+  - value:
+      ja: "\u6DF7\u4E71"
+      en: 
+    guid: bb7a34a7-1e5f-4ec2-a0fb-37e665256780
   asset: []

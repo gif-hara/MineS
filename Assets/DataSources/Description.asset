@@ -551,4 +551,134 @@ MonoBehaviour:
       target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
       value: "\u4ED6\u306E\u6575\u304C\u653B\u6483\u3055\u308C\u308B\u6642\u3001\u81EA\u5206\u81EA\u8EAB\u304C\u653B\u6483\u5BFE\u8C61\u306B\u306A\u308B\u305E\uFF01"
       guid: 6089deba-f083-4df5-90fa-b12c871d4cab
-    image: {fileID: 21300000, guid: 7abbfe895bca44e07b147b5f85c64936, type: 3}
+    image: {fileID: 0}
+  - key: AbnormalStatusType.Regeneration
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u518D\u751F"
+      guid: 91b5d512-e344-4aac-8971-060d229a8646
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u306B\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u304C\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
+      guid: d4241051-0b1d-4b63-9d08-e3f8c1b5bbd7
+    image: {fileID: 21300000, guid: 17ceea173c12d44af862bf6575ce3c77, type: 3}
+  - key: AbnormalStatusType.Sharpness
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u92ED\u5229"
+      guid: 552ade6b-de3e-4c01-95e2-5f2a7eda3431
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u4E0E\u3048\u308B\u30C0\u30E1\u30FC\u30B8\u304C2\u500D\u306B\u306A\u308B\u305E\uFF01"
+      guid: 36bcd96f-37eb-46a3-8d12-93436e3e5e76
+    image: {fileID: 21300000, guid: 8abc403d71cb244d195c053a7945d6d6, type: 3}
+  - key: AbnormalStatusType.Curing
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u786C\u5316"
+      guid: bc17d8cc-1b3a-4ce0-95fd-a0932e19c530
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u53D7\u3051\u308B\u30C0\u30E1\u30FC\u30B8\u304C\u534A\u5206\u306B\u306A\u308B\u305E\uFF01"
+      guid: 54273871-f6e6-460e-bd52-2e2e02342c6e
+    image: {fileID: 21300000, guid: a532f32b3f3f547d0bbc198548128646, type: 3}
+  - key: AbnormalStatusType.Xray
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u900F\u8996"
+      guid: 9d630085-a69d-483d-9597-417390c4febf
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u307E\u3060\u6B69\u3044\u3066\u3044\u306A\u3044\u5834\u6240\u306B\u4F55\u304C\u3042\u308B\u304B\u5206\u304B\u308B\u3088\u3046\u306B\u306A\u308B\u305E\uFF01"
+      guid: 8e0c0c78-2764-4380-b770-e495388c0de0
+    image: {fileID: 21300000, guid: f8703712915408a48a98af024b15f8ac, type: 3}
+  - key: AbnormalStatusType.TrapMaster
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u7F60\u5E2B"
+      guid: 8e6e178a-99fd-4daa-887e-5c0273189019
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u7F60\u306B\u5F15\u3063\u304B\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: afd21b64-7f02-4889-a5c5-f124dd7563b9
+    image: {fileID: 21300000, guid: 9f2421b0a36841a44b7b0d72fa3c7f0f, type: 3}
+  - key: AbnormalStatusType.Happiness
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5E78\u798F"
+      guid: 0ca19e10-fef0-4404-aad9-bcc15c987538
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u53D6\u5F97\u3059\u308B\u7D4C\u9A13\u5024\u304C2\u500D\u306B\u306A\u308B\u305E\uFF01"
+      guid: dacd2dad-7bef-41a1-9b80-5f7ecd09edd3
+    image: {fileID: 21300000, guid: 122b09d3ad0026840abaada53e2cd1b7, type: 3}
+  - key: AbnormalStatusType.Poison
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u6BD2"
+      guid: 13c59037-0012-4ceb-84e0-e67d67089305
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u306B\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u3051\u308B\u305E\uFF01"
+      guid: 9b5a94ff-0f87-400c-a24d-b7ff34e962fc
+    image: {fileID: 21300000, guid: 8f353c105d62b524db5dc3530418aeab, type: 3}
+  - key: AbnormalStatusType.Blur
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5446\u3051"
+      guid: 43320591-f317-4616-a48e-f24b7638ae2e
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u53D6\u5F97\u3059\u308B\u7D4C\u9A13\u5024\u304C\u534A\u5206\u306B\u306A\u308B\u305E\uFF01"
+      guid: ff22c9fe-88cf-4cab-a6f3-66f3f31895c3
+    image: {fileID: 21300000, guid: 09d040a89cc7c8a47925c6a35fecc1ec, type: 3}
+  - key: AbnormalStatusType.Gout
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u8CA0\u50B7"
+      guid: d8e32225-b6de-4013-be99-0a9ea8a6bb9e
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u53D7\u3051\u308B\u30C0\u30E1\u30FC\u30B8\u304C2\u500D\u306B\u306A\u308B\u305E\uFF01"
+      guid: 26ef83af-e646-4176-8900-c1fdd5cdcdc8
+    image: {fileID: 21300000, guid: 8c4a609a73995804c848a0b41e571a07, type: 3}
+  - key: AbnormalStatusType.Dull
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u920D\u3089"
+      guid: 841f10e6-e58d-4ace-a4e6-d0f739f525b6
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u4E0E\u3048\u308B\u30C0\u30E1\u30FC\u30B8\u304C\u534A\u5206\u306B\u306A\u308B\u305E\uFF01"
+      guid: 068a9f8c-149c-44b1-9acc-69a7245358ce
+    image: {fileID: 21300000, guid: fc84e2ac5a39efb42aa20d654acb2576, type: 3}
+  - key: AbnormalStatusType.Fear
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u6050\u6016"
+      guid: 90570d8d-f38c-46d5-9cdd-a235d6d18f6c
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u653B\u6483\u51FA\u6765\u306A\u304F\u306A\u308B\u305E\uFF01"
+      guid: 40f9229a-20fb-42f1-a566-57e7160daeaa
+    image: {fileID: 21300000, guid: 67529d5e6e0504064a18635583d85963, type: 3}
+  - key: AbnormalStatusType.Seal
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5C01\u5370"
+      guid: 4ee55ef1-f0aa-4673-9884-20c7b01c209d
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u7279\u6B8A\u80FD\u529B\u304C\u767A\u52D5\u3057\u306A\u304F\u306A\u308B\u305E\uFF01"
+      guid: bdb74aa7-ec06-4a57-a909-86c9044be5b6
+    image: {fileID: 21300000, guid: 32414fb0e62d940af9a9c138dd836ad1, type: 3}
+  - key: AbnormalStatusType.Confusion
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u6DF7\u4E71"
+      guid: bb7a34a7-1e5f-4ec2-a0fb-37e665256780
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u4F55\u3092\u3059\u308B\u304B\u5206\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01"
+      guid: a655cfe9-5784-4e4b-9bd5-8a553169fa2f
+    image: {fileID: 21300000, guid: af164c04a10fa48d0a1b591f551c96de, type: 3}

@@ -20,4 +20,56 @@ MonoBehaviour:
       ja: "\u5BFE\u8C61\u306E\u30A2\u30FC\u30DE\u30FC\u3092\u5C11\u3057\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
       en: 
     guid: dbd7baba-fc54-4443-b02e-3074896d89cb
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30D0\u30D5\u306E\u518D\u751F\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: b1875bef-01b6-4625-b060-54ef664b0ea2
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30D0\u30D5\u306E\u92ED\u5229\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: 6531bf19-9147-4506-92ee-60394dca134b
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30D0\u30D5\u306E\u786C\u5316\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: 0dd5796d-cc2e-4a16-952c-22c887a68c13
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30D0\u30D5\u306E\u900F\u8996\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: d26aae6a-cae8-46c7-82cd-39f7ae73498f
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30D0\u30D5\u306E\u7F60\u5E2B\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: 88735fc6-2c31-4635-87a5-e1f321c60dd9
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30D0\u30D5\u306E\u5E78\u798F\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: a405f383-0f99-43f2-8394-943dec860de1
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30C7\u30D0\u30D5\u306E\u6BD2\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: 6eef5b34-b36c-43a4-8bd0-327622f61e4b
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30C7\u30D0\u30D5\u306E\u5446\u3051\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: 84114328-edac-4b06-9c05-33eb1e1dcaa7
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30C7\u30D0\u30D5\u306E\u8CA0\u50B7\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: b089bc54-b30e-4837-a908-71555b94abce
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30C7\u30D0\u30D5\u306E\u920D\u3089\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: 5a4bb6f8-1629-4aff-a073-e37795ea45c2
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30C7\u30D0\u30D5\u306E\u6050\u6016\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: 8d3d499a-afc2-4716-9894-94e9fdf4e6f5
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30C7\u30D0\u30D5\u306E\u5C01\u5370\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: aa2ecd1e-0cf2-4cc1-a115-fe1f7656241d
+  - value:
+      ja: "\u5BFE\u8C61\u306B\u30C7\u30D0\u30D5\u306E\u6DF7\u4E71\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      en: 
+    guid: 91797c5d-0ee5-434e-bff2-be9e1a69e88e
   asset: []

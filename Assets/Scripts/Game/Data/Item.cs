@@ -20,7 +20,7 @@ namespace MineS
 
 		public void Use(IAttack user)
 		{
-			if(GameDefine.IsEquipment(InstanceData.ItemType))
+			if(GameDefine.IsEquipment(this.InstanceData.ItemType))
 			{
 				var changedEquipment = PlayerManager.Instance.Data.Inventory.ChangeEquipment(this);
 				PlayerManager.Instance.ChangeItem(this, changedEquipment);
@@ -42,12 +42,29 @@ namespace MineS
 			switch(usableItem.UsableItemType)
 			{
 			case GameDefine.UsableItemType.RecoveryHitPointLimit:
-				playerManager.RecoveryHitPoint(Calculator.GetUsableItemRecoveryValue(usableItem.RandomPower, user), true);
-				playerManager.RemoveInventoryItem(this);
+				{
+					var value = Calculator.GetUsableItemRecoveryValue(usableItem.RandomPower, user);
+					playerManager.RecoveryHitPoint(value, true);
+					playerManager.RemoveInventoryItem(this);
+					InformationManager.OnUseRecoveryHitPointItem(user, value);
+				}
 			break;
 			case GameDefine.UsableItemType.RecoveryArmor:
-				playerManager.RecoveryArmor(Calculator.GetUsableItemRecoveryValue(usableItem.RandomPower, user));
-				playerManager.RemoveInventoryItem(this);
+				{
+					var value = Calculator.GetUsableItemRecoveryValue(usableItem.RandomPower, user);
+					playerManager.RecoveryArmor(value);
+					playerManager.RemoveInventoryItem(this);
+					InformationManager.OnUseRecoveryArmorItem(user, value);
+				}
+			break;
+			case GameDefine.UsableItemType.AddAbnormalStatus:
+				{
+					var type = (GameDefine.AbnormalStatusType)usableItem.Power0;
+					playerManager.AddAbnormalStatus(type, usableItem.Power1, 0);
+					playerManager.RemoveInventoryItem(this);
+					var descriptionData = DescriptionManager.Instance.Data.Get(GameDefine.GetAbnormalStatusDescriptionKey(type));
+					InformationManager.OnUseAddAbnormalStatusItem(user, type, descriptionData.Title);
+				}
 			break;
 			default:
 				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
@@ -55,5 +72,6 @@ namespace MineS
 			}
 
 		}
+
 	}
 }

@@ -26,7 +26,11 @@ namespace MineS
 			onContinuousAttack = null,
 			onAcquiredItem = null,
 			onRecovery = null,
-			onInitiativeDamage = null;
+			onInitiativeDamage = null,
+			onUseRecoveryHitPointItem = null,
+			onUseRecoveryArmorItem = null,
+			onUseAddBuffItem = null,
+			onUseAddDebuffItem = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -109,6 +113,31 @@ namespace MineS
 			var message = instance.onInitiativeDamage.Format(receiver.Name, damage)
 				.Replace(AttackerColor, attacker.ColorCode)
 				.Replace(ReceiverColor, receiver.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void OnUseRecoveryHitPointItem(IAttack user, int value)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.onUseRecoveryHitPointItem.Format(user.Name, value)
+				.Replace(TargetColor, user.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void OnUseRecoveryArmorItem(IAttack user, int value)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.onUseRecoveryArmorItem.Format(user.Name, value)
+				.Replace(TargetColor, user.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void OnUseAddAbnormalStatusItem(IAttack user, GameDefine.AbnormalStatusType abnormalStatusType, string abnormalStatusName)
+		{
+			var instance = InformationManager.Instance;
+			var finder = GameDefine.IsBuff(abnormalStatusType) ? instance.onUseAddBuffItem : instance.onUseAddDebuffItem;
+			var message = finder.Format(user.Name, abnormalStatusName)
+				.Replace(TargetColor, user.ColorCode);
 			instance._AddMessage(message);
 		}
 

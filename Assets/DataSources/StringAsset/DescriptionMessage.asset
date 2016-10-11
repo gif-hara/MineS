@@ -109,7 +109,7 @@ MonoBehaviour:
       en: 
     guid: 39057dc5-cca9-4736-bfdb-7cda3cefb5d5
   - value:
-      ja: "\u7F60\u306B\u5F15\u3063\u304B\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      ja: "\u7F60\u306B\u5F15\u3063\u304B\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01"
       en: 
     guid: afd21b64-7f02-4889-a5c5-f124dd7563b9
   - value:
@@ -228,4 +228,44 @@ MonoBehaviour:
       ja: "\u4ED6\u306E\u6575\u304C\u653B\u6483\u3055\u308C\u308B\u6642\u3001\u81EA\u5206\u81EA\u8EAB\u304C\u653B\u6483\u5BFE\u8C61\u306B\u306A\u308B\u305E\uFF01"
       en: 
     guid: 6089deba-f083-4df5-90fa-b12c871d4cab
+  - value:
+      ja: "\u4E0E\u3048\u308B\u30C0\u30E1\u30FC\u30B8\u304C2\u500D\u306B\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: 36bcd96f-37eb-46a3-8d12-93436e3e5e76
+  - value:
+      ja: "\u53D7\u3051\u308B\u30C0\u30E1\u30FC\u30B8\u304C\u534A\u5206\u306B\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: 54273871-f6e6-460e-bd52-2e2e02342c6e
+  - value:
+      ja: "\u53D6\u5F97\u3059\u308B\u7D4C\u9A13\u5024\u304C2\u500D\u306B\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: dacd2dad-7bef-41a1-9b80-5f7ecd09edd3
+  - value:
+      ja: "\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u306B\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u3051\u308B\u305E\uFF01"
+      en: 
+    guid: 9b5a94ff-0f87-400c-a24d-b7ff34e962fc
+  - value:
+      ja: "\u53D6\u5F97\u3059\u308B\u7D4C\u9A13\u5024\u304C\u534A\u5206\u306B\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: ff22c9fe-88cf-4cab-a6f3-66f3f31895c3
+  - value:
+      ja: "\u53D7\u3051\u308B\u30C0\u30E1\u30FC\u30B8\u304C2\u500D\u306B\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: 26ef83af-e646-4176-8900-c1fdd5cdcdc8
+  - value:
+      ja: "\u4E0E\u3048\u308B\u30C0\u30E1\u30FC\u30B8\u304C\u534A\u5206\u306B\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: 068a9f8c-149c-44b1-9acc-69a7245358ce
+  - value:
+      ja: "\u653B\u6483\u51FA\u6765\u306A\u304F\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: 40f9229a-20fb-42f1-a566-57e7160daeaa
+  - value:
+      ja: "\u7279\u6B8A\u80FD\u529B\u304C\u767A\u52D5\u3057\u306A\u304F\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: bdb74aa7-ec06-4a57-a909-86c9044be5b6
+  - value:
+      ja: "\u4F55\u3092\u3059\u308B\u304B\u5206\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: a655cfe9-5784-4e4b-9bd5-8a553169fa2f
   asset: []

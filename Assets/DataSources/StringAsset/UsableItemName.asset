@@ -20,4 +20,56 @@ MonoBehaviour:
       ja: "\u30A2\u30FC\u30DE\u30FC\u30DD\u30FC\u30B7\u30E7\u30F3"
       en: 
     guid: d5ba770f-1619-4082-8b2a-75a89a24ba34
+  - value:
+      ja: "\u30D7\u30ED\u30C6\u30A4\u30F3\u30FB\u7DD1"
+      en: 
+    guid: 0465ee7e-a73a-453c-ba3c-6cbe5471c13b
+  - value:
+      ja: "\u30D7\u30ED\u30C6\u30A4\u30F3\u30FB\u8D64"
+      en: 
+    guid: 98530a43-a2ac-457d-955e-e4b0a37a26c8
+  - value:
+      ja: "\u30D7\u30ED\u30C6\u30A4\u30F3\u30FB\u9752"
+      en: 
+    guid: d91c270f-8ce6-44b7-8c65-4d43f3bb4ee2
+  - value:
+      ja: "\u30D7\u30ED\u30C6\u30A4\u30F3\u30FB\u767D"
+      en: 
+    guid: 519f83b6-b0cf-4158-8ccd-907867dfbeca
+  - value:
+      ja: "\u30D7\u30ED\u30C6\u30A4\u30F3\u30FB\u9EC4"
+      en: 
+    guid: aa6ff71b-64f8-4fe4-8367-549c88f8cf9b
+  - value:
+      ja: "\u30D7\u30ED\u30C6\u30A4\u30F3\u30FB\u7D2B"
+      en: 
+    guid: a82f4288-749f-4fc9-995b-9a785e1ac8c6
+  - value:
+      ja: "\u30B9\u30D4\u30EA\u30BF\u30B9\u30FB\u30B7\u30E7\u30C3\u30C8"
+      en: 
+    guid: c2e0d2fe-ec14-4144-80c4-eb98dca70f1b
+  - value:
+      ja: "\u30A8\u30D0\u30FC\u30AF\u30EA\u30A2\u30FB\u30B7\u30E7\u30C3\u30C8"
+      en: 
+    guid: 6fa024b5-6725-4b3b-b129-272358cf8cf4
+  - value:
+      ja: "\u30CE\u30C3\u30AD\u30FC\u30F3\u30DD\u30C1\u30FC\u30F3\u30FB\u30B7\u30E7\u30C3\u30C8"
+      en: 
+    guid: db712dcc-33ad-4333-bf7b-9442ac1af2ce
+  - value:
+      ja: "\u30CF\u30D7\u30B9\u30D6\u30EB\u30B0\u30FB\u30B7\u30E7\u30C3\u30C8"
+      en: 
+    guid: c93185b6-dbc3-42e2-91fa-7d0a45f3bf45
+  - value:
+      ja: "\u30C9\u30FC\u30D0\u30FC\u30B9\u30D4\u30EA\u30C3\u30C488\u30FB\u30B7\u30E7\u30C3\u30C8"
+      en: 
+    guid: ee0cbccd-9bf8-49e1-a77d-6457b90e8bee
+  - value:
+      ja: "\u30D0\u30EB\u30AB\u30F3176\u30A6\u30A9\u30C3\u30AB\u30FB\u30B7\u30E7\u30C3\u30C8"
+      en: 
+    guid: cf12dae8-d8b7-41ca-82a4-9234c2ccd61e
+  - value:
+      ja: "\u30A2\u30D6\u30B5\u30F3\u30EC\u30C3\u30C9\u30E9\u30D9\u30EB\u30FB\u30B7\u30E7\u30C3\u30C8"
+      en: 
+    guid: 4b8dd4a4-ab2b-4676-8371-8ac0cf98b4a2
   asset: []
