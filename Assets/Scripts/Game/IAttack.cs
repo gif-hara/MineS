@@ -12,6 +12,10 @@ namespace MineS
 	{
 		string Name{ get; }
 
+		int HitPointMax{ get; }
+
+		int HitPoint{ get; }
+
 		int Strength{ get; }
 
 		int HitProbability{ get; }
@@ -31,5 +35,15 @@ namespace MineS
 		bool FindAbnormalStatus(GameDefine.AbnormalStatusType type);
 
 		int GetAbilityNumber(GameDefine.AbilityType type);
+
+		void RecoveryHitPoint(int value, bool isLimit);
+
+		void RecoveryArmor(int value);
+
+		GameDefine.AddAbnormalStatusResultType AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus);
+
+		void RemoveAbnormalStatus(GameDefine.AbnormalStatusType type);
+
+		void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint);
 	}
 }

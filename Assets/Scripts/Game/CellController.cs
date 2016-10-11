@@ -112,6 +112,25 @@ namespace MineS
 				return;
 			}
 
+			switch(CellManager.Instance.ClickMode)
+			{
+			case GameDefine.CellClickMode.Step:
+				this.OnStepModeAction();
+			break;
+			case GameDefine.CellClickMode.PutItem:
+				this.OnPutItemModeAction();
+			break;
+			case GameDefine.CellClickMode.ThrowItem:
+				this.OnThrowItemModeAction();
+			break;
+			default:
+				Debug.AssertFormat(false, "不正な値です. ClickMode = {0}", CellManager.Instance.ClickMode);
+			break;
+			}
+		}
+
+		private void OnStepModeAction()
+		{
 			if(PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Confusion) && (!this.Data.IsIdentification || this.Data.CurrentEventType == GameDefine.EventType.Enemy))
 			{
 				CellManager.Instance.ActionFromConfusion();
@@ -120,6 +139,37 @@ namespace MineS
 			{
 				this.Data.Action();
 			}
+		}
+
+		private void OnPutItemModeAction()
+		{
+			if(this.Data.CurrentEventType != GameDefine.EventType.None || this.Data.IsLock || !this.Data.IsIdentification || !this.Data.CanStep)
+			{
+				return;
+			}
+
+			var playerManager = PlayerManager.Instance;
+			var inventory = playerManager.Data.Inventory;
+			this.Data.BindCellClickAction(new AcquireItemAction(inventory.SelectItem, this));
+			this.Data.BindDeployDescription(new DeployDescriptionOnItem(inventory.SelectItem));
+			inventory.RemoveItemOrEquipment(inventory.SelectItem);
+			inventory.SetSelectItem(null);
+			CellManager.Instance.ChangeCellClickMode(GameDefine.CellClickMode.Step);
+			playerManager.NotifyCharacterDataObservers();
+		}
+
+		private void OnThrowItemModeAction()
+		{
+			if(this.Data.CurrentEventType != GameDefine.EventType.Enemy || this.Data.IsLock || !this.Data.IsIdentification || !this.Data.CanStep)
+			{
+				return;
+			}
+
+			var playerManager = PlayerManager.Instance;
+			var inventory = playerManager.Data.Inventory;
+			inventory.SelectItem.Use(EnemyManager.Instance.Enemies[this.Data]);
+			inventory.SetSelectItem(null);
+			CellManager.Instance.ChangeCellClickMode(GameDefine.CellClickMode.Step);
 		}
 
 		public void ActionFromConfusion()

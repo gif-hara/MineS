@@ -10,7 +10,7 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusDull : AbnormalStatusBase
 	{
-		public AbnormalStatusDull(CharacterData holder, int remainingTurn, int waitTurn)
+		public AbnormalStatusDull(IAttack holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{
 		}

@@ -693,6 +693,15 @@ namespace MineS
 			Shop_Sell,
 		}
 
+		public enum CellClickMode:int
+		{
+			Step,
+
+			PutItem,
+
+			ThrowItem,
+		}
+
 		public const int AdjacentMax = 9;
 
 		public const int MoneyMax = 9999999;

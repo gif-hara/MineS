@@ -11,7 +11,7 @@ namespace MineS
 	[System.Serializable]
 	public abstract class AbnormalStatusBase
 	{
-		public CharacterData Holder{ protected set; get; }
+		public IAttack Holder{ protected set; get; }
 
 		public int RemainingTurn{ protected set; get; }
 
@@ -23,7 +23,7 @@ namespace MineS
 
 		public abstract GameDefine.AbilityType InvalidateAbilityType{ get; }
 
-		public AbnormalStatusBase(CharacterData holder, int remainingTurn, int waitTurn)
+		public AbnormalStatusBase(IAttack holder, int remainingTurn, int waitTurn)
 		{
 			this.Holder = holder;
 			this.RemainingTurn = remainingTurn;

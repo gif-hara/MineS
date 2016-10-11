@@ -58,6 +58,7 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 			TurnManager.Instance.AddEndTurnEvent(this.OnTurnProgress);
 			TurnManager.Instance.AddLateEndTurnEvent(this.OnLateTurnProgress);
+			Item.AddOnUseItemEvent(this.OnUseItem);
 		}
 
 		public void RecoveryHitPoint(int value, bool isLimit)
@@ -110,6 +111,7 @@ namespace MineS
 
 		public void OpenInventoryUI(GameDefine.InventoryModeType type, Inventory inventory)
 		{
+			CellManager.Instance.ChangeCellClickMode(GameDefine.CellClickMode.Step);
 			this.currentOpenInventory = inventory;
 			this.currentOpenInventory.SetMode(type);
 			this.inventoryUI.SetActive(true);
@@ -224,6 +226,11 @@ namespace MineS
 		}
 
 		private void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
+		{
+			this.NotifyCharacterDataObservers();
+		}
+
+		private void OnUseItem(Item item)
 		{
 			this.NotifyCharacterDataObservers();
 		}

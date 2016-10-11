@@ -10,7 +10,7 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusXray : AbnormalStatusBase
 	{
-		public AbnormalStatusXray(CharacterData holder, int remainingTurn, int waitTurn)
+		public AbnormalStatusXray(IAttack holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{
 			CellManager.Instance.OnUseXray();

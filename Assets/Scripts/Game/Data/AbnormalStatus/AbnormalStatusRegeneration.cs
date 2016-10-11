@@ -10,7 +10,7 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusRegeneration : AbnormalStatusBase
 	{
-		public AbnormalStatusRegeneration(CharacterData holder, int remainingTurn, int waitTurn)
+		public AbnormalStatusRegeneration(IAttack holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{
 		}

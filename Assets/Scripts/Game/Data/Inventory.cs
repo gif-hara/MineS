@@ -119,7 +119,7 @@ namespace MineS
 
 		public void RemoveItemOrEquipment(Item item)
 		{
-			if(this.Equipment.IsInEquipment(item))
+			if(GameDefine.IsEquipment(item.InstanceData.ItemType) && this.Equipment.IsInEquipment(item))
 			{
 				this.Equipment.Remove(item);
 			}

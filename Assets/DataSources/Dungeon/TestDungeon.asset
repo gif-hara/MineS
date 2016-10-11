@@ -22,9 +22,9 @@ MonoBehaviour:
     - floorMin: 1
       floorMax: 1
       enemies:
-      - masterData: {fileID: 11400000, guid: ad9ef393a78584b6c859757a91a259ab, type: 2}
-        probability: 99999
-      - masterData: {fileID: 11400000, guid: 2664c6b88a3774eb58b7b3a2fe2b36fd, type: 2}
+      - masterData: {fileID: 11400000, guid: 06478708a60ca4769b96d92b3227cf7a, type: 2}
+        probability: 100
+      - masterData: {fileID: 11400000, guid: 7fcbd403fc4214a6391c71cee03232f8, type: 2}
         probability: 100
   itemTable:
     elements:
@@ -66,8 +66,8 @@ MonoBehaviour:
     min: 0
     max: 0
   createEnemyRange:
-    min: 76
-    max: 76
+    min: 20
+    max: 20
   createItemRange:
     min: 0
     max: 0

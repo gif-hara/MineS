@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f7e9d515b0e649779991d3ea5e7d149, type: 3}
-  m_Name: 
+  m_Name: Shield25
   m_EditorClassIdentifier: 
   itemName: "\u56DB\u795E\u76FE\u30FB\u9752\u9F8D"
   purchasePrice: 20000

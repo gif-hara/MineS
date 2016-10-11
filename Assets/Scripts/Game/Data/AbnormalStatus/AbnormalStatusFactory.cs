@@ -10,7 +10,7 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusFactory
 	{
-		public static AbnormalStatusBase Create(GameDefine.AbnormalStatusType type, CharacterData holder, int remainingTurn, int waitTurn)
+		public static AbnormalStatusBase Create(GameDefine.AbnormalStatusType type, IAttack holder, int remainingTurn, int waitTurn)
 		{
 			switch(type)
 			{

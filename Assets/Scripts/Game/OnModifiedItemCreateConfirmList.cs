@@ -136,12 +136,16 @@ namespace MineS
 
 		private void OnThrow(Item item)
 		{
-			Debug.Log("「投げる」は未実装だよ！");
+			PlayerManager.Instance.CloseInventoryUI();
+			PlayerManager.Instance.Data.Inventory.SetSelectItem(item);
+			CellManager.Instance.ChangeCellClickMode(GameDefine.CellClickMode.ThrowItem);
 		}
 
 		private void OnPut(Item item)
 		{
-			Debug.Log("「置く」は未実装だよ！");
+			PlayerManager.Instance.CloseInventoryUI();
+			PlayerManager.Instance.Data.Inventory.SetSelectItem(item);
+			CellManager.Instance.ChangeCellClickMode(GameDefine.CellClickMode.PutItem);
 		}
 
 		private void OnDescription(Item item)

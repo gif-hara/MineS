@@ -22,6 +22,8 @@ namespace MineS
 
 		private CellData[,] cellDatabase;
 
+		public GameDefine.CellClickMode ClickMode{ private set; get; }
+
 		private const int RowMax = 10;
 
 		private const int CulumnMax = 8;
@@ -30,6 +32,7 @@ namespace MineS
 
 		void Start()
 		{
+			this.ClickMode = GameDefine.CellClickMode.Step;
 			var database = this.CreateCellDatabaseFromDungeonData();
 			for(int y = 0; y < RowMax; y++)
 			{
@@ -63,6 +66,11 @@ namespace MineS
 		{
 			var notIdentificationCellControllers = this.TurnProgressableCellControllers;
 			notIdentificationCellControllers[Random.Range(0, notIdentificationCellControllers.Count)].ActionFromConfusion();
+		}
+
+		public void ChangeCellClickMode(GameDefine.CellClickMode mode)
+		{
+			this.ClickMode = mode;
 		}
 
 		private void NextFloor()

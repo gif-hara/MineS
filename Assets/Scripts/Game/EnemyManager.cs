@@ -26,6 +26,7 @@ namespace MineS
 		{
 			TurnManager.Instance.AddEndTurnEvent(this.OnTurnProgress);
 			TurnManager.Instance.AddLateEndTurnEvent(this.OnLateTurnProgress);
+			Item.AddOnUseItemEvent(this.OnUseItem);
 		}
 
 		public EnemyData Create(CellData cellData)
@@ -99,6 +100,18 @@ namespace MineS
 				}
 
 				e.Value.OnLateTurnProgress(type, turnCount);
+				e.Key.Controller.CharacterDataObserver.ModifiedData(e.Value);
+			}
+		}
+
+		private void OnUseItem(Item item)
+		{
+			foreach(var e in this.Enemies)
+			{
+				if(e.Value == null || !e.Key.IsIdentification)
+				{
+					continue;
+				}
 				e.Key.Controller.CharacterDataObserver.ModifiedData(e.Value);
 			}
 		}
