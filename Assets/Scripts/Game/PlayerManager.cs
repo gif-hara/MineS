@@ -14,7 +14,6 @@ namespace MineS
 	{
 		public class InventoryEvent : UnityEvent<Inventory>
 		{
-			
 		}
 
 		[SerializeField]
