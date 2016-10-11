@@ -13,8 +13,30 @@ namespace MineS
 		public AbnormalStatusRegeneration(CharacterData holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{
-			this.Type = GameDefine.AbnormalStatusType.Regeneration;
-			this.OppositeType = GameDefine.AbnormalStatusType.Poison;
+		}
+
+		public override GameDefine.AbnormalStatusType Type
+		{
+			get
+			{
+				return GameDefine.AbnormalStatusType.Regeneration;
+			}
+		}
+
+		public override GameDefine.AbnormalStatusType OppositeType
+		{
+			get
+			{
+				return GameDefine.AbnormalStatusType.Poison;
+			}
+		}
+
+		public override GameDefine.AbilityType InvalidateAbilityType
+		{
+			get
+			{
+				return GameDefine.AbilityType.None;
+			}
 		}
 
 		public override void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)

@@ -13,8 +13,30 @@ namespace MineS
 		public AbnormalStatusGout(CharacterData holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{
-			this.Type = GameDefine.AbnormalStatusType.Gout;
-			this.OppositeType = GameDefine.AbnormalStatusType.Curing;
+		}
+
+		public override GameDefine.AbnormalStatusType Type
+		{
+			get
+			{
+				return GameDefine.AbnormalStatusType.Gout;
+			}
+		}
+
+		public override GameDefine.AbnormalStatusType OppositeType
+		{
+			get
+			{
+				return GameDefine.AbnormalStatusType.Curing;
+			}
+		}
+
+		public override GameDefine.AbilityType InvalidateAbilityType
+		{
+			get
+			{
+				return GameDefine.AbilityType.CompleteRecovery;
+			}
 		}
 	}
 }

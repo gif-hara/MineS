@@ -13,8 +13,30 @@ namespace MineS
 		public AbnormalStatusFear(CharacterData holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{
-			this.Type = GameDefine.AbnormalStatusType.Fear;
-			this.OppositeType = GameDefine.AbnormalStatusType.None;
+		}
+
+		public override GameDefine.AbnormalStatusType Type
+		{
+			get
+			{
+				return GameDefine.AbnormalStatusType.Fear;
+			}
+		}
+
+		public override GameDefine.AbnormalStatusType OppositeType
+		{
+			get
+			{
+				return GameDefine.AbnormalStatusType.None;
+			}
+		}
+
+		public override GameDefine.AbilityType InvalidateAbilityType
+		{
+			get
+			{
+				return GameDefine.AbilityType.Bravery;
+			}
 		}
 	}
 }

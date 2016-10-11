@@ -11,19 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7e9d515b0e649779991d3ea5e7d149, type: 3}
   m_Name: Weapon18
   m_EditorClassIdentifier: 
-  itemName:
-    target: {fileID: 11400000, guid: b07e9e1f8c7b04b0aa8f827506c560be, type: 2}
-    value: "\u92AD\u5200"
-    guid: b739e53b-aaa7-4fe8-8446-d370a806f96c
-  rare: 1
-  purchasePrice: 8000
-  sellingPrice: 3000
+  itemName: "\u92AD\u5200"
+  purchasePrice: 5500
+  sellingPrice: 2750
   image: {fileID: 21300000, guid: 3b24933fa912dc74aa1e86dc1626a9c2, type: 3}
-  basePower: 7
+  basePower: 3
   brandingLimit: 6
   canExtraction: 1
   itemType: 1
-  abilities: 09000000
-  reinforcementPurchase: {fileID: 11400000, guid: 487bb6b95396243b79a1875acb5e32c1,
-    type: 2}
-  levelPower: {fileID: 11400000, guid: 7c15e29a15dec4090ba7e99466eca925, type: 2}
+  abilities: 0a000000
+  reinforcementPurchase: {fileID: 0}
+  levelPower: {fileID: 0}

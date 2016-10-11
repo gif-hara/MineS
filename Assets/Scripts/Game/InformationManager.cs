@@ -30,7 +30,8 @@ namespace MineS
 			onUseRecoveryHitPointItem = null,
 			onUseRecoveryArmorItem = null,
 			onUseAddAbnormalStatusItem = null,
-			onUseRemoveAbnormalStatusItem = null;
+			onUseRemoveAbnormalStatusItem = null,
+			onAlsoAddAbnormalStatus = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -148,6 +149,16 @@ namespace MineS
 			var instance = InformationManager.Instance;
 			var message = instance.onUseRemoveAbnormalStatusItem.Format(user.Name, abnormalStatusName)
 				.Replace(TargetColor, user.ColorCode)
+				.Replace(AbnormalStatusColor, GameDefine.GetAbnormalStatusColor(abnormalStatusType));
+			instance._AddMessage(message);
+		}
+
+		public static void OnAlsoAddAbnormalStatus(GameDefine.AbnormalStatusType abnormalStatusType)
+		{
+			var descriptionKey = GameDefine.GetAbnormalStatusDescriptionKey(abnormalStatusType);
+			var descriptionData = DescriptionManager.Instance.Data.Get(descriptionKey);
+			var instance = InformationManager.Instance;
+			var message = instance.onAlsoAddAbnormalStatus.Format(descriptionData.Title)
 				.Replace(AbnormalStatusColor, GameDefine.GetAbnormalStatusColor(abnormalStatusType));
 			instance._AddMessage(message);
 		}

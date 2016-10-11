@@ -258,11 +258,16 @@ namespace MineS
 			this.Money = this.Money > GameDefine.MoneyMax ? GameDefine.MoneyMax : this.Money;
 		}
 
-		public void AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
+		public GameDefine.AddAbnormalStatusResultType AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{
+			if(this.FindAbility(newAbnormalStatus.InvalidateAbilityType))
+			{
+				return GameDefine.AddAbnormalStatusResultType.Invalided;
+			}
+
 			if(this.AbnormalStatuses.FindIndex(a => a.Type == newAbnormalStatus.Type) >= 0)
 			{
-				return;
+				return GameDefine.AddAbnormalStatusResultType.AlreadyHave;
 			}
 			else
 			{
@@ -281,6 +286,8 @@ namespace MineS
 			}
 
 			this.RemoveAbnormalStatus(newAbnormalStatus.OppositeType);
+
+			return GameDefine.AddAbnormalStatusResultType.Added;
 		}
 
 		public void RemoveAbnormalStatus(GameDefine.AbnormalStatusType type)
@@ -359,7 +366,11 @@ namespace MineS
 				return;
 			}
 
-			target.AddAbnormalStatus(AbnormalStatusFactory.Create(abnormalStatusType, target, 5, 1));
+			var result = target.AddAbnormalStatus(AbnormalStatusFactory.Create(abnormalStatusType, target, 5, 1));
+			if(result == GameDefine.AddAbnormalStatusResultType.Added)
+			{
+				InformationManager.OnAlsoAddAbnormalStatus(abnormalStatusType);
+			}
 		}
 	}
 }

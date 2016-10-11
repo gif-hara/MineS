@@ -22,9 +22,9 @@ MonoBehaviour:
     - floorMin: 1
       floorMax: 1
       enemies:
-      - masterData: {fileID: 11400000, guid: 89ddd07b1d8464f87b59b2a06f218de2, type: 2}
-        probability: 100
-      - masterData: {fileID: 11400000, guid: b3a3efd385d854a3984c92bfbac270a1, type: 2}
+      - masterData: {fileID: 11400000, guid: ad9ef393a78584b6c859757a91a259ab, type: 2}
+        probability: 99999
+      - masterData: {fileID: 11400000, guid: 2664c6b88a3774eb58b7b3a2fe2b36fd, type: 2}
         probability: 100
   itemTable:
     elements:
@@ -32,9 +32,9 @@ MonoBehaviour:
       probability: 100
     - masterData: {fileID: 11400000, guid: 3ecaaef1a2b9443e0b96ed675bd10d2a, type: 2}
       probability: 100
-    - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
+    - masterData: {fileID: 0}
       probability: 100
-    - masterData: {fileID: 11400000, guid: b2cb144a5edce4b27b3fed3552e8556d, type: 2}
+    - masterData: {fileID: 0}
       probability: 100
   trapTable:
     elements:
@@ -66,8 +66,8 @@ MonoBehaviour:
     min: 0
     max: 0
   createEnemyRange:
-    min: 0
-    max: 0
+    min: 76
+    max: 76
   createItemRange:
     min: 0
     max: 0

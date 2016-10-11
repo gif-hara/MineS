@@ -13,9 +13,31 @@ namespace MineS
 		public AbnormalStatusXray(CharacterData holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{
-			this.Type = GameDefine.AbnormalStatusType.Xray;
-			this.OppositeType = GameDefine.AbnormalStatusType.None;
 			CellManager.Instance.OnUseXray();
+		}
+
+		public override GameDefine.AbnormalStatusType Type
+		{
+			get
+			{
+				return GameDefine.AbnormalStatusType.Xray;
+			}
+		}
+
+		public override GameDefine.AbnormalStatusType OppositeType
+		{
+			get
+			{
+				return GameDefine.AbnormalStatusType.None;
+			}
+		}
+
+		public override GameDefine.AbilityType InvalidateAbilityType
+		{
+			get
+			{
+				return GameDefine.AbilityType.None;
+			}
 		}
 	}
 }

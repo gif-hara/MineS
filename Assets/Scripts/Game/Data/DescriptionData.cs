@@ -24,7 +24,7 @@ namespace MineS
 			{
 				get
 				{
-					if(this._title == null)
+					if(string.IsNullOrEmpty(this._title))
 					{
 						this._title = this.title.ToString();
 					}
@@ -41,7 +41,7 @@ namespace MineS
 			{
 				get
 				{
-					if(this._message == null)
+					if(string.IsNullOrEmpty(this._message))
 					{
 						this._message = this.message.ToString();
 					}
@@ -63,7 +63,9 @@ namespace MineS
 			public Element(StringAsset.Finder title, StringAsset.Finder message, Sprite image)
 			{
 				this.title = title;
+				this._title = this.title.ToString();
 				this.message = message;
+				this._message = this.message.ToString();
 				this.image = image;
 			}
 

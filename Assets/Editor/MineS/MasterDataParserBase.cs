@@ -19,10 +19,20 @@ namespace MineS
 			foreach(var item in list.Select((v, i) => new {v, i}))
 			{
 				EditorUtility.DisplayProgressBar(string.Format("Create {0}", typeof(T).Name), string.Format("Creating... {0}/{1}", item.i, list.Count), (float)item.i / list.Count);
-				AssetDatabase.CreateAsset(item.v, string.Format(assetPathFormat, item.i));
+				var path = string.Format(assetPathFormat, item.i);
+				var loadAsset = AssetDatabase.LoadAssetAtPath(path, typeof(T)) as T;
+				if(loadAsset == null)
+				{
+					AssetDatabase.CreateAsset(item.v, path);
+				}
+				else
+				{
+					EditorUtility.CopySerialized(item.v, loadAsset);
+				}
 			}
 
 			EditorUtility.ClearProgressBar();
+			AssetDatabase.SaveAssets();
 		}
 	}
 }

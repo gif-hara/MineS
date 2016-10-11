@@ -88,6 +88,24 @@ namespace MineS
 			}
 		}
 
+#if UNITY_EDITOR
+		public static EquipmentData CreateFromCsv(List<string> csv, GameDefine.ItemType itemType)
+		{
+			var result = CreateInstance<EquipmentData>();
+			result.itemType = itemType;
+			result.itemName = csv[1];
+			result.purchasePrice = int.Parse(csv[2]);
+			result.sellingPrice = int.Parse(csv[3]);
+			result.image = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/Textures/Item/" + itemType.ToString() + csv[4] + ".png", typeof(Sprite)) as Sprite;
+			result.basePower = int.Parse(csv[5]);
+			result.brandingLimit = int.Parse(csv[6]);
+			result.canExtraction = bool.Parse(csv[7]);
+			result.abilities = AbilityParser.Parse(csv[8]);
+
+			return result;
+		}
+#endif
+
 		public void SetAbilitiesHolder(CharacterData holder)
 		{
 			this.Abilities.ForEach(a => a.SetHolder(holder));
@@ -144,5 +162,6 @@ namespace MineS
 				return Mathf.FloorToInt(this.purchasePrice * this.reinforcementPurchase.Get(this.Level));
 			}
 		}
+
 	}
 }

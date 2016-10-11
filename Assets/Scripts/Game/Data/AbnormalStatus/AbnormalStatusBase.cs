@@ -17,9 +17,11 @@ namespace MineS
 
 		public int WaitTurn{ protected set; get; }
 
-		public GameDefine.AbnormalStatusType Type{ protected set; get; }
+		public abstract GameDefine.AbnormalStatusType Type{ get; }
 
-		public GameDefine.AbnormalStatusType OppositeType{ protected set; get; }
+		public abstract GameDefine.AbnormalStatusType OppositeType{ get; }
+
+		public abstract GameDefine.AbilityType InvalidateAbilityType{ get; }
 
 		public AbnormalStatusBase(CharacterData holder, int remainingTurn, int waitTurn)
 		{

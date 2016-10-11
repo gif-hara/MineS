@@ -5501,9 +5501,9 @@ RectTransform:
   - {fileID: 1551173470}
   m_Father: {fileID: 842027360}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 370, y: -130}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518210043
@@ -18797,6 +18797,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "<color=targetColor>{0}</color>\u306E<color=abnormalStatusColor>{1}</color>\u306E\u52B9\u679C\u304C\u7121\u304F\u306A\u3063\u305F\uFF01"
     guid: 1174c21a-e71a-4ba9-8b83-3294c0687eb1
+  onAlsoAddAbnormalStatus:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u3055\u3089\u306B<color abnormalStatusColor>{0}</color>\u3092\u4ED8\u4E0E\u3057\u305F\uFF01"
+    guid: 4241b4c4-3b78-4a53-92fa-c8ad1151f0ff
 --- !u!114 &1584263361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19037,13 +19041,13 @@ MonoBehaviour:
     value: "\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3059\u3002"
     guid: 517cd54d-fe95-4817-b1d5-ce2e769595b2
   debugItems:
-  - {fileID: 11400000, guid: a53ef8c4fd2a64f6dbbc50aa8ebe65fa, type: 2}
-  - {fileID: 11400000, guid: 8fc222e6baefe4e7aa6e749540686cfb, type: 2}
-  - {fileID: 11400000, guid: b7e30de605da348488d1bc9b281af317, type: 2}
-  - {fileID: 11400000, guid: 382a3ff8f5f1942079c98639390ce9a7, type: 2}
-  - {fileID: 11400000, guid: 349896cb19b374e92818593972e0c193, type: 2}
-  - {fileID: 11400000, guid: fad7b73c769214a9da71b68d85e30b2f, type: 2}
-  - {fileID: 11400000, guid: e88d01fd400ca4e41902371e6e9d54bc, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1588900025
 GameObject:
   m_ObjectHideFlags: 0

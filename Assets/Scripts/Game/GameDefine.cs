@@ -244,6 +244,12 @@ namespace MineS
 		public enum AbilityType:int
 		{
 			/// <summary>
+			/// 無し.
+			/// </summary>
+			[EnumLabel("無し")]
+			None,
+
+			/// <summary>
 			/// 貫通：アーマーを無視して攻撃する.
 			/// </summary>
 			[EnumLabel("貫通：アーマーを無視して攻撃する")]
@@ -494,6 +500,48 @@ namespace MineS
 			/// </summary>
 			[EnumLabel("挑発：他の敵がダメージを受ける時に肩代わりする")]
 			Provocation,
+
+			/// <summary>
+			/// 血清：デバフの毒を受け付けない.
+			/// </summary>
+			[EnumLabel("血清：デバフの毒を受け付けない")]
+			Serum,
+
+			/// <summary>
+			/// 集中：デバフの呆けを受け付けない.
+			/// </summary>
+			[EnumLabel("集中：デバフの呆けを受け付けない")]
+			Concentration,
+
+			/// <summary>
+			/// 快癒：デバフの負傷を受け付けない.
+			/// </summary>
+			[EnumLabel("快癒：デバフの負傷を受け付けない")]
+			CompleteRecovery,
+
+			/// <summary>
+			/// 鍍金：デバフの鈍らを受け付けない.
+			/// </summary>
+			[EnumLabel("鍍金：デバフの鈍らを受け付けない")]
+			Plating,
+
+			/// <summary>
+			/// 勇気：デバフの恐怖を受け付けない.
+			/// </summary>
+			[EnumLabel("勇気：デバフの恐怖を受け付けない")]
+			Bravery,
+
+			/// <summary>
+			/// 魔除：デバフの封印を受け付けない.
+			/// </summary>
+			[EnumLabel("魔除：デバフの封印を受け付けない")]
+			Talisman,
+
+			/// <summary>
+			/// 気付：デバフの混乱を受け付けない.
+			/// </summary>
+			[EnumLabel("気付：デバフの混乱を受け付けない")]
+			Care,
 		}
 
 		/// <summary>
@@ -520,9 +568,38 @@ namespace MineS
 
 		public enum AttackResultType:int
 		{
+			/// <summary>
+			/// 当たった.
+			/// </summary>
 			Hit,
+
+			/// <summary>
+			/// 外した.
+			/// </summary>
 			Miss,
+
+			/// <summary>
+			/// デバフの恐怖によって外した.
+			/// </summary>
 			MissByFear
+		}
+
+		public enum AddAbnormalStatusResultType:int
+		{
+			/// <summary>
+			/// 追加した.
+			/// </summary>
+			Added,
+
+			/// <summary>
+			/// 無効化された.
+			/// </summary>
+			Invalided,
+
+			/// <summary>
+			/// 既にある.
+			/// </summary>
+			AlreadyHave,
 		}
 
 		public enum SelectItemDecideType:int

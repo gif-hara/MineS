@@ -384,4 +384,8 @@ MonoBehaviour:
       ja: "<color=targetColor>{0}</color>\u306E<color=abnormalStatusColor>{1}</color>\u306E\u52B9\u679C\u304C\u7121\u304F\u306A\u3063\u305F\uFF01"
       en: 
     guid: 1174c21a-e71a-4ba9-8b83-3294c0687eb1
+  - value:
+      ja: "\u3055\u3089\u306B<color abnormalStatusColor>{0}</color>\u3092\u4ED8\u4E0E\u3057\u305F\uFF01"
+      en: 
+    guid: 4241b4c4-3b78-4a53-92fa-c8ad1151f0ff
   asset: []
