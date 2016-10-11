@@ -21,6 +21,14 @@ MonoBehaviour:
       en: 
     guid: 16130cfe-f975-47b9-9f85-201a65f08ed8
   - value:
+      ja: '{0}%'
+      en: 
+    guid: 346314a4-9108-44a9-a987-b628d4d1a16b
+  - value:
+      ja: '{0}F'
+      en: 
+    guid: 3b69729b-6037-4c6b-8ff2-191ef46a4c01
+  - value:
       ja: "\u30A2\u30A4\u30C6\u30E0"
       en: 
     guid: f8145ea6-ccb3-4468-ab08-d15c60fa4f6d
@@ -152,10 +160,6 @@ MonoBehaviour:
       ja: "\u88C5\u5099\u54C1"
       en: 
     guid: ab6c805a-757d-4b14-b317-352868e74ecd
-  - value:
-      ja: '{0}F'
-      en: 
-    guid: 3b69729b-6037-4c6b-8ff2-191ef46a4c01
   - value:
       ja: "\u4F7F\u3046"
       en: 
@@ -353,11 +357,11 @@ MonoBehaviour:
       en: 
     guid: ee6c8b51-0367-4ab9-ba18-48362580920c
   - value:
-      ja: "<color=targetColor>{0}</color>\u306E\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u304C</targetColor>{1}</color>\u56DE\u5FA9\u3057\u305F\uFF01"
+      ja: "<color=targetColor>{0}</color>\u306E\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u304C<color=targetColor>{1}</color>\u56DE\u5FA9\u3057\u305F\uFF01"
       en: 
     guid: fec88d74-ba62-46c6-9977-3f316c5ba2b7
   - value:
-      ja: "<color=targetColor>{0}</color>\u306E\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u304C</targetColor>{1}</color>\u56DE\u5FA9\u3057\u305F\uFF01"
+      ja: "<color=targetColor>{0}</color>\u306E\u30A2\u30FC\u30DE\u30FC\u304C<color=targetColor>{1}</color>\u56DE\u5FA9\u3057\u305F\uFF01"
       en: 
     guid: 1077cf61-e2d4-49b1-a6fb-e84ad445e0f8
   - value:
