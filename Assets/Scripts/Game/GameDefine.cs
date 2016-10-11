@@ -176,72 +176,72 @@ namespace MineS
 			/// <summary>
 			/// 無し.
 			/// </summary>
-			None,
+			None = 0,
 
 			/// <summary>
 			/// 再生：ヒットポイントが徐々に回復する.
 			/// </summary>
-			Regeneration,
+			Regeneration = 1,
 
 			/// <summary>
 			/// 鋭利：与えるダメージを2倍にする.
 			/// </summary>
-			Sharpness,
+			Sharpness = 2,
 
 			/// <summary>
 			/// 硬化：受けるダメージを半分にする.
 			/// </summary>
-			Curing,
+			Curing = 3,
 
 			/// <summary>
 			/// 透視：未識別のセルを透視する.
 			/// </summary>
-			Xray,
+			Xray = 4,
 
 			/// <summary>
 			/// 罠師：罠の影響を受けない.
 			/// </summary>
-			TrapMaster,
+			TrapMaster = 5,
 
 			/// <summary>
 			/// 幸福：取得経験値が2倍になる.
 			/// </summary>
-			Happiness,
+			Happiness = 6,
 
 			/// <summary>
 			/// 毒：ターン終了時にダメージを受ける.
 			/// </summary>
-			Poison,
+			Poison = 7,
 
 			/// <summary>
 			/// 呆け：取得経験値が半分になる.
 			/// </summary>
-			Blur,
+			Blur = 8,
 
 			/// <summary>
 			/// 負傷：受けるダメージが2倍になる.
 			/// </summary>
-			Gout,
+			Gout = 9,
 
 			/// <summary>
 			/// 鈍ら：与えるダメージが半分になる.
 			/// </summary>
-			Dull,
+			Dull = 10,
 
 			/// <summary>
 			/// 恐怖：攻撃できなくなる.
 			/// </summary>
-			Fear,
+			Fear = 11,
 
 			/// <summary>
 			/// 封印：特殊能力が発動しなくなる.
 			/// </summary>
-			Seal,
+			Seal = 12,
 
 			/// <summary>
 			/// 混乱：ターンを消費する行動がランダムに行われてしまう.
 			/// </summary>
-			Confusion,
+			Confusion = 13,
 		}
 
 		public enum AbilityType:int
@@ -714,6 +714,11 @@ namespace MineS
 			}
 		}
 
+		public static string GetAbnormalStatusColor(AbnormalStatusType type)
+		{
+			return IsBuff(type) ? GoodColorCode : BadColorCode;
+		}
+
 		public static GameDefine.AbnormalStatusType ConvertTrapTypeToAbnormalStatusType(GameDefine.TrapType type)
 		{
 			switch(type)
@@ -739,5 +744,9 @@ namespace MineS
 			type == TrapType.Gout ||
 			type == TrapType.Poison;
 		}
+
+		public const string GoodColorCode = "#00FFE9";
+
+		public const string BadColorCode = "#FF3333";
 	}
 }

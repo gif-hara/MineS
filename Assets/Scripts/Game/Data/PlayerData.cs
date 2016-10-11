@@ -61,7 +61,7 @@ namespace MineS
 		{
 			get
 			{
-				return "#00FFE9";
+				return GameDefine.GoodColorCode;
 			}
 		}
 

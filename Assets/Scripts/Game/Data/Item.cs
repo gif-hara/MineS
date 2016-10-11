@@ -66,6 +66,15 @@ namespace MineS
 					InformationManager.OnUseAddAbnormalStatusItem(user, type, descriptionData.Title);
 				}
 			break;
+			case GameDefine.UsableItemType.RemoveAbnormalStatus:
+				{
+					var type = (GameDefine.AbnormalStatusType)usableItem.Power0;
+					playerManager.RemoveAbnormalStatus(type);
+					playerManager.RemoveInventoryItem(this);
+					var descriptionData = DescriptionManager.Instance.Data.Get(GameDefine.GetAbnormalStatusDescriptionKey(type));
+					InformationManager.OnUseRemoveAbnormalStatusItem(user, type, descriptionData.Title);
+				}
+			break;
 			default:
 				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
 			break;

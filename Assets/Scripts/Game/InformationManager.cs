@@ -29,18 +29,20 @@ namespace MineS
 			onInitiativeDamage = null,
 			onUseRecoveryHitPointItem = null,
 			onUseRecoveryArmorItem = null,
-			onUseAddBuffItem = null,
-			onUseAddDebuffItem = null;
+			onUseAddAbnormalStatusItem = null,
+			onUseRemoveAbnormalStatusItem = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
 		private Coroutine currentMessageCoroutine = null;
 
-		private static string AttackerColor = "attackerColor";
+		private const string AttackerColor = "attackerColor";
 
-		private static string ReceiverColor = "receiverColor";
+		private const string ReceiverColor = "receiverColor";
 
-		private static string TargetColor = "targetColor";
+		private const string TargetColor = "targetColor";
+
+		private const string AbnormalStatusColor = "abnormalStatusColor";
 
 		public static void OnAttack(IAttack attacker, IAttack receiver, int damage)
 		{
@@ -135,9 +137,18 @@ namespace MineS
 		public static void OnUseAddAbnormalStatusItem(IAttack user, GameDefine.AbnormalStatusType abnormalStatusType, string abnormalStatusName)
 		{
 			var instance = InformationManager.Instance;
-			var finder = GameDefine.IsBuff(abnormalStatusType) ? instance.onUseAddBuffItem : instance.onUseAddDebuffItem;
-			var message = finder.Format(user.Name, abnormalStatusName)
-				.Replace(TargetColor, user.ColorCode);
+			var message = instance.onUseAddAbnormalStatusItem.Format(user.Name, abnormalStatusName)
+				.Replace(TargetColor, user.ColorCode)
+				.Replace(AbnormalStatusColor, GameDefine.GetAbnormalStatusColor(abnormalStatusType));
+			instance._AddMessage(message);
+		}
+
+		public static void OnUseRemoveAbnormalStatusItem(IAttack user, GameDefine.AbnormalStatusType abnormalStatusType, string abnormalStatusName)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.onUseRemoveAbnormalStatusItem.Format(user.Name, abnormalStatusName)
+				.Replace(TargetColor, user.ColorCode)
+				.Replace(AbnormalStatusColor, GameDefine.GetAbnormalStatusColor(abnormalStatusType));
 			instance._AddMessage(message);
 		}
 

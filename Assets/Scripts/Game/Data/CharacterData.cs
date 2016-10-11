@@ -280,7 +280,12 @@ namespace MineS
 				newAbnormalStatus.AddRemainingTurn(Calculator.GetImmunitySubTurn(this));
 			}
 
-			this.AbnormalStatuses.RemoveAll(a => a.Type == newAbnormalStatus.OppositeType);
+			this.RemoveAbnormalStatus(newAbnormalStatus.OppositeType);
+		}
+
+		public void RemoveAbnormalStatus(GameDefine.AbnormalStatusType type)
+		{
+			this.AbnormalStatuses.RemoveAll(a => a.Type == type);
 		}
 
 		public virtual void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)

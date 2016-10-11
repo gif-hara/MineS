@@ -148,6 +148,12 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
+		public void RemoveAbnormalStatus(GameDefine.AbnormalStatusType type)
+		{
+			this.Data.RemoveAbnormalStatus(type);
+			this.NotifyCharacterDataObservers();
+		}
+
 		public GameDefine.AcquireItemResultType AddItem(Item item, CellData cellData)
 		{
 			if(this.Data.Inventory.IsFreeSpace)
