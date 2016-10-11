@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f7e9d515b0e649779991d3ea5e7d149, type: 3}
-  m_Name: Shield22
+  m_Name: 
   m_EditorClassIdentifier: 
   itemName: "\u53F8\u4EE4\u5854\u306E\u76FE"
   purchasePrice: 11000
   sellingPrice: 5500
-  image: {fileID: 21300000, guid: 5f8ea82d04a98734c93d2c3d0c4082cd, type: 3}
+  image: {fileID: 21300000, guid: 0a90ce5688aba774f90ff274acdce3ee, type: 3}
   basePower: 7
   brandingLimit: 5
   canExtraction: 1
