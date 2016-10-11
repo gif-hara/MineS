@@ -9,16 +9,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f7e9d515b0e649779991d3ea5e7d149, type: 3}
-  m_Name: Accessory0
+  m_Name: 
   m_EditorClassIdentifier: 
-  itemName:
-    target: {fileID: 11400000, guid: 38061fe1c17e64321bea8e24561a537d, type: 2}
-    value: "\u30AC\u30E9\u30B9\u306E\u30CD\u30C3\u30AF\u30EC\u30B9"
-    guid: a5a560ee-fa1f-4ac9-a8f3-6f286206bb5d
-  rare: 0
+  itemName: "\u30AC\u30E9\u30B9\u306E\u30CD\u30C3\u30AF\u30EC\u30B9"
+  purchasePrice: 3000
+  sellingPrice: 1500
   image: {fileID: 21300000, guid: 2dfe281539de17b4f948f65428065e47, type: 3}
-  power: 2
+  basePower: 2
   brandingLimit: 0
   canExtraction: 0
   itemType: 3
   abilities: 
+  reinforcementPurchase: {fileID: 0}
+  levelPower: {fileID: 0}

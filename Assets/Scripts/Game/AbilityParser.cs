@@ -109,6 +109,20 @@ namespace MineS
 				return GameDefine.AbilityType.Reincarnation;
 			case "挑発":
 				return GameDefine.AbilityType.Provocation;
+			case "血清":
+				return GameDefine.AbilityType.Serum;
+			case "集中":
+				return GameDefine.AbilityType.Concentration;
+			case "快癒":
+				return GameDefine.AbilityType.CompleteRecovery;
+			case "鍍金":
+				return GameDefine.AbilityType.Plating;
+			case "勇気":
+				return GameDefine.AbilityType.Bravery;
+			case "魔除":
+				return GameDefine.AbilityType.Talisman;
+			case "気付":
+				return GameDefine.AbilityType.Care;
 			default:
 				Debug.AssertFormat(false, "不正な値です name = {0}", name);
 				return GameDefine.AbilityType.Penetoration;

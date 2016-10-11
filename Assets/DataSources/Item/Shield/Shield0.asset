@@ -11,19 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7e9d515b0e649779991d3ea5e7d149, type: 3}
   m_Name: Shield0
   m_EditorClassIdentifier: 
-  itemName:
-    target: {fileID: 11400000, guid: 0a5dcdf265a75423b9e147773b4c020e, type: 2}
-    value: "\u6728\u306E\u76FE"
-    guid: 556d29ce-662b-4032-8da6-b74920071d5f
-  rare: 0
+  itemName: "\u6728\u306E\u76FE"
   purchasePrice: 400
   sellingPrice: 200
   image: {fileID: 21300000, guid: d1a82eb3447d6a443b7fdf954e8eca53, type: 3}
-  basePower: 1
+  basePower: 2
   brandingLimit: 3
   canExtraction: 1
   itemType: 2
   abilities: 
-  reinforcementPurchase: {fileID: 11400000, guid: 487bb6b95396243b79a1875acb5e32c1,
-    type: 2}
-  levelPower: {fileID: 11400000, guid: 7c15e29a15dec4090ba7e99466eca925, type: 2}
+  reinforcementPurchase: {fileID: 0}
+  levelPower: {fileID: 0}

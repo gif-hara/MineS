@@ -96,7 +96,7 @@ namespace MineS
 			result.itemName = csv[1];
 			result.purchasePrice = int.Parse(csv[2]);
 			result.sellingPrice = int.Parse(csv[3]);
-			result.image = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/Textures/Item/" + itemType.ToString() + csv[4] + ".png", typeof(Sprite)) as Sprite;
+			result.image = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/Textures/Item/" + itemType.ToString() + "/" + itemType.ToString() + csv[4] + ".png", typeof(Sprite)) as Sprite;
 			result.basePower = int.Parse(csv[5]);
 			result.brandingLimit = int.Parse(csv[6]);
 			result.canExtraction = bool.Parse(csv[7]);

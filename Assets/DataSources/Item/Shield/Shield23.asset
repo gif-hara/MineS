@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f7e9d515b0e649779991d3ea5e7d149, type: 3}
+  m_Name: Shield23
+  m_EditorClassIdentifier: 
+  itemName: "\u30A2\u30C0\u30DE\u30F3\u30BF\u30A4\u30C8\u306E\u76FE"
+  purchasePrice: 30000
+  sellingPrice: 15000
+  image: {fileID: 21300000, guid: 4b7717b4f098de9469e80eab6fb574aa, type: 3}
+  basePower: 60
+  brandingLimit: 6
+  canExtraction: 1
+  itemType: 2
+  abilities: 
+  reinforcementPurchase: {fileID: 0}
+  levelPower: {fileID: 0}
