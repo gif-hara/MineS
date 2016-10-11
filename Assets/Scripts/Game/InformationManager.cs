@@ -31,7 +31,8 @@ namespace MineS
 			onUseRecoveryArmorItem = null,
 			onUseAddAbnormalStatusItem = null,
 			onUseRemoveAbnormalStatusItem = null,
-			onAlsoAddAbnormalStatus = null;
+			onAlsoAddAbnormalStatus = null,
+			invalidateAddAbnormalStatus = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -135,19 +136,28 @@ namespace MineS
 			instance._AddMessage(message);
 		}
 
-		public static void OnUseAddAbnormalStatusItem(IAttack user, GameDefine.AbnormalStatusType abnormalStatusType, string abnormalStatusName)
+		public static void OnUseAddAbnormalStatusItem(IAttack user, GameDefine.AbnormalStatusType abnormalStatusType, GameDefine.AddAbnormalStatusResultType addResult)
 		{
+			var descriptionKey = GameDefine.GetAbnormalStatusDescriptionKey(abnormalStatusType);
+			var descriptionData = DescriptionManager.Instance.Data.Get(descriptionKey);
 			var instance = InformationManager.Instance;
-			var message = instance.onUseAddAbnormalStatusItem.Format(user.Name, abnormalStatusName)
+			var onUseMessage = instance.onUseAddAbnormalStatusItem.Format(user.Name, descriptionData.Title)
 				.Replace(TargetColor, user.ColorCode)
 				.Replace(AbnormalStatusColor, GameDefine.GetAbnormalStatusColor(abnormalStatusType));
-			instance._AddMessage(message);
+			instance._AddMessage(onUseMessage);
+
+			if(addResult == GameDefine.AddAbnormalStatusResultType.Invalided)
+			{
+				instance._AddMessage(instance.invalidateAddAbnormalStatus.Get);
+			}
 		}
 
-		public static void OnUseRemoveAbnormalStatusItem(IAttack user, GameDefine.AbnormalStatusType abnormalStatusType, string abnormalStatusName)
+		public static void OnUseRemoveAbnormalStatusItem(IAttack user, GameDefine.AbnormalStatusType abnormalStatusType)
 		{
+			var descriptionKey = GameDefine.GetAbnormalStatusDescriptionKey(abnormalStatusType);
+			var descriptionData = DescriptionManager.Instance.Data.Get(descriptionKey);
 			var instance = InformationManager.Instance;
-			var message = instance.onUseRemoveAbnormalStatusItem.Format(user.Name, abnormalStatusName)
+			var message = instance.onUseRemoveAbnormalStatusItem.Format(user.Name, descriptionData.Title)
 				.Replace(TargetColor, user.ColorCode)
 				.Replace(AbnormalStatusColor, GameDefine.GetAbnormalStatusColor(abnormalStatusType));
 			instance._AddMessage(message);

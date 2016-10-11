@@ -34,6 +34,12 @@ namespace MineS
 			private SerializeFieldGetter.Sprite gout;
 			[SerializeField]
 			private SerializeFieldGetter.Sprite dull;
+			[SerializeField]
+			private SerializeFieldGetter.Sprite fear;
+			[SerializeField]
+			private SerializeFieldGetter.Sprite seal;
+			[SerializeField]
+			private SerializeFieldGetter.Sprite confusion;
 
 			private AbnormalStatus()
 			{
@@ -63,6 +69,12 @@ namespace MineS
 					return this.gout.Element;
 				case GameDefine.AbnormalStatusType.Dull:
 					return this.dull.Element;
+				case GameDefine.AbnormalStatusType.Fear:
+					return this.fear.Element;
+				case GameDefine.AbnormalStatusType.Seal:
+					return this.seal.Element;
+				case GameDefine.AbnormalStatusType.Confusion:
+					return this.confusion.Element;
 				default:
 					Debug.AssertFormat(false, "不正な値です. {0}", type);
 					return null;

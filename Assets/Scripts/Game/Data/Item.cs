@@ -60,10 +60,9 @@ namespace MineS
 			case GameDefine.UsableItemType.AddAbnormalStatus:
 				{
 					var type = (GameDefine.AbnormalStatusType)usableItem.Power0;
-					playerManager.AddAbnormalStatus(type, usableItem.Power1, 0);
+					var addAbnormalResultType = playerManager.AddAbnormalStatus(type, usableItem.Power1, 0);
 					playerManager.RemoveInventoryItem(this);
-					var descriptionData = DescriptionManager.Instance.Data.Get(GameDefine.GetAbnormalStatusDescriptionKey(type));
-					InformationManager.OnUseAddAbnormalStatusItem(user, type, descriptionData.Title);
+					InformationManager.OnUseAddAbnormalStatusItem(user, type, addAbnormalResultType);
 				}
 			break;
 			case GameDefine.UsableItemType.RemoveAbnormalStatus:
@@ -71,8 +70,7 @@ namespace MineS
 					var type = (GameDefine.AbnormalStatusType)usableItem.Power0;
 					playerManager.RemoveAbnormalStatus(type);
 					playerManager.RemoveInventoryItem(this);
-					var descriptionData = DescriptionManager.Instance.Data.Get(GameDefine.GetAbnormalStatusDescriptionKey(type));
-					InformationManager.OnUseRemoveAbnormalStatusItem(user, type, descriptionData.Title);
+					InformationManager.OnUseRemoveAbnormalStatusItem(user, type);
 				}
 			break;
 			default:

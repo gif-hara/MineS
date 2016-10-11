@@ -682,3 +682,73 @@ MonoBehaviour:
       value: "\u4F55\u3092\u3059\u308B\u304B\u5206\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01"
       guid: a655cfe9-5784-4e4b-9bd5-8a553169fa2f
     image: {fileID: 21300000, guid: af164c04a10fa48d0a1b591f551c96de, type: 3}
+  - key: Serum
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u8840\u6E05"
+      guid: a3653030-cfdb-458d-9fee-89ba6d32ecb4
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30C7\u30D0\u30D5\u306E\u6BD2\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      guid: c2e8afeb-4efc-4498-ae81-459e159f5289
+    image: {fileID: 0}
+  - key: Concentration
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u96C6\u4E2D"
+      guid: 26f3b729-626c-492e-92fe-fc0c2e71f36d
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30C7\u30D0\u30D5\u306E\u5446\u3051\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      guid: 43f7eb2d-2ee8-4f77-9b00-f2c68beee8c1
+    image: {fileID: 0}
+  - key: CompleteRecovery
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5FEB\u7652"
+      guid: 2b0b95f7-5dc1-4afc-8d2f-26ee8d8b496d
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30C7\u30D0\u30D5\u306E\u8CA0\u50B7\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      guid: c86338bb-8e56-4bb5-aba5-c19b6ed2c38e
+    image: {fileID: 0}
+  - key: Plating
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u934D\u91D1"
+      guid: a26004da-15a5-41df-8b16-746246e3eb2a
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30C7\u30D0\u30D5\u306E\u920D\u3089\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      guid: fc6ded07-e283-421e-a719-146daf071881
+    image: {fileID: 0}
+  - key: Bravery
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u52C7\u6C17"
+      guid: 7c662ba1-6dde-40a9-97a3-0cc63a1c81b4
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30C7\u30D0\u30D5\u306E\u6050\u6016\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      guid: a2c32334-5614-4c7d-b5dd-56dd09c2c1b6
+    image: {fileID: 0}
+  - key: Talisman
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u9B54\u9664"
+      guid: c58acea0-8b2b-42a1-ab78-13be79acdecb
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30C7\u30D0\u30D5\u306E\u5C01\u5370\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      guid: f8375af7-d308-4d12-8e61-f9cd3b648ad7
+    image: {fileID: 0}
+  - key: Care
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u6C17\u4ED8"
+      guid: 03d5cd80-dbba-42cf-9296-8855ac1c9088
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30C7\u30D0\u30D5\u306E\u6DF7\u4E71\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      guid: 857dc2ed-c44d-4c1d-b9ae-2886cabb5826
+    image: {fileID: 0}

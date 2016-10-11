@@ -268,4 +268,32 @@ MonoBehaviour:
       ja: "\u4F55\u3092\u3059\u308B\u304B\u5206\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01"
       en: 
     guid: a655cfe9-5784-4e4b-9bd5-8a553169fa2f
+  - value:
+      ja: "\u30C7\u30D0\u30D5\u306E\u6BD2\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: c2e8afeb-4efc-4498-ae81-459e159f5289
+  - value:
+      ja: "\u30C7\u30D0\u30D5\u306E\u5446\u3051\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: 43f7eb2d-2ee8-4f77-9b00-f2c68beee8c1
+  - value:
+      ja: "\u30C7\u30D0\u30D5\u306E\u8CA0\u50B7\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: c86338bb-8e56-4bb5-aba5-c19b6ed2c38e
+  - value:
+      ja: "\u30C7\u30D0\u30D5\u306E\u920D\u3089\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: fc6ded07-e283-421e-a719-146daf071881
+  - value:
+      ja: "\u30C7\u30D0\u30D5\u306E\u6050\u6016\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: a2c32334-5614-4c7d-b5dd-56dd09c2c1b6
+  - value:
+      ja: "\u30C7\u30D0\u30D5\u306E\u5C01\u5370\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: f8375af7-d308-4d12-8e61-f9cd3b648ad7
+  - value:
+      ja: "\u30C7\u30D0\u30D5\u306E\u6DF7\u4E71\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
+      en: 
+    guid: 857dc2ed-c44d-4c1d-b9ae-2886cabb5826
   asset: []

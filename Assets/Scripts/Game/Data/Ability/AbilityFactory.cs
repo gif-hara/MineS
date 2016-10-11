@@ -106,6 +106,20 @@ namespace MineS
 				return new AbilityBase(type, holder, "Reincarnation");
 			case GameDefine.AbilityType.Provocation:
 				return new AbilityBase(type, holder, "Provocation");
+			case GameDefine.AbilityType.Serum:
+				return new AbilityBase(type, holder, "Serum");
+			case GameDefine.AbilityType.Concentration:
+				return new AbilityBase(type, holder, "Concentration");
+			case GameDefine.AbilityType.CompleteRecovery:
+				return new AbilityBase(type, holder, "CompleteRecovery");
+			case GameDefine.AbilityType.Plating:
+				return new AbilityBase(type, holder, "Plating");
+			case GameDefine.AbilityType.Bravery:
+				return new AbilityBase(type, holder, "Bravery");
+			case GameDefine.AbilityType.Talisman:
+				return new AbilityBase(type, holder, "Talisman");
+			case GameDefine.AbilityType.Care:
+				return new AbilityBase(type, holder, "Care");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;

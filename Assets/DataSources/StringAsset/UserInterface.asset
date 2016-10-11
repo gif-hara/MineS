@@ -385,7 +385,11 @@ MonoBehaviour:
       en: 
     guid: 1174c21a-e71a-4ba9-8b83-3294c0687eb1
   - value:
-      ja: "\u3055\u3089\u306B<color abnormalStatusColor>{0}</color>\u3092\u4ED8\u4E0E\u3057\u305F\uFF01"
+      ja: "\u3055\u3089\u306B<color=abnormalStatusColor>{0}</color>\u3092\u4ED8\u4E0E\u3057\u305F\uFF01"
       en: 
     guid: 4241b4c4-3b78-4a53-92fa-c8ad1151f0ff
+  - value:
+      ja: "\u3057\u304B\u3057\u3059\u3050\u306B\u7121\u52B9\u5316\u3055\u308C\u305F\uFF01"
+      en: 
+    guid: 818ec29e-bf37-4808-be01-9cb250ea9f65
   asset: []
