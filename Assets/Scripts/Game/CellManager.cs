@@ -204,7 +204,7 @@ namespace MineS
 			get
 			{
 				var result = this.ToListCellData;
-				return result.Where(c => c.CanStep && !c.IsLock && !c.IsIdentification && c.CurrentEventType == GameDefine.EventType.Enemy).Select(c => c.Controller).ToList();
+				return result.Where(c => (c.CanStep && !c.IsLock) && (!c.IsIdentification || c.CurrentEventType == GameDefine.EventType.Enemy)).Select(c => c.Controller).ToList();
 			}
 		}
 
