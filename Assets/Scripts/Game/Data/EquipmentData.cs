@@ -27,8 +27,8 @@ namespace MineS
 		[SerializeField]
 		private GameDefine.ItemType itemType;
 
-		[SerializeField]
-		private List<GameDefine.AbilityType> abilities;
+		[SerializeField, EnumLabel("Ability", typeof(GameDefine.AbilityType))]
+		public List<GameDefine.AbilityType> abilities;
 
 		[SerializeField]
 		private EquipmentLevelElement reinforcementPurchase;

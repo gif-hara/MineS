@@ -2,6 +2,8 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using System;
+using System.Linq;
 
 namespace MineS
 {
@@ -136,39 +138,34 @@ namespace MineS
 			RemoveAbnormalStatus,
 
 			/// <summary>
-			/// ファイアボール：敵にダメージを与える.
+			/// 対象にダメージを与える.
 			/// </summary>
-			Fire,
+			Damage,
 
 			/// <summary>
-			/// ネイルダウン：全てのセルを表示する.
+			/// 全てのセルを表示する.
 			/// </summary>
 			NailDown,
 
 			/// <summary>
-			/// コーリングオフ：罠を全て解除する.
+			/// 罠を全て解除する.
 			/// </summary>
 			CallingOff,
 
 			/// <summary>
-			/// カースボール：敵の攻撃力を下げる.
+			/// 対象の攻撃力を下げる.
 			/// </summary>
-			Carse,
+			StrengthDown,
 
 			/// <summary>
-			/// ドレインボール：敵のヒットポイントを吸収する.
+			/// 対象のヒットポイントを吸収する.
 			/// </summary>
 			Drain,
 
 			/// <summary>
-			/// ブレイクボール：敵のアーマーを0にする.
+			/// 対象のアーマーを0にする.
 			/// </summary>
 			Brake,
-
-			/// <summary>
-			/// デスボール：雑魚敵を倒す.
-			/// </summary>
-			Death,
 		}
 
 		public enum AbnormalStatusType:int
@@ -643,7 +640,7 @@ namespace MineS
 				probabilityMax += elements[i].Probability;
 			}
 
-			int probability = Random.Range(0, probabilityMax);
+			int probability = UnityEngine.Random.Range(0, probabilityMax);
 			int currentProbability = 0;
 			for(int i = 0; i < elements.Count; i++)
 			{
@@ -713,6 +710,15 @@ namespace MineS
 				return "";
 			}
 		}
+
+#if UNITY_EDITOR
+		public static UsableItemType GetUsableItemType(string name)
+		{
+			var type = typeof(UsableItemType);
+			var index = Array.FindIndex(Enum.GetNames(type), u => u.CompareTo(name) == 0);
+			return (UsableItemType)Enum.GetValues(type).GetValue(index);
+		}
+#endif
 
 		public static string GetAbnormalStatusColor(AbnormalStatusType type)
 		{

@@ -20,15 +20,40 @@ namespace MineS
 			[SerializeField]
 			private string key;
 
-			public string Title{ get { return this.title.ToString(); } }
+			public string Title
+			{
+				get
+				{
+					if(this._title == null)
+					{
+						this._title = this.title.ToString();
+					}
+					return this._title;
+				}
+			}
 
 			[SerializeField]
 			private StringAsset.Finder title;
 
-			public string Message{ get { return this.message.ToString(); } }
+			private string _title = null;
+
+			public string Message
+			{
+				get
+				{
+					if(this._message == null)
+					{
+						this._message = this.message.ToString();
+					}
+
+					return this._message;
+				}
+			}
 
 			[SerializeField]
 			private StringAsset.Finder message;
+
+			private string _message;
 
 			public Sprite Image{ get { return this.image; } }
 
@@ -39,6 +64,13 @@ namespace MineS
 			{
 				this.title = title;
 				this.message = message;
+				this.image = image;
+			}
+
+			public Element(string title, string message, Sprite image)
+			{
+				this._title = title;
+				this._message = message;
 				this.image = image;
 			}
 		}

@@ -11,18 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c71d054e3984e2cb2e609f86581f13, type: 3}
   m_Name: UsableItem19
   m_EditorClassIdentifier: 
-  itemName:
-    target: {fileID: 11400000, guid: 1da92368d50b048a3a49cb99e219433a, type: 2}
-    value: "\u7121\u52B9\u85AC\u30FB\u9EC4"
-    guid: 9c220f7b-2997-4a30-a925-0fed33a01e43
-  rare: 0
-  purchasePrice: 0
-  sellingPrice: 0
+  itemName: "\u7121\u52B9\u85AC\u30FB\u7DD1"
+  purchasePrice: 800
+  sellingPrice: 400
   image: {fileID: 21300000, guid: 5b3676b45a4310a49a3eeeff33b48b21, type: 3}
   type: 3
-  power0: 5
+  power0: 1
   power1: 0
-  description:
-    target: {fileID: 11400000, guid: 52f4471bdfc56429a97cf65a8afe840f, type: 2}
-    value: "\u5BFE\u8C61\u306E\u30D0\u30D5\u306E\u7F60\u5E2B\u3092\u6253\u3061\u6D88\u3059\u305E\uFF01"
-    guid: d70e70e8-15d6-4a1b-b183-536ab0e22351
+  description: "\u5BFE\u8C61\u306E\u30D0\u30D5\u306E\u518D\u751F\u3092\u6253\u3061\u6D88\u3059\u305E\uFF01"

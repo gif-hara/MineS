@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using UnityEngine.UI;
 
 namespace MineS
 {
@@ -21,7 +22,7 @@ namespace MineS
 		private int power1;
 
 		[SerializeField]
-		private StringAsset.Finder description;
+		private string description;
 
 		public GameDefine.UsableItemType UsableItemType{ get { return this.type; } }
 
@@ -55,5 +56,21 @@ namespace MineS
 				return result;
 			}
 		}
+
+#if UNITY_EDITOR
+		public static UsableItemData CreateFromCsv(List<string> csv)
+		{
+			var result = CreateInstance<UsableItemData>();
+			result.itemName = csv[1];
+			result.purchasePrice = int.Parse(csv[2]);
+			result.sellingPrice = int.Parse(csv[3]);
+			result.image = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/Textures/Item/UsableItem" + csv[4] + ".png", typeof(Sprite)) as Sprite;
+			result.type = GameDefine.GetUsableItemType(csv[5]);
+			result.power0 = int.Parse(csv[6]);
+			result.power1 = int.Parse(csv[7]);
+			result.description = csv[8];
+			return result;
+		}
+#endif
 	}
 }
