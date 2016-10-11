@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: Enemy0
   m_EditorClassIdentifier: 
   characterName: "\u30B9\u30E9\u30A4\u30E0Lv.1"
-  hitPoint: 5
+  hitPoint: 7
   strength: 1
   armor: 0
   hitProbability: 90
   evasion: 0
-  experience: 2
-  money: 2
+  experience: 1
+  money: 1
   dropItemProbability: 2
   overrideDropItems: []
   abilityTypes: 
