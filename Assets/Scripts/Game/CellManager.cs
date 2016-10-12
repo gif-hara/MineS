@@ -24,9 +24,9 @@ namespace MineS
 
 		public GameDefine.CellClickMode ClickMode{ private set; get; }
 
-		private const int RowMax = 10;
+		private const int RowMax = 8;
 
-		private const int CulumnMax = 8;
+		private const int CulumnMax = 7;
 
 		private const int CellMax = CulumnMax * CulumnMax;
 
