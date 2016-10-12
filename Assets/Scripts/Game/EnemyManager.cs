@@ -128,8 +128,8 @@ namespace MineS
 		{
 			get
 			{
-				var enemies = this.VisibleEnemies;
-				enemies.Where(e => e.FindAbility(GameDefine.AbilityType.Provocation)).ToList();
+				var enemies = this.VisibleEnemies.Where(e => e.FindAbility(GameDefine.AbilityType.Provocation)).ToList();
+
 				if(enemies.Count <= 0)
 				{
 					return null;
