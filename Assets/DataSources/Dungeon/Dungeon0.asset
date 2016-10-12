@@ -20,7 +20,7 @@ MonoBehaviour:
   enemyTable:
     elements:
     - floorMin: 1
-      floorMax: 3
+      floorMax: 2
       enemies:
       - masterData: {fileID: 11400000, guid: 06478708a60ca4769b96d92b3227cf7a, type: 2}
         probability: 100
@@ -28,8 +28,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 7fcbd403fc4214a6391c71cee03232f8, type: 2}
         probability: 20
-    - floorMin: 4
-      floorMax: 5
+    - floorMin: 3
+      floorMax: 4
       enemies:
       - masterData: {fileID: 11400000, guid: fb1fac5df049b4a098b46c770c62f36e, type: 2}
         probability: 80

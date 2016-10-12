@@ -223,7 +223,10 @@ namespace MineS
 		private void OnNextFloor()
 		{
 			this.text.text = "";
-			StopCoroutine(this.currentMessageCoroutine);
+			if(this.currentMessageCoroutine != null)
+			{
+				StopCoroutine(this.currentMessageCoroutine);
+			}
 			this.messageQueue.Clear();
 		}
 	}
