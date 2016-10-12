@@ -15,6 +15,9 @@ namespace MineS
 		private StringAsset.Finder dungeonName;
 
 		[SerializeField]
+		private int floorMax;
+
+		[SerializeField]
 		private Sprite stairImage;
 
 		[SerializeField]
@@ -60,6 +63,12 @@ namespace MineS
 		public Range CreateItemRange{ get { return this.createItemRange; } }
 
 		public Range CreateTrapRange{ get { return this.createTrapRange; } }
+
+		[ContextMenu("Check")]
+		private void AssertionCheck()
+		{
+			this.enemyTable.Check(this.floorMax);
+		}
 
 		public EnemyData CreateEnemy(int floor)
 		{
