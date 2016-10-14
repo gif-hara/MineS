@@ -25,6 +25,7 @@ namespace MineS
 			{
 				data.Controller.SetImage(null);
 				data.BindCellClickAction(null);
+				data.BindDeployDescription(null);
 			}
 		}
 
