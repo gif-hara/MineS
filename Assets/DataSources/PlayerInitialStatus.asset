@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: PlayerInitialStatus
   m_EditorClassIdentifier: 
   characterName: "\u30D7\u30EC\u30A4\u30E4\u30FC"
-  hitPoint: 10
-  strength: 5
+  hitPoint: 20
+  strength: 10
   armor: 0
   hitProbability: 90
   evasion: 0

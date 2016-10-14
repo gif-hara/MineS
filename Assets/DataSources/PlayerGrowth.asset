@@ -11,11 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
   m_Name: PlayerGrowth
   m_EditorClassIdentifier: 
-  characterName:
-    target: {fileID: 0}
-    value: 
-    guid: 
-  hitPoint: 4
+  characterName: $
+  hitPoint: 5
   strength: 2
   armor: 0
   hitProbability: 0

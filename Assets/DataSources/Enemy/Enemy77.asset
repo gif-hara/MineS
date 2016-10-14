@@ -11,15 +11,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: "\u30C8\u30ED\u30FC\u30EBLv.3"
-  hitPoint: 546
-  strength: 225
-  armor: 218
-  hitProbability: 40
+  characterName: "\u30A2\u30FC\u30EA\u30DE\u30F3Lv.3"
+  hitPoint: 285
+  strength: 56
+  armor: 171
+  hitProbability: 90
   evasion: 0
-  experience: 782
-  money: 977
+  experience: 577
+  money: 115
   dropItemProbability: 2
   overrideDropItems: []
-  abilityTypes: 
-  image: {fileID: 21300000, guid: 286467f6404384c3eaa019dbd2fcde7a, type: 3}
+  abilityTypes: 1c0000001c0000001c0000001c0000001c000000
+  image: {fileID: 0}

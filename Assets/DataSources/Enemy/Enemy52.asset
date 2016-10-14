@@ -9,16 +9,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
-  m_Name: Enemy52
+  m_Name: 
   m_EditorClassIdentifier: 
   characterName: "\u30BE\u30F3\u30D3Lv.2"
-  hitPoint: 107
-  strength: 8
+  hitPoint: 120
+  strength: 9
   armor: 0
   hitProbability: 90
   evasion: 0
-  experience: 117
-  money: 58
+  experience: 185
+  money: 92
   dropItemProbability: 2
   overrideDropItems: []
   abilityTypes: 29000000

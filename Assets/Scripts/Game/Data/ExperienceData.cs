@@ -23,7 +23,7 @@ namespace MineS
 				return -1;
 			}
 
-			return this.experiences[level + 1];
+			return this.experiences[level];
 		}
 
 		[ContextMenu("Algorithm 0")]
@@ -43,6 +43,17 @@ namespace MineS
 			for(int i = 0; i < 100; i++)
 			{
 				this.experiences.Add(Mathf.FloorToInt((i * i * i) + (i * i)));
+			}
+		}
+
+		[ContextMenu("From Csv")]
+		private void FromCsv()
+		{
+			var splitData = CsvParser.Split(UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/Csv/PlayerGrowthData.csv", typeof(TextAsset)) as TextAsset);
+			this.experiences = new List<int>();
+			foreach(var s in splitData)
+			{
+				this.experiences.Add(int.Parse(s[3]));
 			}
 		}
 	}
