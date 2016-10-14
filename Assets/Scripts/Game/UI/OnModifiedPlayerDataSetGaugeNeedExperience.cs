@@ -20,11 +20,18 @@ namespace MineS
 			var playerData = data as PlayerData;
 			Debug.AssertFormat(playerData != null, "PlayerDataにキャストできませんでした.");
 
-			var playerManager = PlayerManager.Instance;
-			var experienceData = playerManager.ExperienceData;
-			var needNextLevel = experienceData.NeedNextLevel(playerData.Level);
-			var currentNeedExperience = needNextLevel - experienceData.Experiences[playerData.Level];
-			this.target.Set(1.0f - (needNextLevel - playerData.Experience) / (float)currentNeedExperience);
+			if(playerData.Level > 99)
+			{
+				this.target.Set(0);
+			}
+			else
+			{
+				var playerManager = PlayerManager.Instance;
+				var experienceData = playerManager.ExperienceData;
+				var needNextLevel = experienceData.NeedNextLevel(playerData.Level);
+				var currentNeedExperience = needNextLevel - experienceData.Experiences[playerData.Level - 1];
+				this.target.Set(1.0f - (needNextLevel - playerData.Experience) / (float)currentNeedExperience);
+			}
 		}
 
 #endregion
