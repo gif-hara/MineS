@@ -37,6 +37,9 @@ namespace MineS
 		[SerializeField]
 		private CharacterMasterData growthData;
 
+		[SerializeField]
+		private CellController cellController;
+
 		private InventoryEvent onOpenInventoryUI = new InventoryEvent();
 
 		private InventoryEvent onCloseInventoryUI = new InventoryEvent();
@@ -50,7 +53,7 @@ namespace MineS
 		protected override void Awake()
 		{
 			base.Awake();
-			this.Data = new PlayerData(this.playerInitialStatus, this.growthData);
+			this.Data = new PlayerData(this.playerInitialStatus, this.growthData, this.cellController);
 		}
 
 		void Start()

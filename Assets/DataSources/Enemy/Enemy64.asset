@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
-  m_Name: 
+  m_Name: Enemy64
   m_EditorClassIdentifier: 
   characterName: "\u52D5\u304F\u7532\u5191Lv.2"
   hitPoint: 7

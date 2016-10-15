@@ -30,14 +30,19 @@ namespace MineS
 		}
 
 		[System.Serializable]
-		public class Int : Base<UnityEngine.Sprite>
+		public class Int : Base<int>
 		{
 		}
 
 		[System.Serializable]
 		public class StringAssetFinder : Base<StringAsset.Finder>
 		{
-			
 		}
+
+		[System.Serializable]
+		public class GameObject : Base<UnityEngine.GameObject>
+		{
+		}
+
 	}
 }

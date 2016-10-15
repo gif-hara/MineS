@@ -18,7 +18,7 @@ namespace MineS
 		[SerializeField]
 		private CellController cellPrefab;
 
-		private CellController[,] cellControllers = new CellController[RowMax, CulumnMax];
+		public CellController[,] CellControllers{ private set; get; }
 
 		private CellData[,] cellDatabase;
 
@@ -33,14 +33,15 @@ namespace MineS
 		void Start()
 		{
 			this.ClickMode = GameDefine.CellClickMode.Step;
-			var database = this.CreateCellDatabaseFromDungeonData();
+			this.CellControllers = new CellController[RowMax, CulumnMax];
 			for(int y = 0; y < RowMax; y++)
 			{
 				for(int x = 0; x < CulumnMax; x++)
 				{
-					this.cellControllers[y, x] = Instantiate(this.cellPrefab, this.cellField, false) as CellController;
+					this.CellControllers[y, x] = Instantiate(this.cellPrefab, this.cellField, false) as CellController;
 				}
 			}
+			var database = this.CreateCellDatabaseFromDungeonData();
 			this.SetCell(database);
 
 			this.InitializeStep();
@@ -56,7 +57,7 @@ namespace MineS
 			{
 				for(int x = 0; x < CulumnMax; x++)
 				{
-					this.cellControllers[y, x].SetCellData(database[y, x]);
+					this.CellControllers[y, x].SetCellData(database[y, x]);
 				}
 			}
 			this.CheckCellData(this.cellDatabase);
@@ -99,21 +100,21 @@ namespace MineS
 			switch(type)
 			{
 			case GameDefine.AdjacentType.Left:
-				return x <= 0 ? null : cellControllers[y, x - 1].Data;
+				return x <= 0 ? null : CellControllers[y, x - 1].Data;
 			case GameDefine.AdjacentType.LeftTop:
-				return (x <= 0 || y <= 0) ? null : cellControllers[y - 1, x - 1].Data;
+				return (x <= 0 || y <= 0) ? null : CellControllers[y - 1, x - 1].Data;
 			case GameDefine.AdjacentType.Top:
-				return y <= 0 ? null : cellControllers[y - 1, x].Data;
+				return y <= 0 ? null : CellControllers[y - 1, x].Data;
 			case GameDefine.AdjacentType.RightTop:
-				return (x >= CulumnMax - 1 || y <= 0) ? null : cellControllers[y - 1, x + 1].Data;
+				return (x >= CulumnMax - 1 || y <= 0) ? null : CellControllers[y - 1, x + 1].Data;
 			case GameDefine.AdjacentType.Right:
-				return x >= CulumnMax - 1 ? null : cellControllers[y, x + 1].Data;
+				return x >= CulumnMax - 1 ? null : CellControllers[y, x + 1].Data;
 			case GameDefine.AdjacentType.RightBottom:
-				return (x >= CulumnMax - 1 || y >= RowMax - 1) ? null : cellControllers[y + 1, x + 1].Data;
+				return (x >= CulumnMax - 1 || y >= RowMax - 1) ? null : CellControllers[y + 1, x + 1].Data;
 			case GameDefine.AdjacentType.Bottom:
-				return y >= RowMax - 1 ? null : cellControllers[y + 1, x].Data;
+				return y >= RowMax - 1 ? null : CellControllers[y + 1, x].Data;
 			case GameDefine.AdjacentType.LeftBottom:
-				return (x <= 0 || y >= RowMax - 1) ? null : cellControllers[y + 1, x - 1].Data;
+				return (x <= 0 || y >= RowMax - 1) ? null : CellControllers[y + 1, x - 1].Data;
 			}
 
 			return null;
@@ -154,7 +155,7 @@ namespace MineS
 			{
 				for(int x = 0; x < CulumnMax; x++)
 				{
-					this.cellControllers[y, x].DebugAction();
+					this.CellControllers[y, x].DebugAction();
 				}
 			}
 		}
@@ -172,8 +173,7 @@ namespace MineS
 
 		private CellData[,] CreateCellDatabaseFromDungeonData()
 		{
-			var dungeonManager = DungeonManager.Instance;
-			return new FieldCreator().Create(dungeonManager, RowMax, CulumnMax);
+			return new FieldCreator().Create(this, DungeonManager.Instance, RowMax, CulumnMax);
 		}
 
 		private void CheckCellData(CellData[,] database)

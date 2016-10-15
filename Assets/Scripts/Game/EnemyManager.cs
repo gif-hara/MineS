@@ -33,7 +33,7 @@ namespace MineS
 		{
 			Debug.AssertFormat(!this.Enemies.ContainsKey(cellData), "既に敵が存在します.");
 
-			var enemy = DungeonManager.Instance.CreateEnemy();
+			var enemy = DungeonManager.Instance.CreateEnemy(cellData.Controller);
 			this.Add(cellData, enemy);
 
 			return enemy;

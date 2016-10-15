@@ -77,9 +77,11 @@ namespace MineS
 
 		public abstract GameDefine.CharacterType CharacterType{ get; }
 
+		protected CellController cellController;
+
 		protected CharacterMasterData masterData = null;
 
-		public void Initialize(CharacterMasterData masterData)
+		public void Initialize(CharacterMasterData masterData, CellController cellController)
 		{
 			this.masterData = masterData;
 			this.Name = masterData.Name;
@@ -97,6 +99,7 @@ namespace MineS
 			this.AbnormalStatuses = new List<AbnormalStatusBase>();
 			this.abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
 			this.Image = masterData.Image;
+			this.cellController = cellController;
 		}
 
 		public void RecoveryHitPoint(int value, bool isLimit)
@@ -137,6 +140,7 @@ namespace MineS
 			}
 
 			this.GiveDamage(target, FindAbility(GameDefine.AbilityType.Penetoration));
+			UnityEngine.Object.Instantiate(EffectManager.Instance.prefabBattleEffectSlash.Element, target.cellController.transform, false);
 		}
 
 		protected virtual void OnAttacked(CharacterData target, int damage)

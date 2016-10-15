@@ -28,11 +28,11 @@ namespace MineS
 				return floor >= this.floorMin && floor <= this.floorMax;
 			}
 
-			public EnemyData Create()
+			public EnemyData Create(CellController cellController)
 			{
 				var result = new EnemyData();
 				var index = GameDefine.Lottery(this.enemies);
-				result.Initialize(this.enemies[index].MasterData);
+				result.Initialize(this.enemies[index].MasterData, cellController);
 				return result;
 			}
 		}
@@ -40,12 +40,12 @@ namespace MineS
 		[SerializeField]
 		private List<Element> elements;
 
-		public EnemyData Create(int floor)
+		public EnemyData Create(int floor, CellController cellController)
 		{
 #if DEBUG
 			Debug.AssertFormat(this.elements.FindAll(e => e.IsMatchFloor(floor)).Count == 1, "敵テーブルが無い、または複数ありました.");
 #endif
-			return this.elements.Find(e => e.IsMatchFloor(floor)).Create();
+			return this.elements.Find(e => e.IsMatchFloor(floor)).Create(cellController);
 		}
 
 		public void Check(int floorMax)

@@ -96,7 +96,7 @@ namespace MineS
 				if(blankCell != null)
 				{
 					var clone = new EnemyData();
-					clone.Initialize(this.masterData);
+					clone.Initialize(this.masterData, blankCell.Controller);
 					clone.HitPoint = this.HitPoint;
 					this.BindCombatEnemyAction(blankCell, clone);
 					EnemyManager.Instance.Add(blankCell, clone);

@@ -44,7 +44,7 @@ namespace MineS
 			{
 				var item = data.Items[i];
 				var cellController = this.cellControllers[i];
-				var cellData = new CellData();
+				var cellData = new CellData(cellController);
 				this.cellControllers[i].SetCellData(cellData);
 				cellData.BindCellClickAction(this.GetAction(item, cellController));
 			}

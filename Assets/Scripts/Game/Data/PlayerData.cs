@@ -17,9 +17,9 @@ namespace MineS
 
 		public CharacterMasterData growthData = null;
 
-		public PlayerData(CharacterMasterData masterData, CharacterMasterData growthData)
+		public PlayerData(CharacterMasterData masterData, CharacterMasterData growthData, CellController cellController)
 		{
-			this.Initialize(masterData);
+			this.Initialize(masterData, cellController);
 			this.Level = 1;
 			this.Inventory = new Inventory(this, GameDefine.InventoryItemMax);
 			this.growthData = growthData;

@@ -35,21 +35,23 @@ namespace MineS
 
 		private System.Action<int> modifiedLockCountEvent = null;
 
-		public CellData()
+		public CellData(CellController cellController)
 		{
 			this.X = -1;
 			this.Y = -1;
 			this.IsIdentification = true;
 			this.lockCount = 0;
 			this.CanStep = true;
+			this.Controller = cellController;
 		}
 
-		public CellData(int y, int x)
+		public CellData(int y, int x, CellController cellController)
 		{
 			this.X = x;
 			this.Y = y;
 			this.IsIdentification = false;
 			this.lockCount = 0;
+			this.Controller = cellController;
 		}
 
 		public void Action()
@@ -97,15 +99,6 @@ namespace MineS
 			this.deployDescription.Deploy();
 		}
 
-		public void SetController(CellController controller)
-		{
-			this.Controller = controller;
-			if(this.cellClickAction != null)
-			{
-				this.cellClickAction.SetCellController(controller);
-			}
-		}
-
 		public void OnUseXray()
 		{
 			if(this.cellClickAction == null)
@@ -136,6 +129,10 @@ namespace MineS
 		public void BindCellClickAction(CellClickActionBase cellClickAction)
 		{
 			this.cellClickAction = cellClickAction;
+			if(this.cellClickAction != null)
+			{
+				this.cellClickAction.SetCellController(this.Controller);
+			}
 			if(this.cellClickAction != null)
 			{
 				this.cellClickAction.SetCellData(this);

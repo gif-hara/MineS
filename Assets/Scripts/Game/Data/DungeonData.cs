@@ -70,9 +70,9 @@ namespace MineS
 			this.enemyTable.Check(this.floorMax);
 		}
 
-		public EnemyData CreateEnemy(int floor)
+		public EnemyData CreateEnemy(int floor, CellController cellController)
 		{
-			return this.enemyTable.Create(floor);
+			return this.enemyTable.Create(floor, cellController);
 		}
 
 		public Item CreateItem()

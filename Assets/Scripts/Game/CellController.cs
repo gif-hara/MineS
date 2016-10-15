@@ -101,7 +101,6 @@ namespace MineS
 				this.ModifiedIdentification,
 				this.ModifiedLockCount
 			);
-			this.Data.SetController(this);
 		}
 
 		public void Action()

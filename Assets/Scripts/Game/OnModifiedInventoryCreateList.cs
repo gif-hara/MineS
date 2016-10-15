@@ -190,8 +190,7 @@ namespace MineS
 			var cellController = Instantiate(this.basicCellPrefab, this.root, false) as CellController;
 			this.cellControllers.Add(cellController);
 			this.createdObjects.Add(cellController.gameObject);
-			var cellData = new CellData();
-			cellData.SetController(cellController);
+			var cellData = new CellData(cellController);
 			cellController.SetCellData(cellData);
 			cellData.BindCellClickAction(action);
 			cellController.SetImage(this.GetImage(item, itemType));
@@ -203,8 +202,7 @@ namespace MineS
 			var cellController = Instantiate(this.descriptionCellPrefab, this.root, false) as CellController;
 			this.cellControllers.Add(cellController);
 			this.createdObjects.Add(cellController.gameObject);
-			var cellData = new CellData();
-			cellData.SetController(cellController);
+			var cellData = new CellData(cellController);
 			cellController.SetCellData(cellData);
 			cellController.SetDescriptionData(ability.DescriptionKey);
 			cellData.BindCellClickAction(action);

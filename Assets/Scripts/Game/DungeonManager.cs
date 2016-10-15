@@ -38,9 +38,9 @@ namespace MineS
 			this.observers.ForEach(o => o.ModifiedData(this.CurrentData));
 		}
 
-		public EnemyData CreateEnemy()
+		public EnemyData CreateEnemy(CellController cellController)
 		{
-			return this.current.CreateEnemy(this.floorCount);
+			return this.current.CreateEnemy(this.floorCount, cellController);
 		}
 	}
 }
