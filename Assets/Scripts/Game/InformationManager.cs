@@ -17,6 +17,12 @@ namespace MineS
 		private Text text;
 
 		[SerializeField]
+		private Transform parent;
+
+		[SerializeField]
+		private InformationElement prefabInformation;
+
+		[SerializeField]
 		private StringAsset.Finder
 			onAttack = null,
 			onMiss = null, onMissByFear = null,
@@ -207,8 +213,9 @@ namespace MineS
 
 		private IEnumerator AddMessageCoroutine(string message)
 		{
-			this.text.text += System.Environment.NewLine + message;
-			yield return new WaitForSeconds(0.75f);
+			var informationElement = Instantiate(this.prefabInformation, this.parent, false) as InformationElement;
+			informationElement.Initialize(message);
+			yield return new WaitForSeconds(1.0f);
 
 			if(this.messageQueue.Count > 0)
 			{

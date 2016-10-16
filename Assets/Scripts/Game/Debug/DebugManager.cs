@@ -89,6 +89,14 @@ namespace MineS
 			{
 				PlayerManager.Instance.DebugAddAbnormalStatus((int)GameDefine.AbnormalStatusType.Confusion);
 			}
+			if(Input.GetKeyDown(KeyCode.Z))
+			{
+				InformationManager.AddMessage("一行表示テスト");
+			}
+			if(Input.GetKeyDown(KeyCode.X))
+			{
+				InformationManager.AddMessage("二行表示テスト\n二行表示テスト");
+			}
 		}
 
 		public void AddAbnormalStatusRemainingTurn(int value)

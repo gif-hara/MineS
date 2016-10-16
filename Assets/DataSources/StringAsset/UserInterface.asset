@@ -221,10 +221,6 @@ MonoBehaviour:
       en: 
     guid: 56f21bf3-0c7e-445f-8e37-414fd3755707
   - value:
-      ja: "<color=red>{0}</color>\u306F<color=aqua>{1}</color>\u306B<color=red>{2}</color>\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u305F\uFF01"
-      en: 
-    guid: 9db59081-a855-4bef-808d-50e7e4c0ec99
-  - value:
       ja: "<color=attackerColor>{0}</color>\u306E\u653B\u6483\u306F\u5916\u308C\u305F\uFF01"
       en: 
     guid: 079821f3-62f2-40c5-9abc-dc06d9a44e7d
