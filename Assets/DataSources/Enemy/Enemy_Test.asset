@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
+  m_Name: Enemy_Test
+  m_EditorClassIdentifier: 
+  characterName: "\u30C7\u30D0\u30C3\u30B0\u30B9\u30E9\u30A4\u30E0\u541B1\u53F7"
+  hitPoint: 100
+  strength: 1
+  armor: 0
+  hitProbability: 90
+  evasion: 0
+  experience: 19
+  money: 7
+  dropItemProbability: 2
+  overrideDropItems: []
+  abilityTypes: 
+  image: {fileID: 21300000, guid: 1da21eb40bbdd06438649b1b56b992a6, type: 3}

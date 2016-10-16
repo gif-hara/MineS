@@ -84,6 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9787eb19e2f964f83b4987b0a48a8279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOverrideWaitTime: 1
+  overrideWaitTime: 0
 --- !u!212 &212000012232791054
 SpriteRenderer:
   m_ObjectHideFlags: 1
