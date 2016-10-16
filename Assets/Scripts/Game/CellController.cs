@@ -113,7 +113,7 @@ namespace MineS
 
 		public void TakeDamage(int damage)
 		{
-			this.damageEffectCreator.CreateAsDamage(damage, this.transform);
+			this.damageEffectCreator.CreateAsDamage(damage, this.transform.position, CanvasManager.Instance.EffectLv1.transform);
 			if(this.imageShakeTweener != null)
 			{
 				this.imageShakeTweener.Kill();
@@ -123,7 +123,7 @@ namespace MineS
 
 		public void Recovery(int value)
 		{
-			this.damageEffectCreator.CreateAsRecovery(value, this.transform);
+			this.damageEffectCreator.CreateAsRecovery(value, this.transform.position, CanvasManager.Instance.EffectLv1.transform);
 		}
 
 		public void ForceRemoveImageShake()

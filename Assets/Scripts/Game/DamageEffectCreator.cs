@@ -37,27 +37,27 @@ namespace MineS
 			}
 		}
 
-		public void CreateAsDamage(int damage, Transform parent)
+		public void CreateAsDamage(int damage, Vector3 position, Transform parent)
 		{
 			this.requests.Enqueue(() =>
 			{
-				this.currentEffect = this.Create(parent);
+				this.currentEffect = this.Create(position, parent);
 				this.currentEffect.AsDamage(damage);
 			});
 		}
 
-		public void CreateAsRecovery(int value, Transform parent)
+		public void CreateAsRecovery(int value, Vector3 position, Transform parent)
 		{
 			this.requests.Enqueue(() =>
 			{
-				this.currentEffect = this.Create(parent);
+				this.currentEffect = this.Create(position, parent);
 				this.currentEffect.AsRecovery(value);
 			});
 		}
 
-		private DamageUI Create(Transform parent)
+		private DamageUI Create(Vector3 position, Transform parent)
 		{
-			return Instantiate(this.prefab, parent, false) as DamageUI;
+			return Instantiate(this.prefab, position, Quaternion.identity, parent) as DamageUI;
 		}
 	}
 }
