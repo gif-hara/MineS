@@ -15,7 +15,7 @@ MonoBehaviour:
   hitPoint: 100
   strength: 1
   armor: 0
-  hitProbability: 90
+  hitProbability: 1
   evasion: 0
   experience: 19
   money: 7

@@ -6,6 +6,7 @@ using HK.Framework;
 using UnityEngine.Serialization;
 using UnityEngine.EventSystems;
 using System.Collections;
+using DG.Tweening;
 
 namespace MineS
 {
@@ -49,6 +50,8 @@ namespace MineS
 
 		[SerializeField]
 		private DamageEffectCreator damageEffectCreator;
+
+		private Tweener imageShakeTweener = null;
 
 		public CellData Data{ private set; get; }
 
@@ -111,11 +114,22 @@ namespace MineS
 		public void TakeDamage(int damage)
 		{
 			this.damageEffectCreator.CreateAsDamage(damage, this.transform);
+			if(this.imageShakeTweener != null)
+			{
+				this.imageShakeTweener.Kill();
+			}
+			this.imageShakeTweener = DOTween.Shake(() => this.image.transform.localPosition, x => this.image.transform.localPosition = x, 0.5f, 20, 90).OnKill(() => this.image.transform.localPosition = Vector3.zero);
 		}
 
 		public void Recovery(int value)
 		{
 			this.damageEffectCreator.CreateAsRecovery(value, this.transform);
+		}
+
+		public void ForceRemoveImageShake()
+		{
+			this.imageShakeTweener.Kill();
+			this.imageShakeTweener = null;
 		}
 
 		public void Action()
