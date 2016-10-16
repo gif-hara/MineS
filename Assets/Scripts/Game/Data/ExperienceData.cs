@@ -26,6 +26,7 @@ namespace MineS
 			return this.experiences[level];
 		}
 
+#if UNITY_EDITOR
 		[ContextMenu("Algorithm 0")]
 		private void Alrorithm0()
 		{
@@ -56,5 +57,6 @@ namespace MineS
 				this.experiences.Add(int.Parse(s[3]));
 			}
 		}
+#endif
 	}
 }
