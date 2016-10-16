@@ -14,6 +14,7 @@ namespace MineS
 		public override void Dead(CharacterData attacker)
 		{
 			this.cellController.DamageEffectCreator.ForceRemove();
+			Object.Instantiate(EffectManager.Instance.prefabDeadEffect.Element, this.cellController.transform, false);
 
 			if(this.FindAbility(GameDefine.AbilityType.Reincarnation))
 			{

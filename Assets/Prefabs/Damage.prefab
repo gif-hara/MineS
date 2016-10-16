@@ -50,7 +50,7 @@ MonoBehaviour:
   from: 1
   to: 0
   duration: 0.3
-  ease: 5
+  ease: 20
 --- !u!114 &114000011774316044
 MonoBehaviour:
   m_ObjectHideFlags: 1
