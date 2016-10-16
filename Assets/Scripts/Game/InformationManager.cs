@@ -60,6 +60,10 @@ namespace MineS
 
 		public static void OnAttack(IAttack attacker, IAttack receiver, int damage)
 		{
+			if(OptionManager.Instance.Data.isFewMessage)
+			{
+				return;
+			}
 			var instance = InformationManager.Instance;
 			var message = instance.onAttack.Format(attacker.Name, receiver.Name, damage)
 				.Replace(AttackerColor, attacker.ColorCode)
