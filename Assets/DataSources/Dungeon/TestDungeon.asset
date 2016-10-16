@@ -51,8 +51,8 @@ MonoBehaviour:
     min: 0
     max: 0
   createEnemyRange:
-    min: 54
-    max: 54
+    min: 0
+    max: 0
   createItemRange:
     min: 0
     max: 0

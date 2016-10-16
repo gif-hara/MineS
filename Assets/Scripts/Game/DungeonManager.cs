@@ -15,6 +15,9 @@ namespace MineS
 		private DungeonData current;
 
 		[SerializeField]
+		private DungeonNameFlowController dungeonNameFlowController;
+
+		[SerializeField]
 		private List<DungeonDataObserver> observers;
 
 		private int floorCount = 1;
@@ -25,6 +28,11 @@ namespace MineS
 
 		public int Floor{ get { return this.floorCount; } }
 
+		void Start()
+		{
+			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalNextFloor);
+		}
+
 		public void AddNextFloorEvent(UnityAction otherEvent)
 		{
 			this.nextFloorEvent.AddListener(otherEvent);
@@ -32,15 +40,20 @@ namespace MineS
 
 		public void NextFloorEvent()
 		{
-			this.floorCount++;
-			EnemyManager.Instance.NextFloor();
-			this.nextFloorEvent.Invoke();
-			this.observers.ForEach(o => o.ModifiedData(this.CurrentData));
+			this.dungeonNameFlowController.StartFadeOut(this.CurrentData.Name, this.floorCount + 1);
 		}
 
 		public EnemyData CreateEnemy(CellController cellController)
 		{
 			return this.current.CreateEnemy(this.floorCount, cellController);
+		}
+
+		private void InternalNextFloor()
+		{
+			this.floorCount++;
+			EnemyManager.Instance.NextFloor();
+			this.nextFloorEvent.Invoke();
+			this.observers.ForEach(o => o.ModifiedData(this.CurrentData));
 		}
 	}
 }
