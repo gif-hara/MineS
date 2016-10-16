@@ -16,6 +16,9 @@ namespace MineS
 	public class DungeonNameFlowController : MonoBehaviour
 	{
 		[SerializeField]
+		private Image inputBlock;
+
+		[SerializeField]
 		private Image fade;
 
 		[SerializeField]
@@ -30,6 +33,7 @@ namespace MineS
 
 		void Start()
 		{
+			this.inputBlock.enabled = false;
 			this.fade.enabled = false;
 			this.fade.color = new Color(this.fade.color.r, this.fade.color.g, this.fade.color.b, 0.0f);
 			this.text.color = new Color(this.text.color.r, this.text.color.g, this.text.color.b, 0.0f);
@@ -47,6 +51,7 @@ namespace MineS
 
 		public void StartFadeOut(string dungeonName, int floor)
 		{
+			this.inputBlock.enabled = true;
 			this.fade.enabled = true;
 			this.text.text = this.format.Format(dungeonName, floor);
 			DOTween.ToAlpha(() => this.fade.color, x => this.fade.color = x, 1.0f, 0.5f)
@@ -77,6 +82,7 @@ namespace MineS
 			})
 				.OnComplete(() =>
 			{
+				this.inputBlock.enabled = false;
 				this.fade.enabled = false;
 				this.completeFadeInEvent.Invoke();
 			});
