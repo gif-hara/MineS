@@ -10,6 +10,8 @@ namespace MineS
 	/// </summary>
 	public class EffectManager : SingletonMonoBehaviour<EffectManager>
 	{
+		public SerializeFieldGetter.GameObject prefabDamage;
+
 		public SerializeFieldGetter.GameObject prefabBattleEffectSlash;
 	}
 }

@@ -13,6 +13,8 @@ namespace MineS
 	{
 		public override void Dead(CharacterData attacker)
 		{
+			this.cellController.DamageEffectCreator.ForceRemove();
+
 			if(this.FindAbility(GameDefine.AbilityType.Reincarnation))
 			{
 				var blankCell = CellManager.Instance.RandomBlankCell;

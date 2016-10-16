@@ -44,12 +44,17 @@ namespace MineS
 		[SerializeField]
 		private Image image;
 
-		[SerializeField][FormerlySerializedAs("text")]
+		[SerializeField]
 		private Text text;
+
+		[SerializeField]
+		private DamageEffectCreator damageEffectCreator;
 
 		public CellData Data{ private set; get; }
 
 		public CharacterDataObserver CharacterDataObserver{ get { return this.characterDataObserver; } }
+
+		public DamageEffectCreator DamageEffectCreator{ get { return this.damageEffectCreator; } }
 
 		private Coroutine deployDescriptionCoroutine = null;
 
@@ -101,6 +106,16 @@ namespace MineS
 				this.ModifiedIdentification,
 				this.ModifiedLockCount
 			);
+		}
+
+		public void TakeDamage(int damage)
+		{
+			this.damageEffectCreator.CreateAsDamage(damage, this.transform);
+		}
+
+		public void Recovery(int value)
+		{
+			this.damageEffectCreator.CreateAsRecovery(value, this.transform);
 		}
 
 		public void Action()

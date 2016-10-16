@@ -104,6 +104,7 @@ namespace MineS
 
 		public void RecoveryHitPoint(int value, bool isLimit)
 		{
+			this.cellController.Recovery(value);
 			if(this.HitPoint >= this.HitPointMax && isLimit)
 			{
 				return;
@@ -119,6 +120,7 @@ namespace MineS
 
 		public void RecoveryArmor(int value)
 		{
+			this.cellController.Recovery(value);
 			this.Armor += value;
 			this.Armor = this.Armor > this.ArmorMax ? this.ArmorMax : this.Armor;
 		}
@@ -219,6 +221,7 @@ namespace MineS
 
 		public void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint)
 		{
+			this.cellController.TakeDamage(value);
 			if(!onlyHitPoint)
 			{
 				this.Armor -= value;
