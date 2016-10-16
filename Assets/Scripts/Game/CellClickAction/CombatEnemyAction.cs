@@ -14,11 +14,6 @@ namespace MineS
 		{
 			var enemy = EnemyManager.Instance.Enemies[data];
 			CombatController.Combat(PlayerManager.Instance.Data, enemy);
-			if(enemy.IsDead)
-			{
-				data.BindCellClickAction(null);
-				data.BindDeployDescription(null);
-			}
 			TurnManager.Instance.Progress(GameDefine.TurnProgressType.EnemyAttack);
 		}
 
