@@ -229,12 +229,13 @@ namespace MineS
 
 		private void OnNextFloor()
 		{
-			this.text.text = "";
 			if(this.currentMessageCoroutine != null)
 			{
 				StopCoroutine(this.currentMessageCoroutine);
 			}
 			this.messageQueue.Clear();
+			this.currentMessageCoroutine = null;
+			InformationElement.RemoveAll();
 		}
 	}
 }

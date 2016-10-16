@@ -43,15 +43,29 @@ namespace MineS
 
 		public void Move(float positionY)
 		{
+			elements.RemoveAll(e => e == null);
 			elements.ForEach(e =>
 			{
 				DOTween.To(
 					() => e.rectTransform.anchoredPosition.y,
 					y => e.rectTransform.anchoredPosition = new Vector2(e.rectTransform.anchoredPosition.x, y),
 					e.rectTransform.anchoredPosition.y + positionY,
-					0.5f
-				).SetEase(Ease.OutFlash);
+					0.5f)
+					.SetEase(Ease.OutFlash)
+					.OnComplete(() =>
+				{
+					if(e.rectTransform.anchoredPosition.y > e.rectTransform.sizeDelta.y)
+					{
+						Destroy(e.gameObject);
+					}
+				});
 			});
+		}
+
+		public static void RemoveAll()
+		{
+			elements.RemoveAll(e => e == null);
+			elements.ForEach(e => Destroy(e.gameObject));
 		}
 	}
 }
