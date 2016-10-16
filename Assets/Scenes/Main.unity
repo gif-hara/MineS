@@ -18779,6 +18779,7 @@ GameObject:
   - 114: {fileID: 1584263364}
   - 114: {fileID: 1584263365}
   - 114: {fileID: 1584263366}
+  - 114: {fileID: 1584263367}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -19322,7 +19323,7 @@ MonoBehaviour:
   prefabBattleEffectSlash:
     element: {fileID: 1000012935018800, guid: 2995746fbb16840f0b52c6f885df2d91, type: 2}
   prefabDeadEffect:
-    element: {fileID: 1000013720546142, guid: 9bbe93522eceb4d4380f91aa08ad6d6b, type: 2}
+    element: {fileID: 1000010633946786, guid: 9bbe93522eceb4d4380f91aa08ad6d6b, type: 2}
 --- !u!114 &1584263366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19336,6 +19337,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectLv0: {fileID: 89597400}
   effectLv1: {fileID: 1837765749}
+--- !u!114 &1584263367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1584263349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54452b707e02c411f81af22701b3ddb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    isFewMessage: 1
 --- !u!1 &1588900025
 GameObject:
   m_ObjectHideFlags: 0
