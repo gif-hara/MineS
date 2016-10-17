@@ -18,8 +18,7 @@ namespace MineS
 
 		public void OnModifiedDescriptionData(DescriptionData.Element data)
 		{
-			var replaceText = data.Message.Replace("¥n", System.Environment.NewLine);
-			this.target.text = replaceText;
+			this.target.text = data.Message.Replace("¥n", System.Environment.NewLine);
 		}
 
 		public void OnModifiedDescriptionData(CharacterData data)
