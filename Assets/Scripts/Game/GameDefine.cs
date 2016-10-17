@@ -153,11 +153,6 @@ namespace MineS
 			CallingOff,
 
 			/// <summary>
-			/// 対象の攻撃力を下げる.
-			/// </summary>
-			StrengthDown,
-
-			/// <summary>
 			/// 対象のヒットポイントを吸収する.
 			/// </summary>
 			Drain,
