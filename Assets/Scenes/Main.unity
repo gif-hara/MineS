@@ -19206,6 +19206,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u3057\u304B\u3057\u3059\u3050\u306B\u7121\u52B9\u5316\u3055\u308C\u305F\uFF01"
     guid: 818ec29e-bf37-4808-be01-9cb250ea9f65
+  hadNoEffect:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u3068\u304F\u306B\u52B9\u679C\u306F\u306A\u304B\u3063\u305F\uFF01"
+    guid: 4363efb2-ef2e-421c-9b16-b0bd88324f6c
 --- !u!114 &1584263361
 MonoBehaviour:
   m_ObjectHideFlags: 0

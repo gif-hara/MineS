@@ -402,4 +402,8 @@ MonoBehaviour:
         {1}F'
       en: 
     guid: d7527b6e-70b6-4abf-9f2a-7bf6fce098f2
+  - value:
+      ja: "\u3068\u304F\u306B\u52B9\u679C\u306F\u306A\u304B\u3063\u305F\uFF01"
+      en: 
+    guid: 4363efb2-ef2e-421c-9b16-b0bd88324f6c
   asset: []

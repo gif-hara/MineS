@@ -13,7 +13,7 @@ namespace MineS
 		public AbnormalStatusXray(IAttack holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{
-			CellManager.Instance.OnUseXray();
+			CellManager.Instance.OnUseXrayNotIdentification();
 		}
 
 		public override GameDefine.AbnormalStatusType Type

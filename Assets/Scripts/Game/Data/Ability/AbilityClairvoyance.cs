@@ -34,7 +34,7 @@ namespace MineS
 			base.SetHolder(holder);
 			if(holder != null)
 			{
-				CellManager.Instance.OnUseXray();
+				CellManager.Instance.OnUseXrayNotIdentification();
 			}
 		}
 	}

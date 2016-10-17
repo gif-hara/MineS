@@ -39,7 +39,8 @@ namespace MineS
 			onUseRemoveAbnormalStatusItem = null,
 			onUseDamageItem = null,
 			onAlsoAddAbnormalStatus = null,
-			invalidateAddAbnormalStatus = null;
+			invalidateAddAbnormalStatus = null,
+			hadNoEffect = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -195,6 +196,12 @@ namespace MineS
 			var message = instance.onAlsoAddAbnormalStatus.Format(descriptionData.Title)
 				.Replace(AbnormalStatusColor, GameDefine.GetAbnormalStatusColor(abnormalStatusType));
 			instance._AddMessage(message);
+		}
+
+		public static void OnHadNoEffect()
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.hadNoEffect.Get);
 		}
 
 		public static void AddMessage(string message)

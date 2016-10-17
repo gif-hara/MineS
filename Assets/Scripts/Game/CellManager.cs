@@ -85,15 +85,22 @@ namespace MineS
 			var playerData = PlayerManager.Instance.Data;
 			if(playerData.FindAbility(GameDefine.AbilityType.Clairvoyance) || playerData.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray))
 			{
-				this.OnUseXray();
+				this.OnUseXrayNotIdentification();
 			}
 		}
 
-		public void OnUseXray()
+		public void OnUseXrayNotIdentification()
 		{
 			var notIdentificationCells = this.ToListCellData.Where(c => !c.IsIdentification && c.CanStep).ToList();
 			notIdentificationCells.ForEach(c => c.OnUseXray());
 		}
+
+		public void OnUseXrayAll()
+		{
+			this.ToListCellData.ForEach(c => c.OnUseXray());
+		}
+
+
 
 		public CellData GetAdjacentCellData(int y, int x, GameDefine.AdjacentType type)
 		{
