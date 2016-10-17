@@ -111,6 +111,20 @@ namespace MineS
 					inventory.RemoveItem(this);
 				}
 			break;
+			case GameDefine.UsableItemType.CallingOff:
+				{
+					if(user.CharacterType == GameDefine.CharacterType.Player)
+					{
+						CellManager.Instance.RemoveTrap();
+						InformationManager.OnUseCallingOff();
+					}
+					else
+					{
+						InformationManager.OnHadNoEffect();
+					}
+					inventory.RemoveItem(this);
+				}
+			break;
 			default:
 				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
 			break;

@@ -100,7 +100,15 @@ namespace MineS
 			this.ToListCellData.ForEach(c => c.OnUseXray());
 		}
 
-
+		public void RemoveTrap()
+		{
+			var trapCells = this.ToListCellData.Where(c => c.CurrentEventType == GameDefine.EventType.Trap).ToList();
+			trapCells.ForEach(c =>
+			{
+				c.BindCellClickAction(null);
+				c.Controller.SetImage(null);
+			});
+		}
 
 		public CellData GetAdjacentCellData(int y, int x, GameDefine.AdjacentType type)
 		{
