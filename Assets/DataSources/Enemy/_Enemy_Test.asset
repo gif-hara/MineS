@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: _Enemy_Test
   m_EditorClassIdentifier: 
   characterName: "\u30C7\u30D0\u30C3\u30B0\u30B9\u30E9\u30A4\u30E0\u541B1\u53F7"
-  hitPoint: 100
+  hitPoint: 1
   strength: 1
-  armor: 0
+  armor: 999
   hitProbability: 90
   evasion: 0
   experience: 19

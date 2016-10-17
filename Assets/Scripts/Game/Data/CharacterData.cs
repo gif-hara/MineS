@@ -249,6 +249,7 @@ namespace MineS
 
 		public void TakeDamageArmorOnly(int value)
 		{
+			this.cellController.TakeDamage(value);
 			this.Armor -= value;
 			this.Armor = this.Armor < 0 ? 0 : this.Armor;
 		}

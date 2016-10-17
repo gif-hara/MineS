@@ -142,6 +142,11 @@ namespace MineS
 					inventory.RemoveItem(this);
 				}
 			break;
+			case GameDefine.UsableItemType.Brake:
+				{
+					user.TakeDamageArmorOnly(user.Armor);
+				}
+			break;
 			default:
 				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
 			break;
