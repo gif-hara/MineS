@@ -152,6 +152,15 @@ namespace MineS
 					var value = usableItem.Power0;
 					user.AddBaseStrength(usableItem.Power0);
 					InformationManager.AddBaseStrength(user, value);
+					inventory.RemoveItem(this);
+				}
+			break;
+			case GameDefine.UsableItemType.UndineTear:
+				{
+					var value = usableItem.Power0;
+					user.AddHitPointMax(usableItem.Power0);
+					InformationManager.AddHitPointMax(user, value);
+					inventory.RemoveItem(this);
 				}
 			break;
 			default:

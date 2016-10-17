@@ -53,5 +53,7 @@ namespace MineS
 		void TakeDamageArmorOnly(int value);
 
 		void AddBaseStrength(int value);
+
+		void AddHitPointMax(int value);
 	}
 }

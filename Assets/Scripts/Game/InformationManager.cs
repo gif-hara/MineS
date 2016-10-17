@@ -44,7 +44,8 @@ namespace MineS
 			onUseNailDown = null,
 			onUseCallingOff = null,
 			willThrowEnemy = null,
-			addBaseStrength = null;
+			addBaseStrength = null,
+			addHitPointMax = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -230,6 +231,14 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			var message = instance.addBaseStrength.Format(value)
+				.Replace(TargetColor, user.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void AddHitPointMax(IAttack user, int value)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.addHitPointMax.Format(value)
 				.Replace(TargetColor, user.ColorCode);
 			instance._AddMessage(message);
 		}

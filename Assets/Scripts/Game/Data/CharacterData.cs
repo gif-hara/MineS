@@ -274,6 +274,13 @@ namespace MineS
 			this.baseStrength = this.baseStrength < 0 ? 0 : this.baseStrength;
 		}
 
+		public void AddHitPointMax(int value)
+		{
+			this.HitPointMax += value;
+			this.HitPointMax = this.HitPointMax < 0 ? 0 : this.HitPointMax;
+			this.RecoveryHitPoint(value, true);
+		}
+
 		public GameDefine.AddAbnormalStatusResultType AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{
 			if(this.FindAbility(newAbnormalStatus.InvalidateAbilityType))
