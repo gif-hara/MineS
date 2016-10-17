@@ -40,7 +40,8 @@ namespace MineS
 			onUseDamageItem = null,
 			onAlsoAddAbnormalStatus = null,
 			invalidateAddAbnormalStatus = null,
-			hadNoEffect = null;
+			hadNoEffect = null,
+			onUseNailDown = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -202,6 +203,12 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.hadNoEffect.Get);
+		}
+
+		public static void OnUseNailDown()
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.onUseNailDown.Get);
 		}
 
 		public static void AddMessage(string message)

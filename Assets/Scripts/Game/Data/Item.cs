@@ -102,6 +102,7 @@ namespace MineS
 					if(user.CharacterType == GameDefine.CharacterType.Player)
 					{
 						CellManager.Instance.OnUseXrayAll();
+						InformationManager.OnUseNailDown();
 					}
 					else
 					{

@@ -406,4 +406,8 @@ MonoBehaviour:
       ja: "\u3068\u304F\u306B\u52B9\u679C\u306F\u306A\u304B\u3063\u305F\uFF01"
       en: 
     guid: 4363efb2-ef2e-421c-9b16-b0bd88324f6c
+  - value:
+      ja: "\u30D5\u30ED\u30A2\u5168\u4F53\u304C\u898B\u3048\u308B\u3088\u3046\u306B\u306A\u3063\u305F\uFF01"
+      en: 
+    guid: b7d45d6e-dea4-4d0d-98a5-cf97a9f7cd60
   asset: []
