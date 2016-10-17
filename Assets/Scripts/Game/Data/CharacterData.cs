@@ -271,15 +271,17 @@ namespace MineS
 		public void AddBaseStrength(int value)
 		{
 			this.baseStrength += value;
-			this.baseStrength = this.baseStrength < 0 ? 0 : this.baseStrength;
+			this.baseStrength = this.baseStrength < 1 ? 1 : this.baseStrength;
 		}
 
 		public void AddHitPointMax(int value)
 		{
 			this.HitPointMax += value;
-			this.HitPointMax = this.HitPointMax < 0 ? 0 : this.HitPointMax;
+			this.HitPointMax = this.HitPointMax < 1 ? 1 : this.HitPointMax;
 			this.RecoveryHitPoint(value, true);
 		}
+
+		public abstract void ForceLevelUp(int value);
 
 		public GameDefine.AddAbnormalStatusResultType AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{

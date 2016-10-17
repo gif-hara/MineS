@@ -18,12 +18,17 @@ namespace MineS
 
 		public int NeedNextLevel(int level)
 		{
-			if(level >= (this.experiences.Count - 1))
+			if(!this.CanLevelUp(level))
 			{
 				return -1;
 			}
 
 			return this.experiences[level];
+		}
+
+		public bool CanLevelUp(int level)
+		{
+			return level < this.experiences.Count - 1;
 		}
 
 #if UNITY_EDITOR

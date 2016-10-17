@@ -55,5 +55,7 @@ namespace MineS
 		void AddBaseStrength(int value);
 
 		void AddHitPointMax(int value);
+
+		void ForceLevelUp(int value);
 	}
 }

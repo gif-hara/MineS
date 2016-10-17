@@ -90,11 +90,31 @@ namespace MineS
 			this.Armor += growthData.Armor;
 		}
 
+		public override void ForceLevelUp(int value)
+		{
+			var experienceData = PlayerManager.Instance.ExperienceData;
+			for(int i = 0; i < value; i++)
+			{
+				if(!experienceData.CanLevelUp(this.Level))
+				{
+					break;
+				}
+				this.LevelUp(this.growthData);
+			}
+
+			this.Experience = PlayerManager.Instance.ExperienceData.NeedNextLevel(this.Level - 1);
+		}
+
 		public bool CanLevelUp
 		{
 			get
 			{
-				return this.Experience >= PlayerManager.Instance.ExperienceData.NeedNextLevel(this.Level);
+				var experienceData = PlayerManager.Instance.ExperienceData;
+				if(!experienceData.CanLevelUp(this.Level))
+				{
+					return false;
+				}
+				return this.Experience >= experienceData.NeedNextLevel(this.Level);
 			}
 		}
 

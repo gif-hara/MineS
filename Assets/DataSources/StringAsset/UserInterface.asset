@@ -419,11 +419,15 @@ MonoBehaviour:
       en: 
     guid: 4b1d485c-b025-4bbb-b54f-162a7d343fa8
   - value:
-      ja: "\u6700\u5927\u653B\u6483\u529B\u304C{0}\u4E0A\u304C\u3063\u305F\uFF01"
+      ja: "\u6700\u5927\u653B\u6483\u529B\u304C<color=targetColor>{0}</color>\u4E0A\u304C\u3063\u305F\uFF01"
       en: 
     guid: 59ca165c-4e13-4bf7-8a14-62ba93fec3b5
   - value:
-      ja: "\u6700\u5927\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u304C{0}\u4E0A\u304C\u3063\u305F\uFF01"
+      ja: "\u6700\u5927\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u304C<color=targetColor>{0}</color>\u4E0A\u304C\u3063\u305F\uFF01"
       en: 
     guid: c4bd4839-e042-4720-b6c5-6642e05afc88
+  - value:
+      ja: "<color=targetColor>{0}</color>\u306F<color=targetColor>{1}</color>\u306B\u306A\u3063\u305F\uFF01"
+      en: 
+    guid: 58e2ac8f-f266-4394-8b03-9559854b8842
   asset: []

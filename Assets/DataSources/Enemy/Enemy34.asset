@@ -23,3 +23,5 @@ MonoBehaviour:
   overrideDropItems: []
   abilityTypes: 28000000
   image: {fileID: 21300000, guid: 203f7fb3b10cc46449728d6eace5baa7, type: 3}
+  previousLevelData: {fileID: 11400000, guid: 89f1422af2ba443f9bd208ff701c53db, type: 2}
+  nextLevelData: {fileID: 11400000, guid: c7546f88380d84939aa17bd6ceae7692, type: 2}

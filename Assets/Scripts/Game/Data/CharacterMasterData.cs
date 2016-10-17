@@ -71,6 +71,16 @@ namespace MineS
 		[SerializeField]
 		private Sprite image;
 
+		public CharacterMasterData PreviousLevelData{ get { return this.previousLevelData; } }
+
+		[SerializeField]
+		private CharacterMasterData previousLevelData;
+
+		public CharacterMasterData NextLevelData{ get { return this.nextLevelData; } }
+
+		[SerializeField]
+		private CharacterMasterData nextLevelData;
+
 #if UNITY_EDITOR
 		public static CharacterMasterData CreateFromCsv(List<string> csv)
 		{
@@ -89,6 +99,23 @@ namespace MineS
 			instance.image = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/Textures/Enemy/Enemy" + int.Parse(csv[0]) + ".png", typeof(Sprite)) as Sprite;
 
 			return instance;
+		}
+
+		[ContextMenu("SetLevelData")]
+		public void SetLevelData()
+		{
+			var startIndex = this.name.IndexOf("Enemy") + 5;
+			var id = int.Parse(this.name.Substring(startIndex));
+			var previousId = (id % 3) - 1;
+			if(previousId >= 0)
+			{
+				this.previousLevelData = UnityEditor.AssetDatabase.LoadAssetAtPath<CharacterMasterData>("Assets/DataSources/Enemy/Enemy" + (id - 1) + ".asset");
+			}
+			var nextId = (id % 3) + 1;
+			if(nextId < 3)
+			{
+				this.nextLevelData = UnityEditor.AssetDatabase.LoadAssetAtPath<CharacterMasterData>("Assets/DataSources/Enemy/Enemy" + (id + 1) + ".asset");
+			}
 		}
 #endif
 	}

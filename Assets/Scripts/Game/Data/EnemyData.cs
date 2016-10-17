@@ -83,6 +83,28 @@ namespace MineS
 			base.OnLateTurnProgress(type, turnCount);
 		}
 
+		public override void ForceLevelUp(int value)
+		{
+			if(this.masterData.NextLevelData == null)
+			{
+				InformationManager.OnHadNoEffect();
+				return;
+			}
+
+			var currentName = this.Name;
+			for(int i = 0; i < value; i++)
+			{
+				if(this.masterData.NextLevelData == null)
+				{
+					break;
+				}
+				this.Initialize(this.masterData.NextLevelData, this.cellController);
+			}
+
+			this.cellController.SetImage(this.Image);
+			InformationManager.LevelUpEnemy(this, currentName, this.Name);
+		}
+
 		public override GameDefine.CharacterType CharacterType
 		{
 			get

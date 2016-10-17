@@ -45,7 +45,8 @@ namespace MineS
 			onUseCallingOff = null,
 			willThrowEnemy = null,
 			addBaseStrength = null,
-			addHitPointMax = null;
+			addHitPointMax = null,
+			levelUpEnemy = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -239,6 +240,14 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			var message = instance.addHitPointMax.Format(value)
+				.Replace(TargetColor, user.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void LevelUpEnemy(IAttack user, string currentName, string nextName)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.levelUpEnemy.Format(currentName, nextName)
 				.Replace(TargetColor, user.ColorCode);
 			instance._AddMessage(message);
 		}

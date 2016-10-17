@@ -9,17 +9,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
-  m_Name: _Enemy_Test
+  m_Name: _TestEnemy2
   m_EditorClassIdentifier: 
-  characterName: "\u30C7\u30D0\u30C3\u30B0\u30B9\u30E9\u30A4\u30E0\u541B1\u53F7"
-  hitPoint: 1
-  strength: 1
-  armor: 999
+  characterName: "\u30C7\u30D0\u30C3\u30B0\u30B9\u30E9\u30A4\u30E0\u541B3\u53F7"
+  hitPoint: 380
+  strength: 98
+  armor: 60
   hitProbability: 90
   evasion: 0
-  experience: 19
-  money: 7
+  experience: 3400
+  money: 2000
   dropItemProbability: 100
   overrideDropItems: []
   abilityTypes: 23000000
-  image: {fileID: 21300000, guid: 1da21eb40bbdd06438649b1b56b992a6, type: 3}
+  image: {fileID: 21300000, guid: ede146619deaf48c2a1e94e49e0d1e3b, type: 3}
+  previousLevelData: {fileID: 11400000, guid: f4c00169f66bf478cb0112ef88db7686, type: 2}
+  nextLevelData: {fileID: 0}
