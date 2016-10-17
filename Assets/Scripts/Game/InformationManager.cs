@@ -43,7 +43,8 @@ namespace MineS
 			hadNoEffect = null,
 			onUseNailDown = null,
 			onUseCallingOff = null,
-			willThrowEnemy = null;
+			willThrowEnemy = null,
+			addBaseStrength = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -223,6 +224,14 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.willThrowEnemy.Get);
+		}
+
+		public static void AddBaseStrength(IAttack user, int value)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.addBaseStrength.Format(value)
+				.Replace(TargetColor, user.ColorCode);
+			instance._AddMessage(message);
 		}
 
 		public static void AddMessage(string message)

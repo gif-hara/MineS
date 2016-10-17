@@ -51,5 +51,7 @@ namespace MineS
 		void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint);
 
 		void TakeDamageArmorOnly(int value);
+
+		void AddBaseStrength(int value);
 	}
 }

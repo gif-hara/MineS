@@ -147,6 +147,13 @@ namespace MineS
 					user.TakeDamageArmorOnly(user.Armor);
 				}
 			break;
+			case GameDefine.UsableItemType.UndineDrop:
+				{
+					var value = usableItem.Power0;
+					user.AddBaseStrength(usableItem.Power0);
+					InformationManager.AddBaseStrength(user, value);
+				}
+			break;
 			default:
 				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
 			break;

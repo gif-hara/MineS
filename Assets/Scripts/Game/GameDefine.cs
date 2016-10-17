@@ -161,6 +161,21 @@ namespace MineS
 			/// 対象のアーマーを0にする.
 			/// </summary>
 			Brake,
+
+			/// <summary>
+			/// 最大攻撃力が増加する.
+			/// </summary>
+			UndineDrop,
+
+			/// <summary>
+			/// 最大ヒットポイントが増加する.
+			/// </summary>
+			UndineTear,
+
+			/// <summary>
+			/// レベルが上がる.
+			/// </summary>
+			UndineBlood,
 		}
 
 		public enum AbnormalStatusType:int

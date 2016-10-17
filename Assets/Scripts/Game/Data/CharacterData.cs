@@ -268,6 +268,12 @@ namespace MineS
 			this.Money = this.Money > GameDefine.MoneyMax ? GameDefine.MoneyMax : this.Money;
 		}
 
+		public void AddBaseStrength(int value)
+		{
+			this.baseStrength += value;
+			this.baseStrength = this.baseStrength < 0 ? 0 : this.baseStrength;
+		}
+
 		public GameDefine.AddAbnormalStatusResultType AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{
 			if(this.FindAbility(newAbnormalStatus.InvalidateAbilityType))
