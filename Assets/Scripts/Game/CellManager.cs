@@ -248,18 +248,15 @@ namespace MineS
 			}
 		}
 
-		public CellData RandomBlankCell
+		public CellData RandomBlankCell(bool isIdentification)
 		{
-			get
+			var blankCells = this.ToListCellData;
+			blankCells = blankCells.Where(c => (isIdentification == c.IsIdentification) && c.CurrentEventType == GameDefine.EventType.None).ToList();
+			if(blankCells.Count <= 0)
 			{
-				var blankCells = this.ToListCellData;
-				blankCells = blankCells.Where(c => c.IsIdentification && c.CurrentEventType == GameDefine.EventType.None).ToList();
-				if(blankCells.Count <= 0)
-				{
-					return null;
-				}
-				return blankCells[Random.Range(0, blankCells.Count)];
+				return null;
 			}
+			return blankCells[Random.Range(0, blankCells.Count)];
 		}
 	}
 }

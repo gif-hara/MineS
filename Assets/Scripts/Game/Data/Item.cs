@@ -188,6 +188,29 @@ namespace MineS
 					inventory.RemoveItem(this);
 				}
 			break;
+			case GameDefine.UsableItemType.Actinidia:
+				{
+					var blankCell = CellManager.Instance.RandomBlankCell(true);
+					if(blankCell == null)
+					{
+						InformationManager.OnHadNoEffect();
+						return;
+					}
+
+					if(user.CharacterType == GameDefine.CharacterType.Player)
+					{
+						var enemy = EnemyManager.Instance.Create(blankCell);
+						enemy.OnVisible(blankCell);
+						InformationManager.OnUseActinidiaByPlayer(enemy);
+					}
+					else if(user.CharacterType == GameDefine.CharacterType.Enemy)
+					{
+						(user as EnemyData).OnDivision(blankCell);
+						InformationManager.OnUseActinidiaByEnemy(user);
+					}
+					inventory.RemoveItem(this);
+				}
+			break;
 			default:
 				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
 			break;

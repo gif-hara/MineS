@@ -47,7 +47,9 @@ namespace MineS
 			addBaseStrength = null,
 			addHitPointMax = null,
 			levelUpEnemy = null,
-			onUseAlchemy = null;
+			onUseAlchemy = null,
+			onUseActinidiaByPlayer = null,
+			onUseActinidiaByEnemy = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -257,6 +259,22 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			var message = instance.onUseAlchemy.Format(user.Name)
+				.Replace(TargetColor, user.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void OnUseActinidiaByPlayer(IAttack visibleEnemy)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.onUseActinidiaByPlayer.Format(visibleEnemy.Name)
+				.Replace(TargetColor, visibleEnemy.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void OnUseActinidiaByEnemy(IAttack user)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.onUseActinidiaByEnemy.Format(user.Name)
 				.Replace(TargetColor, user.ColorCode);
 			instance._AddMessage(message);
 		}

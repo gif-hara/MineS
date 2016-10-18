@@ -17,7 +17,7 @@ namespace MineS
 
 			if(this.FindAbility(GameDefine.AbilityType.Reincarnation))
 			{
-				var blankCell = CellManager.Instance.RandomBlankCell;
+				var blankCell = CellManager.Instance.RandomBlankCell(true);
 				if(blankCell != null)
 				{
 					var enemy = EnemyManager.Instance.Create(blankCell);
@@ -54,7 +54,7 @@ namespace MineS
 			base.OnTurnProgress(type, turnCount);
 			if(this.FindAbility(GameDefine.AbilityType.Summon) && !this.IsDead && Calculator.CanInvokeSummon)
 			{
-				var blankCell = CellManager.Instance.RandomBlankCell;
+				var blankCell = CellManager.Instance.RandomBlankCell(true);
 				if(blankCell != null)
 				{
 					var enemy = EnemyManager.Instance.Create(blankCell);
@@ -96,6 +96,32 @@ namespace MineS
 			this.OnDead();
 		}
 
+		public void OnVisible(CellData cellData)
+		{
+			cellData.BindCellClickAction(new CombatEnemyAction());
+			cellData.BindDeployDescription(new DeployDescriptionOnCharacterData(this));
+			cellData.Controller.SetCharacterData(this);
+			cellData.Controller.SetImage(this.Image);
+			var adjacentCells = cellData.AdjacentCellAll;
+			for(int i = 0; i < adjacentCells.Count; i++)
+			{
+				if(!adjacentCells[i].IsIdentification)
+				{
+					adjacentCells[i].AddLock();
+				}
+			}
+		}
+
+		public void OnDivision(CellData cellData)
+		{
+			var clone = new EnemyData();
+			clone.Initialize(this.masterData, cellData.Controller);
+			clone.HitPoint = this.HitPoint;
+			clone.Armor = this.Armor;
+			EnemyManager.Instance.Add(cellData, clone);
+			clone.OnVisible(cellData);
+		}
+
 		public override GameDefine.CharacterType CharacterType
 		{
 			get
@@ -109,16 +135,11 @@ namespace MineS
 			base.OnTakedDamage(attacker, value, onlyHitPoint);
 			if(this.FindAbility(GameDefine.AbilityType.Division) && !this.IsDead)
 			{
-				var blankCell = CellManager.Instance.RandomBlankCell;
+				var blankCell = CellManager.Instance.RandomBlankCell(true);
 				if(blankCell != null)
 				{
-					var clone = new EnemyData();
-					clone.Initialize(this.masterData, blankCell.Controller);
-					clone.HitPoint = this.HitPoint;
-					this.BindCombatEnemyAction(blankCell, clone);
-					EnemyManager.Instance.Add(blankCell, clone);
+					this.OnDivision(blankCell);
 				}
-
 			}
 		}
 

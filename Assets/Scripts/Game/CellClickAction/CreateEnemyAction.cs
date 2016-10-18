@@ -15,19 +15,7 @@ namespace MineS
 		public override void Invoke(CellData data)
 		{
 			InformationManager.OnVisibleEnemy(this.enemy);
-			data.BindCellClickAction(new CombatEnemyAction());
-			data.BindDeployDescription(new DeployDescriptionOnCharacterData(this.enemy));
-			data.Controller.SetCharacterData(this.enemy);
-			data.Controller.SetImage(this.enemy.Image);
-			var adjacentCells = data.AdjacentCellAll;
-			for(int i = 0; i < adjacentCells.Count; i++)
-			{
-				if(!adjacentCells[i].IsIdentification)
-				{
-					adjacentCells[i].AddLock();
-				}
-			}
-
+			this.enemy.OnVisible(data);
 			PlayerManager.Instance.Data.OnInitiative(this.enemy);
 		}
 

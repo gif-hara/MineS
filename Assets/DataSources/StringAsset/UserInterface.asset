@@ -434,4 +434,12 @@ MonoBehaviour:
       ja: "<color=targetColor>{0}</color>\u306F\u30A2\u30A4\u30C6\u30E0\u306B\u5909\u5316\u3057\u305F\uFF01"
       en: 
     guid: 1476f1a7-ad2e-43a3-8947-b47c60cdd91b
+  - value:
+      ja: "\u306A\u3093\u3068\uFF01\u30DE\u30BF\u30BF\u30D3\u306E\u30CB\u30AA\u30A4\u306B\u3064\u3089\u308C\u3066<color=targetColor>{0}</color>\u304C\u51FA\u73FE\u3057\u305F\uFF01"
+      en: 
+    guid: 641a3c61-f810-4370-a60f-bc09465a713d
+  - value:
+      ja: "\u306A\u3093\u3068\uFF01<color=targetColor>{0}</color>\u304C\u5206\u88C2\u3057\u305F\uFF01"
+      en: 
+    guid: 54687902-9738-4508-b28f-cc3b5dc54dbc
   asset: []
