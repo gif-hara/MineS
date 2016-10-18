@@ -38,9 +38,10 @@ namespace MineS
 			this.nextFloorEvent.AddListener(otherEvent);
 		}
 
-		public void NextFloorEvent()
+		public void NextFloorEvent(int addValue)
 		{
-			this.dungeonNameFlowController.StartFadeOut(this.CurrentData.Name, this.floorCount + 1);
+			this.floorCount += addValue;
+			this.dungeonNameFlowController.StartFadeOut(this.CurrentData.Name, this.floorCount);
 		}
 
 		public EnemyData CreateEnemy(CellController cellController)
@@ -53,9 +54,13 @@ namespace MineS
 			return this.current.CreateItem();
 		}
 
+		public bool CanTurnBack(int addValue)
+		{
+			return (this.floorCount + addValue) >= 1;
+		}
+
 		private void InternalNextFloor()
 		{
-			this.floorCount++;
 			EnemyManager.Instance.NextFloor();
 			this.nextFloorEvent.Invoke();
 			this.observers.ForEach(o => o.ModifiedData(this.CurrentData));

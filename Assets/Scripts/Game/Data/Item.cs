@@ -202,11 +202,26 @@ namespace MineS
 						var enemy = EnemyManager.Instance.Create(blankCell);
 						enemy.OnVisible(blankCell);
 						InformationManager.OnUseActinidiaByPlayer(enemy);
+						PlayerManager.Instance.CloseInventoryUI();
 					}
 					else if(user.CharacterType == GameDefine.CharacterType.Enemy)
 					{
 						(user as EnemyData).OnDivision(blankCell);
 						InformationManager.OnUseActinidiaByEnemy(user);
+					}
+					inventory.RemoveItem(this);
+				}
+			break;
+			case GameDefine.UsableItemType.TurnBack:
+				{
+					if(user.CharacterType == GameDefine.CharacterType.Player && DungeonManager.Instance.CanTurnBack(-1))
+					{
+						DungeonManager.Instance.NextFloorEvent(-1);
+						PlayerManager.Instance.CloseInventoryUI();
+					}
+					else
+					{
+						InformationManager.OnHadNoEffect();
 					}
 					inventory.RemoveItem(this);
 				}

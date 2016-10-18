@@ -12,7 +12,7 @@ namespace MineS
 	{
 		public override void Invoke(CellData data)
 		{
-			DungeonManager.Instance.NextFloorEvent();
+			DungeonManager.Instance.NextFloorEvent(1);
 		}
 
 		public override GameDefine.EventType EventType
