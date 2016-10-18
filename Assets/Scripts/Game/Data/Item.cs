@@ -226,6 +226,20 @@ namespace MineS
 					inventory.RemoveItem(this);
 				}
 			break;
+			case GameDefine.UsableItemType.Proceed:
+				{
+					if(user.CharacterType == GameDefine.CharacterType.Player)
+					{
+						DungeonManager.Instance.NextFloorEvent(1);
+						PlayerManager.Instance.CloseInventoryUI();
+					}
+					else
+					{
+						InformationManager.OnHadNoEffect();
+					}
+					inventory.RemoveItem(this);
+				}
+			break;
 			default:
 				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
 			break;
