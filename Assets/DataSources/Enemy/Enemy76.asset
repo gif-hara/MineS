@@ -22,6 +22,6 @@ MonoBehaviour:
   dropItemProbability: 2
   overrideDropItems: []
   abilityTypes: 1c0000001c0000001c000000
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 73a8c1214380241fa962b488f4e3f826, type: 3}
   previousLevelData: {fileID: 11400000, guid: 392c8fbf65505472daac3da9e24b163f, type: 2}
   nextLevelData: {fileID: 11400000, guid: 239c6510726784f089e8afb48a15e197, type: 2}

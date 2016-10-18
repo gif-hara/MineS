@@ -94,7 +94,7 @@ namespace MineS
 			instance.experience = int.Parse(csv[7]);
 			instance.money = int.Parse(csv[8]);
 			instance.dropItemProbability = int.Parse(csv[9]);
-			// overrideDropItems.
+			instance.overrideDropItems = UnityEditor.AssetDatabase.LoadAssetAtPath<ItemDataBaseList>("Assets/DataSources/Item/ItemList/UsableItem.asset").Parse(csv[10]);
 			instance.abilityTypes = AbilityParser.Parse(csv[11]);
 			instance.image = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/Textures/Enemy/Enemy" + int.Parse(csv[0]) + ".png", typeof(Sprite)) as Sprite;
 

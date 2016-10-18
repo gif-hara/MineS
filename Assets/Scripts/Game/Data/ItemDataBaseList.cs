@@ -23,11 +23,12 @@ namespace MineS
 		[ContextMenu("Set as UsableItemList")]
 		private void SetAsUsableItem()
 		{
-			var dir = new DirectoryInfo("Assets/DataSources/Item/UsableItem/");
-			foreach(var o in dir.GetFiles("*.asset"))
-			{
-				Debug.Log(o.Name);
-			}
+		}
+
+		public List<ItemDataBase> Parse(string csvData)
+		{
+			var split = csvData.Split(' ');
+			return database.Where(i => System.Array.FindIndex(split, s => s == i.ItemName) != -1).ToList();
 		}
 #endif
 	}
