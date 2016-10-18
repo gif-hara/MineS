@@ -176,6 +176,26 @@ namespace MineS
 			/// レベルが上がる.
 			/// </summary>
 			UndineBlood,
+
+			/// <summary>
+			/// 敵に投げるとアイテムになる.
+			/// </summary>
+			Alchemy,
+
+			/// <summary>
+			/// 使うと敵をおびき寄せる. 敵に投げると分裂する.
+			/// </summary>
+			Actinidia,
+
+			/// <summary>
+			/// 1階層戻る.
+			/// </summary>
+			TurnBack,
+
+			/// <summary>
+			/// 1階層進む.
+			/// </summary>
+			Proceed,
 		}
 
 		public enum AbnormalStatusType:int

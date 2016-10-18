@@ -105,6 +105,11 @@ namespace MineS
 			this.Experience = PlayerManager.Instance.ExperienceData.NeedNextLevel(this.Level - 1);
 		}
 
+		public override void ForceDead()
+		{
+			throw new System.NotImplementedException();
+		}
+
 		public bool CanLevelUp
 		{
 			get

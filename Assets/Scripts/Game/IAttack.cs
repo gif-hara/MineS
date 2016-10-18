@@ -57,5 +57,7 @@ namespace MineS
 		void AddHitPointMax(int value);
 
 		void ForceLevelUp(int value);
+
+		void ForceDead();
 	}
 }

@@ -430,4 +430,8 @@ MonoBehaviour:
       ja: "<color=targetColor>{0}</color>\u306F<color=targetColor>{1}</color>\u306B\u306A\u3063\u305F\uFF01"
       en: 
     guid: 58e2ac8f-f266-4394-8b03-9559854b8842
+  - value:
+      ja: "<color=targetColor>{0}</color>\u306F\u30A2\u30A4\u30C6\u30E0\u306B\u5909\u5316\u3057\u305F\uFF01"
+      en: 
+    guid: 1476f1a7-ad2e-43a3-8947-b47c60cdd91b
   asset: []

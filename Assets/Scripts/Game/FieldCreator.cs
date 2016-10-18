@@ -86,7 +86,7 @@ namespace MineS
 			// アイテムを作成.
 			for(int i = 0, imax = dungeonData.CreateItemRange.Random; i < imax; i++)
 			{
-				this.CreateCellData(cellManager, database, new CreateItemAction(dungeonData.CreateItem()));
+				this.CreateCellData(cellManager, database, new CreateItemAction(dungeonManager.CreateItem()));
 			}
 
 			// 罠を作成.

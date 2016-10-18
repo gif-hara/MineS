@@ -13,9 +13,7 @@ namespace MineS
 	{
 		public override void Dead(CharacterData attacker)
 		{
-			this.cellController.DamageEffectCreator.ForceRemove();
-			this.cellController.ForceRemoveImageShake();
-			Object.Instantiate(EffectManager.Instance.prefabDeadEffect.Element, this.cellController.transform, false);
+			this.OnDead();
 
 			if(this.FindAbility(GameDefine.AbilityType.Reincarnation))
 			{
@@ -28,19 +26,6 @@ namespace MineS
 			}
 
 			var cellData = EnemyManager.Instance.InEnemyCells[this];
-			cellData.BindCellClickAction(null);
-			cellData.Controller.SetActiveStatusObject(false);
-			cellData.Controller.SetImage(null);
-
-			var adjacentCells = cellData.AdjacentCellAll;
-			for(int i = 0; i < adjacentCells.Count; i++)
-			{
-				if(adjacentCells[i].IsLock)
-				{
-					adjacentCells[i].ReleaseLock();
-				}
-			}
-
 			if(Calculator.CanDropItem(this.DropItemProbability, attacker))
 			{
 				var item = this.OverrideDropItems.Count > 0
@@ -105,6 +90,12 @@ namespace MineS
 			InformationManager.LevelUpEnemy(this, currentName, this.Name);
 		}
 
+		public override void ForceDead()
+		{
+			this.HitPoint = 0;
+			this.OnDead();
+		}
+
 		public override GameDefine.CharacterType CharacterType
 		{
 			get
@@ -145,6 +136,31 @@ namespace MineS
 					adjacentCells[i].AddLock();
 				}
 			}
+		}
+
+		private void ReleaseLockAdjacentCells(CellData cellData)
+		{
+			var adjacentCells = cellData.AdjacentCellAll;
+			for(int i = 0; i < adjacentCells.Count; i++)
+			{
+				if(adjacentCells[i].IsLock)
+				{
+					adjacentCells[i].ReleaseLock();
+				}
+			}
+		}
+
+		private void OnDead()
+		{
+			this.cellController.DamageEffectCreator.ForceRemove();
+			this.cellController.ForceRemoveImageShake();
+			Object.Instantiate(EffectManager.Instance.prefabDeadEffect.Element, this.cellController.transform, false);
+
+			var cellData = EnemyManager.Instance.InEnemyCells[this];
+			cellData.BindCellClickAction(null);
+			cellData.Controller.SetActiveStatusObject(false);
+			cellData.Controller.SetImage(null);
+			this.ReleaseLockAdjacentCells(cellData);
 		}
 	}
 }

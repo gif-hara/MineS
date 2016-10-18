@@ -46,7 +46,8 @@ namespace MineS
 			willThrowEnemy = null,
 			addBaseStrength = null,
 			addHitPointMax = null,
-			levelUpEnemy = null;
+			levelUpEnemy = null,
+			onUseAlchemy = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -248,6 +249,14 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			var message = instance.levelUpEnemy.Format(currentName, nextName)
+				.Replace(TargetColor, user.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void OnUseAlchemy(IAttack user)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.onUseAlchemy.Format(user.Name)
 				.Replace(TargetColor, user.ColorCode);
 			instance._AddMessage(message);
 		}

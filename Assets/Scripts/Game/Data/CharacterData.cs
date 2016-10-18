@@ -283,6 +283,8 @@ namespace MineS
 
 		public abstract void ForceLevelUp(int value);
 
+		public abstract void ForceDead();
+
 		public GameDefine.AddAbnormalStatusResultType AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{
 			if(this.FindAbility(newAbnormalStatus.InvalidateAbilityType))

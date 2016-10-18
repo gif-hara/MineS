@@ -48,6 +48,11 @@ namespace MineS
 			return this.current.CreateEnemy(this.floorCount, cellController);
 		}
 
+		public Item CreateItem()
+		{
+			return this.current.CreateItem();
+		}
+
 		private void InternalNextFloor()
 		{
 			this.floorCount++;

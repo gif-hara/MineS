@@ -170,6 +170,24 @@ namespace MineS
 					inventory.RemoveItem(this);
 				}
 			break;
+			case GameDefine.UsableItemType.Alchemy:
+				{
+					if(user.CharacterType == GameDefine.CharacterType.Enemy)
+					{
+						user.ForceDead();
+						var cellData = EnemyManager.Instance.InEnemyCells[user as EnemyData];
+						var item = DungeonManager.Instance.CreateItem();
+						cellData.BindCellClickAction(new AcquireItemAction(item, cellData.Controller));
+						cellData.BindDeployDescription(new DeployDescriptionOnItem(item));
+						InformationManager.OnUseAlchemy(user);
+					}
+					else
+					{
+						InformationManager.OnHadNoEffect();
+					}
+					inventory.RemoveItem(this);
+				}
+			break;
 			default:
 				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
 			break;
