@@ -36,7 +36,7 @@ namespace MineS
 
 			if(this.Inventory.IsFreeSpace && this.FindAbility(GameDefine.AbilityType.Theft) && Calculator.IsSuccessTheft(this))
 			{
-				this.Inventory.AddItem(DungeonManager.Instance.CurrentData.CreateItem());
+				this.Inventory.AddItem(DungeonManager.Instance.CurrentDataAsDungeon.CreateItem());
 			}
 		}
 

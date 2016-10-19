@@ -101,7 +101,7 @@ namespace MineS
 		{
 			this.SetActiveStatusObject(false);
 			this.SetText("");
-			this.SetImage(null);
+			//this.SetImage(null);
 			this.Data = data;
 			this.Data.BindEvent(
 				this.Infeasible,

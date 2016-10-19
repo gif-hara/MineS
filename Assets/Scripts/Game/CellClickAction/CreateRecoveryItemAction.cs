@@ -12,7 +12,7 @@ namespace MineS
 	{
 		public override void Invoke(CellData data)
 		{
-			data.Controller.SetImage(DungeonManager.Instance.CurrentData.RecoveryItemImage);
+			data.Controller.SetImage(TextureManager.Instance.recoveryItem.Element);
 			data.Controller.SetActiveStatusObject(false);
 			data.BindCellClickAction(new InvokeRecoveryItemAction());
 			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("RecoveryItem"));
@@ -30,7 +30,7 @@ namespace MineS
 		{
 			get
 			{
-				return DungeonManager.Instance.CurrentData.RecoveryItemImage;
+				return TextureManager.Instance.recoveryItem.Element;
 			}
 		}
 	}

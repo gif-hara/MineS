@@ -13,7 +13,7 @@ namespace MineS
 		[SerializeField]
 		private List<GameObject> receivers;
 
-		public void ModifiedData(DungeonData dungeonData)
+		public void ModifiedData(DungeonDataBase dungeonData)
 		{
 			ExecuteEventsExtensions.Execute<IReceiveModifiedDungeonData>(this.receivers, null, (handler, eventData) => handler.OnModifiedDungeonData(dungeonData));
 		}

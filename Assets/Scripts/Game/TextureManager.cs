@@ -139,5 +139,9 @@ namespace MineS
 		public SerializeFieldGetter.Sprite blackSmith;
 
 		public SerializeFieldGetter.Sprite shop;
+
+		public SerializeFieldGetter.Sprite recoveryItem;
+
+		public SerializeFieldGetter.Sprite stairImage;
 	}
 }

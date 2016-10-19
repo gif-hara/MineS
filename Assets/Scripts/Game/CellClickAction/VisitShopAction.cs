@@ -23,6 +23,16 @@ namespace MineS
 			ShopManager.Instance.OpenUI(this.goods);
 		}
 
+		public override void SetCellController(CellController cellController)
+		{
+			cellController.SetImage(this.Image);
+		}
+
+		public override void SetCellData(CellData data)
+		{
+			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("Shop"));
+		}
+
 		public override GameDefine.EventType EventType
 		{
 			get

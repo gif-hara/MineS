@@ -12,9 +12,6 @@ namespace MineS
 	public class DungeonData : DungeonDataBase
 	{
 		[SerializeField]
-		private StringAsset.Finder dungeonName;
-
-		[SerializeField]
 		private int floorMax;
 
 		[SerializeField]
@@ -36,9 +33,6 @@ namespace MineS
 		private BlackSmithTable blackSmithTable;
 
 		[SerializeField]
-		private ShopTable shopTable;
-
-		[SerializeField]
 		private Range createRecoveryItemRange;
 
 		[SerializeField]
@@ -49,8 +43,6 @@ namespace MineS
 
 		[SerializeField]
 		private Range createTrapRange;
-
-		public string Name{ get { return this.dungeonName.ToString(); } }
 
 		public Sprite StairImage{ get { return this.stairImage; } }
 
@@ -70,9 +62,9 @@ namespace MineS
 			this.enemyTable.Check(this.floorMax);
 		}
 
-		public override CellData[,] Create(CellManager cellManager, DungeonManager dungeonManager)
+		public override CellData[,] Create(CellManager cellManager)
 		{
-			return new FieldCreator().Create(cellManager, dungeonManager, GameDefine.CellRowMax, GameDefine.CellCulumnMax);
+			return new DungeonCreator().Create(cellManager, this, GameDefine.CellRowMax, GameDefine.CellCulumnMax);
 		}
 
 		public EnemyData CreateEnemy(int floor, CellController cellController)
@@ -93,16 +85,6 @@ namespace MineS
 		public bool CanCreateBlackSmith(int floor)
 		{
 			return this.blackSmithTable.CanCreate(floor);
-		}
-
-		public bool CanCreateShop(int floor)
-		{
-			return this.shopTable.CanCreate(floor);
-		}
-
-		public Inventory CreateShopInventory(int floor)
-		{
-			return this.shopTable.CreateInventory(floor);
 		}
 	}
 }

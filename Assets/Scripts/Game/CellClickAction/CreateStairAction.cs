@@ -12,7 +12,7 @@ namespace MineS
 	{
 		public override void Invoke(CellData data)
 		{
-			data.Controller.SetImage(DungeonManager.Instance.CurrentData.StairImage);
+			data.Controller.SetImage(TextureManager.Instance.stairImage.Element);
 			data.BindCellClickAction(new InvokeNextFloorAction());
 			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("NextFloor"));
 		}
@@ -29,7 +29,7 @@ namespace MineS
 		{
 			get
 			{
-				return DungeonManager.Instance.CurrentData.StairImage;
+				return TextureManager.Instance.stairImage.Element;
 			}
 		}
 	}

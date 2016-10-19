@@ -177,13 +177,13 @@ namespace MineS
 			var playerData = PlayerManager.Instance.Data;
 			var isXray = playerData.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray) || playerData.FindAbility(GameDefine.AbilityType.Clairvoyance);
 			initialCell.Steppable(isXray);
-			initialCell.Identification(isXray);
+			initialCell.Identification(true, isXray);
 		}
 
 		private CellData[,] CreateCellDatabaseFromDungeonData()
 		{
 			var dungeonManager = DungeonManager.Instance;
-			return dungeonManager.CurrentData.Create(this, dungeonManager);
+			return dungeonManager.CurrentData.Create(this);
 		}
 
 		private void CheckCellData(CellData[,] database)
@@ -201,7 +201,10 @@ namespace MineS
 				}
 			}
 
-			Debug.AssertFormat(existStair, "階段がありませんでした.");
+			if(DungeonManager.Instance.CurrentDataAsDungeon != null)
+			{
+				Debug.AssertFormat(existStair, "階段がありませんでした.");
+			}
 		}
 
 		private void GetBlankCellIndex(CellData[,] database, out int y, out int x)

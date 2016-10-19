@@ -15,6 +15,13 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 4172020a15e334b00838b72bf6b90d8f, type: 2}
     value: "\u30C6\u30B9\u30C8\u30C0\u30F3\u30B8\u30E7\u30F3"
     guid: f1f2bb3b-0336-429b-9013-213c2d9ef1af
+  shopTable:
+    elements:
+    - floorMin: 0
+      floorMax: 0
+      probability: 0
+      itemTable:
+        elements: []
   floorMax: 10
   stairImage: {fileID: 21300000, guid: cf2d90bf6565fe74ba7dbc653686d124, type: 3}
   recoveryItemImage: {fileID: 21300000, guid: beab0bd6fda210d46ac503638a5818eb, type: 3}
@@ -52,8 +59,6 @@ MonoBehaviour:
     - floorMin: 0
       floorMax: 0
       probability: 0
-  shopTable:
-    elements: []
   createRecoveryItemRange:
     min: 0
     max: 0

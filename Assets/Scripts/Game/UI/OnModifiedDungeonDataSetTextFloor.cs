@@ -19,7 +19,7 @@ namespace MineS
 
 #region IReceiveModifiedDungeonData implementation
 
-		public void OnModifiedDungeonData(DungeonData dungeonData)
+		public void OnModifiedDungeonData(DungeonDataBase dungeonData)
 		{
 			this.target.text = this.format.Format(DungeonManager.Instance.Floor);
 		}

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using HK.Framework;
 
@@ -9,8 +8,8 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public interface IReceiveModifiedDungeonData : IEventSystemHandler
+	public abstract class TownCellCreatorBase : ScriptableObject
 	{
-		void OnModifiedDungeonData(DungeonDataBase dungeonData);
+		public abstract CellData Create(int y, int x, CellController cellController);
 	}
 }

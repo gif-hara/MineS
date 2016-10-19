@@ -10,6 +10,24 @@ namespace MineS
 	/// </summary>
 	public abstract class DungeonDataBase : ScriptableObject
 	{
-		public abstract CellData[,] Create(CellManager cellManager, DungeonManager dungeonManager);
+		[SerializeField]
+		private StringAsset.Finder dungeonName;
+
+		[SerializeField]
+		private ShopTable shopTable;
+
+		public string Name{ get { return this.dungeonName.ToString(); } }
+
+		public abstract CellData[,] Create(CellManager cellManager);
+
+		public Inventory CreateShopInventory(int floor)
+		{
+			return this.shopTable.CreateInventory(floor);
+		}
+
+		public bool CanCreateShop(int floor)
+		{
+			return this.shopTable.CanCreate(floor);
+		}
 	}
 }

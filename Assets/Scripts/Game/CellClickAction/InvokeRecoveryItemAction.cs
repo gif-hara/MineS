@@ -31,7 +31,7 @@ namespace MineS
 		{
 			get
 			{
-				return DungeonManager.Instance.CurrentData.RecoveryItemImage;
+				return TextureManager.Instance.recoveryItem.Element;
 			}
 		}
 	}

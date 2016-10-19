@@ -12,7 +12,7 @@ namespace MineS
 	public class DungeonManager : SingletonMonoBehaviour<DungeonManager>
 	{
 		[SerializeField]
-		private DungeonData current;
+		private DungeonDataBase current;
 
 		[SerializeField]
 		private DungeonNameFlowController dungeonNameFlowController;
@@ -24,7 +24,9 @@ namespace MineS
 
 		private UnityEvent nextFloorEvent = new UnityEvent();
 
-		public DungeonData CurrentData{ get { return this.current; } }
+		public DungeonDataBase CurrentData{ get { return this.current; } }
+
+		public DungeonData CurrentDataAsDungeon{ get { return this.current as DungeonData; } }
 
 		public int Floor{ get { return this.floorCount; } }
 
@@ -46,12 +48,12 @@ namespace MineS
 
 		public EnemyData CreateEnemy(CellController cellController)
 		{
-			return this.current.CreateEnemy(this.floorCount, cellController);
+			return this.CurrentDataAsDungeon.CreateEnemy(this.floorCount, cellController);
 		}
 
 		public Item CreateItem()
 		{
-			return this.current.CreateItem();
+			return this.CurrentDataAsDungeon.CreateItem();
 		}
 
 		public bool CanTurnBack(int addValue)
@@ -61,7 +63,7 @@ namespace MineS
 
 		private void InternalNextFloor()
 		{
-			EnemyManager.Instance.NextFloor();
+			EnemyManager.Instance.RemoveAll();
 			this.nextFloorEvent.Invoke();
 			this.observers.ForEach(o => o.ModifiedData(this.CurrentData));
 		}

@@ -62,7 +62,7 @@ namespace MineS
 			}
 		}
 
-		public void NextFloor()
+		public void RemoveAll()
 		{
 			this.Enemies.Clear();
 			this.InEnemyCells.Clear();
