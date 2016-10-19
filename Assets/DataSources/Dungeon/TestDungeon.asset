@@ -23,7 +23,11 @@ MonoBehaviour:
     - floorMin: 1
       floorMax: 10
       enemies:
-      - masterData: {fileID: 11400000, guid: 0adba6c459939469480396f0fc218632, type: 2}
+      - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
+        probability: 100
+      - masterData: {fileID: 11400000, guid: 2669507a80614453f8ca686e99748f3d, type: 2}
+        probability: 100
+      - masterData: {fileID: 11400000, guid: d7ce2900fe0ad4d628a6320138eb6c0a, type: 2}
         probability: 100
   itemTable:
     elements:
@@ -44,15 +48,18 @@ MonoBehaviour:
     - type: 4
       probability: 100
   blackSmithTable:
-    elements: []
+    elements:
+    - floorMin: 0
+      floorMax: 0
+      probability: 0
   shopTable:
     elements: []
   createRecoveryItemRange:
     min: 0
     max: 0
   createEnemyRange:
-    min: 1
-    max: 1
+    min: 50
+    max: 50
   createItemRange:
     min: 0
     max: 0

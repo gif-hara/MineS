@@ -24,19 +24,13 @@ namespace MineS
 
 		public GameDefine.CellClickMode ClickMode{ private set; get; }
 
-		private const int RowMax = 8;
-
-		private const int CulumnMax = 7;
-
-		private const int CellMax = CulumnMax * CulumnMax;
-
 		void Start()
 		{
 			this.ClickMode = GameDefine.CellClickMode.Step;
-			this.CellControllers = new CellController[RowMax, CulumnMax];
-			for(int y = 0; y < RowMax; y++)
+			this.CellControllers = new CellController[GameDefine.CellRowMax, GameDefine.CellCulumnMax];
+			for(int y = 0; y < GameDefine.CellRowMax; y++)
 			{
-				for(int x = 0; x < CulumnMax; x++)
+				for(int x = 0; x < GameDefine.CellCulumnMax; x++)
 				{
 					this.CellControllers[y, x] = Instantiate(this.cellPrefab, this.cellField, false) as CellController;
 				}
@@ -53,9 +47,9 @@ namespace MineS
 		public void SetCell(CellData[,] database)
 		{
 			this.cellDatabase = database;
-			for(int y = 0; y < RowMax; y++)
+			for(int y = 0; y < GameDefine.CellRowMax; y++)
 			{
-				for(int x = 0; x < CulumnMax; x++)
+				for(int x = 0; x < GameDefine.CellCulumnMax; x++)
 				{
 					this.CellControllers[y, x].SetCellData(database[y, x]);
 				}
@@ -121,15 +115,15 @@ namespace MineS
 			case GameDefine.AdjacentType.Top:
 				return y <= 0 ? null : CellControllers[y - 1, x].Data;
 			case GameDefine.AdjacentType.RightTop:
-				return (x >= CulumnMax - 1 || y <= 0) ? null : CellControllers[y - 1, x + 1].Data;
+				return (x >= GameDefine.CellCulumnMax - 1 || y <= 0) ? null : CellControllers[y - 1, x + 1].Data;
 			case GameDefine.AdjacentType.Right:
-				return x >= CulumnMax - 1 ? null : CellControllers[y, x + 1].Data;
+				return x >= GameDefine.CellCulumnMax - 1 ? null : CellControllers[y, x + 1].Data;
 			case GameDefine.AdjacentType.RightBottom:
-				return (x >= CulumnMax - 1 || y >= RowMax - 1) ? null : CellControllers[y + 1, x + 1].Data;
+				return (x >= GameDefine.CellCulumnMax - 1 || y >= GameDefine.CellRowMax - 1) ? null : CellControllers[y + 1, x + 1].Data;
 			case GameDefine.AdjacentType.Bottom:
-				return y >= RowMax - 1 ? null : CellControllers[y + 1, x].Data;
+				return y >= GameDefine.CellRowMax - 1 ? null : CellControllers[y + 1, x].Data;
 			case GameDefine.AdjacentType.LeftBottom:
-				return (x <= 0 || y >= RowMax - 1) ? null : CellControllers[y + 1, x - 1].Data;
+				return (x <= 0 || y >= GameDefine.CellRowMax - 1) ? null : CellControllers[y + 1, x - 1].Data;
 			}
 
 			return null;
@@ -166,9 +160,9 @@ namespace MineS
 
 		public void DebugAction()
 		{
-			for(int y = 0; y < RowMax; y++)
+			for(int y = 0; y < GameDefine.CellRowMax; y++)
 			{
-				for(int x = 0; x < CulumnMax; x++)
+				for(int x = 0; x < GameDefine.CellCulumnMax; x++)
 				{
 					this.CellControllers[y, x].DebugAction();
 				}
@@ -188,15 +182,16 @@ namespace MineS
 
 		private CellData[,] CreateCellDatabaseFromDungeonData()
 		{
-			return new FieldCreator().Create(this, DungeonManager.Instance, RowMax, CulumnMax);
+			var dungeonManager = DungeonManager.Instance;
+			return dungeonManager.CurrentData.Create(this, dungeonManager);
 		}
 
 		private void CheckCellData(CellData[,] database)
 		{
 			var existStair = false;
-			for(int y = 0; y < RowMax; y++)
+			for(int y = 0; y < GameDefine.CellRowMax; y++)
 			{
-				for(int x = 0; x < CulumnMax; x++)
+				for(int x = 0; x < GameDefine.CellCulumnMax; x++)
 				{
 					if(database[y, x].CurrentEventType == GameDefine.EventType.Stair)
 					{
@@ -213,8 +208,8 @@ namespace MineS
 		{
 			do
 			{
-				y = Random.Range(0, RowMax);
-				x = Random.Range(0, CulumnMax);
+				y = Random.Range(0, GameDefine.CellRowMax);
+				x = Random.Range(0, GameDefine.CellCulumnMax);
 			} while(database[y, x].CurrentEventType != GameDefine.EventType.None);
 		}
 
@@ -236,9 +231,9 @@ namespace MineS
 			get
 			{
 				var result = new List<CellData>();
-				for(int y = 0; y < RowMax; y++)
+				for(int y = 0; y < GameDefine.CellRowMax; y++)
 				{
-					for(int x = 0; x < CulumnMax; x++)
+					for(int x = 0; x < GameDefine.CellCulumnMax; x++)
 					{
 						result.Add(this.cellDatabase[y, x]);
 					}

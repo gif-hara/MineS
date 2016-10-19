@@ -754,6 +754,10 @@ namespace MineS
 
 		public const int EquipmentLevelMax = 3;
 
+		public const int CellRowMax = 8;
+
+		public const int CellCulumnMax = 7;
+
 		public static int Lottery<P>(List<P> elements) where P : IProbability
 		{
 			int probabilityMax = 0;

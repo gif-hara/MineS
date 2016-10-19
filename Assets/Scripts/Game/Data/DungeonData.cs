@@ -9,7 +9,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[CreateAssetMenu()]
-	public class DungeonData : ScriptableObject
+	public class DungeonData : DungeonDataBase
 	{
 		[SerializeField]
 		private StringAsset.Finder dungeonName;
@@ -68,6 +68,11 @@ namespace MineS
 		private void AssertionCheck()
 		{
 			this.enemyTable.Check(this.floorMax);
+		}
+
+		public override CellData[,] Create(CellManager cellManager, DungeonManager dungeonManager)
+		{
+			return new FieldCreator().Create(cellManager, dungeonManager, GameDefine.CellRowMax, GameDefine.CellCulumnMax);
 		}
 
 		public EnemyData CreateEnemy(int floor, CellController cellController)
