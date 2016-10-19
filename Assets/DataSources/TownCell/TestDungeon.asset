@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Name: TestDungeon
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: fb7414cd5676941249068426b7a00398, type: 2}
+  descriptionKey: TestDungeon

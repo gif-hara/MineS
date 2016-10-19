@@ -49,7 +49,8 @@ namespace MineS
 			levelUpEnemy = null,
 			onUseAlchemy = null,
 			onUseActinidiaByPlayer = null,
-			onUseActinidiaByEnemy = null;
+			onUseActinidiaByEnemy = null,
+			confirmEnterDungeon = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -277,6 +278,12 @@ namespace MineS
 			var message = instance.onUseActinidiaByEnemy.Format(user.Name)
 				.Replace(TargetColor, user.ColorCode);
 			instance._AddMessage(message);
+		}
+
+		public static void ConfirmEnterDungeon(string dungeonName)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.confirmEnterDungeon.Format(dungeonName));
 		}
 
 		public static void AddMessage(string message)

@@ -24,6 +24,8 @@ namespace MineS
 
 		public SerializeFieldGetter.StringAssetFinder decideSynthesis;
 
+		public SerializeFieldGetter.StringAssetFinder proceed;
+
 		public SerializeFieldGetter.StringAssetFinder cancel;
 
 		private List<GameObject> createdObjects = new List<GameObject>();

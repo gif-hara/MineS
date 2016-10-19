@@ -442,4 +442,12 @@ MonoBehaviour:
       ja: "\u306A\u3093\u3068\uFF01<color=targetColor>{0}</color>\u304C\u5206\u88C2\u3057\u305F\uFF01"
       en: 
     guid: 54687902-9738-4508-b28f-cc3b5dc54dbc
+  - value:
+      ja: "\u9032\u3080"
+      en: 
+    guid: 527528ee-833e-48f6-88c2-4aa88fd5f50b
+  - value:
+      ja: "<color=aqua>{0}</color>\u3078\u9032\u307F\u307E\u3059\u304B\uFF1F"
+      en: 
+    guid: 6d4df666-c915-42cc-a336-898a7b0227f0
   asset: []

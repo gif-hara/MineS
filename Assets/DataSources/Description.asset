@@ -772,3 +772,13 @@ MonoBehaviour:
       value: "\u6295\u3052\u308B\u5BFE\u8C61\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002"
       guid: 7a1349e0-0b43-4b77-af72-60b298f65fcc
     image: {fileID: 0}
+  - key: TestDungeon
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u30C6\u30B9\u30C8\u30C0\u30F3\u30B8\u30E7\u30F3"
+      guid: f5ab3c71-10b4-4c09-aa63-5c3e4459a4eb
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30C6\u30B9\u30C8\u7528\u306E\u30C0\u30F3\u30B8\u30E7\u30F3\uFF01\n\u3042\u3042\u3042\n\u3044\u3044\u3044\n\u3046\u3046\u3046"
+      guid: 5583b963-f60c-4aa9-a504-fd55daffe768
+    image: {fileID: 21300000, guid: cf2d90bf6565fe74ba7dbc653686d124, type: 3}
