@@ -35,6 +35,13 @@ namespace MineS
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalNextFloor);
 		}
 
+		public void ChangeDungeonData(DungeonDataBase data, int floor = 1)
+		{
+			this.current = data;
+			this.floorCount = floor;
+			this.NextFloorEvent(0);
+		}
+
 		public void AddNextFloorEvent(UnityAction otherEvent)
 		{
 			this.nextFloorEvent.AddListener(otherEvent);
