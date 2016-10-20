@@ -9,7 +9,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[CreateAssetMenu()]
-	public class TownDungeonData : DungeonDataBase
+	public class FixDungeonDungeonData : DungeonDataBase
 	{
 		[System.Serializable]
 		public class CellCreator
@@ -21,7 +21,7 @@ namespace MineS
 			private int y;
 
 			[SerializeField]
-			TownCellCreatorBase creator;
+			FixDungeonCellCreatorBase creator;
 
 			public int X{ get { return this.x; } }
 
@@ -45,7 +45,7 @@ namespace MineS
 
 		public override CellData[,] Create(CellManager cellManager)
 		{
-			return new TownCreator().Create(cellManager, this, GameDefine.CellRowMax, GameDefine.CellCulumnMax);
+			return new FixDungeonCreator().Create(cellManager, this, GameDefine.CellRowMax, GameDefine.CellCulumnMax);
 		}
 	}
 }

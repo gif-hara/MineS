@@ -9,12 +9,18 @@ namespace MineS
 	/// .
 	/// </summary>
 	[CreateAssetMenu()]
-	public class TownCellCreateShop : TownCellCreatorBase
+	public class FixDungeonCellCreateChangeDungeon : FixDungeonCellCreatorBase
 	{
+		[SerializeField]
+		private DungeonDataBase data;
+
+		[SerializeField]
+		private string descriptionKey;
+
 		public override CellData Create(int y, int x, CellController cellController)
 		{
 			var cellData = new CellData(y, x, cellController);
-			cellData.BindCellClickAction(new VisitShopAction());
+			cellData.BindCellClickAction(new ChangeDungeonDataAction(this.data, this.descriptionKey));
 
 			return cellData;
 		}

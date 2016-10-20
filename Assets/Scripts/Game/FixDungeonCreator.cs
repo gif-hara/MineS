@@ -9,11 +9,11 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public class TownCreator : DungeonCreatorBase
+	public class FixDungeonCreator : DungeonCreatorBase
 	{
 		public override CellData[,] Create(CellManager cellManager, DungeonDataBase dungeonData, int rowNumber, int culumnNumber)
 		{
-			var _dungeonData = dungeonData as TownDungeonData;
+			var _dungeonData = dungeonData as FixDungeonDungeonData;
 			var database = new Database(rowNumber, culumnNumber);
 
 			// 街データを生成.
