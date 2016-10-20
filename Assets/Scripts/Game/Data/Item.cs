@@ -240,6 +240,29 @@ namespace MineS
 					inventory.RemoveItem(this);
 				}
 			break;
+			case GameDefine.UsableItemType.OndineDrop:
+				{
+					var value = usableItem.Power0;
+					user.AddBaseStrength(usableItem.Power0);
+					InformationManager.SubBaseStrength(user, Mathf.Abs(value));
+					inventory.RemoveItem(this);
+				}
+			break;
+			case GameDefine.UsableItemType.OndineTear:
+				{
+					var value = usableItem.Power0;
+					user.AddHitPointMax(usableItem.Power0);
+					InformationManager.SubHitPointMax(user, Mathf.Abs(value));
+					inventory.RemoveItem(this);
+				}
+			break;
+			case GameDefine.UsableItemType.OndineBlood:
+				{
+					var value = usableItem.Power0;
+					user.ForceLevelDown(value);
+					inventory.RemoveItem(this);
+				}
+			break;
 			default:
 				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
 			break;

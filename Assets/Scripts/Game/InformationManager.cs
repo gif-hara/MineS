@@ -29,6 +29,7 @@ namespace MineS
 			onDefeatByPlayer = null,
 			onVisibleEnemy = null,
 			onLevelUpPlayer = null,
+			onLevelDownPlayer = null,
 			onContinuousAttack = null,
 			onAcquiredItem = null,
 			onRecovery = null,
@@ -50,7 +51,10 @@ namespace MineS
 			onUseAlchemy = null,
 			onUseActinidiaByPlayer = null,
 			onUseActinidiaByEnemy = null,
-			confirmEnterDungeon = null;
+			confirmEnterDungeon = null,
+			subBaseStrength = null,
+			subHitPointMax = null,
+			levelDownEnemy = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -114,6 +118,13 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			var message = instance.onLevelUpPlayer.Format(attacker.Name, level).Replace(TargetColor, attacker.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void OnLevelDownPlayer(IAttack attacker, int level)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.onLevelDownPlayer.Format(attacker.Name, level).Replace(TargetColor, attacker.ColorCode);
 			instance._AddMessage(message);
 		}
 
@@ -252,6 +263,30 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			var message = instance.levelUpEnemy.Format(currentName, nextName)
+				.Replace(TargetColor, user.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void SubBaseStrength(IAttack user, int value)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.subBaseStrength.Format(value)
+				.Replace(TargetColor, user.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void SubHitPointMax(IAttack user, int value)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.subHitPointMax.Format(value)
+				.Replace(TargetColor, user.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void LevelDownEnemy(IAttack user, string currentName, string nextName)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.levelDownEnemy.Format(currentName, nextName)
 				.Replace(TargetColor, user.ColorCode);
 			instance._AddMessage(message);
 		}

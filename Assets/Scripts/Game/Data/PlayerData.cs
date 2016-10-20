@@ -86,8 +86,20 @@ namespace MineS
 				this.HitPoint = this.HitPointMax;
 			}
 
-			this.baseStrength += growthData.Strength;
+			this.AddBaseStrength(growthData.Strength);
 			this.Armor += growthData.Armor;
+		}
+
+		public void LevelDown(CharacterMasterData growthData)
+		{
+			this.Level--;
+			InformationManager.OnLevelDownPlayer(this, this.Level);
+			this.HitPointMax -= growthData.HitPoint;
+			this.TakeDamageRaw(null, growthData.HitPoint, true);
+
+			this.AddBaseStrength(-growthData.Strength);
+			this.Armor -= growthData.Armor;
+			this.Armor = this.Armor < 0 ? 0 : this.Armor;
 		}
 
 		public override void ForceLevelUp(int value)
@@ -100,6 +112,21 @@ namespace MineS
 					break;
 				}
 				this.LevelUp(this.growthData);
+			}
+
+			this.Experience = PlayerManager.Instance.ExperienceData.NeedNextLevel(this.Level - 1);
+		}
+
+		public override void ForceLevelDown(int value)
+		{
+			var experienceData = PlayerManager.Instance.ExperienceData;
+			for(int i = 0; i < value; i++)
+			{
+				if(!experienceData.CanLevelDown(this.Level))
+				{
+					break;
+				}
+				this.LevelDown(this.growthData);
 			}
 
 			this.Experience = PlayerManager.Instance.ExperienceData.NeedNextLevel(this.Level - 1);

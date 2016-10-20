@@ -427,10 +427,6 @@ MonoBehaviour:
       en: 
     guid: c4bd4839-e042-4720-b6c5-6642e05afc88
   - value:
-      ja: "<color=targetColor>{0}</color>\u306F<color=targetColor>{1}</color>\u306B\u306A\u3063\u305F\uFF01"
-      en: 
-    guid: 58e2ac8f-f266-4394-8b03-9559854b8842
-  - value:
       ja: "<color=targetColor>{0}</color>\u306F\u30A2\u30A4\u30C6\u30E0\u306B\u5909\u5316\u3057\u305F\uFF01"
       en: 
     guid: 1476f1a7-ad2e-43a3-8947-b47c60cdd91b
@@ -450,4 +446,16 @@ MonoBehaviour:
       ja: "<color=aqua>{0}</color>\u3078\u9032\u307F\u307E\u3059\u304B\uFF1F"
       en: 
     guid: 6d4df666-c915-42cc-a336-898a7b0227f0
+  - value:
+      ja: "\u6700\u5927\u653B\u6483\u529B\u304C<color=targetColor>{0}</color>\u4E0B\u304C\u3063\u305F\uFF01"
+      en: 
+    guid: 7a3f78cd-09d0-49ec-8f55-18d47e9e4c72
+  - value:
+      ja: "\u6700\u5927\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u304C<color=targetColor>{0}</color>\u4E0B\u304C\u3063\u305F\uFF01"
+      en: 
+    guid: 6e39cf1b-ba1b-4c47-b796-a4cfe5649973
+  - value:
+      ja: "<color=targetColor>{0}</color>\u306F<color=targetColor>{1}</color>\u306B\u30EC\u30D9\u30EB\u30C0\u30A6\u30F3\u3057\u305F\uFF01"
+      en: 
+    guid: 26bfac28-5a43-420b-800f-57293273a677
   asset: []

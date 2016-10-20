@@ -31,6 +31,11 @@ namespace MineS
 			return level < this.experiences.Count - 1;
 		}
 
+		public bool CanLevelDown(int level)
+		{
+			return level > 1;
+		}
+
 #if UNITY_EDITOR
 		[ContextMenu("Algorithm 0")]
 		private void Alrorithm0()

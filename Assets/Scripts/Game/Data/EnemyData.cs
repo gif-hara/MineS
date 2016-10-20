@@ -90,6 +90,28 @@ namespace MineS
 			InformationManager.LevelUpEnemy(this, currentName, this.Name);
 		}
 
+		public override void ForceLevelDown(int value)
+		{
+			if(this.masterData.PreviousLevelData == null)
+			{
+				InformationManager.OnHadNoEffect();
+				return;
+			}
+
+			var currentName = this.Name;
+			for(int i = 0; i < value; i++)
+			{
+				if(this.masterData.PreviousLevelData == null)
+				{
+					break;
+				}
+				this.Initialize(this.masterData.PreviousLevelData, this.cellController);
+			}
+
+			this.cellController.SetImage(this.Image);
+			InformationManager.LevelDownEnemy(this, currentName, this.Name);
+		}
+
 		public override void ForceDead()
 		{
 			this.HitPoint = 0;

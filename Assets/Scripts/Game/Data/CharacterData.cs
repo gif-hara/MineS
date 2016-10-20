@@ -278,10 +278,20 @@ namespace MineS
 		{
 			this.HitPointMax += value;
 			this.HitPointMax = this.HitPointMax < 1 ? 1 : this.HitPointMax;
-			this.RecoveryHitPoint(value, true);
+
+			if(value > 0)
+			{
+				this.RecoveryHitPoint(value, true);
+			}
+			else
+			{
+				this.TakeDamageRaw(null, -value, true);
+			}
 		}
 
 		public abstract void ForceLevelUp(int value);
+
+		public abstract void ForceLevelDown(int value);
 
 		public abstract void ForceDead();
 
