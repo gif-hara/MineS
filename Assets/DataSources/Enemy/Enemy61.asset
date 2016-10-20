@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: Enemy61
   m_EditorClassIdentifier: 
   characterName: "\u30C9\u30E9\u30B4\u30F3Lv.2"
-  hitPoint: 396
-  strength: 47
-  armor: 115
+  hitPoint: 427
+  strength: 51
+  armor: 124
   hitProbability: 90
   evasion: 0
-  experience: 643
-  money: 835
+  experience: 684
+  money: 889
   dropItemProbability: 2
   overrideDropItems: []
   abilityTypes: 220000001b000000

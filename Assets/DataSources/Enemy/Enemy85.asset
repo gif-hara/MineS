@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
+  m_Name: Enemy85
+  m_EditorClassIdentifier: 
+  characterName: "\u706B\u85AC\u5B66\u58EBLv.2"
+  hitPoint: 150
+  strength: 17
+  armor: 0
+  hitProbability: 90
+  evasion: 0
+  experience: 351
+  money: 280
+  dropItemProbability: 80
+  overrideDropItems:
+  - {fileID: 11400000, guid: 9450e70e45a404170b79889380e41f07, type: 2}
+  abilityTypes: 
+  image: {fileID: 21300000, guid: ee2c504d7335c479ab471acdf194242a, type: 3}
+  previousLevelData: {fileID: 11400000, guid: 3ff64318e5a804056a0c10072a6689a2, type: 2}
+  nextLevelData: {fileID: 11400000, guid: d2c9b8f6276c24ceabdf7af6796b7e72, type: 2}

@@ -757,7 +757,7 @@ namespace MineS
 
 		public const int MoneyMax = 9999999;
 
-		public const int InventoryItemMax = 16;
+		public const int InventoryItemMax = 24;
 
 		public const int ShopInventoryMax = 5;
 

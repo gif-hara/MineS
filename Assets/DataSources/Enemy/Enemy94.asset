@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
+  m_Name: Enemy94
+  m_EditorClassIdentifier: 
+  characterName: "\u30B1\u30C3\u30C8\u30B7\u30FCLv.2"
+  hitPoint: 99
+  strength: 20
+  armor: 0
+  hitProbability: 90
+  evasion: 0
+  experience: 296
+  money: 236
+  dropItemProbability: 100
+  overrideDropItems:
+  - {fileID: 11400000, guid: bd714733b7cd74f29b4ff9d5ce59ce6d, type: 2}
+  abilityTypes: 
+  image: {fileID: 21300000, guid: 17faf38ae3d06434780a0701336dff9d, type: 3}
+  previousLevelData: {fileID: 11400000, guid: 11f681ffd5fca49c097a5caed31d23e3, type: 2}
+  nextLevelData: {fileID: 11400000, guid: cd2973964066e43d0b765a00baa2026a, type: 2}

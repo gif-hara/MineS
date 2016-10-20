@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: Enemy14
   m_EditorClassIdentifier: 
   characterName: "\u30BF\u30A4\u30BF\u30F3Lv.3"
-  hitPoint: 150
+  hitPoint: 188
   strength: 139
-  armor: 338
+  armor: 564
   hitProbability: 90
   evasion: 0
   experience: 783

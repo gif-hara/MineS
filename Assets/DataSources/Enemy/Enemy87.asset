@@ -9,19 +9,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
-  m_Name: Enemy71
+  m_Name: Enemy87
   m_EditorClassIdentifier: 
-  characterName: "\u6B7B\u795ELv.3"
-  hitPoint: 688
-  strength: 50
+  characterName: "\u30AC\u30B9\u30C8Lv.1"
+  hitPoint: 520
+  strength: 17
   armor: 0
   hitProbability: 90
   evasion: 0
-  experience: 783
-  money: 391
-  dropItemProbability: 2
+  experience: 524
+  money: 471
+  dropItemProbability: 5
   overrideDropItems: []
-  abilityTypes: 050000000f0000000f0000000f0000000f0000000f0000000f000000
-  image: {fileID: 21300000, guid: 70e51763d46d54025aa0744267dacd72, type: 3}
-  previousLevelData: {fileID: 11400000, guid: e3c2e49679c2c43cf940d8e3e1585a41, type: 2}
-  nextLevelData: {fileID: 0}
+  abilityTypes: 2b000000
+  image: {fileID: 21300000, guid: d09f992df080943b58d5d0949f76605b, type: 3}
+  previousLevelData: {fileID: 0}
+  nextLevelData: {fileID: 11400000, guid: 9b2eff049513c4219835c8228c5b59e4, type: 2}

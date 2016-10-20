@@ -13,12 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: "\u30C8\u30ED\u30FC\u30EBLv.2"
   hitPoint: 224
-  strength: 110
+  strength: 121
   armor: 89
-  hitProbability: 40
+  hitProbability: 35
   evasion: 0
-  experience: 566
-  money: 679
+  experience: 623
+  money: 747
   dropItemProbability: 2
   overrideDropItems: []
   abilityTypes: 
