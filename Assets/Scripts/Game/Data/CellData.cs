@@ -54,6 +54,15 @@ namespace MineS
 			this.Controller = cellController;
 		}
 
+		public void Setup()
+		{
+			if(this.cellClickAction != null)
+			{
+				this.cellClickAction.SetCellController(this.Controller);
+				this.cellClickAction.SetCellData(this);
+			}
+		}
+
 		public void Action()
 		{
 			var actionableType = this.GetActionableType;
@@ -129,14 +138,6 @@ namespace MineS
 		public void BindCellClickAction(CellClickActionBase cellClickAction)
 		{
 			this.cellClickAction = cellClickAction;
-			if(this.cellClickAction != null)
-			{
-				this.cellClickAction.SetCellController(this.Controller);
-			}
-			if(this.cellClickAction != null)
-			{
-				this.cellClickAction.SetCellData(this);
-			}
 		}
 
 		public void BindDeployDescription(DeployDescriptionBase deployDescription)
