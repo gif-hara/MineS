@@ -15,12 +15,6 @@ namespace MineS
 		private int floorMax;
 
 		[SerializeField]
-		private Sprite stairImage;
-
-		[SerializeField]
-		private Sprite recoveryItemImage;
-
-		[SerializeField]
 		private EnemyTable enemyTable;
 
 		[SerializeField]
@@ -43,10 +37,6 @@ namespace MineS
 
 		[SerializeField]
 		private Range createTrapRange;
-
-		public Sprite StairImage{ get { return this.stairImage; } }
-
-		public Sprite RecoveryItemImage{ get { return this.recoveryItemImage; } }
 
 		public Range CreateRecoveryItemRange{ get { return this.createRecoveryItemRange; } }
 
