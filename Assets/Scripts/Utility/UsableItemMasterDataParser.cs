@@ -21,6 +21,7 @@ namespace MineS
 				"Assets/DataSources/Csv/UsableItemMasterData.csv",
 				"Assets/DataSources/Item/UsableItem/UsableItem{0}.asset"
 			);
+			AssetDatabase.LoadAssetAtPath<ItemDataBaseList>("Assets/DataSources/Item/ItemList/UsableItem.asset").SetDatabase("UsableItem");
 		}
 	}
 }

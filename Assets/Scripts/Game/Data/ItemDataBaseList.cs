@@ -20,9 +20,18 @@ namespace MineS
 		public List<ItemDataBase> Database{ get { return this.database; } }
 
 #if UNITY_EDITOR
-		[ContextMenu("Set as UsableItemList")]
-		private void SetAsUsableItem()
+		public void SetDatabase(string itemType)
 		{
+			this.database = new List<ItemDataBase>();
+			var format = string.Format("Assets/DataSources/Item/{0}/{0}{1}.asset", itemType, "{0}");
+			int i = 0;
+			var masterData = UnityEditor.AssetDatabase.LoadAssetAtPath<ItemDataBase>(string.Format(format, i));
+			while(masterData != null)
+			{
+				this.database.Add(masterData);
+				i++;
+				masterData = UnityEditor.AssetDatabase.LoadAssetAtPath<ItemDataBase>(string.Format(format, i));
+			}
 		}
 
 		public List<ItemDataBase> Parse(string csvData)

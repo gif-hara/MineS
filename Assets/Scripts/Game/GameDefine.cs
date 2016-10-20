@@ -196,6 +196,21 @@ namespace MineS
 			/// 1階層進む.
 			/// </summary>
 			Proceed,
+
+			/// <summary>
+			/// 最大攻撃力が減少する.
+			/// </summary>
+			OndineDrop,
+
+			/// <summary>
+			/// 最大ヒットポイントが減少する.
+			/// </summary>
+			OndineTear,
+
+			/// <summary>
+			/// レベルが下がる.
+			/// </summary>
+			OndineBlood,
 		}
 
 		public enum AbnormalStatusType:int

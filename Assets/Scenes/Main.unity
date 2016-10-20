@@ -5506,9 +5506,9 @@ RectTransform:
   - {fileID: 912330559}
   m_Father: {fileID: 842027360}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 371.25, y: -130}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518210043
@@ -6069,9 +6069,9 @@ RectTransform:
   - {fileID: 427700589}
   m_Father: {fileID: 912330559}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 110, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &549576039
@@ -19003,7 +19003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4799242ca19bb4f4b8aac458f72ecafc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current: {fileID: 11400000, guid: fb7414cd5676941249068426b7a00398, type: 2}
+  current: {fileID: 11400000, guid: 6d6f1180a85804caf98fe025f5a291d5, type: 2}
   dungeonNameFlowController: {fileID: 2053258983}
   observers:
   - {fileID: 842027365}

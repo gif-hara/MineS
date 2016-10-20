@@ -21,6 +21,7 @@ namespace MineS
 				"Assets/DataSources/Csv/WeaponMasterData.csv",
 				"Assets/DataSources/Item/Weapon/Weapon{0}.asset"
 			);
+			AssetDatabase.LoadAssetAtPath<ItemDataBaseList>("Assets/DataSources/Item/ItemList/Weapon.asset").SetDatabase("Weapon");
 		}
 
 		[MenuItem("MineS/Parse Shield MasterData")]
@@ -31,6 +32,7 @@ namespace MineS
 				"Assets/DataSources/Csv/ShieldMasterData.csv",
 				"Assets/DataSources/Item/Shield/Shield{0}.asset"
 			);
+			AssetDatabase.LoadAssetAtPath<ItemDataBaseList>("Assets/DataSources/Item/ItemList/Shield.asset").SetDatabase("Shield");
 		}
 
 		[MenuItem("MineS/Parse Accessory MasterData")]
@@ -41,6 +43,7 @@ namespace MineS
 				"Assets/DataSources/Csv/AccessoryMasterData.csv",
 				"Assets/DataSources/Item/Accessory/Accessory{0}.asset"
 			);
+			AssetDatabase.LoadAssetAtPath<ItemDataBaseList>("Assets/DataSources/Item/ItemList/Accessory.asset").SetDatabase("Accessory");
 		}
 	}
 }
