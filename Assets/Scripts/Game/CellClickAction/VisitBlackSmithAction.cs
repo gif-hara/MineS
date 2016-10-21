@@ -19,6 +19,16 @@ namespace MineS
 			BlackSmithManager.Instance.OpenUI();
 		}
 
+		public override void SetCellController(CellController cellController)
+		{
+			cellController.SetImage(this.Image);
+		}
+
+		public override void SetCellData(CellData data)
+		{
+			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("BlackSmith"));
+		}
+
 		public override GameDefine.EventType EventType
 		{
 			get

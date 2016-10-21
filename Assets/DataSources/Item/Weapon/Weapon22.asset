@@ -20,5 +20,3 @@ MonoBehaviour:
   canExtraction: 0
   itemType: 1
   abilities: 1b0000001d0000001e0000001f0000002000000021000000
-  reinforcementPurchase: {fileID: 0}
-  levelPower: {fileID: 0}

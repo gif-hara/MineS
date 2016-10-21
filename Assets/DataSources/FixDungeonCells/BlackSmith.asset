@@ -8,9 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 285b224307d64411abed67e46260b0ed, type: 3}
-  m_Name: AddPowerElement_2_4_7
+  m_Script: {fileID: 11500000, guid: c9336cd4dffeb4349ada1eb01dadc55d, type: 3}
+  m_Name: BlackSmith
   m_EditorClassIdentifier: 
-  level1: 2
-  level2: 4
-  level3: 7

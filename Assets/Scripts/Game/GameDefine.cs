@@ -767,7 +767,7 @@ namespace MineS
 
 		public const int AbnormalStatusTrapRemainingTurn = 5;
 
-		public const int EquipmentLevelMax = 3;
+		public const int EquipmentLevelMax = 99;
 
 		public const int CellRowMax = 8;
 

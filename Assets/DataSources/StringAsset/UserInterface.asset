@@ -466,3 +466,7 @@ MonoBehaviour:
       ja: "\u306A\u3093\u3068\uFF01<color=orange>{0}</color>\u306F<color=aqua>{1}</color>\u3060\u3063\u305F\uFF01"
       en: 
     guid: 19f7f8ed-10b6-446b-8fe3-54de342bc53f
+  - value:
+      ja: "\u304A\u91D1\u8FFD\u52A0"
+      en: 
+    guid: 5e0b92a7-42a7-4e56-9955-31c00bc42da1

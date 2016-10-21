@@ -224,6 +224,12 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
+		public void DebugAddMoney()
+		{
+			this.Data.AddMoney(100000);
+			this.NotifyCharacterDataObservers();
+		}
+
 		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			this.Data.OnTurnProgress(type, turnCount);

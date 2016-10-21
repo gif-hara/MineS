@@ -35,3 +35,6 @@ MonoBehaviour:
   - x: 2
     y: 0
     creator: {fileID: 11400000, guid: 944f44de5d24f47fb85c43945b4ed7d8, type: 2}
+  - x: 0
+    y: 1
+    creator: {fileID: 11400000, guid: 72fb9babe91c6426586c0dd65510926f, type: 2}

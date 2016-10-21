@@ -30,24 +30,13 @@ namespace MineS
 		[SerializeField, EnumLabel("Ability", typeof(GameDefine.AbilityType))]
 		public List<GameDefine.AbilityType> abilities;
 
-		[SerializeField]
-		private EquipmentLevelElement reinforcementPurchase;
-
-		[SerializeField]
-		private EquipmentLevelElement levelPower;
-
 		public int Level{ private set; get; }
 
 		public int Power
 		{
 			get
 			{
-				if(this.Level <= 0)
-				{
-					return this.basePower;
-				}
-
-				return Mathf.FloorToInt(this.basePower + this.levelPower.Get(this.Level - 1));
+				return this.basePower + this.Level;
 			}
 		}
 
@@ -57,7 +46,12 @@ namespace MineS
 		{
 			get
 			{
-				return EquipmentManager.Instance.GetStreetName(this) + base.ItemName;
+				if(this.Level <= 0)
+				{
+					return base.ItemName;
+				}
+
+				return string.Format("{0}+{1}", base.ItemName, this.Level);
 			}
 		}
 
@@ -79,8 +73,6 @@ namespace MineS
 				result.brandingLimit = this.brandingLimit;
 				result.itemType = this.itemType;
 				result.abilities = new List<GameDefine.AbilityType>(this.abilities);
-				result.reinforcementPurchase = this.reinforcementPurchase;
-				result.levelPower = this.levelPower;
 				result.Level = this.Level;
 				result.Abilities = AbilityFactory.Create(this.abilities, null);
 
@@ -159,7 +151,7 @@ namespace MineS
 		{
 			get
 			{
-				return Mathf.FloorToInt(this.purchasePrice * this.reinforcementPurchase.Get(this.Level));
+				return Mathf.FloorToInt((this.purchasePrice / 10) * (this.Level + 1));
 			}
 		}
 
