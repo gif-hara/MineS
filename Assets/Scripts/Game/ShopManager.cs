@@ -65,6 +65,7 @@ namespace MineS
 			this.ui.SetActive(true);
 			this.CreateConfirm();
 			InformationManager.AddMessage(this.welcomeMessage.Get);
+			PlayerManager.Instance.NotifyCharacterDataObservers();
 		}
 
 		public void Buy(Inventory addInventory, Item item)
