@@ -14,9 +14,14 @@ namespace MineS
 		private StringAsset.Finder dungeonName;
 
 		[SerializeField]
+		private bool itemIdentified;
+
+		[SerializeField]
 		private ShopTable shopTable;
 
 		public string Name{ get { return this.dungeonName.ToString(); } }
+
+		public bool ItemIdentified{ get { return this.itemIdentified; } }
 
 		public abstract CellData[,] Create(CellManager cellManager);
 

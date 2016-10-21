@@ -14,7 +14,7 @@ namespace MineS
 	/// </summary>
 	public class EnemyMasterDataParser : MasterDataParserBase<CharacterMasterData>
 	{
-		[MenuItem("MineS/Parse EnemyMasterData")]
+		[MenuItem("MineS/MasterData/Parse/Enemy")]
 		private static void Parse()
 		{
 			Parse(

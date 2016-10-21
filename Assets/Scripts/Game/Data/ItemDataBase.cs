@@ -26,6 +26,8 @@ namespace MineS
 
 		public virtual string ItemName{ get { return this.itemName.ToString(); } }
 
+		public string ItemNameRaw{ get { return this.itemName.ToString(); } }
+
 		public int PurchasePrice{ get { return this.purchasePrice; } }
 
 		public int SellingPrice{ get { return this.sellingPrice; } }

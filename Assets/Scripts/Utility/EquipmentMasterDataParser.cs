@@ -13,7 +13,7 @@ namespace MineS
 	/// </summary>
 	public class EquipmentMasterDataParser : MasterDataParserBase<EquipmentData>
 	{
-		[MenuItem("MineS/Parse Weapon MasterData")]
+		[MenuItem("MineS/MasterData/Parse/Weapon")]
 		private static void ParseWeaponMasterData()
 		{
 			Parse(
@@ -24,7 +24,7 @@ namespace MineS
 			AssetDatabase.LoadAssetAtPath<ItemDataBaseList>("Assets/DataSources/Item/ItemList/Weapon.asset").SetDatabase("Weapon");
 		}
 
-		[MenuItem("MineS/Parse Shield MasterData")]
+		[MenuItem("MineS/MasterData/Parse/Shield")]
 		private static void ParseShieldMasterData()
 		{
 			Parse(
@@ -35,7 +35,7 @@ namespace MineS
 			AssetDatabase.LoadAssetAtPath<ItemDataBaseList>("Assets/DataSources/Item/ItemList/Shield.asset").SetDatabase("Shield");
 		}
 
-		[MenuItem("MineS/Parse Accessory MasterData")]
+		[MenuItem("MineS/MasterData/Parse/Accessory")]
 		private static void ParseAccessoryMasterData()
 		{
 			Parse(

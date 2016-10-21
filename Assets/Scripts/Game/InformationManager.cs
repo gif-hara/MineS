@@ -54,7 +54,8 @@ namespace MineS
 			confirmEnterDungeon = null,
 			subBaseStrength = null,
 			subHitPointMax = null,
-			levelDownEnemy = null;
+			levelDownEnemy = null,
+			identifiedItem = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -319,6 +320,12 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.confirmEnterDungeon.Format(dungeonName));
+		}
+
+		public static void IdentifiedItem(string unidentifiedItemName, string itemName)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.identifiedItem.Format(unidentifiedItemName, itemName));
 		}
 
 		public static void AddMessage(string message)

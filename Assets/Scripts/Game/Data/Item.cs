@@ -50,6 +50,12 @@ namespace MineS
 
 		private void UseUsableItem(IAttack user, Inventory inventory)
 		{
+			var itemName = this.InstanceData.ItemName;
+			if(ItemManager.Instance.Identified(this))
+			{
+				InformationManager.IdentifiedItem(itemName, this.InstanceData.ItemNameRaw);
+			}
+
 			var usableItem = this.InstanceData as UsableItemData;
 			switch(usableItem.UsableItemType)
 			{

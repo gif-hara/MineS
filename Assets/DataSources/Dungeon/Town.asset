@@ -15,6 +15,7 @@ MonoBehaviour:
     target: {fileID: 0}
     value: 
     guid: 
+  itemIdentified: 1
   shopTable:
     elements:
     - floorMin: 1

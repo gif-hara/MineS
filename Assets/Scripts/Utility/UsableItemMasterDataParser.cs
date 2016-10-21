@@ -13,7 +13,7 @@ namespace MineS
 	/// </summary>
 	public class UsableItemMasterDataParser : MasterDataParserBase<UsableItemData>
 	{
-		[MenuItem("MineS/Parse UsableItem MasterData")]
+		[MenuItem("MineS/MasterData/Parse/UsableItem")]
 		private static void Parse()
 		{
 			Parse(

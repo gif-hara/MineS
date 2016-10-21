@@ -18,4 +18,5 @@ MonoBehaviour:
   type: 0
   power0: 100
   power1: 100
+  canUnidentified: 1
   description: "\u5BFE\u8C61\u306E\u30D2\u30C3\u30C8\u30DD\u30A4\u30F3\u30C8\u304C\u56DE\u5FA9\u3059\u308B\u305E\uFF01"

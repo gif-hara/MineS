@@ -22,7 +22,18 @@ namespace MineS
 		private int power1;
 
 		[SerializeField]
+		private bool canUnidentified;
+
+		[SerializeField]
 		private string description;
+
+		public override string ItemName
+		{
+			get
+			{
+				return ItemManager.Instance.GetItemName(this);
+			}
+		}
 
 		public GameDefine.UsableItemType UsableItemType{ get { return this.type; } }
 
@@ -30,9 +41,21 @@ namespace MineS
 
 		public int Power1{ get { return this.power1; } }
 
+		public bool CanUnidentified{ get { return this.canUnidentified; } }
+
 		public int RandomPower{ get { return Random.Range(this.power0, this.power1 + 1); } }
 
-		public DescriptionData.Element DescriptionElement{ get { return new DescriptionData.Element(this.itemName, this.description, this.Image); } }
+		public DescriptionData.Element DescriptionElement{ get { return new DescriptionData.Element(this.ItemName, this.Description, this.Image); } }
+
+		private string Description
+		{
+			get
+			{
+				return ItemManager.Instance.IsIdentified(this)
+					? this.description
+						: ItemManager.Instance.unidentifiedDescription.Element.Get;
+			}
+		}
 
 		public override GameDefine.ItemType ItemType
 		{
@@ -51,6 +74,7 @@ namespace MineS
 				result.type = this.type;
 				result.power0 = this.power0;
 				result.power1 = this.power1;
+				result.canUnidentified = this.canUnidentified;
 				result.description = this.description;
 
 				return result;
@@ -68,7 +92,8 @@ namespace MineS
 			result.type = GameDefine.GetUsableItemType(csv[5]);
 			result.power0 = int.Parse(csv[6]);
 			result.power1 = int.Parse(csv[7]);
-			result.description = csv[8];
+			result.canUnidentified = bool.Parse(csv[8]);
+			result.description = csv[9];
 			return result;
 		}
 #endif

@@ -45,20 +45,20 @@ namespace MineS
 				var item = data.Items[i];
 				var cellController = this.cellControllers[i];
 				var cellData = new CellData(cellController);
-				this.cellControllers[i].SetCellData(cellData);
 				cellData.BindCellClickAction(this.GetAction(item, cellController));
+				this.cellControllers[i].SetCellData(cellData);
 			}
 		}
 
 		private CellClickActionBase GetAction(Item item, CellController cellController)
 		{
-			if(!PlayerManager.Instance.Data.Inventory.ExchangeItemController.CanExchange)
+			if(PlayerManager.Instance.Data.Inventory.ExchangeItemController.CanExchange)
 			{
-				return new SelectItemAction(item);
+				return new ChangeItemAction(item);
 			}
 			else
 			{
-				return new ChangeItemAction(item);
+				return new SelectItemAction(item);
 			}
 		}
 	}
