@@ -35,7 +35,7 @@ namespace MineS
 			{
 				get
 				{
-					return this.IsIdentified ? this.item.ItemNameRaw : string.Format("{0}{1}{2}", "<color=orange>", this.unidentifiedName, "</color>");
+					return this.IsIdentified ? this.item.ItemNameRaw : ItemManager.Instance.unidentifiedItemName.Element.Format(this.unidentifiedName);
 				}
 			}
 		}
@@ -47,6 +47,10 @@ namespace MineS
 		private StringAsset unidentifiedStringAsset;
 
 		public SerializeFieldGetter.StringAssetFinder unidentifiedDescription;
+
+		public SerializeFieldGetter.StringAssetFinder equipmentRevisedLevelName;
+
+		public SerializeFieldGetter.StringAssetFinder unidentifiedItemName;
 
 		private Dictionary<string, IdentifiedItem> identifiedDictionary;
 

@@ -51,7 +51,7 @@ namespace MineS
 					return base.ItemName;
 				}
 
-				return string.Format("{0}+{1}", base.ItemName, this.Level);
+				return ItemManager.Instance.equipmentRevisedLevelName.Element.Format(base.ItemName, this.Level);
 			}
 		}
 

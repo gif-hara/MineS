@@ -470,3 +470,11 @@ MonoBehaviour:
       ja: "\u304A\u91D1\u8FFD\u52A0"
       en: 
     guid: 5e0b92a7-42a7-4e56-9955-31c00bc42da1
+  - value:
+      ja: '{0} +{1}'
+      en: 
+    guid: 3e01b610-f5d1-4708-8ecb-940e4171a9e7
+  - value:
+      ja: <color=orange>{0}</color>
+      en: 
+    guid: cfa74e56-5b00-4e9b-a8dc-2cc14c463022
