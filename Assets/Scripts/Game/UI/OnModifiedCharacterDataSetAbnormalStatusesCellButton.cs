@@ -38,6 +38,9 @@ namespace MineS
 				var parent = isBuff ? this.buffParent : this.debuffParent;
 				var cellController = Instantiate(this.cellControllerPrefab, parent, false) as CellController;
 				cellController.SetActiveStatusObject(false);
+				var cellData = new CellData(cellController);
+				cellData.BindDeployDescription(new DeployDescriptionOnDescriptionData(GameDefine.GetAbnormalStatusDescriptionKey(a.Type)));
+				cellController.SetCellData(cellData);
 				cellController.SetImage(TextureManager.Instance.abnormalStatus.GetIcon(a.Type));
 				dictionary.Add(a.Type, cellController);
 			});
