@@ -13,7 +13,7 @@ namespace MineS
 	{
 		public override CellData Create(int y, int x, CellController cellController)
 		{
-			var cellData = new CellData(y, x, cellController);
+			var cellData = new CellData(y, x, 0, cellController);
 			cellData.BindCellClickAction(new VisitShopAction());
 
 			return cellData;

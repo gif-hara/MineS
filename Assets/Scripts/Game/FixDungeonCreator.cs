@@ -15,6 +15,7 @@ namespace MineS
 		{
 			var _dungeonData = dungeonData as FixDungeonDungeonData;
 			var database = new Database(rowNumber, culumnNumber);
+			var mapChipCreator = new FixDungeonMapChipCreator();
 
 			// 街データを生成.
 			_dungeonData.CellCreators.ForEach(c => database.Set(database.Pop(c.Y, c.X), c.Create(cellManager.CellControllers[c.Y, c.X])));
@@ -22,7 +23,7 @@ namespace MineS
 			// 空白を作成.
 			for(int i = 0, imax = database.Rest; i < imax; i++)
 			{
-				this.CreateCellData(cellManager, database, null, 0);
+				this.CreateCellData(cellManager, database, mapChipCreator, null, 0);
 			}
 
 			for(int y = 0; y < rowNumber; y++)

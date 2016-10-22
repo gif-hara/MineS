@@ -17,11 +17,16 @@ namespace MineS
 		private bool itemIdentified;
 
 		[SerializeField]
+		private MapChipData mapChip;
+
+		[SerializeField]
 		private ShopTable shopTable;
 
 		public string Name{ get { return this.dungeonName.ToString(); } }
 
 		public bool ItemIdentified{ get { return this.itemIdentified; } }
+
+		public MapChipData MapChip{ get { return this.mapChip; } }
 
 		public abstract CellData[,] Create(CellManager cellManager);
 

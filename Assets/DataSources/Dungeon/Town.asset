@@ -16,6 +16,7 @@ MonoBehaviour:
     value: "\u540D\u3082\u7121\u304D\u6751"
     guid: c27eec5d-f791-4a03-bb05-bf5b046b302a
   itemIdentified: 1
+  mapChip: {fileID: 11400000, guid: 310e8b95945bd41f1ab3ceeac02c3dc2, type: 2}
   shopTable:
     elements:
     - floorMin: 1

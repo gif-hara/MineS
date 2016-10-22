@@ -71,25 +71,27 @@ namespace MineS
 
 		public abstract CellData[,] Create(CellManager cellManager, DungeonDataBase dungeonData, int rowNumber, int culumnNumber);
 
-		protected void CreateCellData(CellManager cellManager, Database database, CellClickActionBase action, int cellIndex)
+		protected void CreateCellData(CellManager cellManager, Database database, MapChipCreatorBase mapChipCreator, CellClickActionBase action, int cellIndex)
 		{
 			var cell = database.Pop(cellIndex);
-			var cellData = new CellData(cell.y, cell.x, cellManager.CellControllers[cell.y, cell.x]);
+			var cellData = new CellData(cell.y, cell.x, mapChipCreator.Get(cell.y, cell.x), cellManager.CellControllers[cell.y, cell.x]);
 			cellData.BindCellClickAction(action);
 			database.Set(cell, cellData);
 		}
 
-		protected void CreateCellData(CellManager cellManager, Database database, CellClickActionBase action, int y, int x)
+		protected void CreateCellData(CellManager cellManager, Database database, MapChipCreatorBase mapChipCreator, CellClickActionBase action, int y, int x)
 		{
 			var cell = database.Pop(y, x);
-			var cellData = new CellData(cell.y, cell.x, cellManager.CellControllers[cell.y, cell.x]);
+			var cellController = cellManager.CellControllers[cell.y, cell.x];
+			var cellData = new CellData(cell.y, cell.x, mapChipCreator.Get(y, x), cellController);
+
 			cellData.BindCellClickAction(action);
 			database.Set(cell, cellData);
 		}
 
-		protected void CreateCellData(CellManager cellManager, Database database, CellClickActionBase action)
+		protected void CreateCellData(CellManager cellManager, Database database, MapChipCreatorBase mapChipCreator, CellClickActionBase action)
 		{
-			this.CreateCellData(cellManager, database, action, Random.Range(0, database.Rest));
+			this.CreateCellData(cellManager, database, mapChipCreator, action, Random.Range(0, database.Rest));
 		}
 	}
 }

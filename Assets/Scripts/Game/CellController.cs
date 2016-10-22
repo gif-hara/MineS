@@ -51,6 +51,9 @@ namespace MineS
 		[SerializeField]
 		private DamageEffectCreator damageEffectCreator;
 
+		[SerializeField]
+		private Image mapChip;
+
 		private Tweener imageShakeTweener = null;
 
 		public CellData Data{ private set; get; }
@@ -242,6 +245,11 @@ namespace MineS
 			}
 			this.image.sprite = sprite;
 			this.image.enabled = sprite != null;
+		}
+
+		public void SetMapChip(Sprite image)
+		{
+			this.mapChip.sprite = image;
 		}
 
 		public void SetActiveStatusObject(bool isActive)

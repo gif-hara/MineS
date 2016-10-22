@@ -15,8 +15,11 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 4172020a15e334b00838b72bf6b90d8f, type: 2}
     value: "\u521D\u7D1A\u30C0\u30F3\u30B8\u30E7\u30F3"
     guid: ab1cdd68-b055-4b81-8f0c-c2adca1fcc74
-  stairImage: {fileID: 21300000, guid: cf2d90bf6565fe74ba7dbc653686d124, type: 3}
-  recoveryItemImage: {fileID: 21300000, guid: beab0bd6fda210d46ac503638a5818eb, type: 3}
+  itemIdentified: 0
+  mapChip: {fileID: 11400000, guid: 310e8b95945bd41f1ab3ceeac02c3dc2, type: 2}
+  shopTable:
+    elements: []
+  floorMax: 0
   enemyTable:
     elements:
     - floorMin: 1
@@ -84,11 +87,15 @@ MonoBehaviour:
       probability: 100
   blackSmithTable:
     elements: []
-  shopTable:
-    elements: []
   createRecoveryItemRange:
     min: 8
     max: 12
+  createAnvilRange:
+    min: 0
+    max: 0
+  createMoneyRange:
+    min: 0
+    max: 0
   createEnemyRange:
     min: 16
     max: 24
@@ -98,3 +105,6 @@ MonoBehaviour:
   createTrapRange:
     min: 0
     max: 5
+  acquireMoneyRange:
+    min: 0
+    max: 0

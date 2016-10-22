@@ -54,6 +54,25 @@ namespace MineS
 					this.CellControllers[y, x].SetCellData(database[y, x]);
 				}
 			}
+			for(int y = 0; y < GameDefine.CellRowMax; y++)
+			{
+				for(int x = 0; x < GameDefine.CellCulumnMax; x++)
+				{
+					var centerData = this.CellControllers[y, x].Data;
+					var leftData = this.GetAdjacentCellData(y, x, GameDefine.AdjacentType.Left);
+					var rightData = this.GetAdjacentCellData(y, x, GameDefine.AdjacentType.Right);
+					var topData = this.GetAdjacentCellData(y, x, GameDefine.AdjacentType.Top);
+					var bottomData = this.GetAdjacentCellData(y, x, GameDefine.AdjacentType.Bottom);
+					this.CellControllers[y, x].SetMapChip(DungeonManager.Instance.CurrentData.MapChip.Get(
+						centerData.MapChipId,
+						leftData == null ? 1 : leftData.MapChipId,
+						rightData == null ? 1 : rightData.MapChipId,
+						topData == null ? 1 : topData.MapChipId,
+						bottomData == null ? 1 : bottomData.MapChipId
+					));
+
+				}
+			}
 			this.CheckCellData(this.cellDatabase);
 		}
 

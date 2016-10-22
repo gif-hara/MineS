@@ -15,6 +15,8 @@ namespace MineS
 
 		public int Y{ private set; get; }
 
+		public int MapChipId{ private set; get; }
+
 		public bool CanStep{ private set; get; }
 
 		public bool IsIdentification{ private set; get; }
@@ -45,10 +47,11 @@ namespace MineS
 			this.Controller = cellController;
 		}
 
-		public CellData(int y, int x, CellController cellController)
+		public CellData(int y, int x, int mapChipId, CellController cellController)
 		{
 			this.X = x;
 			this.Y = y;
+			this.MapChipId = mapChipId;
 			this.IsIdentification = false;
 			this.lockCount = 0;
 			this.Controller = cellController;
