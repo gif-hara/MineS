@@ -35,6 +35,7 @@ namespace MineS
 		{
 			this.inputBlock.enabled = false;
 			this.fade.enabled = false;
+			this.text.enabled = false;
 			this.fade.color = new Color(this.fade.color.r, this.fade.color.g, this.fade.color.b, 0.0f);
 			this.text.color = new Color(this.text.color.r, this.text.color.g, this.text.color.b, 0.0f);
 		}
@@ -66,6 +67,10 @@ namespace MineS
 		{
 			DOTween.ToAlpha(() => this.text.color, x => this.text.color = x, 1.0f, 0.5f)
 				.SetDelay(1.0f)
+				.OnStart(() =>
+			{
+				this.text.enabled = true;	
+			})
 				.OnComplete(() =>
 			{
 				this.StartFadeInFade();
@@ -78,7 +83,11 @@ namespace MineS
 				.SetDelay(1.0f)
 				.OnStart(() =>
 			{
-				DOTween.ToAlpha(() => this.text.color, x => this.text.color = x, 0.0f, 1.0f);
+				DOTween.ToAlpha(() => this.text.color, x => this.text.color = x, 0.0f, 1.0f)
+						.OnComplete(() =>
+				{
+					this.text.enabled = false;
+				});
 			})
 				.OnComplete(() =>
 			{
