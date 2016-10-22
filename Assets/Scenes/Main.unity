@@ -19236,7 +19236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4799242ca19bb4f4b8aac458f72ecafc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current: {fileID: 11400000, guid: fb7414cd5676941249068426b7a00398, type: 2}
+  current: {fileID: 11400000, guid: 6d6f1180a85804caf98fe025f5a291d5, type: 2}
   dungeonNameFlowController: {fileID: 2053258983}
   observers:
   - {fileID: 842027365}
@@ -19609,6 +19609,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "<color=aqua>{0}</color>\u306B<color=aqua>{1}</color>\u3092\u5408\u6210\u3059\u308B\u3093\u3060\u306A\uFF1F\u305D\u308C\u306A\u3089<color=orange>{2}G</color>\u306B\u306A\u308B\u306A\u3002"
     guid: 3b1041a7-6273-455a-b092-499f2605de9c
+  canNotSynthesisTargetMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u3059\u307E\u306D\u3047\u30FB\u30FB\u30FB<color=aqua>{0}</color>\u306F\u5408\u6210\u3059\u308B\u306E\u306F\u7121\u7406\u3060\u3002"
+    guid: 1c00f1b8-a1fa-44a5-9a12-8573b55a0df5
   notExistBrandingEquipmentMessage:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u3053\u3044\u3064\u306B\u306F\u713C\u5370\u304C\u4ED8\u3044\u3066\u306A\u3044\u305E\uFF1F"

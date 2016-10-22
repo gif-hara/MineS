@@ -76,6 +76,9 @@ namespace MineS
 		private StringAsset.Finder confirmSynthesisMessage;
 
 		[SerializeField]
+		private StringAsset.Finder canNotSynthesisTargetMessage;
+
+		[SerializeField]
 		private StringAsset.Finder notExistBrandingEquipmentMessage;
 
 		[SerializeField]
@@ -142,6 +145,12 @@ namespace MineS
 		public void InvokeSynthesis(Item targetEquipment)
 		{
 			var equipmentData = targetEquipment.InstanceData as EquipmentData;
+			if(!equipmentData.CanExtraction)
+			{
+				InformationManager.AddMessage(this.canNotSynthesisTargetMessage.Format(equipmentData.ItemName));
+				return;
+			}
+
 			var baseEquipment = PlayerManager.Instance.Data.Inventory.SelectItem;
 			if(equipmentData.ExistBranding)
 			{

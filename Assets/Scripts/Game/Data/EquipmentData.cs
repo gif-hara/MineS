@@ -63,6 +63,14 @@ namespace MineS
 			}
 		}
 
+		public bool CanExtraction
+		{
+			get
+			{
+				return this.canExtraction;
+			}
+		}
+
 		public override ItemDataBase Clone
 		{
 			get
@@ -71,6 +79,7 @@ namespace MineS
 				this.InternalClone(result);
 				result.basePower = this.basePower;
 				result.brandingLimit = this.brandingLimit;
+				result.canExtraction = this.canExtraction;
 				result.itemType = this.itemType;
 				result.abilities = new List<GameDefine.AbilityType>(this.abilities);
 				result.Level = this.Level;
