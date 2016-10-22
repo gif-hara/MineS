@@ -365,6 +365,11 @@ namespace MineS
 			return this.Abilities.Count(a => a.Type == type);
 		}
 
+		public void CheckArmorMax()
+		{
+			this.Armor = this.Armor > this.ArmorMax ? this.ArmorMax : this.Armor;
+		}
+
 		public bool IsDead
 		{
 			get

@@ -30,6 +30,7 @@ namespace MineS
 			case GameDefine.ItemType.Shield:
 				beforeItem = this.Shield;
 				this.Shield = item;
+				holder.CheckArmorMax();
 			break;
 			case GameDefine.ItemType.Accessory:
 				beforeItem = this.Accessory;
