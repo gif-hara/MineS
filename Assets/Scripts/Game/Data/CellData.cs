@@ -86,6 +86,7 @@ namespace MineS
 			if(isIdentification)
 			{
 				TurnManager.Instance.Progress(GameDefine.TurnProgressType.CellClick);
+				Object.Instantiate(EffectManager.Instance.prefabStepEffect.Element, this.Controller.transform, false);
 			}
 		}
 

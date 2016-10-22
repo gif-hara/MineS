@@ -13,5 +13,7 @@ namespace MineS
 		public SerializeFieldGetter.GameObject prefabBattleEffectSlash;
 
 		public SerializeFieldGetter.GameObject prefabDeadEffect;
+
+		public SerializeFieldGetter.GameObject prefabStepEffect;
 	}
 }
