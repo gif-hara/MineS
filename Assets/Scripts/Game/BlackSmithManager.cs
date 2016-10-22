@@ -93,6 +93,9 @@ namespace MineS
 		[SerializeField]
 		private StringAsset.Finder notRemoveAbilityMessage;
 
+		[SerializeField]
+		private StringAsset.Finder notRemoveAbilityMessageFromAbilityMatch;
+
 		public Item SynthesisTargetEquipment{ private set; get; }
 
 		void Start()
@@ -192,7 +195,15 @@ namespace MineS
 			var removeItem = playerData.Inventory.SelectItem;
 			var needMoney = Calculator.GetRemoveAbilityNeedMoney(removeItem);
 			var equipmentData = removeItem.InstanceData as EquipmentData;
-			InformationManager.AddMessage(this.confirmRemoveAbilityMessage.Format(needMoney, equipmentData.Abilities[index].Name));
+			var removeAbility = equipmentData.Abilities[index];
+
+			if(!equipmentData.CanRemoveAbility(index))
+			{
+				InformationManager.AddMessage(this.notRemoveAbilityMessageFromAbilityMatch.Get);
+				return;
+			}
+
+			InformationManager.AddMessage(this.confirmRemoveAbilityMessage.Format(needMoney, removeAbility.Name));
 			var confirmManager = ConfirmManager.Instance;
 			confirmManager.Add(this.removeAbilityMessage, () =>
 			{

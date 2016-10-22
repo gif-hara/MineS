@@ -122,6 +122,11 @@ namespace MineS
 			}
 		}
 
+		public bool CanRemoveAbility(int index)
+		{
+			return index >= (this.MasterData as EquipmentData).abilities.Count;
+		}
+
 		public void RemoveAbility(int index)
 		{
 			this.Abilities.RemoveAt(index);

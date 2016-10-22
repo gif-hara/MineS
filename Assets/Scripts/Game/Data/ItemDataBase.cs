@@ -24,6 +24,8 @@ namespace MineS
 		[SerializeField]
 		protected Sprite image;
 
+		public ItemDataBase MasterData{ private set; get; }
+
 		public virtual string ItemName{ get { return this.itemName.ToString(); } }
 
 		public string ItemNameRaw{ get { return this.itemName.ToString(); } }
@@ -44,6 +46,7 @@ namespace MineS
 			clone.purchasePrice = this.purchasePrice;
 			clone.sellingPrice = this.sellingPrice;
 			clone.image = this.image;
+			clone.MasterData = this;
 		}
 	}
 }
