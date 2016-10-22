@@ -53,6 +53,11 @@ namespace MineS
 			/// 店.
 			/// </summary>
 			Shop,
+
+			/// <summary>
+			/// 鉄床.
+			/// </summary>
+			Anvil,
 		}
 
 		/// <summary>

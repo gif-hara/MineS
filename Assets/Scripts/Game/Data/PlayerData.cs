@@ -166,6 +166,22 @@ namespace MineS
 			}
 		}
 
+		public override int Evasion
+		{
+			get
+			{
+				return base.Evasion + this.Inventory.Equipment.TotalLuck;
+			}
+		}
+
+		public override int HitProbability
+		{
+			get
+			{
+				return base.HitProbability + this.Inventory.Equipment.TotalLuck;
+			}
+		}
+
 		public override List<AbilityBase> Abilities
 		{
 			get

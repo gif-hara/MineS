@@ -33,6 +33,7 @@ namespace MineS
 			onContinuousAttack = null,
 			onAcquiredItem = null,
 			onRecovery = null,
+			onRecoveryArmor = null,
 			onInitiativeDamage = null,
 			onUseRecoveryHitPointItem = null,
 			onUseRecoveryArmorItem = null,
@@ -149,6 +150,12 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.onRecovery.Format(value));
+		}
+
+		public static void OnRecoveryArmor(int value)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.onRecoveryArmor.Format(value));
 		}
 
 		public static void OnInitiativeDamage(IAttack attacker, IAttack receiver, int damage)

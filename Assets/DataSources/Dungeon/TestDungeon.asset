@@ -57,9 +57,12 @@ MonoBehaviour:
   createRecoveryItemRange:
     min: 0
     max: 0
-  createEnemyRange:
+  createAnvilRange:
     min: 50
     max: 50
+  createEnemyRange:
+    min: 0
+    max: 0
   createItemRange:
     min: 0
     max: 0

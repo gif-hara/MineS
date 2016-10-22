@@ -30,6 +30,9 @@ namespace MineS
 		private Range createRecoveryItemRange;
 
 		[SerializeField]
+		private Range createAnvilRange;
+
+		[SerializeField]
 		private Range createEnemyRange;
 
 		[SerializeField]
@@ -39,6 +42,8 @@ namespace MineS
 		private Range createTrapRange;
 
 		public Range CreateRecoveryItemRange{ get { return this.createRecoveryItemRange; } }
+
+		public Range CreateAnvilRange{ get { return this.createAnvilRange; } }
 
 		public Range CreateEnemyRange{ get { return this.createEnemyRange; } }
 

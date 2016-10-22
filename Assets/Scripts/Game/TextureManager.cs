@@ -143,5 +143,7 @@ namespace MineS
 		public SerializeFieldGetter.Sprite recoveryItem;
 
 		public SerializeFieldGetter.Sprite stairImage;
+
+		public SerializeFieldGetter.Sprite anvilImage;
 	}
 }
