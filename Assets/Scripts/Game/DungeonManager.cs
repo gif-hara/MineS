@@ -63,8 +63,8 @@ namespace MineS
 		public void NextFloorEvent(int addValue)
 		{
 			this.floorCount += addValue;
-			this.InternalNextFloor();
-			//this.dungeonNameFlowController.StartFadeOut(this.current, this.CurrentData.Name, this.floorCount);
+			//this.InternalNextFloor();
+			this.dungeonNameFlowController.StartFadeOut(this.current, this.CurrentData.Name, this.floorCount);
 		}
 
 		public EnemyData CreateEnemy(CellController cellController)
