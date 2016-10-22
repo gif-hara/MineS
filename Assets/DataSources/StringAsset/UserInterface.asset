@@ -478,3 +478,7 @@ MonoBehaviour:
       ja: <color=orange>{0}</color>
       en: 
     guid: cfa74e56-5b00-4e9b-a8dc-2cc14c463022
+  - value:
+      ja: "<color=attackerColor>{0}</color>\u306F\u6DF7\u4E71\u3057\u3066\u3044\u308B\uFF01<color=targetColor>{1}</color>\u306B<color=attackerColor>{2}</color>\u306E\u30C0\u30E1\u30FC\u30B8\u3092\u4E0E\u3048\u305F\uFF01"
+      en: 
+    guid: b50d530e-bba9-4282-b830-d830dd07076e

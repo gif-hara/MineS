@@ -61,6 +61,14 @@ namespace MineS
 					this.BindCombatEnemyAction(blankCell, enemy);
 				}
 			}
+
+			if(this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Confusion))
+			{
+				var targets = EnemyManager.Instance.VisibleEnemies;
+				var target = targets[Random.Range(0, targets.Count)];
+				var damage = target.TakeDamage(this, this.FinalStrength, false);
+				InformationManager.ConfusionEnemyAttack(this, target, damage);
+			}
 		}
 
 		public override void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)

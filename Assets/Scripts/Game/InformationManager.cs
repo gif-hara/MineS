@@ -55,7 +55,8 @@ namespace MineS
 			subBaseStrength = null,
 			subHitPointMax = null,
 			levelDownEnemy = null,
-			identifiedItem = null;
+			identifiedItem = null,
+			confusionEnemyAttack = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -326,6 +327,20 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.identifiedItem.Format(unidentifiedItemName, itemName));
+		}
+
+		public static void ConfusionEnemyAttack(IAttack attacker, IAttack target, int damage)
+		{
+			if(OptionManager.Instance.Data.isFewMessage)
+			{
+				return;
+			}
+
+			var instance = InformationManager.Instance;
+			var message = instance.confusionEnemyAttack.Format(attacker.Name, target.Name, damage)
+				.Replace(AttackerColor, attacker.ColorCode)
+				.Replace(TargetColor, target.ColorCode);
+			instance._AddMessage(message);
 		}
 
 		public static void AddMessage(string message)

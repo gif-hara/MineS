@@ -124,6 +124,10 @@ namespace MineS
 			}
 		}
 
+		/// <summary>
+		/// 挑発持ちの敵を返す.
+		/// </summary>
+		/// <value>The find provocation enemy.</value>
 		public EnemyData FindProvocationEnemy
 		{
 			get
@@ -139,7 +143,7 @@ namespace MineS
 			}
 		}
 
-		private List<EnemyData> VisibleEnemies
+		public List<EnemyData> VisibleEnemies
 		{
 			get
 			{
