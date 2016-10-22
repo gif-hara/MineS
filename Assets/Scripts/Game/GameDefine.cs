@@ -908,6 +908,42 @@ namespace MineS
 			type == TrapType.Poison;
 		}
 
+		public static AdjacentType GetDirection(AdjacentType current, AdjacentType vector)
+		{
+			var result = (int)current + ((int)vector - 2);
+			result = result < 0 ? result + GameDefine.AdjacentMax - 1 : result;
+			return (AdjacentType)(result % (GameDefine.AdjacentMax - 1));
+		}
+
+		public static AdjacentType GetReverseDirection(AdjacentType current)
+		{
+			var result = (int)current + 4;
+			result = result < 0 ? result + GameDefine.AdjacentMax - 1 : result;
+			return (AdjacentType)(result % (GameDefine.AdjacentMax - 1));
+		}
+
+		public static AdjacentType GetRandomArrow()
+		{
+			var random = UnityEngine.Random.Range(0, 4);
+			return random == 0
+				? GameDefine.AdjacentType.Left
+					: random == 1
+				? GameDefine.AdjacentType.Right
+					: random == 2
+				? GameDefine.AdjacentType.Top
+					: GameDefine.AdjacentType.Bottom;
+		}
+
+		public static bool IsHorizontal(AdjacentType type)
+		{
+			return type == AdjacentType.Left || type == AdjacentType.Right;
+		}
+
+		public static bool IsVertical(AdjacentType type)
+		{
+			return type == AdjacentType.Top || type == AdjacentType.Bottom;
+		}
+
 		public const string GoodColorCode = "#00FFE9";
 
 		public const string BadColorCode = "#FF3333";
