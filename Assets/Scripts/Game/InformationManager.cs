@@ -57,7 +57,8 @@ namespace MineS
 			subHitPointMax = null,
 			levelDownEnemy = null,
 			identifiedItem = null,
-			confusionEnemyAttack = null;
+			confusionEnemyAttack = null,
+			acquireMoney = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -348,6 +349,12 @@ namespace MineS
 				.Replace(AttackerColor, attacker.ColorCode)
 				.Replace(TargetColor, target.ColorCode);
 			instance._AddMessage(message);
+		}
+
+		public static void AcquireMoney(int money)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.acquireMoney.Format(money));
 		}
 
 		public static void AddMessage(string message)

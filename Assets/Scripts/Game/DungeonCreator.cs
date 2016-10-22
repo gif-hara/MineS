@@ -32,6 +32,12 @@ namespace MineS
 				this.CreateCellData(cellManager, database, new CreateAnvilAction());
 			}
 
+			// 金袋を作成.
+			for(int i = 0, imax = _dungeonData.CreateMoneyRange.Random; i < imax; i++)
+			{
+				this.CreateCellData(cellManager, database, new CreateMoneyAction());
+			}
+
 			// 敵を作成.
 			for(int i = 0, imax = _dungeonData.CreateEnemyRange.Random; i < imax; i++)
 			{

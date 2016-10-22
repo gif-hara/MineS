@@ -58,6 +58,9 @@ MonoBehaviour:
     min: 0
     max: 0
   createAnvilRange:
+    min: 0
+    max: 0
+  createMoneyRange:
     min: 50
     max: 50
   createEnemyRange:
@@ -69,3 +72,6 @@ MonoBehaviour:
   createTrapRange:
     min: 0
     max: 0
+  acquireMoneyRange:
+    min: 10
+    max: 500

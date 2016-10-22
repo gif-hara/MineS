@@ -802,3 +802,13 @@ MonoBehaviour:
       value: "\u30A2\u30FC\u30DE\u30FC\u304C\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
       guid: 0f1af8c2-8614-4f81-a587-b484b97fb792
     image: {fileID: 21300000, guid: 7be0b1fbb71c648329e2f57037cfaf36, type: 3}
+  - key: Money
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u91D1\u888B"
+      guid: 0dca16a2-58a4-43b6-a166-0c8a156db669
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u304A\u91D1\u304C\u5165\u3063\u3066\u3044\u308B\u305E\uFF01"
+      guid: b71e4132-eb42-440f-b4d7-472b912f891e
+    image: {fileID: 21300000, guid: a99a9e4853dd14d118d2e20c51c8c99b, type: 3}

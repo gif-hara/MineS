@@ -58,6 +58,11 @@ namespace MineS
 			/// 鉄床.
 			/// </summary>
 			Anvil,
+
+			/// <summary>
+			/// 金袋.
+			/// </summary>
+			Money,
 		}
 
 		/// <summary>
