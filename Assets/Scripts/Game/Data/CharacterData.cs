@@ -219,8 +219,13 @@ namespace MineS
 			return resultDamage;
 		}
 
-		public void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint)
+		public virtual void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint)
 		{
+			if(this.IsDead)
+			{
+				return;
+			}
+
 			this.cellController.TakeDamage(value);
 			if(!onlyHitPoint)
 			{

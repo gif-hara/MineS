@@ -33,11 +33,18 @@ namespace MineS
 		protected override void OnAttacked(CharacterData target, int damage)
 		{
 			base.OnAttacked(target, damage);
+			AchievementManager.Instance.AddGiveDamage(damage);
 
 			if(this.Inventory.IsFreeSpace && this.FindAbility(GameDefine.AbilityType.Theft) && Calculator.IsSuccessTheft(this))
 			{
 				this.Inventory.AddItem(DungeonManager.Instance.CurrentDataAsDungeon.CreateItem());
 			}
+		}
+
+		public override void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint)
+		{
+			AchievementManager.Instance.AddTakeDamage(value);
+			base.TakeDamageRaw(attacker, value, onlyHitPoint);
 		}
 
 		public override void Defeat(IAttack target)
@@ -46,6 +53,7 @@ namespace MineS
 			base.Defeat(target);
 			this.AddExperience(Calculator.GetFinalExperience(target.Experience, this));
 			this.AddMoney(Calculator.GetFinalMoney(target.Money, this));
+			AchievementManager.Instance.AddDefeatedEnemy(1);
 
 			while(this.CanLevelUp)
 			{
@@ -55,6 +63,15 @@ namespace MineS
 
 		public override void Dead(CharacterData attacker)
 		{
+			InformationManager.GameOver();
+			if(attacker == null)
+			{
+				ResultManager.Instance.Invoke(ResultManager.Instance.causeOtherDead.Element.Format(this.Name));
+			}
+			else
+			{
+				ResultManager.Instance.Invoke(ResultManager.Instance.causeEnemyDead.Element.Format(attacker.Name));
+			}
 		}
 
 		public override string ColorCode
@@ -100,6 +117,16 @@ namespace MineS
 			this.AddBaseStrength(-growthData.Strength);
 			this.Armor -= growthData.Armor;
 			this.Armor = this.Armor < 0 ? 0 : this.Armor;
+		}
+
+		public void OnChangeDungeon()
+		{
+			this.HitPointMax = this.masterData.HitPoint;
+			this.HitPoint = this.HitPointMax;
+			this.Armor = this.ArmorMax;
+			this.Experience = 0;
+			this.AbnormalStatuses.Clear();
+			this.Level = 1;
 		}
 
 		public override void ForceLevelUp(int value)

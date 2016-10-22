@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: Town
   m_EditorClassIdentifier: 
   dungeonName:
-    target: {fileID: 0}
-    value: 
-    guid: 
+    target: {fileID: 11400000, guid: 4172020a15e334b00838b72bf6b90d8f, type: 2}
+    value: "\u540D\u3082\u7121\u304D\u6751"
+    guid: c27eec5d-f791-4a03-bb05-bf5b046b302a
   itemIdentified: 1
   shopTable:
     elements:

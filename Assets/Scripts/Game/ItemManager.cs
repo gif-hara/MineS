@@ -56,14 +56,20 @@ namespace MineS
 
 		private List<string> unidentifiedStrings;
 
-		public void Initialize(DungeonDataBase dungeonData)
+		void Start()
+		{
+			DungeonManager.Instance.AddChangeDungeonEvent(this.Initialize);
+			this.Initialize();
+		}
+
+		public void Initialize()
 		{
 			this.unidentifiedStrings = this.unidentifiedStringAsset.database.Select(d => d.value.Get("ja")).ToList();
 			this.identifiedDictionary = new Dictionary<string, IdentifiedItem>();
 			this.usableItemList.Database.ForEach(d =>
 			{
 				var unidentifiedStringIndex = Random.Range(0, this.unidentifiedStrings.Count);
-				var identifiedItem = new IdentifiedItem(d, this.unidentifiedStrings[unidentifiedStringIndex], dungeonData.ItemIdentified && (d as UsableItemData).CanUnidentified);
+				var identifiedItem = new IdentifiedItem(d, this.unidentifiedStrings[unidentifiedStringIndex], DungeonManager.Instance.CurrentData.ItemIdentified && (d as UsableItemData).CanUnidentified);
 				this.identifiedDictionary.Add(d.ItemNameRaw, identifiedItem);
 				this.unidentifiedStrings.RemoveAt(unidentifiedStringIndex);
 			});

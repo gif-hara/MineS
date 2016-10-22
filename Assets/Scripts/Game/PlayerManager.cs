@@ -63,6 +63,7 @@ namespace MineS
 			TurnManager.Instance.AddLateEndTurnEvent(this.OnLateTurnProgress);
 			Item.AddOnUseItemEvent(this.OnUseItem);
 			DungeonManager.Instance.AddNextFloorEvent(this.OnNextFloor);
+			DungeonManager.Instance.AddChangeDungeonEvent(this.OnChangeDungeon);
 		}
 
 		public void RecoveryHitPoint(int value, bool isLimit)
@@ -248,6 +249,12 @@ namespace MineS
 		private void OnNextFloor()
 		{
 			this.Data.RecoveryArmor(this.Data.ArmorMax / 2);
+			this.NotifyCharacterDataObservers();
+		}
+
+		private void OnChangeDungeon()
+		{
+			this.Data.OnChangeDungeon();
 			this.NotifyCharacterDataObservers();
 		}
 	}

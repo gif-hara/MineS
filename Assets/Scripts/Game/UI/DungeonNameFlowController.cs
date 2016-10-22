@@ -25,7 +25,10 @@ namespace MineS
 		private Text text;
 
 		[SerializeField]
-		private StringAsset.Finder format;
+		private StringAsset.Finder dungeonFormat;
+
+		[SerializeField]
+		private StringAsset.Finder fixDungeonFormat;
 
 		private UnityEvent completeFadeOutEvent = new UnityEvent();
 
@@ -45,16 +48,21 @@ namespace MineS
 			this.completeFadeOutEvent.AddListener(call);
 		}
 
+		public void RemoveCompleteFadeOutEvent(UnityAction call)
+		{
+			this.completeFadeOutEvent.RemoveListener(call);
+		}
+
 		public void AddCompleteFadeInEvent(UnityAction call)
 		{
 			this.completeFadeInEvent.AddListener(call);
 		}
 
-		public void StartFadeOut(string dungeonName, int floor)
+		public void StartFadeOut(DungeonDataBase dungeonData, string dungeonName, int floor)
 		{
 			this.inputBlock.enabled = true;
 			this.fade.enabled = true;
-			this.text.text = this.format.Format(dungeonName, floor);
+			this.text.text = (dungeonData as DungeonData) != null ? this.dungeonFormat.Format(dungeonName, floor) : this.fixDungeonFormat.Format(dungeonName);
 			DOTween.ToAlpha(() => this.fade.color, x => this.fade.color = x, 1.0f, 0.5f)
 				.OnComplete(() =>
 			{

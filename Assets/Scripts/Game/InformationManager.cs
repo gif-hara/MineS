@@ -58,7 +58,8 @@ namespace MineS
 			levelDownEnemy = null,
 			identifiedItem = null,
 			confusionEnemyAttack = null,
-			acquireMoney = null;
+			acquireMoney = null,
+			gameOver = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -355,6 +356,12 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.acquireMoney.Format(money));
+		}
+
+		public static void GameOver()
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.gameOver.Get);
 		}
 
 		public static void AddMessage(string message)

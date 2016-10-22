@@ -22,6 +22,8 @@ namespace MineS
 
 		private int floorCount = 1;
 
+		private UnityEvent changeDungeonEvent = new UnityEvent();
+
 		private UnityEvent nextFloorEvent = new UnityEvent();
 
 		public DungeonDataBase CurrentData{ get { return this.current; } }
@@ -33,15 +35,19 @@ namespace MineS
 		void Start()
 		{
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalNextFloor);
-			ItemManager.Instance.Initialize(this.current);
 		}
 
 		public void ChangeDungeonData(DungeonDataBase data, int floor = 1)
 		{
 			this.current = data;
 			this.floorCount = floor;
-			ItemManager.Instance.Initialize(data);
+			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalChangeDungeon);
 			this.NextFloorEvent(0);
+		}
+
+		public void AddChangeDungeonEvent(UnityAction otherEvent)
+		{
+			this.changeDungeonEvent.AddListener(otherEvent);
 		}
 
 		public void AddNextFloorEvent(UnityAction otherEvent)
@@ -52,7 +58,7 @@ namespace MineS
 		public void NextFloorEvent(int addValue)
 		{
 			this.floorCount += addValue;
-			this.dungeonNameFlowController.StartFadeOut(this.CurrentData.Name, this.floorCount);
+			this.dungeonNameFlowController.StartFadeOut(this.current, this.CurrentData.Name, this.floorCount);
 		}
 
 		public EnemyData CreateEnemy(CellController cellController)
@@ -76,5 +82,12 @@ namespace MineS
 			this.nextFloorEvent.Invoke();
 			this.observers.ForEach(o => o.ModifiedData(this.CurrentData));
 		}
+
+		private void InternalChangeDungeon()
+		{
+			this.changeDungeonEvent.Invoke();
+			this.dungeonNameFlowController.RemoveCompleteFadeOutEvent(this.InternalChangeDungeon);
+		}
+			
 	}
 }
