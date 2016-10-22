@@ -46,6 +46,11 @@ namespace MineS
 			{
 				PlayerManager.Instance.Data.Defeat(this.Holder);
 			}
+
+			if(this.Holder.CharacterType == GameDefine.CharacterType.Player)
+			{
+				Object.Instantiate(EffectManager.Instance.prefabPoisonEffect.Element, CanvasManager.Instance.EffectLv0.transform, false);
+			}
 		}
 	}
 }
