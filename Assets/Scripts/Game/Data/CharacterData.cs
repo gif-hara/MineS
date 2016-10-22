@@ -104,6 +104,11 @@ namespace MineS
 
 		public void RecoveryHitPoint(int value, bool isLimit)
 		{
+			if(this.IsDead)
+			{
+				return;
+			}
+
 			this.cellController.Recovery(value);
 			if(this.HitPoint >= this.HitPointMax && isLimit)
 			{

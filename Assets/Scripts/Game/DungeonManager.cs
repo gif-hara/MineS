@@ -50,6 +50,11 @@ namespace MineS
 			this.changeDungeonEvent.AddListener(otherEvent);
 		}
 
+		public void RemoveChangeDungeonEvent(UnityAction otherEvent)
+		{
+			this.changeDungeonEvent.RemoveListener(otherEvent);
+		}
+
 		public void AddNextFloorEvent(UnityAction otherEvent)
 		{
 			this.nextFloorEvent.AddListener(otherEvent);

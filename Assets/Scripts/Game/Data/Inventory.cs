@@ -63,6 +63,15 @@ namespace MineS
 			this.Items[index] = null;
 		}
 
+		public void RemoveAll()
+		{
+			for(int i = 0; i < this.Items.Count; i++)
+			{
+				this.Items[i] = null;
+			}
+			this.Equipment.RemoveAll();
+		}
+
 		public void ChangeItem(Item before, Item after)
 		{
 			var index = this.Items.FindIndex(i => i == before);

@@ -63,6 +63,7 @@ namespace MineS
 
 		public override void Dead(CharacterData attacker)
 		{
+			DungeonManager.Instance.AddChangeDungeonEvent(this.GameOver);
 			InformationManager.GameOver();
 			var resultManager = ResultManager.Instance;
 			var causeMessage = attacker == null
@@ -237,6 +238,15 @@ namespace MineS
 			}
 
 			return (equipment.InstanceData as EquipmentData).Abilities;
+		}
+
+		public void GameOver()
+		{
+			this.Inventory.RemoveAll();
+			this.Money = 0;
+			DungeonManager.Instance.RemoveChangeDungeonEvent(this.GameOver);
+			this.OnChangeDungeon();
+			PlayerManager.Instance.NotifyCharacterDataObservers();
 		}
 	}
 }

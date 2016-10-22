@@ -46,6 +46,10 @@ namespace MineS
 
 		public void Remove(Item item)
 		{
+			if(item == null)
+			{
+				return;
+			}
 			(item.InstanceData as EquipmentData).SetAbilitiesHolder(null);
 
 			switch(item.InstanceData.ItemType)
@@ -63,6 +67,13 @@ namespace MineS
 				Debug.AssertFormat(false, "不正な値です = {0}", item.InstanceData.ItemType);
 			break;
 			}
+		}
+
+		public void RemoveAll()
+		{
+			this.Remove(this.Weapon);
+			this.Remove(this.Shield);
+			this.Remove(this.Accessory);
 		}
 
 		public Item Get(GameDefine.ItemType type)
