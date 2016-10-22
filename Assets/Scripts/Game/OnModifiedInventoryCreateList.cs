@@ -191,8 +191,8 @@ namespace MineS
 			this.cellControllers.Add(cellController);
 			this.createdObjects.Add(cellController.gameObject);
 			var cellData = new CellData(cellController);
-			cellController.SetCellData(cellData);
 			cellData.BindCellClickAction(action);
+			cellController.SetCellData(cellData);
 			cellController.SetImage(this.GetImage(item, itemType));
 			cellController.SetText(this.GetMessage(item));
 		}
@@ -203,9 +203,9 @@ namespace MineS
 			this.cellControllers.Add(cellController);
 			this.createdObjects.Add(cellController.gameObject);
 			var cellData = new CellData(cellController);
-			cellController.SetCellData(cellData);
 			cellController.SetDescriptionData(ability.DescriptionKey);
 			cellData.BindCellClickAction(action);
+			cellController.SetCellData(cellData);
 		}
 
 		private void CreatePartition(string message)
