@@ -47,6 +47,8 @@ namespace MineS
 		[SerializeField]
 		private Range acquireMoneyRange;
 
+		public int FloorMax{ get { return this.floorMax; } }
+
 		public Range CreateRecoveryItemRange{ get { return this.createRecoveryItemRange; } }
 
 		public Range CreateAnvilRange{ get { return this.createAnvilRange; } }

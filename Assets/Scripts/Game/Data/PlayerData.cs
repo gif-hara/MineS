@@ -64,14 +64,11 @@ namespace MineS
 		public override void Dead(CharacterData attacker)
 		{
 			InformationManager.GameOver();
-			if(attacker == null)
-			{
-				ResultManager.Instance.Invoke(ResultManager.Instance.causeOtherDead.Element.Format(this.Name));
-			}
-			else
-			{
-				ResultManager.Instance.Invoke(ResultManager.Instance.causeEnemyDead.Element.Format(attacker.Name));
-			}
+			var resultManager = ResultManager.Instance;
+			var causeMessage = attacker == null
+				? resultManager.causeOtherDead.Element.Format(this.Name)
+				: resultManager.causeEnemyDead.Element.Format(attacker.Name);
+			resultManager.Invoke(GameDefine.GameResultType.GameOver, causeMessage);
 		}
 
 		public override string ColorCode

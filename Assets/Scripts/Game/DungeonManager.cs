@@ -76,6 +76,14 @@ namespace MineS
 			return (this.floorCount + addValue) >= 1;
 		}
 
+		public bool IsClear
+		{
+			get
+			{
+				return this.floorCount >= this.CurrentDataAsDungeon.FloorMax;
+			}
+		}
+
 		private void InternalNextFloor()
 		{
 			EnemyManager.Instance.RemoveAll();

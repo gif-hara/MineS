@@ -12,7 +12,15 @@ namespace MineS
 	{
 		public override void Invoke(CellData data)
 		{
-			DungeonManager.Instance.NextFloorEvent(1);
+			if(DungeonManager.Instance.IsClear)
+			{
+				InformationManager.GameClear(DungeonManager.Instance.CurrentData.Name);
+				ResultManager.Instance.Invoke(GameDefine.GameResultType.Clear, ResultManager.Instance.causeClear.Element.Get);
+			}
+			else
+			{
+				DungeonManager.Instance.NextFloorEvent(1);
+			}
 		}
 
 		public override GameDefine.EventType EventType

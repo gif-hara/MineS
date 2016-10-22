@@ -23,7 +23,7 @@ MonoBehaviour:
       probability: 0
       itemTable:
         elements: []
-  floorMax: 10
+  floorMax: 2
   enemyTable:
     elements:
     - floorMin: 1
@@ -64,8 +64,8 @@ MonoBehaviour:
     min: 0
     max: 0
   createEnemyRange:
-    min: 50
-    max: 50
+    min: 0
+    max: 0
   createItemRange:
     min: 0
     max: 0

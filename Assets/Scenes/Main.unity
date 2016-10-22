@@ -20242,6 +20242,14 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "<color=orange>{0}G</color>\u62FE\u3063\u305F\uFF01"
     guid: a0494a02-1e57-4e57-8eed-978259c7ac70
+  gameOver:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u3084\u3089\u308C\u3066\u3057\u307E\u3063\u305F\u30FB\u30FB\u30FB\u3002"
+    guid: ab2e3c0c-b8d1-4eeb-93ad-d9d2d55961fe
+  gameClear:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "<color=aqua>{0}</color>\u3092\u5236\u8987\u3057\u305F\uFF01"
+    guid: b68b8488-12af-4b02-bc5b-37ee1c44b919
 --- !u!114 &1584263361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20559,10 +20567,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d40c0c12aeae46f8b384a1fae636ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiRoot: {fileID: 1876956134}
+  uiRoot: {fileID: 1876956136}
   contentRoot: {fileID: 909923120}
   causeText: {fileID: 1372189253}
   achievementParent: {fileID: 1115110114}
+  clearColor: {r: 0.53676474, g: 0.53676474, b: 1, a: 0.5019608}
+  gameOverColor: {r: 0.5441177, g: 0, b: 0, a: 0.5019608}
   prefabElement: {fileID: 114000010485817794, guid: 87c5a2e5393ba497cbf3cc4ef4915848,
     type: 2}
   floor:

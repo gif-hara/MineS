@@ -763,6 +763,12 @@ namespace MineS
 			Enemy,
 		}
 
+		public enum GameResultType:int
+		{
+			Clear,
+			GameOver,
+		}
+
 		public const int AdjacentMax = 9;
 
 		public const int MoneyMax = 9999999;

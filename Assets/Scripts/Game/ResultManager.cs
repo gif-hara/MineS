@@ -30,7 +30,7 @@ namespace MineS
 		}
 
 		[SerializeField]
-		private GameObject uiRoot;
+		private Image uiRoot;
 
 		[SerializeField]
 		private CanvasGroup contentRoot;
@@ -40,6 +40,12 @@ namespace MineS
 
 		[SerializeField]
 		private Transform achievementParent;
+
+		[SerializeField]
+		private Color clearColor;
+
+		[SerializeField]
+		private Color gameOverColor;
 
 		[SerializeField]
 		private ResultAchievementElementController prefabElement;
@@ -84,7 +90,7 @@ namespace MineS
 			DungeonManager.Instance.AddNextFloorEvent(this.OnNextFloor);
 		}
 
-		public void Invoke(string causeMessage)
+		public void Invoke(GameDefine.GameResultType type, string causeMessage)
 		{
 			this.causeText.text = causeMessage;
 			var playerData = PlayerManager.Instance.Data;
@@ -99,7 +105,8 @@ namespace MineS
 			this.CreateAchievementElement(this.giveDamage, achievementManager.GiveDamage);
 			this.CreateAchievementElement(this.takeDamage, achievementManager.TakeDamage);
 
-			this.uiRoot.SetActive(true);
+			this.uiRoot.gameObject.SetActive(true);
+			this.uiRoot.color = type == GameDefine.GameResultType.Clear ? this.clearColor : this.gameOverColor;
 			this.contentRoot.alpha = 0.0f;
 			DOTween.ToAlpha(() => new Color(), x => this.contentRoot.alpha = x.a, 1.0f, 1.0f)
 				.SetDelay(3.0f);
@@ -114,7 +121,7 @@ namespace MineS
 
 		private void OnNextFloor()
 		{
-			this.uiRoot.SetActive(false);
+			this.uiRoot.gameObject.SetActive(false);
 			this.createdObjects.ForEach(c => Destroy(c.gameObject));
 			this.createdObjects.Clear();
 		}
