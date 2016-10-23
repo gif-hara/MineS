@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2536cddd03dcd43dba2e0d4da643465d, type: 3}
+  m_Name: Desert0
+  m_EditorClassIdentifier: 
+  all:
+  - {fileID: 21300000, guid: 99d20699d97b0ac4cae9f6fd3c6a4f8e, type: 3}
+  horizontal: {fileID: 21300000, guid: c128644db85c238428df1c1d340fca8c, type: 3}
+  vertical: {fileID: 21300000, guid: 0073a42a38fc69644bf38843534c26c4, type: 3}
+  leftBottom: {fileID: 21300000, guid: c5af5195bcc912948bf20639795a39ea, type: 3}
+  leftRightBottom: {fileID: 21300000, guid: 657749a464714bf43abf12f313590a90, type: 3}
+  leftRightTop: {fileID: 21300000, guid: e898c9e4d73ed0f43b9cb7e6872fedf5, type: 3}
+  leftRightTopBottom: {fileID: 21300000, guid: c599c61b9372fc246a5e6b0a479d3860, type: 3}
+  leftTop: {fileID: 21300000, guid: 9e1d67371b4384d41926d1c54323d3cb, type: 3}
+  leftTopBottom: {fileID: 21300000, guid: 256a02c8605b24042adbb2a7d65ba25b, type: 3}
+  rightBottom: {fileID: 21300000, guid: ff2a99e5af97e7944b6a9d9063538364, type: 3}
+  rightTop: {fileID: 21300000, guid: a0242bf9314889444a68ac8e2be53048, type: 3}
+  rightTopBottom: {fileID: 21300000, guid: 6dc721eab82ebc34994917f2edc7c034, type: 3}

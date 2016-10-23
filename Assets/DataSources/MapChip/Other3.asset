@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2536cddd03dcd43dba2e0d4da643465d, type: 3}
+  m_Name: Other3
+  m_EditorClassIdentifier: 
+  all:
+  - {fileID: 21300000, guid: 15118b3bf5c67844baa89fada0cd4f26, type: 3}
+  - {fileID: 21300000, guid: 0238060fc5dca2249b5262eb01dd1a6c, type: 3}
+  horizontal: {fileID: 21300000, guid: 14911d6bdc1bd42498e2dad7d352feee, type: 3}
+  vertical: {fileID: 21300000, guid: 85afe7e6fc8825246a9554f8214237ff, type: 3}
+  leftBottom: {fileID: 21300000, guid: 14911d6bdc1bd42498e2dad7d352feee, type: 3}
+  leftRightBottom: {fileID: 21300000, guid: 85afe7e6fc8825246a9554f8214237ff, type: 3}
+  leftRightTop: {fileID: 21300000, guid: 14911d6bdc1bd42498e2dad7d352feee, type: 3}
+  leftRightTopBottom: {fileID: 21300000, guid: 85afe7e6fc8825246a9554f8214237ff, type: 3}
+  leftTop: {fileID: 21300000, guid: 14911d6bdc1bd42498e2dad7d352feee, type: 3}
+  leftTopBottom: {fileID: 21300000, guid: 85afe7e6fc8825246a9554f8214237ff, type: 3}
+  rightBottom: {fileID: 21300000, guid: 14911d6bdc1bd42498e2dad7d352feee, type: 3}
+  rightTop: {fileID: 21300000, guid: 85afe7e6fc8825246a9554f8214237ff, type: 3}
+  rightTopBottom: {fileID: 21300000, guid: 14911d6bdc1bd42498e2dad7d352feee, type: 3}
