@@ -17,7 +17,7 @@ namespace MineS
 		private bool itemIdentified;
 
 		[SerializeField]
-		private MapChipData mapChip;
+		private MapChipTable mapChipTable;
 
 		[SerializeField]
 		private ShopTable shopTable;
@@ -26,9 +26,12 @@ namespace MineS
 
 		public bool ItemIdentified{ get { return this.itemIdentified; } }
 
-		public MapChipData MapChip{ get { return this.mapChip; } }
-
 		public abstract CellData[,] Create(CellManager cellManager);
+
+		public MapChipData GetMapChip(int floor)
+		{
+			return this.mapChipTable.Get(floor);
+		}
 
 		public Inventory CreateShopInventory(int floor)
 		{

@@ -58,12 +58,13 @@ namespace MineS
 			{
 				for(int x = 0; x < GameDefine.CellCulumnMax; x++)
 				{
+					var dungeonManager = DungeonManager.Instance;
 					var centerData = this.CellControllers[y, x].Data;
 					var leftData = this.GetAdjacentCellData(y, x, GameDefine.AdjacentType.Left);
 					var rightData = this.GetAdjacentCellData(y, x, GameDefine.AdjacentType.Right);
 					var topData = this.GetAdjacentCellData(y, x, GameDefine.AdjacentType.Top);
 					var bottomData = this.GetAdjacentCellData(y, x, GameDefine.AdjacentType.Bottom);
-					this.CellControllers[y, x].SetMapChip(DungeonManager.Instance.CurrentData.MapChip.Get(
+					this.CellControllers[y, x].SetMapChip(dungeonManager.CurrentData.GetMapChip(dungeonManager.Floor).Get(
 						centerData.MapChipId,
 						leftData == null ? 1 : leftData.MapChipId,
 						rightData == null ? 1 : rightData.MapChipId,

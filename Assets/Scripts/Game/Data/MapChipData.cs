@@ -12,7 +12,7 @@ namespace MineS
 	public class MapChipData : ScriptableObject
 	{
 		[SerializeField]
-		private Sprite all;
+		private List<Sprite> all;
 		[SerializeField]
 		private Sprite horizontal;
 		[SerializeField]
@@ -51,7 +51,7 @@ namespace MineS
 			}
 			if(myId == 0)
 			{
-				return this.all;
+				return this.all[Random.Range(0, this.all.Count)];
 			}
 
 			int key = Left * leftId + Right * rightId + Top * topId + Bottom * bottomId;

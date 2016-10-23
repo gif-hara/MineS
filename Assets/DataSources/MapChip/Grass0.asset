@@ -11,7 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2536cddd03dcd43dba2e0d4da643465d, type: 3}
   m_Name: Grass0
   m_EditorClassIdentifier: 
-  all: {fileID: 21300000, guid: 12e1e056b88c7b54cadbd31a2a5c971b, type: 3}
+  all:
+  - {fileID: 21300000, guid: 12e1e056b88c7b54cadbd31a2a5c971b, type: 3}
+  - {fileID: 21300000, guid: efb9fbc18c3e3465fb6240d806941604, type: 3}
+  - {fileID: 21300000, guid: 1303fad8c9b7d42688db2cd603e657a3, type: 3}
   horizontal: {fileID: 21300000, guid: aa33d800e3680b74cb1f909b18de276f, type: 3}
   vertical: {fileID: 21300000, guid: e68800d6f90dcb64493b893109a39fc6, type: 3}
   leftBottom: {fileID: 21300000, guid: 6192f9aa75abb9f4bb3383876c7105fd, type: 3}
