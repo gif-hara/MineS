@@ -18,7 +18,7 @@ MonoBehaviour:
   hitProbability: 90
   evasion: 0
   experience: 698
-  money: 732
+  money: 0
   dropItemProbability: 2
   overrideDropItems: []
   abilityTypes: 06000000

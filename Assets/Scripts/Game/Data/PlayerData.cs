@@ -52,7 +52,6 @@ namespace MineS
 			InformationManager.OnDefeat(target);
 			base.Defeat(target);
 			this.AddExperience(Calculator.GetFinalExperience(target.Experience, this));
-			this.AddMoney(Calculator.GetFinalMoney(target.Money, this));
 			AchievementManager.Instance.AddDefeatedEnemy(1);
 
 			while(this.CanLevelUp)

@@ -229,7 +229,7 @@ MonoBehaviour:
       en: 
     guid: 977d03b4-aed3-4efe-aa83-9bb175bd6930
   - value:
-      ja: "<color=targetColor>{0}</color>\u3092\u5012\u3057\u305F\uFF01\n<color=aqua>{1}</color>\u306E\u7D4C\u9A13\u5024\u3068<color=orange>{2}G</color>\u3092\u5F97\u305F\uFF01"
+      ja: "<color=targetColor>{0}</color>\u3092\u5012\u3057\u305F\uFF01\n<color=aqua>{1}</color>\u306E\u7D4C\u9A13\u5024\u3092\u624B\u306B\u5165\u308C\u305F\uFF01"
       en: 
     guid: 9735b6c3-4ec1-4325-b286-34c432e49c58
   - value:

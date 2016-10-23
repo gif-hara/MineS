@@ -18,7 +18,7 @@ MonoBehaviour:
   hitProbability: 90
   evasion: 0
   experience: 351
-  money: 280
+  money: 0
   dropItemProbability: 80
   overrideDropItems:
   - {fileID: 11400000, guid: 9450e70e45a404170b79889380e41f07, type: 2}

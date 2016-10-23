@@ -37,7 +37,7 @@ namespace MineS
 		public List<ItemDataBase> Parse(string csvData)
 		{
 			var split = csvData.Split(' ');
-			return database.Where(i => System.Array.FindIndex(split, s => s == i.ItemName) != -1).ToList();
+			return database.Where(i => System.Array.FindIndex(split, s => s == i.ItemNameRaw) != -1).ToList();
 		}
 #endif
 	}

@@ -21,7 +21,7 @@ MonoBehaviour:
     - floorRange:
         min: 1
         max: 99
-      mapChip: {fileID: 11400000, guid: 310e8b95945bd41f1ab3ceeac02c3dc2, type: 2}
+      mapChip: {fileID: 11400000, guid: 68545d259f8b59e429d8ac5f33204ef2, type: 2}
   shopTable:
     elements:
     - floorMin: 0
