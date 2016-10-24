@@ -31,7 +31,7 @@ namespace MineS
 				for(int x = 0; x < culumnNumber; x++)
 				{
 					database.CellDatabase[y, x].Steppable(false);
-					database.CellDatabase[y, x].Identification(false, false);
+					database.CellDatabase[y, x].Identification(false, false, false);
 				}
 			}
 

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using DG.Tweening;
 
 namespace MineS
 {
@@ -90,10 +91,17 @@ namespace MineS
 #endif
 		}
 
+		public void FadeOut()
+		{
+			this.source.DOFade(0.0f, 1.0f);
+		}
+
 		public void StartBGM(AudioClip clip)
 		{
 			this.currentData = this.database.Find(d => d.Clip == clip);
 			this.source.clip = clip;
+			this.source.volume = 1.0f;
+			this.source.time = 0.0f;
 			this.source.Play();
 		}
 

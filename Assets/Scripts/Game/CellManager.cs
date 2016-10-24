@@ -197,7 +197,7 @@ namespace MineS
 			var playerData = PlayerManager.Instance.Data;
 			var isXray = playerData.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray) || playerData.FindAbility(GameDefine.AbilityType.Clairvoyance);
 			initialCell.Steppable(isXray);
-			initialCell.Identification(true, isXray);
+			initialCell.Identification(true, isXray, false);
 		}
 
 		private CellData[,] CreateCellDatabaseFromDungeonData()

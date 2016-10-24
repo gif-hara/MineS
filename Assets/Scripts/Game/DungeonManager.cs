@@ -35,6 +35,8 @@ namespace MineS
 		void Start()
 		{
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalNextFloor);
+			this.dungeonNameFlowController.AddStartTextFadeIn(this.PlayBGM);
+			this.PlayBGM();
 		}
 
 		public void ChangeDungeonData(DungeonDataBase data, int floor = 1)
@@ -63,6 +65,10 @@ namespace MineS
 		public void NextFloorEvent(int addValue)
 		{
 			this.floorCount += addValue;
+			if(this.current.CanPlayBGM(this.floorCount))
+			{
+				BGMManager.Instance.FadeOut();
+			}
 			//this.InternalNextFloor();
 			this.dungeonNameFlowController.StartFadeOut(this.current, this.CurrentData.Name, this.floorCount);
 		}
@@ -102,6 +108,15 @@ namespace MineS
 			this.changeDungeonEvent.Invoke();
 			this.dungeonNameFlowController.RemoveCompleteFadeOutEvent(this.InternalChangeDungeon);
 		}
-			
+
+		private void PlayBGM()
+		{
+			if(!this.current.CanPlayBGM(this.floorCount))
+			{
+				return;
+			}
+
+			BGMManager.Instance.StartBGM(this.current.GetBGM(this.floorCount));
+		}
 	}
 }

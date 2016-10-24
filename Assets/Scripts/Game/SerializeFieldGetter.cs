@@ -44,5 +44,10 @@ namespace MineS
 		{
 		}
 
+		[System.Serializable]
+		public class AudioClip : Base<UnityEngine.AudioClip>
+		{
+		}
+
 	}
 }

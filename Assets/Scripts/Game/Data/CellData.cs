@@ -75,7 +75,7 @@ namespace MineS
 				return;
 			}
 
-			var isIdentification = this.Identification(true, PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray));
+			var isIdentification = this.Identification(true, PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray), true);
 			if(this.cellClickAction != null)
 			{
 				var currentCellClickAction = this.cellClickAction;
@@ -95,7 +95,7 @@ namespace MineS
 
 		public void DebugAction()
 		{
-			this.Identification(true, false);
+			this.Identification(true, false, false);
 			if(this.cellClickAction != null)
 			{
 				this.cellClickAction.Invoke(this);
@@ -186,7 +186,7 @@ namespace MineS
 			}
 		}
 
-		public bool Identification(bool isSteppableAdjacentCells, bool isXray)
+		public bool Identification(bool isSteppableAdjacentCells, bool isXray, bool playSE)
 		{
 			if(this.IsIdentification)
 			{
@@ -206,6 +206,12 @@ namespace MineS
 			if(this.modifiedIdentificationEvent != null)
 			{
 				this.modifiedIdentificationEvent(this.IsIdentification);
+			}
+
+			if(playSE)
+			{
+				var seManager = SEManager.Instance;
+				seManager.PlaySE(seManager.walks[Random.Range(0, seManager.walks.Count)]);
 			}
 
 			return true;

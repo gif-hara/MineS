@@ -20,6 +20,9 @@ namespace MineS
 		private MapChipTable mapChipTable;
 
 		[SerializeField]
+		private BGMTable bgmTable;
+
+		[SerializeField]
 		private ShopTable shopTable;
 
 		public string Name{ get { return this.dungeonName.ToString(); } }
@@ -31,6 +34,16 @@ namespace MineS
 		public MapChipData GetMapChip(int floor)
 		{
 			return this.mapChipTable.Get(floor);
+		}
+
+		public AudioClip GetBGM(int floor)
+		{
+			return this.bgmTable.Get(floor);
+		}
+
+		public bool CanPlayBGM(int floor)
+		{
+			return this.bgmTable.CanPlay(floor);
 		}
 
 		public Inventory CreateShopInventory(int floor)

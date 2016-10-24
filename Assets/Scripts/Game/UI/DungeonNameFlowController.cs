@@ -32,6 +32,8 @@ namespace MineS
 
 		private UnityEvent completeFadeOutEvent = new UnityEvent();
 
+		private UnityEvent startTextFadeInEvent = new UnityEvent();
+
 		private UnityEvent completeFadeInEvent = new UnityEvent();
 
 		void Start()
@@ -58,6 +60,11 @@ namespace MineS
 			this.completeFadeInEvent.AddListener(call);
 		}
 
+		public void AddStartTextFadeIn(UnityAction call)
+		{
+			this.startTextFadeInEvent.AddListener(call);
+		}
+
 		public void StartFadeOut(DungeonDataBase dungeonData, string dungeonName, int floor)
 		{
 			this.inputBlock.enabled = true;
@@ -77,7 +84,8 @@ namespace MineS
 				.SetDelay(1.0f)
 				.OnStart(() =>
 			{
-				this.text.enabled = true;	
+				this.text.enabled = true;
+				this.startTextFadeInEvent.Invoke();
 			})
 				.OnComplete(() =>
 			{

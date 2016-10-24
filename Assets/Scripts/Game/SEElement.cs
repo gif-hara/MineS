@@ -8,15 +8,16 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public abstract class TableElementBase
+	public class SEElement : MonoBehaviour
 	{
 		[SerializeField]
-		protected Range floorRange;
+		private AudioSource source;
 
-		public bool IsMatch(int floor)
+		public void PlaySE(AudioClip clip)
 		{
-			return floor >= this.floorRange.min && floor <= this.floorRange.max;
+			this.source.clip = clip;
+			this.source.time = 0.0f;
+			this.source.Play();
 		}
-
 	}
 }

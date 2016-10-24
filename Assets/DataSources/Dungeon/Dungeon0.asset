@@ -22,6 +22,18 @@ MonoBehaviour:
         min: 1
         max: 10
       mapChip: {fileID: 11400000, guid: 310e8b95945bd41f1ab3ceeac02c3dc2, type: 2}
+  bgmTable:
+    elements:
+    - floorRange:
+        min: 1
+        max: 5
+      clips:
+      - {fileID: 8300000, guid: ef2ea4bd0fbca41c58699dbc76f0ee19, type: 3}
+    - floorRange:
+        min: 6
+        max: 10
+      clips:
+      - {fileID: 8300000, guid: b9e69e120297b4bb6b8d6d1369e00951, type: 3}
   shopTable:
     elements: []
   floorMax: 10
