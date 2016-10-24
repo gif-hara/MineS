@@ -34,6 +34,8 @@ namespace MineS
 
 		public SerializeFieldGetter.AudioClip blackSmith;
 
+		public SerializeFieldGetter.AudioClip levelUp;
+
 		[SerializeField]
 		private SEElement prefabElement;
 
