@@ -109,7 +109,7 @@ MonoBehaviour:
   blackSmithTable:
     elements: []
   clearDungeonProccesses:
-  - {fileID: 11400000, guid: f109e944a0e864115a36ca043e205740, type: 2}
+  - {fileID: 11400000, guid: 34908e3833a0a48ababc268ddd119b74, type: 2}
   createRecoveryItemRange:
     min: 3
     max: 4

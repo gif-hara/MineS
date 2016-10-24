@@ -17799,7 +17799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205172a8221a5493f81cae5f703f4cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dungeonData: {fileID: 0}
+  dungeonData: {fileID: 11400000, guid: 6d6f1180a85804caf98fe025f5a291d5, type: 2}
 --- !u!114 &1433623172
 MonoBehaviour:
   m_ObjectHideFlags: 0
