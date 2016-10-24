@@ -13,6 +13,20 @@ namespace MineS
 	/// </summary>
 	public class SaveDataEditor
 	{
+		[MenuItem("MineS/SaveData/Complete Progress Data")]
+		private static void CompleteProgressData()
+		{
+			var progressData = ProgressData.Instance;
+			progressData.ClearDungeon(GameDefine.DungeonType.ElementaryLevel);
+			progressData.ClearDungeon(GameDefine.DungeonType.IntermediateLevel);
+			progressData.ClearDungeon(GameDefine.DungeonType.AdvancedLevel);
+			progressData.ClearDungeon(GameDefine.DungeonType.CarnageCave);
+			progressData.ClearDungeon(GameDefine.DungeonType.TartarusScarletCave);
+			progressData.ClearDungeon(GameDefine.DungeonType.BlackSmithEdge);
+			progressData.ClearDungeon(GameDefine.DungeonType.PeddlerTemple);
+			SaveData.Save();
+		}
+
 		[MenuItem("MineS/SaveData/Remove")]
 		private static void Remove()
 		{
