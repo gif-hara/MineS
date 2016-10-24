@@ -15,12 +15,23 @@ namespace MineS
 
 		public int max;
 
+		public Range(int min, int max)
+		{
+			this.min = min;
+			this.max = max;
+		}
+
 		public int Random
 		{
 			get
 			{
 				return UnityEngine.Random.Range(this.min, this.max + 1);
 			}
+		}
+
+		public bool Equals(Range obj)
+		{
+			return this.min == obj.min && this.max == obj.max;
 		}
 	}
 }

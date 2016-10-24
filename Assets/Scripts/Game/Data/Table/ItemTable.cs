@@ -3,6 +3,10 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace MineS
 {
 	/// <summary>
@@ -12,12 +16,30 @@ namespace MineS
 	public class ItemTable
 	{
 		[SerializeField]
-		private List<Element> elements;
+		private List<Element> elements = new List<Element>();
 
 		public Item Create()
 		{
 			return this.elements[GameDefine.Lottery(this.elements)].Create();
 		}
+#if UNITY_EDITOR
+		public void Add(string itemName, int probability)
+		{
+			this.elements.Add(Element.Create(itemName, probability));
+		}
+
+		public static ItemTable CreateFromCsv(string dungeonName)
+		{
+			var csv = CsvParser.Split(AssetDatabase.LoadAssetAtPath(string.Format("Assets/DataSources/Csv/Dungeon/{0}ItemTable.csv", dungeonName), typeof(TextAsset)) as TextAsset);
+			var result = new ItemTable();
+			foreach(var c in csv)
+			{
+				result.elements.Add(Element.Create(c[0], int.Parse(c[1])));
+			}
+
+			return result;
+		}
+#endif
 
 		[System.Serializable]
 		private class Element : IProbability
@@ -36,6 +58,16 @@ namespace MineS
 			{
 				return new Item(this.masterData);
 			}
+#if UNITY_EDITOR
+			public static Element Create(string itemName, int probability)
+			{
+				var result = new Element();
+				result.masterData = ItemDataBaseList.Get(itemName);
+				result.probability = probability;
+
+				return result;
+			}
+#endif
 		}
 
 	}

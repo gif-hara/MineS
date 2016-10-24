@@ -913,6 +913,13 @@ namespace MineS
 			var index = Array.FindIndex(Enum.GetNames(type), u => u.CompareTo(name) == 0);
 			return (UsableItemType)Enum.GetValues(type).GetValue(index);
 		}
+
+		public static TrapType GetTrapType(string name)
+		{
+			var type = typeof(TrapType);
+			var index = Array.FindIndex(Enum.GetNames(type), u => u.CompareTo(name) == 0);
+			return (TrapType)Enum.GetValues(type).GetValue(index);
+		}
 #endif
 
 		public static string GetAbnormalStatusColor(AbnormalStatusType type)

@@ -11,19 +11,19 @@ namespace MineS
 	public abstract class DungeonDataBase : ScriptableObject
 	{
 		[SerializeField]
-		private StringAsset.Finder dungeonName;
+		protected StringAsset.Finder dungeonName;
 
 		[SerializeField]
-		private bool itemIdentified;
+		protected bool itemIdentified;
 
 		[SerializeField]
-		private MapChipTable mapChipTable;
+		protected MapChipTable mapChipTable;
 
 		[SerializeField]
-		private BGMTable bgmTable;
+		protected BGMTable bgmTable;
 
 		[SerializeField]
-		private ShopTable shopTable;
+		protected ShopTable shopTable;
 
 		public string Name{ get { return this.dungeonName.ToString(); } }
 

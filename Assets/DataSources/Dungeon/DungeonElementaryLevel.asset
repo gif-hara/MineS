@@ -35,99 +35,114 @@ MonoBehaviour:
       clips:
       - {fileID: 8300000, guid: b9e69e120297b4bb6b8d6d1369e00951, type: 3}
   shopTable:
-    elements: []
-  floorMax: 1
+    elements:
+    - floorRange:
+        min: 1
+        max: 10
+      probability: 0
+      itemTable:
+        elements:
+        - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
+          probability: 100
+  floorMax: 10
   enemyTable:
     elements:
-    - floorMin: 1
-      floorMax: 2
+    - floorRange:
+        min: 1
+        max: 2
       enemies:
       - masterData: {fileID: 11400000, guid: 06478708a60ca4769b96d92b3227cf7a, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: b3a3efd385d854a3984c92bfbac270a1, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 7fcbd403fc4214a6391c71cee03232f8, type: 2}
-        probability: 20
-    - floorMin: 3
-      floorMax: 4
+        probability: 100
+    - floorRange:
+        min: 3
+        max: 4
       enemies:
       - masterData: {fileID: 11400000, guid: fb1fac5df049b4a098b46c770c62f36e, type: 2}
-        probability: 80
+        probability: 100
       - masterData: {fileID: 11400000, guid: cf37f3c4351964e17836d25a20dbefe5, type: 2}
-        probability: 120
+        probability: 100
       - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
-        probability: 20
-    - floorMin: 5
-      floorMax: 6
+        probability: 100
+    - floorRange:
+        min: 5
+        max: 6
       enemies:
       - masterData: {fileID: 11400000, guid: fb1fac5df049b4a098b46c770c62f36e, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 94231d284b74c4a0c83708a62ed534c3, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
-        probability: 40
-    - floorMin: 7
-      floorMax: 8
+        probability: 100
+    - floorRange:
+        min: 7
+        max: 8
+      enemies:
+      - masterData: {fileID: 11400000, guid: f2a9bee251178425eaf7ad66bf9646c2, type: 2}
+        probability: 100
+      - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
+        probability: 100
+    - floorRange:
+        min: 9
+        max: 10
       enemies:
       - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
         probability: 100
-      - masterData: {fileID: 11400000, guid: f2a9bee251178425eaf7ad66bf9646c2, type: 2}
-        probability: 100
-    - floorMin: 9
-      floorMax: 10
-      enemies:
       - masterData: {fileID: 11400000, guid: 649ca90f7ce90465680df5cdf56b8f37, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: f2a9bee251178425eaf7ad66bf9646c2, type: 2}
-        probability: 80
-      - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
         probability: 100
   itemTable:
     elements:
     - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
-      probability: 200
+      probability: 120
+    - masterData: {fileID: 11400000, guid: d102d8f1a9f70420baf28b1559384175, type: 2}
+      probability: 120
+    - masterData: {fileID: 11400000, guid: 803bb3873ab264b0fb8b475d34ef46ee, type: 2}
+      probability: 100
     - masterData: {fileID: 11400000, guid: b2cb144a5edce4b27b3fed3552e8556d, type: 2}
-      probability: 200
+      probability: 100
     - masterData: {fileID: 11400000, guid: a38c2b3b551880b48ad9874572d9a070, type: 2}
       probability: 100
     - masterData: {fileID: 11400000, guid: bd29123d4987641a2a7148f164dabbe7, type: 2}
       probability: 20
-    - masterData: {fileID: 11400000, guid: 803bb3873ab264b0fb8b475d34ef46ee, type: 2}
-      probability: 200
     - masterData: {fileID: 11400000, guid: 3ecaaef1a2b9443e0b96ed675bd10d2a, type: 2}
-      probability: 120
+      probability: 100
     - masterData: {fileID: 11400000, guid: a3223164c51e44ddbabf27c9d51f47d8, type: 2}
-      probability: 90
-    - masterData: {fileID: 11400000, guid: d102d8f1a9f70420baf28b1559384175, type: 2}
-      probability: 200
-    - masterData: {fileID: 11400000, guid: 4960e048c3e97410986cc2e6ec689df9, type: 2}
-      probability: 150
-    - masterData: {fileID: 11400000, guid: 66eeb53d158be4578a33bf0a20c2605e, type: 2}
-      probability: 150
+      probability: 100
   trapTable:
-    elements: []
+    elements:
+    - type: 0
+      probability: 100
   blackSmithTable:
-    elements: []
+    elements:
+    - floorRange:
+        min: 1
+        max: 10
+      probability: 0
   clearDungeonProccesses:
   - {fileID: 11400000, guid: f109e944a0e864115a36ca043e205740, type: 2}
   createRecoveryItemRange:
+    min: 2
+    max: 5
+  createAnvilRange:
     min: 3
     max: 4
-  createAnvilRange:
-    min: 4
-    max: 5
   createMoneyRange:
     min: 3
     max: 5
   createEnemyRange:
-    min: 8
-    max: 12
+    min: 5
+    max: 10
   createItemRange:
-    min: 4
+    min: 3
     max: 5
   createTrapRange:
     min: 0
     max: 0
   acquireMoneyRange:
     min: 10
-    max: 500
+    max: 100

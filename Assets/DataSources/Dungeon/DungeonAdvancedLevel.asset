@@ -35,7 +35,14 @@ MonoBehaviour:
       clips:
       - {fileID: 8300000, guid: b9e69e120297b4bb6b8d6d1369e00951, type: 3}
   shopTable:
-    elements: []
+    elements:
+    - floorMin: 0
+      floorMax: 0
+      probability: 0
+      itemTable:
+        elements:
+        - masterData: {fileID: 0}
+          probability: 0
   floorMax: 1
   enemyTable:
     elements:
@@ -105,9 +112,14 @@ MonoBehaviour:
     - masterData: {fileID: 11400000, guid: 66eeb53d158be4578a33bf0a20c2605e, type: 2}
       probability: 150
   trapTable:
-    elements: []
+    elements:
+    - type: 0
+      probability: 0
   blackSmithTable:
-    elements: []
+    elements:
+    - floorMin: 0
+      floorMax: 0
+      probability: 0
   clearDungeonProccesses:
   - {fileID: 11400000, guid: cfc9e45a8ab4344ccb9f010bf0a9211f, type: 2}
   createRecoveryItemRange:
