@@ -19,5 +19,7 @@ namespace MineS
 		public SerializeFieldGetter.GameObject prefabPoisonEffect;
 
 		public SerializeFieldGetter.GameObject prefabLevelUp;
+
+		public SerializeFieldGetter.GameObject prefabTakeDamage;
 	}
 }
