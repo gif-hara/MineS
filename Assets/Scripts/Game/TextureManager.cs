@@ -144,6 +144,8 @@ namespace MineS
 
 		public SerializeFieldGetter.Sprite stairImage;
 
+		public SerializeFieldGetter.Sprite closeStairImage;
+
 		public SerializeFieldGetter.Sprite anvilImage;
 
 		public SerializeFieldGetter.Sprite moneyImage;

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2536cddd03dcd43dba2e0d4da643465d, type: 3}
+  m_Name: Town
+  m_EditorClassIdentifier: 
+  all:
+  - {fileID: 21300000, guid: 12e1e056b88c7b54cadbd31a2a5c971b, type: 3}
+  horizontal: {fileID: 21300000, guid: aa33d800e3680b74cb1f909b18de276f, type: 3}
+  vertical: {fileID: 21300000, guid: e68800d6f90dcb64493b893109a39fc6, type: 3}
+  leftBottom: {fileID: 21300000, guid: 6192f9aa75abb9f4bb3383876c7105fd, type: 3}
+  leftRightBottom: {fileID: 21300000, guid: 7c93571015208644aa2d6f9b1684105d, type: 3}
+  leftRightTop: {fileID: 21300000, guid: 186a244205d87e94c852717735657e65, type: 3}
+  leftRightTopBottom: {fileID: 21300000, guid: a4134bebfb1c3814b96359ee224385e6, type: 3}
+  leftTop: {fileID: 21300000, guid: bb61dbf698fba6648a596ffd108ae7a8, type: 3}
+  leftTopBottom: {fileID: 21300000, guid: f4fb3fb447de3794090748806785a7ae, type: 3}
+  rightBottom: {fileID: 21300000, guid: 3b95d959cdd29824781c7eeeea123ee2, type: 3}
+  rightTop: {fileID: 21300000, guid: 493e8a38f4ad29540a782875885c97e7, type: 3}
+  rightTopBottom: {fileID: 21300000, guid: 0ce8c2d477646284db111d80233cc2b8, type: 3}

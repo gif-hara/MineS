@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f468505a35874ca8b43e7c350ae29ac, type: 3}
+  m_Name: DungeonElementaryLevel
+  m_EditorClassIdentifier: 
+  dungeonName:
+    target: {fileID: 11400000, guid: 4172020a15e334b00838b72bf6b90d8f, type: 2}
+    value: "\u521D\u7D1A\u30C0\u30F3\u30B8\u30E7\u30F3"
+    guid: ab1cdd68-b055-4b81-8f0c-c2adca1fcc74
+  itemIdentified: 1
+  mapChipTable:
+    elements:
+    - floorRange:
+        min: 1
+        max: 10
+      mapChip: {fileID: 11400000, guid: 310e8b95945bd41f1ab3ceeac02c3dc2, type: 2}
+  bgmTable:
+    elements:
+    - floorRange:
+        min: 1
+        max: 5
+      clips:
+      - {fileID: 8300000, guid: ef2ea4bd0fbca41c58699dbc76f0ee19, type: 3}
+    - floorRange:
+        min: 6
+        max: 10
+      clips:
+      - {fileID: 8300000, guid: b9e69e120297b4bb6b8d6d1369e00951, type: 3}
+  shopTable:
+    elements: []
+  floorMax: 1
+  enemyTable:
+    elements:
+    - floorMin: 1
+      floorMax: 2
+      enemies:
+      - masterData: {fileID: 11400000, guid: 06478708a60ca4769b96d92b3227cf7a, type: 2}
+        probability: 100
+      - masterData: {fileID: 11400000, guid: b3a3efd385d854a3984c92bfbac270a1, type: 2}
+        probability: 100
+      - masterData: {fileID: 11400000, guid: 7fcbd403fc4214a6391c71cee03232f8, type: 2}
+        probability: 20
+    - floorMin: 3
+      floorMax: 4
+      enemies:
+      - masterData: {fileID: 11400000, guid: fb1fac5df049b4a098b46c770c62f36e, type: 2}
+        probability: 80
+      - masterData: {fileID: 11400000, guid: cf37f3c4351964e17836d25a20dbefe5, type: 2}
+        probability: 120
+      - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
+        probability: 20
+    - floorMin: 5
+      floorMax: 6
+      enemies:
+      - masterData: {fileID: 11400000, guid: fb1fac5df049b4a098b46c770c62f36e, type: 2}
+        probability: 100
+      - masterData: {fileID: 11400000, guid: 94231d284b74c4a0c83708a62ed534c3, type: 2}
+        probability: 100
+      - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
+        probability: 40
+    - floorMin: 7
+      floorMax: 8
+      enemies:
+      - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
+        probability: 100
+      - masterData: {fileID: 11400000, guid: f2a9bee251178425eaf7ad66bf9646c2, type: 2}
+        probability: 100
+    - floorMin: 9
+      floorMax: 10
+      enemies:
+      - masterData: {fileID: 11400000, guid: 649ca90f7ce90465680df5cdf56b8f37, type: 2}
+        probability: 100
+      - masterData: {fileID: 11400000, guid: f2a9bee251178425eaf7ad66bf9646c2, type: 2}
+        probability: 80
+      - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
+        probability: 100
+  itemTable:
+    elements:
+    - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
+      probability: 200
+    - masterData: {fileID: 11400000, guid: b2cb144a5edce4b27b3fed3552e8556d, type: 2}
+      probability: 200
+    - masterData: {fileID: 11400000, guid: a38c2b3b551880b48ad9874572d9a070, type: 2}
+      probability: 100
+    - masterData: {fileID: 11400000, guid: bd29123d4987641a2a7148f164dabbe7, type: 2}
+      probability: 20
+    - masterData: {fileID: 11400000, guid: 803bb3873ab264b0fb8b475d34ef46ee, type: 2}
+      probability: 200
+    - masterData: {fileID: 11400000, guid: 3ecaaef1a2b9443e0b96ed675bd10d2a, type: 2}
+      probability: 120
+    - masterData: {fileID: 11400000, guid: a3223164c51e44ddbabf27c9d51f47d8, type: 2}
+      probability: 90
+    - masterData: {fileID: 11400000, guid: d102d8f1a9f70420baf28b1559384175, type: 2}
+      probability: 200
+    - masterData: {fileID: 11400000, guid: 4960e048c3e97410986cc2e6ec689df9, type: 2}
+      probability: 150
+    - masterData: {fileID: 11400000, guid: 66eeb53d158be4578a33bf0a20c2605e, type: 2}
+      probability: 150
+  trapTable:
+    elements: []
+  blackSmithTable:
+    elements: []
+  clearDungeonProccesses:
+  - {fileID: 11400000, guid: f109e944a0e864115a36ca043e205740, type: 2}
+  createRecoveryItemRange:
+    min: 3
+    max: 4
+  createAnvilRange:
+    min: 4
+    max: 5
+  createMoneyRange:
+    min: 3
+    max: 5
+  createEnemyRange:
+    min: 8
+    max: 12
+  createItemRange:
+    min: 4
+    max: 5
+  createTrapRange:
+    min: 0
+    max: 0
+  acquireMoneyRange:
+    min: 10
+    max: 500

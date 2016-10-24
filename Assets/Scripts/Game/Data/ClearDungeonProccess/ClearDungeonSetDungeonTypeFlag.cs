@@ -17,7 +17,6 @@ namespace MineS
 		public override void Invoke()
 		{
 			ProgressData.Instance.ClearDungeon(this.type);
-			Debug.Log("Clear Dungeon type = " + type);
 		}
 	}
 }

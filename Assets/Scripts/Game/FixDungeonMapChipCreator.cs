@@ -10,9 +10,30 @@ namespace MineS
 	/// </summary>
 	public class FixDungeonMapChipCreator : MapChipCreatorBase
 	{
+		private List<List<int>> ids;
+
+		public FixDungeonMapChipCreator(FixDungeonData data)
+		{
+			this.ids = new List<List<int>>();
+			var splitMapChip = data.MapChip.Split('\n');
+			foreach(var s in splitMapChip)
+			{
+				var id = new List<int>();
+				for(int i = 0; i < s.Length; i++)
+				{
+					int value;
+					if(int.TryParse(s[i].ToString(), out value))
+					{
+						id.Add(value);
+					}
+				}
+				this.ids.Add(id);
+			}
+		}
+
 		public override int Get(int y, int x)
 		{
-			return 0;
+			return this.ids[y][x];
 		}
 	}
 }

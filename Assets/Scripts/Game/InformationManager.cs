@@ -60,7 +60,8 @@ namespace MineS
 			confusionEnemyAttack = null,
 			acquireMoney = null,
 			gameOver = null,
-			gameClear = null;
+			gameClear = null,
+			closeStair = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -369,6 +370,12 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.gameClear.Format(dungeonName));
+		}
+
+		public static void CloseStair()
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.closeStair.Get);
 		}
 
 		public static void AddMessage(string message)

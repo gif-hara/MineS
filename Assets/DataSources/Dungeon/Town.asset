@@ -21,7 +21,7 @@ MonoBehaviour:
     - floorRange:
         min: 1
         max: 1
-      mapChip: {fileID: 11400000, guid: 310e8b95945bd41f1ab3ceeac02c3dc2, type: 2}
+      mapChip: {fileID: 11400000, guid: effc1ca4fdae74bffaeeae600d621e91, type: 2}
   bgmTable:
     elements:
     - floorRange:
@@ -39,15 +39,34 @@ MonoBehaviour:
         - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
           probability: 100
   creators:
-  - x: 0
-    y: 0
+  - x: 2
+    y: 4
     creator: {fileID: 11400000, guid: 7d84a5310c8794b3792f061f0b6dbf98, type: 2}
-  - x: 1
-    y: 0
+  - x: 0
+    y: 7
     creator: {fileID: 11400000, guid: b8e29d9cb7b1e4cd58462ec81858a6a3, type: 2}
   - x: 2
-    y: 0
+    y: 2
     creator: {fileID: 11400000, guid: 944f44de5d24f47fb85c43945b4ed7d8, type: 2}
-  - x: 0
-    y: 1
+  - x: 4
+    y: 2
+    creator: {fileID: 11400000, guid: 67112b6daa42d41d683093bbcbaf6de8, type: 2}
+  - x: 1
+    y: 3
+    creator: {fileID: 11400000, guid: 631807b1de55a4bda8f5e2f774d45b6d, type: 2}
+  - x: 5
+    y: 3
+    creator: {fileID: 11400000, guid: 33fd733049c824505b7dd609568e09e5, type: 2}
+  - x: 4
+    y: 6
+    creator: {fileID: 11400000, guid: d0766b2fc2fb34947ad40625c7ae9417, type: 2}
+  - x: 2
+    y: 6
+    creator: {fileID: 11400000, guid: bfef205ba1f854e54947bfbb827d37be, type: 2}
+  - x: 3
+    y: 0
+    creator: {fileID: 11400000, guid: d6e023676a437424cbb5a58186e9db35, type: 2}
+  - x: 4
+    y: 4
     creator: {fileID: 11400000, guid: 72fb9babe91c6426586c0dd65510926f, type: 2}
+  mapChip: "0010100\n\r0011100\n\r0001000\n\r0001000\n\r1101011\n\r0111110\n\r0001000\n\r0001000\r"

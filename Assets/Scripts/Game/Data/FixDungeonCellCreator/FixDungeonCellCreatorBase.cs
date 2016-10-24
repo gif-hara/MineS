@@ -10,6 +10,6 @@ namespace MineS
 	/// </summary>
 	public abstract class FixDungeonCellCreatorBase : ScriptableObject
 	{
-		public abstract CellData Create(int y, int x, CellController cellController);
+		public abstract CellData Create(int y, int x, CellController cellController, MapChipCreatorBase mapChipCreator);
 	}
 }

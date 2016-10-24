@@ -9,7 +9,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[CreateAssetMenu()]
-	public class FixDungeonDungeonData : DungeonDataBase
+	public class FixDungeonData : DungeonDataBase
 	{
 		[System.Serializable]
 		public class CellCreator
@@ -27,16 +27,21 @@ namespace MineS
 
 			public int Y{ get { return this.y; } }
 
-			public CellData Create(CellController cellController)
+			public CellData Create(CellController cellController, MapChipCreatorBase mapChipCreator)
 			{
-				return this.creator.Create(this.y, this.x, cellController);
+				return this.creator.Create(this.y, this.x, cellController, mapChipCreator);
 			}
 		}
 
 		[SerializeField]
 		private List<CellCreator> creators;
 
+		[SerializeField][Multiline(8)]
+		private string mapChip;
+
 		public List<CellCreator> CellCreators{ get { return this.creators; } }
+
+		public string MapChip{ get { return this.mapChip; } }
 
 		[ContextMenu("Check")]
 		private void AssertionCheck()

@@ -13,14 +13,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database:
   - value:
+      ja: "\u30AB\u30B6\u30CD\u6751"
+      en: 
+    guid: c27eec5d-f791-4a03-bb05-bf5b046b302a
+  - value:
       ja: "\u30C6\u30B9\u30C8\u30C0\u30F3\u30B8\u30E7\u30F3"
       en: 
     guid: f1f2bb3b-0336-429b-9013-213c2d9ef1af
   - value:
-      ja: "\u521D\u7D1A\u30C0\u30F3\u30B8\u30E7\u30F3"
+      ja: "\u521D\u3081\u3066\u306E\u30C0\u30F3\u30B8\u30E7\u30F3"
       en: 
     guid: ab1cdd68-b055-4b81-8f0c-c2adca1fcc74
   - value:
-      ja: "\u30AB\u30B6\u30CD\u6751"
+      ja: "\u8155\u9CF4\u3089\u3057\u306E\u30C0\u30F3\u30B8\u30E7\u30F3"
       en: 
-    guid: c27eec5d-f791-4a03-bb05-bf5b046b302a
+    guid: 85b93a5f-53a1-4915-9579-740dfc246785
+  - value:
+      ja: "\u6311\u6226\u8005\u306E\u30C0\u30F3\u30B8\u30E7\u30F3"
+      en: 
+    guid: 19a6e747-675b-41b3-ad1e-d555100357f5
+  - value:
+      ja: "\u4FEE\u7F85\u306E\u6D1E\u7A9F"
+      en: 
+    guid: 2a9b7c9d-9676-44d4-b81e-19d50e13260b
+  - value:
+      ja: "\u30BF\u30EB\u30BF\u30ED\u30B9\u306E\u7DCB\u5DCC\u7A9F"
+      en: 
+    guid: f67c4c4a-531e-4f4c-97a4-544bccda0d51
+  - value:
+      ja: "\u935B\u51B6\u5C4B\u306E\u7E01\u306E\u4E0B"
+      en: 
+    guid: 2a6dd14d-9b27-4881-a198-4f691ce8e815
+  - value:
+      ja: "\u884C\u5546\u4EBA\u306E\u7960"
+      en: 
+    guid: 39af20a6-096e-44f3-8c76-38e041a54540

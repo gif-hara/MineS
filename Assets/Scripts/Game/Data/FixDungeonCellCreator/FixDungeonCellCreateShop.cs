@@ -11,9 +11,9 @@ namespace MineS
 	[CreateAssetMenu()]
 	public class FixDungeonCellCreateShop : FixDungeonCellCreatorBase
 	{
-		public override CellData Create(int y, int x, CellController cellController)
+		public override CellData Create(int y, int x, CellController cellController, MapChipCreatorBase mapChipCreator)
 		{
-			var cellData = new CellData(y, x, 0, cellController);
+			var cellData = new CellData(y, x, mapChipCreator.Get(y, x), cellController);
 			cellData.BindCellClickAction(new VisitShopAction());
 
 			return cellData;

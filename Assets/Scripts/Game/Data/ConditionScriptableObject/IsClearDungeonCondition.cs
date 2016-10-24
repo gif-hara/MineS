@@ -17,7 +17,6 @@ namespace MineS
 		{
 			get
 			{
-				Debug.LogFormat("type = {0} isClear = {1}", this.type, ProgressData.Instance.IsClearDungeon(this.type));
 				return ProgressData.Instance.IsClearDungeon(this.type);
 			}
 		}

@@ -11,8 +11,18 @@ namespace MineS
 	[CreateAssetMenu()]
 	public class FixDungeonCellCreateChangeDungeon : FixDungeonCellCreatorBase
 	{
+		public enum BadConditionType:int
+		{
+			None,
+
+			CloseStair,
+		}
+
 		[SerializeField]
 		private ConditionScriptableObjectBase conditioner;
+
+		[SerializeField]
+		private BadConditionType badConditionType;
 
 		[SerializeField]
 		private DungeonDataBase data;
@@ -20,13 +30,30 @@ namespace MineS
 		[SerializeField]
 		private string descriptionKey;
 
-		public override CellData Create(int y, int x, CellController cellController)
+		[SerializeField]
+		private bool debugOnly;
+
+		public override CellData Create(int y, int x, CellController cellController, MapChipCreatorBase mapChipCreator)
 		{
-			var cellData = new CellData(y, x, 0, cellController);
+			var cellData = new CellData(y, x, mapChipCreator.Get(y, x), cellController);
+
+#if RELEASE
+			if(this.debugOnly)
+			{
+				return cellData;
+			}
+#endif
 
 			if(this.conditioner.Condition)
 			{
 				cellData.BindCellClickAction(new ChangeDungeonDataAction(this.data, this.descriptionKey));
+			}
+			else
+			{
+				if(this.badConditionType == BadConditionType.CloseStair)
+				{
+					cellData.BindCellClickAction(new CloseStairAction());
+				}
 			}
 
 			return cellData;

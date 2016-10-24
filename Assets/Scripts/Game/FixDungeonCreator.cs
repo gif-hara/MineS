@@ -13,12 +13,12 @@ namespace MineS
 	{
 		public override CellData[,] Create(CellManager cellManager, DungeonDataBase dungeonData, int rowNumber, int culumnNumber)
 		{
-			var _dungeonData = dungeonData as FixDungeonDungeonData;
+			var _dungeonData = dungeonData as FixDungeonData;
 			var database = new Database(rowNumber, culumnNumber);
-			var mapChipCreator = new FixDungeonMapChipCreator();
+			var mapChipCreator = new FixDungeonMapChipCreator(_dungeonData);
 
 			// 街データを生成.
-			_dungeonData.CellCreators.ForEach(c => database.Set(database.Pop(c.Y, c.X), c.Create(cellManager.CellControllers[c.Y, c.X])));
+			_dungeonData.CellCreators.ForEach(c => database.Set(database.Pop(c.Y, c.X), c.Create(cellManager.CellControllers[c.Y, c.X], mapChipCreator)));
 
 			// 空白を作成.
 			for(int i = 0, imax = database.Rest; i < imax; i++)

@@ -562,3 +562,7 @@ MonoBehaviour:
       ja: "<color=aqua>{0}</color>\u3092\u5236\u8987\u3057\u305F\uFF01"
       en: 
     guid: b68b8488-12af-4b02-bc5b-37ee1c44b919
+  - value:
+      ja: "\u3053\u3053\u306F\u307E\u3060\u5165\u308C\u306A\u3044\u3088\u3046\u3060\u30FB\u30FB\u30FB\uFF01"
+      en: 
+    guid: 62fe5d42-f94c-4bb3-8754-063df199158f
