@@ -36,7 +36,7 @@ MonoBehaviour:
       - {fileID: 8300000, guid: b9e69e120297b4bb6b8d6d1369e00951, type: 3}
   shopTable:
     elements: []
-  floorMax: 10
+  floorMax: 1
   enemyTable:
     elements:
     - floorMin: 1
@@ -108,6 +108,8 @@ MonoBehaviour:
     elements: []
   blackSmithTable:
     elements: []
+  clearDungeonProccesses:
+  - {fileID: 11400000, guid: f109e944a0e864115a36ca043e205740, type: 2}
   createRecoveryItemRange:
     min: 3
     max: 4

@@ -769,6 +769,44 @@ namespace MineS
 			GameOver,
 		}
 
+		public enum DungeonType:int
+		{
+			/// <summary>
+			/// 初級ダンジョン.
+			/// </summary>
+			ElementaryLevel,
+
+			/// <summary>
+			/// 中級ダンジョン.
+			/// </summary>
+			IntermediateLevel,
+
+			/// <summary>
+			/// 上級ダンジョン.
+			/// </summary>
+			AdvancedLevel,
+
+			/// <summary>
+			/// 修羅の洞窟.
+			/// </summary>
+			CarnageCave,
+
+			/// <summary>
+			/// タルタロスの緋巌窟.
+			/// </summary>
+			TartarusScarletCave,
+
+			/// <summary>
+			/// 鍛冶屋の縁の下.
+			/// </summary>
+			BlackSmithEdge,
+
+			/// <summary>
+			/// 行商人の祠.
+			/// </summary>
+			PeddlerTemple,
+		}
+
 		public const int AdjacentMax = 9;
 
 		public const int MoneyMax = 9999999;

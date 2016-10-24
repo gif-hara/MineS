@@ -84,6 +84,12 @@ namespace MineS
 			return this.CurrentDataAsDungeon.CreateItem();
 		}
 
+		public void ClearDungeon()
+		{
+			this.CurrentDataAsDungeon.ClearDungeon();
+			SaveData.Save();
+		}
+
 		public bool CanTurnBack(int addValue)
 		{
 			return (this.floorCount + addValue) >= 1;

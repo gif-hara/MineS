@@ -11,40 +11,48 @@ namespace MineS
 	[System.Serializable]
 	public class ProgressData
 	{
-		public Dictionary<string, bool> ClearDungeonFlags{ private set; get; }
+		[SerializeField]
+		private List<GameDefine.DungeonType> clearDungeonFlags;
 
 		private const string KeyName = "ProgressData";
 
+		private static ProgressData instance = null;
+
+		public List<GameDefine.DungeonType> ClearDungeonFlags{ get { return this.clearDungeonFlags; } }
+
 		public ProgressData()
 		{
-			this.ClearDungeonFlags = new Dictionary<string, bool>();
-			this.ClearDungeonFlags["Test"] = false;
+			this.clearDungeonFlags = new List<GameDefine.DungeonType>();
 		}
 
-		public void ClearDungeon(string key)
+		public void ClearDungeon(GameDefine.DungeonType type)
 		{
-			if(this.ClearDungeonFlags.ContainsKey(key))
+			if(this.clearDungeonFlags.FindIndex(c => c == type) != -1)
 			{
 				return;
 			}
 
-			this.ClearDungeonFlags.Add(key, true);
+			this.clearDungeonFlags.Add(type);
+			SaveData.SetClass<ProgressData>(KeyName, this);
 		}
 
-		public bool IsClearDungeon(string key)
+		public bool IsClearDungeon(GameDefine.DungeonType type)
 		{
-			return this.ClearDungeonFlags.ContainsKey(key);
+			return this.clearDungeonFlags.FindIndex(c => c == type) != -1;
 		}
 
 		public static ProgressData Instance
 		{
 			get
 			{
-				var instance = SaveData.GetClass<ProgressData>(KeyName, null);
 				if(instance == null)
 				{
-					instance = new ProgressData();
-					SaveData.SetClass<ProgressData>(KeyName, instance);
+					instance = SaveData.GetClass<ProgressData>(KeyName, null);
+					if(instance == null)
+					{
+						instance = new ProgressData();
+						SaveData.SetClass<ProgressData>(KeyName, instance);
+					}
 				}
 
 				return instance;

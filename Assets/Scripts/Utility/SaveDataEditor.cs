@@ -17,6 +17,7 @@ namespace MineS
 		private static void Remove()
 		{
 			var saveData = new FileInfo(SaveData.Savedatabase.Path + SaveData.Savedatabase.FileName);
+			Debug.LogFormat("file = {0}", saveData.FullName);
 			saveData.Delete();
 		}
 	}

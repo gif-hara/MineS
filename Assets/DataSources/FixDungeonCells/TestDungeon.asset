@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21882ded38ca54c5c89a551478c3c4d4, type: 3}
   m_Name: TestDungeon
   m_EditorClassIdentifier: 
+  conditioner: {fileID: 11400000, guid: b019b4c6d13ce407eae7d33991f23b8e, type: 2}
   data: {fileID: 11400000, guid: fb7414cd5676941249068426b7a00398, type: 2}
   descriptionKey: TestDungeon

@@ -253,12 +253,8 @@ namespace HK.Framework
 
 			}
 
-			/// <summary>
-			/// クラスが破棄される時点でファイルに書き込みます。
-			/// </summary>
 			~SaveDataBase ()
 			{
-				Save();
 			}
 
 #endregion
