@@ -12,6 +12,28 @@ namespace MineS
 	{
 		public List<SerializeFieldGetter.AudioClip> walks;
 
+		public SerializeFieldGetter.AudioClip stair;
+
+		public SerializeFieldGetter.AudioClip useItem;
+
+		public SerializeFieldGetter.AudioClip recovery;
+
+		public SerializeFieldGetter.AudioClip slash;
+
+		public SerializeFieldGetter.AudioClip damage;
+
+		public SerializeFieldGetter.AudioClip dead;
+
+		public SerializeFieldGetter.AudioClip equipOn;
+
+		public SerializeFieldGetter.AudioClip equipOff;
+
+		public SerializeFieldGetter.AudioClip acquireItem;
+
+		public SerializeFieldGetter.AudioClip acquireMoney;
+
+		public SerializeFieldGetter.AudioClip blackSmith;
+
 		[SerializeField]
 		private SEElement prefabElement;
 

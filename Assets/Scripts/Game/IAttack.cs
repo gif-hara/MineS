@@ -42,7 +42,7 @@ namespace MineS
 
 		void RecoveryHitPoint(int value, bool isLimit);
 
-		void RecoveryArmor(int value);
+		void RecoveryArmor(int value, bool playSE);
 
 		GameDefine.AddAbnormalStatusResultType AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus);
 
@@ -50,7 +50,7 @@ namespace MineS
 
 		void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint);
 
-		void TakeDamageArmorOnly(int value);
+		void TakeDamageArmorOnly(int value, bool playSE);
 
 		void AddBaseStrength(int value);
 

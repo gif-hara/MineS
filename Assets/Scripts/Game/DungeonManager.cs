@@ -64,6 +64,7 @@ namespace MineS
 
 		public void NextFloorEvent(int addValue)
 		{
+			SEManager.Instance.PlaySE(SEManager.Instance.stair);
 			this.floorCount += addValue;
 			if(this.current.CanPlayBGM(this.floorCount))
 			{

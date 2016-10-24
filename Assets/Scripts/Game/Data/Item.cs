@@ -50,6 +50,7 @@ namespace MineS
 
 		private void UseUsableItem(IAttack user, Inventory inventory)
 		{
+			SEManager.Instance.PlaySE(SEManager.Instance.useItem);
 			var itemName = this.InstanceData.ItemName;
 			if(ItemManager.Instance.Identified(this))
 			{
@@ -70,7 +71,7 @@ namespace MineS
 			case GameDefine.UsableItemType.RecoveryArmor:
 				{
 					var value = Calculator.GetUsableItemRecoveryValue(usableItem.RandomPower, user);
-					user.RecoveryArmor(value);
+					user.RecoveryArmor(value, true);
 					inventory.RemoveItem(this);
 					InformationManager.OnUseRecoveryArmorItem(user, value);
 				}
@@ -150,7 +151,7 @@ namespace MineS
 			break;
 			case GameDefine.UsableItemType.Brake:
 				{
-					user.TakeDamageArmorOnly(user.Armor);
+					user.TakeDamageArmorOnly(user.Armor, true);
 				}
 			break;
 			case GameDefine.UsableItemType.UndineDrop:

@@ -16263,6 +16263,28 @@ MonoBehaviour:
   walks:
   - element: {fileID: 8300000, guid: c907c17c727944df8a4e964ec2047930, type: 3}
   - element: {fileID: 8300000, guid: fcc4bcb9373cf4f44acf1cc88c3c52ae, type: 3}
+  stair:
+    element: {fileID: 8300000, guid: 4dd18a896be89460fb3cbc08c00496c6, type: 3}
+  useItem:
+    element: {fileID: 8300000, guid: 44d511b5cc7424c9b87217e859acb15f, type: 3}
+  recovery:
+    element: {fileID: 8300000, guid: 12391baa67f59442dab5a1dee82fc27a, type: 3}
+  slash:
+    element: {fileID: 8300000, guid: 8ec2fac4a82a1488a8aea565b86b58ae, type: 3}
+  damage:
+    element: {fileID: 8300000, guid: a250e27c7abe04240ba5de5c210705bb, type: 3}
+  dead:
+    element: {fileID: 8300000, guid: d6746aff926f146e784ca7bb513ac187, type: 3}
+  equipOn:
+    element: {fileID: 8300000, guid: c74c9684623b14ded92c7994cc0f6db2, type: 3}
+  equipOff:
+    element: {fileID: 8300000, guid: a6381b37b34634b64801fdd0b0ec1423, type: 3}
+  acquireItem:
+    element: {fileID: 8300000, guid: cce6e043a78264ed2aa96af40e0267b0, type: 3}
+  acquireMoney:
+    element: {fileID: 8300000, guid: 50dee0aeb68f14475b6bd14c2ae8f2ad, type: 3}
+  blackSmith:
+    element: {fileID: 8300000, guid: abe5fa0fda020447e9ba5bea43d062b2, type: 3}
   prefabElement: {fileID: 114000012096606980, guid: dfa5d91d0823a40a081667c24b52d466,
     type: 2}
 --- !u!114 &1339646585

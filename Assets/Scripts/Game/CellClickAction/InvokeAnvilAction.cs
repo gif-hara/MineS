@@ -16,7 +16,7 @@ namespace MineS
 			data.BindCellClickAction(null);
 			data.BindDeployDescription(null);
 			var value = GameDefine.RecoveryItemRecovery;
-			PlayerManager.Instance.RecoveryArmor(value);
+			PlayerManager.Instance.RecoveryArmor(value, true);
 			InformationManager.OnRecoveryArmor(value);
 		}
 

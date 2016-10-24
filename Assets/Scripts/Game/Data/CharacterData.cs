@@ -109,6 +109,7 @@ namespace MineS
 				return;
 			}
 
+			SEManager.Instance.PlaySE(SEManager.Instance.recovery);
 			this.cellController.Recovery(value);
 			if(this.HitPoint >= this.HitPointMax && isLimit)
 			{
@@ -123,8 +124,12 @@ namespace MineS
 			}
 		}
 
-		public void RecoveryArmor(int value)
+		public void RecoveryArmor(int value, bool playSE)
 		{
+			if(playSE)
+			{
+				SEManager.Instance.PlaySE(SEManager.Instance.recovery);
+			}
 			this.cellController.Recovery(value);
 			this.Armor += value;
 			this.Armor = this.Armor > this.ArmorMax ? this.ArmorMax : this.Armor;
@@ -132,6 +137,7 @@ namespace MineS
 
 		public void Attack(CharacterData target)
 		{
+			SEManager.Instance.PlaySE(SEManager.Instance.slash);
 			var hitResult = this.CanAttack(target);
 			if(hitResult != GameDefine.AttackResultType.Hit)
 			{
@@ -180,11 +186,11 @@ namespace MineS
 			}
 			if(this.FindAbility(GameDefine.AbilityType.RiskOfLife))
 			{
-				this.TakeDamageArmorOnly(Calculator.GetRiskOfLifeSubArmorValue(this));
+				this.TakeDamageArmorOnly(Calculator.GetRiskOfLifeSubArmorValue(this), true);
 			}
 			if(target.IsDead && this.FindAbility(GameDefine.AbilityType.Repair))
 			{
-				this.RecoveryArmor(Calculator.GetRepairValue(this));
+				this.RecoveryArmor(Calculator.GetRepairValue(this), true);
 			}
 
 			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.PoisonPainted, GameDefine.AbnormalStatusType.Poison);
@@ -231,6 +237,8 @@ namespace MineS
 				return;
 			}
 
+			SEManager.Instance.PlaySE(SEManager.Instance.damage);
+
 			this.cellController.TakeDamage(value);
 			if(!onlyHitPoint)
 			{
@@ -257,8 +265,13 @@ namespace MineS
 			}
 		}
 
-		public void TakeDamageArmorOnly(int value)
+		public void TakeDamageArmorOnly(int value, bool playSE)
 		{
+			if(playSE)
+			{
+				SEManager.Instance.PlaySE(SEManager.Instance.damage);
+			}
+
 			this.cellController.TakeDamage(value);
 			this.Armor -= value;
 			this.Armor = this.Armor < 0 ? 0 : this.Armor;
@@ -274,6 +287,7 @@ namespace MineS
 
 		public void AddMoney(int value)
 		{
+			SEManager.Instance.PlaySE(SEManager.Instance.acquireMoney);
 			this.Money += value;
 			this.Money = this.Money > GameDefine.MoneyMax ? GameDefine.MoneyMax : this.Money;
 		}

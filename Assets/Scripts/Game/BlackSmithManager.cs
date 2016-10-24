@@ -136,6 +136,7 @@ namespace MineS
 					InformationManager.AddMessage(this.levelUpMessage.Get);
 					PlayerManager.instance.UpdateInventoryUI(playerData.Inventory);
 					PlayerManager.instance.NotifyCharacterDataObservers();
+					SEManager.instance.PlaySE(SEManager.instance.blackSmith);
 				}
 				else
 				{
@@ -180,6 +181,7 @@ namespace MineS
 					playerData.Inventory.SetSelectItem(null);
 					PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment, playerData.Inventory);
 					PlayerManager.Instance.NotifyCharacterDataObservers();
+					SEManager.instance.PlaySE(SEManager.instance.blackSmith);
 				}
 				else
 				{
@@ -214,6 +216,7 @@ namespace MineS
 					playerData.AddMoney(-needMoney);
 					PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_RemoveAbilitySelectBaseEquipment, playerData.Inventory);
 					PlayerManager.Instance.NotifyCharacterDataObservers();
+					SEManager.instance.PlaySE(SEManager.instance.blackSmith);
 				}
 				else
 				{

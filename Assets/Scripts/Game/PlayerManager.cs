@@ -72,9 +72,9 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
-		public void RecoveryArmor(int value)
+		public void RecoveryArmor(int value, bool playSE)
 		{
-			this.Data.RecoveryArmor(value);
+			this.Data.RecoveryArmor(value, playSE);
 			this.NotifyCharacterDataObservers();
 		}
 
@@ -215,13 +215,13 @@ namespace MineS
 
 		public void DebugRecoveryArmor()
 		{
-			this.Data.RecoveryArmor(999);
+			this.Data.RecoveryArmor(999, true);
 			this.NotifyCharacterDataObservers();
 		}
 
 		public void DebugZeroArmor()
 		{
-			this.Data.RecoveryArmor(-this.Data.Armor);
+			this.Data.RecoveryArmor(-this.Data.Armor, true);
 			this.NotifyCharacterDataObservers();
 		}
 
@@ -248,7 +248,7 @@ namespace MineS
 
 		private void OnNextFloor()
 		{
-			this.Data.RecoveryArmor(this.Data.ArmorMax / 2);
+			this.Data.RecoveryArmor(this.Data.ArmorMax / 2, false);
 			this.NotifyCharacterDataObservers();
 		}
 

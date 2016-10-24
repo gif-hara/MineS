@@ -19,6 +19,7 @@ namespace MineS
 
 		public Item Change(Item item, CharacterData holder)
 		{
+			SEManager.Instance.PlaySE(SEManager.Instance.equipOn);
 			Item beforeItem = null;
 			(item.InstanceData as EquipmentData).SetAbilitiesHolder(holder);
 			switch(item.InstanceData.ItemType)
@@ -50,6 +51,7 @@ namespace MineS
 			{
 				return;
 			}
+			SEManager.Instance.PlaySE(SEManager.Instance.equipOff);
 			(item.InstanceData as EquipmentData).SetAbilitiesHolder(null);
 
 			switch(item.InstanceData.ItemType)

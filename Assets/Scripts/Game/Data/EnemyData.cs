@@ -15,6 +15,8 @@ namespace MineS
 		{
 			this.OnDead();
 
+			SEManager.Instance.PlaySE(SEManager.Instance.dead);
+
 			if(this.FindAbility(GameDefine.AbilityType.Reincarnation))
 			{
 				var blankCell = CellManager.Instance.RandomBlankCell(true);
