@@ -126,6 +126,7 @@ namespace MineS
 			this.Experience = 0;
 			this.AbnormalStatuses.Clear();
 			this.Level = 1;
+			this.baseStrength = this.masterData.Strength;
 		}
 
 		public override void ForceLevelUp(int value)
