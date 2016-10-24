@@ -110,5 +110,15 @@ namespace MineS
 			func.Invoke(this.abnormalStatusRemainingTurn);
 			this.abnormalStatusRemainingTurnEvent.AddListener(func);
 		}
+
+		public void AllDungeonClear()
+		{
+			SaveDataEditor.CompleteProgressData();
+		}
+
+		public void RemoveSaveData()
+		{
+			SaveDataEditor.Remove();
+		}
 	}
 }

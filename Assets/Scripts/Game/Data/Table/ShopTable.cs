@@ -41,6 +41,14 @@ namespace MineS
 				return result;
 			}
 
+			public bool CanCreate
+			{
+				get
+				{
+					return this.probability > Random.Range(0, 100);
+				}
+			}
+
 #if UNITY_EDITOR
 			public void SetProbability(int value)
 			{
@@ -59,7 +67,13 @@ namespace MineS
 
 		public bool CanCreate(int floor)
 		{
-			return this.elements.Exists(e => e.IsMatch(floor));
+			var element = this.elements.Find(e => e.IsMatch(floor));
+			if(element == null)
+			{
+				return false;
+			}
+
+			return element.CanCreate;
 		}
 
 		public Inventory CreateInventory(int floor)

@@ -38,7 +38,7 @@ namespace MineS
 #if UNITY_EDITOR
 			public void SetProbability(int value)
 			{
-				this.probability = probability;
+				this.probability = value;
 			}
 #endif
 		}

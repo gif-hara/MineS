@@ -1,9 +1,11 @@
-﻿#if UNITY_EDITOR
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System.IO;
 
 namespace MineS
@@ -13,8 +15,10 @@ namespace MineS
 	/// </summary>
 	public class SaveDataEditor
 	{
+#if UNITY_EDITOR
 		[MenuItem("MineS/SaveData/Complete Progress Data")]
-		private static void CompleteProgressData()
+		#endif
+		public static void CompleteProgressData()
 		{
 			var progressData = ProgressData.Instance;
 			progressData.ClearDungeon(GameDefine.DungeonType.ElementaryLevel);
@@ -27,13 +31,13 @@ namespace MineS
 			SaveData.Save();
 		}
 
+#if UNITY_EDITOR
 		[MenuItem("MineS/SaveData/Remove")]
-		private static void Remove()
+		#endif
+		public static void Remove()
 		{
 			var saveData = new FileInfo(SaveData.Savedatabase.Path + SaveData.Savedatabase.FileName);
-			Debug.LogFormat("file = {0}", saveData.FullName);
 			saveData.Delete();
 		}
 	}
 }
-#endif
