@@ -14,10 +14,6 @@ namespace MineS
 		[SerializeField]
 		private List<GameDefine.DungeonType> clearDungeonFlags;
 
-		private const string KeyName = "ProgressData";
-
-		private static ProgressData instance = null;
-
 		public List<GameDefine.DungeonType> ClearDungeonFlags{ get { return this.clearDungeonFlags; } }
 
 		public ProgressData()
@@ -33,30 +29,12 @@ namespace MineS
 			}
 
 			this.clearDungeonFlags.Add(type);
-			SaveData.SetClass<ProgressData>(KeyName, this);
+			HK.Framework.SaveData.SetClass<ProgressData>(MineS.SaveData.ProgressKeyName, this);
 		}
 
 		public bool IsClearDungeon(GameDefine.DungeonType type)
 		{
 			return this.clearDungeonFlags.FindIndex(c => c == type) != -1;
-		}
-
-		public static ProgressData Instance
-		{
-			get
-			{
-				if(instance == null)
-				{
-					instance = SaveData.GetClass<ProgressData>(KeyName, null);
-					if(instance == null)
-					{
-						instance = new ProgressData();
-						SaveData.SetClass<ProgressData>(KeyName, instance);
-					}
-				}
-
-				return instance;
-			}
 		}
 	}
 }

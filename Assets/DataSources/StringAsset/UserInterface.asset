@@ -578,3 +578,19 @@ MonoBehaviour:
       ja: "\u30BB\u30FC\u30D6\u30C7\u30FC\u30BF\u524A\u9664"
       en: 
     guid: d590d222-68ac-4245-8e6f-00bd122c05ef
+  - value:
+      ja: "\u5009\u5EAB"
+      en: 
+    guid: 88dd821d-dbaf-420d-8397-7ebe17966266
+  - value:
+      ja: "\u9280\u884C"
+      en: 
+    guid: 1229098f-bfad-4eb2-ad53-ab9a3f358832
+  - value:
+      ja: "\u9810\u3051\u308B"
+      en: 
+    guid: 69b8f297-15bc-4894-a023-a4baccc13beb
+  - value:
+      ja: "\u5F15\u304D\u51FA\u3059"
+      en: 
+    guid: e3384454-d08f-496f-ad04-80102181cebb

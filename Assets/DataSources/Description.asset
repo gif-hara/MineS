@@ -542,6 +542,16 @@ MonoBehaviour:
       value: "\u88C5\u5099\u54C1\u306E\u5F37\u5316\u3084\u5408\u6210\u304C\u51FA\u6765\u308B\u305E\uFF01"
       guid: 624143be-8c75-420e-9246-22f9676d5c98
     image: {fileID: 21300000, guid: 7abbfe895bca44e07b147b5f85c64936, type: 3}
+  - key: WareHouse
+    title:
+      target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+      value: "\u5009\u5EAB"
+      guid: 88dd821d-dbaf-420d-8397-7ebe17966266
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30A2\u30A4\u30C6\u30E0\u3092\u9810\u3051\u305F\u308A\u304A\u91D1\u3092\u9810\u3051\u308B\u3053\u3068\u304C\u51FA\u6765\u308B\u305E\uFF01"
+      guid: 0e311869-0069-49d1-a903-6882be409813
+    image: {fileID: 21300000, guid: ef6fc7a0092b243a78466a4520060f43, type: 3}
   - key: Provocation
     title:
       target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}

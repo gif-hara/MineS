@@ -56,7 +56,7 @@ namespace MineS
 		{
 			if(item.InstanceData.ItemType == GameDefine.ItemType.UsableItem)
 			{
-				this.Deploy((item.InstanceData as UsableItemData).DescriptionElement);
+				this.Deploy((item.InstanceData as UsableItemInstanceData).DescriptionElement);
 			}
 			else if(GameDefine.IsEquipment(item.InstanceData.ItemType))
 			{

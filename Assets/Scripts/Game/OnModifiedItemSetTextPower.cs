@@ -21,7 +21,7 @@ namespace MineS
 
 		public void OnModifiedItem(Item item)
 		{
-			this.target.text = this.format.Format((item.InstanceData as EquipmentData).Power);
+			this.target.text = this.format.Format((item.InstanceData as EquipmentInstanceData).Power);
 		}
 
 #endregion

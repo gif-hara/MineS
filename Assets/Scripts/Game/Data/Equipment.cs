@@ -21,7 +21,7 @@ namespace MineS
 		{
 			SEManager.Instance.PlaySE(SEManager.Instance.equipOn);
 			Item beforeItem = null;
-			(item.InstanceData as EquipmentData).SetAbilitiesHolder(holder);
+			(item.InstanceData as EquipmentInstanceData).SetAbilitiesHolder(holder);
 			switch(item.InstanceData.ItemType)
 			{
 			case GameDefine.ItemType.Weapon:
@@ -52,7 +52,7 @@ namespace MineS
 				return;
 			}
 			SEManager.Instance.PlaySE(SEManager.Instance.equipOff);
-			(item.InstanceData as EquipmentData).SetAbilitiesHolder(null);
+			(item.InstanceData as EquipmentInstanceData).SetAbilitiesHolder(null);
 
 			switch(item.InstanceData.ItemType)
 			{
@@ -111,7 +111,7 @@ namespace MineS
 
 		private int GetPower(Item item)
 		{
-			return item == null ? 0 : (item.InstanceData as EquipmentData).Power;
+			return item == null ? 0 : (item.InstanceData as EquipmentInstanceData).Power;
 		}
 
 		public List<Item> ToList

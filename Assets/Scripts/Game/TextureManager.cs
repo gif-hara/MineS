@@ -140,6 +140,8 @@ namespace MineS
 
 		public SerializeFieldGetter.Sprite shop;
 
+		public SerializeFieldGetter.Sprite wareHouse;
+
 		public SerializeFieldGetter.Sprite recoveryItem;
 
 		public SerializeFieldGetter.Sprite stairImage;

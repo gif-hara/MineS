@@ -12,9 +12,22 @@ namespace MineS
 	[System.Serializable]
 	public class Inventory
 	{
-		public List<Item> Items{ private set; get; }
+		[SerializeField]
+		private List<Item> items;
 
-		public Equipment Equipment{ private set; get; }
+		[SerializeField]
+		private Equipment equipment;
+
+		public List<Item> Items
+		{
+			get
+			{
+				this.ClearInvalidItem();
+				return this.items;
+			}
+		}
+
+		public Equipment Equipment{ get { return this.equipment; } }
 
 		public ExchangeItemController ExchangeItemController{ private set; get; }
 
@@ -27,24 +40,24 @@ namespace MineS
 		public Inventory(CharacterData holder, int itemMax)
 		{
 			this.holder = holder;
-			this.Items = new List<Item>();
+			this.items = new List<Item>();
 			for(int i = 0; i < itemMax; i++)
 			{
-				this.Items.Add(null);
+				this.items.Add(null);
 			}
-			this.Equipment = new Equipment();
+			this.equipment = new Equipment();
 			this.ExchangeItemController = new ExchangeItemController(this);
 		}
 
 		public bool AddItem(Item item)
 		{
-			var emptyIndex = this.Items.FindIndex(i => i == null);
+			var emptyIndex = this.items.FindIndex(i => i == null || i.InstanceData == null);
 			if(emptyIndex < 0)
 			{
 				return false;
 			}
 
-			this.Items[emptyIndex] = item;
+			this.items[emptyIndex] = item;
 
 			return true;
 		}
@@ -53,29 +66,29 @@ namespace MineS
 		{
 			if(!this.AddItem(item))
 			{
-				this.Items.Add(item);
+				this.items.Add(item);
 			}
 		}
 
 		public void RemoveItem(Item item)
 		{
-			var index = this.Items.FindIndex(i => i == item);
-			this.Items[index] = null;
+			var index = this.items.FindIndex(i => i == item);
+			this.items[index] = null;
 		}
 
 		public void RemoveAll()
 		{
-			for(int i = 0; i < this.Items.Count; i++)
+			for(int i = 0; i < this.items.Count; i++)
 			{
-				this.Items[i] = null;
+				this.items[i] = null;
 			}
-			this.Equipment.RemoveAll();
+			this.equipment.RemoveAll();
 		}
 
 		public void ChangeItem(Item before, Item after)
 		{
-			var index = this.Items.FindIndex(i => i == before);
-			this.Items[index] = after;
+			var index = this.items.FindIndex(i => i == before);
+			this.items[index] = after;
 		}
 
 		public void SetExchangeItem(Item exchangeItem, CellData fieldCell)
@@ -107,30 +120,30 @@ namespace MineS
 		{
 			get
 			{
-				return this.Items.FindIndex(i => i == null) != -1;
+				return this.items.FindIndex(i => i == null) != -1;
 			}
 		}
 
 		public Item ChangeEquipment(Item item)
 		{
-			return this.Equipment.Change(item, this.holder);
+			return this.equipment.Change(item, this.holder);
 		}
 
 		public Item ChangeEquipmentFromSelectItem()
 		{
-			return this.Equipment.Change(this.SelectItem, this.holder);
+			return this.equipment.Change(this.SelectItem, this.holder);
 		}
 
 		public void RemoveEquipment(Item item)
 		{
-			this.Equipment.Remove(item);
+			this.equipment.Remove(item);
 		}
 
 		public void RemoveItemOrEquipment(Item item)
 		{
-			if(GameDefine.IsEquipment(item.InstanceData.ItemType) && this.Equipment.IsInEquipment(item))
+			if(GameDefine.IsEquipment(item.InstanceData.ItemType) && this.equipment.IsInEquipment(item))
 			{
-				this.Equipment.Remove(item);
+				this.equipment.Remove(item);
 			}
 			else
 			{
@@ -138,13 +151,54 @@ namespace MineS
 			}
 		}
 
+		public void Serialize(string key)
+		{
+			HK.Framework.SaveData.SetInt(key, 1);
+			for(int i = 0; i < this.items.Count; i++)
+			{
+				var item = this.items[i];
+				HK.Framework.SaveData.SetInt(this.ItemNullKey(key, i), item == null ? 0 : 1);
+				if(item != null)
+				{
+					this.items[i].Serialize(this.ItemKey(key, i));
+				}
+			}
+		}
+
+		public void Deserialize(string key)
+		{
+			if(!HK.Framework.SaveData.ContainsKey(key))
+			{
+				Debug.AssertFormat(false, "{0}に対応するセーブデータがありません.", key);
+				return;
+			}
+			for(int i = 0; i < this.items.Count; i++)
+			{
+				if(HK.Framework.SaveData.GetInt(this.ItemNullKey(key, i)) == 0)
+				{
+					continue;
+				}
+				this.items[i] = Item.Deserialize(this.ItemKey(key, i));
+			}
+		}
+
+		private string ItemKey(string key, int index)
+		{
+			return string.Format("{0}_Inventory_Item{1}", key, index);
+		}
+
+		private string ItemNullKey(string key, int index)
+		{
+			return string.Format("{0}_Inventory_ItemIsNull{1}", key, index);
+		}
+
 		public List<Item> AllItem
 		{
 			get
 			{
 				var result = new List<Item>();
-				result.AddRange(this.Items.Where(i => i != null));
-				result.AddRange(this.Equipment.ToList.Where(i => i != null));
+				result.AddRange(this.items.Where(i => i != null));
+				result.AddRange(this.equipment.ToList.Where(i => i != null));
 
 				return result;
 			}
@@ -156,6 +210,17 @@ namespace MineS
 			{
 				var list = this.AllItem;
 				return list.Exists(i => GameDefine.IsEquipment(i.InstanceData.ItemType));
+			}
+		}
+
+		private void ClearInvalidItem()
+		{
+			for(int i = 0; i < this.items.Count; i++)
+			{
+				if(this.items[i] != null && !this.items[i].IsValid)
+				{
+					this.items[i] = null;
+				}
 			}
 		}
 	}

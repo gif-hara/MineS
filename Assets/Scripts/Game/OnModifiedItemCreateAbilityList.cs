@@ -26,7 +26,7 @@ namespace MineS
 			this.createdObjects.ForEach(o => Destroy(o));
 			this.createdObjects.Clear();
 
-			(item.InstanceData as EquipmentData).Abilities.ForEach(a =>
+			(item.InstanceData as EquipmentInstanceData).Abilities.ForEach(a =>
 			{
 				var element = Instantiate(this.observerPrefab, this.root, false) as DescriptionDataObserver;
 				element.ModifiedData(a.DescriptionKey);

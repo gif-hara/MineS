@@ -17,7 +17,7 @@ namespace MineS
 		{
 			get
 			{
-				return ProgressData.Instance.IsClearDungeon(this.type);
+				return MineS.SaveData.Progress.IsClearDungeon(this.type);
 			}
 		}
 	}

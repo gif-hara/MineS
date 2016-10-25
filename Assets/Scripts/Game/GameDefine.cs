@@ -63,6 +63,11 @@ namespace MineS
 			/// 金袋.
 			/// </summary>
 			Money,
+
+			/// <summary>
+			/// 倉庫.
+			/// </summary>
+			WareHouse,
 		}
 
 		/// <summary>
@@ -746,6 +751,16 @@ namespace MineS
 			/// 店の売却モード.
 			/// </summary>
 			Shop_Sell,
+
+			/// <summary>
+			/// 倉庫に預ける.
+			/// </summary>
+			WareHouse_Leave,
+
+			/// <summary>
+			/// 倉庫から引き出す.
+			/// </summary>
+			WareHouse_Draw,
 		}
 
 		public enum CellClickMode:int
@@ -826,6 +841,8 @@ namespace MineS
 		public const int CellRowMax = 8;
 
 		public const int CellCulumnMax = 7;
+
+		public const int WareHouseInventoryMax = 2;
 
 		public static int Lottery<P>(List<P> elements) where P : IProbability
 		{

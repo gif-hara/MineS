@@ -20,7 +20,7 @@ namespace MineS
 		#endif
 		public static void CompleteProgressData()
 		{
-			var progressData = ProgressData.Instance;
+			var progressData = MineS.SaveData.Progress;
 			progressData.ClearDungeon(GameDefine.DungeonType.ElementaryLevel);
 			progressData.ClearDungeon(GameDefine.DungeonType.IntermediateLevel);
 			progressData.ClearDungeon(GameDefine.DungeonType.AdvancedLevel);
@@ -28,7 +28,7 @@ namespace MineS
 			progressData.ClearDungeon(GameDefine.DungeonType.TartarusScarletCave);
 			progressData.ClearDungeon(GameDefine.DungeonType.BlackSmithEdge);
 			progressData.ClearDungeon(GameDefine.DungeonType.PeddlerTemple);
-			SaveData.Save();
+			HK.Framework.SaveData.Save();
 		}
 
 #if UNITY_EDITOR
@@ -36,7 +36,7 @@ namespace MineS
 		#endif
 		public static void Remove()
 		{
-			var saveData = new FileInfo(SaveData.Savedatabase.Path + SaveData.Savedatabase.FileName);
+			var saveData = new FileInfo(HK.Framework.SaveData.Savedatabase.Path + HK.Framework.SaveData.Savedatabase.FileName);
 			saveData.Delete();
 		}
 	}

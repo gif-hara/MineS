@@ -16,13 +16,35 @@ namespace MineS
 		{
 		}
 
-		public ItemDataBase InstanceData{ private set; get; }
+		[SerializeField]
+		private ItemInstanceDataBase instanceData;
+
+		public ItemInstanceDataBase InstanceData{ get { return this.instanceData; } }
+
+		public bool IsValid{ get { return this.instanceData != null; } }
 
 		private static ItemEvent onUseItemEvent = new ItemEvent();
 
 		public Item(ItemDataBase masterData)
 		{
-			this.InstanceData = masterData.Clone;
+			switch(masterData.ItemType)
+			{
+			case GameDefine.ItemType.UsableItem:
+				this.instanceData = new UsableItemInstanceData(masterData);
+			break;
+			case GameDefine.ItemType.Accessory:
+			case GameDefine.ItemType.Shield:
+			case GameDefine.ItemType.Weapon:
+				this.instanceData = new EquipmentInstanceData(masterData);
+			break;
+			default:
+				Debug.AssertFormat(false, "不正な値です. masterData.ItemType = {0}", masterData.ItemType);
+			break;
+			}
+		}
+
+		public Item()
+		{
 		}
 
 		public static void AddOnUseItemEvent(UnityAction<Item> call)
@@ -32,32 +54,84 @@ namespace MineS
 
 		public void Use(IAttack user)
 		{
-			if(GameDefine.IsEquipment(this.InstanceData.ItemType))
+			if(GameDefine.IsEquipment(this.instanceData.ItemType))
 			{
 				var changedEquipment = PlayerManager.Instance.Data.Inventory.ChangeEquipment(this);
 				PlayerManager.Instance.ChangeItem(this, changedEquipment);
 			}
-			else if(this.InstanceData.ItemType == GameDefine.ItemType.UsableItem)
+			else if(this.instanceData.ItemType == GameDefine.ItemType.UsableItem)
 			{
 				this.UseUsableItem(user, PlayerManager.Instance.Data.Inventory);
 			}
 			else
 			{
-				Debug.LogWarning("未実装のアイテムです ItemType = " + this.InstanceData.ItemType);
+				Debug.LogWarning("未実装のアイテムです ItemType = " + this.instanceData.ItemType);
 			}
 			onUseItemEvent.Invoke(this);
+		}
+
+		public void Serialize(string key)
+		{
+			switch(this.instanceData.ItemType)
+			{
+			case GameDefine.ItemType.UsableItem:
+				HK.Framework.SaveData.SetClass<UsableItemInstanceData>(key, this.instanceData as UsableItemInstanceData);
+			break;
+			case GameDefine.ItemType.Accessory:
+			case GameDefine.ItemType.Shield:
+			case GameDefine.ItemType.Weapon:
+				HK.Framework.SaveData.SetClass<EquipmentInstanceData>(key, this.instanceData as EquipmentInstanceData);
+			break;
+			default:
+				Debug.AssertFormat(false, "不正な値です. itemType = {0}", this.instanceData.ItemType);
+			break;
+			}
+			HK.Framework.SaveData.SetInt(string.Format("{0}_Type", key), (int)this.instanceData.ItemType);
+		}
+
+		public static Item Deserialize(string key)
+		{
+			var typeKey = TypeKey(key);
+			if(!HK.Framework.SaveData.ContainsKey(typeKey))
+			{
+				return null;
+			}
+
+			var type = (GameDefine.ItemType)HK.Framework.SaveData.GetInt(typeKey);
+			var result = new Item();
+			switch(type)
+			{
+			case GameDefine.ItemType.UsableItem:
+				result.instanceData = HK.Framework.SaveData.GetClass<UsableItemInstanceData>(key, null);
+			break;
+			case GameDefine.ItemType.Accessory:
+			case GameDefine.ItemType.Shield:
+			case GameDefine.ItemType.Weapon:
+				result.instanceData = HK.Framework.SaveData.GetClass<EquipmentInstanceData>(key, null);
+			break;
+			default:
+				Debug.AssertFormat(false, "不正な値です. itemType = {0}", type);
+			break;
+			}
+
+			return result;
+		}
+
+		private static string TypeKey(string key)
+		{
+			return string.Format("{0}_Type", key);
 		}
 
 		private void UseUsableItem(IAttack user, Inventory inventory)
 		{
 			SEManager.Instance.PlaySE(SEManager.Instance.useItem);
-			var itemName = this.InstanceData.ItemName;
+			var itemName = this.instanceData.ItemName;
 			if(ItemManager.Instance.Identified(this))
 			{
-				InformationManager.IdentifiedItem(itemName, this.InstanceData.ItemNameRaw);
+				InformationManager.IdentifiedItem(itemName, this.instanceData.ItemNameRaw);
 			}
 
-			var usableItem = this.InstanceData as UsableItemData;
+			var usableItem = this.instanceData as UsableItemInstanceData;
 			switch(usableItem.UsableItemType)
 			{
 			case GameDefine.UsableItemType.RecoveryHitPointLimit:

@@ -148,6 +148,11 @@ namespace MineS
 			this.inventoryObservers.ForEach(i => i.ModifiedData(inventory));
 		}
 
+		public void UpdateInventoryUI()
+		{
+			this.UpdateInventoryUI(this.currentOpenInventory);
+		}
+
 		public GameDefine.AddAbnormalStatusResultType AddAbnormalStatus(GameDefine.AbnormalStatusType type, int remainingTurn, int waitTurn)
 		{
 			var result = this.Data.AddAbnormalStatus(AbnormalStatusFactory.Create(type, this.Data, remainingTurn, waitTurn));

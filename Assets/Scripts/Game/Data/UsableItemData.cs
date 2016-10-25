@@ -31,7 +31,8 @@ namespace MineS
 		{
 			get
 			{
-				return ItemManager.Instance.GetItemName(this);
+				return "";
+				//ItemManager.Instance.GetItemName(this);
 			}
 		}
 
@@ -47,13 +48,22 @@ namespace MineS
 
 		public DescriptionData.Element DescriptionElement{ get { return new DescriptionData.Element(this.ItemName, this.Description, this.Image); } }
 
-		private string Description
+		public string Description
 		{
 			get
 			{
-				return ItemManager.Instance.IsIdentified(this)
-					? this.description
-						: ItemManager.Instance.unidentifiedDescription.Element.Get;
+				return "";
+//				ItemManager.Instance.IsIdentified(this)
+//					? this.description
+//						: ItemManager.Instance.unidentifiedDescription.Element.Get;
+			}
+		}
+
+		public string DescriptionRaw
+		{
+			get
+			{
+				return this.description;
 			}
 		}
 

@@ -31,14 +31,14 @@ namespace MineS
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			if(this.action != null)
-			{
-				this.action.Invoke();
-			}
-
 			if(this.closeConfirmUI)
 			{
 				ConfirmManager.Instance.Close();
+			}
+
+			if(this.action != null)
+			{
+				this.action.Invoke();
 			}
 		}
 

@@ -2,35 +2,31 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
-using UnityEngine.Events;
 
 namespace MineS
 {
 	/// <summary>
 	/// .
 	/// </summary>
-	public class SelectBlackSmithReinforcementItemAction : CellClickActionBase
+	public class SelectWareHouseDrawItemAction : CellClickActionBase
 	{
 		private Item item;
 
-		public SelectBlackSmithReinforcementItemAction(Item item)
+		public SelectWareHouseDrawItemAction(Item item)
 		{
 			this.item = item;
 		}
 
 		public override void Invoke(CellData data)
 		{
-			if(this.item == null)
-			{
-				return;
-			}
-			BlackSmithManager.Instance.InvokeReinforcement(this.item);
+			Debug.AssertFormat(this.item != null, "アイテムがありません.");
+			WareHouseManager.Instance.DrawItem(this.item);
 		}
 
 		public override void SetCellController(CellController cellController)
 		{
 			base.SetCellController(cellController);
-			if(this.item != null)
+			if(this.item != null && this.item.IsValid)
 			{
 				this.cellController.SetImage(this.item.InstanceData.Image);
 			}
@@ -46,7 +42,7 @@ namespace MineS
 		{
 			get
 			{
-				return GameDefine.EventType.Item;
+				return GameDefine.EventType.WareHouse;
 			}
 		}
 
@@ -55,20 +51,6 @@ namespace MineS
 			get
 			{
 				return this.item.InstanceData.Image;
-			}
-		}
-
-		private bool CanSelect
-		{
-			get
-			{
-				var openType = PlayerManager.Instance.Data.Inventory.OpenType;
-				if(openType == GameDefine.InventoryModeType.BlackSmith_Reinforcement)
-				{
-					return (this.item.InstanceData as EquipmentInstanceData).CanLevelUp;
-				}
-
-				return true;
 			}
 		}
 	}

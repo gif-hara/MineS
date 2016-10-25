@@ -30,6 +30,10 @@ namespace MineS
 		[SerializeField, EnumLabel("Ability", typeof(GameDefine.AbilityType))]
 		public List<GameDefine.AbilityType> abilities;
 
+		public int BasePower{ get { return this.basePower; } }
+
+		public int BrandingLimit{ get { return this.brandingLimit; } }
+
 		public int Level{ private set; get; }
 
 		public int Power
@@ -106,68 +110,5 @@ namespace MineS
 			return result;
 		}
 #endif
-
-		public void SetAbilitiesHolder(CharacterData holder)
-		{
-			this.Abilities.ForEach(a => a.SetHolder(holder));
-		}
-
-		public void Synthesis(Item target)
-		{
-			var targetEquipmentData = target.InstanceData as EquipmentData;
-			this.Abilities.AddRange(targetEquipmentData.Abilities);
-			if(this.Abilities.Count > this.brandingLimit)
-			{
-				this.Abilities.RemoveRange(this.brandingLimit, this.Abilities.Count - this.brandingLimit);
-			}
-		}
-
-		public bool CanRemoveAbility(int index)
-		{
-			return index >= (this.MasterData as EquipmentData).abilities.Count;
-		}
-
-		public void RemoveAbility(int index)
-		{
-			this.Abilities.RemoveAt(index);
-		}
-
-		public void LevelUp()
-		{
-			this.Level++;
-		}
-
-		public bool CanLevelUp
-		{
-			get
-			{
-				return this.Level < GameDefine.EquipmentLevelMax;
-			}
-		}
-
-		public bool CanSynthesis
-		{
-			get
-			{
-				return this.Abilities.Count < this.brandingLimit;
-			}
-		}
-
-		public bool ExistBranding
-		{
-			get
-			{
-				return this.Abilities.Count > 0;
-			}
-		}
-
-		public int NeedLevelUpMoney
-		{
-			get
-			{
-				return Mathf.FloorToInt((this.purchasePrice / 10) * (this.Level + 1));
-			}
-		}
-
 	}
 }

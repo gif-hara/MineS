@@ -87,7 +87,7 @@ namespace MineS
 		public void ClearDungeon()
 		{
 			this.CurrentDataAsDungeon.ClearDungeon();
-			SaveData.Save();
+			HK.Framework.SaveData.Save();
 		}
 
 		public bool CanTurnBack(int addValue)

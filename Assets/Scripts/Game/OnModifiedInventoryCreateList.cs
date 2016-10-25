@@ -82,6 +82,12 @@ namespace MineS
 			case GameDefine.InventoryModeType.Shop_Sell:
 				this.OpenShop_Sell(inventory);
 			break;
+			case GameDefine.InventoryModeType.WareHouse_Leave:
+				this.OpenWareHouse_Leave(inventory);
+			break;
+			case GameDefine.InventoryModeType.WareHouse_Draw:
+				this.OpenWareHouse_Draw(inventory);
+			break;
 			default:
 				Debug.AssertFormat(false, "未実装です. openType = {0}", inventory.OpenType);
 			break;
@@ -131,7 +137,7 @@ namespace MineS
 		private void OpenBlackSmith_RemoveAbilitySelectAbility(Inventory inventory)
 		{
 			var item = inventory.SelectItem;
-			var abilities = (item.InstanceData as EquipmentData).Abilities;
+			var abilities = (item.InstanceData as EquipmentInstanceData).Abilities;
 			for(int i = 0; i < abilities.Count; i++)
 			{
 				this.CreateAbilityCellController(abilities[i], new SelectBlackSmithRemoveAbilitySelectAbilityAction(i));
@@ -146,6 +152,17 @@ namespace MineS
 		private void OpenShop_Sell(Inventory inventory)
 		{
 			inventory.Items.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.UsableItem, this.GetAction(inventory, i)));
+		}
+
+		private void OpenWareHouse_Leave(Inventory inventory)
+		{
+			this.CreateEquipmentCells(inventory, true);
+			this.CreateInventoryItemCells(inventory, true);
+		}
+
+		private void OpenWareHouse_Draw(Inventory inventory)
+		{
+			this.CreateInventoryItemCells(inventory, false);
 		}
 
 		private void CreateEquipmentCells(Inventory inventory, bool createPartition)
@@ -245,6 +262,10 @@ namespace MineS
 				return new SelectShopBuyItemAction(item);
 			case GameDefine.InventoryModeType.Shop_Sell:
 				return new SelectShopSellItemAction(item);
+			case GameDefine.InventoryModeType.WareHouse_Leave:
+				return new SelectWareHouseLeaveItemAction(item);
+			case GameDefine.InventoryModeType.WareHouse_Draw:
+				return new SelectWareHouseDrawItemAction(item);
 			default:
 				Debug.AssertFormat(false, "未実装です. openType = {0}", inventory.OpenType);
 				return null;

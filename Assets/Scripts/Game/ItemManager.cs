@@ -75,13 +75,13 @@ namespace MineS
 			});
 		}
 
-		public string GetItemName(ItemDataBase item)
+		public string GetItemName(ItemInstanceDataBase item)
 		{
 			Debug.AssertFormat(item.ItemType == GameDefine.ItemType.UsableItem, "{0}はUsableItemではありません.", item.ItemNameRaw);
 			return this.identifiedDictionary[item.ItemNameRaw].ItemName;
 		}
 
-		public bool IsIdentified(ItemDataBase item)
+		public bool IsIdentified(ItemInstanceDataBase item)
 		{
 			Debug.AssertFormat(item.ItemType == GameDefine.ItemType.UsableItem, "{0}はUsableItemではありません.", item.ItemNameRaw);
 			return this.identifiedDictionary[item.ItemNameRaw].IsIdentified;

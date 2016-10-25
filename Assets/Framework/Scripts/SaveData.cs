@@ -210,6 +210,7 @@ namespace HK.Framework
 		public static void Save()
 		{
 			Savedatabase.Save();
+			Debug.Log("Save");
 		}
 
 #endregion
@@ -289,6 +290,7 @@ namespace HK.Framework
 					return _default;
 
 				string json = saveDictionary[key];
+				Debug.LogFormat("GetClass<{0}> = {1}", typeof(T).Name, json);
 				T obj = JsonUtility.FromJson<T>(json);
 				return obj;
 
@@ -298,6 +300,7 @@ namespace HK.Framework
 			{
 				keyCheck(key);
 				string json = JsonUtility.ToJson(obj);
+				Debug.LogFormat("SetClass<{0}> = {1}", typeof(T).Name, json);
 				saveDictionary[key] = json;
 			}
 

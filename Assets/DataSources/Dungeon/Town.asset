@@ -70,4 +70,7 @@ MonoBehaviour:
   - x: 4
     y: 4
     creator: {fileID: 11400000, guid: 72fb9babe91c6426586c0dd65510926f, type: 2}
+  - x: 6
+    y: 5
+    creator: {fileID: 11400000, guid: 6ed965b5340db435b878ffb814789735, type: 2}
   mapChip: "0010100\n\r0011100\n\r0001000\n\r0001000\n\r1101011\n\r0111110\n\r0001000\n\r0001000\r"

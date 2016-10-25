@@ -114,7 +114,7 @@ namespace MineS
 
 		public void InvokeReinforcement(Item item)
 		{
-			var equipmentData = item.InstanceData as EquipmentData;
+			var equipmentData = item.InstanceData as EquipmentInstanceData;
 			if(equipmentData.CanLevelUp)
 			{
 				InformationManager.AddMessage(this.confirmReinforceMessage.Format(equipmentData.NeedLevelUpMoney));
@@ -148,7 +148,7 @@ namespace MineS
 
 		public void InvokeSynthesis(Item targetEquipment)
 		{
-			var equipmentData = targetEquipment.InstanceData as EquipmentData;
+			var equipmentData = targetEquipment.InstanceData as EquipmentInstanceData;
 			if(!equipmentData.CanExtraction)
 			{
 				InformationManager.AddMessage(this.canNotSynthesisTargetMessage.Format(equipmentData.ItemName));
@@ -175,7 +175,7 @@ namespace MineS
 				if(playerData.Money >= needMoney)
 				{
 					playerData.AddMoney(-needMoney);
-					(baseEquipment.InstanceData as EquipmentData).Synthesis(this.SynthesisTargetEquipment);
+					(baseEquipment.InstanceData as EquipmentInstanceData).Synthesis(this.SynthesisTargetEquipment);
 					InformationManager.AddMessage(this.successSynthesisMessage.Get);
 					playerData.Inventory.RemoveItemOrEquipment(this.SynthesisTargetEquipment);
 					playerData.Inventory.SetSelectItem(null);
@@ -196,7 +196,7 @@ namespace MineS
 			var playerData = PlayerManager.Instance.Data;
 			var removeItem = playerData.Inventory.SelectItem;
 			var needMoney = Calculator.GetRemoveAbilityNeedMoney(removeItem);
-			var equipmentData = removeItem.InstanceData as EquipmentData;
+			var equipmentData = removeItem.InstanceData as EquipmentInstanceData;
 			var removeAbility = equipmentData.Abilities[index];
 
 			if(!equipmentData.CanRemoveAbility(index))
@@ -228,7 +228,7 @@ namespace MineS
 
 		public void SetSynthesisBaseEquipment(Item item)
 		{
-			var equipmentData = item.InstanceData as EquipmentData;
+			var equipmentData = item.InstanceData as EquipmentInstanceData;
 			if(equipmentData.CanSynthesis)
 			{
 				InformationManager.AddMessage(this.selectSynthesisTargetEquipmentMessage.Get);
@@ -246,7 +246,7 @@ namespace MineS
 
 		public void SetRemoveAbilityBaseEquipment(Item item)
 		{
-			var equipmentData = item.InstanceData as EquipmentData;
+			var equipmentData = item.InstanceData as EquipmentInstanceData;
 			if(equipmentData.ExistBranding)
 			{
 				InformationManager.AddMessage(this.selectRemoveAbilityMessage.Get);

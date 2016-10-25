@@ -240,7 +240,7 @@ namespace MineS
 				return new List<AbilityBase>();
 			}
 
-			return (equipment.InstanceData as EquipmentData).Abilities;
+			return (equipment.InstanceData as EquipmentInstanceData).Abilities;
 		}
 
 		public void GameOver()
