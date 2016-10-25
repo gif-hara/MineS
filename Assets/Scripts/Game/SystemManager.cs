@@ -15,5 +15,10 @@ namespace MineS
 			QualitySettings.vSyncCount = 1;
 			Application.targetFrameRate = 60;
 		}
+
+		void OnApplicationQuit()
+		{
+			HK.Framework.SaveData.Save();
+		}
 	}
 }

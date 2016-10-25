@@ -50,6 +50,8 @@ namespace MineS
 
 		public ExperienceData ExperienceData{ get { return this.experienceData; } }
 
+		private const string InventoryKeyName = "PlayerData";
+
 		protected override void Awake()
 		{
 			base.Awake();
@@ -64,6 +66,7 @@ namespace MineS
 			Item.AddOnUseItemEvent(this.OnUseItem);
 			DungeonManager.Instance.AddNextFloorEvent(this.OnNextFloor);
 			DungeonManager.Instance.AddChangeDungeonEvent(this.OnChangeDungeon);
+			this.LoadData();
 		}
 
 		public void RecoveryHitPoint(int value, bool isLimit)
@@ -93,11 +96,26 @@ namespace MineS
 		public void RemoveInventoryItem(Item item)
 		{
 			this.Data.Inventory.RemoveItem(item);
+			this.Data.Inventory.Serialize(InventoryKeyName);
+		}
+
+		public void RemoveInventoryItemOrEquipment(Item item)
+		{
+			this.Data.Inventory.RemoveItemOrEquipment(item);
+			this.Data.Inventory.Serialize(InventoryKeyName);
 		}
 
 		public void ChangeItem(Item before, Item after)
 		{
 			this.Data.Inventory.ChangeItem(before, after);
+			this.Data.Inventory.Serialize(InventoryKeyName);
+		}
+
+		public void RemoveEquipment(Item equipment)
+		{
+			this.Data.Inventory.RemoveEquipment(equipment);
+			this.Data.Inventory.AddItem(equipment);
+			this.Data.Inventory.Serialize(InventoryKeyName);
 		}
 
 		public void AddMoney(int value)
@@ -167,12 +185,11 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
-		public GameDefine.AcquireItemResultType AddItem(Item item, CellData cellData)
+		public GameDefine.AcquireItemResultType AddItemOnClickCell(Item item, CellData cellData)
 		{
 			if(this.Data.Inventory.IsFreeSpace)
 			{
-				this.Data.Inventory.AddItem(item);
-				InformationManager.OnAcquiredItem(item.InstanceData.ItemName);
+				this.AddItem(item);
 				return GameDefine.AcquireItemResultType.Acquired;
 			}
 			else
@@ -184,6 +201,18 @@ namespace MineS
 			}
 		}
 
+		public bool AddItem(Item item)
+		{
+			var result = this.Data.Inventory.AddItem(item);
+			if(result)
+			{
+				InformationManager.OnAcquiredItem(item.InstanceData.ItemName);
+			}
+			this.Data.Inventory.Serialize(InventoryKeyName);
+
+			return result;
+		}
+
 		public void AddOpenInventoryUIEvent(UnityAction<Inventory> call)
 		{
 			this.onOpenInventoryUI.AddListener(call);
@@ -192,6 +221,14 @@ namespace MineS
 		public void AddCloseInventoryUIEvent(UnityAction<Inventory> call)
 		{
 			this.onCloseInventoryUI.AddListener(call);
+		}
+
+		public void LoadData()
+		{
+			if(HK.Framework.SaveData.ContainsKey(InventoryKeyName))
+			{
+				this.Data.Inventory.Deserialize(InventoryKeyName);
+			}
 		}
 
 		public void DebugAddAbnormalStatus(int type)

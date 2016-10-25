@@ -11,11 +11,88 @@ namespace MineS
 	[System.Serializable]
 	public class Equipment
 	{
-		public Item Weapon{ private set; get; }
+		[SerializeField]
+		private Item weapon;
 
-		public Item Shield{ private set; get; }
+		[SerializeField]
+		private Item shield;
 
-		public Item Accessory{ private set; get; }
+		[SerializeField]
+		private Item accessory;
+
+		public Item Weapon{ get { return this.weapon; } }
+
+		public Item Shield{ get { return this.shield; } }
+
+		public Item Accessory{ get { return this.accessory; } }
+
+		public void Serialize(string key)
+		{
+			HK.Framework.SaveData.SetInt(key, 1);
+			if(this.weapon != null)
+			{
+				this.weapon.Serialize(this.WeaponKey(key));
+			}
+			else
+			{
+				HK.Framework.SaveData.Remove(this.WeaponKey(key));
+			}
+			if(this.shield != null)
+			{
+				this.shield.Serialize(this.ShieldKey(key));
+			}
+			else
+			{
+				HK.Framework.SaveData.Remove(this.ShieldKey(key));
+			}
+			if(this.accessory != null)
+			{
+				this.accessory.Serialize(this.AccessoryKey(key));
+			}
+			else
+			{
+				HK.Framework.SaveData.Remove(this.AccessoryKey(key));
+			}
+		}
+
+		public void Deserialize(string key, CharacterData holder)
+		{
+			if(!HK.Framework.SaveData.ContainsKey(key))
+			{
+				return;
+			}
+
+			if(HK.Framework.SaveData.ContainsKey(this.WeaponKey(key)))
+			{
+				this.weapon = Item.Deserialize(this.WeaponKey(key));
+				(this.weapon.InstanceData as EquipmentInstanceData).SetAbilitiesHolder(holder);
+			}
+			if(HK.Framework.SaveData.ContainsKey(this.ShieldKey(key)))
+			{
+				this.shield = Item.Deserialize(this.ShieldKey(key));
+				(this.shield.InstanceData as EquipmentInstanceData).SetAbilitiesHolder(holder);
+			}
+			if(HK.Framework.SaveData.ContainsKey(this.AccessoryKey(key)))
+			{
+				this.accessory = Item.Deserialize(this.AccessoryKey(key));
+				(this.accessory.InstanceData as EquipmentInstanceData).SetAbilitiesHolder(holder);
+			}
+		}
+
+		private string WeaponKey(string key)
+		{
+			return string.Format("{0}_Weapon", key);
+		}
+
+		private string ShieldKey(string key)
+		{
+			return string.Format("{0}_Shield", key);
+		}
+
+		private string AccessoryKey(string key)
+		{
+			return string.Format("{0}_Accessory", key);
+		}
 
 		public Item Change(Item item, CharacterData holder)
 		{
@@ -25,17 +102,17 @@ namespace MineS
 			switch(item.InstanceData.ItemType)
 			{
 			case GameDefine.ItemType.Weapon:
-				beforeItem = this.Weapon;
-				this.Weapon = item;
+				beforeItem = this.weapon;
+				this.weapon = item;
 			break;
 			case GameDefine.ItemType.Shield:
-				beforeItem = this.Shield;
-				this.Shield = item;
+				beforeItem = this.shield;
+				this.shield = item;
 				holder.CheckArmorMax();
 			break;
 			case GameDefine.ItemType.Accessory:
-				beforeItem = this.Accessory;
-				this.Accessory = item;
+				beforeItem = this.accessory;
+				this.accessory = item;
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です = {0}", item.InstanceData.ItemType);
@@ -57,13 +134,13 @@ namespace MineS
 			switch(item.InstanceData.ItemType)
 			{
 			case GameDefine.ItemType.Weapon:
-				this.Weapon = null;
+				this.weapon = null;
 			break;
 			case GameDefine.ItemType.Shield:
-				this.Shield = null;
+				this.shield = null;
 			break;
 			case GameDefine.ItemType.Accessory:
-				this.Accessory = null;
+				this.accessory = null;
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です = {0}", item.InstanceData.ItemType);
@@ -73,9 +150,9 @@ namespace MineS
 
 		public void RemoveAll()
 		{
-			this.Remove(this.Weapon);
-			this.Remove(this.Shield);
-			this.Remove(this.Accessory);
+			this.Remove(this.weapon);
+			this.Remove(this.shield);
+			this.Remove(this.accessory);
 		}
 
 		public Item Get(GameDefine.ItemType type)
@@ -98,11 +175,11 @@ namespace MineS
 			switch(itemType)
 			{
 			case GameDefine.ItemType.Weapon:
-				return this.Weapon;
+				return this.weapon;
 			case GameDefine.ItemType.Shield:
-				return this.Shield;
+				return this.shield;
 			case GameDefine.ItemType.Accessory:
-				return this.Accessory;
+				return this.accessory;
 			}
 
 			Debug.AssertFormat(false, "不正な値です = {0}", itemType);
@@ -119,9 +196,9 @@ namespace MineS
 			get
 			{
 				var result = new List<Item>();
-				result.Add(this.Weapon);
-				result.Add(this.Shield);
-				result.Add(this.Accessory);
+				result.Add(this.weapon);
+				result.Add(this.shield);
+				result.Add(this.accessory);
 
 				return result;
 			}
@@ -131,7 +208,7 @@ namespace MineS
 		{
 			get
 			{
-				return this.GetPower(this.Weapon);
+				return this.GetPower(this.weapon);
 			}
 		}
 
@@ -139,7 +216,7 @@ namespace MineS
 		{
 			get
 			{
-				return this.GetPower(this.Shield);
+				return this.GetPower(this.shield);
 			}
 		}
 
@@ -147,7 +224,7 @@ namespace MineS
 		{
 			get
 			{
-				return this.GetPower(this.Accessory);
+				return this.GetPower(this.accessory);
 			}
 		}
 	}

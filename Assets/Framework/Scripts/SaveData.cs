@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define OUTPUT_LOG
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -210,7 +211,6 @@ namespace HK.Framework
 		public static void Save()
 		{
 			Savedatabase.Save();
-			Debug.Log("Save");
 		}
 
 #endregion
@@ -290,7 +290,9 @@ namespace HK.Framework
 					return _default;
 
 				string json = saveDictionary[key];
+#if OUTPUT_LOG && DEBUG
 				Debug.LogFormat("GetClass<{0}> = {1}", typeof(T).Name, json);
+#endif
 				T obj = JsonUtility.FromJson<T>(json);
 				return obj;
 
@@ -300,7 +302,9 @@ namespace HK.Framework
 			{
 				keyCheck(key);
 				string json = JsonUtility.ToJson(obj);
+#if OUTPUT_LOG && DEBUG
 				Debug.LogFormat("SetClass<{0}> = {1}", typeof(T).Name, json);
+#endif
 				saveDictionary[key] = json;
 			}
 
@@ -394,6 +398,9 @@ namespace HK.Framework
 					string dictJsonString = Crypt.Encrypt(JsonUtility.ToJson(serialDict));
 					writer.WriteLine(dictJsonString);
 				}
+#if OUTPUT_LOG && DEBUG
+				Debug.Log("Save");
+#endif
 			}
 
 			public void Load()

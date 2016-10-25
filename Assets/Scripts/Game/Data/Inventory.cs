@@ -129,11 +129,6 @@ namespace MineS
 			return this.equipment.Change(item, this.holder);
 		}
 
-		public Item ChangeEquipmentFromSelectItem()
-		{
-			return this.equipment.Change(this.SelectItem, this.holder);
-		}
-
 		public void RemoveEquipment(Item item)
 		{
 			this.equipment.Remove(item);
@@ -162,7 +157,13 @@ namespace MineS
 				{
 					this.items[i].Serialize(this.ItemKey(key, i));
 				}
+				else
+				{
+					HK.Framework.SaveData.Remove(this.ItemKey(key, i));
+				}
 			}
+
+			this.equipment.Serialize(key);
 		}
 
 		public void Deserialize(string key)
@@ -180,6 +181,8 @@ namespace MineS
 				}
 				this.items[i] = Item.Deserialize(this.ItemKey(key, i));
 			}
+
+			this.equipment.Deserialize(key, this.holder);
 		}
 
 		private string ItemKey(string key, int index)

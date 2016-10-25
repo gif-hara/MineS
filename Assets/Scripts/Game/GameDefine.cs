@@ -842,7 +842,7 @@ namespace MineS
 
 		public const int CellCulumnMax = 7;
 
-		public const int WareHouseInventoryMax = 2;
+		public const int WareHouseInventoryMax = 100;
 
 		public static int Lottery<P>(List<P> elements) where P : IProbability
 		{

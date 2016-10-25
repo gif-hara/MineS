@@ -97,6 +97,10 @@ namespace MineS
 			{
 				InformationManager.AddMessage("二行表示テスト\n二行表示テスト");
 			}
+			if(Input.GetKeyDown(KeyCode.Alpha1))
+			{
+				HK.Framework.SaveData.Save();
+			}
 		}
 
 		public void AddAbnormalStatusRemainingTurn(int value)

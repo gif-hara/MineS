@@ -122,8 +122,7 @@ namespace MineS
 			var inventory = playerManager.Data.Inventory;
 			if(inventory.IsFreeSpace)
 			{
-				inventory.RemoveEquipment(item);
-				inventory.AddItem(item);
+				playerManager.RemoveEquipment(item);
 				playerManager.NotifyCharacterDataObservers();
 				playerManager.UpdateInventoryUI(inventory);
 				playerManager.CloseConfirmSelectItemUI();

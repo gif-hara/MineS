@@ -186,7 +186,7 @@ namespace MineS
 			var inventory = playerManager.Data.Inventory;
 			this.Data.BindCellClickAction(new AcquireItemAction(inventory.SelectItem, this));
 			this.Data.BindDeployDescription(new DeployDescriptionOnItem(inventory.SelectItem));
-			inventory.RemoveItemOrEquipment(inventory.SelectItem);
+			playerManager.RemoveInventoryItemOrEquipment(inventory.SelectItem);
 			inventory.SetSelectItem(null);
 			CellManager.Instance.ChangeCellClickMode(GameDefine.CellClickMode.Step);
 			playerManager.NotifyCharacterDataObservers();

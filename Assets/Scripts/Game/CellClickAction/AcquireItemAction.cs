@@ -20,7 +20,7 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			var acquiredType = PlayerManager.Instance.AddItem(this.item, data);
+			var acquiredType = PlayerManager.Instance.AddItemOnClickCell(this.item, data);
 			if(acquiredType == GameDefine.AcquireItemResultType.Acquired)
 			{
 				data.Controller.SetImage(null);

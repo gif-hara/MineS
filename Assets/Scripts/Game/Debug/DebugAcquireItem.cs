@@ -31,7 +31,7 @@ namespace MineS
 			var playerManager = PlayerManager.Instance;
 			if(playerManager.Data.Inventory.IsFreeSpace)
 			{
-				playerManager.AddItem(new Item(this.item), null);
+				playerManager.AddItem(new Item(this.item));
 			}
 			else
 			{
