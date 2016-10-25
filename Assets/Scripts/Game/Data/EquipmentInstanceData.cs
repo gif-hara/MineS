@@ -3,6 +3,7 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
 using UnityEngine.Serialization;
+using System.Linq;
 
 namespace MineS
 {
@@ -110,6 +111,7 @@ namespace MineS
 			{
 				this.Abilities.RemoveRange(this.brandingLimit, this.Abilities.Count - this.brandingLimit);
 			}
+			this.abilities = this.Abilities.Select(a => a.Type).ToList();
 		}
 
 		public bool CanRemoveAbility(int index)
@@ -120,6 +122,7 @@ namespace MineS
 		public void RemoveAbility(int index)
 		{
 			this.Abilities.RemoveAt(index);
+			this.abilities = this.Abilities.Select(a => a.Type).ToList();
 		}
 
 		public void LevelUp()
