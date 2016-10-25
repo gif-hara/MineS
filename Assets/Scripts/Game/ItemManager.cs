@@ -35,7 +35,7 @@ namespace MineS
 			{
 				get
 				{
-					return this.IsIdentified ? this.item.ItemNameRaw : ItemManager.Instance.unidentifiedItemName.Element.Format(this.unidentifiedName);
+					return this.IsIdentified ? this.item.ItemName : ItemManager.Instance.unidentifiedItemName.Element.Format(this.unidentifiedName);
 				}
 			}
 		}
@@ -70,7 +70,7 @@ namespace MineS
 			{
 				var unidentifiedStringIndex = Random.Range(0, this.unidentifiedStrings.Count);
 				var identifiedItem = new IdentifiedItem(d, this.unidentifiedStrings[unidentifiedStringIndex], DungeonManager.Instance.CurrentData.ItemIdentified && (d as UsableItemData).CanUnidentified);
-				this.identifiedDictionary.Add(d.ItemNameRaw, identifiedItem);
+				this.identifiedDictionary.Add(d.ItemName, identifiedItem);
 				this.unidentifiedStrings.RemoveAt(unidentifiedStringIndex);
 			});
 		}

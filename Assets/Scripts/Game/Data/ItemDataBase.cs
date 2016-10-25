@@ -24,11 +24,7 @@ namespace MineS
 		[SerializeField]
 		protected Sprite image;
 
-		public ItemDataBase MasterData{ private set; get; }
-
-		public virtual string ItemName{ get { return this.itemName.ToString(); } }
-
-		public string ItemNameRaw{ get { return this.itemName.ToString(); } }
+		public string ItemName{ get { return this.itemName; } }
 
 		public int PurchasePrice{ get { return this.purchasePrice; } }
 
@@ -37,16 +33,5 @@ namespace MineS
 		public Sprite Image{ get { return this.image; } }
 
 		public abstract GameDefine.ItemType ItemType{ get; }
-
-		public abstract ItemDataBase Clone{ get; }
-
-		protected void InternalClone(ItemDataBase clone)
-		{
-			clone.itemName = this.itemName;
-			clone.purchasePrice = this.purchasePrice;
-			clone.sellingPrice = this.sellingPrice;
-			clone.image = this.image;
-			clone.MasterData = this;
-		}
 	}
 }

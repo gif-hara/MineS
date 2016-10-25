@@ -34,30 +34,7 @@ namespace MineS
 
 		public int BrandingLimit{ get { return this.brandingLimit; } }
 
-		public int Level{ private set; get; }
-
-		public int Power
-		{
-			get
-			{
-				return this.basePower + this.Level;
-			}
-		}
-
-		public List<AbilityBase> Abilities{ private set; get; }
-
-		public override string ItemName
-		{
-			get
-			{
-				if(this.Level <= 0)
-				{
-					return base.ItemName;
-				}
-
-				return ItemManager.Instance.equipmentRevisedLevelName.Element.Format(base.ItemName, this.Level);
-			}
-		}
+		public bool CanExtraction{ get { return this.canExtraction; } }
 
 		public override GameDefine.ItemType ItemType
 		{
@@ -67,31 +44,6 @@ namespace MineS
 			}
 		}
 
-		public bool CanExtraction
-		{
-			get
-			{
-				return this.canExtraction;
-			}
-		}
-
-		public override ItemDataBase Clone
-		{
-			get
-			{
-				var result = ScriptableObject.CreateInstance<EquipmentData>();
-				this.InternalClone(result);
-				result.basePower = this.basePower;
-				result.brandingLimit = this.brandingLimit;
-				result.canExtraction = this.canExtraction;
-				result.itemType = this.itemType;
-				result.abilities = new List<GameDefine.AbilityType>(this.abilities);
-				result.Level = this.Level;
-				result.Abilities = AbilityFactory.Create(this.abilities, null);
-
-				return result;
-			}
-		}
 
 #if UNITY_EDITOR
 		public static EquipmentData CreateFromCsv(List<string> csv, GameDefine.ItemType itemType)

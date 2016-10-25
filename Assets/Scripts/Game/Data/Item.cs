@@ -97,8 +97,8 @@ namespace MineS
 				return null;
 			}
 
-			var type = (GameDefine.ItemType)HK.Framework.SaveData.GetInt(typeKey);
 			var result = new Item();
+			var type = (GameDefine.ItemType)HK.Framework.SaveData.GetInt(typeKey);
 			switch(type)
 			{
 			case GameDefine.ItemType.UsableItem:
@@ -108,6 +108,7 @@ namespace MineS
 			case GameDefine.ItemType.Shield:
 			case GameDefine.ItemType.Weapon:
 				result.instanceData = HK.Framework.SaveData.GetClass<EquipmentInstanceData>(key, null);
+				(result.instanceData as EquipmentInstanceData).InitializeAbilities();
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です. itemType = {0}", type);

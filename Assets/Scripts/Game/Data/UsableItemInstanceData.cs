@@ -54,7 +54,7 @@ namespace MineS
 			this.power0 = usableItemMasterData.Power0;
 			this.power1 = usableItemMasterData.Power1;
 			this.canUnidentified = usableItemMasterData.CanUnidentified;
-			this.description = usableItemMasterData.DescriptionRaw;
+			this.description = usableItemMasterData.Description;
 		}
 
 		public UsableItemInstanceData()

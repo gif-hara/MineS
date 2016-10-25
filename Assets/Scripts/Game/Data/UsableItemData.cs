@@ -27,15 +27,6 @@ namespace MineS
 		[SerializeField]
 		private string description;
 
-		public override string ItemName
-		{
-			get
-			{
-				return "";
-				//ItemManager.Instance.GetItemName(this);
-			}
-		}
-
 		public GameDefine.UsableItemType UsableItemType{ get { return this.type; } }
 
 		public int Power0{ get { return this.power0; } }
@@ -44,22 +35,7 @@ namespace MineS
 
 		public bool CanUnidentified{ get { return this.canUnidentified; } }
 
-		public int RandomPower{ get { return Random.Range(this.power0, this.power1 + 1); } }
-
-		public DescriptionData.Element DescriptionElement{ get { return new DescriptionData.Element(this.ItemName, this.Description, this.Image); } }
-
 		public string Description
-		{
-			get
-			{
-				return "";
-//				ItemManager.Instance.IsIdentified(this)
-//					? this.description
-//						: ItemManager.Instance.unidentifiedDescription.Element.Get;
-			}
-		}
-
-		public string DescriptionRaw
 		{
 			get
 			{
@@ -72,22 +48,6 @@ namespace MineS
 			get
 			{
 				return GameDefine.ItemType.UsableItem;
-			}
-		}
-
-		public override ItemDataBase Clone
-		{
-			get
-			{
-				var result = ScriptableObject.CreateInstance<UsableItemData>();
-				this.InternalClone(result);
-				result.type = this.type;
-				result.power0 = this.power0;
-				result.power1 = this.power1;
-				result.canUnidentified = this.canUnidentified;
-				result.description = this.description;
-
-				return result;
 			}
 		}
 

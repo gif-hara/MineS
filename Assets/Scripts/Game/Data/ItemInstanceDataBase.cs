@@ -39,7 +39,7 @@ namespace MineS
 
 		protected void InternalCreateFromMasterData(ItemInstanceDataBase instanceData, ItemDataBase masterData)
 		{
-			instanceData.itemName = masterData.ItemNameRaw;
+			instanceData.itemName = masterData.ItemName;
 			instanceData.purchasePrice = masterData.PurchasePrice;
 			instanceData.sellingPrice = masterData.SellingPrice;
 			instanceData.image = masterData.Image;

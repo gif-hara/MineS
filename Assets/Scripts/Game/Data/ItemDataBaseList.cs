@@ -28,7 +28,7 @@ namespace MineS
 		public List<ItemDataBase> Parse(string csvData)
 		{
 			var split = csvData.Split(' ');
-			return database.Where(i => System.Array.FindIndex(split, s => s == i.ItemNameRaw) != -1).ToList();
+			return database.Where(i => System.Array.FindIndex(split, s => s == i.ItemName) != -1).ToList();
 		}
 
 		private static Dictionary<string, ItemDataBase> _allItem = null;
@@ -38,10 +38,10 @@ namespace MineS
 			if(_allItem == null)
 			{
 				_allItem = new Dictionary<string, ItemDataBase>();
-				GetList("UsableItem").ForEach(i => _allItem.Add(i.ItemNameRaw, i));
-				GetList("Weapon").ForEach(i => _allItem.Add(i.ItemNameRaw, i));
-				GetList("Shield").ForEach(i => _allItem.Add(i.ItemNameRaw, i));
-				GetList("Accessory").ForEach(i => _allItem.Add(i.ItemNameRaw, i));
+				GetList("UsableItem").ForEach(i => _allItem.Add(i.ItemName, i));
+				GetList("Weapon").ForEach(i => _allItem.Add(i.ItemName, i));
+				GetList("Shield").ForEach(i => _allItem.Add(i.ItemName, i));
+				GetList("Accessory").ForEach(i => _allItem.Add(i.ItemName, i));
 			}
 
 			return _allItem[itemName];

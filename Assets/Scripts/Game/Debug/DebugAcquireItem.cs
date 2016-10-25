@@ -21,7 +21,7 @@ namespace MineS
 		public void Initialize(ItemDataBase item)
 		{
 			this.item = item;
-			this.text.text = this.item.ItemNameRaw;
+			this.text.text = this.item.ItemName;
 		}
 
 #region IPointerClickHandler implementation

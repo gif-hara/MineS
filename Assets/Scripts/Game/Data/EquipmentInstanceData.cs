@@ -92,6 +92,11 @@ namespace MineS
 			
 		}
 
+		public void InitializeAbilities()
+		{
+			this.Abilities = AbilityFactory.Create(this.abilities, null);
+		}
+
 		public void SetAbilitiesHolder(CharacterData holder)
 		{
 			this.Abilities.ForEach(a => a.SetHolder(holder));
