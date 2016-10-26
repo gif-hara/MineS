@@ -47,8 +47,8 @@ namespace MineS
 		{
 			if(MineS.SaveData.WareHouse.Add(item))
 			{
-				var playerInventory = PlayerManager.Instance.Data.Inventory;
-				playerInventory.RemoveItemOrEquipment(item);
+				var playerManager = PlayerManager.Instance;
+				playerManager.RemoveInventoryItemOrEquipment(item);
 				PlayerManager.Instance.UpdateInventoryUI();
 				HK.Framework.SaveData.Save();
 			}
@@ -61,7 +61,7 @@ namespace MineS
 		public void DrawItem(Item item)
 		{
 			var playerManager = PlayerManager.Instance;
-			if(playerManager.Data.Inventory.AddItem(item))
+			if(playerManager.AddItem(item))
 			{
 				MineS.SaveData.WareHouse.Remove(item);
 				playerManager.UpdateInventoryUI();
