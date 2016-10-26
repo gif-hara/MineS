@@ -594,3 +594,11 @@ MonoBehaviour:
       ja: "\u5F15\u304D\u51FA\u3059"
       en: 
     guid: e3384454-d08f-496f-ad04-80102181cebb
+  - value:
+      ja: "\u91D1\u984D\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044"
+      en: 
+    guid: 82073ff9-7f23-4ba2-a003-7ef0d6e4c006
+  - value:
+      ja: "\u304A\u91D1MAX"
+      en: 
+    guid: 285e544c-9458-40d4-8ee4-cccb78c9696f

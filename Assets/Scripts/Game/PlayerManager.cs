@@ -50,7 +50,9 @@ namespace MineS
 
 		public ExperienceData ExperienceData{ get { return this.experienceData; } }
 
-		private const string InventoryKeyName = "PlayerData";
+		private const string InventoryKeyName = "PlayerData_Inventory";
+
+		private const string PlayerMoneyKeyName = "PlayerData_Money";
 
 		protected override void Awake()
 		{
@@ -118,10 +120,15 @@ namespace MineS
 			this.Data.Inventory.Serialize(InventoryKeyName);
 		}
 
-		public void AddMoney(int value)
+		public void AddMoney(int value, bool playSE)
 		{
+			if(playSE)
+			{
+				SEManager.Instance.PlaySE(SEManager.Instance.acquireMoney);
+			}
 			this.Data.AddMoney(Calculator.GetFinalMoney(value, this.Data));
 			this.NotifyCharacterDataObservers();
+			HK.Framework.SaveData.SetInt(PlayerMoneyKeyName, this.Data.Money);
 		}
 
 		public void NotifyCharacterDataObservers()
@@ -228,8 +235,9 @@ namespace MineS
 			if(HK.Framework.SaveData.ContainsKey(InventoryKeyName))
 			{
 				this.Data.Inventory.Deserialize(InventoryKeyName);
-				this.NotifyCharacterDataObservers();
 			}
+			this.Data.AddMoney(HK.Framework.SaveData.GetInt(PlayerMoneyKeyName));
+			this.NotifyCharacterDataObservers();
 		}
 
 		public void DebugAddAbnormalStatus(int type)
@@ -268,9 +276,9 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
-		public void DebugAddMoney()
+		public void DebugAddMoney(int value)
 		{
-			this.Data.AddMoney(100000);
+			this.AddMoney(value, true);
 			this.NotifyCharacterDataObservers();
 		}
 

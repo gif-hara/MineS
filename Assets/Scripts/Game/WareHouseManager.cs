@@ -2,6 +2,8 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace MineS
 {
@@ -12,6 +14,18 @@ namespace MineS
 	{
 		[SerializeField]
 		private GameObject ui;
+
+		[SerializeField]
+		private GameObject bankUI;
+
+		[SerializeField]
+		private Text bankMoney;
+
+		[SerializeField]
+		private InputField bankInputField;
+
+		[SerializeField]
+		private StringAsset.Finder bankFormat;
 
 		[SerializeField]
 		private StringAsset.Finder wareHouseMessage;
@@ -30,6 +44,8 @@ namespace MineS
 
 		[SerializeField]
 		private StringAsset.Finder cancelMessage;
+
+		private const string BankMoneyKeyName = "BankMoney";
 
 		void Start()
 		{
@@ -79,7 +95,7 @@ namespace MineS
 			if(openType == GameDefine.InventoryModeType.WareHouse_Leave
 			   || openType == GameDefine.InventoryModeType.WareHouse_Draw)
 			{
-				this.CreateConfirm();
+				this.OnWareHouse();
 			}
 		}
 
@@ -119,17 +135,85 @@ namespace MineS
 
 		private void OnBankLeave()
 		{
-
+			this.OnBankInternal(this.leaveMessage, this.SetLimitBankLeave, money =>
+			{
+				PlayerManager.Instance.AddMoney(-money, true);
+				this.AddMoney(money);
+			});
 		}
 
 		private void OnBankDraw()
 		{
+			this.OnBankInternal(this.drawMessage, this.SetLimitBankDraw, money =>
+			{
+				PlayerManager.Instance.AddMoney(money, true);
+				this.AddMoney(-money);
+			});
+		}
 
+		private void OnBankInternal(StringAsset.Finder invokeMessage, UnityAction<string> limitCall, System.Action<int> moneyAction)
+		{
+			this.bankUI.SetActive(true);
+			this.bankInputField.text = "";
+			this.bankInputField.onValueChanged.AddListener(limitCall);
+			this.bankMoney.text = this.bankFormat.Format(this.Money);
+			var confirmManager = ConfirmManager.Instance;
+			confirmManager.Add(invokeMessage, () =>
+			{
+				this.bankInputField.onValueChanged.RemoveListener(limitCall);
+				this.bankUI.SetActive(false);
+				this.OnBank();
+				int money;
+				if(int.TryParse(this.bankInputField.text, out money))
+				{
+					moneyAction(money);
+				}
+			}, true);
+			confirmManager.Add(this.cancelMessage, () =>
+			{
+				this.bankUI.SetActive(false);
+				this.OnBank();
+			}, true);
 		}
 
 		private void OnClosed()
 		{
 			this.ui.SetActive(false);
+		}
+
+		private void AddMoney(int value)
+		{
+			var money = this.Money;
+			money += value;
+			money = money > GameDefine.BankMoneyMax ? GameDefine.BankMoneyMax : money;
+			HK.Framework.SaveData.SetInt(BankMoneyKeyName, money);
+		}
+
+		private int Money
+		{
+			get
+			{
+				return HK.Framework.SaveData.GetInt(BankMoneyKeyName);
+			}
+		}
+
+		private void SetLimitBankLeave(string text)
+		{
+			var value = int.Parse(text);
+			if(value > PlayerManager.Instance.Data.Money)
+			{
+				this.bankInputField.text = PlayerManager.Instance.Data.Money.ToString();
+			}
+		}
+
+		private void SetLimitBankDraw(string text)
+		{
+			var value = int.Parse(text);
+			var max = Mathf.Min(this.Money, GameDefine.MoneyMax - PlayerManager.Instance.Data.Money);
+			if(value > max)
+			{
+				this.bankInputField.text = max.ToString();
+			}
 		}
 	}
 }

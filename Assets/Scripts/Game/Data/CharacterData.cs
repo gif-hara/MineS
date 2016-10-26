@@ -287,7 +287,6 @@ namespace MineS
 
 		public void AddMoney(int value)
 		{
-			SEManager.Instance.PlaySE(SEManager.Instance.acquireMoney);
 			this.Money += value;
 			this.Money = this.Money > GameDefine.MoneyMax ? GameDefine.MoneyMax : this.Money;
 		}

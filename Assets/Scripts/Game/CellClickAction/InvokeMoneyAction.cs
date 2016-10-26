@@ -22,7 +22,7 @@ namespace MineS
 			data.Controller.SetImage(null);
 			data.BindCellClickAction(null);
 			data.BindDeployDescription(null);
-			PlayerManager.Instance.AddMoney(this.money);
+			PlayerManager.Instance.AddMoney(this.money, true);
 			InformationManager.AcquireMoney(this.money);
 		}
 
