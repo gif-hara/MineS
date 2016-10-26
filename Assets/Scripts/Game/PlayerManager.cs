@@ -228,6 +228,7 @@ namespace MineS
 			if(HK.Framework.SaveData.ContainsKey(InventoryKeyName))
 			{
 				this.Data.Inventory.Deserialize(InventoryKeyName);
+				this.NotifyCharacterDataObservers();
 			}
 		}
 
