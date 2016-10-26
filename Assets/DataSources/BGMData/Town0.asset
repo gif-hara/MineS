@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Town0
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: f1248cfbc73fe4becaca478553441bee, type: 3}
-  startLoop: 46.13
-  endLoop: 0
+  startLoop: 44.70794
+  endLoop: 0.27600032

@@ -16898,8 +16898,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 735040019}
-  debugClip: {fileID: 8300000, guid: 5f832a907e99c426b913939a2d150015, type: 3}
-  startTime: 55
+  debugClip: {fileID: 8300000, guid: f1248cfbc73fe4becaca478553441bee, type: 3}
+  startTime: 40
   database:
   - {fileID: 11400000, guid: 2fe764a623e2348d5a62c5468bddc98e, type: 2}
   - {fileID: 11400000, guid: 3f828eb00a6384b52b97a30e71110c99, type: 2}
