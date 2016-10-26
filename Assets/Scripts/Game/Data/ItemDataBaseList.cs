@@ -44,6 +44,7 @@ namespace MineS
 				GetList("Accessory").ForEach(i => _allItem.Add(i.ItemName, i));
 			}
 
+			Debug.AssertFormat(_allItem.ContainsKey(itemName), "{0}がありませんでした.", itemName);
 			return _allItem[itemName];
 		}
 
