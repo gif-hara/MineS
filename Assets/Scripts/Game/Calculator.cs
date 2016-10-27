@@ -352,6 +352,17 @@ namespace MineS
 		}
 
 		/// <summary>
+		/// 特殊能力の跳返のダメージを返す.
+		/// </summary>
+		/// <returns>The splash damage.</returns>
+		/// <param name="attacker">Attacker.</param>
+		/// <param name="takeDamage">Take damage.</param>
+		public static int GetSplashDamage(int takeDamage)
+		{
+			return takeDamage / 10;
+		}
+
+		/// <summary>
 		/// 特殊能力の召喚の成功確率を返す.
 		/// </summary>
 		/// <value><c>true</c> if can invoke summon; otherwise, <c>false</c>.</value>

@@ -259,9 +259,9 @@ namespace MineS
 
 		protected virtual void OnTakedDamage(CharacterData attacker, int value, bool onlyHitPoint)
 		{
-			if(attacker != null && this.FindAbility(GameDefine.AbilityType.Splash))
+			if(attacker != null && !this.IsDead && this.FindAbility(GameDefine.AbilityType.Splash))
 			{
-				attacker.TakeDamageRaw(this, value / 2, false);
+				attacker.TakeDamageRaw(this, Calculator.GetSplashDamage(value), false);
 			}
 		}
 
