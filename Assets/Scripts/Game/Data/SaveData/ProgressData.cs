@@ -14,7 +14,27 @@ namespace MineS
 		[SerializeField]
 		private List<GameDefine.DungeonType> clearDungeonFlags;
 
+		[SerializeField]
+		private int visitShopCount;
+
+		[SerializeField]
+		private int visitBlackSmithCount;
+
+		[SerializeField]
+		private int visitTownShopCount;
+
+		[SerializeField]
+		private int visitTownBlackSmithCount;
+
 		public List<GameDefine.DungeonType> ClearDungeonFlags{ get { return this.clearDungeonFlags; } }
+
+		public int VisitShopCount{ get { return this.visitShopCount; } }
+
+		public int VisitTownShopCount{ get { return this.visitTownShopCount; } }
+
+		public int VisitBlackSmithCount{ get { return this.visitBlackSmithCount; } }
+
+		public int VisitTownBlackSmithCount{ get { return this.visitTownBlackSmithCount; } }
 
 		public ProgressData()
 		{
@@ -29,6 +49,26 @@ namespace MineS
 			}
 
 			this.clearDungeonFlags.Add(type);
+			HK.Framework.SaveData.SetClass<ProgressData>(MineS.SaveData.ProgressKeyName, this);
+		}
+
+		public void AddVisitShopCount(bool isTown)
+		{
+			this.visitShopCount++;
+			if(isTown)
+			{
+				this.visitTownShopCount++;
+			}
+			HK.Framework.SaveData.SetClass<ProgressData>(MineS.SaveData.ProgressKeyName, this);
+		}
+
+		public void AddVisitBlackSmithCount(bool isTown)
+		{
+			this.visitBlackSmithCount++;
+			if(isTown)
+			{
+				this.visitTownBlackSmithCount++;
+			}
 			HK.Framework.SaveData.SetClass<ProgressData>(MineS.SaveData.ProgressKeyName, this);
 		}
 

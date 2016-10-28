@@ -10,13 +10,18 @@ namespace MineS
 	/// </summary>
 	public class VisitBlackSmithAction : CellClickActionBase
 	{
-		public VisitBlackSmithAction()
+		private bool isTown;
+
+
+		public VisitBlackSmithAction(bool isTown)
 		{
+			this.isTown = isTown;
 		}
 
 		public override void Invoke(CellData data)
 		{
 			BlackSmithManager.Instance.OpenUI();
+			MineS.SaveData.Progress.AddVisitBlackSmithCount(this.isTown);
 		}
 
 		public override void SetCellController(CellController cellController)

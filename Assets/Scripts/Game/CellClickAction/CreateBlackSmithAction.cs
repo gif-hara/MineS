@@ -17,7 +17,7 @@ namespace MineS
 		public override void Invoke(CellData data)
 		{
 			this.cellController.SetImage(this.Image);
-			data.BindCellClickAction(new VisitBlackSmithAction());
+			data.BindCellClickAction(new VisitBlackSmithAction(false));
 			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("BlackSmith"));
 		}
 

@@ -12,15 +12,19 @@ namespace MineS
 	{
 		private Inventory goods;
 
-		public VisitShopAction()
+		private bool isTown;
+
+		public VisitShopAction(bool isTown)
 		{
 			var dungeonManager = DungeonManager.Instance;
 			this.goods = dungeonManager.CurrentData.CreateShopInventory(dungeonManager.Floor);
+			this.isTown = isTown;
 		}
 
 		public override void Invoke(CellData data)
 		{
 			ShopManager.Instance.OpenUI(this.goods);
+			MineS.SaveData.Progress.AddVisitShopCount(this.isTown);
 		}
 
 		public override void SetCellController(CellController cellController)

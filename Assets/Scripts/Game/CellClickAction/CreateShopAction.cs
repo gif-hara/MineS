@@ -17,7 +17,7 @@ namespace MineS
 		public override void Invoke(CellData data)
 		{
 			this.cellController.SetImage(this.Image);
-			data.BindCellClickAction(new VisitShopAction());
+			data.BindCellClickAction(new VisitShopAction(false));
 		}
 
 		public override GameDefine.EventType EventType

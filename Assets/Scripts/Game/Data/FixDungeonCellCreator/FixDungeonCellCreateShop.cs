@@ -11,10 +11,19 @@ namespace MineS
 	[CreateAssetMenu()]
 	public class FixDungeonCellCreateShop : FixDungeonCellCreatorBase
 	{
+		[SerializeField]
+		private ConditionScriptableObjectBase condition;
+
 		public override CellData Create(int y, int x, CellController cellController, MapChipCreatorBase mapChipCreator)
 		{
 			var cellData = new CellData(y, x, mapChipCreator.Get(y, x), cellController);
-			cellData.BindCellClickAction(new VisitShopAction());
+
+			if(!this.condition.Condition)
+			{
+				return cellData;
+			}
+
+			cellData.BindCellClickAction(new VisitShopAction(true));
 
 			return cellData;
 		}
