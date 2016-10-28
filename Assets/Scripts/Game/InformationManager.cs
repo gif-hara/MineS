@@ -384,6 +384,17 @@ namespace MineS
 			instance._AddMessage(message);
 		}
 
+		public static void RemoveAllElement()
+		{
+			if(instance.currentMessageCoroutine != null)
+			{
+				instance.StopCoroutine(instance.currentMessageCoroutine);
+			}
+			instance.messageQueue.Clear();
+			instance.currentMessageCoroutine = null;
+			InformationElement.RemoveAll();
+		}
+
 		private void _AddMessage(string message)
 		{
 			if(this.currentMessageCoroutine == null)
@@ -414,13 +425,7 @@ namespace MineS
 
 		private void OnNextFloor()
 		{
-			if(this.currentMessageCoroutine != null)
-			{
-				StopCoroutine(this.currentMessageCoroutine);
-			}
-			this.messageQueue.Clear();
-			this.currentMessageCoroutine = null;
-			InformationElement.RemoveAll();
+			RemoveAllElement();
 		}
 	}
 }

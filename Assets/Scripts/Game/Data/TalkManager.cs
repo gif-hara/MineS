@@ -21,6 +21,7 @@ namespace MineS
 
 		public void StartTalk(TalkChunkData chunkData, UnityAction onceCall)
 		{
+			InformationManager.RemoveAllElement();
 			this.chunkData = chunkData;
 			this.talkedCount = -1;
 			this.Next();
