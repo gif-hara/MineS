@@ -21545,7 +21545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc70d073b2269419ca498e6143904d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 192200996}
+  npcImage: {fileID: 21300000, guid: 92922848c5ea746ce83f4740dd35e6f6, type: 3}
   welcomeMessage:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u304A\u3046\uFF01\u3044\u3089\u3063\u3057\u3083\u3044\uFF01"
@@ -21654,6 +21654,8 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u304A\u3063\u3068\u3001\u5143\u3005\u4ED8\u3044\u3066\u3044\u308B\u713C\u5370\u306F\u6D88\u305B\u306A\u3044\u305C\u3002"
     guid: 2ce32499-f239-415f-b9f9-58c28743d31e
+  firstVisitTalk: {fileID: 11400000, guid: d5ae46201561d46bcbcc182ea6c93dd9, type: 2}
+  firstVisitTownTalk: {fileID: 11400000, guid: d557dcfb4154544d9a8a08135c7c3358, type: 2}
 --- !u!114 &1584263362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21760,9 +21762,8 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3059\u3002"
     guid: 517cd54d-fe95-4817-b1d5-ce2e769595b2
-  FirstVisitShopTalk: {fileID: 11400000, guid: 64050835ee46a4417be37a5a6d613bf4, type: 2}
-  FirstVisitTownShopTalk: {fileID: 11400000, guid: f7f2e64430d344511b86f6eff905f9fd,
-    type: 2}
+  firstVisitTalk: {fileID: 11400000, guid: 64050835ee46a4417be37a5a6d613bf4, type: 2}
+  firstVisitTownTalk: {fileID: 11400000, guid: f7f2e64430d344511b86f6eff905f9fd, type: 2}
   debugItems:
   - {fileID: 0}
   - {fileID: 0}

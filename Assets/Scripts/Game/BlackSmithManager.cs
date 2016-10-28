@@ -13,7 +13,7 @@ namespace MineS
 	public class BlackSmithManager : SingletonMonoBehaviour<BlackSmithManager>
 	{
 		[SerializeField]
-		private GameObject ui;
+		private Sprite npcImage;
 
 		[SerializeField]
 		private StringAsset.Finder welcomeMessage;
@@ -96,6 +96,12 @@ namespace MineS
 		[SerializeField]
 		private StringAsset.Finder notRemoveAbilityMessageFromAbilityMatch;
 
+		[SerializeField]
+		private TalkChunkData firstVisitTalk;
+
+		[SerializeField]
+		private TalkChunkData firstVisitTownTalk;
+
 		public Item SynthesisTargetEquipment{ private set; get; }
 
 		void Start()
@@ -107,9 +113,25 @@ namespace MineS
 		public void OpenUI()
 		{
 			InformationManager.AddMessage(this.welcomeMessage.Get);
-			this.ui.SetActive(true);
+			this.OpenNPCUI();
 			this.CreateConfirm();
+		}
+
+		public void OpenNPCUI()
+		{
+			NPCManager.Instance.SetImage(this.npcImage);
+			NPCManager.Instance.SetActiveUI(true);
 			PlayerManager.Instance.NotifyCharacterDataObservers();
+		}
+
+		public void InvokeFirstTalk(UnityAction onEndEvent)
+		{
+			TalkManager.Instance.StartTalk(this.firstVisitTalk, onEndEvent);
+		}
+
+		public void InvokeFirstTalkTown(UnityAction onEndEvent)
+		{
+			TalkManager.Instance.StartTalk(this.firstVisitTownTalk, onEndEvent);
 		}
 
 		public void InvokeReinforcement(Item item)
@@ -300,7 +322,7 @@ namespace MineS
 		private void OnClosed()
 		{
 			InformationManager.AddMessage(this.goodbyeMessage.Get);
-			this.ui.SetActive(false);
+			NPCManager.Instance.SetActiveUI(false);
 		}
 
 	}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c932cb5455f464b288e33eb7fa54f213, type: 3}
+  m_Name: Talk_BlackSmithTown
+  m_EditorClassIdentifier: 
+  database:
+  - value:
+      ja: "\u304A\u3046\uFF01\u307E\u305F\u4F1A\u3063\u305F\u306A\uFF01"
+      en: 
+    guid: 1de6ce3e-39e4-4e16-b1d7-26cc398b6940
+  - value:
+      ja: "\u3053\u306E\u6751\u306F\u521D\u3081\u3066\u6765\u305F\u3093\u3060\u304C\u3001\u9759\u304B\u904E\u304E\u308B\u304B\u3089\u4FFA\u304C\u5C45\u3066\u3084\u308D\u3046\u3068\u601D\u3063\u3066\u306A\uFF01"
+      en: 
+    guid: 90974238-ff9c-41f9-973b-9e6b7b95fcc7
+  - value:
+      ja: "\u3044\u3064\u3082\u901A\u308A\u5F37\u5316\u306F\u3057\u3066\u3084\u308B\u304B\u3089\u305F\u307E\u306B\u306F\u9854\u51FA\u3057\u306A\uFF01"
+      en: 
+    guid: b4796ba2-d0a4-4355-88d1-4360e8c23b48

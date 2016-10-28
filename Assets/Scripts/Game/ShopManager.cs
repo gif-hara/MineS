@@ -51,10 +51,10 @@ namespace MineS
 		private StringAsset.Finder successSellMessage;
 
 		[SerializeField]
-		private TalkChunkData FirstVisitShopTalk;
+		private TalkChunkData firstVisitTalk;
 
 		[SerializeField]
-		private TalkChunkData FirstVisitTownShopTalk;
+		private TalkChunkData firstVisitTownTalk;
 
 		[SerializeField]
 		private List<ItemDataBase> debugItems;
@@ -72,23 +72,23 @@ namespace MineS
 			this.OpenNPCUI();
 			this.CreateConfirm();
 			InformationManager.AddMessage(this.welcomeMessage.Get);
-			PlayerManager.Instance.NotifyCharacterDataObservers();
 		}
 
 		public void OpenNPCUI()
 		{
 			NPCManager.Instance.SetImage(this.npcImage);
 			NPCManager.Instance.SetActiveUI(true);
+			PlayerManager.Instance.NotifyCharacterDataObservers();
 		}
 
 		public void InvokeFirstTalk(UnityAction onEndEvent)
 		{
-			TalkManager.Instance.StartTalk(this.FirstVisitShopTalk, onEndEvent);
+			TalkManager.Instance.StartTalk(this.firstVisitTalk, onEndEvent);
 		}
 
 		public void InvokeFirstTalkTown(UnityAction onEndEvent)
 		{
-			TalkManager.Instance.StartTalk(this.FirstVisitTownShopTalk, onEndEvent);
+			TalkManager.Instance.StartTalk(this.firstVisitTownTalk, onEndEvent);
 		}
 
 		public void Buy(Inventory addInventory, Item item)

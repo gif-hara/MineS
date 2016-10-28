@@ -20,7 +20,26 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			BlackSmithManager.Instance.OpenUI();
+			if(this.isTown && MineS.SaveData.Progress.VisitTownBlackSmithCount <= 0)
+			{
+				BlackSmithManager.Instance.OpenNPCUI();
+				BlackSmithManager.Instance.InvokeFirstTalkTown(() =>
+				{
+					BlackSmithManager.Instance.OpenUI();
+				});
+			}
+			else if(!this.isTown && MineS.SaveData.Progress.VisitBlackSmithCount <= 0)
+			{
+				BlackSmithManager.Instance.OpenNPCUI();
+				BlackSmithManager.Instance.InvokeFirstTalk(() =>
+				{
+					BlackSmithManager.Instance.OpenUI();
+				});
+			}
+			else
+			{
+				BlackSmithManager.Instance.OpenUI();
+			}
 			MineS.SaveData.Progress.AddVisitBlackSmithCount(this.isTown);
 		}
 

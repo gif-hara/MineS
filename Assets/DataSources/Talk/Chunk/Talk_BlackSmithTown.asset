@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
+  m_Name: Talk_BlackSmithTown
+  m_EditorClassIdentifier: 
+  elements:
+  - {fileID: 11400000, guid: 7890fbb3d8a274c039d69d92bb2fe0fd, type: 2}
+  - {fileID: 11400000, guid: 8c7e13f7672684c9ca5a20497b7eff16, type: 2}
+  - {fileID: 11400000, guid: fb6aa6d11e3bf4a928af74c0f371ce9f, type: 2}
