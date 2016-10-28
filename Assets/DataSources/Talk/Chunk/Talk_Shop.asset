@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
+  m_Name: Talk_Shop
+  m_EditorClassIdentifier: 
+  elements:
+  - {fileID: 11400000, guid: 4bae2d15480bd4f499988193189d92c0, type: 2}
+  - {fileID: 11400000, guid: 934eca2c9f2864222b440e2cb9e9fc4b, type: 2}
+  - {fileID: 11400000, guid: da2a36a315c6248da9601818dea9d1d2, type: 2}

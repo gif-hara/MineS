@@ -8,7 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734ab8d6eab3c4f17bc3505d02eed066, type: 3}
-  m_Name: Shop
+  m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
+  m_Name: TalkTest
   m_EditorClassIdentifier: 
-  condition: {fileID: 11400000, guid: 6e69b9edfe22940259cf292f272ada28, type: 2}
+  elements:
+  - {fileID: 11400000, guid: a05d52522937f4d1f808240494b66fcd, type: 2}
+  - {fileID: 11400000, guid: 2e6c577a2664c4ad3819f83dd51c006f, type: 2}

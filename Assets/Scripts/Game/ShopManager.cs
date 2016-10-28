@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using UnityEngine.Events;
 
 namespace MineS
 {
@@ -11,7 +12,7 @@ namespace MineS
 	public class ShopManager : SingletonMonoBehaviour<ShopManager>
 	{
 		[SerializeField]
-		private GameObject ui;
+		private Sprite npcImage;
 
 		[SerializeField]
 		private StringAsset.Finder buyMessage;
@@ -50,6 +51,12 @@ namespace MineS
 		private StringAsset.Finder successSellMessage;
 
 		[SerializeField]
+		private TalkChunkData FirstVisitShopTalk;
+
+		[SerializeField]
+		private TalkChunkData FirstVisitTownShopTalk;
+
+		[SerializeField]
 		private List<ItemDataBase> debugItems;
 
 		private Inventory goods;
@@ -62,10 +69,26 @@ namespace MineS
 		public void OpenUI(Inventory goods)
 		{
 			this.goods = goods;
-			this.ui.SetActive(true);
+			this.OpenNPCUI();
 			this.CreateConfirm();
 			InformationManager.AddMessage(this.welcomeMessage.Get);
 			PlayerManager.Instance.NotifyCharacterDataObservers();
+		}
+
+		public void OpenNPCUI()
+		{
+			NPCManager.Instance.SetImage(this.npcImage);
+			NPCManager.Instance.SetActiveUI(true);
+		}
+
+		public void InvokeFirstTalk(UnityAction onEndEvent)
+		{
+			TalkManager.Instance.StartTalk(this.FirstVisitShopTalk, onEndEvent);
+		}
+
+		public void InvokeFirstTalkTown(UnityAction onEndEvent)
+		{
+			TalkManager.Instance.StartTalk(this.FirstVisitTownShopTalk, onEndEvent);
 		}
 
 		public void Buy(Inventory addInventory, Item item)
@@ -144,7 +167,7 @@ namespace MineS
 		private void OnClosed()
 		{
 			InformationManager.AddMessage(this.goodbyeMessage.Get);
-			this.ui.SetActive(false);
+			NPCManager.Instance.SetActiveUI(false);
 		}
 	}
 }

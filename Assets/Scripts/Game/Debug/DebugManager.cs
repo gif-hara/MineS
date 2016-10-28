@@ -21,6 +21,9 @@ namespace MineS
 		[SerializeField]
 		private int abnormalStatusRemainingTurn;
 
+		[SerializeField]
+		private TalkChunkData testTalk;
+
 		private ModifiedEventInt abnormalStatusRemainingTurnEvent = new ModifiedEventInt();
 
 		void Update()
@@ -96,6 +99,10 @@ namespace MineS
 			if(Input.GetKeyDown(KeyCode.X))
 			{
 				InformationManager.AddMessage("二行表示テスト\n二行表示テスト");
+			}
+			if(Input.GetKeyDown(KeyCode.C))
+			{
+				TalkManager.Instance.StartTalk(this.testTalk, null);
 			}
 			if(Input.GetKeyDown(KeyCode.Alpha1))
 			{

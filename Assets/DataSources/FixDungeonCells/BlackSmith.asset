@@ -11,3 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9336cd4dffeb4349ada1eb01dadc55d, type: 3}
   m_Name: BlackSmith
   m_EditorClassIdentifier: 
+  condition: {fileID: 11400000, guid: 7bc7a323f513d4f128c5117b9f2359ce, type: 2}

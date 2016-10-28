@@ -23,7 +23,26 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			ShopManager.Instance.OpenUI(this.goods);
+			if(this.isTown && MineS.SaveData.Progress.VisitTownShopCount <= 0)
+			{
+				ShopManager.Instance.OpenNPCUI();
+				ShopManager.Instance.InvokeFirstTalkTown(() =>
+				{
+					ShopManager.Instance.OpenUI(this.goods);
+				});
+			}
+			else if(!this.isTown && MineS.SaveData.Progress.VisitShopCount <= 0)
+			{
+				ShopManager.Instance.OpenNPCUI();
+				ShopManager.Instance.InvokeFirstTalk(() =>
+				{
+					ShopManager.Instance.OpenUI(this.goods);
+				});
+			}
+			else
+			{
+				ShopManager.Instance.OpenUI(this.goods);
+			}
 			MineS.SaveData.Progress.AddVisitShopCount(this.isTown);
 		}
 

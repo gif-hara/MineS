@@ -36,16 +36,20 @@ MonoBehaviour:
       - {fileID: 8300000, guid: b9e69e120297b4bb6b8d6d1369e00951, type: 3}
   shopTable:
     elements:
-    - floorMin: 0
-      floorMax: 0
-      probability: 0
+    - floorRange:
+        min: 1
+        max: 1
+      probability: 100
       itemTable:
-        elements: []
-  floorMax: 99
+        elements:
+        - masterData: {fileID: 11400000, guid: efe88658878e94286a9c64db374a9252, type: 2}
+          probability: 100
+  floorMax: 1
   enemyTable:
     elements:
-    - floorMin: 1
-      floorMax: 10
+    - floorRange:
+        min: 0
+        max: 0
       enemies:
       - masterData: {fileID: 11400000, guid: b27bedffcd9ab4a92b73c155283c6926, type: 2}
         probability: 100
@@ -69,9 +73,11 @@ MonoBehaviour:
       probability: 100
   blackSmithTable:
     elements:
-    - floorMin: 0
-      floorMax: 0
+    - floorRange:
+        min: 0
+        max: 0
       probability: 0
+  clearDungeonProccesses: []
   createRecoveryItemRange:
     min: 0
     max: 0
