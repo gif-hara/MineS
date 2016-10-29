@@ -14,7 +14,7 @@ MonoBehaviour:
   itemName: "\u602A\u5263\u30B7\u30E5\u30C6\u30F3\u30C9\u30A6\u30B8"
   purchasePrice: 12000
   sellingPrice: 6000
-  image: {fileID: 21300000, guid: cff0e244911d4794da8cc5b9dbec1757, type: 3}
+  image: {fileID: 21300000, guid: 3018621846a96364689ebd6ec635ab20, type: 3}
   basePower: 18
   brandingLimit: 7
   canExtraction: 1
