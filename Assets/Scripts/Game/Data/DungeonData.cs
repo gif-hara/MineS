@@ -75,6 +75,8 @@ namespace MineS
 		private void AssertionCheck()
 		{
 			this.enemyTable.Check(this.floorMax);
+			this.mapChipTable.Check(this.floorMax);
+			this.bgmTable.Check(this.floorMax);
 		}
 
 		public override CellData[,] Create(CellManager cellManager)
@@ -131,6 +133,8 @@ namespace MineS
 			this.itemTable = ItemTable.CreateFromCsv(basicData[0]);
 			this.trapTable = TrapTable.CreateFromCsv(basicData[0]);
 			this.blackSmithTable = BlackSmithTable.CreateFromCsv(basicData[0]);
+
+			this.AssertionCheck();
 		}
 #endif
 	}

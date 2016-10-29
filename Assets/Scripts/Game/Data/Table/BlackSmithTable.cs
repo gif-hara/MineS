@@ -57,6 +57,12 @@ namespace MineS
 			return element.CanCreate;
 		}
 #if UNITY_EDITOR
+
+		public void Check(int floorMax)
+		{
+			new TableChecker().Check(this.elements, typeof(BlackSmithTable), floorMax);
+		}
+
 		public static BlackSmithTable CreateFromCsv(string dungeonName)
 		{
 			var csv = CsvParser.Split(AssetDatabase.LoadAssetAtPath(string.Format("Assets/DataSources/Csv/Dungeon/{0}BlackSmithTable.csv", dungeonName), typeof(TextAsset)) as TextAsset);

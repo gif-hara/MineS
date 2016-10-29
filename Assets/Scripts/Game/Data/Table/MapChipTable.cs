@@ -45,6 +45,12 @@ namespace MineS
 		}
 
 #if UNITY_EDITOR
+
+		public void Check(int floorMax)
+		{
+			new TableChecker().Check(this.elements, typeof(MapChipTable), floorMax);
+		}
+
 		public static MapChipTable CreateFromCsv(string dungeonName)
 		{
 			var csv = CsvParser.Split(AssetDatabase.LoadAssetAtPath(string.Format("Assets/DataSources/Csv/Dungeon/{0}MapChipTable.csv", dungeonName), typeof(TextAsset)) as TextAsset);

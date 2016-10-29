@@ -55,36 +55,7 @@ namespace MineS
 
 		public void Check(int floorMax)
 		{
-			var result = true;
-			int floor = 1;
-			Element element = this.elements.Find(e => e.IsMatch(floor));
-			while(element != null || floor < floorMax)
-			{
-				var existCount = this.elements.FindAll(e => e.IsMatch(floor)).Count;
-				result = result && existCount == 1;
-				if(existCount == 0)
-				{
-					Debug.AssertFormat(false, "floor = {0}の敵テーブルがありません.", floor);
-				}
-				else if(existCount > 1)
-				{
-					Debug.AssertFormat(false, "floor = {0}に敵テーブルが複数存在しています.", floor);
-				}
-				floor++;
-				element = this.elements.Find(e => e.IsMatch(floor));
-			}
-			floor--;
-
-			if(floor != floorMax)
-			{
-				Debug.AssertFormat(false, "階数の最大値と一致していません. floor = {0} max = {1}", floor, floorMax);
-				result = false;
-			}
-
-			if(result)
-			{
-				Debug.Log("敵テーブルに問題はありませんでした");
-			}
+			new TableChecker().Check(this.elements, typeof(EnemyTable), floorMax);
 		}
 
 		[System.Serializable]

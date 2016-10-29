@@ -24,7 +24,7 @@ MonoBehaviour:
       mapChip: {fileID: 11400000, guid: cc508f78a52b7444882252e7dd56d528, type: 2}
     - floorRange:
         min: 11
-        max: 20
+        max: 23
       mapChip: {fileID: 11400000, guid: 0da40667e349c48418150eb3b4d1f2c5, type: 2}
     - floorRange:
         min: 24
@@ -103,7 +103,7 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: 7fcbd403fc4214a6391c71cee03232f8, type: 2}
         probability: 100
     - floorRange:
-        min: 4
+        min: 3
         max: 6
       enemies:
       - masterData: {fileID: 11400000, guid: cf37f3c4351964e17836d25a20dbefe5, type: 2}

@@ -85,6 +85,12 @@ namespace MineS
 		}
 
 #if UNITY_EDITOR
+
+		public void Check(int floorMax)
+		{
+			new TableChecker().Check(this.elements, typeof(ShopTable), floorMax);
+		}
+
 		public static ShopTable CreateFromCsv(string dungeonName)
 		{
 			var csv = CsvParser.Split(AssetDatabase.LoadAssetAtPath(string.Format("Assets/DataSources/Csv/Dungeon/{0}ShopTable.csv", dungeonName), typeof(TextAsset)) as TextAsset);

@@ -54,6 +54,12 @@ namespace MineS
 			return this.elements.Find(e => e.IsMatch(floor)).CanPlay(floor);
 		}
 #if UNITY_EDITOR
+		
+		public void Check(int floorMax)
+		{
+			new TableChecker().Check(this.elements, typeof(BGMTable), floorMax);
+		}
+
 		public static BGMTable CreateFromCsv(string dungeonName)
 		{
 			var csv = CsvParser.Split(AssetDatabase.LoadAssetAtPath(string.Format("Assets/DataSources/Csv/Dungeon/{0}BGMTable.csv", dungeonName), typeof(TextAsset)) as TextAsset);
