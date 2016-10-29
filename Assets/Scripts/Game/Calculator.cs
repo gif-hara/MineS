@@ -357,9 +357,11 @@ namespace MineS
 		/// <returns>The splash damage.</returns>
 		/// <param name="attacker">Attacker.</param>
 		/// <param name="takeDamage">Take damage.</param>
-		public static int GetSplashDamage(int takeDamage)
+		public static int GetSplashDamage(IAttack attacker, int takeDamage)
 		{
-			return takeDamage / 10;
+			var rate = 22 - attacker.GetAbilityNumber(GameDefine.AbilityType.Splash) * 2;
+			rate = rate < 10 ? 10 : rate;
+			return takeDamage / rate;
 		}
 
 		/// <summary>

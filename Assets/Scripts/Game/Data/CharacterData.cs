@@ -261,7 +261,7 @@ namespace MineS
 		{
 			if(attacker != null && !this.IsDead && this.FindAbility(GameDefine.AbilityType.Splash))
 			{
-				attacker.TakeDamageRaw(this, Calculator.GetSplashDamage(value), false);
+				attacker.TakeDamageRaw(this, Calculator.GetSplashDamage(this, value), false);
 			}
 		}
 
