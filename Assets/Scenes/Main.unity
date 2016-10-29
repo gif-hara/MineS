@@ -4774,6 +4774,8 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: '{0}'
     guid: 8e1e21b5-d0f4-40ef-a478-2c0e477d302b
+  basicColor: {r: 1, g: 1, b: 1, a: 1}
+  limitOverColor: {r: 0, g: 1, b: 0.08965516, a: 1}
 --- !u!114 &383702673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21230,7 +21232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4799242ca19bb4f4b8aac458f72ecafc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current: {fileID: 11400000, guid: 6d6f1180a85804caf98fe025f5a291d5, type: 2}
+  current: {fileID: 11400000, guid: fb7414cd5676941249068426b7a00398, type: 2}
   dungeonNameFlowController: {fileID: 2053258983}
   observers:
   - {fileID: 842027365}
@@ -21795,6 +21797,8 @@ MonoBehaviour:
     element: {fileID: 1000011697786726, guid: 743f8c6ec41974215b15d255328dae98, type: 2}
   prefabTakeDamage:
     element: {fileID: 1000011697786726, guid: 9aad14a850a5349ddb7c9a21129ae834, type: 2}
+  prefabSummon:
+    element: {fileID: 1000010090548180, guid: d68048784a3fe44af8160b457e799f4f, type: 2}
 --- !u!114 &1584263366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22231,6 +22235,8 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: '{0}'
     guid: 8e1e21b5-d0f4-40ef-a478-2c0e477d302b
+  basicColor: {r: 0, g: 0, b: 0, a: 0}
+  limitOverColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1612956099
 GameObject:
   m_ObjectHideFlags: 0
