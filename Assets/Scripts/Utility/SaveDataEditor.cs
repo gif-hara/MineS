@@ -28,6 +28,8 @@ namespace MineS
 			progressData.ClearDungeon(GameDefine.DungeonType.TartarusScarletCave);
 			progressData.ClearDungeon(GameDefine.DungeonType.BlackSmithEdge);
 			progressData.ClearDungeon(GameDefine.DungeonType.PeddlerTemple);
+			progressData.AddVisitShopCount(true);
+			progressData.AddVisitBlackSmithCount(true);
 			HK.Framework.SaveData.Save();
 		}
 

@@ -36,6 +36,8 @@ namespace MineS
 
 		public int Level{ get { return this.level; } }
 
+		public int BrandingLimit{ get { return this.brandingLimit; } }
+
 		public int Power
 		{
 			get
