@@ -104,6 +104,10 @@ namespace MineS
 			{
 				TalkManager.Instance.StartTalk(this.testTalk, null);
 			}
+			if(Input.GetKeyDown(KeyCode.M))
+			{
+				UnityAdsController.Instance.ShowRewardedAd();
+			}
 			if(Input.GetKeyDown(KeyCode.Alpha1))
 			{
 				HK.Framework.SaveData.Save();
