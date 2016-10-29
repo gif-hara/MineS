@@ -13,7 +13,7 @@ namespace MineS
 	public class WareHouseManager : SingletonMonoBehaviour<WareHouseManager>
 	{
 		[SerializeField]
-		private GameObject ui;
+		private Sprite npcImage;
 
 		[SerializeField]
 		private GameObject bankUI;
@@ -54,7 +54,8 @@ namespace MineS
 
 		public void OpenUI()
 		{
-			this.ui.SetActive(true);
+			NPCManager.Instance.SetImage(this.npcImage);
+			NPCManager.Instance.SetActiveUI(true);
 			PlayerManager.Instance.NotifyCharacterDataObservers();
 			this.CreateConfirm();
 		}
@@ -178,7 +179,7 @@ namespace MineS
 
 		private void OnClosed()
 		{
-			this.ui.SetActive(false);
+			NPCManager.Instance.SetActiveUI(false);
 		}
 
 		private void AddMoney(int value)

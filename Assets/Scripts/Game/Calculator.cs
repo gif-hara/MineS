@@ -177,15 +177,9 @@ namespace MineS
 		/// <returns>The goemon value.</returns>
 		/// <param name="damage">Damage.</param>
 		/// <param name="attacker">Attacker.</param>
-		public static int GetGoemonValue(int damage, IAttack attacker)
+		public static int GetGoemonValue(IAttack attacker)
 		{
-			var abilityNumber = attacker.GetAbilityNumber(GameDefine.AbilityType.Goemon);
-			if(abilityNumber <= 0)
-			{
-				return 0;
-			}
-
-			return Mathf.FloorToInt(damage * ((float)abilityNumber / 10.0f)) + 1;
+			return Random.Range(10, (attacker.GetAbilityNumber(GameDefine.AbilityType.Goemon) * 50) + 1);
 		}
 
 		/// <summary>

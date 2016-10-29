@@ -170,7 +170,7 @@ namespace MineS
 			}
 			if(this.FindAbility(GameDefine.AbilityType.Goemon))
 			{
-				this.Money += Calculator.GetGoemonValue(damage, this);
+				this.Money += Calculator.GetGoemonValue(this);
 			}
 			if(this.FindAbility(GameDefine.AbilityType.ContinuousAttack))
 			{
