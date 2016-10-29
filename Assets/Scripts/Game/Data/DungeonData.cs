@@ -71,6 +71,7 @@ namespace MineS
 
 		public Range AcquireMoneyRange{ get { return this.acquireMoneyRange; } }
 
+#if UNITY_EDITOR
 		[ContextMenu("Check")]
 		private void AssertionCheck()
 		{
@@ -78,6 +79,7 @@ namespace MineS
 			this.mapChipTable.Check(this.floorMax);
 			this.bgmTable.Check(this.floorMax);
 		}
+#endif
 
 		public override CellData[,] Create(CellManager cellManager)
 		{
