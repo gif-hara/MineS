@@ -19,7 +19,7 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			ShopManager.Instance.Sell(PlayerManager.Instance.Data.Inventory, this.item);
+			ShopManager.Instance.Sell(this.item);
 		}
 
 		public override void SetCellController(CellController cellController)

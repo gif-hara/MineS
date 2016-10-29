@@ -91,9 +91,10 @@ namespace MineS
 			TalkManager.Instance.StartTalk(this.firstVisitTownTalk, onEndEvent);
 		}
 
-		public void Buy(Inventory addInventory, Item item)
+		public void Buy(Item item)
 		{
 			InformationManager.AddMessage(this.confirmBuyItemMessage.Format(item.InstanceData.ItemName, item.InstanceData.PurchasePrice));
+			var playerManager = PlayerManager.Instance;
 			var confirmManager = ConfirmManager.Instance;
 			confirmManager.Add(this.buyMessage, () =>
 			{
@@ -102,35 +103,34 @@ namespace MineS
 					InformationManager.AddMessage(this.notBuyMoneyMessage.Get);
 					return;
 				}
-				if(!addInventory.IsFreeSpace)
+				if(!playerManager.Data.Inventory.IsFreeSpace)
 				{
 					InformationManager.AddMessage(this.notBuyNotFreeSpaceMessage.Get);
 					return;
 				}
 				InformationManager.AddMessage(this.successBuyMessage.Get);
-				addInventory.AddItem(item);
 				this.goods.RemoveItem(item);
-				var playerManager = PlayerManager.Instance;
-				playerManager.Data.AddMoney(-item.InstanceData.PurchasePrice);
-				playerManager.UpdateInventoryUI(this.goods);
+				playerManager.AddItem(item);
+				playerManager.AddMoney(-item.InstanceData.PurchasePrice, true);
+				playerManager.UpdateInventoryUI();
 				playerManager.NotifyCharacterDataObservers();
 			}, true);
 			confirmManager.Add(this.cancelMessage, null, true);
 		}
 
-		public void Sell(Inventory sellInventory, Item item)
+		public void Sell(Item item)
 		{
 			InformationManager.AddMessage(this.confirmSellItemMessage.Format(item.InstanceData.ItemName, item.InstanceData.SellingPrice));
 			var confirmManager = ConfirmManager.Instance;
 			confirmManager.Add(this.sellMessage, () =>
 			{
-				InformationManager.AddMessage(this.successSellMessage.Get);
-				sellInventory.RemoveItem(item);
-				this.goods.AddItemNoLimit(item);
 				var playerManager = PlayerManager.Instance;
-				playerManager.Data.AddMoney(item.InstanceData.SellingPrice);
+				InformationManager.AddMessage(this.successSellMessage.Get);
+				playerManager.RemoveInventoryItemOrEquipment(item);
+				this.goods.AddItemNoLimit(item);
+				playerManager.AddMoney(item.InstanceData.SellingPrice, true);
 				playerManager.NotifyCharacterDataObservers();
-				playerManager.UpdateInventoryUI(sellInventory);
+				playerManager.UpdateInventoryUI();
 			}, true);
 			confirmManager.Add(this.cancelMessage, null, true);
 		}

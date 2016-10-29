@@ -20,7 +20,7 @@ namespace MineS
 		public override void Invoke(CellData data)
 		{
 			Debug.AssertFormat(this.item != null, "アイテムがありません.");
-			ShopManager.Instance.Buy(PlayerManager.Instance.Data.Inventory, this.item);
+			ShopManager.Instance.Buy(this.item);
 		}
 
 		public override void SetCellController(CellController cellController)
