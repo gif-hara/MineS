@@ -71,8 +71,8 @@ namespace MineS
 				: receiver.FindAbnormalStatus(GameDefine.AbnormalStatusType.Curing)
 				? 0.5f
 				: 1.0f;
-			int result = Mathf.FloorToInt(baseDamage * rate) - receiver.GetAbilityNumber(GameDefine.AbilityType.Protection);
-			result = result < 0 ? 0 : result;
+			int result = Mathf.FloorToInt(baseDamage * rate) - (receiver.GetAbilityNumber(GameDefine.AbilityType.Protection) * 3);
+			result = result < 1 ? 1 : result;
 
 			return result;
 		}
