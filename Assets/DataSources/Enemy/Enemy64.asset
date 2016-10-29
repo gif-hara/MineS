@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Name: Enemy64
   m_EditorClassIdentifier: 
   characterName: "\u52D5\u304F\u7532\u5191Lv.2"
-  hitPoint: 7
+  hitPoint: 44
   strength: 15
-  armor: 352
+  armor: 264
   hitProbability: 90
   evasion: 0
-  experience: 431
+  experience: 474
   money: 0
   dropItemProbability: 2
   overrideDropItems: []
