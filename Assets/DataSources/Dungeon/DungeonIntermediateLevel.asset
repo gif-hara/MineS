@@ -147,7 +147,7 @@ MonoBehaviour:
       enemies:
       - masterData: {fileID: 11400000, guid: 2b03b8aedc52b475abafa9219597d97b, type: 2}
         probability: 100
-      - masterData: {fileID: 11400000, guid: e177533d68716475abfb153d7d941188, type: 2}
+      - masterData: {fileID: 11400000, guid: 7d7fcc16ddb164c38b1e65daa0839f4a, type: 2}
         probability: 100
     - floorRange:
         min: 17
