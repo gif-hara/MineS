@@ -22,7 +22,7 @@ namespace MineS
 				return;
 			}
 
-			this.Holder.RecoveryHitPoint(Calculator.GetRegenerationValue(this.Holder.HitPointMax), true);
+			this.Holder.RecoveryHitPoint(Calculator.GetRegenerationAbilityValue(this.Holder), true);
 		}
 	}
 }

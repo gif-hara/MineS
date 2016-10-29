@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7e9d515b0e649779991d3ea5e7d149, type: 3}
   m_Name: Weapon10
   m_EditorClassIdentifier: 
-  itemName: "\u4E16\u754C\u6A39\u306E\u6756"
-  purchasePrice: 4200
-  sellingPrice: 2100
-  image: {fileID: 21300000, guid: f942602d8901be246ba1cb4b3f1b5171, type: 3}
-  basePower: 3
-  brandingLimit: 9
+  itemName: "\u30AD\u30BB\u30EB"
+  purchasePrice: 3200
+  sellingPrice: 1600
+  image: {fileID: 21300000, guid: fca868e07f5da8740bd2e49b1e3633cf, type: 3}
+  basePower: 5
+  brandingLimit: 5
   canExtraction: 1
   itemType: 1
-  abilities: 1a00000017000000
+  abilities: 11000000

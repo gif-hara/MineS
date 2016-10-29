@@ -107,7 +107,7 @@ MonoBehaviour:
       probability: 100
     - masterData: {fileID: 11400000, guid: a38c2b3b551880b48ad9874572d9a070, type: 2}
       probability: 100
-    - masterData: {fileID: 11400000, guid: bd29123d4987641a2a7148f164dabbe7, type: 2}
+    - masterData: {fileID: 11400000, guid: 36279253f457249989e6343b693e05cf, type: 2}
       probability: 20
     - masterData: {fileID: 11400000, guid: 3ecaaef1a2b9443e0b96ed675bd10d2a, type: 2}
       probability: 100

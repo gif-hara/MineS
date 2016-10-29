@@ -21,6 +21,16 @@ namespace MineS
 		}
 
 		/// <summary>
+		/// 特殊能力の自己再生の回復量を返す.
+		/// </summary>
+		/// <returns>The regeneration ability value.</returns>
+		/// <param name="hitPointMax">Hit point max.</param>
+		public static int GetRegenerationAbilityValue(IAttack user)
+		{
+			return user.GetAbilityNumber(GameDefine.AbilityType.Regeneration) * 2;
+		}
+
+		/// <summary>
 		/// デバフの毒ダメージ量を返す.
 		/// </summary>
 		/// <returns>The poison value.</returns>
@@ -317,7 +327,7 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static int GetAbilityRecoveryValue(IAttack attacker)
 		{
-			return attacker.GetAbilityNumber(GameDefine.AbilityType.Recovery);
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Recovery) * 3;
 		}
 
 		/// <summary>

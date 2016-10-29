@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7e9d515b0e649779991d3ea5e7d149, type: 3}
   m_Name: Shield16
   m_EditorClassIdentifier: 
-  itemName: "\u30EF\u30AF\u30C1\u30F3\u306E\u76FE"
-  purchasePrice: 7500
-  sellingPrice: 3750
-  image: {fileID: 21300000, guid: 5f8ea82d04a98734c93d2c3d0c4082cd, type: 3}
+  itemName: "\u30DF\u30E9\u30FC\u30B7\u30FC\u30EB\u30C9"
+  purchasePrice: 8800
+  sellingPrice: 4400
+  image: {fileID: 21300000, guid: 7516741e19cf7f846b51872200e1ff65, type: 3}
   basePower: 5
-  brandingLimit: 5
+  brandingLimit: 6
   canExtraction: 1
   itemType: 2
-  abilities: 2b000000
+  abilities: 04000000
