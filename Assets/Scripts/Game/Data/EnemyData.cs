@@ -24,6 +24,7 @@ namespace MineS
 				{
 					var enemy = EnemyManager.Instance.Create(blankCell);
 					this.BindCombatEnemyAction(blankCell, enemy);
+					Object.Instantiate(EffectManager.Instance.prefabSummon.Element, blankCell.Controller.transform, false);
 				}
 			}
 
@@ -61,6 +62,7 @@ namespace MineS
 				{
 					var enemy = EnemyManager.Instance.Create(blankCell);
 					this.BindCombatEnemyAction(blankCell, enemy);
+					Object.Instantiate(EffectManager.Instance.prefabSummon.Element, blankCell.Controller.transform, false);
 				}
 			}
 
@@ -171,6 +173,7 @@ namespace MineS
 				if(blankCell != null)
 				{
 					this.OnDivision(blankCell);
+					Object.Instantiate(EffectManager.Instance.prefabSummon.Element, blankCell.Controller.transform, false);
 				}
 			}
 		}

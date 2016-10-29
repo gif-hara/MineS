@@ -21,5 +21,7 @@ namespace MineS
 		public SerializeFieldGetter.GameObject prefabLevelUp;
 
 		public SerializeFieldGetter.GameObject prefabTakeDamage;
+
+		public SerializeFieldGetter.GameObject prefabSummon;
 	}
 }
