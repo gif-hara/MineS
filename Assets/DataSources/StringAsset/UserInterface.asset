@@ -606,3 +606,7 @@ MonoBehaviour:
       ja: "\u6B21\u3078"
       en: 
     guid: e909d898-4a3d-45b9-b2a0-3c80996d78ab
+  - value:
+      ja: UnityAds
+      en: 
+    guid: 97945470-70f4-4d7e-8891-27d12945dee6
