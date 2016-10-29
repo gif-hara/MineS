@@ -107,10 +107,10 @@ namespace MineS
 			instance._AddMessage(message);
 		}
 
-		public static void OnDefeat(IAttack target)
+		public static void OnDefeat(IAttack target, int experience)
 		{
 			var instance = InformationManager.Instance;
-			var message = instance.onDefeatByPlayer.Format(target.Name, target.Experience).Replace(TargetColor, target.ColorCode);
+			var message = instance.onDefeatByPlayer.Format(target.Name, experience).Replace(TargetColor, target.ColorCode);
 			instance._AddMessage(message);
 		}
 

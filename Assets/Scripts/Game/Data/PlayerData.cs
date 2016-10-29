@@ -50,9 +50,10 @@ namespace MineS
 
 		public override void Defeat(IAttack target)
 		{
-			InformationManager.OnDefeat(target);
+			var finalExperience = Calculator.GetFinalExperience(target.Experience, this);
+			InformationManager.OnDefeat(target, finalExperience);
 			base.Defeat(target);
-			this.AddExperience(Calculator.GetFinalExperience(target.Experience, this));
+			this.AddExperience(finalExperience);
 			AchievementManager.Instance.AddDefeatedEnemy(1);
 
 			while(this.CanLevelUp)
