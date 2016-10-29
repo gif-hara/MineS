@@ -184,7 +184,7 @@ namespace MineS
 					InformationManager.OnContinuousAttack(this, target, continuousDamage);
 				}
 			}
-			if(this.FindAbility(GameDefine.AbilityType.RiskOfLife))
+			if(this.FindAbility(GameDefine.AbilityType.RiskOfLife) && this.Armor > 0)
 			{
 				this.TakeDamageArmorOnly(Calculator.GetRiskOfLifeSubArmorValue(this), true);
 			}
