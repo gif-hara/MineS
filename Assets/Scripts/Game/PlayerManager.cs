@@ -240,6 +240,11 @@ namespace MineS
 			this.NotifyCharacterDataObservers();
 		}
 
+		public void SerializeInventory()
+		{
+			this.Data.Inventory.Serialize(InventoryKeyName);
+		}
+
 		public void DebugAddAbnormalStatus(int type)
 		{
 			this.Data.AddAbnormalStatus(AbnormalStatusFactory.Create((GameDefine.AbnormalStatusType)type, this.Data, DebugManager.Instance.AbnormalStatusRemainingTurn, 0));

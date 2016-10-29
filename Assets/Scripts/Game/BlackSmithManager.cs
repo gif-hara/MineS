@@ -150,14 +150,15 @@ namespace MineS
 			var confirmManager = ConfirmManager.Instance;
 			confirmManager.Add(this.reinforcementMessage, () =>
 			{
-				var playerData = PlayerManager.Instance.Data;
-				if(playerData.Money >= equipmentData.NeedLevelUpMoney)
+				var playerManager = PlayerManager.Instance;
+				if(playerManager.Data.Money >= equipmentData.NeedLevelUpMoney)
 				{
-					playerData.AddMoney(-equipmentData.NeedLevelUpMoney);
+					playerManager.AddMoney(-equipmentData.NeedLevelUpMoney, false);
 					equipmentData.LevelUp();
 					InformationManager.AddMessage(this.levelUpMessage.Get);
-					PlayerManager.instance.UpdateInventoryUI(playerData.Inventory);
-					PlayerManager.instance.NotifyCharacterDataObservers();
+					playerManager.SerializeInventory();
+					playerManager.UpdateInventoryUI(playerManager.Data.Inventory);
+					playerManager.NotifyCharacterDataObservers();
 					SEManager.instance.PlaySE(SEManager.instance.blackSmith);
 				}
 				else
@@ -192,17 +193,17 @@ namespace MineS
 			var confirmManager = ConfirmManager.Instance;
 			confirmManager.Add(this.synthesisMessage, () =>
 			{
-				var playerData = PlayerManager.Instance.Data;
+				var playerManager = PlayerManager.Instance;
 				var needMoney = Calculator.GetSynthesisNeedMoney(baseEquipment, this.SynthesisTargetEquipment);
-				if(playerData.Money >= needMoney)
+				if(playerManager.Data.Money >= needMoney)
 				{
-					playerData.AddMoney(-needMoney);
+					playerManager.AddMoney(-needMoney, false);
 					(baseEquipment.InstanceData as EquipmentInstanceData).Synthesis(this.SynthesisTargetEquipment);
 					InformationManager.AddMessage(this.successSynthesisMessage.Get);
-					playerData.Inventory.RemoveItemOrEquipment(this.SynthesisTargetEquipment);
-					playerData.Inventory.SetSelectItem(null);
-					PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment, playerData.Inventory);
-					PlayerManager.Instance.NotifyCharacterDataObservers();
+					playerManager.RemoveInventoryItemOrEquipment(this.SynthesisTargetEquipment);
+					playerManager.Data.Inventory.SetSelectItem(null);
+					playerManager.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_SynthesisSelectBaseEquipment, playerManager.Data.Inventory);
+					playerManager.NotifyCharacterDataObservers();
 					SEManager.instance.PlaySE(SEManager.instance.blackSmith);
 				}
 				else
@@ -215,8 +216,8 @@ namespace MineS
 
 		public void InvokeRemoveAbility(int index)
 		{
-			var playerData = PlayerManager.Instance.Data;
-			var removeItem = playerData.Inventory.SelectItem;
+			var playerManager = PlayerManager.Instance;
+			var removeItem = playerManager.Data.Inventory.SelectItem;
 			var needMoney = Calculator.GetRemoveAbilityNeedMoney(removeItem);
 			var equipmentData = removeItem.InstanceData as EquipmentInstanceData;
 			var removeAbility = equipmentData.Abilities[index];
@@ -231,12 +232,13 @@ namespace MineS
 			var confirmManager = ConfirmManager.Instance;
 			confirmManager.Add(this.removeAbilityMessage, () =>
 			{
-				if(playerData.Money >= needMoney)
+				if(playerManager.Data.Money >= needMoney)
 				{
 					InformationManager.AddMessage(this.successRemoveAbilityMessage.Get);
 					equipmentData.RemoveAbility(index);
-					playerData.AddMoney(-needMoney);
-					PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_RemoveAbilitySelectBaseEquipment, playerData.Inventory);
+					playerManager.AddMoney(-needMoney, false);
+					playerManager.SerializeInventory();
+					PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_RemoveAbilitySelectBaseEquipment, playerManager.Data.Inventory);
 					PlayerManager.Instance.NotifyCharacterDataObservers();
 					SEManager.instance.PlaySE(SEManager.instance.blackSmith);
 				}
