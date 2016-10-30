@@ -20,9 +20,10 @@ namespace MineS
 			}
 		}
 
-		public static void Save()
+		public static void Save(int floor, DungeonDataBase dungeonData)
 		{
-			HK.Framework.SaveData.SetInt(SaveDungeonKeyName, 1);
+			var serializeData = new DungeonSerializeData(floor, dungeonData);
+			HK.Framework.SaveData.SetClass<DungeonSerializeData>(SaveDungeonKeyName, serializeData);
 		}
 
 		public static void InvalidSaveData()
@@ -55,6 +56,11 @@ namespace MineS
 			}
 
 			return result;
+		}
+
+		public static DungeonSerializeData DeserializeDungeonData()
+		{
+			return HK.Framework.SaveData.GetClass<DungeonSerializeData>(SaveDungeonKeyName, null);
 		}
 
 		private static string GetCellDataKeyName(int y, int x)

@@ -32,6 +32,17 @@ namespace MineS
 
 		public int Floor{ get { return this.floorCount; } }
 
+		protected override void Awake()
+		{
+			base.Awake();
+			if(DungeonSerializer.ContainsDungeonData)
+			{
+				var serializeData = DungeonSerializer.DeserializeDungeonData();
+				this.floorCount = serializeData.floor;
+				this.current = serializeData.dungeonData;
+			}
+		}
+
 		void Start()
 		{
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalNextFloor);
@@ -53,6 +64,10 @@ namespace MineS
 			if(this.current.Serializable)
 			{
 				this.Serialize();
+			}
+			else
+			{
+				DungeonSerializer.InvalidSaveData();
 			}
 		}
 
@@ -147,7 +162,7 @@ namespace MineS
 		{
 			CellManager.Instance.Serialize();
 			EnemyManager.Instance.Serialize();
-			DungeonSerializer.Save();
+			DungeonSerializer.Save(this.floorCount, this.current);
 			HK.Framework.SaveData.Save();
 		}
 
