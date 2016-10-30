@@ -82,7 +82,7 @@ namespace MineS
 			{
 				this.items[i] = null;
 			}
-			this.equipment.RemoveAll();
+			this.equipment.RemoveAll(this.holder);
 		}
 
 		public void ChangeItem(Item before, Item after)
@@ -131,14 +131,14 @@ namespace MineS
 
 		public void RemoveEquipment(Item item)
 		{
-			this.equipment.Remove(item);
+			this.equipment.Remove(item, this.holder);
 		}
 
 		public void RemoveItemOrEquipment(Item item)
 		{
 			if(GameDefine.IsEquipment(item.InstanceData.ItemType) && this.equipment.IsInEquipment(item))
 			{
-				this.equipment.Remove(item);
+				this.equipment.Remove(item, this.holder);
 			}
 			else
 			{

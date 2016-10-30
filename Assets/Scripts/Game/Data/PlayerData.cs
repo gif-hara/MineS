@@ -14,11 +14,16 @@ namespace MineS
 		[SerializeField]
 		private int level;
 
+		[SerializeField]
+		private CharacterMasterData growthData = null;
+
 		public int Level{ get { return this.level; } }
 
 		public Inventory Inventory{ private set; get; }
 
-		public CharacterMasterData growthData = null;
+		public PlayerData()
+		{
+		}
 
 		public PlayerData(CharacterMasterData masterData, CharacterMasterData growthData, CellController cellController)
 		{
@@ -254,6 +259,30 @@ namespace MineS
 			DungeonManager.Instance.RemoveChangeDungeonEvent(this.GameOver);
 			this.OnChangeDungeon();
 			PlayerManager.Instance.NotifyCharacterDataObservers();
+		}
+
+		public void Serialize(string key)
+		{
+			HK.Framework.SaveData.SetClass<PlayerData>(key, this);
+			this.SerializeAbnormalStatuses(key);
+			this.Inventory.Serialize(GetInventorySerializeKeyName(key));
+		}
+
+		public static PlayerData Deserialize(string key, CellController cellController)
+		{
+			var result = HK.Framework.SaveData.GetClass<PlayerData>(key, null);
+			result.cellController = cellController;
+			DeserializeAbnormalStatuses(key, result);
+			result.Inventory = new Inventory(result, GameDefine.InventoryItemMax);
+			result.Inventory.Deserialize(GetInventorySerializeKeyName(key));
+			result.abilities = new List<AbilityBase>();
+
+			return result;
+		}
+
+		private static string GetInventorySerializeKeyName(string key)
+		{
+			return string.Format("{0}_Inventory", key);
 		}
 	}
 }

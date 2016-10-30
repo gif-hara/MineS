@@ -122,7 +122,7 @@ namespace MineS
 			return beforeItem;
 		}
 
-		public void Remove(Item item)
+		public void Remove(Item item, CharacterData holder)
 		{
 			if(item == null)
 			{
@@ -138,6 +138,7 @@ namespace MineS
 			break;
 			case GameDefine.ItemType.Shield:
 				this.shield = null;
+				holder.CheckArmorMax();
 			break;
 			case GameDefine.ItemType.Accessory:
 				this.accessory = null;
@@ -148,11 +149,11 @@ namespace MineS
 			}
 		}
 
-		public void RemoveAll()
+		public void RemoveAll(CharacterData holder)
 		{
-			this.Remove(this.weapon);
-			this.Remove(this.shield);
-			this.Remove(this.accessory);
+			this.Remove(this.weapon, holder);
+			this.Remove(this.shield, holder);
+			this.Remove(this.accessory, holder);
 		}
 
 		public Item Get(GameDefine.ItemType type)

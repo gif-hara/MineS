@@ -50,14 +50,14 @@ namespace MineS
 
 		public ExperienceData ExperienceData{ get { return this.experienceData; } }
 
-		private const string InventoryKeyName = "PlayerData_Inventory";
+		private const string PlayerDataSerializeKeyName = "PlayerData";
 
 		private const string PlayerMoneyKeyName = "PlayerData_Money";
 
 		protected override void Awake()
 		{
 			base.Awake();
-			this.Data = new PlayerData(this.playerInitialStatus, this.growthData, this.cellController);
+			this.LoadData();
 		}
 
 		void Start()
@@ -68,7 +68,6 @@ namespace MineS
 			Item.AddOnUseItemEvent(this.OnUseItem);
 			DungeonManager.Instance.AddNextFloorEvent(this.OnNextFloor);
 			DungeonManager.Instance.AddChangeDungeonEvent(this.OnChangeDungeon);
-			this.LoadData();
 		}
 
 		public void RecoveryHitPoint(int value, bool isLimit)
@@ -98,26 +97,26 @@ namespace MineS
 		public void RemoveInventoryItem(Item item)
 		{
 			this.Data.Inventory.RemoveItem(item);
-			this.Data.Inventory.Serialize(InventoryKeyName);
+			this.Serialize();
 		}
 
 		public void RemoveInventoryItemOrEquipment(Item item)
 		{
 			this.Data.Inventory.RemoveItemOrEquipment(item);
-			this.Data.Inventory.Serialize(InventoryKeyName);
+			this.Serialize();
 		}
 
 		public void ChangeItem(Item before, Item after)
 		{
 			this.Data.Inventory.ChangeItem(before, after);
-			this.Data.Inventory.Serialize(InventoryKeyName);
+			this.Serialize();
 		}
 
 		public void RemoveEquipment(Item equipment)
 		{
 			this.Data.Inventory.RemoveEquipment(equipment);
 			this.Data.Inventory.AddItem(equipment);
-			this.Data.Inventory.Serialize(InventoryKeyName);
+			this.Serialize();
 		}
 
 		public void AddMoney(int value, bool playSE)
@@ -128,7 +127,7 @@ namespace MineS
 			}
 			this.Data.AddMoney(Calculator.GetFinalMoney(value, this.Data));
 			this.NotifyCharacterDataObservers();
-			HK.Framework.SaveData.SetInt(PlayerMoneyKeyName, this.Data.Money);
+			this.Serialize();
 		}
 
 		public void NotifyCharacterDataObservers()
@@ -215,7 +214,7 @@ namespace MineS
 			{
 				InformationManager.OnAcquiredItem(item.InstanceData.ItemName);
 			}
-			this.Data.Inventory.Serialize(InventoryKeyName);
+			this.Serialize();
 
 			return result;
 		}
@@ -232,17 +231,20 @@ namespace MineS
 
 		public void LoadData()
 		{
-			if(HK.Framework.SaveData.ContainsKey(InventoryKeyName))
+			if(HK.Framework.SaveData.ContainsKey(PlayerDataSerializeKeyName))
 			{
-				this.Data.Inventory.Deserialize(InventoryKeyName);
+				this.Data = PlayerData.Deserialize(PlayerDataSerializeKeyName, this.cellController);
 			}
-			this.Data.AddMoney(HK.Framework.SaveData.GetInt(PlayerMoneyKeyName));
+			else
+			{
+				this.Data = new PlayerData(this.playerInitialStatus, this.growthData, this.cellController);
+			}
 			this.NotifyCharacterDataObservers();
 		}
 
-		public void SerializeInventory()
+		public void Serialize()
 		{
-			this.Data.Inventory.Serialize(InventoryKeyName);
+			this.Data.Serialize(PlayerDataSerializeKeyName);
 		}
 
 		public void DebugAddAbnormalStatus(int type)

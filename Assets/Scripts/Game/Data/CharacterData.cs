@@ -61,6 +61,9 @@ namespace MineS
 		[SerializeField]
 		private Sprite image;
 
+		[SerializeField]
+		protected CharacterMasterData masterData;
+
 		public string Name{ get { return this.name; } }
 
 		public int HitPointMax{ get { return this.hitPointMax; } }
@@ -98,8 +101,6 @@ namespace MineS
 		public abstract GameDefine.CharacterType CharacterType{ get; }
 
 		protected CellController cellController;
-
-		protected CharacterMasterData masterData = null;
 
 		public void Initialize(CharacterMasterData masterData, CellController cellController)
 		{

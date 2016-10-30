@@ -156,7 +156,7 @@ namespace MineS
 					playerManager.AddMoney(-equipmentData.NeedLevelUpMoney, false);
 					equipmentData.LevelUp();
 					InformationManager.AddMessage(this.levelUpMessage.Get);
-					playerManager.SerializeInventory();
+					playerManager.Serialize();
 					playerManager.UpdateInventoryUI(playerManager.Data.Inventory);
 					playerManager.NotifyCharacterDataObservers();
 					SEManager.instance.PlaySE(SEManager.instance.blackSmith);
@@ -237,7 +237,7 @@ namespace MineS
 					InformationManager.AddMessage(this.successRemoveAbilityMessage.Get);
 					equipmentData.RemoveAbility(index);
 					playerManager.AddMoney(-needMoney, false);
-					playerManager.SerializeInventory();
+					playerManager.Serialize();
 					PlayerManager.Instance.OpenInventoryUI(GameDefine.InventoryModeType.BlackSmith_RemoveAbilitySelectBaseEquipment, playerManager.Data.Inventory);
 					PlayerManager.Instance.NotifyCharacterDataObservers();
 					SEManager.instance.PlaySE(SEManager.instance.blackSmith);
