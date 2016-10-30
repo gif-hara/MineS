@@ -9,6 +9,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
+	[System.Serializable]
 	public class EnemyData : CharacterData, IIdentification
 	{
 		public override void Dead(CharacterData attacker)
@@ -126,7 +127,7 @@ namespace MineS
 
 		public override void ForceDead()
 		{
-			this.HitPoint = 0;
+			this.hitPoint = 0;
 			this.OnDead();
 		}
 
@@ -150,8 +151,8 @@ namespace MineS
 		{
 			var clone = new EnemyData();
 			clone.Initialize(this.masterData, cellData.Controller);
-			clone.HitPoint = this.HitPoint;
-			clone.Armor = this.Armor;
+			clone.hitPoint = this.HitPoint;
+			clone.baseArmor = this.Armor;
 			EnemyManager.Instance.Add(cellData, clone);
 			clone.OnVisible(cellData);
 		}

@@ -13,67 +13,84 @@ namespace MineS
 	[System.Serializable]
 	public abstract class CharacterData : IAttack, ITurnProgress
 	{
-		public string Name{ private set; get; }
+		[SerializeField]
+		protected string name;
 
-		public int HitPointMax{ protected set; get; }
+		[SerializeField]
+		protected int hitPointMax;
 
-		public int HitPoint{ protected set; get; }
+		[SerializeField]
+		protected int hitPoint;
 
-		public int FinalStrength
-		{
-			get
-			{
-				return Calculator.GetFinalStrength(this);
-			}
-		}
-
-		public virtual int Strength
-		{
-			get
-			{
-				return this.baseStrength;
-			}
-		}
-
-		public int BaseStrength
-		{
-			get
-			{
-				return this.baseStrength;
-			}
-		}
-
+		[SerializeField]
 		protected int baseStrength = 0;
 
-		public int Armor{ protected set; get; }
+		[SerializeField]
+		protected int baseArmorMax;
+
+		[SerializeField]
+		protected int baseArmor;
+
+		[SerializeField]
+		protected int baseHitProbability = 0;
+
+		[SerializeField]
+		protected int baseEvasion = 0;
+
+		[SerializeField]
+		protected int experience;
+
+		[SerializeField]
+		protected int money;
+
+		[SerializeField]
+		protected int dropItemProbability;
+
+		[SerializeField]
+		protected List<ItemDataBase> overrideDropItems;
+
+		[SerializeField]
+		protected List<AbnormalStatusBase> abnormalStatuses;
+
+		[SerializeField]
+		protected List<AbilityBase> abilities;
+
+		[SerializeField]
+		private Sprite image;
+
+		public string Name{ get { return this.name; } }
+
+		public int HitPointMax{ get { return this.hitPointMax; } }
+
+		public int HitPoint{ get { return this.hitPoint; } }
+
+		public int FinalStrength{ get { return Calculator.GetFinalStrength(this); } }
+
+		public virtual int Strength{ get { return this.baseStrength; } }
+
+		public int BaseStrength{ get { return this.baseStrength; } }
+
+		public int Armor{ get { return this.baseArmor; } }
 
 		public virtual int ArmorMax{ get { return this.baseArmorMax + Calculator.GetExquisiteArmorValue(this); } }
 
-		protected int baseArmorMax;
-
 		public virtual int HitProbability{ get { return this.baseHitProbability + this.GetAbilityNumber(GameDefine.AbilityType.HitProbability); } }
-
-		protected int baseHitProbability = 0;
 
 		public virtual int Evasion{ get { return this.baseEvasion + this.GetAbilityNumber(GameDefine.AbilityType.Evasion); } }
 
-		protected int baseEvasion = 0;
+		public int Experience{ get { return this.experience; } }
 
-		public int Experience{ protected set; get; }
+		public int Money{ get { return this.money; } }
 
-		public int Money{ protected set; get; }
+		public int DropItemProbability{ get { return this.dropItemProbability; } }
 
-		public int DropItemProbability{ protected set; get; }
+		public List<ItemDataBase> OverrideDropItems{ get { return this.overrideDropItems; } }
 
-		public List<ItemDataBase> OverrideDropItems{ protected set; get; }
-
-		public List<AbnormalStatusBase> AbnormalStatuses{ protected set; get; }
+		public List<AbnormalStatusBase> AbnormalStatuses{ get { return this.abnormalStatuses; } }
 
 		public virtual List<AbilityBase> Abilities{ get { return this.abilities; } }
 
-		protected List<AbilityBase> abilities;
-
-		public Sprite Image { protected set; get; }
+		public Sprite Image { get { return this.image; } }
 
 		public abstract GameDefine.CharacterType CharacterType{ get; }
 
@@ -84,21 +101,21 @@ namespace MineS
 		public void Initialize(CharacterMasterData masterData, CellController cellController)
 		{
 			this.masterData = masterData;
-			this.Name = masterData.Name;
-			this.HitPointMax = masterData.HitPoint;
-			this.HitPoint = masterData.HitPoint;
+			this.name = masterData.Name;
+			this.hitPointMax = masterData.HitPoint;
+			this.hitPoint = masterData.HitPoint;
 			this.baseStrength = masterData.Strength;
-			this.Armor = masterData.Armor;
+			this.baseArmor = masterData.Armor;
 			this.baseArmorMax = masterData.Armor;
 			this.baseHitProbability = masterData.HitProbability;
 			this.baseEvasion = masterData.Evasion;
-			this.Experience = masterData.Experience;
-			this.Money = masterData.Money;
-			this.DropItemProbability = masterData.DropItemProbability;
-			this.OverrideDropItems = new List<ItemDataBase>(masterData.OverrideDropItems);
-			this.AbnormalStatuses = new List<AbnormalStatusBase>();
+			this.experience = masterData.Experience;
+			this.money = masterData.Money;
+			this.dropItemProbability = masterData.DropItemProbability;
+			this.overrideDropItems = new List<ItemDataBase>(masterData.OverrideDropItems);
+			this.abnormalStatuses = new List<AbnormalStatusBase>();
 			this.abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
-			this.Image = masterData.Image;
+			this.image = masterData.Image;
 			this.cellController = cellController;
 		}
 
@@ -116,11 +133,11 @@ namespace MineS
 				return;
 			}
 
-			this.HitPoint += value;
+			this.hitPoint += value;
 
 			if(isLimit)
 			{
-				this.HitPoint = this.HitPoint > this.HitPointMax ? this.HitPointMax : this.HitPoint;
+				this.hitPoint = this.HitPoint > this.HitPointMax ? this.HitPointMax : this.HitPoint;
 			}
 		}
 
@@ -131,8 +148,8 @@ namespace MineS
 				SEManager.Instance.PlaySE(SEManager.Instance.recovery);
 			}
 			this.cellController.Recovery(value);
-			this.Armor += value;
-			this.Armor = this.Armor > this.ArmorMax ? this.ArmorMax : this.Armor;
+			this.baseArmor += value;
+			this.baseArmor = this.Armor > this.ArmorMax ? this.ArmorMax : this.Armor;
 		}
 
 		public void Attack(CharacterData target)
@@ -170,7 +187,7 @@ namespace MineS
 			}
 			if(this.FindAbility(GameDefine.AbilityType.Goemon))
 			{
-				this.Money += Calculator.GetGoemonValue(this);
+				this.money += Calculator.GetGoemonValue(this);
 			}
 			if(this.FindAbility(GameDefine.AbilityType.ContinuousAttack))
 			{
@@ -242,14 +259,14 @@ namespace MineS
 			this.cellController.TakeDamage(value);
 			if(!onlyHitPoint)
 			{
-				this.Armor -= value;
+				this.baseArmor -= value;
 				value = -this.Armor;
 				value = value < 0 ? 0 : value;
-				this.Armor = this.Armor < 0 ? 0 : this.Armor;
+				this.baseArmor = this.Armor < 0 ? 0 : this.Armor;
 			}
 
-			this.HitPoint -= value;
-			this.HitPoint = this.HitPoint < 0 ? 0 : this.HitPoint;
+			this.hitPoint -= value;
+			this.hitPoint = this.HitPoint < 0 ? 0 : this.HitPoint;
 
 			if(this.IsDead)
 			{
@@ -273,8 +290,8 @@ namespace MineS
 			}
 
 			this.cellController.TakeDamage(value);
-			this.Armor -= value;
-			this.Armor = this.Armor < 0 ? 0 : this.Armor;
+			this.baseArmor -= value;
+			this.baseArmor = this.Armor < 0 ? 0 : this.Armor;
 		}
 
 		public virtual void Defeat(IAttack target)
@@ -287,8 +304,8 @@ namespace MineS
 
 		public void AddMoney(int value)
 		{
-			this.Money += value;
-			this.Money = this.Money > GameDefine.MoneyMax ? GameDefine.MoneyMax : this.Money;
+			this.money += value;
+			this.money = this.Money > GameDefine.MoneyMax ? GameDefine.MoneyMax : this.Money;
 		}
 
 		public void AddBaseStrength(int value)
@@ -299,8 +316,8 @@ namespace MineS
 
 		public void AddHitPointMax(int value)
 		{
-			this.HitPointMax += value;
-			this.HitPointMax = this.HitPointMax < 1 ? 1 : this.HitPointMax;
+			this.hitPointMax += value;
+			this.hitPointMax = this.HitPointMax < 1 ? 1 : this.HitPointMax;
 
 			if(value > 0)
 			{
@@ -352,14 +369,14 @@ namespace MineS
 
 		public void RemoveAbnormalStatus(GameDefine.AbnormalStatusType type)
 		{
-			this.AbnormalStatuses.RemoveAll(a => a.Type == type);
+			this.abnormalStatuses.RemoveAll(a => a.Type == type);
 		}
 
 		public virtual void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
-			this.AbnormalStatuses.ForEach(a => a.OnTurnProgress(type, turnCount));
-			this.AbnormalStatuses.RemoveAll(a => !a.IsValid);
-			this.Abilities.ForEach(a => a.OnTurnProgress(type, turnCount));
+			this.abnormalStatuses.ForEach(a => a.OnTurnProgress(type, turnCount));
+			this.abnormalStatuses.RemoveAll(a => !a.IsValid);
+			this.abilities.ForEach(a => a.OnTurnProgress(type, turnCount));
 		}
 
 		public virtual void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
@@ -369,7 +386,7 @@ namespace MineS
 
 		public bool FindAbnormalStatus(GameDefine.AbnormalStatusType type)
 		{
-			return this.AbnormalStatuses.Find(a => a.Type == type) != null;
+			return this.abnormalStatuses.Find(a => a.Type == type) != null;
 		}
 
 		public bool FindAbility(GameDefine.AbilityType type)
@@ -385,12 +402,12 @@ namespace MineS
 				return 0;
 			}
 
-			return this.Abilities.Count(a => a.Type == type);
+			return this.abilities.Count(a => a.Type == type);
 		}
 
 		public void CheckArmorMax()
 		{
-			this.Armor = this.Armor > this.ArmorMax ? this.ArmorMax : this.Armor;
+			this.baseArmor = this.Armor > this.ArmorMax ? this.ArmorMax : this.Armor;
 		}
 
 		public bool IsDead

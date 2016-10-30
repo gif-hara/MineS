@@ -35,9 +35,9 @@ namespace MineS
 					this.CellControllers[y, x] = Instantiate(this.cellPrefab, this.cellField, false) as CellController;
 				}
 			}
+
 			var database = this.CreateCellDatabaseFromDungeonData();
 			this.SetCell(database);
-
 			this.InitializeStep();
 
 			DungeonManager.Instance.AddNextFloorEvent(this.NextFloor);

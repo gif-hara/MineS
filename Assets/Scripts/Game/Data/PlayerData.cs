@@ -11,7 +11,10 @@ namespace MineS
 	[System.Serializable]
 	public class PlayerData : CharacterData
 	{
-		public int Level{ private set; get; }
+		[SerializeField]
+		private int level;
+
+		public int Level{ get { return this.level; } }
 
 		public Inventory Inventory{ private set; get; }
 
@@ -20,14 +23,14 @@ namespace MineS
 		public PlayerData(CharacterMasterData masterData, CharacterMasterData growthData, CellController cellController)
 		{
 			this.Initialize(masterData, cellController);
-			this.Level = 1;
+			this.level = 1;
 			this.Inventory = new Inventory(this, GameDefine.InventoryItemMax);
 			this.growthData = growthData;
 		}
 
 		public void AddExperience(int value)
 		{
-			this.Experience += value;
+			this.experience += value;
 		}
 
 		protected override void OnAttacked(CharacterData target, int damage)
@@ -94,40 +97,40 @@ namespace MineS
 
 		public void LevelUp(CharacterMasterData growthData)
 		{
-			this.Level++;
+			this.level++;
 			InformationManager.OnLevelUpPlayer(this, this.Level);
-			this.HitPointMax += growthData.HitPoint;
+			this.hitPointMax += growthData.HitPoint;
 			if(this.HitPoint <= this.HitPointMax)
 			{
-				this.HitPoint = this.HitPointMax;
+				this.hitPoint = this.HitPointMax;
 			}
 
 			this.AddBaseStrength(growthData.Strength);
-			this.Armor += growthData.Armor;
+			this.baseArmor += growthData.Armor;
 			SEManager.Instance.PlaySE(SEManager.Instance.levelUp);
 			Object.Instantiate(EffectManager.Instance.prefabLevelUp.Element, CanvasManager.Instance.EffectLv0.transform, false);
 		}
 
 		public void LevelDown(CharacterMasterData growthData)
 		{
-			this.Level--;
+			this.level--;
 			InformationManager.OnLevelDownPlayer(this, this.Level);
-			this.HitPointMax -= growthData.HitPoint;
+			this.hitPointMax -= growthData.HitPoint;
 			this.TakeDamageRaw(null, growthData.HitPoint, true);
 
 			this.AddBaseStrength(-growthData.Strength);
-			this.Armor -= growthData.Armor;
-			this.Armor = this.Armor < 0 ? 0 : this.Armor;
+			this.baseArmor -= growthData.Armor;
+			this.baseArmor = this.Armor < 0 ? 0 : this.Armor;
 		}
 
 		public void OnChangeDungeon()
 		{
-			this.HitPointMax = this.masterData.HitPoint;
-			this.HitPoint = this.HitPointMax;
-			this.Armor = this.ArmorMax;
-			this.Experience = 0;
-			this.AbnormalStatuses.Clear();
-			this.Level = 1;
+			this.hitPointMax = this.masterData.HitPoint;
+			this.hitPoint = this.HitPointMax;
+			this.baseArmor = this.ArmorMax;
+			this.experience = 0;
+			this.abnormalStatuses.Clear();
+			this.level = 1;
 			this.baseStrength = this.masterData.Strength;
 		}
 
@@ -143,7 +146,7 @@ namespace MineS
 				this.LevelUp(this.growthData);
 			}
 
-			this.Experience = PlayerManager.Instance.ExperienceData.NeedNextLevel(this.Level - 1);
+			this.experience = PlayerManager.Instance.ExperienceData.NeedNextLevel(this.Level - 1);
 		}
 
 		public override void ForceLevelDown(int value)
@@ -158,7 +161,7 @@ namespace MineS
 				this.LevelDown(this.growthData);
 			}
 
-			this.Experience = PlayerManager.Instance.ExperienceData.NeedNextLevel(this.Level - 1);
+			this.experience = PlayerManager.Instance.ExperienceData.NeedNextLevel(this.Level - 1);
 		}
 
 		public override void ForceDead()
@@ -247,7 +250,7 @@ namespace MineS
 		public void GameOver()
 		{
 			this.Inventory.RemoveAll();
-			this.Money = 0;
+			this.money = 0;
 			DungeonManager.Instance.RemoveChangeDungeonEvent(this.GameOver);
 			this.OnChangeDungeon();
 			PlayerManager.Instance.NotifyCharacterDataObservers();
