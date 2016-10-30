@@ -24,6 +24,12 @@ namespace MineS
 			}
 		}
 
+		public override void SetCellController(CellController cellController)
+		{
+			base.SetCellController(cellController);
+			this.cellController.SetImage(this.Image);
+		}
+
 		public override GameDefine.EventType EventType
 		{
 			get
@@ -36,7 +42,7 @@ namespace MineS
 		{
 			get
 			{
-				return null;
+				return TextureManager.Instance.stairImage.Element;
 			}
 		}
 
