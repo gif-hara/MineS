@@ -10,18 +10,6 @@ namespace MineS
 	/// </summary>
 	public abstract class DungeonCreatorBase
 	{
-		public class Cell
-		{
-			public int x;
-			public int y;
-
-			public Cell(int y, int x)
-			{
-				this.x = x;
-				this.y = y;
-			}
-		}
-
 		public class Database
 		{
 			private List<Cell> data;

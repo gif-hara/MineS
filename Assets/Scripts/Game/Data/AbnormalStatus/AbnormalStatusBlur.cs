@@ -10,6 +10,11 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusBlur : AbnormalStatusBase
 	{
+		public AbnormalStatusBlur()
+			: base()
+		{
+		}
+
 		public AbnormalStatusBlur(IAttack holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{

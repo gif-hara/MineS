@@ -165,6 +165,21 @@ namespace MineS
 			}
 		}
 
+		public void Serialize(string key)
+		{
+			HK.Framework.SaveData.SetClass<EnemyData>(key, this);
+			this.SerializeAbnormalStatuses(key);
+		}
+
+		public static EnemyData Deserialize(string key, CellController cellController)
+		{
+			var obj = HK.Framework.SaveData.GetClass<EnemyData>(key, null);
+			obj.abilities = AbilityFactory.Create(obj.abilityTypes, obj);
+			obj.cellController = cellController;
+			DeserializeAbnormalStatuses(key, obj);
+			return obj;
+		}
+
 		protected override void OnTakedDamage(CharacterData attacker, int value, bool onlyHitPoint)
 		{
 			base.OnTakedDamage(attacker, value, onlyHitPoint);

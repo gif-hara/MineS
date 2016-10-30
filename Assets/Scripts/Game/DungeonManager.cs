@@ -37,6 +37,23 @@ namespace MineS
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalNextFloor);
 			this.dungeonNameFlowController.AddStartTextFadeIn(this.PlayBGM);
 			this.PlayBGM();
+
+			if(DungeonSerializer.ContainsDungeonData)
+			{
+				this.Deserialize();
+			}
+			else
+			{
+				CellManager.Instance.CreateCellDatabaseFromDungeonData();
+			}
+		}
+
+		void OnApplicationQuit()
+		{
+			if(this.current.Serializable)
+			{
+				this.Serialize();
+			}
 		}
 
 		public void ChangeDungeonData(DungeonDataBase data, int floor = 1)
@@ -124,6 +141,21 @@ namespace MineS
 			}
 
 			BGMManager.Instance.StartBGM(this.current.GetBGM(this.floorCount));
+		}
+
+		private void Serialize()
+		{
+			CellManager.Instance.Serialize();
+			EnemyManager.Instance.Serialize();
+			DungeonSerializer.Save();
+			HK.Framework.SaveData.Save();
+		}
+
+		private void Deserialize()
+		{
+			CellManager.Instance.Deserialize();
+			DungeonSerializer.InvalidSaveData();
+			HK.Framework.SaveData.Save();
 		}
 	}
 }

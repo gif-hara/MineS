@@ -10,11 +10,25 @@ namespace MineS
 	/// </summary>
 	public class CombatEnemyAction : CellClickActionBase
 	{
+		private CellData cellData;
+
 		public override void Invoke(CellData data)
 		{
-			var enemy = EnemyManager.Instance.Enemies[data];
-			CombatController.Combat(PlayerManager.Instance.Data, enemy);
+			CombatController.Combat(PlayerManager.Instance.Data, this.Enemy);
 			TurnManager.Instance.Progress(GameDefine.TurnProgressType.EnemyAttack);
+		}
+
+		public override void SetCellController(CellController cellController)
+		{
+			base.SetCellController(cellController);
+		}
+
+		public override void SetCellData(CellData data)
+		{
+			this.cellData = data;
+			this.cellController.SetImage(this.Image);
+			this.cellController.SetCharacterData(EnemyManager.Instance.Enemies[this.cellData]);
+			this.cellData.BindDeployDescription(new DeployDescriptionOnCharacterData(this.Enemy));
 		}
 
 		public override GameDefine.EventType EventType
@@ -29,8 +43,24 @@ namespace MineS
 		{
 			get
 			{
-				return null;
+				return this.Enemy.Image;
 			}
+		}
+
+		private EnemyData Enemy
+		{
+			get
+			{
+				return EnemyManager.Instance.Enemies[this.cellData];
+			}
+		}
+
+		public override void Serialize(int y, int x)
+		{
+		}
+
+		public override void Deserialize(int y, int x)
+		{
 		}
 	}
 }

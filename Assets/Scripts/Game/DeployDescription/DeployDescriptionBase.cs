@@ -8,6 +8,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
+	[System.Serializable]
 	public abstract class DeployDescriptionBase
 	{
 		public abstract void Deploy();

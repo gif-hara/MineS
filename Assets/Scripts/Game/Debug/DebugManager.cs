@@ -108,6 +108,10 @@ namespace MineS
 			{
 				UnityAdsController.Instance.ShowRewardedAd();
 			}
+			if(Input.GetKeyDown(KeyCode.L))
+			{
+				CellManager.Instance.Serialize();
+			}
 			if(Input.GetKeyDown(KeyCode.Alpha1))
 			{
 				HK.Framework.SaveData.Save();

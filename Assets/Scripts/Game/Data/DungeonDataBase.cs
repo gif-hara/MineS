@@ -14,6 +14,9 @@ namespace MineS
 		protected StringAsset.Finder dungeonName;
 
 		[SerializeField]
+		private bool serializable;
+
+		[SerializeField]
 		protected bool itemIdentified;
 
 		[SerializeField]
@@ -26,6 +29,8 @@ namespace MineS
 		protected ShopTable shopTable;
 
 		public string Name{ get { return this.dungeonName.ToString(); } }
+
+		public bool Serializable{ get { return this.serializable; } }
 
 		public bool ItemIdentified{ get { return this.itemIdentified; } }
 

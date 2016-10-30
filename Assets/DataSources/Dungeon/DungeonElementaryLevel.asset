@@ -15,6 +15,7 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 4172020a15e334b00838b72bf6b90d8f, type: 2}
     value: "\u521D\u7D1A\u30C0\u30F3\u30B8\u30E7\u30F3"
     guid: ab1cdd68-b055-4b81-8f0c-c2adca1fcc74
+  serializable: 1
   itemIdentified: 1
   mapChipTable:
     elements:

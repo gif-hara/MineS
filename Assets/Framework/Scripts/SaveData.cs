@@ -291,7 +291,7 @@ namespace HK.Framework
 
 				string json = saveDictionary[key];
 #if OUTPUT_LOG && DEBUG
-				Debug.LogFormat("GetClass<{0}> = {1}", typeof(T).Name, json);
+				Debug.LogFormat("GetClass<{0}> key = {1} value = {2}", typeof(T).Name, key, json);
 #endif
 				T obj = JsonUtility.FromJson<T>(json);
 				return obj;
@@ -303,7 +303,7 @@ namespace HK.Framework
 				keyCheck(key);
 				string json = JsonUtility.ToJson(obj);
 #if OUTPUT_LOG && DEBUG
-				Debug.LogFormat("SetClass<{0}> = {1}", typeof(T).Name, json);
+				Debug.LogFormat("SetClass<{0}> key = {1} value = {2}", typeof(T).Name, key, json);
 #endif
 				saveDictionary[key] = json;
 			}

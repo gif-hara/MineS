@@ -10,6 +10,11 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusCuring : AbnormalStatusBase
 	{
+		public AbnormalStatusCuring()
+			: base()
+		{
+		}
+
 		public AbnormalStatusCuring(IAttack holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{

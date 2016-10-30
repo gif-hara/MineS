@@ -56,6 +56,9 @@ namespace MineS
 		protected List<AbilityBase> abilities;
 
 		[SerializeField]
+		protected List<GameDefine.AbilityType> abilityTypes;
+
+		[SerializeField]
 		private Sprite image;
 
 		public string Name{ get { return this.name; } }
@@ -115,6 +118,7 @@ namespace MineS
 			this.overrideDropItems = new List<ItemDataBase>(masterData.OverrideDropItems);
 			this.abnormalStatuses = new List<AbnormalStatusBase>();
 			this.abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
+			this.abilityTypes = masterData.AbilityTypes;
 			this.image = masterData.Image;
 			this.cellController = cellController;
 		}
@@ -453,6 +457,37 @@ namespace MineS
 			{
 				InformationManager.OnAlsoAddAbnormalStatus(abnormalStatusType);
 			}
+		}
+
+		protected void SerializeAbnormalStatuses(string key)
+		{
+			HK.Framework.SaveData.SetInt(GetAbnormalStatusCountKeyName(key), this.abnormalStatuses.Count);
+			for(int i = 0; i < this.abnormalStatuses.Count; i++)
+			{
+				this.abnormalStatuses[i].Serialize(GetAbnormalStatusSerializeKeyName(key, i));
+			}
+		}
+
+		protected static void DeserializeAbnormalStatuses(string key, CharacterData obj)
+		{
+			var count = HK.Framework.SaveData.GetInt(GetAbnormalStatusCountKeyName(key));
+			obj.abnormalStatuses = new List<AbnormalStatusBase>();
+			for(int i = 0; i < count; i++)
+			{
+				var abnormalStatus = AbnormalStatusBase.Deserialize(GetAbnormalStatusSerializeKeyName(key, i));
+				abnormalStatus.SetHolder(obj);
+				obj.abnormalStatuses.Add(abnormalStatus);
+			}
+		}
+
+		private static string GetAbnormalStatusSerializeKeyName(string key, int index)
+		{
+			return string.Format("{0}_AbnormalStatus[{1}]", key, index);
+		}
+
+		private static string GetAbnormalStatusCountKeyName(string key)
+		{
+			return string.Format("{0}_AbnormalStatusCount", key);
 		}
 	}
 }

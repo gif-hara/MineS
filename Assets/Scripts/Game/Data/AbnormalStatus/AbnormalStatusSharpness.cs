@@ -10,6 +10,11 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusSharpness : AbnormalStatusBase
 	{
+		public AbnormalStatusSharpness()
+			: base()
+		{
+		}
+
 		public AbnormalStatusSharpness(IAttack holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{

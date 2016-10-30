@@ -10,6 +10,11 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusHappiness : AbnormalStatusBase
 	{
+		public AbnormalStatusHappiness()
+			: base()
+		{
+		}
+
 		public AbnormalStatusHappiness(IAttack holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{

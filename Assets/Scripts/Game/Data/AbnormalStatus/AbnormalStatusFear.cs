@@ -10,6 +10,11 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusFear : AbnormalStatusBase
 	{
+		public AbnormalStatusFear()
+			: base()
+		{
+		}
+
 		public AbnormalStatusFear(IAttack holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{

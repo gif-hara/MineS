@@ -11,17 +11,15 @@ namespace MineS
 	[System.Serializable]
 	public sealed class CellData
 	{
-		public int X{ private set; get; }
+		public Cell Position{ private set; get; }
 
-		public int Y{ private set; get; }
+		private CellSerializeData serializeData = new CellSerializeData();
 
-		public int MapChipId{ private set; get; }
+		public int MapChipId{ get { return this.serializeData.mapChipId; } }
 
-		public bool CanStep{ private set; get; }
+		public bool CanStep{ get { return this.serializeData.canStep; } }
 
-		public bool IsIdentification{ private set; get; }
-
-		private int lockCount = 0;
+		public bool IsIdentification{ get { return this.serializeData.isIdentification; } }
 
 		public CellController Controller{ private set; get; }
 
@@ -39,21 +37,19 @@ namespace MineS
 
 		public CellData(CellController cellController)
 		{
-			this.X = -1;
-			this.Y = -1;
-			this.IsIdentification = true;
-			this.lockCount = 0;
-			this.CanStep = true;
+			this.Position = new Cell(-1, -1);
+			this.serializeData.isIdentification = true;
+			this.serializeData.lockCount = 0;
+			this.serializeData.canStep = true;
 			this.Controller = cellController;
 		}
 
 		public CellData(int y, int x, int mapChipId, CellController cellController)
 		{
-			this.X = x;
-			this.Y = y;
-			this.MapChipId = mapChipId;
-			this.IsIdentification = false;
-			this.lockCount = 0;
+			this.Position = new Cell(y, x);
+			this.serializeData.mapChipId = mapChipId;
+			this.serializeData.isIdentification = false;
+			this.serializeData.lockCount = 0;
 			this.Controller = cellController;
 		}
 
@@ -134,14 +130,18 @@ namespace MineS
 			this.modifiedIdentificationEvent = modifiedIdentificationEvent;
 			this.modifiedLockCountEvent = modifiedLockCountEvent;
 
-			this.modifiedCanStepEvent(this.CanStep);
-			this.modifiedIdentificationEvent(this.IsIdentification);
-			this.modifiedLockCountEvent(this.lockCount);
+			this.modifiedCanStepEvent(this.serializeData.canStep);
+			this.modifiedIdentificationEvent(this.serializeData.isIdentification);
+			this.modifiedLockCountEvent(this.serializeData.lockCount);
 		}
 
 		public void BindCellClickAction(CellClickActionBase cellClickAction)
 		{
 			this.cellClickAction = cellClickAction;
+			if(this.cellClickAction != null)
+			{
+				this.Setup();
+			}
 		}
 
 		public void BindDeployDescription(DeployDescriptionBase deployDescription)
@@ -151,7 +151,7 @@ namespace MineS
 
 		public void Steppable(bool isXray)
 		{
-			if(this.CanStep)
+			if(this.serializeData.canStep)
 			{
 				return;
 			}
@@ -161,51 +161,51 @@ namespace MineS
 				this.OnUseXray();
 			}
 
-			this.CanStep = true;
+			this.serializeData.canStep = true;
 			if(this.modifiedCanStepEvent != null)
 			{
-				this.modifiedCanStepEvent(this.CanStep);
+				this.modifiedCanStepEvent(this.serializeData.canStep);
 			}
 		}
 
 		public void AddLock()
 		{
-			this.lockCount++;
+			this.serializeData.lockCount++;
 			if(this.modifiedLockCountEvent != null)
 			{
-				this.modifiedLockCountEvent(this.lockCount);
+				this.modifiedLockCountEvent(this.serializeData.lockCount);
 			}
 		}
 
 		public void ReleaseLock()
 		{
-			this.lockCount--;
+			this.serializeData.lockCount--;
 			if(this.modifiedLockCountEvent != null)
 			{
-				this.modifiedLockCountEvent(this.lockCount);
+				this.modifiedLockCountEvent(this.serializeData.lockCount);
 			}
 		}
 
 		public bool Identification(bool isSteppableAdjacentCells, bool isXray, bool playSE)
 		{
-			if(this.IsIdentification)
+			if(this.serializeData.isIdentification)
 			{
 				return false;
 			}
 
 			if(isSteppableAdjacentCells)
 			{
-				var adjacentCells = CellManager.Instance.GetAdjacentCellDataLeftTopRightBottom(this.Y, this.X);
+				var adjacentCells = CellManager.Instance.GetAdjacentCellDataLeftTopRightBottom(this.Position.y, this.Position.x);
 				for(int i = 0; i < adjacentCells.Count; i++)
 				{
 					adjacentCells[i].Steppable(isXray);
 				}
 			}
 
-			this.IsIdentification = true;
+			this.serializeData.isIdentification = true;
 			if(this.modifiedIdentificationEvent != null)
 			{
-				this.modifiedIdentificationEvent(this.IsIdentification);
+				this.modifiedIdentificationEvent(this.serializeData.isIdentification);
 			}
 
 			if(playSE)
@@ -221,7 +221,7 @@ namespace MineS
 		{
 			get
 			{
-				return CellManager.Instance.GetAdjacentCellDataAll(this.Y, this.X);
+				return CellManager.Instance.GetAdjacentCellDataAll(this.Position.y, this.Position.x);
 			}
 		}
 
@@ -229,7 +229,7 @@ namespace MineS
 		{
 			get
 			{
-				return this.lockCount > 0;
+				return this.serializeData.lockCount > 0;
 			}
 		}
 
@@ -250,7 +250,7 @@ namespace MineS
 		{
 			get
 			{
-				if(!this.CanStep)
+				if(!this.serializeData.canStep)
 				{
 					return GameDefine.ActionableType.NotStep;
 				}
@@ -260,6 +260,47 @@ namespace MineS
 				}
 
 				return GameDefine.ActionableType.OK;
+			}
+		}
+
+		public void Serialize()
+		{
+			HK.Framework.SaveData.SetClass<CellSerializeData>(this.SerializeKeyName, this.serializeData);
+			if(this.cellClickAction != null)
+			{
+				HK.Framework.SaveData.SetString(this.CellClickKeyName, this.cellClickAction.GetType().FullName);
+				this.cellClickAction.Serialize(this.Position.y, this.Position.x);
+			}
+			else
+			{
+				HK.Framework.SaveData.Remove(this.CellClickKeyName);
+			}
+		}
+
+		public void Deserialize()
+		{
+			this.serializeData = HK.Framework.SaveData.GetClass<CellSerializeData>(this.SerializeKeyName, null);
+			if(HK.Framework.SaveData.ContainsKey(this.CellClickKeyName))
+			{
+				var cellClickType = System.Type.GetType(HK.Framework.SaveData.GetString(this.CellClickKeyName));
+				this.cellClickAction = (CellClickActionBase)System.Activator.CreateInstance(cellClickType);
+				this.cellClickAction.Deserialize(this.Position.y, this.Position.x);
+			}
+		}
+
+		private string SerializeKeyName
+		{
+			get
+			{
+				return string.Format("DungeonCellData_{0}_{1}", this.Position.y, this.Position.x);
+			}
+		}
+
+		private string CellClickKeyName
+		{
+			get
+			{
+				return string.Format("CellClickAction_{0}_{1}", this.Position.y, this.Position.x);
 			}
 		}
 	}

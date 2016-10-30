@@ -10,6 +10,11 @@ namespace MineS
 	/// </summary>
 	public class AbnormalStatusXray : AbnormalStatusBase
 	{
+		public AbnormalStatusXray()
+			: base()
+		{
+		}
+
 		public AbnormalStatusXray(IAttack holder, int remainingTurn, int waitTurn)
 			: base(holder, remainingTurn, waitTurn)
 		{

@@ -12,6 +12,8 @@ namespace MineS
 	{
 		private EnemyData enemy;
 
+		private const string EnemySerializeFormat = "CreateEnemyActionEnemy_{0}_{1}";
+
 		public override void Invoke(CellData data)
 		{
 			InformationManager.OnVisibleEnemy(this.enemy);
@@ -26,6 +28,10 @@ namespace MineS
 
 		public override void SetCellData(CellData data)
 		{
+			if(this.enemy != null)
+			{
+				return;
+			}
 			this.enemy = EnemyManager.Instance.Create(data);
 		}
 
@@ -43,6 +49,21 @@ namespace MineS
 			{
 				return this.enemy.Image;
 			}
+		}
+
+		public override void Serialize(int y, int x)
+		{
+			this.enemy.Serialize(this.GetEnemySerializeName(y, x));
+		}
+
+		public override void Deserialize(int y, int x)
+		{
+			this.enemy = EnemyData.Deserialize(this.GetEnemySerializeName(y, x), CellManager.Instance.CellControllers[y, x]);
+		}
+
+		private string GetEnemySerializeName(int y, int x)
+		{
+			return string.Format(EnemySerializeFormat, y, x);
 		}
 	}
 }

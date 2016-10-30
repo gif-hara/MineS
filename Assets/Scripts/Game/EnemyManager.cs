@@ -15,6 +15,8 @@ namespace MineS
 
 		public Dictionary<EnemyData, CellData> InEnemyCells{ private set; get; }
 
+		private const string EnemyCountKeyName = "EnemyManager_EnemyCount";
+
 		protected override void Awake()
 		{
 			base.Awake();
@@ -149,6 +151,48 @@ namespace MineS
 			{
 				return this.Enemies.Where(e => e.Key.IsIdentification).Select(e => e.Value).ToList();
 			}
+		}
+
+		public void Serialize()
+		{
+			HK.Framework.SaveData.SetInt(EnemyCountKeyName, this.Enemies.Count);
+			int index = 0;
+			foreach(var d in this.Enemies)
+			{
+				d.Key.Position.Serialize(this.GetCellSerializeKeyName(index));
+				d.Value.Serialize(this.GetEnemySerializeKeyName(index));
+				index++;
+			}
+		}
+
+		public void Deserialize()
+		{
+			if(!HK.Framework.SaveData.ContainsKey(EnemyCountKeyName))
+			{
+				return;
+			}
+
+			this.Enemies = new Dictionary<CellData, EnemyData>();
+			this.InEnemyCells = new Dictionary<EnemyData, CellData>();
+			var count = HK.Framework.SaveData.GetInt(EnemyCountKeyName);
+			for(int i = 0; i < count; i++)
+			{
+				var cell = Cell.Deserialize(this.GetCellSerializeKeyName(i));
+				var enemy = EnemyData.Deserialize(this.GetEnemySerializeKeyName(i), CellManager.Instance.CellControllers[cell.y, cell.x]);
+				var cellData = CellManager.Instance.CellDatabase[cell.y, cell.x];
+				this.Enemies.Add(cellData, enemy);
+				this.InEnemyCells.Add(enemy, cellData);
+			}
+		}
+
+		private string GetEnemySerializeKeyName(int index)
+		{
+			return string.Format("EnemyManager_Enemy{0}", index);
+		}
+
+		private string GetCellSerializeKeyName(int index)
+		{
+			return string.Format("EnemyManager_Cell{0}", index);
 		}
 	}
 }

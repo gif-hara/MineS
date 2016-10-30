@@ -8,8 +8,12 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
+	[System.Serializable]
 	public abstract class CellClickActionBase : IIdentification
 	{
+		[SerializeField]
+		protected bool isUseXray = false;
+
 		protected CellController cellController;
 
 		public abstract GameDefine.EventType EventType{ get; }
@@ -29,12 +33,22 @@ namespace MineS
 
 		public virtual void OnUseXray()
 		{
+			this.isUseXray = true;
 			this.cellController.SetImage(this.Image);
 		}
 
 		public virtual void OnIdentification(CellData cellData)
 		{
-			
+		}
+
+		public virtual void Serialize(int y, int x)
+		{
+			Debug.AssertFormat(false, "{0}のSerialize処理がありませんでした.", this.GetType().Name);
+		}
+
+		public virtual void Deserialize(int y, int x)
+		{
+			Debug.AssertFormat(false, "{0}のDeserialize処理がありませんでした.", this.GetType().Name);
 		}
 	}
 }

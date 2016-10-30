@@ -24,6 +24,8 @@ namespace MineS
 
 		public GameDefine.CellClickMode ClickMode{ private set; get; }
 
+		public CellData[,] CellDatabase{ get { return this.cellDatabase; } }
+
 		void Start()
 		{
 			this.ClickMode = GameDefine.CellClickMode.Step;
@@ -36,15 +38,11 @@ namespace MineS
 				}
 			}
 
-			var database = this.CreateCellDatabaseFromDungeonData();
-			this.SetCell(database);
-			this.InitializeStep();
-
 			DungeonManager.Instance.AddNextFloorEvent(this.NextFloor);
 			TurnManager.Instance.AddLateEndTurnEvent(this.OnLateTurnProgress);
 		}
 
-		public void SetCell(CellData[,] database)
+		private void SetCell(CellData[,] database)
 		{
 			this.cellDatabase = database;
 			for(int y = 0; y < GameDefine.CellRowMax; y++)
@@ -90,8 +88,7 @@ namespace MineS
 
 		private void NextFloor()
 		{
-			this.SetCell(this.CreateCellDatabaseFromDungeonData());
-			this.InitializeStep();
+			this.CreateCellDatabaseFromDungeonData();
 		}
 
 		private void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
@@ -200,10 +197,11 @@ namespace MineS
 			initialCell.Identification(true, isXray, false);
 		}
 
-		private CellData[,] CreateCellDatabaseFromDungeonData()
+		public void CreateCellDatabaseFromDungeonData()
 		{
 			var dungeonManager = DungeonManager.Instance;
-			return dungeonManager.CurrentData.Create(this);
+			this.SetCell(dungeonManager.CurrentData.Create(this));
+			this.InitializeStep();
 		}
 
 		private void CheckCellData(CellData[,] database)
@@ -275,6 +273,18 @@ namespace MineS
 				return null;
 			}
 			return blankCells[Random.Range(0, blankCells.Count)];
+		}
+
+		public void Serialize()
+		{
+			DungeonSerializer.SerializeCellData(this.cellDatabase, GameDefine.CellRowMax, GameDefine.CellCulumnMax);
+		}
+
+		public void Deserialize()
+		{
+			this.cellDatabase = DungeonSerializer.DeserializeCellData(this.CellControllers, GameDefine.CellRowMax, GameDefine.CellCulumnMax);
+			EnemyManager.Instance.Deserialize();
+			this.SetCell(this.cellDatabase);
 		}
 	}
 }

@@ -32,5 +32,13 @@ namespace MineS
 				return TextureManager.Instance.stairImage.Element;
 			}
 		}
+
+		public override void Serialize(int y, int x)
+		{
+		}
+
+		public override void Deserialize(int y, int x)
+		{
+		}
 	}
 }

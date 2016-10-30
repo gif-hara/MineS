@@ -12,6 +12,8 @@ namespace MineS
 	{
 		private Item item;
 
+		private const string ItemSerialzeKeyFormat = "AcquireItemActionItem_{0}_{1}";
+
 		public AcquireItemAction(Item item, CellController cellController)
 		{
 			this.item = item;
@@ -30,6 +32,16 @@ namespace MineS
 			}
 		}
 
+		public override void Serialize(int y, int x)
+		{
+			this.item.Serialize(this.GetItemSerialzeKeyName(y, x));
+		}
+
+		public override void Deserialize(int y, int x)
+		{
+			this.item = Item.Deserialize(this.GetItemSerialzeKeyName(y, x));
+		}
+
 		public override GameDefine.EventType EventType
 		{
 			get
@@ -44,6 +56,11 @@ namespace MineS
 			{
 				return this.item.InstanceData.Image;
 			}
+		}
+
+		private string GetItemSerialzeKeyName(int y, int x)
+		{
+			return string.Format(ItemSerialzeKeyFormat, y, x);
 		}
 	}
 }
