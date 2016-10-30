@@ -38,8 +38,8 @@ namespace MineS
 		#endif
 		public static void Remove()
 		{
-			var saveData = new FileInfo(HK.Framework.SaveData.Savedatabase.Path + HK.Framework.SaveData.Savedatabase.FileName);
-			saveData.Delete();
+			HK.Framework.SaveData.Clear();
+			HK.Framework.SaveData.Save();
 		}
 	}
 }
