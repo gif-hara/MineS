@@ -12,6 +12,11 @@ namespace MineS
 	{
 		private Item item;
 
+		public CreateItemAction()
+		{
+			
+		}
+
 		public CreateItemAction(Item item)
 		{
 			this.item = item;
@@ -19,8 +24,7 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			data.BindCellClickAction(new AcquireItemAction(this.item, this.cellController));
-			data.BindDeployDescription(new DeployDescriptionOnItem(this.item));
+			data.BindCellClickAction(new AcquireItemAction(this.item));
 		}
 
 		public override GameDefine.EventType EventType
@@ -37,6 +41,21 @@ namespace MineS
 			{
 				return this.item.InstanceData.Image;
 			}
+		}
+
+		public override void Serialize(int y, int x)
+		{
+			this.item.Serialize(this.ItemSerializeKeyName(y, x));
+		}
+
+		public override void Deserialize(int y, int x)
+		{
+			this.item = Item.Deserialize(this.ItemSerializeKeyName(y, x));
+		}
+
+		private string ItemSerializeKeyName(int y, int x)
+		{
+			return string.Format("CreateItemActionItem_{0}_{1}", y, x);
 		}
 	}
 }

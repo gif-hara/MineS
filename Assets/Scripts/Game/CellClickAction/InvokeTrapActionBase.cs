@@ -10,8 +10,16 @@ namespace MineS
 	/// </summary>
 	public abstract class InvokeTrapActionBase : CellClickActionBase
 	{
+		private bool isInvoke = true;
+
 		public override void Invoke(CellData data)
 		{
+			if(!this.isInvoke)
+			{
+				return;
+			}
+
+			this.isInvoke = false;
 			this.cellController.SetImage(this.Image);
 
 			var player = PlayerManager.Instance.Data;
@@ -22,6 +30,21 @@ namespace MineS
 
 			data.BindDeployDescription(new DeployDescriptionOnDescriptionData(this.DescriptionKey));
 			this.InternalInvoke(data);
+		}
+
+		public override void SetCellController(CellController cellController)
+		{
+			base.SetCellController(cellController);
+			this.cellController.SetImage(this.Image);
+		}
+
+		public override void SetCellData(CellData data)
+		{
+			base.SetCellData(data);
+			if(data.IsIdentification)
+			{
+				data.BindDeployDescription(new DeployDescriptionOnDescriptionData(this.DescriptionKey));
+			}
 		}
 
 		public override GameDefine.EventType EventType
@@ -35,5 +58,20 @@ namespace MineS
 		public abstract void InternalInvoke(CellData data);
 
 		public abstract string DescriptionKey{ get; }
+
+		public override void Serialize(int y, int x)
+		{
+			HK.Framework.SaveData.SetInt(this.GetIsInvokeSerializeKeyName(y, x), this.isInvoke ? 1 : 0);
+		}
+
+		public override void Deserialize(int y, int x)
+		{
+			this.isInvoke = HK.Framework.SaveData.GetInt(this.GetIsInvokeSerializeKeyName(y, x)) == 1;
+		}
+
+		private string GetIsInvokeSerializeKeyName(int y, int x)
+		{
+			return string.Format("InvokeTrapActionIsInvoke_{0}_{1}", y, x);
+		}
 	}
 }

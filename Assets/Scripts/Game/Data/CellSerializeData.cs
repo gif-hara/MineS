@@ -22,5 +22,8 @@ namespace MineS
 
 		[SerializeField]
 		public int lockCount;
+
+		[SerializeField]
+		public bool isXray;
 	}
 }

@@ -12,6 +12,10 @@ namespace MineS
 	{
 		private bool isTown;
 
+		public VisitBlackSmithAction()
+		{
+			this.isTown = false;
+		}
 
 		public VisitBlackSmithAction(bool isTown)
 		{
@@ -67,6 +71,21 @@ namespace MineS
 			{
 				return TextureManager.Instance.blackSmith.Element;
 			}
+		}
+
+		public override void Serialize(int y, int x)
+		{
+			HK.Framework.SaveData.SetInt(this.GetIsTownSerializeKeyName(y, x), this.isTown ? 1 : 0);
+		}
+
+		public override void Deserialize(int y, int x)
+		{
+			this.isTown = HK.Framework.SaveData.GetInt(this.GetIsTownSerializeKeyName(y, x)) == 1;
+		}
+
+		private string GetIsTownSerializeKeyName(int y, int x)
+		{
+			return string.Format("VisitBlackSmithActionIsTown_{0}_{1}", y, x);
 		}
 	}
 }

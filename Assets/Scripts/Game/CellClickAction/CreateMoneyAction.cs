@@ -18,7 +18,6 @@ namespace MineS
 		{
 			this.cellController.SetImage(this.Image);
 			data.BindCellClickAction(new InvokeMoneyAction(DungeonManager.Instance.CurrentDataAsDungeon.AcquireMoneyRange.Random));
-			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("Money"));
 		}
 
 		public override GameDefine.EventType EventType
@@ -35,6 +34,14 @@ namespace MineS
 			{
 				return TextureManager.Instance.moneyImage.Element;
 			}
+		}
+
+		public override void Serialize(int y, int x)
+		{
+		}
+
+		public override void Deserialize(int y, int x)
+		{
 		}
 	}
 }

@@ -14,6 +14,11 @@ namespace MineS
 
 		private bool isTown;
 
+		public VisitShopAction()
+		{
+			
+		}
+
 		public VisitShopAction(bool isTown)
 		{
 			var dungeonManager = DungeonManager.Instance;
@@ -70,6 +75,29 @@ namespace MineS
 			{
 				return TextureManager.Instance.shop.Element;
 			}
+		}
+
+		public override void Serialize(int y, int x)
+		{
+			HK.Framework.SaveData.SetInt(this.GetIsTownSerializeKeyName(y, x), this.isTown ? 1 : 0);
+			this.goods.Serialize(this.GetGoodsSerializeKeyName(y, x));
+		}
+
+		public override void Deserialize(int y, int x)
+		{
+			this.isTown = HK.Framework.SaveData.GetInt(this.GetIsTownSerializeKeyName(y, x)) == 1;
+			this.goods = new Inventory(null, GameDefine.ShopInventoryMax);
+			this.goods.Deserialize(this.GetGoodsSerializeKeyName(y, x));
+		}
+
+		private string GetIsTownSerializeKeyName(int y, int x)
+		{
+			return string.Format("VisitShopActionIsTown_{0}_{1}", y, x);
+		}
+
+		private string GetGoodsSerializeKeyName(int y, int x)
+		{
+			return string.Format("VisitShopActionGoods_{0}_{1}", y, x);
 		}
 	}
 }

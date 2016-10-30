@@ -12,6 +12,10 @@ namespace MineS
 	{
 		private GameDefine.AbnormalStatusType type;
 
+		public InvokeAbnormalStatusTrapAction()
+		{
+		}
+
 		public InvokeAbnormalStatusTrapAction(GameDefine.AbnormalStatusType type)
 		{
 			this.type = type;
@@ -24,7 +28,6 @@ namespace MineS
 
 		public override void InternalInvoke(CellData data)
 		{
-			data.BindCellClickAction(null);
 			this.cellController.SetImage(this.Image);
 			PlayerManager.Instance.AddAbnormalStatus(this.type, GameDefine.AbnormalStatusTrapRemainingTurn, 1);
 		}
@@ -33,20 +36,7 @@ namespace MineS
 		{
 			get
 			{
-				switch(this.type)
-				{
-				case GameDefine.AbnormalStatusType.Poison:
-					return TextureManager.Instance.trap.poison.Element;
-				case GameDefine.AbnormalStatusType.Blur:
-					return TextureManager.Instance.trap.blur.Element;
-				case GameDefine.AbnormalStatusType.Dull:
-					return TextureManager.Instance.trap.dull.Element;
-				case GameDefine.AbnormalStatusType.Gout:
-					return TextureManager.Instance.trap.gout.Element;
-				default:
-					Debug.AssertFormat(false, "不正な値です. type = {0}", type);
-					return null;
-				}
+				return TextureManager.Instance.trap.Get(this.type);
 			}
 		}
 
@@ -69,6 +59,23 @@ namespace MineS
 					return "";
 				}
 			}
+		}
+
+		public override void Serialize(int y, int x)
+		{
+			base.Serialize(y, x);
+			HK.Framework.SaveData.SetInt(this.GetTypeSerializeKeyName(y, x), (int)this.type);
+		}
+
+		public override void Deserialize(int y, int x)
+		{
+			base.Deserialize(y, x);
+			this.type = (GameDefine.AbnormalStatusType)HK.Framework.SaveData.GetInt(this.GetTypeSerializeKeyName(y, x));
+		}
+
+		private string GetTypeSerializeKeyName(int y, int x)
+		{
+			return string.Format("InvokeAbnormalStatusTrapActionType_{0}_{1}", y, x);
 		}
 	}
 }

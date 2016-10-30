@@ -12,12 +12,14 @@ namespace MineS
 	{
 		private Item item;
 
-		private const string ItemSerialzeKeyFormat = "AcquireItemActionItem_{0}_{1}";
+		public AcquireItemAction()
+		{
+			this.item = null;
+		}
 
-		public AcquireItemAction(Item item, CellController cellController)
+		public AcquireItemAction(Item item)
 		{
 			this.item = item;
-			cellController.SetImage(this.item.InstanceData.Image);
 		}
 
 		public override void Invoke(CellData data)
@@ -30,6 +32,18 @@ namespace MineS
 				data.BindDeployDescription(null);
 				SEManager.Instance.PlaySE(SEManager.Instance.acquireItem);
 			}
+		}
+
+		public override void SetCellController(CellController cellController)
+		{
+			base.SetCellController(cellController);
+			this.cellController.SetImage(this.item.InstanceData.Image);
+		}
+
+		public override void SetCellData(CellData data)
+		{
+			base.SetCellData(data);
+			data.BindDeployDescription(new DeployDescriptionOnItem(this.item));
 		}
 
 		public override void Serialize(int y, int x)
@@ -60,7 +74,7 @@ namespace MineS
 
 		private string GetItemSerialzeKeyName(int y, int x)
 		{
-			return string.Format(ItemSerialzeKeyFormat, y, x);
+			return string.Format("AcquireItemActionItem_{0}_{1}", y, x);
 		}
 	}
 }

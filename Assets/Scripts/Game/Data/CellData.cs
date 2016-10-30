@@ -115,6 +115,7 @@ namespace MineS
 				return;
 			}
 
+			this.serializeData.isXray = true;
 			this.cellClickAction.OnUseXray();
 		}
 
@@ -285,6 +286,14 @@ namespace MineS
 				var cellClickType = System.Type.GetType(HK.Framework.SaveData.GetString(this.CellClickKeyName));
 				this.cellClickAction = (CellClickActionBase)System.Activator.CreateInstance(cellClickType);
 				this.cellClickAction.Deserialize(this.Position.y, this.Position.x);
+			}
+		}
+
+		public void UseXrayOnDeserialize()
+		{
+			if(this.serializeData.isXray)
+			{
+				this.OnUseXray();
 			}
 		}
 

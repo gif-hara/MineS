@@ -11,9 +11,6 @@ namespace MineS
 	[System.Serializable]
 	public abstract class CellClickActionBase : IIdentification
 	{
-		[SerializeField]
-		protected bool isUseXray = false;
-
 		protected CellController cellController;
 
 		public abstract GameDefine.EventType EventType{ get; }
@@ -33,7 +30,6 @@ namespace MineS
 
 		public virtual void OnUseXray()
 		{
-			this.isUseXray = true;
 			this.cellController.SetImage(this.Image);
 		}
 

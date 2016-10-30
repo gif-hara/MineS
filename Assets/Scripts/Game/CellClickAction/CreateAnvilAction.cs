@@ -18,7 +18,6 @@ namespace MineS
 		{
 			this.cellController.SetImage(this.Image);
 			data.BindCellClickAction(new InvokeAnvilAction());
-			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("Anvil"));
 		}
 
 		public override GameDefine.EventType EventType
@@ -35,6 +34,14 @@ namespace MineS
 			{
 				return TextureManager.Instance.anvilImage.Element;
 			}
+		}
+
+		public override void Serialize(int y, int x)
+		{
+		}
+
+		public override void Deserialize(int y, int x)
+		{
 		}
 	}
 }

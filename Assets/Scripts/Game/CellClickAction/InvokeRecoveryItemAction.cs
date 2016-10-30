@@ -20,6 +20,18 @@ namespace MineS
 			InformationManager.OnRecovery(value);
 		}
 
+		public override void SetCellController(CellController cellController)
+		{
+			base.SetCellController(cellController);
+			this.cellController.SetImage(this.Image);
+		}
+
+		public override void SetCellData(CellData data)
+		{
+			base.SetCellData(data);
+			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("RecoveryItem"));
+		}
+
 		public override GameDefine.EventType EventType
 		{
 			get
@@ -34,6 +46,14 @@ namespace MineS
 			{
 				return TextureManager.Instance.recoveryItem.Element;
 			}
+		}
+
+		public override void Serialize(int y, int x)
+		{
+		}
+
+		public override void Deserialize(int y, int x)
+		{
 		}
 	}
 }

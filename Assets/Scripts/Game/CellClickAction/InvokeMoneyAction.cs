@@ -12,6 +12,11 @@ namespace MineS
 	{
 		private int money;
 
+		public InvokeMoneyAction()
+		{
+			this.money = 0;
+		}
+
 		public InvokeMoneyAction(int money)
 		{
 			this.money = money;
@@ -26,6 +31,18 @@ namespace MineS
 			InformationManager.AcquireMoney(this.money);
 		}
 
+		public override void SetCellController(CellController cellController)
+		{
+			base.SetCellController(cellController);
+			this.cellController.SetImage(this.Image);
+		}
+
+		public override void SetCellData(CellData data)
+		{
+			base.SetCellData(data);
+			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("Money"));
+		}
+
 		public override GameDefine.EventType EventType
 		{
 			get
@@ -38,8 +55,23 @@ namespace MineS
 		{
 			get
 			{
-				return TextureManager.Instance.recoveryItem.Element;
+				return TextureManager.Instance.moneyImage.Element;
 			}
+		}
+
+		public override void Serialize(int y, int x)
+		{
+			HK.Framework.SaveData.SetInt(this.GetSerializeKeyName(y, x), this.money);
+		}
+
+		public override void Deserialize(int y, int x)
+		{
+			this.money = HK.Framework.SaveData.GetInt(this.GetSerializeKeyName(y, x));
+		}
+
+		private string GetSerializeKeyName(int y, int x)
+		{
+			return string.Format("InvokeMoneyActionMoney_{0}_{1}", y, x);
 		}
 	}
 }

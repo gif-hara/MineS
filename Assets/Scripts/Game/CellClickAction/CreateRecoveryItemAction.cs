@@ -12,10 +12,16 @@ namespace MineS
 	{
 		public override void Invoke(CellData data)
 		{
-			data.Controller.SetImage(TextureManager.Instance.recoveryItem.Element);
+			data.Controller.SetImage(this.Image);
 			data.Controller.SetActiveStatusObject(false);
 			data.BindCellClickAction(new InvokeRecoveryItemAction());
 			data.BindDeployDescription(new DeployDescriptionOnDescriptionData("RecoveryItem"));
+		}
+
+		public override void SetCellController(CellController cellController)
+		{
+			base.SetCellController(cellController);
+			this.cellController.SetImage(this.Image);
 		}
 
 		public override GameDefine.EventType EventType
@@ -32,6 +38,14 @@ namespace MineS
 			{
 				return TextureManager.Instance.recoveryItem.Element;
 			}
+		}
+
+		public override void Serialize(int y, int x)
+		{
+		}
+
+		public override void Deserialize(int y, int x)
+		{
 		}
 	}
 }

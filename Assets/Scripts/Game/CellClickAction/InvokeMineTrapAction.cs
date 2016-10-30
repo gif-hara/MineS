@@ -12,7 +12,6 @@ namespace MineS
 	{
 		public override void InternalInvoke(CellData data)
 		{
-			data.BindCellClickAction(null);
 			var player = PlayerManager.Instance.Data;
 			player.TakeDamageRaw(null, Calculator.GetMineTrapDamageValue(player.HitPointMax), true);
 		}
@@ -31,6 +30,14 @@ namespace MineS
 			{
 				return "TrapMine";
 			}
+		}
+
+		public override void Serialize(int y, int x)
+		{
+		}
+
+		public override void Deserialize(int y, int x)
+		{
 		}
 	}
 }

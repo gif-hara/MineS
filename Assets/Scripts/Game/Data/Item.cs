@@ -259,7 +259,7 @@ namespace MineS
 						user.ForceDead();
 						var cellData = EnemyManager.Instance.InEnemyCells[user as EnemyData];
 						var item = DungeonManager.Instance.CreateItem();
-						cellData.BindCellClickAction(new AcquireItemAction(item, cellData.Controller));
+						cellData.BindCellClickAction(new AcquireItemAction(item));
 						cellData.BindDeployDescription(new DeployDescriptionOnItem(item));
 						InformationManager.OnUseAlchemy(user);
 					}

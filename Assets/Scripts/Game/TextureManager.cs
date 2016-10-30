@@ -94,6 +94,25 @@ namespace MineS
 			public SerializeFieldGetter.Sprite dull;
 
 			public SerializeFieldGetter.Sprite mine;
+
+			public Sprite Get(GameDefine.AbnormalStatusType type)
+			{
+				switch(type)
+				{
+				case GameDefine.AbnormalStatusType.Poison:
+					return poison.Element;
+				case GameDefine.AbnormalStatusType.Blur:
+					return blur.Element;
+				case GameDefine.AbnormalStatusType.Dull:
+					return dull.Element;
+				case GameDefine.AbnormalStatusType.Gout:
+					return gout.Element;
+				default:
+					Debug.AssertFormat(false, "不正な値です. type = {0}", type);
+					return null;
+				}
+
+			}
 		}
 
 		[System.Serializable]
