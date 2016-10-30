@@ -349,6 +349,8 @@ namespace MineS
 				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
 			break;
 			}
+
+			PlayerManager.Instance.Serialize();
 		}
 
 	}

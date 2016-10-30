@@ -47,16 +47,19 @@ namespace MineS
 		{
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalNextFloor);
 			this.dungeonNameFlowController.AddStartTextFadeIn(this.PlayBGM);
-			this.PlayBGM();
 
 			if(DungeonSerializer.ContainsDungeonData)
 			{
 				this.Deserialize();
+				BGMManager.Instance.StartBGM(this.current.GetBGM(this.floorCount));
 			}
 			else
 			{
 				CellManager.Instance.CreateCellDatabaseFromDungeonData();
+				this.PlayBGM();
 			}
+
+			this.observers.ForEach(o => o.ModifiedData(this.current));
 		}
 
 		void OnApplicationQuit()

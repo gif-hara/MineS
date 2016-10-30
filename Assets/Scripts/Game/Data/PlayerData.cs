@@ -36,6 +36,7 @@ namespace MineS
 		public void AddExperience(int value)
 		{
 			this.experience += value;
+			PlayerManager.Instance.Serialize();
 		}
 
 		protected override void OnAttacked(CharacterData target, int damage)
@@ -114,6 +115,7 @@ namespace MineS
 			this.baseArmor += growthData.Armor;
 			SEManager.Instance.PlaySE(SEManager.Instance.levelUp);
 			Object.Instantiate(EffectManager.Instance.prefabLevelUp.Element, CanvasManager.Instance.EffectLv0.transform, false);
+			PlayerManager.Instance.Serialize();
 		}
 
 		public void LevelDown(CharacterMasterData growthData)
@@ -126,6 +128,7 @@ namespace MineS
 			this.AddBaseStrength(-growthData.Strength);
 			this.baseArmor -= growthData.Armor;
 			this.baseArmor = this.Armor < 0 ? 0 : this.Armor;
+			this.cellController.SetImage(this.Image);
 		}
 
 		public void OnChangeDungeon()
