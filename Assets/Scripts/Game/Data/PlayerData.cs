@@ -73,13 +73,18 @@ namespace MineS
 
 		public override void Dead(CharacterData attacker)
 		{
-			DungeonManager.Instance.AddChangeDungeonEvent(this.GameOver);
 			InformationManager.GameOver();
+			PlayerManager.Instance.CloseInventoryUI();
+			PlayerManager.Instance.NotifyCharacterDataObservers();
 			var resultManager = ResultManager.Instance;
 			var causeMessage = attacker == null
 				? resultManager.causeOtherDead.Element.Format(this.Name)
 				: resultManager.causeEnemyDead.Element.Format(attacker.Name);
 			resultManager.Invoke(GameDefine.GameResultType.GameOver, causeMessage);
+			this.Inventory.RemoveAll();
+			this.money = 0;
+			this.OnChangeDungeon();
+			DungeonSerializer.InvalidSaveData();
 		}
 
 		public override string ColorCode
@@ -140,6 +145,7 @@ namespace MineS
 			this.abnormalStatuses.Clear();
 			this.level = 1;
 			this.baseStrength = this.masterData.Strength;
+			PlayerManager.Instance.Serialize();
 		}
 
 		public override void ForceLevelUp(int value)
@@ -253,15 +259,6 @@ namespace MineS
 			}
 
 			return (equipment.InstanceData as EquipmentInstanceData).Abilities;
-		}
-
-		public void GameOver()
-		{
-			this.Inventory.RemoveAll();
-			this.money = 0;
-			DungeonManager.Instance.RemoveChangeDungeonEvent(this.GameOver);
-			this.OnChangeDungeon();
-			PlayerManager.Instance.NotifyCharacterDataObservers();
 		}
 
 		public void Serialize(string key)

@@ -22,6 +22,8 @@ namespace MineS
 
 		private int floorCount = 1;
 
+		private UnityEvent preChangeDungeonEvent = new UnityEvent();
+
 		private UnityEvent changeDungeonEvent = new UnityEvent();
 
 		private UnityEvent nextFloorEvent = new UnityEvent();
@@ -31,6 +33,8 @@ namespace MineS
 		public DungeonData CurrentDataAsDungeon{ get { return this.current as DungeonData; } }
 
 		public int Floor{ get { return this.floorCount; } }
+
+		private int cachedAddFloorCount = 0;
 
 		protected override void Awake()
 		{
@@ -64,7 +68,7 @@ namespace MineS
 
 		void OnApplicationQuit()
 		{
-			if(this.current.Serializable)
+			if(this.current.Serializable && !ResultManager.Instance.IsResult)
 			{
 				this.Serialize();
 			}
@@ -80,6 +84,11 @@ namespace MineS
 			this.floorCount = floor;
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalChangeDungeon);
 			this.NextFloorEvent(0);
+		}
+
+		public void AddPreChangeDungeonEvent(UnityAction otherEvent)
+		{
+			this.preChangeDungeonEvent.AddListener(otherEvent);
 		}
 
 		public void AddChangeDungeonEvent(UnityAction otherEvent)
@@ -99,14 +108,14 @@ namespace MineS
 
 		public void NextFloorEvent(int addValue)
 		{
+			this.cachedAddFloorCount = addValue;
 			SEManager.Instance.PlaySE(SEManager.Instance.stair);
-			this.floorCount += addValue;
 			if(this.current.CanPlayBGM(this.floorCount))
 			{
 				BGMManager.Instance.FadeOut();
 			}
 			//this.InternalNextFloor();
-			this.dungeonNameFlowController.StartFadeOut(this.current, this.CurrentData.Name, this.floorCount);
+			this.dungeonNameFlowController.StartFadeOut(this.current, this.CurrentData.Name, this.floorCount + 1);
 		}
 
 		public EnemyData CreateEnemy(CellController cellController)
@@ -140,6 +149,7 @@ namespace MineS
 
 		private void InternalNextFloor()
 		{
+			this.floorCount += this.cachedAddFloorCount;
 			EnemyManager.Instance.RemoveAll();
 			this.nextFloorEvent.Invoke();
 			this.observers.ForEach(o => o.ModifiedData(this.CurrentData));
@@ -147,6 +157,7 @@ namespace MineS
 
 		private void InternalChangeDungeon()
 		{
+			this.preChangeDungeonEvent.Invoke();
 			this.changeDungeonEvent.Invoke();
 			this.dungeonNameFlowController.RemoveCompleteFadeOutEvent(this.InternalChangeDungeon);
 		}

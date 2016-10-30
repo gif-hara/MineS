@@ -52,8 +52,6 @@ namespace MineS
 
 		private const string PlayerDataSerializeKeyName = "PlayerData";
 
-		private const string PlayerMoneyKeyName = "PlayerData_Money";
-
 		protected override void Awake()
 		{
 			base.Awake();
@@ -132,6 +130,11 @@ namespace MineS
 
 		public void NotifyCharacterDataObservers()
 		{
+			if(ResultManager.Instance.IsResult)
+			{
+				return;
+			}
+
 			for(int i = 0; i < this.characterDataObservers.Count; i++)
 			{
 				this.characterDataObservers[i].ModifiedData(this.Data);
@@ -150,9 +153,13 @@ namespace MineS
 
 		public void CloseInventoryUI()
 		{
-			this.currentOpenInventory.SetExchangeItem(null, null);
 			this.inventoryUI.SetActive(false);
-			this.onCloseInventoryUI.Invoke(this.currentOpenInventory);
+
+			if(this.currentOpenInventory != null)
+			{
+				this.currentOpenInventory.SetExchangeItem(null, null);
+				this.onCloseInventoryUI.Invoke(this.currentOpenInventory);
+			}
 		}
 
 		public void SelectItem(Item item)

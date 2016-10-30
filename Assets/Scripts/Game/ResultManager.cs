@@ -85,13 +85,18 @@ namespace MineS
 
 		private List<ResultAchievementElementController> createdObjects = new List<ResultAchievementElementController>();
 
+		public bool IsResult{ private set; get; }
+
 		void Start()
 		{
+			this.IsResult = false;
 			DungeonManager.Instance.AddNextFloorEvent(this.OnNextFloor);
+			DungeonManager.Instance.AddPreChangeDungeonEvent(this.OnPreChangeDungeon);
 		}
 
 		public void Invoke(GameDefine.GameResultType type, string causeMessage)
 		{
+			this.IsResult = true;
 			this.causeText.text = causeMessage;
 			var playerData = PlayerManager.Instance.Data;
 			var achievementManager = AchievementManager.Instance;
@@ -124,6 +129,11 @@ namespace MineS
 			this.uiRoot.gameObject.SetActive(false);
 			this.createdObjects.ForEach(c => Destroy(c.gameObject));
 			this.createdObjects.Clear();
+		}
+
+		private void OnPreChangeDungeon()
+		{
+			this.IsResult = false;
 		}
 	}
 }

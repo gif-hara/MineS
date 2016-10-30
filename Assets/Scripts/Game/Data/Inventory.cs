@@ -73,6 +73,10 @@ namespace MineS
 		public void RemoveItem(Item item)
 		{
 			var index = this.items.FindIndex(i => i == item);
+			if(index == -1)
+			{
+				return;
+			}
 			this.items[index] = null;
 		}
 
