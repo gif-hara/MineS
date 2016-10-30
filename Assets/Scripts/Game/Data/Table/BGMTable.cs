@@ -57,7 +57,7 @@ namespace MineS
 		
 		public void Check(int floorMax)
 		{
-			new TableChecker().Check(this.elements, typeof(BGMTable), floorMax);
+			new TableChecker().Check(this.elements, this.GetType(), floorMax);
 		}
 
 		public static BGMTable CreateFromCsv(string dungeonName)

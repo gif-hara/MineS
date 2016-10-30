@@ -48,7 +48,7 @@ namespace MineS
 
 		public void Check(int floorMax)
 		{
-			new TableChecker().Check(this.elements, typeof(MapChipTable), floorMax);
+			new TableChecker().Check(this.elements, this.GetType(), floorMax);
 		}
 
 		public static MapChipTable CreateFromCsv(string dungeonName)
