@@ -152,7 +152,7 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static int GetArtisanRate(IAttack attacker)
 		{
-			return attacker.GetAbilityNumber(GameDefine.AbilityType.Artisan);
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Artisan) * 3;
 		}
 
 		/// <summary>
