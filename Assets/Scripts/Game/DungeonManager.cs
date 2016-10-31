@@ -110,12 +110,12 @@ namespace MineS
 		{
 			this.cachedAddFloorCount = addValue;
 			SEManager.Instance.PlaySE(SEManager.Instance.stair);
-			if(this.current.CanPlayBGM(this.floorCount))
+			if(this.current.CanPlayBGM(this.floorCount + addValue))
 			{
 				BGMManager.Instance.FadeOut();
 			}
 			//this.InternalNextFloor();
-			this.dungeonNameFlowController.StartFadeOut(this.current, this.CurrentData.Name, this.floorCount + 1);
+			this.dungeonNameFlowController.StartFadeOut(this.current, this.CurrentData.Name, this.floorCount + addValue);
 		}
 
 		public EnemyData CreateEnemy(CellController cellController)
