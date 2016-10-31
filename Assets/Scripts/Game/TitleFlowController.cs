@@ -36,8 +36,9 @@ namespace MineS
 		private void FadeOut()
 		{
 			DOTween.ToAlpha(() => new Color(1.0f, 1.0f, 1.0f, this.canvasGroup.alpha), (x) => this.canvasGroup.alpha = x.a, 0.0f, 0.5f)
+				.SetDelay(1.0f)
 				.OnStart(() => startFadeOutEvent.Invoke())
-				.SetDelay(1.0f);
+				.OnComplete(() => this.canvasGroup.gameObject.SetActive(false));
 		}
 	}
 }
