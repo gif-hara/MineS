@@ -35,7 +35,6 @@ namespace MineS
 		public override void SetCellController(CellController cellController)
 		{
 			base.SetCellController(cellController);
-			this.cellController.SetImage(this.Image);
 		}
 
 		public override void SetCellData(CellData data)
@@ -43,6 +42,7 @@ namespace MineS
 			base.SetCellData(data);
 			if(data.IsIdentification)
 			{
+				this.cellController.SetImage(this.Image);
 				data.BindDeployDescription(new DeployDescriptionOnDescriptionData(this.DescriptionKey));
 			}
 		}
