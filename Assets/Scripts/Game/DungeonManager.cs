@@ -20,6 +20,9 @@ namespace MineS
 		[SerializeField]
 		private List<DungeonDataObserver> observers;
 
+		[SerializeField]
+		private TitleFlowController titleFlowController;
+
 		private int floorCount = 1;
 
 		private UnityEvent preChangeDungeonEvent = new UnityEvent();
@@ -51,16 +54,15 @@ namespace MineS
 		{
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalNextFloor);
 			this.dungeonNameFlowController.AddStartTextFadeIn(this.PlayBGM);
+			this.titleFlowController.AddStartFadeOutEvent(this.OnStartTitleFadeOut);
 
 			if(DungeonSerializer.ContainsDungeonData)
 			{
 				this.Deserialize();
-				BGMManager.Instance.StartBGM(this.current.GetBGM(this.floorCount));
 			}
 			else
 			{
 				CellManager.Instance.CreateCellDatabaseFromDungeonData();
-				this.PlayBGM();
 			}
 
 			this.observers.ForEach(o => o.ModifiedData(this.current));
@@ -169,6 +171,11 @@ namespace MineS
 				return;
 			}
 
+			BGMManager.Instance.StartBGM(this.current.GetBGM(this.floorCount));
+		}
+
+		private void OnStartTitleFadeOut()
+		{
 			BGMManager.Instance.StartBGM(this.current.GetBGM(this.floorCount));
 		}
 

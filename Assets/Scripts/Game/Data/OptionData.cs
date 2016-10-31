@@ -11,6 +11,7 @@ namespace MineS
 	[System.Serializable]
 	public class OptionData
 	{
+		[SerializeField]
 		public bool isFewMessage;
 	}
 }
