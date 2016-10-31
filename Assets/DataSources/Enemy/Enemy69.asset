@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: Enemy69
   m_EditorClassIdentifier: 
   characterName: "\u6B7B\u795ELv.1"
-  hitPoint: 113
-  strength: 11
+  hitPoint: 108
+  strength: 13
   armor: 0
   hitProbability: 90
   evasion: 0

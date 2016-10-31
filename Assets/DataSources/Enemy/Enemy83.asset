@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: Enemy83
   m_EditorClassIdentifier: 
   characterName: "\u30B7\u30FC\u30D5Lv.3"
-  hitPoint: 361
+  hitPoint: 335
   strength: 33
-  armor: 67
+  armor: 134
   hitProbability: 90
   evasion: 0
   experience: 662

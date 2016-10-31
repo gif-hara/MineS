@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: Enemy22
   m_EditorClassIdentifier: 
   characterName: "\u72FCLv.2"
-  hitPoint: 93
-  strength: 12
+  hitPoint: 83
+  strength: 25
   armor: 0
   hitProbability: 90
   evasion: 0
