@@ -11,24 +11,37 @@ namespace MineS
 	/// </summary>
 	public class ItemManager : SingletonMonoBehaviour<ItemManager>
 	{
+		[System.Serializable]
 		public class IdentifiedItem
 		{
+			[SerializeField]
 			private ItemDataBase item;
 
+			[SerializeField]
 			private string unidentifiedName;
 
-			public bool IsIdentified{ private set; get; }
+			[SerializeField]
+			private bool isIdentified;
+
+			public bool IsIdentified{ get { return this.isIdentified; } }
+
+			public IdentifiedItem()
+			{
+				this.item = null;
+				this.unidentifiedName = "";
+				this.isIdentified = false;
+			}
 
 			public IdentifiedItem(ItemDataBase item, string unidentifiedName, bool isIdentified)
 			{
 				this.item = item;
 				this.unidentifiedName = unidentifiedName;
-				this.IsIdentified = isIdentified;
+				this.isIdentified = isIdentified;
 			}
 
 			public void Identified()
 			{
-				this.IsIdentified = true;
+				this.isIdentified = true;
 			}
 
 			public string ItemName
@@ -54,24 +67,23 @@ namespace MineS
 
 		private Dictionary<string, IdentifiedItem> identifiedDictionary;
 
-		private List<string> unidentifiedStrings;
+		private const string DictionaryCountSerializeKeyName = "ItemManagerIdentifiedDictionaryCount";
 
 		void Start()
 		{
 			DungeonManager.Instance.AddChangeDungeonEvent(this.Initialize);
-			this.Initialize();
 		}
 
 		public void Initialize()
 		{
-			this.unidentifiedStrings = this.unidentifiedStringAsset.database.Select(d => d.value.Get("ja")).ToList();
+			var unidentifiedStrings = this.unidentifiedStringAsset.database.Select(d => d.value.Get("ja")).ToList();
 			this.identifiedDictionary = new Dictionary<string, IdentifiedItem>();
 			this.usableItemList.Database.ForEach(d =>
 			{
-				var unidentifiedStringIndex = Random.Range(0, this.unidentifiedStrings.Count);
-				var identifiedItem = new IdentifiedItem(d, this.unidentifiedStrings[unidentifiedStringIndex], DungeonManager.Instance.CurrentData.ItemIdentified && (d as UsableItemData).CanUnidentified);
+				var unidentifiedStringIndex = Random.Range(0, unidentifiedStrings.Count);
+				var identifiedItem = new IdentifiedItem(d, unidentifiedStrings[unidentifiedStringIndex], DungeonManager.Instance.CurrentData.ItemIdentified && (d as UsableItemData).CanUnidentified);
 				this.identifiedDictionary.Add(d.ItemName, identifiedItem);
-				this.unidentifiedStrings.RemoveAt(unidentifiedStringIndex);
+				unidentifiedStrings.RemoveAt(unidentifiedStringIndex);
 			});
 		}
 
@@ -98,6 +110,47 @@ namespace MineS
 
 			identifiedItem.Identified();
 			return true;
+		}
+
+		public void Serialize()
+		{
+			int count = this.identifiedDictionary.Count;
+			HK.Framework.SaveData.SetInt(DictionaryCountSerializeKeyName, count);
+			int i = 0;
+			foreach(var d in this.identifiedDictionary)
+			{
+				HK.Framework.SaveData.SetString(this.GetDictionaryKeySerializeKeyName(i), d.Key);
+				HK.Framework.SaveData.SetClass<IdentifiedItem>(this.GetDictionaryValueSerializeKeyName(i), d.Value);
+				i++;
+			}
+		}
+
+		public void Deserialize()
+		{
+			if(!HK.Framework.SaveData.ContainsKey(DictionaryCountSerializeKeyName))
+			{
+				return;
+			}
+
+			this.identifiedDictionary = new Dictionary<string, IdentifiedItem>();
+			var count = HK.Framework.SaveData.GetInt(DictionaryCountSerializeKeyName);
+			for(int i = 0; i < count; i++)
+			{
+				this.identifiedDictionary.Add(
+					HK.Framework.SaveData.GetString(this.GetDictionaryKeySerializeKeyName(i)),
+					HK.Framework.SaveData.GetClass<IdentifiedItem>(this.GetDictionaryValueSerializeKeyName(i), null)
+				);
+			}
+		}
+
+		private string GetDictionaryKeySerializeKeyName(int index)
+		{
+			return string.Format("ItemManagerIdentifiedDictionaryKey_{0}", index);
+		}
+
+		private string GetDictionaryValueSerializeKeyName(int index)
+		{
+			return string.Format("ItemManagerIdentifiedDictionaryValue_{0}", index);
 		}
 	}
 }

@@ -176,6 +176,7 @@ namespace MineS
 		{
 			CellManager.Instance.Serialize();
 			EnemyManager.Instance.Serialize();
+			ItemManager.Instance.Serialize();
 			DungeonSerializer.Save(this.floorCount, this.current);
 			HK.Framework.SaveData.Save();
 		}
@@ -183,6 +184,7 @@ namespace MineS
 		private void Deserialize()
 		{
 			CellManager.Instance.Deserialize();
+			ItemManager.Instance.Deserialize();
 			DungeonSerializer.InvalidSaveData();
 			HK.Framework.SaveData.Save();
 		}
