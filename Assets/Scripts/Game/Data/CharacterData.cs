@@ -381,7 +381,7 @@ namespace MineS
 		{
 			this.abnormalStatuses.ForEach(a => a.OnTurnProgress(type, turnCount));
 			this.abnormalStatuses.RemoveAll(a => !a.IsValid);
-			this.abilities.ForEach(a => a.OnTurnProgress(type, turnCount));
+			this.Abilities.ForEach(a => a.OnTurnProgress(type, turnCount));
 		}
 
 		public virtual void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
@@ -407,7 +407,7 @@ namespace MineS
 				return 0;
 			}
 
-			return this.abilities.Count(a => a.Type == type);
+			return this.Abilities.Count(a => a.Type == type);
 		}
 
 		public void CheckArmorMax()
