@@ -65,7 +65,7 @@ namespace MineS
 
 		public SerializeFieldGetter.StringAssetFinder unidentifiedItemName;
 
-		private Dictionary<string, IdentifiedItem> identifiedDictionary;
+		private Dictionary<string, IdentifiedItem> identifiedDictionary = new Dictionary<string, IdentifiedItem>();
 
 		private const string DictionaryCountSerializeKeyName = "ItemManagerIdentifiedDictionaryCount";
 
@@ -89,18 +89,30 @@ namespace MineS
 
 		public string GetItemName(ItemInstanceDataBase item)
 		{
+			if(!this.identifiedDictionary.ContainsKey(item.ItemNameRaw))
+			{
+				return item.ItemNameRaw;
+			}
 			Debug.AssertFormat(item.ItemType == GameDefine.ItemType.UsableItem, "{0}はUsableItemではありません.", item.ItemNameRaw);
 			return this.identifiedDictionary[item.ItemNameRaw].ItemName;
 		}
 
 		public bool IsIdentified(ItemInstanceDataBase item)
 		{
+			if(!this.identifiedDictionary.ContainsKey(item.ItemNameRaw))
+			{
+				return true;
+			}
 			Debug.AssertFormat(item.ItemType == GameDefine.ItemType.UsableItem, "{0}はUsableItemではありません.", item.ItemNameRaw);
 			return this.identifiedDictionary[item.ItemNameRaw].IsIdentified;
 		}
 
 		public bool Identified(Item item)
 		{
+			if(!this.identifiedDictionary.ContainsKey(item.InstanceData.ItemNameRaw))
+			{
+				return true;
+			}
 			Debug.AssertFormat(item.InstanceData.ItemType == GameDefine.ItemType.UsableItem, "{0}はUsableItemではありません.", item.InstanceData.ItemName);
 			var identifiedItem = this.identifiedDictionary[item.InstanceData.ItemNameRaw];
 			if(identifiedItem.IsIdentified)
