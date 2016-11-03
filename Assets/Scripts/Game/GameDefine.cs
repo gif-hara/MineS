@@ -68,6 +68,11 @@ namespace MineS
 			/// 倉庫.
 			/// </summary>
 			WareHouse,
+
+			/// <summary>
+			/// 宣伝屋.
+			/// </summary>
+			Publicity,
 		}
 
 		/// <summary>

@@ -108,17 +108,33 @@ namespace MineS
 		public void Synthesis(Item target)
 		{
 			var targetEquipmentData = target.InstanceData as EquipmentInstanceData;
-			this.Abilities.AddRange(targetEquipmentData.Abilities);
-			if(this.Abilities.Count > this.brandingLimit)
-			{
-				this.Abilities.RemoveRange(this.brandingLimit, this.Abilities.Count - this.brandingLimit);
-			}
-			this.abilities = this.Abilities.Select(a => a.Type).ToList();
+			this.AddAbility(targetEquipmentData.Abilities);
 		}
 
 		public bool CanRemoveAbility(int index)
 		{
 			return index >= (this.MasterData as EquipmentData).abilities.Count;
+		}
+
+		public void AddAbility(AbilityBase ability)
+		{
+			if(this.Abilities.Count >= this.brandingLimit)
+			{
+				return;
+			}
+
+			this.Abilities.Add(ability);
+			this.abilities = this.Abilities.Select(a => a.Type).ToList();
+		}
+
+		public void AddAbility(List<AbilityBase> abilities)
+		{
+			this.Abilities.AddRange(abilities);
+			if(this.Abilities.Count > this.brandingLimit)
+			{
+				this.Abilities.RemoveRange(this.brandingLimit, this.Abilities.Count - this.brandingLimit);
+			}
+			this.abilities = this.Abilities.Select(a => a.Type).ToList();
 		}
 
 		public void RemoveAbility(int index)

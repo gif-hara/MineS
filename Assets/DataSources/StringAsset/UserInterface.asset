@@ -245,7 +245,7 @@ MonoBehaviour:
       en: 
     guid: 94e17d2b-ca98-4663-b16f-da8d6efade9a
   - value:
-      ja: "<color=aqua>{0}</color>\u3092\u5165\u624B\u3057\u305F\uFF01"
+      ja: "<color=aqua>{0}</color>\u3092\u624B\u306B\u5165\u308C\u305F\uFF01"
       en: 
     guid: 459b3ed1-c2c8-4191-9530-1ac89b035c26
   - value:
@@ -495,7 +495,7 @@ MonoBehaviour:
       en: 
     guid: 2ce32499-f239-415f-b9f9-58c28743d31e
   - value:
-      ja: "<color=orange>{0}G</color>\u62FE\u3063\u305F\uFF01"
+      ja: "<color=orange>{0}G</color>\u624B\u306B\u5165\u308C\u305F\uFF01"
       en: 
     guid: a0494a02-1e57-4e57-8eed-978259c7ac70
   - value:
@@ -614,3 +614,15 @@ MonoBehaviour:
       ja: Mine's Rogue
       en: 
     guid: 34c6a3d8-c520-4fd9-838e-7c377b79530c
+  - value:
+      ja: "\u52D5\u753B\u3092\u898B\u308B"
+      en: 
+    guid: 77ef6c82-2331-4858-b12f-415194d637c6
+  - value:
+      ja: "\u3044\u3089\u3063\u3057\u3083\u3044\uFF01"
+      en: 
+    guid: e6683452-9724-491b-a8e1-a313471aeb80
+  - value:
+      ja: "\u307E\u305F\u306A\u30FC\uFF01"
+      en: 
+    guid: c66f8734-c0ac-4bf9-9746-7a112c18a0a5

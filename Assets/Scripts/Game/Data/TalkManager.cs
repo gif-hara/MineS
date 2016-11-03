@@ -17,7 +17,7 @@ namespace MineS
 
 		private UnityEvent onEndTalkResident = new UnityEvent();
 
-		private UnityEvent onEndTalkOnce = new UnityEvent();
+		private UnityAction onEndTalkOnce;
 
 		public void StartTalk(TalkChunkData chunkData, UnityAction onceCall)
 		{
@@ -27,7 +27,7 @@ namespace MineS
 			this.Next();
 			if(onceCall != null)
 			{
-				this.onEndTalkOnce.AddListener(onceCall);
+				this.onEndTalkOnce = onceCall;
 			}
 		}
 
@@ -52,8 +52,13 @@ namespace MineS
 
 		private void EndTalk()
 		{
-			this.onEndTalkOnce.Invoke();
-			this.onEndTalkOnce.RemoveAllListeners();
+			if(this.onEndTalkOnce != null)
+			{
+				var _onEndTalkOnce = new UnityAction(this.onEndTalkOnce.Invoke);
+				this.onEndTalkOnce = null;
+				_onEndTalkOnce.Invoke();
+			}
+
 			this.onEndTalkResident.Invoke();
 		}
 	}

@@ -13,9 +13,14 @@ namespace MineS
 	{
 		public void ShowRewardedAd()
 		{
+			this.ShowRewardedAd(this.HandleShowResult);
+		}
+
+		public void ShowRewardedAd(System.Action<ShowResult> call)
+		{
 			if(Advertisement.IsReady("rewardedVideo"))
 			{
-				var options = new ShowOptions { resultCallback = HandleShowResult };
+				var options = new ShowOptions { resultCallback = call };
 				Advertisement.Show("rewardedVideo", options);
 			}
 		}

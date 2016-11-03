@@ -21206,6 +21206,7 @@ GameObject:
   - 114: {fileID: 1584263371}
   - 114: {fileID: 1584263372}
   - 114: {fileID: 1584263373}
+  - 114: {fileID: 1584263374}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -21411,6 +21412,8 @@ MonoBehaviour:
     element: {fileID: 21300000, guid: c8815581dbc3b468a9ba3236bbac9a5a, type: 3}
   wareHouse:
     element: {fileID: 21300000, guid: ef6fc7a0092b243a78466a4520060f43, type: 3}
+  publicity:
+    element: {fileID: 21300000, guid: a128ba496c16a4362893040dd2460f34, type: 3}
   recoveryItem:
     element: {fileID: 21300000, guid: beab0bd6fda210d46ac503638a5818eb, type: 3}
   stairImage:
@@ -22103,6 +22106,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe3509472b29455a8aa60ca6f0d0ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1584263374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1584263349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2068b5a682f78442689fcbdf41466c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcImage: {fileID: 21300000, guid: 94a5f87aa581d48d0a019323ad1484c2, type: 3}
+  watchVideoMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u52D5\u753B\u3092\u898B\u308B"
+    guid: 77ef6c82-2331-4858-b12f-415194d637c6
+  closedMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u9000\u5E97"
+    guid: 76e7826d-a2bd-49b0-bfa8-c6ba73c13ee1
+  welcomeMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u3044\u3089\u3063\u3057\u3083\u3044\uFF01"
+    guid: e6683452-9724-491b-a8e1-a313471aeb80
+  goodbyeMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u307E\u305F\u306A\u30FC\uFF01"
+    guid: c66f8734-c0ac-4bf9-9746-7a112c18a0a5
+  finishedTalk: {fileID: 11400000, guid: 96b23d0fb49e14c8aa5aeac515a2b26d, type: 2}
+  failureTalk: {fileID: 11400000, guid: 37c70e5b5a1eb4c55aa3fb2cdd9b501e, type: 2}
+  fullInventoryTalk: {fileID: 11400000, guid: e32b3506a6ca2425489881547ab36905, type: 2}
+  rewards:
+  - database:
+    - {fileID: 11400000, guid: 1bca26df7f15f4b0180c1cd63771ce76, type: 2}
+    - {fileID: 11400000, guid: 9e736c4eddfb64285b11b4185172151e, type: 2}
+    - {fileID: 11400000, guid: b501b8f76f9eb4fb59cddbe6a580dfe1, type: 2}
 --- !u!1 &1588900025
 GameObject:
   m_ObjectHideFlags: 0
@@ -22644,7 +22683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.36764705, g: 0.35720676, b: 0.31358132, a: 1}
+  m_Color: {r: 0.75, g: 0.75, b: 0.75, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

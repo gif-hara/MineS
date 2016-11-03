@@ -76,9 +76,7 @@ namespace MineS
 
 		public void OpenNPCUI()
 		{
-			NPCManager.Instance.SetImage(this.npcImage);
-			NPCManager.Instance.SetActiveUI(true);
-			PlayerManager.Instance.NotifyCharacterDataObservers();
+			NPCManager.Instance.Open(this.npcImage);
 		}
 
 		public void InvokeFirstTalk(UnityAction onEndEvent)

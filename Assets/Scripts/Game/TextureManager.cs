@@ -161,6 +161,8 @@ namespace MineS
 
 		public SerializeFieldGetter.Sprite wareHouse;
 
+		public SerializeFieldGetter.Sprite publicity;
+
 		public SerializeFieldGetter.Sprite recoveryItem;
 
 		public SerializeFieldGetter.Sprite stairImage;

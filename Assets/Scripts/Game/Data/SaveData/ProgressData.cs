@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using System.Linq;
 
 namespace MineS
 {
@@ -75,6 +76,20 @@ namespace MineS
 		public bool IsClearDungeon(GameDefine.DungeonType type)
 		{
 			return this.clearDungeonFlags.FindIndex(c => c == type) != -1;
+		}
+
+		public int ClearDungeonCount
+		{
+			get
+			{
+				var dungeonType = System.Enum.GetValues(typeof(GameDefine.DungeonType));
+				int result = 0;
+				foreach(var d in dungeonType)
+				{
+					result += this.IsClearDungeon((GameDefine.DungeonType)d) ? 1 : 0;
+				}
+				return result;
+			}
 		}
 	}
 }

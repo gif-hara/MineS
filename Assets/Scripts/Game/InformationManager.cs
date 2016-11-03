@@ -384,6 +384,12 @@ namespace MineS
 			instance._AddMessage(message);
 		}
 
+		public static void AddMessage(StringAsset.Finder message)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(message.Get);
+		}
+
 		public static void RemoveAllElement()
 		{
 			if(instance.currentMessageCoroutine != null)

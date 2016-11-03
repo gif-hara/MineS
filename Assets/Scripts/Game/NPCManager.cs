@@ -17,6 +17,13 @@ namespace MineS
 		[SerializeField]
 		private Image image;
 
+		public void Open(Sprite image)
+		{
+			this.SetImage(image);
+			this.SetActiveUI(true);
+			PlayerManager.Instance.NotifyCharacterDataObservers();
+		}
+
 		public void SetImage(Sprite image)
 		{
 			this.image.sprite = image;

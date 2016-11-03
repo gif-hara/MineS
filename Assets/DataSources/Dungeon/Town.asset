@@ -15,6 +15,7 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 4172020a15e334b00838b72bf6b90d8f, type: 2}
     value: "\u540D\u3082\u7121\u304D\u6751"
     guid: c27eec5d-f791-4a03-bb05-bf5b046b302a
+  serializable: 0
   itemIdentified: 1
   mapChipTable:
     elements:
@@ -73,4 +74,7 @@ MonoBehaviour:
   - x: 6
     y: 5
     creator: {fileID: 11400000, guid: 6ed965b5340db435b878ffb814789735, type: 2}
+  - x: 0
+    y: 5
+    creator: {fileID: 11400000, guid: c906e062bcd7244b49d391f5a431d0c4, type: 2}
   mapChip: "0010100\n\r0011100\n\r0001000\n\r0001000\n\r1101011\n\r0111110\n\r0001000\n\r0001000\r"
