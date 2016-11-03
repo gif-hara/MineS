@@ -20,5 +20,13 @@ namespace MineS
 		{
 			HK.Framework.SaveData.Save();
 		}
+
+		void OnApplicationPause(bool pauseStatus)
+		{
+			if(pauseStatus)
+			{
+				HK.Framework.SaveData.Save();
+			}
+		}
 	}
 }
