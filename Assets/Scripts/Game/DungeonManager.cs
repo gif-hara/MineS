@@ -80,6 +80,16 @@ namespace MineS
 			}
 		}
 
+		void OnApplicationPause(bool pauseStatus)
+		{
+			if(!pauseStatus)
+			{
+				return;
+			}
+
+			OnApplicationQuit();
+		}
+
 		public void ChangeDungeonData(DungeonDataBase data, int floor = 1)
 		{
 			this.current = data;
@@ -181,6 +191,7 @@ namespace MineS
 
 		private void Serialize()
 		{
+			PlayerManager.Instance.Serialize();
 			CellManager.Instance.Serialize();
 			EnemyManager.Instance.Serialize();
 			ItemManager.Instance.Serialize();

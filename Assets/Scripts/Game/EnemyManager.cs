@@ -194,5 +194,21 @@ namespace MineS
 		{
 			return string.Format("EnemyManager_Cell{0}", index);
 		}
+
+		public static void BindCombatEnemyAction(CellData cellData, EnemyData enemy)
+		{
+			cellData.BindCellClickAction(new CombatEnemyAction());
+			cellData.BindDeployDescription(new DeployDescriptionOnCharacterData(enemy));
+			cellData.Controller.SetCharacterData(enemy);
+			cellData.Controller.SetImage(enemy.Image);
+			var adjacentCells = cellData.AdjacentCellAll;
+			for(int i = 0; i < adjacentCells.Count; i++)
+			{
+				if(!adjacentCells[i].IsIdentification)
+				{
+					adjacentCells[i].AddLock();
+				}
+			}
+		}
 	}
 }

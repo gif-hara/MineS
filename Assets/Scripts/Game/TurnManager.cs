@@ -27,6 +27,7 @@ namespace MineS
 			this.count++;
 			this.endTurnProgressEvent.Invoke(type, this.count);
 			this.lateEndTurnProgressEvent.Invoke(type, this.count);
+			Calculator.ResetCanInvokeSummon();
 		}
 
 		public void AddEndTurnEvent(UnityAction<GameDefine.TurnProgressType, int> action)

@@ -24,7 +24,7 @@ namespace MineS
 				if(blankCell != null)
 				{
 					var enemy = EnemyManager.Instance.Create(blankCell);
-					this.BindCombatEnemyAction(blankCell, enemy);
+					EnemyManager.BindCombatEnemyAction(blankCell, enemy);
 					Object.Instantiate(EffectManager.Instance.prefabSummon.Element, blankCell.Controller.transform, false);
 				}
 			}
@@ -56,16 +56,6 @@ namespace MineS
 		public override void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			base.OnTurnProgress(type, turnCount);
-			if(this.FindAbility(GameDefine.AbilityType.Summon) && !this.IsDead && Calculator.CanInvokeSummon)
-			{
-				var blankCell = CellManager.Instance.RandomBlankCell(true);
-				if(blankCell != null)
-				{
-					var enemy = EnemyManager.Instance.Create(blankCell);
-					this.BindCombatEnemyAction(blankCell, enemy);
-					Object.Instantiate(EffectManager.Instance.prefabSummon.Element, blankCell.Controller.transform, false);
-				}
-			}
 
 			if(this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Confusion))
 			{
@@ -190,22 +180,6 @@ namespace MineS
 				{
 					this.OnDivision(blankCell);
 					Object.Instantiate(EffectManager.Instance.prefabSummon.Element, blankCell.Controller.transform, false);
-				}
-			}
-		}
-
-		private void BindCombatEnemyAction(CellData cellData, EnemyData enemy)
-		{
-			cellData.BindCellClickAction(new CombatEnemyAction());
-			cellData.BindDeployDescription(new DeployDescriptionOnCharacterData(enemy));
-			cellData.Controller.SetCharacterData(enemy);
-			cellData.Controller.SetImage(enemy.Image);
-			var adjacentCells = cellData.AdjacentCellAll;
-			for(int i = 0; i < adjacentCells.Count; i++)
-			{
-				if(!adjacentCells[i].IsIdentification)
-				{
-					adjacentCells[i].AddLock();
 				}
 			}
 		}

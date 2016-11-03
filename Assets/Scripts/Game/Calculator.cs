@@ -10,6 +10,8 @@ namespace MineS
 	/// </summary>
 	public static class Calculator
 	{
+		private static bool canInvokeSummon = true;
+
 		/// <summary>
 		/// バフの再生の回復量を返す.
 		/// </summary>
@@ -376,8 +378,22 @@ namespace MineS
 		{
 			get
 			{
-				return Random.value < 0.3f;
+				if(!canInvokeSummon)
+				{
+					return false;
+				}
+
+				canInvokeSummon = false;
+				return Random.value < 0.2f;
 			}
+		}
+
+		/// <summary>
+		/// 特殊能力の召喚を使用可能にする.
+		/// </summary>
+		public static void ResetCanInvokeSummon()
+		{
+			canInvokeSummon = true;
 		}
 	}
 }

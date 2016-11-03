@@ -382,6 +382,17 @@ namespace MineS
 			this.abnormalStatuses.ForEach(a => a.OnTurnProgress(type, turnCount));
 			this.abnormalStatuses.RemoveAll(a => !a.IsValid);
 			this.Abilities.ForEach(a => a.OnTurnProgress(type, turnCount));
+
+			if(this.FindAbility(GameDefine.AbilityType.Summon) && !this.IsDead && Calculator.CanInvokeSummon)
+			{
+				var blankCell = CellManager.Instance.RandomBlankCell(true);
+				if(blankCell != null)
+				{
+					var enemy = EnemyManager.Instance.Create(blankCell);
+					EnemyManager.BindCombatEnemyAction(blankCell, enemy);
+					UnityEngine.Object.Instantiate(EffectManager.Instance.prefabSummon.Element, blankCell.Controller.transform, false);
+				}
+			}
 		}
 
 		public virtual void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
