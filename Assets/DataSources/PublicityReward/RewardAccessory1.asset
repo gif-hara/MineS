@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b733c0dfcda044e539951b5d2d2adb21, type: 3}
-  m_Name: RewardWeapon0
+  m_Name: RewardAccessory1
   m_EditorClassIdentifier: 
   equipments:
-  - {fileID: 11400000, guid: e086598dcbb3c49a8b2a893987f59599, type: 2}
-  addCount: 1
-  randomAddAbilities: 1b0000001a00000017000000
+  - {fileID: 11400000, guid: 96b6ee6968dce49e8b7449e5c5730788, type: 2}
+  addCount: 3
+  randomAddAbilities: 090000000a0000000f000000

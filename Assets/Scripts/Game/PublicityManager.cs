@@ -95,7 +95,7 @@ namespace MineS
 
 		private void GiveReward()
 		{
-			if(this.rewards[MineS.SaveData.Progress.ClearDungeonCount].Grant())
+			if(this.rewards[MineS.SaveData.Progress.ClearDungeonCount - 1].Grant())
 			{
 				this.CreateConfirm();
 			}

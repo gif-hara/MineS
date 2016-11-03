@@ -135,6 +135,21 @@ namespace MineS
 			SaveDataEditor.CompleteProgressData();
 		}
 
+		public void DungeonClear(int type)
+		{
+			MineS.SaveData.Progress.ClearDungeon((GameDefine.DungeonType)type);
+		}
+
+		public void AddVisitShop()
+		{
+			MineS.SaveData.Progress.AddVisitShopCount(true);
+		}
+
+		public void AddVisitBlackSmith()
+		{
+			MineS.SaveData.Progress.AddVisitBlackSmithCount(true);
+		}
+
 		public void RemoveSaveData()
 		{
 			SaveDataEditor.Remove();

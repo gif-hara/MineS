@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f7e9d515b0e649779991d3ea5e7d149, type: 3}
+  m_Name: Accessory15
+  m_EditorClassIdentifier: 
+  itemName: "\u5BA3\u4F1D\u5C4B\u306E\u91D1\u30CD\u30C3\u30AF\u30EC\u30B9"
+  purchasePrice: 10000
+  sellingPrice: 3000
+  image: {fileID: 21300000, guid: ee101aef62e348249b11a121f7a409b5, type: 3}
+  basePower: 1
+  brandingLimit: 10
+  canExtraction: 0
+  itemType: 3
+  abilities: 
