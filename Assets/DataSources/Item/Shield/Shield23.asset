@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7e9d515b0e649779991d3ea5e7d149, type: 3}
   m_Name: Shield23
   m_EditorClassIdentifier: 
+  id: 23
   itemName: "\u6843\u592A\u90CE\u306E\u76FE"
   purchasePrice: 11000
   sellingPrice: 5500

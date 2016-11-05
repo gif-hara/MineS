@@ -150,6 +150,21 @@ namespace MineS
 			}
 		}
 
+		public void Sort()
+		{
+			var result = new List<Item>();
+			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.Weapon).OrderBy(i => i.InstanceData.Id));
+			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.Shield).OrderBy(i => i.InstanceData.Id));
+			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.Accessory).OrderBy(i => i.InstanceData.Id));
+			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.UsableItem).OrderBy(i => i.InstanceData.Id));
+			for(int i = 0, imax = this.items.Count - result.Count; i < imax; i++)
+			{
+				result.Add(null);
+			}
+
+			this.items = result;
+		}
+
 		public void Serialize(string key)
 		{
 			HK.Framework.SaveData.SetInt(key, 1);

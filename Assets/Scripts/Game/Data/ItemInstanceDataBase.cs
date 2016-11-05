@@ -12,6 +12,9 @@ namespace MineS
 	public abstract class ItemInstanceDataBase
 	{
 		[SerializeField]
+		protected int id;
+
+		[SerializeField]
 		protected string itemName;
 
 		[SerializeField]
@@ -28,6 +31,8 @@ namespace MineS
 
 		public ItemDataBase MasterData{ get { return this.masterData; } }
 
+		public int Id{ get { return this.id; } }
+
 		public virtual string ItemName{ get { return this.itemName.ToString(); } }
 
 		public string ItemNameRaw{ get { return this.itemName.ToString(); } }
@@ -42,6 +47,7 @@ namespace MineS
 
 		protected void InternalCreateFromMasterData(ItemInstanceDataBase instanceData, ItemDataBase masterData)
 		{
+			instanceData.id = masterData.Id;
 			instanceData.itemName = masterData.ItemName;
 			instanceData.purchasePrice = masterData.PurchasePrice;
 			instanceData.sellingPrice = masterData.SellingPrice;

@@ -110,6 +110,13 @@ namespace MineS
 			this.Serialize();
 		}
 
+		public void SortItem()
+		{
+			this.Data.Inventory.Sort();
+			this.Serialize();
+			this.UpdateInventoryUI();
+		}
+
 		public void RemoveEquipment(Item equipment)
 		{
 			this.Data.Inventory.RemoveEquipment(equipment);

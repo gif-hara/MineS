@@ -13,6 +13,9 @@ namespace MineS
 	public abstract class ItemDataBase : ScriptableObject
 	{
 		[SerializeField]
+		protected int id;
+
+		[SerializeField]
 		protected string itemName;
 
 		[SerializeField]
@@ -23,6 +26,8 @@ namespace MineS
 
 		[SerializeField]
 		protected Sprite image;
+
+		public int Id{ get { return this.id; } }
 
 		public string ItemName{ get { return this.itemName; } }
 

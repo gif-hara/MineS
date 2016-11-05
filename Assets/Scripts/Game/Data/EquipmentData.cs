@@ -50,6 +50,7 @@ namespace MineS
 		{
 			var result = CreateInstance<EquipmentData>();
 			result.itemType = itemType;
+			result.id = int.Parse(csv[0]);
 			result.itemName = csv[1];
 			result.purchasePrice = int.Parse(csv[2]);
 			result.sellingPrice = int.Parse(csv[3]);

@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c71d054e3984e2cb2e609f86581f13, type: 3}
   m_Name: UsableItem29
   m_EditorClassIdentifier: 
+  id: 29
   itemName: "\u30B5\u30D7\u30EA\u30E1\u30F3\u30C8\u30FB\u7070"
   purchasePrice: 500
   sellingPrice: 250
