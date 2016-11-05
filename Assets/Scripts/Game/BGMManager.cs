@@ -31,6 +31,11 @@ namespace MineS
 		{
 			if(this.debugClip != null)
 			{
+				this.currentData = this.database.Find(d => d.Clip == this.debugClip);
+				this.source.clip = this.debugClip;
+				this.source.volume = 1.0f;
+				this.source.time = 0.0f;
+				this.source.Play();
 				this.StartBGM(this.debugClip);
 				this.source.time = this.startTime;
 			}
@@ -53,17 +58,18 @@ namespace MineS
 			}
 
 #if BGMDATA_EDITMODE
+			var addValue = Input.GetKey(KeyCode.LeftCommand) ? 0.01f : 0.001f;
 			if(!Input.GetKey(KeyCode.LeftShift))
 			{
 				if(Input.GetKeyDown(KeyCode.LeftArrow))
 				{
-					this.currentData.startLoop -= 0.001f;
+					this.currentData.startLoop -= addValue;
 					Debug.LogFormat("startLoop = {0}", this.currentData.startLoop);
 					this.SetStartTime();
 				}
 				if(Input.GetKeyDown(KeyCode.RightArrow))
 				{
-					this.currentData.startLoop += 0.001f;
+					this.currentData.startLoop += addValue;
 					Debug.LogFormat("startLoop = {0}", this.currentData.startLoop);
 					this.SetStartTime();
 				}
@@ -72,13 +78,13 @@ namespace MineS
 			{
 				if(Input.GetKeyDown(KeyCode.LeftArrow))
 				{
-					this.currentData.endLoop -= 0.001f;
+					this.currentData.endLoop -= addValue;
 					Debug.LogFormat("endLoop = {0}", this.currentData.endLoop);
 					this.SetStartTime();
 				}
 				if(Input.GetKeyDown(KeyCode.RightArrow))
 				{
-					this.currentData.endLoop += 0.001f;
+					this.currentData.endLoop += addValue;
 					Debug.LogFormat("endLoop = {0}", this.currentData.endLoop);
 					this.SetStartTime();
 				}
@@ -98,11 +104,13 @@ namespace MineS
 
 		public void StartBGM(AudioClip clip)
 		{
+#if !BGMDATA_EDITMODE
 			this.currentData = this.database.Find(d => d.Clip == clip);
 			this.source.clip = clip;
 			this.source.volume = 1.0f;
 			this.source.time = 0.0f;
 			this.source.Play();
+#endif
 		}
 
 		[ContextMenu("Set StartTime")]
