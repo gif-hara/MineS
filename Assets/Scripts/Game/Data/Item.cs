@@ -351,6 +351,12 @@ namespace MineS
 					inventory.RemoveItem(this);
 				}
 			break;
+			case GameDefine.UsableItemType.Water:
+				{
+					InformationManager.OnHadNoEffect();
+					inventory.RemoveItem(this);
+				}
+			break;
 			default:
 				Debug.LogWarning("未実装の使用可能アイテムです UsableItemType= " + usableItem.UsableItemType);
 			break;
