@@ -81,7 +81,8 @@ namespace MineS
 			this.usableItemList.Database.ForEach(d =>
 			{
 				var unidentifiedStringIndex = Random.Range(0, unidentifiedStrings.Count);
-				var identifiedItem = new IdentifiedItem(d, unidentifiedStrings[unidentifiedStringIndex], DungeonManager.Instance.CurrentData.ItemIdentified && (d as UsableItemData).CanUnidentified);
+				var idenditied = !(d as UsableItemData).CanUnidentified ? true : DungeonManager.Instance.CurrentData.ItemIdentified;
+				var identifiedItem = new IdentifiedItem(d, unidentifiedStrings[unidentifiedStringIndex], idenditied);
 				this.identifiedDictionary.Add(d.ItemName, identifiedItem);
 				unidentifiedStrings.RemoveAt(unidentifiedStringIndex);
 			});
