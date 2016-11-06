@@ -264,6 +264,11 @@ namespace MineS
 			this.onCloseInventoryUI.AddListener(call);
 		}
 
+		public void Giveup()
+		{
+			this.Data.Giveup();
+		}
+
 		public void LoadData()
 		{
 			if(HK.Framework.SaveData.ContainsKey(PlayerDataSerializeKeyName))

@@ -148,6 +148,12 @@ namespace MineS
 			PlayerManager.Instance.Serialize();
 		}
 
+		public void Giveup()
+		{
+			this.Inventory.RemoveAll();
+			this.money = 0;
+		}
+
 		public override void ForceLevelUp(int value)
 		{
 			var experienceData = PlayerManager.Instance.ExperienceData;

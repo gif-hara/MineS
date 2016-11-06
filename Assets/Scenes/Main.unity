@@ -10859,16 +10859,15 @@ RectTransform:
 --- !u!114 &674414088
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000013387887958, guid: 619cad36206b3459b84d2bbb0a5d60a9,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 674414086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ee589d32de547768833bb3fe3560df, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d6554027caf547ebb10e8a07348e893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1732172280}
+  target: {fileID: 674414090}
 --- !u!114 &674414089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10911,7 +10910,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.375, g: 0.375, b: 0.375, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0
   m_SpriteState:
@@ -10928,9 +10927,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1584263354}
+        m_MethodName: ConfirmGiveup
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10938,17 +10937,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -27329,10 +27317,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current: {fileID: 11400000, guid: 6d6f1180a85804caf98fe025f5a291d5, type: 2}
+  townData: {fileID: 11400000, guid: 6d6f1180a85804caf98fe025f5a291d5, type: 2}
   dungeonNameFlowController: {fileID: 2053258983}
   observers:
   - {fileID: 842027365}
   titleFlowController: {fileID: 1626304127}
+  giveupMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u3042\u304D\u3089\u3081\u308B"
+    guid: 08e26681-c386-47b4-aac1-1249f1c93c2d
+  giveupCancelMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u3042\u304D\u3089\u3081\u306A\u3044"
+    guid: f881f5c6-af8f-4e6a-9f91-5a26f97be3cd
 --- !u!114 &1584263355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27933,10 +27930,11 @@ MonoBehaviour:
   - {fileID: 1072342822}
   - {fileID: 2044136730}
   - {fileID: 1413544252}
+  - {fileID: 674414086}
   data:
     bgmVolume: 0
     seVolume: 0
-    messageSpeed: 2
+    messageSpeed: 1
     isFewMessage: 0
     autoSort: 0
 --- !u!114 &1584263368
@@ -30519,7 +30517,6 @@ GameObject:
   - 114: {fileID: 1710396512}
   - 114: {fileID: 1710396511}
   - 114: {fileID: 1710396510}
-  - 114: {fileID: 1710396509}
   m_Layer: 5
   m_Name: RemoveSaveData
   m_TagString: Untagged
@@ -30547,19 +30544,6 @@ RectTransform:
   m_AnchoredPosition: {x: 506.25, y: -1170}
   m_SizeDelta: {x: 1012.5, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1710396509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000013387887958, guid: 619cad36206b3459b84d2bbb0a5d60a9,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1710396507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ee589d32de547768833bb3fe3560df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 1387014553}
 --- !u!114 &1710396510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30618,29 +30602,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1710396512}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1710396512

@@ -15,6 +15,9 @@ namespace MineS
 		private DungeonDataBase current;
 
 		[SerializeField]
+		private DungeonDataBase townData;
+
+		[SerializeField]
 		private DungeonNameFlowController dungeonNameFlowController;
 
 		[SerializeField]
@@ -22,6 +25,12 @@ namespace MineS
 
 		[SerializeField]
 		private TitleFlowController titleFlowController;
+
+		[SerializeField]
+		private StringAsset.Finder giveupMessage;
+
+		[SerializeField]
+		private StringAsset.Finder giveupCancelMessage;
 
 		private int floorCount = 1;
 
@@ -148,6 +157,22 @@ namespace MineS
 			}
 			PlayerManager.Instance.CloseInventoryUI();
 			HK.Framework.SaveData.Save();
+		}
+
+		public void ConfirmGiveup()
+		{
+			DescriptionManager.Instance.DeployEmergency("ConfirmGiveup");
+			var confirmManager = ConfirmManager.Instance;
+			confirmManager.Add(this.giveupMessage, () =>
+			{
+				PlayerManager.Instance.Giveup();
+				OptionManager.Instance.CloseUI();
+				this.ChangeDungeonData(this.townData);
+			}, true);
+			confirmManager.Add(this.giveupCancelMessage, () =>
+			{
+
+			}, true);
 		}
 
 		public bool CanTurnBack(int addValue)
