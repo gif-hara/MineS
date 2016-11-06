@@ -1,4 +1,4 @@
-﻿#define BGMDATA_EDITMODE
+﻿//#define BGMDATA_EDITMODE
 using UnityEngine;
 using UnityEngine.Assertions;
 using System.Collections.Generic;
