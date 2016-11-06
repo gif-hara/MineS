@@ -83,7 +83,7 @@ namespace MineS
 
 		public static void OnAttack(IAttack attacker, IAttack receiver, int damage)
 		{
-			if(OptionManager.Instance.Data.isFewMessage)
+			if(OptionManager.Instance.Data.IsFewMessage)
 			{
 				return;
 			}
@@ -343,7 +343,7 @@ namespace MineS
 
 		public static void ConfusionEnemyAttack(IAttack attacker, IAttack target, int damage)
 		{
-			if(OptionManager.Instance.Data.isFewMessage)
+			if(OptionManager.Instance.Data.IsFewMessage)
 			{
 				return;
 			}
@@ -426,7 +426,7 @@ namespace MineS
 		{
 			var informationElement = Instantiate(this.prefabInformation, this.parent, false) as InformationElement;
 			informationElement.Initialize(message);
-			yield return new WaitForSeconds(1.0f);
+			yield return new WaitForSeconds(OptionData.MessageSpeedMax - MineS.SaveData.Option.MessageSpeed);
 
 			if(this.messageQueue.Count > 0)
 			{

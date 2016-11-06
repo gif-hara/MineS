@@ -48,6 +48,7 @@ namespace MineS
 			{
 				element = Instantiate(this.prefabElement, this.transform) as SEElement;
 				element.name = clip.name;
+				element.SetVolume(MineS.SaveData.Option.SEVolume);
 				this.dictionary.Add(clip, element);
 			}
 
@@ -57,6 +58,14 @@ namespace MineS
 		public void PlaySE(SerializeFieldGetter.AudioClip getter)
 		{
 			this.PlaySE(getter.Element);
+		}
+
+		public void SetVolume(float value)
+		{
+			foreach(var s in this.dictionary)
+			{
+				s.Value.SetVolume(value);
+			}
 		}
 	}
 }

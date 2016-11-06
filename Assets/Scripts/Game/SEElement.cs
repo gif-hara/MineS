@@ -19,5 +19,10 @@ namespace MineS
 			this.source.time = 0.0f;
 			this.source.Play();
 		}
+
+		public void SetVolume(float value)
+		{
+			this.source.volume = value;
+		}
 	}
 }

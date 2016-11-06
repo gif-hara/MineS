@@ -95,18 +95,30 @@ namespace MineS
 		public void RemoveInventoryItem(Item item)
 		{
 			this.Data.Inventory.RemoveItem(item);
+			if(MineS.SaveData.Option.AutoSort)
+			{
+				this.SortItem();
+			}
 			this.Serialize();
 		}
 
 		public void RemoveInventoryItemOrEquipment(Item item)
 		{
 			this.Data.Inventory.RemoveItemOrEquipment(item);
+			if(MineS.SaveData.Option.AutoSort)
+			{
+				this.SortItem();
+			}
 			this.Serialize();
 		}
 
 		public void ChangeItem(Item before, Item after)
 		{
 			this.Data.Inventory.ChangeItem(before, after);
+			if(MineS.SaveData.Option.AutoSort)
+			{
+				this.SortItem();
+			}
 			this.Serialize();
 		}
 
@@ -121,6 +133,10 @@ namespace MineS
 		{
 			this.Data.Inventory.RemoveEquipment(equipment);
 			this.Data.Inventory.AddItem(equipment);
+			if(MineS.SaveData.Option.AutoSort)
+			{
+				this.SortItem();
+			}
 			this.Serialize();
 		}
 
@@ -227,7 +243,12 @@ namespace MineS
 			if(result)
 			{
 				InformationManager.OnAcquiredItem(item.InstanceData.ItemName);
+				if(MineS.SaveData.Option.AutoSort)
+				{
+					this.SortItem();
+				}
 			}
+
 			this.Serialize();
 
 			return result;

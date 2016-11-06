@@ -15,6 +15,8 @@ namespace MineS
 
 		public const string WareHouseKeyName = "WareHouseData";
 
+		public const string OptionKeyName = "OptionData";
+
 		private static WareHouseData wareHouseData;
 
 		public static ProgressData Progress
@@ -35,6 +37,14 @@ namespace MineS
 				}
 
 				return wareHouseData;
+			}
+		}
+
+		public static OptionData Option
+		{
+			get
+			{
+				return Get<OptionData>(OptionKeyName);
 			}
 		}
 

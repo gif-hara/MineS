@@ -654,3 +654,31 @@ MonoBehaviour:
       ja: "<color=targetColor>{0}</color>\u306F\u5BB6\u306B\u5E30\u3063\u3066\u3044\u3063\u305F\uFF01"
       en: 
     guid: cafac0ed-bda3-4c3d-88a9-57bbe60b102a
+  - value:
+      ja: "\u30E1\u30C3\u30BB\u30FC\u30B8\u306E\u7C21\u7565\u5316"
+      en: 
+    guid: da0b8763-50dd-4d3d-8b9e-496976b6f846
+  - value:
+      ja: BGM
+      en: 
+    guid: f4871747-a8fa-4767-b706-3e0bdc4c1775
+  - value:
+      ja: SE
+      en: 
+    guid: b6903c1e-0745-4c01-9658-4c990ab1b455
+  - value:
+      ja: "\u30E1\u30C3\u30BB\u30FC\u30B8\u901F\u5EA6"
+      en: 
+    guid: 83823b3e-fe1d-4162-9039-6176d9c5d65a
+  - value:
+      ja: "\u81EA\u52D5\u3067\u6574\u9813"
+      en: 
+    guid: 5d92be72-43e4-40b1-b6a7-ca3e13ed8cc2
+  - value:
+      ja: "\u5192\u967A\u3092\u3042\u304D\u3089\u3081\u308B"
+      en: 
+    guid: 6fc1146b-b90a-40e2-8cbe-1c010985efec
+  - value:
+      ja: "\u30BB\u30FC\u30D6\u30C7\u30FC\u30BF\u3092\u524A\u9664"
+      en: 
+    guid: eddbe873-bc57-4c0e-bd78-a3575b06cccb

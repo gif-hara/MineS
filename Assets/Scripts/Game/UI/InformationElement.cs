@@ -50,7 +50,7 @@ namespace MineS
 					() => e.rectTransform.anchoredPosition.y,
 					y => e.rectTransform.anchoredPosition = new Vector2(e.rectTransform.anchoredPosition.x, y),
 					e.rectTransform.anchoredPosition.y + positionY,
-					0.5f)
+					(OptionData.MessageSpeedMax - MineS.SaveData.Option.MessageSpeed) / 2)
 					.SetEase(Ease.OutFlash)
 					.OnComplete(() =>
 				{

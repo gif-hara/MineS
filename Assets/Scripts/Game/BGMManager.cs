@@ -40,6 +40,13 @@ namespace MineS
 				this.source.time = this.startTime;
 			}
 		}
+
+
+#else
+		void Start()
+		{
+			this.SetVolume(MineS.SaveData.Option.BGMVolume);
+		}
 #endif
 
 		void Update()
@@ -107,10 +114,14 @@ namespace MineS
 #if !BGMDATA_EDITMODE
 			this.currentData = this.database.Find(d => d.Clip == clip);
 			this.source.clip = clip;
-			this.source.volume = 1.0f;
 			this.source.time = 0.0f;
 			this.source.Play();
 #endif
+		}
+
+		public void SetVolume(float value)
+		{
+			this.source.volume = value;
 		}
 
 		[ContextMenu("Set StartTime")]
