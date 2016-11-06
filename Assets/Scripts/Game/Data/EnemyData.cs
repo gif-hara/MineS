@@ -14,7 +14,7 @@ namespace MineS
 	{
 		public override void Dead(CharacterData attacker)
 		{
-			this.OnDead();
+			this.OnDead(true);
 
 			SEManager.Instance.PlaySE(SEManager.Instance.dead);
 
@@ -118,7 +118,14 @@ namespace MineS
 		public override void ForceDead()
 		{
 			this.hitPoint = 0;
-			this.OnDead();
+			this.OnDead(true);
+		}
+
+		public override void ReturnTown()
+		{
+			this.hitPoint = 0;
+			this.OnDead(false);
+			InformationManager.ReturnTown(this);
 		}
 
 		public void OnVisible(CellData cellData)
@@ -196,11 +203,15 @@ namespace MineS
 			}
 		}
 
-		private void OnDead()
+		private void OnDead(bool createDeadEffect)
 		{
 			this.cellController.DamageEffectCreator.ForceRemove();
 			this.cellController.ForceRemoveImageShake();
-			Object.Instantiate(EffectManager.Instance.prefabDeadEffect.Element, this.cellController.transform, false);
+
+			if(createDeadEffect)
+			{
+				Object.Instantiate(EffectManager.Instance.prefabDeadEffect.Element, this.cellController.transform, false);
+			}
 
 			var cellData = EnemyManager.Instance.InEnemyCells[this];
 			cellData.BindCellClickAction(null);

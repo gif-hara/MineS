@@ -61,7 +61,8 @@ namespace MineS
 			acquireMoney = null,
 			gameOver = null,
 			gameClear = null,
-			closeStair = null;
+			closeStair = null,
+			returnTownEnemy = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -376,6 +377,14 @@ namespace MineS
 		{
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.closeStair.Get);
+		}
+
+		public static void ReturnTown(IAttack user)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.returnTownEnemy.Format(user.Name)
+				.Replace(TargetColor, user.ColorCode);
+			instance._AddMessage(message);
 		}
 
 		public static void AddMessage(string message)

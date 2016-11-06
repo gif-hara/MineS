@@ -797,6 +797,7 @@ namespace MineS
 		{
 			Clear,
 			GameOver,
+			ReturnInItem,
 		}
 
 		public enum DungeonType:int
@@ -1021,6 +1022,11 @@ namespace MineS
 		public static bool IsVertical(AdjacentType type)
 		{
 			return type == AdjacentType.Top || type == AdjacentType.Bottom;
+		}
+
+		public static bool IsPossitiveGameClear(GameResultType type)
+		{
+			return type == GameResultType.Clear || type == GameResultType.ReturnInItem;
 		}
 
 		public const string GoodColorCode = "#00FFE9";

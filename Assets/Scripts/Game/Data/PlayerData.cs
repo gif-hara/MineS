@@ -183,6 +183,19 @@ namespace MineS
 			throw new System.NotImplementedException();
 		}
 
+		public override void ReturnTown()
+		{
+			if(DungeonManager.Instance.CurrentDataAsDungeon == null)
+			{
+				InformationManager.OnHadNoEffect();
+				return;
+			}
+
+			ResultManager.Instance.Invoke(GameDefine.GameResultType.ReturnInItem, ResultManager.Instance.causeReturnInItem.Element.Get);
+			DungeonManager.Instance.ClearDungeon(GameDefine.GameResultType.ReturnInItem);
+			InformationManager.ReturnTown(this);
+		}
+
 		public bool CanLevelUp
 		{
 			get

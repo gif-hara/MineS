@@ -79,6 +79,8 @@ namespace MineS
 
 		public SerializeFieldGetter.StringAssetFinder causeClear;
 
+		public SerializeFieldGetter.StringAssetFinder causeReturnInItem;
+
 		public SerializeFieldGetter.StringAssetFinder causeEnemyDead;
 
 		public SerializeFieldGetter.StringAssetFinder causeOtherDead;
@@ -111,7 +113,7 @@ namespace MineS
 			this.CreateAchievementElement(this.takeDamage, achievementManager.TakeDamage);
 
 			this.uiRoot.gameObject.SetActive(true);
-			this.uiRoot.color = type == GameDefine.GameResultType.Clear ? this.clearColor : this.gameOverColor;
+			this.uiRoot.color = GameDefine.IsPossitiveGameClear(type) ? this.clearColor : this.gameOverColor;
 			this.contentRoot.alpha = 0.0f;
 			DOTween.ToAlpha(() => new Color(), x => this.contentRoot.alpha = x.a, 1.0f, 1.0f)
 				.SetDelay(3.0f);

@@ -140,9 +140,13 @@ namespace MineS
 			return this.CurrentDataAsDungeon.CreateItem();
 		}
 
-		public void ClearDungeon()
+		public void ClearDungeon(GameDefine.GameResultType type)
 		{
-			this.CurrentDataAsDungeon.ClearDungeon();
+			if(this.CurrentDataAsDungeon != null && type == GameDefine.GameResultType.Clear)
+			{
+				this.CurrentDataAsDungeon.ClearDungeon();
+			}
+			PlayerManager.Instance.CloseInventoryUI();
 			HK.Framework.SaveData.Save();
 		}
 

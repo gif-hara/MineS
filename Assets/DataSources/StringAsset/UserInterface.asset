@@ -37,7 +37,7 @@ MonoBehaviour:
       en: 
     guid: f8145ea6-ccb3-4468-ab08-d15c60fa4f6d
   - value:
-      ja: "\u30C7\u30D0\u30C3\u30B0"
+      ja: DEBUG
       en: 
     guid: 3893ba54-0f99-4f46-8fdd-3f5197966440
   - value:
@@ -642,3 +642,15 @@ MonoBehaviour:
       ja: "\u6574\u9813"
       en: 
     guid: 0e5aa210-e219-4c59-ac4e-98b1b6f54b42
+  - value:
+      ja: "\u8A2D\u5B9A"
+      en: 
+    guid: 3147b857-67d3-4e74-a0ce-7f433f4b081f
+  - value:
+      ja: "\u5E30\u9084\u306E\u77F3\u3067\u5E30\u3063\u3066\u304D\u305F\uFF01"
+      en: 
+    guid: f9aeeef4-2576-471d-88af-d60b40e0b659
+  - value:
+      ja: "<color=targetColor>{0}</color>\u306F\u5BB6\u306B\u5E30\u3063\u3066\u3044\u3063\u305F\uFF01"
+      en: 
+    guid: cafac0ed-bda3-4c3d-88a9-57bbe60b102a

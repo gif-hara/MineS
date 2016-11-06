@@ -340,6 +340,8 @@ namespace MineS
 
 		public abstract void ForceDead();
 
+		public abstract void ReturnTown();
+
 		public GameDefine.AddAbnormalStatusResultType AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{
 			if(this.FindAbility(newAbnormalStatus.InvalidateAbilityType))

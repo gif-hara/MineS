@@ -61,5 +61,7 @@ namespace MineS
 		void ForceLevelDown(int value);
 
 		void ForceDead();
+
+		void ReturnTown();
 	}
 }
