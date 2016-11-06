@@ -14,8 +14,6 @@ namespace MineS
 
 		public SerializeFieldGetter.AudioClip stair;
 
-		public SerializeFieldGetter.AudioClip useItem;
-
 		public SerializeFieldGetter.AudioClip recovery;
 
 		public SerializeFieldGetter.AudioClip slash;

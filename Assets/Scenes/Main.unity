@@ -21808,8 +21808,6 @@ MonoBehaviour:
   - element: {fileID: 8300000, guid: fcc4bcb9373cf4f44acf1cc88c3c52ae, type: 3}
   stair:
     element: {fileID: 8300000, guid: 4dd18a896be89460fb3cbc08c00496c6, type: 3}
-  useItem:
-    element: {fileID: 8300000, guid: 44d511b5cc7424c9b87217e859acb15f, type: 3}
   recovery:
     element: {fileID: 8300000, guid: 12391baa67f59442dab5a1dee82fc27a, type: 3}
   slash:

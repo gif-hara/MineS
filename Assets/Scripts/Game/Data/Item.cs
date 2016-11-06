@@ -125,7 +125,7 @@ namespace MineS
 
 		private void UseUsableItem(IAttack user, Inventory inventory)
 		{
-			SEManager.Instance.PlaySE(SEManager.Instance.useItem);
+			SEManager.Instance.PlaySE((this.instanceData.MasterData as UsableItemData).UseSound);
 			var itemName = this.instanceData.ItemName;
 			if(ItemManager.Instance.Identified(this))
 			{

@@ -27,6 +27,9 @@ namespace MineS
 		[SerializeField]
 		private string description;
 
+		[SerializeField]
+		private AudioClip useSound;
+
 		public GameDefine.UsableItemType UsableItemType{ get { return this.type; } }
 
 		public int Power0{ get { return this.power0; } }
@@ -34,6 +37,8 @@ namespace MineS
 		public int Power1{ get { return this.power1; } }
 
 		public bool CanUnidentified{ get { return this.canUnidentified; } }
+
+		public AudioClip UseSound{ get { return this.useSound; } }
 
 		public string Description
 		{
@@ -60,11 +65,12 @@ namespace MineS
 			result.purchasePrice = int.Parse(csv[2]);
 			result.sellingPrice = int.Parse(csv[3]);
 			result.image = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/Textures/Item/UsableItem" + csv[4] + ".png", typeof(Sprite)) as Sprite;
-			result.type = GameDefine.GetUsableItemType(csv[5]);
-			result.power0 = int.Parse(csv[6]);
-			result.power1 = int.Parse(csv[7]);
-			result.canUnidentified = bool.Parse(csv[8]);
-			result.description = csv[9];
+			result.useSound = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/SE/UseItem" + csv[5] + ".mp3", typeof(AudioClip)) as AudioClip;
+			result.type = GameDefine.GetUsableItemType(csv[6]);
+			result.power0 = int.Parse(csv[7]);
+			result.power1 = int.Parse(csv[8]);
+			result.canUnidentified = bool.Parse(csv[9]);
+			result.description = csv[10];
 			return result;
 		}
 #endif

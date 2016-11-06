@@ -21,3 +21,4 @@ MonoBehaviour:
   power1: 0
   canUnidentified: 1
   description: "\u30EC\u30D9\u30EB\u304C\u4E0B\u304C\u308B\u305E\uFF01"
+  useSound: {fileID: 8300000, guid: 44d511b5cc7424c9b87217e859acb15f, type: 3}
