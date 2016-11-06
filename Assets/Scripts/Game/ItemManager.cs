@@ -112,7 +112,7 @@ namespace MineS
 		{
 			if(!this.identifiedDictionary.ContainsKey(item.InstanceData.ItemNameRaw))
 			{
-				return true;
+				return false;
 			}
 			Debug.AssertFormat(item.InstanceData.ItemType == GameDefine.ItemType.UsableItem, "{0}はUsableItemではありません.", item.InstanceData.ItemName);
 			var identifiedItem = this.identifiedDictionary[item.InstanceData.ItemNameRaw];
