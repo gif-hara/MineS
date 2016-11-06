@@ -231,6 +231,16 @@ namespace MineS
 			/// レベルが下がる.
 			/// </summary>
 			OndineBlood,
+
+			/// <summary>
+			/// 街へ帰る.
+			/// </summary>
+			ReturnTown,
+
+			/// <summary>
+			/// ただの水.
+			/// </summary>
+			Water,
 		}
 
 		public enum AbnormalStatusType:int

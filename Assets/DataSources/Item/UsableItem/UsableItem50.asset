@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c71d054e3984e2cb2e609f86581f13, type: 3}
+  m_Name: UsableItem50
+  m_EditorClassIdentifier: 
+  id: 49
+  itemName: "\u6C34"
+  purchasePrice: 100
+  sellingPrice: 50
+  image: {fileID: 21300000, guid: 5b3676b45a4310a49a3eeeff33b48b21, type: 3}
+  type: 20
+  power0: 0
+  power1: 0
+  canUnidentified: 1
+  description: "\u305F\u3060\u306E\u6C34\u3060\u305E\uFF01"
