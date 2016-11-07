@@ -235,6 +235,15 @@ namespace MineS
 			}
 		}
 
+		public bool IsPossessionAny
+		{
+			get
+			{
+				var list = this.AllItem;
+				return list.Count <= 0;
+			}
+		}
+
 		private void ClearInvalidItem()
 		{
 			for(int i = 0; i < this.items.Count; i++)

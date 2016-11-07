@@ -14,16 +14,19 @@ namespace MineS
 
 		private string descriptionKey;
 
-		public CreateChangeDungeonDataAction(DungeonDataBase dungeonData, string descriptionKey)
+		private ConditionScriptableObjectBase canChange;
+
+		public CreateChangeDungeonDataAction(DungeonDataBase dungeonData, string descriptionKey, ConditionScriptableObjectBase canChange)
 		{
 			this.dungeonData = dungeonData;
 			this.descriptionKey = descriptionKey;
+			this.canChange = canChange;
 		}
 
 		public override void Invoke(CellData data)
 		{
 			this.cellController.SetImage(this.Image);
-			data.BindCellClickAction(new ChangeDungeonDataAction(this.dungeonData, this.descriptionKey));
+			data.BindCellClickAction(new ChangeDungeonDataAction(this.dungeonData, this.descriptionKey, this.canChange));
 		}
 
 		public override GameDefine.EventType EventType

@@ -14,14 +14,23 @@ namespace MineS
 
 		private string descriptionKey;
 
-		public ChangeDungeonDataAction(DungeonDataBase dungeonData, string descriptionKey)
+		private ConditionScriptableObjectBase canChange;
+
+		public ChangeDungeonDataAction(DungeonDataBase dungeonData, string descriptionKey, ConditionScriptableObjectBase canChange)
 		{
 			this.dungeonData = dungeonData;
 			this.descriptionKey = descriptionKey;
+			this.canChange = canChange;
 		}
 
 		public override void Invoke(CellData data)
 		{
+			if(!this.canChange.Condition)
+			{
+				DescriptionManager.Instance.DeployEmergency("NotChangeDungeon");
+				return;
+			}
+
 			ConfirmManager.Instance.Add(ConfirmManager.Instance.proceed, () =>
 			{
 				DungeonManager.Instance.ChangeDungeonData(this.dungeonData, false);

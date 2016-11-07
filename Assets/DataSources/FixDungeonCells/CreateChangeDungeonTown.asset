@@ -14,3 +14,4 @@ MonoBehaviour:
   conditioner: {fileID: 11400000, guid: ef61b50bada6846e08e949a7a8b5856d, type: 2}
   data: {fileID: 11400000, guid: 6d6f1180a85804caf98fe025f5a291d5, type: 2}
   descriptionKey: DungeonTown
+  canChange: {fileID: 11400000, guid: ef61b50bada6846e08e949a7a8b5856d, type: 2}

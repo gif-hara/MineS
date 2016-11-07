@@ -15,4 +15,5 @@ MonoBehaviour:
   badConditionType: 0
   data: {fileID: 11400000, guid: 5578322edf93a4270b809c3e720fd7c9, type: 2}
   descriptionKey: DungeonPeddlerTemple
+  canChange: {fileID: 11400000, guid: bdcc0045142234e0184c10018e4ba134, type: 2}
   debugOnly: 0

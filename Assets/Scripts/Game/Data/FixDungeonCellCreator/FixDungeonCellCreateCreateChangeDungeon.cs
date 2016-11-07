@@ -20,13 +20,16 @@ namespace MineS
 		[SerializeField]
 		private string descriptionKey;
 
+		[SerializeField]
+		private ConditionScriptableObjectBase canChange;
+
 		public override CellData Create(int y, int x, CellController cellController, MapChipCreatorBase mapChipCreator)
 		{
 			var cellData = new CellData(y, x, mapChipCreator.Get(y, x), cellController);
 
 			if(this.conditioner.Condition)
 			{
-				cellData.BindCellClickAction(new CreateChangeDungeonDataAction(this.data, this.descriptionKey));
+				cellData.BindCellClickAction(new CreateChangeDungeonDataAction(this.data, this.descriptionKey, this.canChange));
 			}
 
 			return cellData;

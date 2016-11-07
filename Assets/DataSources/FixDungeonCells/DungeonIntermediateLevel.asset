@@ -15,3 +15,5 @@ MonoBehaviour:
   badConditionType: 1
   data: {fileID: 11400000, guid: 46ff7cc699cd643bd8b0a412044db838, type: 2}
   descriptionKey: DungeonIntermediateLevel
+  canChange: {fileID: 11400000, guid: ef61b50bada6846e08e949a7a8b5856d, type: 2}
+  debugOnly: 0

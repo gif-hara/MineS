@@ -932,3 +932,13 @@ MonoBehaviour:
       value: "\u672C\u5F53\u306E\u672C\u5F53\u306B\u3088\u308D\u3057\u3044\u3093\u3067\u3059\u306D\uFF1F"
       guid: 7b0eb9a2-75b8-4c79-a12e-1b8ba8ad6746
     image: {fileID: 0}
+  - key: NotChangeDungeon
+    title:
+      target: {fileID: 0}
+      value: "\u91D1\u888B"
+      guid: 0dca16a2-58a4-43b6-a166-0c8a156db669
+    message:
+      target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+      value: "\u3053\u306E\u30C0\u30F3\u30B8\u30E7\u30F3\u30D8\u9032\u3080\u6761\u4EF6\u3092\u6E80\u305F\u3057\u3066\u3044\u307E\u305B\u3093\u3002\n\u8A73\u3057\u304F\u306F\u30C0\u30F3\u30B8\u30E7\u30F3\u3092\u9577\u62BC\u3057\u3057\u3066\u78BA\u8A8D\u3057\u3066\u304F\u3060\u3055\u3044\u3002"
+      guid: cb43c52d-fda5-48b9-8241-64e95f65e190
+    image: {fileID: 0}

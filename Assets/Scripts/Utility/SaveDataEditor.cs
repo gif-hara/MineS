@@ -30,6 +30,7 @@ namespace MineS
 			progressData.ClearDungeon(GameDefine.DungeonType.PeddlerTemple);
 			progressData.AddVisitShopCount(true);
 			progressData.AddVisitBlackSmithCount(true);
+			progressData.CompleteTutorial();
 			HK.Framework.SaveData.Save();
 		}
 
@@ -39,6 +40,16 @@ namespace MineS
 		public static void Remove()
 		{
 			HK.Framework.SaveData.Clear();
+			HK.Framework.SaveData.Save();
+		}
+
+#if UNITY_EDITOR
+		[MenuItem("MineS/SaveData/Remove but CompleteTutorial")]
+		#endif
+		public static void RemoveButCompleteTutorial()
+		{
+			Remove();
+			MineS.SaveData.Progress.CompleteTutorial();
 			HK.Framework.SaveData.Save();
 		}
 	}

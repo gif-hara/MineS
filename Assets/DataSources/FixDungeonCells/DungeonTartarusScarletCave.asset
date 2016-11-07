@@ -15,4 +15,5 @@ MonoBehaviour:
   badConditionType: 0
   data: {fileID: 11400000, guid: 5344c01f6ab2c45e79192cae8e34c96e, type: 2}
   descriptionKey: DungeonTartarusScarletCave
+  canChange: {fileID: 11400000, guid: bdcc0045142234e0184c10018e4ba134, type: 2}
   debugOnly: 0

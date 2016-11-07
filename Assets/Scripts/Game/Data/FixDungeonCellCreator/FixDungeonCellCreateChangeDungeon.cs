@@ -31,6 +31,9 @@ namespace MineS
 		private string descriptionKey;
 
 		[SerializeField]
+		private ConditionScriptableObjectBase canChange;
+
+		[SerializeField]
 		private bool debugOnly;
 
 		public override CellData Create(int y, int x, CellController cellController, MapChipCreatorBase mapChipCreator)
@@ -46,7 +49,7 @@ namespace MineS
 
 			if(this.conditioner.Condition)
 			{
-				cellData.BindCellClickAction(new ChangeDungeonDataAction(this.data, this.descriptionKey));
+				cellData.BindCellClickAction(new ChangeDungeonDataAction(this.data, this.descriptionKey, this.canChange));
 			}
 			else
 			{

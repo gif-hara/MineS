@@ -14,3 +14,4 @@ MonoBehaviour:
   conditioner: {fileID: 11400000, guid: ef61b50bada6846e08e949a7a8b5856d, type: 2}
   data: {fileID: 11400000, guid: 2c8d87bdf136c4b0894045e564b03ccb, type: 2}
   descriptionKey: DungeonTutorial
+  canChange: {fileID: 11400000, guid: ef61b50bada6846e08e949a7a8b5856d, type: 2}
