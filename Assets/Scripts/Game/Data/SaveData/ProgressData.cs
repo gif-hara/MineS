@@ -30,6 +30,9 @@ namespace MineS
 		[SerializeField]
 		private int visitTownBlackSmithCount;
 
+		[SerializeField]
+		private int visitPublicityCount;
+
 		public bool IsCompleteTutorial{ get { return this.isCompleteTutorial; } }
 
 		public List<GameDefine.DungeonType> ClearDungeonFlags{ get { return this.clearDungeonFlags; } }
@@ -41,6 +44,8 @@ namespace MineS
 		public int VisitBlackSmithCount{ get { return this.visitBlackSmithCount; } }
 
 		public int VisitTownBlackSmithCount{ get { return this.visitTownBlackSmithCount; } }
+
+		public int VisitPublicityCount{ get { return this.visitPublicityCount; } }
 
 		public ProgressData()
 		{
@@ -85,6 +90,12 @@ namespace MineS
 			{
 				this.visitTownBlackSmithCount++;
 			}
+			HK.Framework.SaveData.SetClass<ProgressData>(MineS.SaveData.ProgressKeyName, this);
+		}
+
+		public void AddVisitPublicityCount()
+		{
+			this.visitPublicityCount++;
 			HK.Framework.SaveData.SetClass<ProgressData>(MineS.SaveData.ProgressKeyName, this);
 		}
 

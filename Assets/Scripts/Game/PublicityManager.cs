@@ -27,6 +27,9 @@ namespace MineS
 		private StringAsset.Finder goodbyeMessage;
 
 		[SerializeField]
+		private TalkChunkData firstTalk;
+
+		[SerializeField]
 		private TalkChunkData finishedTalk;
 
 		[SerializeField]
@@ -60,6 +63,12 @@ namespace MineS
 		public void OpenNPCUI()
 		{
 			NPCManager.Instance.Open(this.npcImage);
+		}
+
+		public void StartFirstTalk()
+		{
+			this.OpenNPCUI();
+			TalkManager.Instance.StartTalk(this.firstTalk, this.OpenUI);
 		}
 
 		public void StartFullInventoryTalk()

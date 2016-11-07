@@ -8505,9 +8505,9 @@ RectTransform:
   - {fileID: 912330559}
   m_Father: {fileID: 842027360}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 371.25, y: -130}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518210043
@@ -9178,9 +9178,9 @@ RectTransform:
   - {fileID: 427700589}
   m_Father: {fileID: 912330559}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 110, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &549576039
@@ -28203,6 +28203,7 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u307E\u305F\u306A\u30FC\uFF01"
     guid: c66f8734-c0ac-4bf9-9746-7a112c18a0a5
+  firstTalk: {fileID: 11400000, guid: 5996c918228004c14baf113f9471716a, type: 2}
   finishedTalk: {fileID: 11400000, guid: 96b23d0fb49e14c8aa5aeac515a2b26d, type: 2}
   failureTalk: {fileID: 11400000, guid: 37c70e5b5a1eb4c55aa3fb2cdd9b501e, type: 2}
   fullInventoryTalk: {fileID: 11400000, guid: e32b3506a6ca2425489881547ab36905, type: 2}

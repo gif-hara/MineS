@@ -17,7 +17,16 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			PublicityManager.Instance.OpenUI();
+			if(MineS.SaveData.Progress.VisitPublicityCount <= 0)
+			{
+				PublicityManager.Instance.StartFirstTalk();
+			}
+			else
+			{
+				PublicityManager.Instance.OpenUI();
+			}
+
+			MineS.SaveData.Progress.AddVisitPublicityCount();
 		}
 
 		public override void SetCellController(CellController cellController)
