@@ -677,49 +677,6 @@ namespace MineS
 			AlreadyHave,
 		}
 
-		public enum SelectItemDecideType:int
-		{
-			/// <summary>
-			/// 使う.
-			/// </summary>
-			Use,
-
-			/// <summary>
-			/// 装備する.
-			/// </summary>
-			Equipment,
-
-			/// <summary>
-			/// 外す.
-			/// </summary>
-			Remove,
-
-			/// <summary>
-			/// 投げる.
-			/// </summary>
-			Throw,
-
-			/// <summary>
-			/// 置く.
-			/// </summary>
-			Put,
-
-			/// <summary>
-			/// 説明.
-			/// </summary>
-			Description,
-
-			/// <summary>
-			/// キャンセル.
-			/// </summary>
-			Cancel,
-
-			/// <summary>
-			/// 強化する.
-			/// </summary>
-			Reinforcement,
-		}
-
 		public enum InventoryModeType:int
 		{
 			/// <summary>
