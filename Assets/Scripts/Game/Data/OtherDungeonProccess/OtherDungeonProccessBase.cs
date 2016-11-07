@@ -8,7 +8,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public abstract class ClearDungeonProccessBase : ScriptableObject
+	public abstract class OtherDungeonProccessBase : ScriptableObject
 	{
 		public abstract void Invoke();
 	}

@@ -32,9 +32,6 @@ namespace MineS
 		private BlackSmithTable blackSmithTable;
 
 		[SerializeField]
-		private List<ClearDungeonProccessBase> clearDungeonProccesses;
-
-		[SerializeField]
 		private Range createRecoveryItemRange;
 
 		[SerializeField]
@@ -114,11 +111,6 @@ namespace MineS
 		public bool CanCreateBlackSmith(int floor)
 		{
 			return this.blackSmithTable.CanCreate(floor);
-		}
-
-		public void ClearDungeon()
-		{
-			this.clearDungeonProccesses.ForEach(c => c.Invoke());
 		}
 
 #if UNITY_EDITOR

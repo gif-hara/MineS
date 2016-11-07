@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 432601c7c1dd542ffac13810a39c1ef6, type: 3}
-  m_Name: Town
+  m_Name: Tutorial
   m_EditorClassIdentifier: 
   dungeonName:
     target: {fileID: 11400000, guid: 4172020a15e334b00838b72bf6b90d8f, type: 2}

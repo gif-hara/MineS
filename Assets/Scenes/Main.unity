@@ -27930,9 +27930,9 @@ MonoBehaviour:
   - {fileID: 1413544252}
   - {fileID: 674414086}
   data:
-    bgmVolume: 0
-    seVolume: 0.5276223
-    messageSpeed: 2
+    bgmVolume: 0.5
+    seVolume: 0.5
+    messageSpeed: 1
     isFewMessage: 0
     autoSort: 0
 --- !u!114 &1584263368

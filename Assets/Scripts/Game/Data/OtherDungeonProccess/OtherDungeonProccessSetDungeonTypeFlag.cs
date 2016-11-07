@@ -9,7 +9,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[CreateAssetMenu()]
-	public class ClearDungeonSetDungeonTypeFlag : ClearDungeonProccessBase
+	public class OtherDungeonProccessSetDungeonTypeFlag : OtherDungeonProccessBase
 	{
 		[SerializeField]
 		GameDefine.DungeonType type;
