@@ -17,8 +17,8 @@ MonoBehaviour:
   sellingPrice: 400
   image: {fileID: 21300000, guid: 5b3676b45a4310a49a3eeeff33b48b21, type: 3}
   type: 1
-  power0: 150
-  power1: 150
+  power0: 200
+  power1: 200
   canUnidentified: 1
   description: "\u5BFE\u8C61\u306E\u30A2\u30FC\u30DE\u30FC\u304C\u3059\u3054\u304F\u56DE\u5FA9\u3059\u308B\u305E\uFF01"
   useSound: {fileID: 8300000, guid: 44d511b5cc7424c9b87217e859acb15f, type: 3}
