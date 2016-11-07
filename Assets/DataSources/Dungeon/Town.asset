@@ -40,6 +40,11 @@ MonoBehaviour:
         elements:
         - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
           probability: 100
+  otherDungeonProccesses:
+    proccesses:
+    - {fileID: 11400000, guid: 4163aac1e2e2e4b089178f521507c173, type: 2}
+  clearDungeonProccesses:
+    proccesses: []
   allIdentification: 1
   initialStepPosition:
     x: 3

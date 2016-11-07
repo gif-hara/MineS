@@ -54,6 +54,7 @@ namespace MineS
 		public void CompleteTutorial()
 		{
 			this.isCompleteTutorial = true;
+			HK.Framework.SaveData.SetClass<ProgressData>(MineS.SaveData.ProgressKeyName, this);
 		}
 
 		public void ClearDungeon(GameDefine.DungeonType type)
