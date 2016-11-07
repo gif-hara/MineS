@@ -23,5 +23,9 @@ namespace MineS
 		public SerializeFieldGetter.GameObject prefabTakeDamage;
 
 		public SerializeFieldGetter.GameObject prefabSummon;
+
+		public SerializeFieldGetter.GameObject prefabAddAbnormalBuff;
+
+		public SerializeFieldGetter.GameObject prefabAddAbnormalDebuff;
 	}
 }

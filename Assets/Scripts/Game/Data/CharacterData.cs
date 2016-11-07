@@ -362,16 +362,23 @@ namespace MineS
 			{
 				newAbnormalStatus.AddRemainingTurn(Calculator.GetEnhancementAddTurn(this));
 				newAbnormalStatus.AddRemainingTurn(Calculator.GetWeakSubTurn(this));
+				SEManager.Instance.PlaySE(SEManager.Instance.addBuff);
 			}
 			else if(!GameDefine.IsBuff(newAbnormalStatus.Type))
 			{
 				newAbnormalStatus.AddRemainingTurn(Calculator.GetInfectionAddTurn(this));
 				newAbnormalStatus.AddRemainingTurn(Calculator.GetImmunitySubTurn(this));
+				SEManager.Instance.PlaySE(SEManager.Instance.addDebuff);
 			}
 
 			this.RemoveAbnormalStatus(newAbnormalStatus.OppositeType);
+			this.OnAddedAbnormalStatus(newAbnormalStatus);
 
 			return GameDefine.AddAbnormalStatusResultType.Added;
+		}
+
+		protected virtual void OnAddedAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
+		{
 		}
 
 		public void RemoveAbnormalStatus(GameDefine.AbnormalStatusType type)

@@ -39,6 +39,18 @@ namespace MineS
 			PlayerManager.Instance.Serialize();
 		}
 
+		protected override void OnAddedAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
+		{
+			if(GameDefine.IsBuff(newAbnormalStatus.Type))
+			{
+				Object.Instantiate(EffectManager.Instance.prefabAddAbnormalBuff.Element, CanvasManager.Instance.EffectLv0.transform, false);
+			}
+			else
+			{
+				Object.Instantiate(EffectManager.Instance.prefabAddAbnormalDebuff.Element, CanvasManager.Instance.EffectLv0.transform, false);
+			}
+		}
+
 		protected override void OnAttacked(CharacterData target, int damage)
 		{
 			base.OnAttacked(target, damage);

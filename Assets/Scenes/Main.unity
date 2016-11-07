@@ -21828,6 +21828,10 @@ MonoBehaviour:
     element: {fileID: 8300000, guid: abe5fa0fda020447e9ba5bea43d062b2, type: 3}
   levelUp:
     element: {fileID: 8300000, guid: d6232cee9776e4ab09ff3f106fe755b6, type: 3}
+  addBuff:
+    element: {fileID: 8300000, guid: f8654330df8494e1db8b12c096639370, type: 3}
+  addDebuff:
+    element: {fileID: 8300000, guid: 4aa3ede7196fe432688973fffd1d98a5, type: 3}
   prefabElement: {fileID: 114000012096606980, guid: dfa5d91d0823a40a081667c24b52d466,
     type: 2}
 --- !u!114 &1339646585
@@ -27910,6 +27914,10 @@ MonoBehaviour:
     element: {fileID: 1000011697786726, guid: 9aad14a850a5349ddb7c9a21129ae834, type: 2}
   prefabSummon:
     element: {fileID: 1000010090548180, guid: d68048784a3fe44af8160b457e799f4f, type: 2}
+  prefabAddAbnormalBuff:
+    element: {fileID: 1000011697786726, guid: f4e15da6476514e95a337e17472cb245, type: 2}
+  prefabAddAbnormalDebuff:
+    element: {fileID: 1000011697786726, guid: 6e5fc363c2f1049749b1fe227ed2a178, type: 2}
 --- !u!114 &1584263366
 MonoBehaviour:
   m_ObjectHideFlags: 0
