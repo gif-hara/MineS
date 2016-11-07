@@ -227,12 +227,6 @@ namespace MineS
 			}
 		}
 
-		private Cell GetBlankCellPositionRandom(CellData[,] database)
-		{
-			var result = database.Cast<CellData>().Where(c => c.CurrentEventType == GameDefine.EventType.None).ToList();
-			return result[Random.Range(0, result.Count)].Position;
-		}
-
 		/// <summary>
 		/// ターン経過可能なセルコントローラーを返す.
 		/// </summary>
