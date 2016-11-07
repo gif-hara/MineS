@@ -42,6 +42,8 @@ namespace MineS
 		}
 
 
+
+
 #else
 		void Start()
 		{
@@ -106,7 +108,12 @@ namespace MineS
 
 		public void FadeOut()
 		{
-			this.source.DOFade(0.0f, 1.0f);
+			this.source.DOFade(0.0f, 1.0f)
+				.OnComplete(() =>
+			{
+				this.source.Stop();
+				this.source.volume = MineS.SaveData.Option.BGMVolume;
+			});
 		}
 
 		public void StartBGM(AudioClip clip)
