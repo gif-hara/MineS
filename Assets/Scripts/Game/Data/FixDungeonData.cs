@@ -34,14 +34,22 @@ namespace MineS
 		}
 
 		[SerializeField]
+		private bool allIdentification;
+
+		[SerializeField]
+		private Cell initialStepPosition;
+
+		[SerializeField]
 		private List<CellCreator> creators;
 
 		[SerializeField][Multiline(8)]
-		private string mapChip;
+		private List<string> mapChip;
+
+		public bool AllIdentification{ get { return this.allIdentification; } }
 
 		public List<CellCreator> CellCreators{ get { return this.creators; } }
 
-		public string MapChip{ get { return this.mapChip; } }
+		public List<string> MapChip{ get { return this.mapChip; } }
 
 		[ContextMenu("Check")]
 		private void AssertionCheck()
@@ -51,6 +59,14 @@ namespace MineS
 		public override CellData[,] Create(CellManager cellManager)
 		{
 			return new FixDungeonCreator().Create(cellManager, this, GameDefine.CellRowMax, GameDefine.CellCulumnMax);
+		}
+
+		public override void InitialStep()
+		{
+			var initialCell = CellManager.Instance.CellDatabase[this.initialStepPosition.y, this.initialStepPosition.x];
+			var isXray = PlayerManager.Instance.Data.IsXray;
+			initialCell.Steppable(isXray);
+			initialCell.Identification(true, isXray, false);
 		}
 	}
 }

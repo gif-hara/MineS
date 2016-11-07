@@ -12,10 +12,10 @@ namespace MineS
 	{
 		private List<List<int>> ids;
 
-		public FixDungeonMapChipCreator(FixDungeonData data)
+		public FixDungeonMapChipCreator(FixDungeonData data, int floor)
 		{
 			this.ids = new List<List<int>>();
-			var splitMapChip = data.MapChip.Split('\n');
+			var splitMapChip = data.MapChip[floor - 1].Split('\n');
 			foreach(var s in splitMapChip)
 			{
 				var id = new List<int>();

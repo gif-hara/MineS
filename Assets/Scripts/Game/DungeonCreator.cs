@@ -70,7 +70,7 @@ namespace MineS
 			}
 
 			// 空白を作成.
-			for(int i = 0, imax = database.Rest; i < imax; i++)
+			for(int i = 0, imax = database.RestCount; i < imax; i++)
 			{
 				this.CreateCellData(cellManager, database, mapChipCreator, null, 0);
 			}

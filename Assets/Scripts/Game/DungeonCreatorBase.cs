@@ -36,6 +36,11 @@ namespace MineS
 				return cell;
 			}
 
+			public Cell Seek(int index)
+			{
+				return this.data[index];
+			}
+
 			public Cell Pop(int y, int x)
 			{
 				var cell = this.data.Find(c => c.y == y && c.x == x);
@@ -48,7 +53,7 @@ namespace MineS
 				this.CellDatabase[cell.y, cell.x] = cellData;
 			}
 
-			public int Rest
+			public int RestCount
 			{
 				get
 				{
@@ -79,7 +84,7 @@ namespace MineS
 
 		protected void CreateCellData(CellManager cellManager, Database database, MapChipCreatorBase mapChipCreator, CellClickActionBase action)
 		{
-			this.CreateCellData(cellManager, database, mapChipCreator, action, Random.Range(0, database.Rest));
+			this.CreateCellData(cellManager, database, mapChipCreator, action, Random.Range(0, database.RestCount));
 		}
 	}
 }

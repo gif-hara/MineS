@@ -188,20 +188,22 @@ namespace MineS
 
 		private void InitializeStep()
 		{
-			int y, x;
-			this.GetBlankCellIndex(this.cellDatabase, out y, out x);
-			var initialCell = this.cellDatabase[y, x];
+			var initialCell = this.RandomBlankCell(false);
+			if(initialCell == null)
+			{
+				return;
+			}
 			var playerData = PlayerManager.Instance.Data;
-			var isXray = playerData.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray) || playerData.FindAbility(GameDefine.AbilityType.Clairvoyance);
+			var isXray = playerData.IsXray;
 			initialCell.Steppable(isXray);
 			initialCell.Identification(true, isXray, false);
 		}
 
 		public void CreateCellDatabaseFromDungeonData()
 		{
-			var dungeonManager = DungeonManager.Instance;
-			this.SetCell(dungeonManager.CurrentData.Create(this));
-			this.InitializeStep();
+			var dungeonData = DungeonManager.Instance.CurrentData;
+			this.SetCell(dungeonData.Create(this));
+			dungeonData.InitialStep();
 		}
 
 		private void CheckCellData(CellData[,] database)
@@ -225,13 +227,10 @@ namespace MineS
 			}
 		}
 
-		private void GetBlankCellIndex(CellData[,] database, out int y, out int x)
+		private Cell GetBlankCellPositionRandom(CellData[,] database)
 		{
-			do
-			{
-				y = Random.Range(0, GameDefine.CellRowMax);
-				x = Random.Range(0, GameDefine.CellCulumnMax);
-			} while(database[y, x].CurrentEventType != GameDefine.EventType.None);
+			var result = database.Cast<CellData>().Where(c => c.CurrentEventType == GameDefine.EventType.None).ToList();
+			return result[Random.Range(0, result.Count)].Position;
 		}
 
 		/// <summary>

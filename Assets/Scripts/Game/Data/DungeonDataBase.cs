@@ -36,6 +36,8 @@ namespace MineS
 
 		public abstract CellData[,] Create(CellManager cellManager);
 
+		public abstract void InitialStep();
+
 		public MapChipData GetMapChip(int floor)
 		{
 			return this.mapChipTable.Get(floor);

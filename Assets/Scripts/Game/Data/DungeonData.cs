@@ -86,6 +86,16 @@ namespace MineS
 			return new DungeonCreator().Create(cellManager, this, GameDefine.CellRowMax, GameDefine.CellCulumnMax);
 		}
 
+		public override void InitialStep()
+		{
+			var initialCell = CellManager.Instance.RandomBlankCell(false);
+			Debug.AssertFormat(initialCell != null, "最初に踏めるセルがありませんでした.");
+
+			var isXray = PlayerManager.Instance.Data.IsXray;
+			initialCell.Steppable(isXray);
+			initialCell.Identification(true, isXray, false);
+		}
+
 		public EnemyData CreateEnemy(int floor, CellController cellController)
 		{
 			return this.enemyTable.Create(floor, cellController);

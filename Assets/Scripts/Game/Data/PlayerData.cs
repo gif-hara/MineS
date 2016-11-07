@@ -269,6 +269,14 @@ namespace MineS
 			}
 		}
 
+		public bool IsXray
+		{
+			get
+			{
+				return this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray) || this.FindAbility(GameDefine.AbilityType.Clairvoyance);
+			}
+		}
+
 		private List<AbilityBase> GetEquipmentAbilities(GameDefine.ItemType type)
 		{
 			var equipment = this.Inventory.Equipment.Get(type);
