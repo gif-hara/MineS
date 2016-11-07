@@ -17,7 +17,7 @@ MonoBehaviour:
   armor: 712
   hitProbability: 90
   evasion: 0
-  experience: 857
+  experience: 9504
   money: 0
   dropItemProbability: 2
   overrideDropItems: []
