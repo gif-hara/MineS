@@ -20,7 +20,7 @@ namespace MineS
 			}
 			else
 			{
-				DungeonManager.Instance.NextFloorEvent(1);
+				DungeonManager.Instance.NextFloorEvent(1, false);
 			}
 		}
 

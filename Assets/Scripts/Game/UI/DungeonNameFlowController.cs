@@ -65,12 +65,22 @@ namespace MineS
 			this.startTextFadeInEvent.AddListener(call);
 		}
 
-		public void StartFadeOut(DungeonDataBase dungeonData, string dungeonName, int floor)
+		public void StartFadeOut(DungeonDataBase dungeonData, string dungeonName, int floor, bool immediateFadeOut)
 		{
 			this.inputBlock.enabled = true;
 			this.fade.enabled = true;
 			this.text.text = (dungeonData as DungeonData) != null ? this.dungeonFormat.Format(dungeonName, floor) : this.fixDungeonFormat.Format(dungeonName);
-			DOTween.ToAlpha(() => this.fade.color, x => this.fade.color = x, 1.0f, 0.5f)
+			DOTween.ToAlpha(() => this.fade.color, x =>
+			{
+				if(immediateFadeOut)
+				{
+					this.fade.color = new Color(x.r, x.g, x.b, 1.0f);
+				}
+				else
+				{
+					this.fade.color = x;
+				}
+			}, 1.0f, 0.5f)
 				.OnComplete(() =>
 			{
 				this.StartFadeInText();

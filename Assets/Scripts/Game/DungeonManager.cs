@@ -103,12 +103,12 @@ namespace MineS
 			OnApplicationQuit();
 		}
 
-		public void ChangeDungeonData(DungeonDataBase data, int floor = 1)
+		public void ChangeDungeonData(DungeonDataBase data, bool immediateFadeOut, int floor = 1)
 		{
 			this.current = data;
 			this.floorCount = floor;
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalChangeDungeon);
-			this.NextFloorEvent(0);
+			this.NextFloorEvent(0, immediateFadeOut);
 		}
 
 		public void AddPreChangeDungeonEvent(UnityAction otherEvent)
@@ -131,7 +131,7 @@ namespace MineS
 			this.nextFloorEvent.AddListener(otherEvent);
 		}
 
-		public void NextFloorEvent(int addValue)
+		public void NextFloorEvent(int addValue, bool immediateFadeOut)
 		{
 			this.cachedAddFloorCount = addValue;
 			SEManager.Instance.PlaySE(SEManager.Instance.stair);
@@ -140,7 +140,7 @@ namespace MineS
 				BGMManager.Instance.FadeOut();
 			}
 			//this.InternalNextFloor();
-			this.dungeonNameFlowController.StartFadeOut(this.current, this.CurrentData.Name, this.floorCount + addValue);
+			this.dungeonNameFlowController.StartFadeOut(this.current, this.CurrentData.Name, this.floorCount + addValue, immediateFadeOut);
 		}
 
 		public EnemyData CreateEnemy(CellController cellController)
@@ -171,7 +171,7 @@ namespace MineS
 			{
 				PlayerManager.Instance.Giveup();
 				OptionManager.Instance.CloseUI();
-				this.ChangeDungeonData(this.townData);
+				this.ChangeDungeonData(this.townData, false);
 			}, true);
 			confirmManager.Add(this.giveupCancelMessage, () =>
 			{
@@ -221,7 +221,7 @@ namespace MineS
 		{
 			if(!MineS.SaveData.Progress.IsCompleteTutorial)
 			{
-				this.ChangeDungeonData(this.tutorialData);
+				this.ChangeDungeonData(this.tutorialData, true);
 			}
 			else
 			{

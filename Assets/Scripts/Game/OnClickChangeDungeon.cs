@@ -19,7 +19,7 @@ namespace MineS
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			DungeonManager.Instance.ChangeDungeonData(this.dungeonData);
+			DungeonManager.Instance.ChangeDungeonData(this.dungeonData, false);
 		}
 
 #endregion

@@ -24,7 +24,7 @@ namespace MineS
 		{
 			ConfirmManager.Instance.Add(ConfirmManager.Instance.proceed, () =>
 			{
-				DungeonManager.Instance.ChangeDungeonData(this.dungeonData);
+				DungeonManager.Instance.ChangeDungeonData(this.dungeonData, false);
 			}, true);
 			ConfirmManager.Instance.Add(ConfirmManager.Instance.cancel, () =>
 			{
