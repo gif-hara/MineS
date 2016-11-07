@@ -179,6 +179,11 @@ namespace MineS
 			}, true);
 		}
 
+		public void RemoveSaveData()
+		{
+			this.ChangeDungeonData(this.tutorialData, false);
+		}
+
 		public bool CanTurnBack(int addValue)
 		{
 			return (this.floorCount + addValue) >= 1;
@@ -196,6 +201,7 @@ namespace MineS
 		{
 			this.floorCount += this.cachedAddFloorCount;
 			EnemyManager.Instance.RemoveAll();
+			OptionManager.Instance.CloseUI();
 			this.nextFloorEvent.Invoke();
 			this.observers.ForEach(o => o.ModifiedData(this.CurrentData));
 		}

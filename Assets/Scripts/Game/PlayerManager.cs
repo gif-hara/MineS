@@ -334,6 +334,12 @@ namespace MineS
 			this.Data.OnTurnProgress(type, turnCount);
 		}
 
+		public void RemoveSaveData()
+		{
+			this.Data.Inventory.RemoveAll();
+			this.Data.AddMoney(-this.Data.Money);
+		}
+
 		private void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			this.NotifyCharacterDataObservers();

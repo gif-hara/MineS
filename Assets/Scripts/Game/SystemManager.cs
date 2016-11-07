@@ -10,6 +10,15 @@ namespace MineS
 	/// </summary>
 	public class SystemManager : MonoBehaviour
 	{
+		[SerializeField]
+		private StringAsset.Finder removeSaveDataMessage0;
+
+		[SerializeField]
+		private StringAsset.Finder removeSaveDataMessage1;
+
+		[SerializeField]
+		private StringAsset.Finder cancelMessage;
+
 		void Awake()
 		{
 			QualitySettings.vSyncCount = 1;
@@ -27,6 +36,28 @@ namespace MineS
 			{
 				HK.Framework.SaveData.Save();
 			}
+		}
+
+		public void ConfirmRemoveSaveData()
+		{
+			DescriptionManager.Instance.DeployEmergency("ConfirmRemoveSaveData0");
+			var confirmManager = ConfirmManager.Instance;
+			confirmManager.Add(this.removeSaveDataMessage0, () =>
+			{
+				DescriptionManager.Instance.DeployEmergency("ConfirmRemoveSaveData1");
+				confirmManager.Add(this.removeSaveDataMessage1, () =>
+				{
+					PlayerManager.Instance.RemoveSaveData();
+					HK.Framework.SaveData.Clear();
+					DungeonManager.Instance.RemoveSaveData();
+				}, true);
+				confirmManager.Add(this.cancelMessage, () =>
+				{
+				}, true);
+			}, true);
+			confirmManager.Add(this.cancelMessage, () =>
+			{
+			}, true);
 		}
 	}
 }
