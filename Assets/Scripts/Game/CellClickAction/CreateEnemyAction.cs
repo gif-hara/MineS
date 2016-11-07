@@ -12,7 +12,24 @@ namespace MineS
 	{
 		private EnemyData enemy;
 
+		private CharacterMasterData masterData = null;
+
 		private const string EnemySerializeFormat = "CreateEnemyActionEnemy_{0}_{1}";
+
+		public CreateEnemyAction()
+		{
+			this.masterData = null;
+		}
+
+		/// <summary>
+		/// .ctor
+		/// 固定の敵を生成可能.
+		/// </summary>
+		/// <param name="masterData">Master data.</param>
+		public CreateEnemyAction(CharacterMasterData masterData)
+		{
+			this.masterData = masterData;
+		}
 
 		public override void Invoke(CellData data)
 		{
@@ -32,7 +49,15 @@ namespace MineS
 			{
 				return;
 			}
-			this.enemy = EnemyManager.Instance.Create(data);
+
+			if(this.masterData == null)
+			{
+				this.enemy = EnemyManager.Instance.Create(data);
+			}
+			else
+			{
+				this.enemy = EnemyManager.Instance.Create(data, this.masterData);
+			}
 		}
 
 		public override GameDefine.EventType EventType

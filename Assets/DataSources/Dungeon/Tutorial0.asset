@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 432601c7c1dd542ffac13810a39c1ef6, type: 3}
+  m_Name: Tutorial0
+  m_EditorClassIdentifier: 
+  dungeonName:
+    target: {fileID: 11400000, guid: 4172020a15e334b00838b72bf6b90d8f, type: 2}
+    value: "\u540D\u3082\u306A\u304D\u9053"
+    guid: 00d0d986-cc84-40bb-98ce-e8f5f9e02e11
+  serializable: 0
+  itemIdentified: 1
+  mapChipTable:
+    elements:
+    - floorRange:
+        min: 1
+        max: 1
+      mapChip: {fileID: 11400000, guid: effc1ca4fdae74bffaeeae600d621e91, type: 2}
+  bgmTable:
+    elements:
+    - floorRange:
+        min: 1
+        max: 1
+      clips:
+      - {fileID: 0}
+  shopTable:
+    elements:
+    - floorRange:
+        min: 1
+        max: 1
+      probability: 100
+      itemTable:
+        elements:
+        - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
+          probability: 100
+  otherDungeonProccesses:
+    proccesses:
+    - {fileID: 11400000, guid: 1b805c941a0db44a8986fb8e128a4ba0, type: 2}
+  clearDungeonProccesses:
+    proccesses: []
+  allIdentification: 0
+  initialStepPosition:
+    x: 3
+    y: 7
+  creators:
+  - x: 3
+    y: 0
+    creator: {fileID: 11400000, guid: 1ec86ef8f98654fd2bfacfd0a6899840, type: 2}
+  mapChip:
+  - "0001000\n\r0001000\n\r0001000\n\r0001000\n\r0001000\n\r0001000\n\r0001000\n\r0001000\r"

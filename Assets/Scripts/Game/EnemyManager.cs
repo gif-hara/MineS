@@ -41,6 +41,17 @@ namespace MineS
 			return enemy;
 		}
 
+		public EnemyData Create(CellData cellData, CharacterMasterData masterData)
+		{
+			Debug.AssertFormat(!this.Enemies.ContainsKey(cellData), "既に敵が存在します.");
+
+			var enemy = new EnemyData();
+			enemy.Initialize(masterData, cellData.Controller);
+			this.Add(cellData, enemy);
+
+			return enemy;
+		}
+
 		public void Add(CellData cellData, EnemyData enemy)
 		{
 			this.Enemies.Add(cellData, enemy);

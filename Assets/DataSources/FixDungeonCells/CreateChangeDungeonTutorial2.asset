@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea438fe006a74e8c845166ba766e975, type: 3}
+  m_Name: CreateChangeDungeonTutorial2
+  m_EditorClassIdentifier: 
+  conditioner: {fileID: 11400000, guid: ef61b50bada6846e08e949a7a8b5856d, type: 2}
+  data: {fileID: 11400000, guid: 8ea87f08d4918479e9b6752af41f92b4, type: 2}
+  descriptionKey: DungeonTutorial

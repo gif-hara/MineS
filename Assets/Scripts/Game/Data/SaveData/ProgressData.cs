@@ -13,6 +13,9 @@ namespace MineS
 	public class ProgressData
 	{
 		[SerializeField]
+		private bool isCompleteTutorial;
+
+		[SerializeField]
 		private List<GameDefine.DungeonType> clearDungeonFlags;
 
 		[SerializeField]
@@ -27,6 +30,8 @@ namespace MineS
 		[SerializeField]
 		private int visitTownBlackSmithCount;
 
+		public bool IsCompleteTutorial{ get { return this.isCompleteTutorial; } }
+
 		public List<GameDefine.DungeonType> ClearDungeonFlags{ get { return this.clearDungeonFlags; } }
 
 		public int VisitShopCount{ get { return this.visitShopCount; } }
@@ -39,7 +44,16 @@ namespace MineS
 
 		public ProgressData()
 		{
+			this.isCompleteTutorial = false;
 			this.clearDungeonFlags = new List<GameDefine.DungeonType>();
+			this.visitShopCount = 0;
+			this.visitBlackSmithCount = 0;
+			this.visitTownShopCount = 0;
+		}
+
+		public void CompleteTutorial()
+		{
+			this.isCompleteTutorial = true;
 		}
 
 		public void ClearDungeon(GameDefine.DungeonType type)

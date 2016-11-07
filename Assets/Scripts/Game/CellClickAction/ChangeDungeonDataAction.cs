@@ -32,6 +32,12 @@ namespace MineS
 			InformationManager.ConfirmEnterDungeon(this.dungeonData.Name);
 		}
 
+		public override void OnIdentification(CellData cellData)
+		{
+			base.OnIdentification(cellData);
+
+		}
+
 		public override void SetCellData(CellData data)
 		{
 			this.cellController.SetImage(this.Image);

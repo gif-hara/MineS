@@ -29,7 +29,10 @@ namespace MineS
 		protected ShopTable shopTable;
 
 		[SerializeField]
-		protected List<OtherDungeonProccessBase> clearDungeonProccesses;
+		private InvokeOtherDungeonProccess otherDungeonProccesses;
+
+		[SerializeField]
+		protected InvokeOtherDungeonProccess clearDungeonProccesses;
 
 		public string Name{ get { return this.dungeonName.ToString(); } }
 
@@ -66,9 +69,14 @@ namespace MineS
 			return this.shopTable.CanCreate(floor);
 		}
 
+		public void InvokeOtherProccess()
+		{
+			this.otherDungeonProccesses.Invoke();
+		}
+
 		public void ClearDungeon()
 		{
-			this.clearDungeonProccesses.ForEach(c => c.Invoke());
+			this.clearDungeonProccesses.Invoke();
 		}
 	}
 }

@@ -15,6 +15,9 @@ namespace MineS
 		private DungeonDataBase current;
 
 		[SerializeField]
+		private DungeonDataBase tutorialData;
+
+		[SerializeField]
 		private DungeonDataBase townData;
 
 		[SerializeField]
@@ -63,6 +66,7 @@ namespace MineS
 		{
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalNextFloor);
 			this.dungeonNameFlowController.AddStartTextFadeIn(this.PlayBGM);
+			this.dungeonNameFlowController.AddCompleteFadeInEvent(this.InvokeOtherProccess);
 			this.titleFlowController.AddStartFadeOutEvent(this.OnStartTitleFadeOut);
 
 			if(DungeonSerializer.ContainsDungeonData)
@@ -215,7 +219,19 @@ namespace MineS
 
 		private void OnStartTitleFadeOut()
 		{
-			BGMManager.Instance.StartBGM(this.current.GetBGM(this.floorCount));
+			if(!MineS.SaveData.Progress.IsCompleteTutorial)
+			{
+				this.ChangeDungeonData(this.tutorialData);
+			}
+			else
+			{
+				BGMManager.Instance.StartBGM(this.current.GetBGM(this.floorCount));
+			}
+		}
+
+		private void InvokeOtherProccess()
+		{
+			this.current.InvokeOtherProccess();
 		}
 
 		private void Serialize()

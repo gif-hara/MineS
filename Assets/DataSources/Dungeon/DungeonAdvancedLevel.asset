@@ -84,6 +84,10 @@ MonoBehaviour:
           probability: 80
         - masterData: {fileID: 11400000, guid: 4d6ec913ab03c4498b8b97c44e709598, type: 2}
           probability: 80
+  otherDungeonProccesses: []
+  clearDungeonProccesses:
+    proccesses:
+    - {fileID: 11400000, guid: cfc9e45a8ab4344ccb9f010bf0a9211f, type: 2}
   floorMax: 30
   enemyTable:
     elements:
@@ -315,8 +319,6 @@ MonoBehaviour:
         min: 26
         max: 26
       probability: 100
-  clearDungeonProccesses:
-  - {fileID: 11400000, guid: cfc9e45a8ab4344ccb9f010bf0a9211f, type: 2}
   createRecoveryItemRange:
     min: 1
     max: 4
