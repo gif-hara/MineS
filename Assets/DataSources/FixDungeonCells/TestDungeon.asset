@@ -15,4 +15,5 @@ MonoBehaviour:
   badConditionType: 0
   data: {fileID: 11400000, guid: fb7414cd5676941249068426b7a00398, type: 2}
   descriptionKey: TestDungeon
+  canChange: {fileID: 11400000, guid: ef61b50bada6846e08e949a7a8b5856d, type: 2}
   debugOnly: 1
