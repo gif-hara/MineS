@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: "\u30B4\u30FC\u30B9\u30C8Lv.2"
   hitPoint: 126
-  strength: 20
+  strength: 25
   armor: 0
   hitProbability: 90
-  evasion: 0
+  evasion: 10
   experience: 2364
   money: 0
   dropItemProbability: 2

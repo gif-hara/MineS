@@ -13,13 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: "\u30C8\u30ED\u30FC\u30EBLv.2"
   hitPoint: 224
-  strength: 121
+  strength: 137
   armor: 89
   hitProbability: 35
   evasion: 0
   experience: 5944
   money: 0
-  dropItemProbability: 2
+  dropItemProbability: 30
   overrideDropItems: []
   abilityTypes: 
   image: {fileID: 21300000, guid: 641a5e6de8f7a44069aa0211ce91c549, type: 3}

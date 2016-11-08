@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Enemy7
   m_EditorClassIdentifier: 
   characterName: "\u30D0\u30C3\u30C8Lv.2"
-  hitPoint: 64
+  hitPoint: 69
   strength: 11
   armor: 0
   hitProbability: 90

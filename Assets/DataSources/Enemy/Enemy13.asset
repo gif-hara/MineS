@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: Enemy13
   m_EditorClassIdentifier: 
   characterName: "\u30BF\u30A4\u30BF\u30F3Lv.2"
-  hitPoint: 124
-  strength: 54
+  hitPoint: 186
+  strength: 61
   armor: 248
   hitProbability: 90
   evasion: 0
@@ -21,7 +21,7 @@ MonoBehaviour:
   money: 0
   dropItemProbability: 2
   overrideDropItems: []
-  abilityTypes: 140000001400000014000000
+  abilityTypes: 14000000140000001400000014000000
   image: {fileID: 21300000, guid: fffb2ec3659d24ec3aaa7a5592690a7e, type: 3}
   previousLevelData: {fileID: 11400000, guid: 72915eb8bd08244a9bb3b47640a9ad59, type: 2}
   nextLevelData: {fileID: 11400000, guid: 928769585442a44aaa43510b4e015761, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: "\u5927\u86C7Lv.2"
   hitPoint: 84
-  strength: 14
+  strength: 20
   armor: 0
   hitProbability: 90
   evasion: 0
