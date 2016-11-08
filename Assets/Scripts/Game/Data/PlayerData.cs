@@ -146,6 +146,7 @@ namespace MineS
 			SEManager.Instance.PlaySE(SEManager.Instance.levelUp);
 			Object.Instantiate(EffectManager.Instance.prefabLevelUp.Element, CanvasManager.Instance.EffectLv0.transform, false);
 			PlayerManager.Instance.Serialize();
+			Object.Destroy(this.dyingEffect);
 		}
 
 		public void LevelDown(CharacterMasterData growthData)
