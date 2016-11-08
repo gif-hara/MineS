@@ -21,6 +21,8 @@ namespace MineS
 
 		public Inventory Inventory{ private set; get; }
 
+		private GameObject dyingEffect = null;
+
 		public PlayerData()
 		{
 		}
@@ -67,6 +69,16 @@ namespace MineS
 			AchievementManager.Instance.AddTakeDamage(value);
 			base.TakeDamageRaw(attacker, value, onlyHitPoint);
 			Object.Instantiate(EffectManager.Instance.prefabTakeDamage.Element, CanvasManager.Instance.EffectLv0.transform, false);
+			this.CreateDyingEffect();
+		}
+
+		public override void RecoveryHitPoint(int value, bool isLimit)
+		{
+			base.RecoveryHitPoint(value, isLimit);
+			if(!this.IsDying && this.dyingEffect != null)
+			{
+				Object.Destroy(this.dyingEffect);
+			}
 		}
 
 		public override void Defeat(IAttack target)
@@ -97,6 +109,7 @@ namespace MineS
 			this.money = 0;
 			this.OnChangeDungeon();
 			DungeonSerializer.InvalidSaveData();
+			Object.Destroy(this.dyingEffect);
 		}
 
 		public override string ColorCode
@@ -315,6 +328,7 @@ namespace MineS
 			result.Inventory = new Inventory(result, GameDefine.InventoryItemMax);
 			result.Inventory.Deserialize(GetInventorySerializeKeyName(key));
 			result.abilities = new List<AbilityBase>();
+			result.CreateDyingEffect();
 
 			return result;
 		}
@@ -322,6 +336,16 @@ namespace MineS
 		private static string GetInventorySerializeKeyName(string key)
 		{
 			return string.Format("{0}_Inventory", key);
+		}
+
+		private void CreateDyingEffect()
+		{
+			if(this.dyingEffect != null || !this.IsDying)
+			{
+				return;
+			}
+
+			this.dyingEffect = Object.Instantiate(EffectManager.Instance.prefabDyingEffect.Element, CanvasManager.Instance.EffectLv0.transform, false) as GameObject;
 		}
 	}
 }

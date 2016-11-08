@@ -27,5 +27,7 @@ namespace MineS
 		public SerializeFieldGetter.GameObject prefabAddAbnormalBuff;
 
 		public SerializeFieldGetter.GameObject prefabAddAbnormalDebuff;
+
+		public SerializeFieldGetter.GameObject prefabDyingEffect;
 	}
 }

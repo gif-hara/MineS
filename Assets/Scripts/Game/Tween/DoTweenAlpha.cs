@@ -27,10 +27,15 @@ namespace MineS
 		[SerializeField]
 		private Ease ease;
 
+		[SerializeField]
+		private int loopCount = 1;
+
 		void Start()
 		{
 			this.target.color = new Color(this.target.color.r, this.target.color.g, this.target.color.b, this.from);
-			DOTween.ToAlpha(() => this.target.color, x => this.target.color = x, this.to, this.duration).SetEase(this.ease);
+			DOTween.ToAlpha(() => this.target.color, x => this.target.color = x, this.to, this.duration)
+				.SetEase(this.ease)
+				.SetLoops(this.loopCount);
 		}
 	}
 }

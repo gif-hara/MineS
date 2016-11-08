@@ -22,26 +22,13 @@ GameObject:
   - 222: {fileID: 222000012293033300}
   - 114: {fileID: 114000012025263998}
   - 114: {fileID: 114000012053192432}
-  - 114: {fileID: 114000011682776460}
   m_Layer: 8
-  m_Name: TakeDamageEffect
+  m_Name: DyingEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114000011682776460
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011697786726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f1e93c72e5ca40688932c031b807fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0.3
 --- !u!114 &114000012025263998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,9 +70,9 @@ MonoBehaviour:
   target: {fileID: 114000012025263998}
   from: 0.2
   to: 0
-  duration: 0.25
+  duration: 0.5
   ease: 3
-  loopCount: 1
+  loopCount: -1
 --- !u!222 &222000012293033300
 CanvasRenderer:
   m_ObjectHideFlags: 1

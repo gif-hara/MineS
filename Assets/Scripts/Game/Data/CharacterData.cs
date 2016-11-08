@@ -124,7 +124,7 @@ namespace MineS
 			this.cellController = cellController;
 		}
 
-		public void RecoveryHitPoint(int value, bool isLimit)
+		public virtual void RecoveryHitPoint(int value, bool isLimit)
 		{
 			if(this.IsDead)
 			{
@@ -440,6 +440,14 @@ namespace MineS
 			get
 			{
 				return this.HitPoint <= 0;
+			}
+		}
+
+		public bool IsDying
+		{
+			get
+			{
+				return ((float)this.hitPoint / this.hitPointMax) < 0.3f;
 			}
 		}
 
