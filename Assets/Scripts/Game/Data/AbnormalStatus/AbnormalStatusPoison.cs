@@ -46,7 +46,7 @@ namespace MineS
 
 		protected override void InternalTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
-			this.Holder.TakeDamageRaw(null, Calculator.GetPoisonValue(this.Holder.HitPointMax), true);
+			this.Holder.TakeDamageRaw(null, Calculator.GetPoisonValue(this.Holder, this.Holder.HitPointMax), true);
 			if(this.Holder.CharacterType == GameDefine.CharacterType.Enemy && this.Holder.IsDead)
 			{
 				PlayerManager.Instance.Data.Defeat(this.Holder);

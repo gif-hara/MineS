@@ -36,10 +36,16 @@ namespace MineS
 		/// デバフの毒ダメージ量を返す.
 		/// </summary>
 		/// <returns>The poison value.</returns>
+		/// <param name="holder">Holder.</param>
 		/// <param name="hitPointMax">Hit point max.</param>
-		public static int GetPoisonValue(int hitPointMax)
+		public static int GetPoisonValue(IAttack holder, int hitPointMax)
 		{
-			return (hitPointMax / 50) + 1;
+			var rate = holder.CharacterType == GameDefine.CharacterType.Player
+				? 50
+				: 10;
+			var result = (hitPointMax / rate);
+			result = result <= 0 ? 1 : result;
+			return result;
 		}
 
 		/// <summary>
