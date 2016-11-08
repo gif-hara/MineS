@@ -10,8 +10,6 @@ namespace MineS
 	/// </summary>
 	public class AbilityLongRangeAttack : AbilityBase
 	{
-		private int waitTurn = 1;
-
 		public AbilityLongRangeAttack(CharacterData holder)
 			: base(GameDefine.AbilityType.LongRangeAttack, holder, "LongRangeAttack")
 		{
@@ -23,13 +21,6 @@ namespace MineS
 			{
 				return;
 			}
-
-			if(this.waitTurn > 0)
-			{
-				this.waitTurn--;
-				return;
-			}
-
 			CombatController.CombatLongRangeAttack(PlayerManager.Instance.Data, this.Holder);
 		}
 	}
