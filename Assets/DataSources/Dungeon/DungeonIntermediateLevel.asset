@@ -75,7 +75,8 @@ MonoBehaviour:
           probability: 80
         - masterData: {fileID: 11400000, guid: 4d6ec913ab03c4498b8b97c44e709598, type: 2}
           probability: 80
-  otherDungeonProccesses: []
+  otherDungeonProccesses:
+    proccesses: []
   clearDungeonProccesses:
     proccesses:
     - {fileID: 11400000, guid: 34908e3833a0a48ababc268ddd119b74, type: 2}
@@ -145,7 +146,7 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: 7d7fcc16ddb164c38b1e65daa0839f4a, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
-        probability: 30
+        probability: 10
     - floorRange:
         min: 15
         max: 16

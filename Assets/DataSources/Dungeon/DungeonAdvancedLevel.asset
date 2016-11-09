@@ -84,7 +84,8 @@ MonoBehaviour:
           probability: 80
         - masterData: {fileID: 11400000, guid: 4d6ec913ab03c4498b8b97c44e709598, type: 2}
           probability: 80
-  otherDungeonProccesses: []
+  otherDungeonProccesses:
+    proccesses: []
   clearDungeonProccesses:
     proccesses:
     - {fileID: 11400000, guid: cfc9e45a8ab4344ccb9f010bf0a9211f, type: 2}
@@ -146,13 +147,13 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: 5b32bd503e96d45799c5df17a603845b, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
-        probability: 50
+        probability: 10
     - floorRange:
         min: 13
         max: 14
       enemies:
       - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
-        probability: 50
+        probability: 10
       - masterData: {fileID: 11400000, guid: 7d7fcc16ddb164c38b1e65daa0839f4a, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 5b32bd503e96d45799c5df17a603845b, type: 2}
@@ -162,7 +163,7 @@ MonoBehaviour:
         max: 16
       enemies:
       - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
-        probability: 30
+        probability: 6
       - masterData: {fileID: 11400000, guid: 2b03b8aedc52b475abafa9219597d97b, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 7d7fcc16ddb164c38b1e65daa0839f4a, type: 2}
@@ -216,7 +217,7 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: 89f1422af2ba443f9bd208ff701c53db, type: 2}
         probability: 90
       - masterData: {fileID: 11400000, guid: 2669507a80614453f8ca686e99748f3d, type: 2}
-        probability: 70
+        probability: 10
       - masterData: {fileID: 11400000, guid: a9a69e7b003ba44309053111f383e998, type: 2}
         probability: 100
     - floorRange:
@@ -321,9 +322,9 @@ MonoBehaviour:
       probability: 100
   createRecoveryItemRange:
     min: 1
-    max: 4
+    max: 3
   createAnvilRange:
-    min: 2
+    min: 1
     max: 3
   createMoneyRange:
     min: 3
