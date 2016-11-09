@@ -123,6 +123,14 @@ namespace MineS
 				return GameDefine.AbilityType.Talisman;
 			case "気付":
 				return GameDefine.AbilityType.Care;
+			case "再生付与":
+				return GameDefine.AbilityType.GrantRegeneration;
+			case "鋭利付与":
+				return GameDefine.AbilityType.GrantSharpness;
+			case "硬化付与":
+				return GameDefine.AbilityType.GrantCuring;
+			case "一致団結":
+				return GameDefine.AbilityType.Unity;
 			default:
 				Debug.AssertFormat(false, "不正な値です name = {0}", name);
 				return GameDefine.AbilityType.Penetoration;
