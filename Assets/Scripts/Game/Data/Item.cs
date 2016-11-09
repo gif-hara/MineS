@@ -362,6 +362,10 @@ namespace MineS
 			break;
 			}
 
+			if(MineS.SaveData.Option.AutoSort)
+			{
+				inventory.Sort();
+			}
 			PlayerManager.Instance.Serialize();
 		}
 
