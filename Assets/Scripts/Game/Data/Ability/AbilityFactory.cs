@@ -120,6 +120,12 @@ namespace MineS
 				return new AbilityBase(type, holder, "Talisman");
 			case GameDefine.AbilityType.Care:
 				return new AbilityBase(type, holder, "Care");
+			case GameDefine.AbilityType.GrantRegeneration:
+				return new AbilityGrantRegeneration(holder);
+			case GameDefine.AbilityType.GrantSharpness:
+				return new AbilityGrantSharpness(holder);
+			case GameDefine.AbilityType.GrantCuring:
+				return new AbilityGrantCuring(holder);
 			case GameDefine.AbilityType.Unity:
 				return new AbilityBase(type, holder, "Unity");
 			default:

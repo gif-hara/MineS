@@ -782,6 +782,36 @@ MonoBehaviour:
       value: "\u4ED6\u306E\u6575\u306E\u6570\u3060\u3051\u30C0\u30E1\u30FC\u30B8\u304C\u6E1B\u308B\u305E\uFF01\n\u3055\u3089\u306B\u4ED6\u306E\u6575\u306E\u30C0\u30E1\u30FC\u30B8\u3082\u6E1B\u3063\u3066\u3057\u307E\u3046\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
       guid: d4c5c5c6-9a9c-4a90-9c88-d640fc9e5fbc
     image: {fileID: 0}
+  - key: GrantRegeneration
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u518D\u751F\u4ED8\u4E0E"
+      guid: 5c0f9652-9f73-4155-9297-5c5ba4eab7b8
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u767A\u898B\u3055\u308C\u305F\u6642\u306B\u4ED6\u306E\u6575\u306B\u30D0\u30D5\u306E\u518D\u751F\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      guid: c12b9ce6-3b79-48a1-a111-b0e34a2a76e7
+    image: {fileID: 0}
+  - key: GrantSharpness
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u92ED\u5229\u4ED8\u4E0E"
+      guid: b612a15c-590c-4599-a014-4658f9799ffb
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u767A\u898B\u3055\u308C\u305F\u6642\u306B\u4ED6\u306E\u6575\u306B\u30D0\u30D5\u306E\u92ED\u5229\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      guid: 098d4db3-4735-4329-bf83-f932c71da626
+    image: {fileID: 0}
+  - key: GrantCuring
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u786C\u5316\u4ED8\u4E0E"
+      guid: d495a838-2774-4e7d-ba38-a598547f0f54
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u767A\u898B\u3055\u308C\u305F\u6642\u306B\u4ED6\u306E\u6575\u306B\u30D0\u30D5\u306E\u786C\u5316\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      guid: bd5bf440-0caa-40ab-a08f-5538e46aef67
+    image: {fileID: 0}
   - key: CanNotPutItem
     title:
       target: {fileID: 0}

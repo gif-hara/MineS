@@ -46,9 +46,12 @@ namespace MineS
 
 		public override void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
+			if(this.Holder == null)
+			{
+				return;
+			}
 			base.OnTurnProgress(type, turnCount);
-			var playerManager = PlayerManager.Instance;
-			playerManager.RecoveryHitPoint(Calculator.GetRegenerationValue(playerManager.Data.HitPointMax), true);
+			this.Holder.RecoveryHitPoint(Calculator.GetRegenerationValue(this.Holder.HitPointMax), true);
 		}
 	}
 }
