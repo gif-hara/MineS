@@ -27957,7 +27957,7 @@ MonoBehaviour:
     seVolume: 0.5
     messageSpeed: 2
     isFewMessage: 1
-    autoSort: 1
+    autoSort: 0
 --- !u!114 &1584263368
 MonoBehaviour:
   m_ObjectHideFlags: 0

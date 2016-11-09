@@ -156,6 +156,14 @@ namespace MineS
 			}
 		}
 
+		public int GetAbilityUnityNumber
+		{
+			get
+			{
+				return this.VisibleEnemies.Select(e => e.GetAbilityNumber(GameDefine.AbilityType.Unity)).Sum(i => i);
+			}
+		}
+
 		public List<EnemyData> VisibleEnemies
 		{
 			get

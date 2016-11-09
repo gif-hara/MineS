@@ -90,6 +90,12 @@ namespace MineS
 				? 0.5f
 				: 1.0f;
 			int result = Mathf.FloorToInt(baseDamage * rate) - (receiver.GetAbilityNumber(GameDefine.AbilityType.Protection) * 3);
+
+			// 敵のみ一致団結の処理を行う.
+			if(receiver.CharacterType == GameDefine.CharacterType.Enemy)
+			{
+				result -= (EnemyManager.Instance.VisibleEnemies.Count - 1) * (EnemyManager.Instance.GetAbilityUnityNumber * 2);
+			}
 			result = result < 1 ? 1 : result;
 
 			return result;

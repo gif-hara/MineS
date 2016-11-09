@@ -617,6 +617,30 @@ namespace MineS
 			/// </summary>
 			[EnumLabel("気付：デバフの混乱を受け付けない")]
 			Care,
+
+			/// <summary>
+			/// 再生付与：識別状態になった際に他の敵に再生を付与する（敵のみ）.
+			/// </summary>
+			[EnumLabel("再生付与：識別状態になった際に他の敵に再生を付与する（敵のみ）")]
+			GrantRegeneration,
+
+			/// <summary>
+			/// 鋭利付与：識別状態になった際に他の敵に鋭利を付与する（敵のみ）.
+			/// </summary>
+			[EnumLabel("鋭利付与：識別状態になった際に他の敵に鋭利を付与する（敵のみ）")]
+			GrantSharpness,
+
+			/// <summary>
+			/// 硬化付与：識別状態になった際に他の敵に硬化を付与する（敵のみ）.
+			/// </summary>
+			[EnumLabel("硬化付与：識別状態になった際に他の敵に硬化を付与する（敵のみ）")]
+			GrantCuring,
+
+			/// <summary>
+			/// 一致団結：敵の数だけ受けるダメージが減る。さらに全ての敵に適用される.
+			/// </summary>
+			[EnumLabel("一致団結：敵の数だけ受けるダメージが減る。さらに全ての敵に適用される")]
+			Unity,
 		}
 
 		/// <summary>

@@ -772,6 +772,16 @@ MonoBehaviour:
       value: "\u30C7\u30D0\u30D5\u306E\u6DF7\u4E71\u3092\u53D7\u3051\u4ED8\u3051\u306A\u304F\u306A\u308B\u305E\uFF01"
       guid: 857dc2ed-c44d-4c1d-b9ae-2886cabb5826
     image: {fileID: 0}
+  - key: Unity
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u4E00\u81F4\u56E3\u7D50"
+      guid: 2a6718d4-028d-42a3-87e6-a543618533f9
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u4ED6\u306E\u6575\u306E\u6570\u3060\u3051\u30C0\u30E1\u30FC\u30B8\u304C\u6E1B\u308B\u305E\uFF01\n\u3055\u3089\u306B\u4ED6\u306E\u6575\u306E\u30C0\u30E1\u30FC\u30B8\u3082\u6E1B\u3063\u3066\u3057\u307E\u3046\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
+      guid: d4c5c5c6-9a9c-4a90-9c88-d640fc9e5fbc
+    image: {fileID: 0}
   - key: CanNotPutItem
     title:
       target: {fileID: 0}

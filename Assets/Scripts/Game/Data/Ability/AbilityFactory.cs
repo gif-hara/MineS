@@ -120,6 +120,8 @@ namespace MineS
 				return new AbilityBase(type, holder, "Talisman");
 			case GameDefine.AbilityType.Care:
 				return new AbilityBase(type, holder, "Care");
+			case GameDefine.AbilityType.Unity:
+				return new AbilityBase(type, holder, "Unity");
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = " + type);
 				return null;
