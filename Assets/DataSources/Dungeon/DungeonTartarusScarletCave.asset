@@ -787,7 +787,7 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: 2b03b8aedc52b475abafa9219597d97b, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
-        probability: 10
+        probability: 6
     - floorRange:
         min: 15
         max: 16
@@ -797,7 +797,7 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: c8c3b33748fc04361ae2bb3c7de3a71a, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
-        probability: 6
+        probability: 5
     - floorRange:
         min: 17
         max: 18
@@ -810,6 +810,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 953c4eed2519b47c5bc45db3e1bbcf29, type: 2}
         probability: 100
+      - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
+        probability: 10
     - floorRange:
         min: 19
         max: 19
@@ -818,6 +820,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: f2a9bee251178425eaf7ad66bf9646c2, type: 2}
         probability: 100
+      - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
+        probability: 5
     - floorRange:
         min: 20
         max: 21
@@ -830,6 +834,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: ef172ef9b1fff45c8a0bd0925db14158, type: 2}
         probability: 100
+      - masterData: {fileID: 11400000, guid: 2669507a80614453f8ca686e99748f3d, type: 2}
+        probability: 10
     - floorRange:
         min: 22
         max: 23
@@ -842,6 +848,8 @@ MonoBehaviour:
         probability: 60
       - masterData: {fileID: 11400000, guid: 89f1422af2ba443f9bd208ff701c53db, type: 2}
         probability: 60
+      - masterData: {fileID: 11400000, guid: 2669507a80614453f8ca686e99748f3d, type: 2}
+        probability: 7
     - floorRange:
         min: 24
         max: 25
@@ -854,6 +862,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 2664c6b88a3774eb58b7b3a2fe2b36fd, type: 2}
         probability: 80
+      - masterData: {fileID: 11400000, guid: 2669507a80614453f8ca686e99748f3d, type: 2}
+        probability: 10
     - floorRange:
         min: 26
         max: 27
@@ -864,6 +874,8 @@ MonoBehaviour:
         probability: 40
       - masterData: {fileID: 11400000, guid: a9a69e7b003ba44309053111f383e998, type: 2}
         probability: 50
+      - masterData: {fileID: 11400000, guid: 2669507a80614453f8ca686e99748f3d, type: 2}
+        probability: 5
     - floorRange:
         min: 28
         max: 29
@@ -876,6 +888,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 60f050c1f98fe46dd8ad9498fe8a6508, type: 2}
         probability: 100
+      - masterData: {fileID: 11400000, guid: 2669507a80614453f8ca686e99748f3d, type: 2}
+        probability: 10
     - floorRange:
         min: 30
         max: 32
@@ -934,6 +948,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 53a1c0dd6c8de416e93660f0e6a5e302, type: 2}
         probability: 20
+      - masterData: {fileID: 11400000, guid: d7ce2900fe0ad4d628a6320138eb6c0a, type: 2}
+        probability: 10
     - floorRange:
         min: 44
         max: 46
@@ -948,6 +964,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 53a1c0dd6c8de416e93660f0e6a5e302, type: 2}
         probability: 20
+      - masterData: {fileID: 11400000, guid: d7ce2900fe0ad4d628a6320138eb6c0a, type: 2}
+        probability: 10
     - floorRange:
         min: 47
         max: 49
@@ -962,6 +980,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 53a1c0dd6c8de416e93660f0e6a5e302, type: 2}
         probability: 20
+      - masterData: {fileID: 11400000, guid: d7ce2900fe0ad4d628a6320138eb6c0a, type: 2}
+        probability: 10
     - floorRange:
         min: 50
         max: 52
@@ -972,6 +992,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: cf41c8d0ea8654595bf9e6bb83e72367, type: 2}
         probability: 50
+      - masterData: {fileID: 11400000, guid: d7ce2900fe0ad4d628a6320138eb6c0a, type: 2}
+        probability: 3
     - floorRange:
         min: 53
         max: 55
@@ -984,6 +1006,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 038b390fd43bb46d499ad6f8420888f8, type: 2}
         probability: 50
+      - masterData: {fileID: 11400000, guid: d7ce2900fe0ad4d628a6320138eb6c0a, type: 2}
+        probability: 5
     - floorRange:
         min: 56
         max: 58
@@ -998,6 +1022,8 @@ MonoBehaviour:
         probability: 80
       - masterData: {fileID: 11400000, guid: 038b390fd43bb46d499ad6f8420888f8, type: 2}
         probability: 50
+      - masterData: {fileID: 11400000, guid: d7ce2900fe0ad4d628a6320138eb6c0a, type: 2}
+        probability: 5
     - floorRange:
         min: 59
         max: 61
@@ -1134,6 +1160,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: d21a2ffd2d7e14bcea67ae15c9298afa, type: 2}
         probability: 100
+      - masterData: {fileID: 11400000, guid: 928769585442a44aaa43510b4e015761, type: 2}
+        probability: 100
       - masterData: {fileID: 11400000, guid: 1e4aef6c286d242faaf67d92074d5955, type: 2}
         probability: 50
       - masterData: {fileID: 11400000, guid: b0a009892d2cf49598536e3abd138b87, type: 2}
@@ -1148,8 +1176,10 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: d21a2ffd2d7e14bcea67ae15c9298afa, type: 2}
         probability: 100
+      - masterData: {fileID: 11400000, guid: 928769585442a44aaa43510b4e015761, type: 2}
+        probability: 80
       - masterData: {fileID: 11400000, guid: b0a009892d2cf49598536e3abd138b87, type: 2}
-        probability: 100
+        probability: 80
     - floorRange:
         min: 92
         max: 94
