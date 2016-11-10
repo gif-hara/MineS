@@ -688,20 +688,18 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
         probability: 60
-      - masterData: {fileID: 11400000, guid: 3ff64318e5a804056a0c10072a6689a2, type: 2}
-        probability: 50
     - floorRange:
         min: 7
         max: 8
       enemies:
       - masterData: {fileID: 11400000, guid: f2a9bee251178425eaf7ad66bf9646c2, type: 2}
         probability: 100
-      - masterData: {fileID: 11400000, guid: 3ff64318e5a804056a0c10072a6689a2, type: 2}
-        probability: 100
       - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 72915eb8bd08244a9bb3b47640a9ad59, type: 2}
         probability: 80
+      - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
+        probability: 100
     - floorRange:
         min: 9
         max: 10
@@ -710,12 +708,10 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 9f8d502de637744d99a98949689f57a4, type: 2}
         probability: 100
-      - masterData: {fileID: 11400000, guid: 11f681ffd5fca49c097a5caed31d23e3, type: 2}
+      - masterData: {fileID: 11400000, guid: 649ca90f7ce90465680df5cdf56b8f37, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 714e1bde786804d329994d8b049219ce, type: 2}
         probability: 100
-      - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
-        probability: 10
     - floorRange:
         min: 11
         max: 12
@@ -726,10 +722,8 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 7d7fcc16ddb164c38b1e65daa0839f4a, type: 2}
         probability: 60
-      - masterData: {fileID: 11400000, guid: 11f681ffd5fca49c097a5caed31d23e3, type: 2}
-        probability: 80
-      - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
-        probability: 10
+      - masterData: {fileID: 11400000, guid: 714e1bde786804d329994d8b049219ce, type: 2}
+        probability: 100
     - floorRange:
         min: 13
         max: 14
@@ -738,8 +732,10 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 7d7fcc16ddb164c38b1e65daa0839f4a, type: 2}
         probability: 100
-      - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
-        probability: 10
+      - masterData: {fileID: 11400000, guid: 94c9dede526664061b476744c690f5a6, type: 2}
+        probability: 70
+      - masterData: {fileID: 11400000, guid: 2b03b8aedc52b475abafa9219597d97b, type: 2}
+        probability: 50
     - floorRange:
         min: 15
         max: 16
@@ -750,8 +746,6 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 7d7fcc16ddb164c38b1e65daa0839f4a, type: 2}
         probability: 50
-      - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
-        probability: 6
     - floorRange:
         min: 17
         max: 19
@@ -810,10 +804,10 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 89f1422af2ba443f9bd208ff701c53db, type: 2}
         probability: 100
-      - masterData: {fileID: 11400000, guid: c4735073ceff446649272e33dd2fe582, type: 2}
-        probability: 80
       - masterData: {fileID: 11400000, guid: a9a69e7b003ba44309053111f383e998, type: 2}
         probability: 80
+      - masterData: {fileID: 11400000, guid: 89f1422af2ba443f9bd208ff701c53db, type: 2}
+        probability: 100
     - floorRange:
         min: 28
         max: 29
@@ -821,11 +815,9 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: e089c7cccc0044fcab0f4527a267a9e9, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 6745db54d5a1c4c9b973a4919b67fc99, type: 2}
-        probability: 80
+        probability: 100
       - masterData: {fileID: 11400000, guid: a9a69e7b003ba44309053111f383e998, type: 2}
         probability: 100
-      - masterData: {fileID: 11400000, guid: c4735073ceff446649272e33dd2fe582, type: 2}
-        probability: 90
       - masterData: {fileID: 11400000, guid: 60f050c1f98fe46dd8ad9498fe8a6508, type: 2}
         probability: 50
     - floorRange:
@@ -900,12 +892,12 @@ MonoBehaviour:
         min: 44
         max: 46
       enemies:
-      - masterData: {fileID: 11400000, guid: 0cbb85b1fa97041de8d9075eccce2691, type: 2}
-        probability: 100
-      - masterData: {fileID: 11400000, guid: d7ce2900fe0ad4d628a6320138eb6c0a, type: 2}
-        probability: 70
       - masterData: {fileID: 11400000, guid: 980d15fb5dfa64076adeae712e98f058, type: 2}
         probability: 100
+      - masterData: {fileID: 11400000, guid: f80f13574676d4bada064735a6e66dec, type: 2}
+        probability: 100
+      - masterData: {fileID: 11400000, guid: 09b36ad995c7f4bc588e3f38e8c85c3b, type: 2}
+        probability: 50
       - masterData: {fileID: 11400000, guid: 53a1c0dd6c8de416e93660f0e6a5e302, type: 2}
         probability: 20
     - floorRange:
@@ -918,8 +910,6 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 980d15fb5dfa64076adeae712e98f058, type: 2}
         probability: 100
-      - masterData: {fileID: 11400000, guid: d7ce2900fe0ad4d628a6320138eb6c0a, type: 2}
-        probability: 10
       - masterData: {fileID: 11400000, guid: 53a1c0dd6c8de416e93660f0e6a5e302, type: 2}
         probability: 20
     - floorRange:
@@ -972,12 +962,12 @@ MonoBehaviour:
       enemies:
       - masterData: {fileID: 11400000, guid: 782d91bf9cfc7436294fb9097f517b15, type: 2}
         probability: 100
-      - masterData: {fileID: 11400000, guid: cd2973964066e43d0b765a00baa2026a, type: 2}
-        probability: 100
       - masterData: {fileID: 11400000, guid: 195d32c3395c644b5a6ca3fb7d1fa3cc, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 9e40a493b69bf4bb4beb1237091f1c6a, type: 2}
-        probability: 50
+        probability: 70
+      - masterData: {fileID: 11400000, guid: 1d365bfb2d3ce4203bf726b001a58ffc, type: 2}
+        probability: 70
       - masterData: {fileID: 11400000, guid: 038b390fd43bb46d499ad6f8420888f8, type: 2}
         probability: 50
     - floorRange:
@@ -992,8 +982,6 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 782d91bf9cfc7436294fb9097f517b15, type: 2}
         probability: 80
-      - masterData: {fileID: 11400000, guid: cd2973964066e43d0b765a00baa2026a, type: 2}
-        probability: 50
       - masterData: {fileID: 11400000, guid: 195d32c3395c644b5a6ca3fb7d1fa3cc, type: 2}
         probability: 50
       - masterData: {fileID: 11400000, guid: 782d91bf9cfc7436294fb9097f517b15, type: 2}
@@ -1036,8 +1024,6 @@ MonoBehaviour:
       enemies:
       - masterData: {fileID: 11400000, guid: 5258c0a9cb7b84d51b30926c5c9568d3, type: 2}
         probability: 100
-      - masterData: {fileID: 11400000, guid: d2c9b8f6276c24ceabdf7af6796b7e72, type: 2}
-        probability: 100
       - masterData: {fileID: 11400000, guid: 9b2eff049513c4219835c8228c5b59e4, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: e7aec8b08765049888b5aa70f3f5a997, type: 2}
@@ -1058,8 +1044,6 @@ MonoBehaviour:
         probability: 100
       - masterData: {fileID: 11400000, guid: 5258c0a9cb7b84d51b30926c5c9568d3, type: 2}
         probability: 70
-      - masterData: {fileID: 11400000, guid: d2c9b8f6276c24ceabdf7af6796b7e72, type: 2}
-        probability: 50
       - masterData: {fileID: 11400000, guid: 9b2eff049513c4219835c8228c5b59e4, type: 2}
         probability: 50
       - masterData: {fileID: 11400000, guid: cf41c8d0ea8654595bf9e6bb83e72367, type: 2}
