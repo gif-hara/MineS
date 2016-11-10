@@ -58,7 +58,9 @@ namespace MineS
 			var baseStrength = attacker.Strength;
 			if(attacker.FindAbility(GameDefine.AbilityType.Reinforcement))
 			{
-				baseStrength += attacker.GetAbilityNumber(GameDefine.AbilityType.Reinforcement) * (EnemyManager.Instance.IdentitiedEnemyNumber - 1) * 2;
+				var reinforcementPower = attacker.GetAbilityNumber(GameDefine.AbilityType.Reinforcement) * (EnemyManager.Instance.IdentitiedEnemyNumber - 1) * 2;
+				reinforcementPower = reinforcementPower < 0 ? 0 : reinforcementPower;
+				baseStrength += reinforcementPower;
 			}
 
 			baseStrength += GetArtisanRate(attacker);
