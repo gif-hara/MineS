@@ -232,7 +232,7 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static int GetRiskOfLifeAddStrengthValue(IAttack attacker)
 		{
-			return attacker.GetAbilityNumber(GameDefine.AbilityType.RiskOfLife) * 2;
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.RiskOfLife) * 6;
 		}
 
 		/// <summary>
