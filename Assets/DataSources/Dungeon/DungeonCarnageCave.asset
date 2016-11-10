@@ -899,7 +899,7 @@ MonoBehaviour:
     - floorRange:
         min: 5
         max: 40
-      probability: 8
+      probability: 10
   createRecoveryItemRange:
     min: 1
     max: 2
