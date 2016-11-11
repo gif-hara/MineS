@@ -79,7 +79,10 @@ namespace MineS
 				baseStrength += reinforcementPower;
 			}
 
-			baseStrength += GetArtisanRate(attacker);
+			if(attacker.FindAbility(GameDefine.AbilityType.Artisan))
+			{
+				baseStrength += GetArtisanRate(attacker);
+			}
 
 			if(attacker.FindAbility(GameDefine.AbilityType.RiskOfLife) && attacker.Armor > 0)
 			{
@@ -184,7 +187,9 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static int GetArtisanRate(IAttack attacker)
 		{
-			return attacker.GetAbilityNumber(GameDefine.AbilityType.Artisan) * 3;
+			var result = Mathf.FloorToInt(attacker.Strength * (0.1f + attacker.GetAbilityNumber(GameDefine.AbilityType.Artisan) * 0.05f));
+			Debug.Log("result = " + result);
+			return result;
 		}
 
 		/// <summary>
