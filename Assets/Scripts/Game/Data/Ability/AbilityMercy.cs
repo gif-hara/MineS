@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using System.Linq;
 
 namespace MineS
 {
@@ -22,16 +23,10 @@ namespace MineS
 				return;
 			}
 
-			var recoveryValue = Calculator.GetRegenerationValue(this.Holder.HitPointMax);
-			foreach(var e in EnemyManager.Instance.Enemies)
-			{
-				if(e.Value == this.Holder || e.Value == null || !e.Key.IsIdentification)
-				{
-					continue;
-				}
-
-				e.Value.RecoveryHitPoint(recoveryValue, false);
-			}
+			var recoveryValue = Calculator.GetMercyAbilityValue(this.Holder);
+			EnemyManager.Instance.VisibleEnemies
+				.Where(e => e != this.Holder)
+				.ToList().ForEach(e => e.RecoveryHitPoint(recoveryValue, false));
 		}
 	}
 }

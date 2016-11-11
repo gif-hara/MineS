@@ -16,10 +16,16 @@ namespace MineS
 		/// バフの再生の回復量を返す.
 		/// </summary>
 		/// <returns>The regeneration value.</returns>
+		/// <param name="user">User.</param>
 		/// <param name="hitPointMax">Hit point max.</param>
-		public static int GetRegenerationValue(int hitPointMax)
+		public static int GetRegenerationValue(IAttack user, int hitPointMax)
 		{
-			return (hitPointMax / 50) + 1;
+			var rate = user.CharacterType == GameDefine.CharacterType.Player
+				? 50
+				: 5;
+			var result = (hitPointMax / rate);
+			result = result <= 0 ? 1 : result;
+			return result;
 		}
 
 		/// <summary>
@@ -30,6 +36,16 @@ namespace MineS
 		public static int GetRegenerationAbilityValue(IAttack user)
 		{
 			return user.GetAbilityNumber(GameDefine.AbilityType.Regeneration) * 2;
+		}
+
+		/// <summary>
+		/// 特殊能力の慈悲の回復量を返す.
+		/// </summary>
+		/// <returns>The mercy ability value.</returns>
+		/// <param name="user">User.</param>
+		public static int GetMercyAbilityValue(IAttack user)
+		{
+			return (user.HitPointMax / 10);
 		}
 
 		/// <summary>
