@@ -19,7 +19,7 @@ MonoBehaviour:
   evasion: 0
   experience: 5741
   money: 0
-  dropItemProbability: 80
+  dropItemProbability: 100
   overrideDropItems:
   - {fileID: 11400000, guid: 3957b9c9277514a2fb967e8126e8af2f, type: 2}
   abilityTypes: 
