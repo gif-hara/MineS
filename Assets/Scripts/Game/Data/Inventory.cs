@@ -54,7 +54,7 @@ namespace MineS
 			// 投擲物の加算処理.
 			if(item.InstanceData.ItemType == GameDefine.ItemType.Throwing)
 			{
-				var existItem = this.items.Find(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.Throwing && i.InstanceData.Id == item.InstanceData.Id);
+				var existItem = this.items.Find(i => this.CanIntegrationThrowing(i, item));
 				if(existItem != null)
 				{
 					(existItem.InstanceData as ThrowingInstanceData).Add((item.InstanceData as ThrowingInstanceData).RemainingNumber);
@@ -167,6 +167,7 @@ namespace MineS
 			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.Weapon).OrderBy(i => i.InstanceData.Id));
 			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.Shield).OrderBy(i => i.InstanceData.Id));
 			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.Accessory).OrderBy(i => i.InstanceData.Id));
+			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.Throwing).OrderBy(i => i.InstanceData.Id));
 			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.UsableItem).OrderBy(i => i.InstanceData.Id));
 			for(int i = 0, imax = this.items.Count - result.Count; i < imax; i++)
 			{
@@ -264,6 +265,24 @@ namespace MineS
 					this.items[i] = null;
 				}
 			}
+		}
+
+		private bool CanIntegrationThrowing(Item a, Item b)
+		{
+			if(a == null || b == null)
+			{
+				return false;
+			}
+
+			var a_throwingItem = a.InstanceData as ThrowingInstanceData;
+			var b_throwingItem = b.InstanceData as ThrowingInstanceData;
+			if(a_throwingItem == null || b_throwingItem == null)
+			{
+				return false;
+			}
+
+			return a_throwingItem.Id == b_throwingItem.Id && a_throwingItem.CoatingId == b_throwingItem.CoatingId;
+
 		}
 	}
 }

@@ -34,6 +34,9 @@ namespace MineS
 		private StringAsset.Finder shootFormat;
 
 		[SerializeField]
+		private StringAsset.Finder coatFormat;
+
+		[SerializeField]
 		private StringAsset.Finder cancelFormat;
 
 		private List<GameObject> createdObjects = new List<GameObject>();
@@ -106,6 +109,11 @@ namespace MineS
 		private void CreateOnThrowing(Item selectItem)
 		{
 			ConfirmManager.Instance.Add(this.shootFormat.Get, new UnityAction(() => this.OnThrow(selectItem)), true);
+			var throwingInstanceData = selectItem.InstanceData as ThrowingInstanceData;
+			if(throwingInstanceData.CoatingId == -1 && throwingInstanceData.ThrowingType == GameDefine.ThrowingType.Coatable)
+			{
+				ConfirmManager.Instance.Add(this.coatFormat, new UnityAction(() => this.OnCoat(selectItem)), true);
+			}
 			this.CreateCommonConfirm(selectItem);
 		}
 
@@ -164,6 +172,14 @@ namespace MineS
 		private void OnDescription(Item item)
 		{
 			DescriptionManager.Instance.Deploy(item);
+		}
+
+		private void OnCoat(Item item)
+		{
+			var playerManager = PlayerManager.Instance;
+			playerManager.Data.Inventory.SetSelectItem(item);
+			playerManager.OpenInventoryUI(GameDefine.InventoryModeType.SelectCoatPotion, playerManager.Data.Inventory);
+			DescriptionManager.Instance.DeployEmergency("InvokeCoat");
 		}
 
 		private void OnCancel()

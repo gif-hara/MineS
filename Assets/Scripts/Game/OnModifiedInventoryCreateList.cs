@@ -88,6 +88,9 @@ namespace MineS
 			case GameDefine.InventoryModeType.WareHouse_Draw:
 				this.OpenWareHouse_Draw(inventory);
 			break;
+			case GameDefine.InventoryModeType.SelectCoatPotion:
+				this.OpenSelectCoatPotion(inventory);
+			break;
 			default:
 				Debug.AssertFormat(false, "未実装です. openType = {0}", inventory.OpenType);
 			break;
@@ -163,6 +166,13 @@ namespace MineS
 		private void OpenWareHouse_Draw(Inventory inventory)
 		{
 			this.CreateInventoryItemCells(inventory, false);
+		}
+
+		private void OpenSelectCoatPotion(Inventory inventory)
+		{
+			inventory.Items
+				.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.UsableItem).ToList()
+				.ForEach(i => this.CreateItemCellController(i, GameDefine.ItemType.UsableItem, this.GetAction(inventory, i)));
 		}
 
 		private void CreateEquipmentCells(Inventory inventory, bool createPartition)
@@ -266,6 +276,8 @@ namespace MineS
 				return new SelectWareHouseLeaveItemAction(item);
 			case GameDefine.InventoryModeType.WareHouse_Draw:
 				return new SelectWareHouseDrawItemAction(item);
+			case GameDefine.InventoryModeType.SelectCoatPotion:
+				return new SelectCoatPotionAction(item);
 			default:
 				Debug.AssertFormat(false, "未実装です. openType = {0}", inventory.OpenType);
 				return null;

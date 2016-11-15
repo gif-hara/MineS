@@ -376,3 +376,7 @@ MonoBehaviour:
       ja: "\u767A\u898B\u3055\u308C\u305F\u6642\u306B\u4ED6\u306E\u6575\u306B\u30D0\u30D5\u306E\u786C\u5316\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
       en: 
     guid: bd5bf440-0caa-40ab-a08f-5538e46aef67
+  - value:
+      ja: "\u5857\u5E03\u3059\u308B\u30DD\u30FC\u30B7\u30E7\u30F3\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044"
+      en: 
+    guid: d348050a-4364-43d2-bdf8-e28a12a2a9ec

@@ -33,7 +33,7 @@ namespace MineS
 		/// 塗布したポーションのId.
 		/// </summary>
 		[SerializeField]
-		private int coatingId;
+		private int coatingId = -1;
 
 		public GameDefine.ThrowingType ThrowingType{ get { return this.type; } }
 
@@ -44,6 +44,8 @@ namespace MineS
 		public DescriptionData.Element DescriptionElement{ get { return new DescriptionData.Element(this.ItemName, this.description, this.Image); } }
 
 		public int RemainingNumber{ get { return this.remainingNumber; } }
+
+		public int CoatingId{ get { return this.coatingId; } }
 
 		public bool IsEmpty{ get { return this.remainingNumber <= 0; } }
 
@@ -56,6 +58,7 @@ namespace MineS
 			this.playerPower = throwingMasterData.PlayerPower;
 			this.description = throwingMasterData.Description;
 			this.remainingNumber = remainingNumber;
+			this.coatingId = -1;
 		}
 
 		public ThrowingInstanceData()
@@ -67,7 +70,15 @@ namespace MineS
 		{
 			get
 			{
-				return ItemManager.Instance.throwingItemReminaingName.Element.Format(this.itemName, this.remainingNumber);
+				if(this.coatingId == -1)
+				{
+					return ItemManager.Instance.throwingItemReminaingName.Element.Format(this.itemName, this.remainingNumber);
+				}
+				else
+				{
+					var coatingItem = ItemManager.Instance.UsableItemList.Database.Find(i => i.Id == coatingId);
+					return ItemManager.Instance.coatingThrowingItemReminaingName.Element.Format(coatingItem.ItemName, this.itemName, this.remainingNumber);
+				}
 			}
 		}
 
@@ -104,13 +115,30 @@ namespace MineS
 		public void Throw(CharacterData attacker, IAttack target)
 		{
 			var damage = Calculator.GetThrowingItemDamage(this);
+			target.TakeDamageRaw(attacker, damage, false);
+
 			switch(this.type)
 			{
 			case GameDefine.ThrowingType.None:
-				target.TakeDamageRaw(attacker, damage, false);
+			break;
+			case GameDefine.ThrowingType.Coatable:
+			break;
+			default:
+				Debug.AssertFormat(false, "不正な値です. ThrowingType = {0}", this.type);
 			break;
 			}
 			this.remainingNumber--;
+		}
+
+		public void Coating(UsableItemInstanceData usableItemInstanceData)
+		{
+			var coatingItem = new Item(this.MasterData);
+			var coatingInstanceData = coatingItem.InstanceData as ThrowingInstanceData;
+			var remainingNumber = this.remainingNumber > GameDefine.CreateCoatingThrowingItemNumber ? GameDefine.CreateCoatingThrowingItemNumber : this.remainingNumber;
+			coatingInstanceData.coatingId = usableItemInstanceData.Id;
+			coatingInstanceData.remainingNumber = remainingNumber;
+			this.remainingNumber -= remainingNumber;
+			PlayerManager.Instance.AddItem(coatingItem);
 		}
 	}
 }

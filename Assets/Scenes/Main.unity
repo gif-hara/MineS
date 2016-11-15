@@ -28607,6 +28607,11 @@ MonoBehaviour:
       target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
       value: "{0}({1}\u500B)"
       guid: f748c558-8484-4808-bbea-631bb6891f74
+  coatingThrowingItemReminaingName:
+    element:
+      target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+      value: "{0}\u306E{1}({2})"
+      guid: 01f912fb-6a7b-464a-b4b8-7552cd105e2e
 --- !u!114 &1584263369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38563,6 +38568,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u767A\u5C04"
     guid: ae1b7c7d-7896-4b46-9afb-aa40e37d97bd
+  coatFormat:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u5857\u5E03"
+    guid: 3098af58-b108-40ec-80b1-37d33cf400ab
   cancelFormat:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u623B\u308B"

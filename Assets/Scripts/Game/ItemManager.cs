@@ -67,9 +67,13 @@ namespace MineS
 
 		public SerializeFieldGetter.StringAssetFinder throwingItemReminaingName;
 
+		public SerializeFieldGetter.StringAssetFinder coatingThrowingItemReminaingName;
+
 		private Dictionary<string, IdentifiedItem> identifiedDictionary = new Dictionary<string, IdentifiedItem>();
 
 		private const string DictionaryCountSerializeKeyName = "ItemManagerIdentifiedDictionaryCount";
+
+		public ItemMasterDataBaseList UsableItemList{ get { return this.usableItemList; } }
 
 		void Start()
 		{

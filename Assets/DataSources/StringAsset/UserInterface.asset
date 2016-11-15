@@ -735,10 +735,18 @@ MonoBehaviour:
       en: 
     guid: cb43c52d-fda5-48b9-8241-64e95f65e190
   - value:
-      ja: "{0}({1}\u500B)"
+      ja: '{0}({1})'
       en: 
     guid: f748c558-8484-4808-bbea-631bb6891f74
   - value:
       ja: "\u767A\u5C04"
       en: 
     guid: ae1b7c7d-7896-4b46-9afb-aa40e37d97bd
+  - value:
+      ja: "\u5857\u5E03"
+      en: 
+    guid: 3098af58-b108-40ec-80b1-37d33cf400ab
+  - value:
+      ja: "{0}\u306E{1}({2})"
+      en: 
+    guid: 01f912fb-6a7b-464a-b4b8-7552cd105e2e

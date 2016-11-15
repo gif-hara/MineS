@@ -800,6 +800,11 @@ namespace MineS
 			/// 倉庫から引き出す.
 			/// </summary>
 			WareHouse_Draw,
+
+			/// <summary>
+			/// 塗布に使用するポーションを選択.
+			/// </summary>
+			SelectCoatPotion,
 		}
 
 		public enum CellClickMode:int
@@ -887,6 +892,8 @@ namespace MineS
 		public const int WareHouseInventoryMax = 100;
 
 		public const int ThrowingItemMax = 99;
+
+		public const int CreateCoatingThrowingItemNumber = 10;
 
 		public static int Lottery<P>(List<P> elements) where P : IProbability
 		{
