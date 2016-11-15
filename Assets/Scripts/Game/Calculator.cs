@@ -430,5 +430,16 @@ namespace MineS
 		{
 			canInvokeSummon = true;
 		}
+
+		/// <summary>
+		/// 投擲物のダメージを返す.
+		/// </summary>
+		/// <returns>The throwing item damage.</returns>
+		/// <param name="item">Item.</param>
+		public static int GetThrowingItemDamage(ThrowingInstanceData item)
+		{
+			var playerData = PlayerManager.Instance.Data;
+			return item.Power + Mathf.FloorToInt((float)playerData.FinalStrength * ((float)item.PlayerPower / 100));
+		}
 	}
 }

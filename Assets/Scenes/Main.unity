@@ -38560,9 +38560,9 @@ MonoBehaviour:
     value: "\u8AAC\u660E"
     guid: b0439ec0-e8df-4e2f-92f4-6b91b05ff612
   shootFormat:
-    target: {fileID: 0}
-    value: 
-    guid: 
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u767A\u5C04"
+    guid: ae1b7c7d-7896-4b46-9afb-aa40e37d97bd
   cancelFormat:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u623B\u308B"

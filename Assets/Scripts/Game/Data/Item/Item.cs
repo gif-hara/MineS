@@ -68,7 +68,13 @@ namespace MineS
 			}
 			else if(this.instanceData.ItemType == GameDefine.ItemType.Throwing)
 			{
-				(this.instanceData as ThrowingInstanceData).Throw(user);
+				var throwingInstanceData = this.instanceData as ThrowingInstanceData;
+				throwingInstanceData.Throw(PlayerManager.Instance.Data, user);
+				if(throwingInstanceData.IsEmpty)
+				{
+					var inventory = PlayerManager.Instance.Data.Inventory;
+					inventory.RemoveItem(this);
+				}
 			}
 			else
 			{

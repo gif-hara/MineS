@@ -29,6 +29,12 @@ namespace MineS
 		[SerializeField]
 		private int remainingNumber;
 
+		/// <summary>
+		/// 塗布したポーションのId.
+		/// </summary>
+		[SerializeField]
+		private int coatingId;
+
 		public GameDefine.ThrowingType ThrowingType{ get { return this.type; } }
 
 		public int Power{ get { return this.power; } }
@@ -95,9 +101,15 @@ namespace MineS
 			this.remainingNumber = this.remainingNumber > GameDefine.ThrowingItemMax ? GameDefine.ThrowingItemMax : this.remainingNumber;
 		}
 
-		public void Throw(IAttack target)
+		public void Throw(CharacterData attacker, IAttack target)
 		{
-			Debug.Log("target = " + target.Name);
+			var damage = Calculator.GetThrowingItemDamage(this);
+			switch(this.type)
+			{
+			case GameDefine.ThrowingType.None:
+				target.TakeDamageRaw(attacker, damage, false);
+			break;
+			}
 			this.remainingNumber--;
 		}
 	}

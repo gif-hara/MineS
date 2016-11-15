@@ -105,7 +105,7 @@ namespace MineS
 
 		private void CreateOnThrowing(Item selectItem)
 		{
-			ConfirmManager.Instance.Add(this.shootFormat.Get, this.OnCancel, true);
+			ConfirmManager.Instance.Add(this.shootFormat.Get, new UnityAction(() => this.OnThrow(selectItem)), true);
 			this.CreateCommonConfirm(selectItem);
 		}
 
