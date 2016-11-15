@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using System.Linq;
 
 namespace MineS
 {
@@ -147,6 +148,19 @@ namespace MineS
 						}
 						Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, c.Controller.transform, false);
 					});
+				}
+			break;
+			case GameDefine.ThrowingType.Bounce:
+				{
+					target.TakeDamageRaw(attacker, damage, false);
+					Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
+					var otherEnemy = EnemyManager.Instance.VisibleEnemies.Where(e => e != (target as EnemyData)).ToList();
+					if(otherEnemy.Count > 0)
+					{
+						var otherTarget = otherEnemy[Random.Range(0, otherEnemy.Count)];
+						otherTarget.TakeDamageRaw(attacker, damage, false);
+						Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[otherTarget].Controller.transform, false);
+					}
 				}
 			break;
 			default:
