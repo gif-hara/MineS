@@ -19,7 +19,7 @@ namespace MineS
 		private DebugAcquireItem prefab;
 
 		[SerializeField]
-		private List<ItemDataBaseList> itemList;
+		private List<ItemMasterDataBaseList> itemList;
 
 		void Start()
 		{

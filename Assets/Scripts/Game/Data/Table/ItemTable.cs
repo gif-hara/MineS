@@ -45,12 +45,12 @@ namespace MineS
 		private class Element : IProbability
 		{
 			[SerializeField]
-			private ItemDataBase masterData;
+			private ItemMasterDataBase masterData;
 
 			[SerializeField]
 			private int probability;
 
-			public ItemDataBase MasterData{ get { return this.masterData; } }
+			public ItemMasterDataBase MasterData{ get { return this.masterData; } }
 
 			public int Probability{ get { return this.probability; } }
 
@@ -62,7 +62,7 @@ namespace MineS
 			public static Element Create(string itemName, int probability)
 			{
 				var result = new Element();
-				result.masterData = ItemDataBaseList.Get(itemName);
+				result.masterData = ItemMasterDataBaseList.Get(itemName);
 				result.probability = probability;
 
 				return result;

@@ -25,7 +25,7 @@ namespace MineS
 
 		private static ItemEvent onUseItemEvent = new ItemEvent();
 
-		public Item(ItemDataBase masterData)
+		public Item(ItemMasterDataBase masterData)
 		{
 			switch(masterData.ItemType)
 			{
@@ -125,7 +125,7 @@ namespace MineS
 
 		private void UseUsableItem(IAttack user, Inventory inventory)
 		{
-			SEManager.Instance.PlaySE((this.instanceData.MasterData as UsableItemData).UseSound);
+			SEManager.Instance.PlaySE((this.instanceData.MasterData as UsableItemMasterData).UseSound);
 			var itemName = this.instanceData.ItemName;
 			if(ItemManager.Instance.Identified(this))
 			{

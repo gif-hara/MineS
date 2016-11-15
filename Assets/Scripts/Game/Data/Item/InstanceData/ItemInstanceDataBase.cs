@@ -27,9 +27,9 @@ namespace MineS
 		protected Sprite image;
 
 		[SerializeField]
-		private ItemDataBase masterData;
+		private ItemMasterDataBase masterData;
 
-		public ItemDataBase MasterData{ get { return this.masterData; } }
+		public ItemMasterDataBase MasterData{ get { return this.masterData; } }
 
 		public int Id{ get { return this.id; } }
 
@@ -45,7 +45,7 @@ namespace MineS
 
 		public abstract GameDefine.ItemType ItemType{ get; }
 
-		protected void InternalCreateFromMasterData(ItemInstanceDataBase instanceData, ItemDataBase masterData)
+		protected void InternalCreateFromMasterData(ItemInstanceDataBase instanceData, ItemMasterDataBase masterData)
 		{
 			instanceData.id = masterData.Id;
 			instanceData.itemName = masterData.ItemName;

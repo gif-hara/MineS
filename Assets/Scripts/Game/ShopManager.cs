@@ -57,7 +57,7 @@ namespace MineS
 		private TalkChunkData firstVisitTownTalk;
 
 		[SerializeField]
-		private List<ItemDataBase> debugItems;
+		private List<ItemMasterDataBase> debugItems;
 
 		private Inventory goods;
 

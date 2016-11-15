@@ -46,10 +46,10 @@ namespace MineS
 
 		public DescriptionData.Element DescriptionElement{ get { return new DescriptionData.Element(this.ItemName, this.Description, this.Image); } }
 
-		public UsableItemInstanceData(ItemDataBase masterData)
+		public UsableItemInstanceData(ItemMasterDataBase masterData)
 		{
 			base.InternalCreateFromMasterData(this, masterData);
-			var usableItemMasterData = masterData as UsableItemData;
+			var usableItemMasterData = masterData as UsableItemMasterData;
 			this.type = usableItemMasterData.UsableItemType;
 			this.power0 = usableItemMasterData.Power0;
 			this.power1 = usableItemMasterData.Power1;

@@ -11,17 +11,17 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class UsableItemMasterDataParser : MasterDataParserBase<UsableItemData>
+	public class UsableItemMasterDataParser : MasterDataParserBase<UsableItemMasterData>
 	{
 		[MenuItem("MineS/MasterData/Parse/UsableItem")]
 		private static void Parse()
 		{
 			Parse(
-				csv => UsableItemData.CreateFromCsv(csv),
+				csv => UsableItemMasterData.CreateFromCsv(csv),
 				"Assets/DataSources/Csv/UsableItemMasterData.csv",
 				"Assets/DataSources/Item/UsableItem/UsableItem{0}.asset"
 			);
-			AssetDatabase.LoadAssetAtPath<ItemDataBaseList>("Assets/DataSources/Item/ItemList/UsableItem.asset").SetDatabase("UsableItem");
+			AssetDatabase.LoadAssetAtPath<ItemMasterDataBaseList>("Assets/DataSources/Item/ItemList/UsableItem.asset").SetDatabase("UsableItem");
 		}
 	}
 }

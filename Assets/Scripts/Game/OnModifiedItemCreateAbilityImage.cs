@@ -33,7 +33,7 @@ namespace MineS
 			}
 
 			var equipment = item.InstanceData as EquipmentInstanceData;
-			var masterData = (equipment.MasterData as EquipmentData);
+			var masterData = (equipment.MasterData as EquipmentMasterData);
 			masterData.abilities.ForEach(a => Instantiate(this.prefabFixRegist, this.root, false));
 			for(int i = 0, imax = equipment.Abilities.Count - masterData.abilities.Count; i < imax; i++)
 			{

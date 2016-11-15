@@ -16,9 +16,9 @@ namespace MineS
 		[SerializeField]
 		private Text text;
 
-		private ItemDataBase item;
+		private ItemMasterDataBase item;
 
-		public void Initialize(ItemDataBase item)
+		public void Initialize(ItemMasterDataBase item)
 		{
 			this.item = item;
 			this.text.text = this.item.ItemName;

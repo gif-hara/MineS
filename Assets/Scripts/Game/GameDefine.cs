@@ -125,6 +125,7 @@ namespace MineS
 			Weapon,
 			Shield,
 			Accessory,
+			Arrow,
 		}
 
 		public enum UsableItemType:int

@@ -10,7 +10,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable][CreateAssetMenu()]
-	public class UsableItemData : ItemDataBase
+	public class UsableItemMasterData : ItemMasterDataBase
 	{
 		[SerializeField]
 		private GameDefine.UsableItemType type;
@@ -57,9 +57,9 @@ namespace MineS
 		}
 
 #if UNITY_EDITOR
-		public static UsableItemData CreateFromCsv(List<string> csv)
+		public static UsableItemMasterData CreateFromCsv(List<string> csv)
 		{
-			var result = CreateInstance<UsableItemData>();
+			var result = CreateInstance<UsableItemMasterData>();
 			result.id = int.Parse(csv[0]);
 			result.itemName = csv[1];
 			result.purchasePrice = int.Parse(csv[2]);

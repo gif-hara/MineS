@@ -12,7 +12,7 @@ namespace MineS
 	public class PublicityRewardEquipment : PublicityRewardAddItemBase
 	{
 		[SerializeField]
-		private List<EquipmentData> equipments;
+		private List<EquipmentMasterData> equipments;
 
 		[SerializeField]
 		private int addCount;

@@ -12,7 +12,7 @@ namespace MineS
 	public class FixDungeonCellCreateItem : FixDungeonCellCreatorBase
 	{
 		[SerializeField]
-		private ItemDataBase masterData;
+		private ItemMasterDataBase masterData;
 
 		[SerializeField]
 		private ConditionScriptableObjectBase condition;

@@ -56,10 +56,10 @@ namespace MineS
 		[SerializeField]
 		private int dropItemProbability;
 
-		public List<ItemDataBase> OverrideDropItems{ get { return this.overrideDropItems; } }
+		public List<ItemMasterDataBase> OverrideDropItems{ get { return this.overrideDropItems; } }
 
 		[SerializeField]
-		private List<ItemDataBase> overrideDropItems;
+		private List<ItemMasterDataBase> overrideDropItems;
 
 		public List<GameDefine.AbilityType> AbilityTypes{ get { return this.abilityTypes; } }
 
@@ -93,7 +93,7 @@ namespace MineS
 			instance.evasion = int.Parse(csv[6]);
 			instance.experience = int.Parse(csv[7]);
 			instance.dropItemProbability = int.Parse(csv[8]);
-			instance.overrideDropItems = UnityEditor.AssetDatabase.LoadAssetAtPath<ItemDataBaseList>("Assets/DataSources/Item/ItemList/UsableItem.asset").Parse(csv[9]);
+			instance.overrideDropItems = UnityEditor.AssetDatabase.LoadAssetAtPath<ItemMasterDataBaseList>("Assets/DataSources/Item/ItemList/UsableItem.asset").Parse(csv[9]);
 			instance.abilityTypes = AbilityParser.Parse(csv[10]);
 			instance.image = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/Textures/Enemy/Enemy" + int.Parse(csv[0]) + ".png", typeof(Sprite)) as Sprite;
 

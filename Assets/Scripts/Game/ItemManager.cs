@@ -15,7 +15,7 @@ namespace MineS
 		public class IdentifiedItem
 		{
 			[SerializeField]
-			private ItemDataBase item;
+			private ItemMasterDataBase item;
 
 			[SerializeField]
 			private string unidentifiedName;
@@ -32,7 +32,7 @@ namespace MineS
 				this.isIdentified = false;
 			}
 
-			public IdentifiedItem(ItemDataBase item, string unidentifiedName, bool isIdentified)
+			public IdentifiedItem(ItemMasterDataBase item, string unidentifiedName, bool isIdentified)
 			{
 				this.item = item;
 				this.unidentifiedName = unidentifiedName;
@@ -54,7 +54,7 @@ namespace MineS
 		}
 
 		[SerializeField]
-		private ItemDataBaseList usableItemList;
+		private ItemMasterDataBaseList usableItemList;
 
 		[SerializeField]
 		private StringAsset unidentifiedStringAsset;
@@ -81,7 +81,7 @@ namespace MineS
 			this.usableItemList.Database.ForEach(d =>
 			{
 				var unidentifiedStringIndex = Random.Range(0, unidentifiedStrings.Count);
-				var idenditied = !(d as UsableItemData).CanUnidentified ? true : DungeonManager.Instance.CurrentData.ItemIdentified;
+				var idenditied = !(d as UsableItemMasterData).CanUnidentified ? true : DungeonManager.Instance.CurrentData.ItemIdentified;
 				var identifiedItem = new IdentifiedItem(d, unidentifiedStrings[unidentifiedStringIndex], idenditied);
 				this.identifiedDictionary.Add(d.ItemName, identifiedItem);
 				unidentifiedStrings.RemoveAt(unidentifiedStringIndex);

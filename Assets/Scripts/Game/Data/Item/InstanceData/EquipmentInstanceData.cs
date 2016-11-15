@@ -77,10 +77,10 @@ namespace MineS
 			}
 		}
 
-		public EquipmentInstanceData(ItemDataBase masterData)
+		public EquipmentInstanceData(ItemMasterDataBase masterData)
 		{
 			base.InternalCreateFromMasterData(this, masterData);
-			var equipmentData = masterData as EquipmentData;
+			var equipmentData = masterData as EquipmentMasterData;
 			this.basePower = equipmentData.BasePower;
 			this.brandingLimit = equipmentData.BrandingLimit;
 			this.canExtraction = equipmentData.CanExtraction;
@@ -113,7 +113,7 @@ namespace MineS
 
 		public bool CanRemoveAbility(int index)
 		{
-			return index >= (this.MasterData as EquipmentData).abilities.Count;
+			return index >= (this.MasterData as EquipmentMasterData).abilities.Count;
 		}
 
 		public void AddAbility(AbilityBase ability)

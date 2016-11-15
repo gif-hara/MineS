@@ -10,7 +10,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable][CreateAssetMenu()]
-	public class EquipmentData : ItemDataBase
+	public class EquipmentMasterData : ItemMasterDataBase
 	{
 		[SerializeField]
 		private int basePower;
@@ -46,9 +46,9 @@ namespace MineS
 
 
 #if UNITY_EDITOR
-		public static EquipmentData CreateFromCsv(List<string> csv, GameDefine.ItemType itemType)
+		public static EquipmentMasterData CreateFromCsv(List<string> csv, GameDefine.ItemType itemType)
 		{
-			var result = CreateInstance<EquipmentData>();
+			var result = CreateInstance<EquipmentMasterData>();
 			result.itemType = itemType;
 			result.id = int.Parse(csv[0]);
 			result.itemName = csv[1];

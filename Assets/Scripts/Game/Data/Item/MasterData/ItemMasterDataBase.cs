@@ -10,7 +10,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public abstract class ItemDataBase : ScriptableObject
+	public abstract class ItemMasterDataBase : ScriptableObject
 	{
 		[SerializeField]
 		protected int id;

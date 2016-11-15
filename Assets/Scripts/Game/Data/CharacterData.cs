@@ -47,7 +47,7 @@ namespace MineS
 		protected int dropItemProbability;
 
 		[SerializeField]
-		protected List<ItemDataBase> overrideDropItems;
+		protected List<ItemMasterDataBase> overrideDropItems;
 
 		[SerializeField]
 		protected List<AbnormalStatusBase> abnormalStatuses;
@@ -90,7 +90,7 @@ namespace MineS
 
 		public int DropItemProbability{ get { return this.dropItemProbability; } }
 
-		public List<ItemDataBase> OverrideDropItems{ get { return this.overrideDropItems; } }
+		public List<ItemMasterDataBase> OverrideDropItems{ get { return this.overrideDropItems; } }
 
 		public List<AbnormalStatusBase> AbnormalStatuses{ get { return this.abnormalStatuses; } }
 
@@ -116,7 +116,7 @@ namespace MineS
 			this.experience = masterData.Experience;
 			this.money = masterData.Money;
 			this.dropItemProbability = masterData.DropItemProbability;
-			this.overrideDropItems = new List<ItemDataBase>(masterData.OverrideDropItems);
+			this.overrideDropItems = new List<ItemMasterDataBase>(masterData.OverrideDropItems);
 			this.abnormalStatuses = new List<AbnormalStatusBase>();
 			this.abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
 			this.abilityTypes = masterData.AbilityTypes;
