@@ -121,14 +121,13 @@ namespace MineS
 			{
 			case GameDefine.ThrowingType.None:
 				{
-					target.TakeDamageRaw(attacker, damage, false);
+					this.TakeDamage(target, damage);
 					Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
-
 				}
 			break;
 			case GameDefine.ThrowingType.Coatable:
 				{
-					target.TakeDamageRaw(attacker, damage, false);
+					this.TakeDamage(target, damage);
 					Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
 					if(this.coatingId != -1 && !target.IsDead)
 					{
@@ -144,7 +143,7 @@ namespace MineS
 						EnemyData enemy;
 						if(EnemyManager.Instance.Enemies.TryGetValue(c, out enemy) && c.IsIdentification)
 						{
-							enemy.TakeDamageRaw(attacker, damage, false);
+							this.TakeDamage(target, damage);
 						}
 						Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, c.Controller.transform, false);
 					});
@@ -152,15 +151,29 @@ namespace MineS
 			break;
 			case GameDefine.ThrowingType.Bounce:
 				{
-					target.TakeDamageRaw(attacker, damage, false);
+					this.TakeDamage(target, damage);
 					Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
 					var otherEnemy = EnemyManager.Instance.VisibleEnemies.Where(e => e != (target as EnemyData)).ToList();
 					if(otherEnemy.Count > 0)
 					{
 						var otherTarget = otherEnemy[Random.Range(0, otherEnemy.Count)];
-						otherTarget.TakeDamageRaw(attacker, damage, false);
+						this.TakeDamage(otherTarget, damage);
 						Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[otherTarget].Controller.transform, false);
 					}
+				}
+			break;
+			case GameDefine.ThrowingType.Cross:
+				{
+					var cellData = EnemyManager.Instance.InEnemyCells[target as EnemyData];
+					CellManager.Instance.GetCrossCellDataAll(cellData.Position).ForEach(c =>
+					{
+						EnemyData enemy;
+						if(EnemyManager.Instance.Enemies.TryGetValue(c, out enemy) && c.IsIdentification)
+						{
+							this.TakeDamage(enemy, damage);
+						}
+						Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, c.Controller.transform, false);
+					});
 				}
 			break;
 			default:
@@ -179,6 +192,15 @@ namespace MineS
 			coatingInstanceData.remainingNumber = remainingNumber;
 			this.remainingNumber -= remainingNumber;
 			PlayerManager.Instance.AddItem(coatingItem);
+		}
+
+		private void TakeDamage(IAttack target, int damage)
+		{
+			target.TakeDamageRaw(null, damage, false);
+			if(target.IsDead)
+			{
+				PlayerManager.Instance.Data.Defeat(target);
+			}
 		}
 	}
 }

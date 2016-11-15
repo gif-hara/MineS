@@ -175,6 +175,22 @@ namespace MineS
 			return result;
 		}
 
+		/// <summary>
+		/// 十字方向の隣接するセルを返す.
+		/// 例：range = 1
+		///  *
+		/// ***
+		///  *
+		/// 例：range = 2
+		///   *
+		///  ***
+		/// *****
+		///  ***
+		///   *
+		/// </summary>
+		/// <returns>The adjacent cell data slanting.</returns>
+		/// <param name="position">Position.</param>
+		/// <param name="range">Range.</param>
 		public List<CellData> GetAdjacentCellDataSlanting(Cell position, int range)
 		{
 			var result = new Dictionary<Cell, CellData>();
@@ -198,6 +214,11 @@ namespace MineS
 				});
 			}
 			return result.Select(r => r.Value).ToList();
+		}
+
+		public List<CellData> GetCrossCellDataAll(Cell origin)
+		{
+			return this.ToListCellData.Where(c => (c.Position.x == origin.x || c.Position.y == origin.y)).ToList();
 		}
 
 		public void DebugAction()

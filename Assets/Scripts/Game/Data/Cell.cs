@@ -37,5 +37,10 @@ namespace MineS
 		{
 			return HK.Framework.SaveData.GetClass<Cell>(key, null);
 		}
+
+		public bool IsMatch(Cell other)
+		{
+			return this.x == other.x && this.y == other.y;
+		}
 	}
 }
