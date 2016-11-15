@@ -169,6 +169,10 @@ MonoBehaviour:
       en: 
     guid: cb64102e-ef0b-4b80-b8e9-8df0bf6de8f6
   - value:
+      ja: "\u6295\u64F2\u7269\u53D6\u5F97"
+      en: 
+    guid: 7b1c6ba9-307e-42e6-a496-f4f4cd90dfeb
+  - value:
       ja: "\u306A\u3057"
       en: 
     guid: 56b4ec88-35c0-4455-b940-8dc944f760f8
@@ -730,3 +734,7 @@ MonoBehaviour:
       ja: "\u3053\u306E\u30C0\u30F3\u30B8\u30E7\u30F3\u30D8\u9032\u3080\u6761\u4EF6\u3092\u6E80\u305F\u3057\u3066\u3044\u307E\u305B\u3093\u3002\n\u8A73\u3057\u304F\u306F\u30C0\u30F3\u30B8\u30E7\u30F3\u3092\u9577\u62BC\u3057\u3057\u3066\u78BA\u8A8D\u3057\u3066\u304F\u3060\u3055\u3044\u3002"
       en: 
     guid: cb43c52d-fda5-48b9-8241-64e95f65e190
+  - value:
+      ja: "{0}({1}\u500B)"
+      en: 
+    guid: f748c558-8484-4808-bbea-631bb6891f74

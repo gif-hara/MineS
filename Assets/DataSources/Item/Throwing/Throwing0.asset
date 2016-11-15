@@ -16,7 +16,7 @@ MonoBehaviour:
   purchasePrice: 80
   sellingPrice: 40
   image: {fileID: 21300000, guid: 7759d21d8b01143588b04d3b7a24ab4b, type: 3}
+  type: 1
   power: 10
   playerPower: 10
-  canCoat: 1
-  description: "\u6728\u3067\u51FA\u6765\u305F\u77E2\u3060\u305E\uFF01\xA5n\u4ED6\u306E\u30DD\u30FC\u30B7\u30E7\u30F3\u3092\u5857\u308B\u3068\u69D8\u3005\u306A\u52B9\u679C\u304C\u767A\u63EE\u3055\u308C\u308B\u305E\uFF01"
+  description: "\u6728\u3067\u51FA\u6765\u305F\u77E2\u3060\u305E\uFF01\xA5n\u30DD\u30FC\u30B7\u30E7\u30F3\u3092\u5857\u308B\u3068\u69D8\u3005\u306A\u52B9\u679C\u304C\u767A\u63EE\u3055\u308C\u308B\u305E\uFF01"

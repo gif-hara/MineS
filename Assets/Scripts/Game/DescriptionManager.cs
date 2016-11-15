@@ -66,6 +66,10 @@ namespace MineS
 					i.ModifiedData(item);
 				});
 			}
+			else if(item.InstanceData.ItemType == GameDefine.ItemType.Throwing)
+			{
+				this.Deploy((item.InstanceData as ThrowingInstanceData).DescriptionElement);
+			}
 			else
 			{
 				Debug.AssertFormat(false, "未対応のアイテムです. itemType = {0}", item.InstanceData.ItemType);

@@ -51,6 +51,17 @@ namespace MineS
 
 		public bool AddItem(Item item)
 		{
+			// 投擲物の加算処理.
+			if(item.InstanceData.ItemType == GameDefine.ItemType.Throwing)
+			{
+				var existItem = this.items.Find(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.Throwing && i.InstanceData.Id == item.InstanceData.Id);
+				if(existItem != null)
+				{
+					(existItem.InstanceData as ThrowingInstanceData).Add((item.InstanceData as ThrowingInstanceData).RemainingNumber);
+					return true;
+				}
+			}
+
 			var emptyIndex = this.items.FindIndex(i => i == null || i.InstanceData == null);
 			if(emptyIndex < 0)
 			{

@@ -16,7 +16,7 @@ MonoBehaviour:
   purchasePrice: 80
   sellingPrice: 32
   image: {fileID: 21300000, guid: 7759d21d8b01143588b04d3b7a24ab4b, type: 3}
+  type: 0
   power: 20
   playerPower: 20
-  canCoat: 0
   description: "\u9244\u3067\u51FA\u6765\u305F\u77E2\u3060\u305E\uFF01\xA5n\u6728\u306E\u77E2\u3088\u308A\u3082\u653B\u6483\u529B\u304C\u9AD8\u3044\u305E\uFF01"

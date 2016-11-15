@@ -65,6 +65,8 @@ namespace MineS
 
 		public SerializeFieldGetter.StringAssetFinder unidentifiedItemName;
 
+		public SerializeFieldGetter.StringAssetFinder throwingItemReminaingName;
+
 		private Dictionary<string, IdentifiedItem> identifiedDictionary = new Dictionary<string, IdentifiedItem>();
 
 		private const string DictionaryCountSerializeKeyName = "ItemManagerIdentifiedDictionaryCount";

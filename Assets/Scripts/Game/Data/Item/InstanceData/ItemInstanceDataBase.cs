@@ -37,9 +37,9 @@ namespace MineS
 
 		public string ItemNameRaw{ get { return this.itemName.ToString(); } }
 
-		public int PurchasePrice{ get { return this.purchasePrice; } }
+		public virtual int PurchasePrice{ get { return this.purchasePrice; } }
 
-		public int SellingPrice{ get { return this.sellingPrice; } }
+		public virtual int SellingPrice{ get { return this.sellingPrice; } }
 
 		public Sprite Image{ get { return this.image; } }
 

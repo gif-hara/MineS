@@ -37,6 +37,9 @@ namespace MineS
 			case GameDefine.ItemType.Weapon:
 				this.instanceData = new EquipmentInstanceData(masterData);
 			break;
+			case GameDefine.ItemType.Throwing:
+				this.instanceData = new ThrowingInstanceData(masterData, Random.Range(1, 10));
+			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です. masterData.ItemType = {0}", masterData.ItemType);
 			break;
@@ -63,6 +66,10 @@ namespace MineS
 			{
 				this.UseUsableItem(user, PlayerManager.Instance.Data.Inventory);
 			}
+			else if(this.instanceData.ItemType == GameDefine.ItemType.Throwing)
+			{
+				(this.instanceData as ThrowingInstanceData).Throw(user);
+			}
 			else
 			{
 				Debug.LogWarning("未実装のアイテムです ItemType = " + this.instanceData.ItemType);
@@ -81,6 +88,9 @@ namespace MineS
 			case GameDefine.ItemType.Shield:
 			case GameDefine.ItemType.Weapon:
 				HK.Framework.SaveData.SetClass<EquipmentInstanceData>(key, this.instanceData as EquipmentInstanceData);
+			break;
+			case GameDefine.ItemType.Throwing:
+				HK.Framework.SaveData.SetClass<ThrowingInstanceData>(key, this.instanceData as ThrowingInstanceData);
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です. itemType = {0}", this.instanceData.ItemType);
@@ -109,6 +119,9 @@ namespace MineS
 			case GameDefine.ItemType.Weapon:
 				result.instanceData = HK.Framework.SaveData.GetClass<EquipmentInstanceData>(key, null);
 				(result.instanceData as EquipmentInstanceData).InitializeAbilities();
+			break;
+			case GameDefine.ItemType.Throwing:
+				result.instanceData = HK.Framework.SaveData.GetClass<ThrowingInstanceData>(key, null);
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です. itemType = {0}", type);

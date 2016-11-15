@@ -142,9 +142,9 @@ namespace MineS
 			Accessory,
 
 			/// <summary>
-			/// 矢.
+			/// 投擲物.
 			/// </summary>
-			Arrow,
+			Throwing,
 		}
 
 		public enum UsableItemType:int
@@ -253,6 +253,37 @@ namespace MineS
 			/// ただの水.
 			/// </summary>
 			Water,
+		}
+
+		/// <summary>
+		/// 投擲物タイプ.
+		/// </summary>
+		public enum ThrowingType:int
+		{
+			/// <summary>
+			/// 特殊能力無し.
+			/// </summary>
+			None,
+
+			/// <summary>
+			/// 塗布可能.
+			/// </summary>
+			Coatable,
+
+			/// <summary>
+			/// 隣の敵にも攻撃する拡散系.
+			/// </summary>
+			Diffusion,
+
+			/// <summary>
+			/// 他の敵にも攻撃する跳弾系.
+			/// </summary>
+			Bounce,
+
+			/// <summary>
+			/// 縦と横の敵にも攻撃する十字系.
+			/// </summary>
+			Cross,
 		}
 
 		public enum AbnormalStatusType:int
@@ -855,6 +886,8 @@ namespace MineS
 
 		public const int WareHouseInventoryMax = 100;
 
+		public const int ThrowingItemMax = 99;
+
 		public static int Lottery<P>(List<P> elements) where P : IProbability
 		{
 			int probabilityMax = 0;
@@ -942,11 +975,25 @@ namespace MineS
 			return (UsableItemType)Enum.GetValues(type).GetValue(index);
 		}
 
+		public static ThrowingType GetThrowingType(string name)
+		{
+			var type = typeof(ThrowingType);
+			var index = Array.FindIndex(Enum.GetNames(type), u => u.CompareTo(name) == 0);
+			return (ThrowingType)Enum.GetValues(type).GetValue(index);
+		}
+
 		public static TrapType GetTrapType(string name)
 		{
 			var type = typeof(TrapType);
 			var index = Array.FindIndex(Enum.GetNames(type), u => u.CompareTo(name) == 0);
 			return (TrapType)Enum.GetValues(type).GetValue(index);
+		}
+
+		public static T GetType<T>(string name)
+		{
+			var type = typeof(T);
+			var index = Array.FindIndex(Enum.GetNames(type), u => u.CompareTo(name) == 0);
+			return (T)Enum.GetValues(type).GetValue(index);
 		}
 #endif
 

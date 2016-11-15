@@ -74,9 +74,9 @@ namespace MineS
 					this.CreateOnEquipmentFromInventory(item);
 				}
 			}
-			else if(item.InstanceData.ItemType == GameDefine.ItemType.Arrow)
+			else if(item.InstanceData.ItemType == GameDefine.ItemType.Throwing)
 			{
-				this.CreateOnArrow(item);
+				this.CreateOnThrowing(item);
 			}
 			else
 			{
@@ -103,7 +103,7 @@ namespace MineS
 			this.CreateCommonConfirm(selectItem);
 		}
 
-		private void CreateOnArrow(Item selectItem)
+		private void CreateOnThrowing(Item selectItem)
 		{
 			ConfirmManager.Instance.Add(this.shootFormat.Get, this.OnCancel, true);
 			this.CreateCommonConfirm(selectItem);
