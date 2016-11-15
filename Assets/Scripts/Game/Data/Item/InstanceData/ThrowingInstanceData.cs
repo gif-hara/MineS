@@ -115,16 +115,38 @@ namespace MineS
 		public void Throw(CharacterData attacker, IAttack target)
 		{
 			var damage = Calculator.GetThrowingItemDamage(this);
-			target.TakeDamageRaw(attacker, damage, false);
 
 			switch(this.type)
 			{
 			case GameDefine.ThrowingType.None:
+				{
+					target.TakeDamageRaw(attacker, damage, false);
+					Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
+
+				}
 			break;
 			case GameDefine.ThrowingType.Coatable:
-				if(this.coatingId != -1 && !target.IsDead)
 				{
-					(ItemManager.Instance.UsableItemList.Database.Find(i => i.Id == this.coatingId) as UsableItemMasterData).OnUse(target, 0.5f);
+					target.TakeDamageRaw(attacker, damage, false);
+					Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
+					if(this.coatingId != -1 && !target.IsDead)
+					{
+						(ItemManager.Instance.UsableItemList.Database.Find(i => i.Id == this.coatingId) as UsableItemMasterData).OnUse(target, 0.5f);
+					}
+				}
+			break;
+			case GameDefine.ThrowingType.Diffusion:
+				{
+					var cellData = EnemyManager.Instance.InEnemyCells[target as EnemyData];
+					CellManager.Instance.GetAdjacentCellDataSlanting(cellData.Position, 2).ForEach(c =>
+					{
+						EnemyData enemy;
+						if(EnemyManager.Instance.Enemies.TryGetValue(c, out enemy) && c.IsIdentification)
+						{
+							enemy.TakeDamageRaw(attacker, damage, false);
+						}
+						Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, c.Controller.transform, false);
+					});
 				}
 			break;
 			default:

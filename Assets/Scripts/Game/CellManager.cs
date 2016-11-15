@@ -175,6 +175,31 @@ namespace MineS
 			return result;
 		}
 
+		public List<CellData> GetAdjacentCellDataSlanting(Cell position, int range)
+		{
+			var result = new Dictionary<Cell, CellData>();
+			result.Add(position, this.CellDatabase[position.y, position.x]);
+			for(int i = 0; i < range; i++)
+			{
+				var addCell = new List<CellData>();
+				foreach(var r in result.Values)
+				{
+					this.GetAdjacentCellDataLeftTopRightBottom(r.Position.y, r.Position.x).ForEach(c =>
+					{
+						addCell.Add(c);
+					});
+				}
+				addCell.ForEach(a =>
+				{
+					if(!result.ContainsKey(a.Position))
+					{
+						result.Add(a.Position, a);
+					}
+				});
+			}
+			return result.Select(r => r.Value).ToList();
+		}
+
 		public void DebugAction()
 		{
 			for(int y = 0; y < GameDefine.CellRowMax; y++)
