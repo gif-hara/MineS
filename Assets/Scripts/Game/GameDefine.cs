@@ -119,14 +119,6 @@ namespace MineS
 			LeftBottom,
 		}
 
-		public enum RareType:int
-		{
-			Normal,
-			Rare,
-			SuperRare,
-			Legend,
-		}
-
 		public enum ItemType:int
 		{
 			UsableItem,

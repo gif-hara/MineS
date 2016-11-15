@@ -27953,7 +27953,7 @@ MonoBehaviour:
   - {fileID: 1413544252}
   - {fileID: 674414086}
   data:
-    bgmVolume: 0.5
+    bgmVolume: 0
     seVolume: 0.5
     messageSpeed: 2
     isFewMessage: 1
