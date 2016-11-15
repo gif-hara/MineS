@@ -42,7 +42,7 @@ namespace MineS
 
 		public bool CanUnidentified{ get { return this.canUnidentified; } }
 
-		public int RandomPower{ get { return Random.Range(this.power0, this.power1 + 1); } }
+		public int RandomPower{ get { return (this.MasterData as UsableItemMasterData).RandomPower; } }
 
 		public DescriptionData.Element DescriptionElement{ get { return new DescriptionData.Element(this.ItemName, this.Description, this.Image); } }
 

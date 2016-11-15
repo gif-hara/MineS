@@ -122,6 +122,10 @@ namespace MineS
 			case GameDefine.ThrowingType.None:
 			break;
 			case GameDefine.ThrowingType.Coatable:
+				if(this.coatingId != -1 && !target.IsDead)
+				{
+					(ItemManager.Instance.UsableItemList.Database.Find(i => i.Id == this.coatingId) as UsableItemMasterData).OnUse(target, 0.5f);
+				}
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です. ThrowingType = {0}", this.type);
