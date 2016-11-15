@@ -31,6 +31,9 @@ namespace MineS
 		private StringAsset.Finder descriptionFormat;
 
 		[SerializeField]
+		private StringAsset.Finder shootFormat;
+
+		[SerializeField]
 		private StringAsset.Finder cancelFormat;
 
 		private List<GameObject> createdObjects = new List<GameObject>();
@@ -71,6 +74,10 @@ namespace MineS
 					this.CreateOnEquipmentFromInventory(item);
 				}
 			}
+			else if(item.InstanceData.ItemType == GameDefine.ItemType.Arrow)
+			{
+				this.CreateOnArrow(item);
+			}
 			else
 			{
 				Debug.AssertFormat(false, "不正な値です. ItemType = {0}", item.InstanceData.ItemType);
@@ -81,22 +88,29 @@ namespace MineS
 		{
 			ConfirmManager.Instance.Add(this.useFormat.Get, new UnityAction(() => this.OnUse(selectItem)), true);
 			ConfirmManager.Instance.Add(this.throwFormat.Get, new UnityAction(() => this.OnThrow(selectItem)), true);
-			ConfirmManager.Instance.Add(this.putFormat.Get, new UnityAction(() => this.OnPut(selectItem)), true);
-			ConfirmManager.Instance.Add(this.descriptionFormat.Get, new UnityAction(() => this.OnDescription(selectItem)), true);
-			ConfirmManager.Instance.Add(this.cancelFormat.Get, this.OnCancel, true);
+			this.CreateCommonConfirm(selectItem);
 		}
 
 		private void CreateOnEquipmentFromInventory(Item selectItem)
 		{
 			ConfirmManager.Instance.Add(this.equipmentFormat.Get, new UnityAction(() => this.OnEquipment(selectItem)), true);
-			ConfirmManager.Instance.Add(this.putFormat.Get, new UnityAction(() => this.OnPut(selectItem)), true);
-			ConfirmManager.Instance.Add(this.descriptionFormat.Get, new UnityAction(() => this.OnDescription(selectItem)), true);
-			ConfirmManager.Instance.Add(this.cancelFormat.Get, this.OnCancel, true);
+			this.CreateCommonConfirm(selectItem);
 		}
 
 		private void CreateOnEquipmentFromEquipment(Item selectItem)
 		{
 			ConfirmManager.Instance.Add(this.removeFormat.Get, new UnityAction(() => this.OnRemove(selectItem)), true);
+			this.CreateCommonConfirm(selectItem);
+		}
+
+		private void CreateOnArrow(Item selectItem)
+		{
+			ConfirmManager.Instance.Add(this.shootFormat.Get, this.OnCancel, true);
+			this.CreateCommonConfirm(selectItem);
+		}
+
+		private void CreateCommonConfirm(Item selectItem)
+		{
 			ConfirmManager.Instance.Add(this.putFormat.Get, new UnityAction(() => this.OnPut(selectItem)), true);
 			ConfirmManager.Instance.Add(this.descriptionFormat.Get, new UnityAction(() => this.OnDescription(selectItem)), true);
 			ConfirmManager.Instance.Add(this.cancelFormat.Get, this.OnCancel, true);

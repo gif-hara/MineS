@@ -121,10 +121,29 @@ namespace MineS
 
 		public enum ItemType:int
 		{
+			/// <summary>
+			/// 使用可能アイテム.
+			/// </summary>
 			UsableItem,
+
+			/// <summary>
+			/// 武器.
+			/// </summary>
 			Weapon,
+
+			/// <summary>
+			/// 盾.
+			/// </summary>
 			Shield,
+
+			/// <summary>
+			/// アクセサリー.
+			/// </summary>
 			Accessory,
+
+			/// <summary>
+			/// 矢.
+			/// </summary>
 			Arrow,
 		}
 
