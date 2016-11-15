@@ -28535,6 +28535,8 @@ MonoBehaviour:
     element: {fileID: 1000011697786726, guid: 6e5fc363c2f1049749b1fe227ed2a178, type: 2}
   prefabDyingEffect:
     element: {fileID: 1000011697786726, guid: 403d22b891d56463180369c67ca62365, type: 2}
+  prefabThrowing0:
+    element: {fileID: 1000014151412420, guid: 61e8aad3e19684d9fba699bd05d7a601, type: 2}
 --- !u!114 &1584263366
 MonoBehaviour:
   m_ObjectHideFlags: 0

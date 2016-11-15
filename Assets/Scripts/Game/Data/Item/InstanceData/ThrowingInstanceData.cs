@@ -143,7 +143,7 @@ namespace MineS
 						EnemyData enemy;
 						if(EnemyManager.Instance.Enemies.TryGetValue(c, out enemy) && c.IsIdentification)
 						{
-							this.TakeDamage(target, damage);
+							this.TakeDamage(enemy, damage);
 						}
 						Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, c.Controller.transform, false);
 					});
