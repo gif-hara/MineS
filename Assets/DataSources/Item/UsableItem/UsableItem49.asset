@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Name: UsableItem49
   m_EditorClassIdentifier: 
   id: 49
-  itemName: "\u5E30\u9084\u306E\u77F3"
+  itemName: "\u5E30\u9084\u306E\u8056\u6C34"
   purchasePrice: 1000
   sellingPrice: 500
-  image: {fileID: 21300000, guid: 885db1e3c82194da98e63b2b862b9fd0, type: 3}
+  image: {fileID: 21300000, guid: 5b3676b45a4310a49a3eeeff33b48b21, type: 3}
   type: 19
   power0: 0
   power1: 0
