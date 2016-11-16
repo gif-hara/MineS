@@ -38,10 +38,10 @@ namespace MineS
 				this.instanceData = new EquipmentInstanceData(masterData);
 			break;
 			case GameDefine.ItemType.Throwing:
-				this.instanceData = new ThrowingInstanceData(masterData, Random.Range(1, 10));
+				this.instanceData = new ThrowingInstanceData(masterData, Random.Range(3, 10));
 			break;
 			case GameDefine.ItemType.MagicStone:
-				this.instanceData = new MagicStoneInstanceData(masterData, Random.Range(1, 10));
+				this.instanceData = new MagicStoneInstanceData(masterData, Random.Range(3, 10));
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です. masterData.ItemType = {0}", masterData.ItemType);
