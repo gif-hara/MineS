@@ -117,6 +117,9 @@ namespace MineS
 			case GameDefine.MagicStoneType.AddRandomAbnormalStatus:
 				this.AddAbnormalStatus(GameDefine.RandomAbnormalStatus, target);
 			break;
+			case GameDefine.MagicStoneType.ChangeSlug:
+				target.ChangeMasterData(EnemyManager.Instance.SlugMasterData);
+			break;
 			}
 			Debug.Log("target = " + target.Name);
 			this.remainingNumber--;

@@ -8843,9 +8843,9 @@ RectTransform:
   - {fileID: 912330559}
   m_Father: {fileID: 842027360}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 371.25, y: -130}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518210043
@@ -9668,9 +9668,9 @@ RectTransform:
   - {fileID: 427700589}
   m_Father: {fileID: 912330559}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &549576039
@@ -28754,6 +28754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c4b12646a504f65a3e9f502a830ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slugMasterData: {fileID: 11400000, guid: 4dafd8e0bdb47427697a10585839c626, type: 2}
 --- !u!114 &1584263354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29100,6 +29101,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "<color=targetColor>{0}</color>\u306F\u5BB6\u306B\u5E30\u3063\u3066\u3044\u3063\u305F\uFF01"
     guid: cafac0ed-bda3-4c3d-88a9-57bbe60b102a
+  changeCharacter:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u306A\u3093\u3068\uFF01<color=targetColor>{0}</color>\u306F<color=targetColor>{1}</color>\u306B\u306A\u3063\u3066\u3057\u307E\u3063\u305F\uFF01"
+    guid: e300fa8d-3d20-4417-a554-7416f86e0c34
 --- !u!114 &1584263361
 MonoBehaviour:
   m_ObjectHideFlags: 0

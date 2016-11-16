@@ -228,6 +228,11 @@ namespace MineS
 			InformationManager.ReturnTown(this);
 		}
 
+		public override void ChangeMasterData(CharacterMasterData masterData)
+		{
+			throw new System.NotImplementedException();
+		}
+
 		public bool CanLevelUp
 		{
 			get

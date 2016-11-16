@@ -11,6 +11,11 @@ namespace MineS
 	/// </summary>
 	public class EnemyManager : SingletonMonoBehaviour<EnemyManager>, ITurnProgress
 	{
+		[SerializeField]
+		private CharacterMasterData slugMasterData;
+
+		public CharacterMasterData SlugMasterData{ get { return this.slugMasterData; } }
+
 		public Dictionary<CellData, EnemyData> Enemies{ private set; get; }
 
 		public Dictionary<EnemyData, CellData> InEnemyCells{ private set; get; }

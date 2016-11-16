@@ -63,5 +63,7 @@ namespace MineS
 		void ForceDead();
 
 		void ReturnTown();
+
+		void ChangeMasterData(CharacterMasterData masterData);
 	}
 }

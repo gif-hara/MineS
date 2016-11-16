@@ -342,6 +342,8 @@ namespace MineS
 
 		public abstract void ReturnTown();
 
+		public abstract void ChangeMasterData(CharacterMasterData masterData);
+
 		public GameDefine.AddAbnormalStatusResultType AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{
 			if(this.FindAbility(newAbnormalStatus.InvalidateAbilityType))

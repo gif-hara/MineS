@@ -62,7 +62,8 @@ namespace MineS
 			gameOver = null,
 			gameClear = null,
 			closeStair = null,
-			returnTownEnemy = null;
+			returnTownEnemy = null,
+			changeCharacter = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -384,6 +385,14 @@ namespace MineS
 			var instance = InformationManager.Instance;
 			var message = instance.returnTownEnemy.Format(user.Name)
 				.Replace(TargetColor, user.ColorCode);
+			instance._AddMessage(message);
+		}
+
+		public static void ChangeCharacter(string beforeName, IAttack afterCharacter)
+		{
+			var instance = InformationManager.Instance;
+			var message = instance.changeCharacter.Format(beforeName, afterCharacter.Name)
+				.Replace(TargetColor, afterCharacter.ColorCode);
 			instance._AddMessage(message);
 		}
 

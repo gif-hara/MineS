@@ -128,6 +128,14 @@ namespace MineS
 			InformationManager.ReturnTown(this);
 		}
 
+		public override void ChangeMasterData(CharacterMasterData masterData)
+		{
+			var currentName = this.Name;
+			this.Initialize(masterData, this.cellController);
+			this.cellController.SetImage(this.Image);
+			InformationManager.ChangeCharacter(currentName, this);
+		}
+
 		public void OnVisible(CellData cellData)
 		{
 			cellData.BindCellClickAction(new CombatEnemyAction());
