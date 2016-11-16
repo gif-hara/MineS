@@ -114,6 +114,9 @@ namespace MineS
 			case GameDefine.MagicStoneType.AddDebuff_Assumption:
 				this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Assumption, target);
 			break;
+			case GameDefine.MagicStoneType.AddRandomAbnormalStatus:
+				this.AddAbnormalStatus(GameDefine.RandomAbnormalStatus, target);
+			break;
 			}
 			Debug.Log("target = " + target.Name);
 			this.remainingNumber--;
