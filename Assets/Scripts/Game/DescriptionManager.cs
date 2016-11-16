@@ -70,6 +70,10 @@ namespace MineS
 			{
 				this.Deploy((item.InstanceData as ThrowingInstanceData).DescriptionElement);
 			}
+			else if(item.InstanceData.ItemType == GameDefine.ItemType.MagicStone)
+			{
+				this.Deploy((item.InstanceData as MagicStoneInstanceData).DescriptionElement);
+			}
 			else
 			{
 				Debug.AssertFormat(false, "未対応のアイテムです. itemType = {0}", item.InstanceData.ItemType);

@@ -69,6 +69,8 @@ namespace MineS
 
 		public SerializeFieldGetter.StringAssetFinder coatingThrowingItemReminaingName;
 
+		public SerializeFieldGetter.StringAssetFinder magicStoneItemReminaingName;
+
 		private Dictionary<string, IdentifiedItem> identifiedDictionary = new Dictionary<string, IdentifiedItem>();
 
 		private const string DictionaryCountSerializeKeyName = "ItemManagerIdentifiedDictionaryCount";

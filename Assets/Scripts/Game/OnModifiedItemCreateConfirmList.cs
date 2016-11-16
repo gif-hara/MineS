@@ -81,6 +81,10 @@ namespace MineS
 			{
 				this.CreateOnThrowing(item);
 			}
+			else if(item.InstanceData.ItemType == GameDefine.ItemType.MagicStone)
+			{
+				this.CreateOnMagicStone(item);
+			}
 			else
 			{
 				Debug.AssertFormat(false, "不正な値です. ItemType = {0}", item.InstanceData.ItemType);
@@ -114,6 +118,12 @@ namespace MineS
 			{
 				ConfirmManager.Instance.Add(this.coatFormat, new UnityAction(() => this.OnCoat(selectItem)), true);
 			}
+			this.CreateCommonConfirm(selectItem);
+		}
+
+		private void CreateOnMagicStone(Item selectItem)
+		{
+			ConfirmManager.Instance.Add(this.useFormat.Get, new UnityAction(() => this.OnThrow(selectItem)), true);
 			this.CreateCommonConfirm(selectItem);
 		}
 

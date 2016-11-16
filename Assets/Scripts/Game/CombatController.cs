@@ -22,7 +22,9 @@ namespace MineS
 
 			if(CanAttackEnemy(enemy))
 			{
-				enemy.Attack(player);
+				CharacterData enemyTarget = EnemyManager.Instance.AssumptionEnemy;
+				enemyTarget = enemyTarget == null ? player : enemyTarget;
+				enemy.Attack(enemyTarget);
 			}
 		}
 

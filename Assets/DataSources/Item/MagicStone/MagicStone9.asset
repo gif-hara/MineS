@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19059b5f4138e42d2882447d81ca5c4b, type: 3}
+  m_Name: MagicStone9
+  m_EditorClassIdentifier: 
+  id: 9
+  itemName: "\u30AA\u30F3\u30C7\u30A3\u30FC\u30CC\u306E\u9B54\u6CD5\u77F3"
+  purchasePrice: 2000
+  sellingPrice: 1000
+  image: {fileID: 21300000, guid: 885db1e3c82194da98e63b2b862b9fd0, type: 3}
+  type: 9
+  addPurchasePrice: 200
+  addSellingPrice: 100
+  description: "\u5BFE\u8C61\u306E\u6575\u3092\u30EC\u30D9\u30EB\u30C0\u30A6\u30F3\u3055\u305B\u308B\u305E\uFF01"

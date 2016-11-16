@@ -40,6 +40,9 @@ namespace MineS
 			case GameDefine.ItemType.Throwing:
 				this.instanceData = new ThrowingInstanceData(masterData, Random.Range(1, 10));
 			break;
+			case GameDefine.ItemType.MagicStone:
+				this.instanceData = new MagicStoneInstanceData(masterData, Random.Range(1, 10));
+			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です. masterData.ItemType = {0}", masterData.ItemType);
 			break;
@@ -72,8 +75,16 @@ namespace MineS
 				throwingInstanceData.Throw(PlayerManager.Instance.Data, user);
 				if(throwingInstanceData.IsEmpty)
 				{
-					var inventory = PlayerManager.Instance.Data.Inventory;
-					inventory.RemoveItem(this);
+					PlayerManager.Instance.Data.Inventory.RemoveItem(this);
+				}
+			}
+			else if(this.instanceData.ItemType == GameDefine.ItemType.MagicStone)
+			{
+				var magicStoneInstanceData = this.instanceData as MagicStoneInstanceData;
+				magicStoneInstanceData.Use(PlayerManager.Instance.Data, user);
+				if(magicStoneInstanceData.IsEmpty)
+				{
+					PlayerManager.Instance.Data.Inventory.RemoveItem(this);
 				}
 			}
 			else
@@ -97,6 +108,9 @@ namespace MineS
 			break;
 			case GameDefine.ItemType.Throwing:
 				HK.Framework.SaveData.SetClass<ThrowingInstanceData>(key, this.instanceData as ThrowingInstanceData);
+			break;
+			case GameDefine.ItemType.MagicStone:
+				HK.Framework.SaveData.SetClass<MagicStoneInstanceData>(key, this.instanceData as MagicStoneInstanceData);
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です. itemType = {0}", this.instanceData.ItemType);
@@ -128,6 +142,9 @@ namespace MineS
 			break;
 			case GameDefine.ItemType.Throwing:
 				result.instanceData = HK.Framework.SaveData.GetClass<ThrowingInstanceData>(key, null);
+			break;
+			case GameDefine.ItemType.MagicStone:
+				result.instanceData = HK.Framework.SaveData.GetClass<MagicStoneInstanceData>(key, null);
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です. itemType = {0}", type);

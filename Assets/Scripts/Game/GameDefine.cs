@@ -145,6 +145,11 @@ namespace MineS
 			/// 投擲物.
 			/// </summary>
 			Throwing,
+
+			/// <summary>
+			/// 魔法石.
+			/// </summary>
+			MagicStone,
 		}
 
 		public enum UsableItemType:int
@@ -286,6 +291,74 @@ namespace MineS
 			Cross,
 		}
 
+		public enum MagicStoneType:int
+		{
+			/// <summary>
+			/// デバフの鈍らを付与する.
+			/// </summary>
+			AddDebuff_Dull,
+
+			/// <summary>
+			/// デバフの負傷を付与する.
+			/// </summary>
+			AddDebuff_Gout,
+
+			/// <summary>
+			/// デバフの恐怖を付与する.
+			/// </summary>
+			AddDebuff_Fear,
+
+			/// <summary>
+			/// デバフの封印を付与する.
+			/// </summary>
+			AddDebuff_Seal,
+
+			/// <summary>
+			/// デバフの混乱を付与する.
+			/// </summary>
+			AddDebuff_Confusion,
+
+			/// <summary>
+			/// デバフの肩代を付与する.
+			/// </summary>
+			AddDebuff_Assumption,
+
+			/// <summary>
+			/// ランダムで状態異常を付与する.
+			/// </summary>
+			AddRandomAbnormalStatus,
+
+			/// <summary>
+			/// 蛞蝓に変身する.
+			/// </summary>
+			ChangeSlug,
+
+			/// <summary>
+			/// レベルアップする.
+			/// </summary>
+			LevelUp,
+
+			/// <summary>
+			/// レベルダウンする.
+			/// </summary>
+			LevelDown,
+
+			/// <summary>
+			/// 八方のロックを解除する.
+			/// </summary>
+			Passage,
+
+			/// <summary>
+			/// その階に出現する他の敵に変異する.
+			/// </summary>
+			ChangeEnemy,
+
+			/// <summary>
+			/// ランダムで特殊能力を付与する.
+			/// </summary>
+			AddAbility,
+		}
+
 		public enum AbnormalStatusType:int
 		{
 			/// <summary>
@@ -357,6 +430,11 @@ namespace MineS
 			/// 混乱：ターンを消費する行動がランダムに行われてしまう.
 			/// </summary>
 			Confusion = 13,
+
+			/// <summary>
+			/// 肩代：プレイヤーの受けるダメージを肩代わりする.
+			/// </summary>
+			Assumption,
 		}
 
 		public enum AbilityType:int
@@ -893,7 +971,11 @@ namespace MineS
 
 		public const int ThrowingItemMax = 99;
 
+		public const int MagicStoneItemMax = 99;
+
 		public const int CreateCoatingThrowingItemNumber = 10;
+
+		public const int AddMagicStoneAbnormalStatusTurn = 10;
 
 		public static int Lottery<P>(List<P> elements) where P : IProbability
 		{
@@ -968,6 +1050,8 @@ namespace MineS
 				return "AbnormalStatusType.TrapMaster";
 			case AbnormalStatusType.Xray:
 				return "AbnormalStatusType.Xray";
+			case AbnormalStatusType.Assumption:
+				return "AbnormalStatusType.Assumption";
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = {0}", type);
 				return "";

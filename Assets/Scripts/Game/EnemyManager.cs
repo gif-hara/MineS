@@ -172,6 +172,18 @@ namespace MineS
 			}
 		}
 
+		/// <summary>
+		/// デバフの肩代を持つ敵を返す.
+		/// </summary>
+		/// <value>The assumption enemy.</value>
+		public EnemyData AssumptionEnemy
+		{
+			get
+			{
+				return this.VisibleEnemies.First(e => e.FindAbnormalStatus(GameDefine.AbnormalStatusType.Assumption));
+			}
+		}
+
 		public void Serialize()
 		{
 			HK.Framework.SaveData.SetInt(EnemyCountKeyName, this.Enemies.Count);

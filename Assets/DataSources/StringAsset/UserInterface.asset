@@ -750,3 +750,7 @@ MonoBehaviour:
       ja: "{0}\u306E{1}({2})"
       en: 
     guid: 01f912fb-6a7b-464a-b4b8-7552cd105e2e
+  - value:
+      ja: "\u9B54\u6CD5\u77F3\u53D6\u5F97"
+      en: 
+    guid: ab12144d-c3e7-4429-8aa0-dcbf9a42761e

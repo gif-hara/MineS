@@ -439,7 +439,7 @@ namespace MineS
 		public static int GetThrowingItemDamage(ThrowingInstanceData item)
 		{
 			var playerData = PlayerManager.Instance.Data;
-			return item.Power + Mathf.FloorToInt((float)playerData.FinalStrength * ((float)item.PlayerPower / 100));
+			return item.Power + Mathf.FloorToInt((float)playerData.BaseStrength * ((float)item.PlayerPower / 100));
 		}
 	}
 }

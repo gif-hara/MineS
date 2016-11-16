@@ -116,6 +116,7 @@ namespace MineS
 		public void Throw(CharacterData attacker, IAttack target)
 		{
 			var damage = Calculator.GetThrowingItemDamage(this);
+			this.remainingNumber--;
 
 			switch(this.type)
 			{
@@ -180,7 +181,6 @@ namespace MineS
 				Debug.AssertFormat(false, "不正な値です. ThrowingType = {0}", this.type);
 			break;
 			}
-			this.remainingNumber--;
 		}
 
 		public void Coating(UsableItemInstanceData usableItemInstanceData)

@@ -702,6 +702,16 @@ MonoBehaviour:
       value: "\u4F55\u3092\u3059\u308B\u304B\u5206\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01"
       guid: a655cfe9-5784-4e4b-9bd5-8a553169fa2f
     image: {fileID: 21300000, guid: af164c04a10fa48d0a1b591f551c96de, type: 3}
+  - key: AbnormalStatusType.Assumption
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u80A9\u4EE3"
+      guid: 857b62e0-1b90-435a-b7e8-32a0b745c9f4
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30D7\u30EC\u30A4\u30E4\u30FC\u306E\u53D7\u3051\u308B\u30C0\u30E1\u30FC\u30B8\u3092\u80A9\u4EE3\u308F\u308A\u3059\u308B\u305E\uFF01"
+      guid: 79fa1481-11cb-4d0b-b2dc-a3e82cbea750
+    image: {fileID: 21300000, guid: 94db866e7a55642a8acb748b0de67fcb, type: 3}
   - key: Serum
     title:
       target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}

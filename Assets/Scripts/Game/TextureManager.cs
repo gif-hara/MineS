@@ -40,6 +40,8 @@ namespace MineS
 			private SerializeFieldGetter.Sprite seal;
 			[SerializeField]
 			private SerializeFieldGetter.Sprite confusion;
+			[SerializeField]
+			private SerializeFieldGetter.Sprite assumption;
 
 			private AbnormalStatus()
 			{
@@ -75,6 +77,8 @@ namespace MineS
 					return this.seal.Element;
 				case GameDefine.AbnormalStatusType.Confusion:
 					return this.confusion.Element;
+				case GameDefine.AbnormalStatusType.Assumption:
+					return this.assumption.Element;
 				default:
 					Debug.AssertFormat(false, "不正な値です. {0}", type);
 					return null;
