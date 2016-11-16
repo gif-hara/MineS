@@ -94,6 +94,7 @@ namespace MineS
 
 		public void Use(CharacterData attacker, IAttack target)
 		{
+			this.remainingNumber--;
 			switch(this.type)
 			{
 			case GameDefine.MagicStoneType.AddDebuff_Dull:
@@ -120,9 +121,13 @@ namespace MineS
 			case GameDefine.MagicStoneType.ChangeSlug:
 				target.ChangeMasterData(EnemyManager.Instance.SlugMasterData);
 			break;
+			case GameDefine.MagicStoneType.LevelUp:
+				target.ForceLevelUp(1);
+			break;
+			case GameDefine.MagicStoneType.LevelDown:
+				target.ForceLevelDown(1);
+			break;
 			}
-			Debug.Log("target = " + target.Name);
-			this.remainingNumber--;
 		}
 
 		private void AddAbnormalStatus(GameDefine.AbnormalStatusType abnormalStatusType, IAttack target)
