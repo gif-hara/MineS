@@ -185,7 +185,7 @@ namespace MineS
 		{
 			get
 			{
-				return this.VisibleEnemies.First(e => e.FindAbnormalStatus(GameDefine.AbnormalStatusType.Assumption));
+				return this.VisibleEnemies.Find(e => e.FindAbnormalStatus(GameDefine.AbnormalStatusType.Assumption));
 			}
 		}
 
