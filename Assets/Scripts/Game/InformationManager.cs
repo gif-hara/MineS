@@ -63,7 +63,8 @@ namespace MineS
 			gameClear = null,
 			closeStair = null,
 			returnTownEnemy = null,
-			changeCharacter = null;
+			changeCharacter = null,
+			forceReleaseLock = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -394,6 +395,12 @@ namespace MineS
 			var message = instance.changeCharacter.Format(beforeName, afterCharacter.Name)
 				.Replace(TargetColor, afterCharacter.ColorCode);
 			instance._AddMessage(message);
+		}
+
+		public static void ForceReleaseLock()
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.forceReleaseLock.Get);
 		}
 
 		public static void AddMessage(string message)

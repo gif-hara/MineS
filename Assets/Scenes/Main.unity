@@ -29105,6 +29105,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u306A\u3093\u3068\uFF01<color=targetColor>{0}</color>\u306F<color=targetColor>{1}</color>\u306B\u306A\u3063\u3066\u3057\u307E\u3063\u305F\uFF01"
     guid: e300fa8d-3d20-4417-a554-7416f86e0c34
+  forceReleaseLock:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u901A\u305B\u3093\u307C\u3055\u308C\u3066\u3044\u305F\u9053\u304C\u9032\u3081\u308B\u3088\u3046\u306B\u306A\u3063\u305F\uFF01"
+    guid: 63476a64-07fa-4adb-b6b4-7013ee3287f7
 --- !u!114 &1584263361
 MonoBehaviour:
   m_ObjectHideFlags: 0
