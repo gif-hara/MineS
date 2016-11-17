@@ -30,7 +30,7 @@ namespace MineS
 		{
 			get
 			{
-				return ItemManager.Instance.GetItemName(this);
+				return ItemManager.Instance.UsableItemIdentified.Get(this);
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace MineS
 		{
 			get
 			{
-				return ItemManager.Instance.IsIdentified(this)
+				return ItemManager.Instance.UsableItemIdentified.IsIdentified(this)
 					? this.description
 						: ItemManager.Instance.unidentifiedDescription.Element.Get;
 			}

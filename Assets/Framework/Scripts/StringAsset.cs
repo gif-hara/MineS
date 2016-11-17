@@ -128,6 +128,11 @@ namespace HK.Framework
 					return "";
 				}
 			}
+
+			public string Get()
+			{
+				return this.Get("ja");
+			}
 		}
 
 		public List<Data> database = new List<Data>();

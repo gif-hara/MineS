@@ -163,7 +163,7 @@ namespace MineS
 		{
 			SEManager.Instance.PlaySE((this.instanceData.MasterData as UsableItemMasterData).UseSound);
 			var itemName = this.instanceData.ItemName;
-			if(ItemManager.Instance.Identified(this))
+			if(ItemManager.Instance.UsableItemIdentified.Identified(this))
 			{
 				InformationManager.IdentifiedItem(itemName, this.instanceData.ItemNameRaw);
 			}
