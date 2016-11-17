@@ -119,7 +119,7 @@ namespace MineS
 			this.overrideDropItems = new List<ItemMasterDataBase>(masterData.OverrideDropItems);
 			this.abnormalStatuses = new List<AbnormalStatusBase>();
 			this.abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
-			this.abilityTypes = masterData.AbilityTypes;
+			this.abilityTypes = new List<GameDefine.AbilityType>(masterData.AbilityTypes);
 			this.image = masterData.Image;
 			this.cellController = cellController;
 		}
@@ -377,6 +377,12 @@ namespace MineS
 			this.OnAddedAbnormalStatus(newAbnormalStatus);
 
 			return GameDefine.AddAbnormalStatusResultType.Added;
+		}
+
+		public void AddAbility(AbilityBase newAbility)
+		{
+			this.abilityTypes.Add(newAbility.Type);
+			this.abilities.Add(newAbility);
 		}
 
 		protected virtual void OnAddedAbnormalStatus(AbnormalStatusBase newAbnormalStatus)

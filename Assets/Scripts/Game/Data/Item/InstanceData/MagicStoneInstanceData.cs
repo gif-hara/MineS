@@ -164,6 +164,13 @@ namespace MineS
 					target.ChangeMasterData(creatableEnemies[Random.Range(0, creatableEnemies.Count)]);
 				}
 			break;
+			case GameDefine.MagicStoneType.AddAbility:
+				{
+					var ability = this.GetRandomAbility(target);
+					target.AddAbility(ability);
+					InformationManager.AddAbility(target, ability);
+				}
+			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = {0}", this.type);
 			break;
@@ -174,6 +181,28 @@ namespace MineS
 		{
 			var addResult = target.AddAbnormalStatus(AbnormalStatusFactory.Create(abnormalStatusType, target, GameDefine.AddMagicStoneAbnormalStatusTurn, 0));
 			InformationManager.OnUseAddAbnormalStatusItem(target, abnormalStatusType, addResult);
+		}
+
+		private AbilityBase GetRandomAbility(IAttack target)
+		{
+			var targetAbility = new List<GameDefine.AbilityType>();
+			targetAbility.Add(GameDefine.AbilityType.Penetoration);
+			targetAbility.Add(GameDefine.AbilityType.Mercy);
+			targetAbility.Add(GameDefine.AbilityType.Regeneration);
+			targetAbility.Add(GameDefine.AbilityType.Reinforcement);
+			targetAbility.Add(GameDefine.AbilityType.Artisan);
+			targetAbility.Add(GameDefine.AbilityType.RiskOfLife);
+			targetAbility.Add(GameDefine.AbilityType.Enhancement);
+			targetAbility.Add(GameDefine.AbilityType.Weak);
+			targetAbility.Add(GameDefine.AbilityType.Immunity);
+			targetAbility.Add(GameDefine.AbilityType.Infection);
+			targetAbility.Add(GameDefine.AbilityType.Division);
+			targetAbility.Add(GameDefine.AbilityType.Summon);
+			targetAbility.Add(GameDefine.AbilityType.Reincarnation);
+			targetAbility.Add(GameDefine.AbilityType.Provocation);
+			targetAbility.Add(GameDefine.AbilityType.Unity);
+
+			return AbilityFactory.Create(targetAbility[Random.Range(0, targetAbility.Count)], target as CharacterData);
 		}
 	}
 }

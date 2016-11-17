@@ -46,6 +46,8 @@ namespace MineS
 
 		GameDefine.AddAbnormalStatusResultType AddAbnormalStatus(AbnormalStatusBase newAbnormalStatus);
 
+		void AddAbility(AbilityBase newAbility);
+
 		void RemoveAbnormalStatus(GameDefine.AbnormalStatusType type);
 
 		void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint);

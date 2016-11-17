@@ -8843,9 +8843,9 @@ RectTransform:
   - {fileID: 912330559}
   m_Father: {fileID: 842027360}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 371.25, y: -130}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518210043
@@ -9668,9 +9668,9 @@ RectTransform:
   - {fileID: 427700589}
   m_Father: {fileID: 912330559}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &549576039
@@ -29109,6 +29109,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u901A\u305B\u3093\u307C\u3055\u308C\u3066\u3044\u305F\u9053\u304C\u9032\u3081\u308B\u3088\u3046\u306B\u306A\u3063\u305F\uFF01"
     guid: 63476a64-07fa-4adb-b6b4-7013ee3287f7
+  addAbility:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "<color=targetColor>{0}</color>\u306B<color=orange>{1}</color>\u304C\u4ED8\u4E0E\u3055\u308C\u305F\uFF01"
+    guid: 99749d78-4ea9-4666-9373-7a4f0000789d
 --- !u!114 &1584263361
 MonoBehaviour:
   m_ObjectHideFlags: 0
