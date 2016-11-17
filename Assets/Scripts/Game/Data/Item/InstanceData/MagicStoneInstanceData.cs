@@ -128,6 +128,13 @@ namespace MineS
 			case GameDefine.MagicStoneType.LevelDown:
 				target.ForceLevelDown(1);
 			break;
+			case GameDefine.MagicStoneType.Passage:
+				var cellData = EnemyManager.Instance.InEnemyCells[target as EnemyData];
+				CellManager.Instance.GetAdjacentCellDataAll(cellData.Position.y, cellData.Position.x).ForEach(c => c.ForceReleaseLock());
+			break;
+			default:
+				Debug.AssertFormat(false, "不正な値です. type = {0}", this.type);
+			break;
 			}
 		}
 

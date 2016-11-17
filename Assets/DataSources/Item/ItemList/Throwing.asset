@@ -11,4 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05e4b33b59444a55a31597cbd09d33d, type: 3}
   m_Name: Throwing
   m_EditorClassIdentifier: 
-  database: []
+  database:
+  - {fileID: 11400000, guid: 7227855bcc3734b9197c551c0655cc1c, type: 2}
+  - {fileID: 11400000, guid: 744cb84fccfed40d797e16732b209875, type: 2}
+  - {fileID: 11400000, guid: e265fdf7653fa45909e97f70600e2984, type: 2}
+  - {fileID: 11400000, guid: e082e83b446e24872ac006b60f5b12b6, type: 2}
+  - {fileID: 11400000, guid: 9a95c444663fe4481b3e9c3096c92c59, type: 2}

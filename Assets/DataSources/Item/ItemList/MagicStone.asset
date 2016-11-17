@@ -11,4 +11,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05e4b33b59444a55a31597cbd09d33d, type: 3}
   m_Name: MagicStone
   m_EditorClassIdentifier: 
-  database: []
+  database:
+  - {fileID: 11400000, guid: 08465df990a0f41279710c3255a3d9fa, type: 2}
+  - {fileID: 11400000, guid: 880b1932fa401408b9ba7a7210bd2fbc, type: 2}
+  - {fileID: 11400000, guid: c70dd8b4a19ba45ca9edd43d73e9041c, type: 2}
+  - {fileID: 11400000, guid: 95575a5bb799a45d9a823ee0539f9cff, type: 2}
+  - {fileID: 11400000, guid: d74b383a5429040a68c0667a05fd9a6b, type: 2}
+  - {fileID: 11400000, guid: 611ac5c14b52e4ac8b5b3ee8f687fb5c, type: 2}
+  - {fileID: 11400000, guid: 20b656e8b100245bfa9c4d6fbd6ff18b, type: 2}
+  - {fileID: 11400000, guid: f744990c432cc412798ce6a48aae537c, type: 2}
+  - {fileID: 11400000, guid: cdbb07014859c42faa3b3e55ad9279b8, type: 2}
+  - {fileID: 11400000, guid: eef2d9369641e4518bfb61773ecd8e81, type: 2}
+  - {fileID: 11400000, guid: 0a83a20b272694236920732ec766ec09, type: 2}
+  - {fileID: 11400000, guid: 103c59d192c9a40e7a5ae90c6c6b6ef1, type: 2}
+  - {fileID: 11400000, guid: 434addeb3c42546c992363dd5d225093, type: 2}

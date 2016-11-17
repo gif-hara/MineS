@@ -23,6 +23,8 @@ namespace MineS
 		public void SetDatabase(string itemType)
 		{
 			this.database = GetList(itemType);
+			UnityEditor.EditorUtility.SetDirty(this);
+			UnityEditor.AssetDatabase.SaveAssets();
 		}
 
 		public List<ItemMasterDataBase> Parse(string csvData)
@@ -42,6 +44,8 @@ namespace MineS
 				GetList("Weapon").ForEach(i => _allItem.Add(i.ItemName, i));
 				GetList("Shield").ForEach(i => _allItem.Add(i.ItemName, i));
 				GetList("Accessory").ForEach(i => _allItem.Add(i.ItemName, i));
+				GetList("Throwing").ForEach(i => _allItem.Add(i.ItemName, i));
+				GetList("MagicStone").ForEach(i => _allItem.Add(i.ItemName, i));
 			}
 
 			Debug.AssertFormat(_allItem.ContainsKey(itemName), "{0}がありませんでした.", itemName);

@@ -181,6 +181,16 @@ namespace MineS
 		public void ReleaseLock()
 		{
 			this.serializeData.lockCount--;
+			this.serializeData.lockCount = this.serializeData.lockCount < 0 ? 0 : this.serializeData.lockCount;
+			if(this.modifiedLockCountEvent != null)
+			{
+				this.modifiedLockCountEvent(this.serializeData.lockCount);
+			}
+		}
+
+		public void ForceReleaseLock()
+		{
+			this.serializeData.lockCount = 0;
 			if(this.modifiedLockCountEvent != null)
 			{
 				this.modifiedLockCountEvent(this.serializeData.lockCount);
