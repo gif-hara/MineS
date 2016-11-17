@@ -8843,9 +8843,9 @@ RectTransform:
   - {fileID: 912330559}
   m_Father: {fileID: 842027360}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 371.25, y: -130}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518210043
@@ -9668,9 +9668,9 @@ RectTransform:
   - {fileID: 427700589}
   m_Father: {fileID: 912330559}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 110, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &549576039
@@ -29426,7 +29426,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usableItemList: {fileID: 11400000, guid: 296598321c52d4e22b1d417988c1b533, type: 2}
-  unidentifiedStringAsset: {fileID: 11400000, guid: 7ee12fe7ac09d49bf8b153a4425f413d,
+  magicStoneList: {fileID: 11400000, guid: c9c77f607abec4e2083dfc231f7f57a2, type: 2}
+  usableItemUnidentifiedStringAsset: {fileID: 11400000, guid: 7ee12fe7ac09d49bf8b153a4425f413d,
+    type: 2}
+  magicStoneUnidentifiedStringAsset: {fileID: 11400000, guid: 433c1ceb5e8f84d7e8c0f060f322d26c,
     type: 2}
   unidentifiedDescription:
     element:

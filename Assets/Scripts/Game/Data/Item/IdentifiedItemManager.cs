@@ -17,12 +17,12 @@ namespace MineS
 
 		public IdentifiedItemManager(ItemMasterDataBaseList list, StringAsset unidentifiedStringAsset)
 		{
-			Debug.AssertFormat(list.Database.Count >= unidentifiedStringAsset.database.Count, "未識別文字列が足りません.");
+			Debug.AssertFormat(list.Database.Count <= unidentifiedStringAsset.database.Count, "未識別文字列が足りません. list = {0}", list.name);
 			var unidentifiedStrings = unidentifiedStringAsset.database.Select(d => d.value.Get()).ToList();
 			list.Database.ForEach(d =>
 			{
 				var unidentifiedStringIndex = Random.Range(0, unidentifiedStrings.Count);
-				var idenditied = !(d as UsableItemMasterData).CanUnidentified ? true : DungeonManager.Instance.CurrentData.ItemIdentified;
+				var idenditied = !d.CanUnidentified ? true : DungeonManager.Instance.CurrentData.ItemIdentified;
 				var identifiedItem = new IdentifiedItem(d, unidentifiedStrings[unidentifiedStringIndex], idenditied);
 				this.dictionary.Add(d.ItemName, identifiedItem);
 				unidentifiedStrings.RemoveAt(unidentifiedStringIndex);

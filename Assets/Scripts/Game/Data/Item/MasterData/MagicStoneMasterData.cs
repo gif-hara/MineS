@@ -39,6 +39,14 @@ namespace MineS
 			}
 		}
 
+		public override bool CanUnidentified
+		{
+			get
+			{
+				return true;
+			}
+		}
+
 #if UNITY_EDITOR
 		public static MagicStoneMasterData CreateFromCsv(List<string> csv)
 		{

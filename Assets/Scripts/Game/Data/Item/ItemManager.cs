@@ -15,7 +15,13 @@ namespace MineS
 		private ItemMasterDataBaseList usableItemList;
 
 		[SerializeField]
-		private StringAsset unidentifiedStringAsset;
+		private ItemMasterDataBaseList magicStoneList;
+
+		[SerializeField]
+		private StringAsset usableItemUnidentifiedStringAsset;
+
+		[SerializeField]
+		private StringAsset magicStoneUnidentifiedStringAsset;
 
 		public SerializeFieldGetter.StringAssetFinder unidentifiedDescription;
 
@@ -31,9 +37,13 @@ namespace MineS
 
 		public IdentifiedItemManager UsableItemIdentified{ private set; get; }
 
-		private const string UsableItemSerializeKeyName = "ItemManagerUsableItemIdentified";
+		public IdentifiedItemManager MagicStoneIdentified{ private set; get; }
 
 		public ItemMasterDataBaseList UsableItemList{ get { return this.usableItemList; } }
+
+		private const string UsableItemSerializeKeyName = "ItemManagerUsableItemIdentified";
+
+		private const string MagicStoneSerializeKeyName = "ItemManagerMagicStoneIdentified";
 
 		protected override void Awake()
 		{
@@ -48,17 +58,20 @@ namespace MineS
 
 		public void Initialize()
 		{
-			this.UsableItemIdentified = new IdentifiedItemManager(this.usableItemList, unidentifiedStringAsset);
+			this.UsableItemIdentified = new IdentifiedItemManager(this.usableItemList, this.usableItemUnidentifiedStringAsset);
+			this.MagicStoneIdentified = new IdentifiedItemManager(this.magicStoneList, this.magicStoneUnidentifiedStringAsset);
 		}
 
 		public void Serialize()
 		{
 			this.UsableItemIdentified.Serialize(UsableItemSerializeKeyName);
+			this.MagicStoneIdentified.Serialize(MagicStoneSerializeKeyName);
 		}
 
 		public void Deserialize()
 		{
 			this.UsableItemIdentified.Deserialize(UsableItemSerializeKeyName);
+			this.MagicStoneIdentified.Deserialize(MagicStoneSerializeKeyName);
 		}
 	}
 }

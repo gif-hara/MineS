@@ -60,37 +60,35 @@ namespace MineS
 
 		public void Use(IAttack user)
 		{
+			var inventory = PlayerManager.Instance.Data.Inventory;
 			if(GameDefine.IsEquipment(this.instanceData.ItemType))
 			{
-				var changedEquipment = PlayerManager.Instance.Data.Inventory.ChangeEquipment(this);
+				var changedEquipment = inventory.ChangeEquipment(this);
 				PlayerManager.Instance.ChangeItem(this, changedEquipment);
 			}
 			else if(this.instanceData.ItemType == GameDefine.ItemType.UsableItem)
 			{
-				this.UseUsableItem(user, PlayerManager.Instance.Data.Inventory);
+				this.UseUsableItem(user, inventory);
 			}
 			else if(this.instanceData.ItemType == GameDefine.ItemType.Throwing)
 			{
-				var throwingInstanceData = this.instanceData as ThrowingInstanceData;
-				throwingInstanceData.Throw(PlayerManager.Instance.Data, user);
-				if(throwingInstanceData.IsEmpty)
-				{
-					PlayerManager.Instance.Data.Inventory.RemoveItem(this);
-				}
+				this.UseThrowing(user, inventory);
 			}
 			else if(this.instanceData.ItemType == GameDefine.ItemType.MagicStone)
 			{
-				var magicStoneInstanceData = this.instanceData as MagicStoneInstanceData;
-				magicStoneInstanceData.Use(PlayerManager.Instance.Data, user);
-				if(magicStoneInstanceData.IsEmpty)
-				{
-					PlayerManager.Instance.Data.Inventory.RemoveItem(this);
-				}
+				this.UseMagicStone(user, inventory);
 			}
 			else
 			{
 				Debug.LogWarning("未実装のアイテムです ItemType = " + this.instanceData.ItemType);
 			}
+
+			if(MineS.SaveData.Option.AutoSort)
+			{
+				inventory.Sort();
+			}
+			PlayerManager.Instance.Serialize();
+
 			onUseItemEvent.Invoke(this);
 		}
 
@@ -170,12 +168,33 @@ namespace MineS
 
 			(this.instanceData.MasterData as UsableItemMasterData).OnUse(user, 1.0f);
 			inventory.RemoveItem(this);
+		}
 
-			if(MineS.SaveData.Option.AutoSort)
+		private void UseThrowing(IAttack user, Inventory inventory)
+		{
+			var throwingInstanceData = this.instanceData as ThrowingInstanceData;
+			throwingInstanceData.Throw(PlayerManager.Instance.Data, user);
+			if(throwingInstanceData.IsEmpty)
 			{
-				inventory.Sort();
+				inventory.RemoveItem(this);
 			}
-			PlayerManager.Instance.Serialize();
+		}
+
+		private void UseMagicStone(IAttack user, Inventory inventory)
+		{
+			//SEManager
+			var itemName = this.instanceData.ItemName;
+			if(ItemManager.Instance.MagicStoneIdentified.Identified(this))
+			{
+				InformationManager.IdentifiedItem(itemName, this.instanceData.ItemName);
+			}
+
+			var magicStoneInstanceData = this.instanceData as MagicStoneInstanceData;
+			magicStoneInstanceData.Use(PlayerManager.Instance.Data, user);
+			if(magicStoneInstanceData.IsEmpty)
+			{
+				inventory.RemoveItem(this);
+			}
 		}
 
 	}

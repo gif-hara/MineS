@@ -13,6 +13,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database:
   - value:
-      ja: 
+      ja: "\u4FE1\u983C\u306E\u9B54\u6CD5\u77F3"
       en: 
     guid: e9291a6b-17fe-43f8-b851-357f7a90137e
+  - value:
+      ja: "\u697D\u89B3\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 078ce251-2848-4fcc-b0e1-c2265ac277fd
+  - value:
+      ja: "\u5ACC\u60AA\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: b810038f-58fa-41f6-ab48-87aac47dffa5
+  - value:
+      ja: "\u670D\u5F93\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 63c933cc-6621-4929-8d29-ea2598164843
+  - value:
+      ja: "\u754F\u6016\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: ea70ada3-9cda-4fbc-bd14-2a5fe0ccb545
+  - value:
+      ja: "\u81EA\u8CAC\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 09f20798-e8e4-441e-a91a-b2880add061e
+  - value:
+      ja: "\u8EFD\u8511\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 7540ec07-ef85-49ea-96f1-8d89280a3f3f
+  - value:
+      ja: "\u6B32\u671B\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 8c316c2c-ac29-432b-bf4b-94e369423909
+  - value:
+      ja: "\u5E0C\u671B\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 301f182b-19b4-4120-866b-99f69e4306a8
+  - value:
+      ja: "\u7D76\u671B\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: f15233e4-b45a-4cf0-8e53-20d723cd9087
+  - value:
+      ja: "\u5931\u671B\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 9cca4bac-e424-4e8f-8e34-5eb3390a404a
+  - value:
+      ja: "\u5AC9\u59AC\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: b25ec3f6-4888-4f2f-8ddd-def5b5507e24
+  - value:
+      ja: "\u5D07\u62DD\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 096a2857-59ed-40c6-a54e-a755296f158f
+  - value:
+      ja: "\u60AA\u610F\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: dd175071-5654-40c9-9653-e77ab7bd8860
+  - value:
+      ja: "\u5584\u610F\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 47c9dd81-b27b-4977-b453-659c233cae57
+  - value:
+      ja: "\u50B2\u6162\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 4b44659d-b260-4d1c-b46c-74e870d537c9
+  - value:
+      ja: "\u5FC3\u9154\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 4d6129f5-9fc0-416d-ae5c-01095378b8ae

@@ -58,7 +58,7 @@ namespace MineS
 		{
 			get
 			{
-				return ItemManager.Instance.magicStoneItemReminaingName.Element.Format(this.itemName, this.remainingNumber);
+				return ItemManager.Instance.magicStoneItemReminaingName.Element.Format(ItemManager.Instance.MagicStoneIdentified.Get(this), this.remainingNumber);
 			}
 		}
 
@@ -94,6 +94,7 @@ namespace MineS
 
 		public void Use(CharacterData attacker, IAttack target)
 		{
+			
 			this.remainingNumber--;
 			switch(this.type)
 			{

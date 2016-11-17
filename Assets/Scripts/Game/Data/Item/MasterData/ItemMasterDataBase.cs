@@ -38,5 +38,17 @@ namespace MineS
 		public Sprite Image{ get { return this.image; } }
 
 		public abstract GameDefine.ItemType ItemType{ get; }
+
+		/// <summary>
+		/// 未識別可能か返す.
+		/// </summary>
+		/// <value><c>true</c> if this instance can unidentified; otherwise, <c>false</c>.</value>
+		public virtual bool CanUnidentified
+		{
+			get
+			{
+				return false;
+			}
+		}
 	}
 }

@@ -38,7 +38,7 @@ namespace MineS
 
 		public int RandomPower{ get { return Random.Range(this.power0, this.power1 + 1); } }
 
-		public bool CanUnidentified{ get { return this.canUnidentified; } }
+		public override bool CanUnidentified{ get { return this.canUnidentified; } }
 
 		public AudioClip UseSound{ get { return this.useSound; } }
 
