@@ -31,5 +31,7 @@ namespace MineS
 		public SerializeFieldGetter.GameObject prefabDyingEffect;
 
 		public SerializeFieldGetter.GameObject prefabThrowing0;
+
+		public SerializeFieldGetter.GameObject prefabUseMagicStone0;
 	}
 }

@@ -182,7 +182,8 @@ namespace MineS
 
 		private void UseMagicStone(IAttack user, Inventory inventory)
 		{
-			//SEManager
+			SEManager.Instance.PlaySE(SEManager.Instance.useMagicStone0);
+			Object.Instantiate(EffectManager.Instance.prefabUseMagicStone0.Element, EnemyManager.Instance.InEnemyCells[user as EnemyData].Controller.transform, false);
 			var itemName = this.instanceData.ItemName;
 			if(ItemManager.Instance.MagicStoneIdentified.Identified(this))
 			{
