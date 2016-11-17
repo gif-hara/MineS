@@ -168,6 +168,7 @@ namespace MineS
 			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.Shield).OrderBy(i => i.InstanceData.Id));
 			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.Accessory).OrderBy(i => i.InstanceData.Id));
 			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.Throwing).OrderBy(i => i.InstanceData.Id));
+			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.MagicStone).OrderBy(i => i.InstanceData.Id));
 			result.AddRange(this.items.Where(i => i != null && i.InstanceData.ItemType == GameDefine.ItemType.UsableItem).OrderBy(i => i.InstanceData.Id));
 			for(int i = 0, imax = this.items.Count - result.Count; i < imax; i++)
 			{
