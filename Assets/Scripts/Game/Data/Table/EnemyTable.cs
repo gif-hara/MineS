@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using System.Linq;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -34,6 +35,14 @@ namespace MineS
 				result.Initialize(this.enemies[index].MasterData, cellController);
 				return result;
 			}
+
+			public List<CharacterMasterData> EnemyList
+			{
+				get
+				{
+					return this.enemies.Select(e => e.MasterData).ToList();
+				}
+			}
 #if UNITY_EDITOR
 			public void Add(string enemyName, int probability)
 			{
@@ -51,6 +60,14 @@ namespace MineS
 			Debug.AssertFormat(this.elements.FindAll(e => e.IsMatch(floor)).Count == 1, "敵テーブルが無い、または複数ありました.");
 #endif
 			return this.elements.Find(e => e.IsMatch(floor)).Create(cellController);
+		}
+
+		public List<CharacterMasterData> GetCreatableEnemies(int floor)
+		{
+#if DEBUG
+			Debug.AssertFormat(this.elements.FindAll(e => e.IsMatch(floor)).Count == 1, "敵テーブルが無い、または複数ありました.");
+#endif
+			return this.elements.Find(e => e.IsMatch(floor)).EnemyList;
 		}
 
 		public void Check(int floorMax)

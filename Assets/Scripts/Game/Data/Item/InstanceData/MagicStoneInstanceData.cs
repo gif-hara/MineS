@@ -99,39 +99,70 @@ namespace MineS
 			switch(this.type)
 			{
 			case GameDefine.MagicStoneType.AddDebuff_Dull:
-				this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Dull, target);
+				{
+					this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Dull, target);
+				}
 			break;
 			case GameDefine.MagicStoneType.AddDebuff_Gout:
-				this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Gout, target);
+				{
+					this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Gout, target);
+				}
 			break;
 			case GameDefine.MagicStoneType.AddDebuff_Fear:
-				this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Fear, target);
+				{
+					this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Fear, target);
+				}
 			break;
 			case GameDefine.MagicStoneType.AddDebuff_Seal:
-				this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Seal, target);
+				{
+					this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Seal, target);
+				}
 			break;
 			case GameDefine.MagicStoneType.AddDebuff_Confusion:
-				this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Confusion, target);
+				{
+					this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Confusion, target);
+				}
 			break;
 			case GameDefine.MagicStoneType.AddDebuff_Assumption:
-				this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Assumption, target);
+				{
+					this.AddAbnormalStatus(GameDefine.AbnormalStatusType.Assumption, target);
+				}
 			break;
 			case GameDefine.MagicStoneType.AddRandomAbnormalStatus:
-				this.AddAbnormalStatus(GameDefine.RandomAbnormalStatus, target);
+				{
+					this.AddAbnormalStatus(GameDefine.RandomAbnormalStatus, target);
+				}
 			break;
 			case GameDefine.MagicStoneType.ChangeSlug:
-				target.ChangeMasterData(EnemyManager.Instance.SlugMasterData);
+				{
+					target.ChangeMasterData(EnemyManager.Instance.SlugMasterData);
+				}
 			break;
 			case GameDefine.MagicStoneType.LevelUp:
-				target.ForceLevelUp(1);
+				{
+					target.ForceLevelUp(1);
+				}
 			break;
 			case GameDefine.MagicStoneType.LevelDown:
-				target.ForceLevelDown(1);
+				{
+					target.ForceLevelDown(1);
+				}
 			break;
 			case GameDefine.MagicStoneType.Passage:
-				var cellData = EnemyManager.Instance.InEnemyCells[target as EnemyData];
-				CellManager.Instance.GetAdjacentCellDataAll(cellData.Position.y, cellData.Position.x).ForEach(c => c.ForceReleaseLock());
-				InformationManager.ForceReleaseLock();
+				{
+					var cellData = EnemyManager.Instance.InEnemyCells[target as EnemyData];
+					CellManager.Instance.GetAdjacentCellDataAll(cellData.Position.y, cellData.Position.x).ForEach(c => c.ForceReleaseLock());
+					InformationManager.ForceReleaseLock();
+				}
+			break;
+			case GameDefine.MagicStoneType.ChangeEnemy:
+				{
+					var dungeonManager = DungeonManager.Instance;
+					var creatableEnemies = dungeonManager.CurrentDataAsDungeon.GetCreatableEnemies(dungeonManager.Floor)
+						.Where(e => e.Name != target.Name)
+						.ToList();
+					target.ChangeMasterData(creatableEnemies[Random.Range(0, creatableEnemies.Count)]);
+				}
 			break;
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = {0}", this.type);

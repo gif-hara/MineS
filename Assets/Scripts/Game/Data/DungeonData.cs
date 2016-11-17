@@ -98,6 +98,11 @@ namespace MineS
 			return this.enemyTable.Create(floor, cellController);
 		}
 
+		public List<CharacterMasterData> GetCreatableEnemies(int floor)
+		{
+			return this.enemyTable.GetCreatableEnemies(floor);
+		}
+
 		public Item CreateItem()
 		{
 			return this.itemTable.Create();

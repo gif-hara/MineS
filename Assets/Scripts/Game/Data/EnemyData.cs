@@ -91,6 +91,7 @@ namespace MineS
 
 			this.cellController.SetImage(this.Image);
 			InformationManager.LevelUpEnemy(this, currentName, this.Name);
+			Object.Instantiate(EffectManager.Instance.prefabSummon.Element, this.cellController.transform, false);
 		}
 
 		public override void ForceLevelDown(int value)
@@ -113,6 +114,7 @@ namespace MineS
 
 			this.cellController.SetImage(this.Image);
 			InformationManager.LevelDownEnemy(this, currentName, this.Name);
+			Object.Instantiate(EffectManager.Instance.prefabSummon.Element, this.cellController.transform, false);
 		}
 
 		public override void ForceDead()
@@ -134,6 +136,7 @@ namespace MineS
 			this.Initialize(masterData, this.cellController);
 			this.cellController.SetImage(this.Image);
 			InformationManager.ChangeCharacter(currentName, this);
+			Object.Instantiate(EffectManager.Instance.prefabSummon.Element, this.cellController.transform, false);
 		}
 
 		public void OnVisible(CellData cellData)
