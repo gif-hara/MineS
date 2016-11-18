@@ -43,7 +43,6 @@ namespace MineS
 			this.cellController.SetImage(this.Image);
 			this.cellController.SetCharacterData(EnemyManager.Instance.Enemies[this.cellData]);
 			this.cellData.BindDeployDescription(new DeployDescriptionOnCharacterData(this.Enemy));
-			Debug.Log("CombatEnemyAction DeployDescriptionOnCharacterData");
 		}
 
 		public override GameDefine.EventType EventType

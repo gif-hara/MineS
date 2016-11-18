@@ -83,14 +83,7 @@ namespace MineS
 
 		void OnApplicationQuit()
 		{
-			if(this.current.Serializable && !ResultManager.Instance.IsResult)
-			{
-				this.Serialize();
-			}
-			else
-			{
-				DungeonSerializer.InvalidSaveData();
-			}
+			this.Serialize();
 		}
 
 		void OnApplicationPause(bool pauseStatus)
@@ -100,7 +93,7 @@ namespace MineS
 				return;
 			}
 
-			OnApplicationQuit();
+			this.Serialize();
 		}
 
 		public void ChangeDungeonData(DungeonDataBase data, bool immediateFadeOut, int floor = 1)
@@ -240,14 +233,21 @@ namespace MineS
 			this.current.InvokeOtherProccess();
 		}
 
-		private void Serialize()
+		public void Serialize()
 		{
-			PlayerManager.Instance.Serialize();
-			CellManager.Instance.Serialize();
-			EnemyManager.Instance.Serialize();
-			ItemManager.Instance.Serialize();
-			DungeonSerializer.Save(this.floorCount, this.current);
-			HK.Framework.SaveData.Save();
+			if(this.current.Serializable && !ResultManager.Instance.IsResult)
+			{
+				PlayerManager.Instance.Serialize();
+				CellManager.Instance.Serialize();
+				EnemyManager.Instance.Serialize();
+				ItemManager.Instance.Serialize();
+				DungeonSerializer.Save(this.floorCount, this.current);
+				HK.Framework.SaveData.Save();
+			}
+			else
+			{
+				DungeonSerializer.InvalidSaveData();
+			}
 		}
 
 		private void Deserialize()
