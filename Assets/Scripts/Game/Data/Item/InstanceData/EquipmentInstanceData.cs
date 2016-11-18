@@ -176,7 +176,7 @@ namespace MineS
 		{
 			get
 			{
-				return Mathf.FloorToInt((this.purchasePrice / 10) * (this.Level + 1));
+				return 2000 + 500 * this.Level;
 			}
 		}
 
