@@ -14,8 +14,14 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			CombatController.Combat(PlayerManager.Instance.Data, this.Enemy);
+			var enemy = this.Enemy;
+			CombatController.Combat(PlayerManager.Instance.Data, enemy);
 			TurnManager.Instance.Progress(GameDefine.TurnProgressType.EnemyAttack);
+
+			if(enemy.IsDead)
+			{
+				this.cellData.BindDeployDescription(null);
+			}
 		}
 
 		public override void SetCellController(CellController cellController)
