@@ -109,6 +109,7 @@ namespace MineS
 		{
 			var targetEquipmentData = target.InstanceData as EquipmentInstanceData;
 			this.AddAbility(targetEquipmentData.Abilities);
+			this.level += targetEquipmentData.Level;
 		}
 
 		public bool CanRemoveAbility(int index)
