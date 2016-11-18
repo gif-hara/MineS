@@ -187,9 +187,11 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static int GetArtisanRate(IAttack attacker)
 		{
-			var result = Mathf.FloorToInt(attacker.Strength * (0.1f + attacker.GetAbilityNumber(GameDefine.AbilityType.Artisan) * 0.05f));
-			Debug.Log("result = " + result);
-			return result;
+			if(!attacker.FindAbility(GameDefine.AbilityType.Artisan))
+			{
+				return 0;
+			}
+			return 2 + attacker.GetAbilityNumber(GameDefine.AbilityType.Artisan) * 4;
 		}
 
 		/// <summary>
