@@ -33,5 +33,13 @@ namespace MineS
 		public SerializeFieldGetter.GameObject prefabThrowing0;
 
 		public SerializeFieldGetter.GameObject prefabUseMagicStone0;
+
+		[SerializeField]
+		private ItemObserver prefabSuccessTheft;
+
+		public void CreateTheftEffect(Item theftedItem, Transform parent)
+		{
+			(Instantiate(this.prefabSuccessTheft, parent, false) as ItemObserver).ModifiedData(theftedItem);
+		}
 	}
 }

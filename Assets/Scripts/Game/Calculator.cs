@@ -226,7 +226,7 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static bool IsSuccessTheft(IAttack attacker)
 		{
-			var probability = attacker.GetAbilityNumber(GameDefine.AbilityType.Theft) + 3;
+			var probability = attacker.GetAbilityNumber(GameDefine.AbilityType.Theft) + 2;
 
 			return probability > Random.Range(0, 100);
 		}
