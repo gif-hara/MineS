@@ -114,6 +114,10 @@ namespace MineS
 		public void InvokeExchangeItem(Item inventoryItem)
 		{
 			this.ExchangeItemController.Invoke(inventoryItem);
+			if(OptionManager.Instance.Data.AutoSort)
+			{
+				this.Sort();
+			}
 		}
 
 		public void SetSelectItem(Item item)
