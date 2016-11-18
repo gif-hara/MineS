@@ -232,7 +232,7 @@ namespace MineS
 			{
 				this.Data.Inventory.SetExchangeItem(item, cellData);
 				this.OpenInventoryUI(GameDefine.InventoryModeType.Exchange, this.Data.Inventory);
-				DescriptionManager.Instance.DeployEmergency("ExchangeItem");
+				DescriptionManager.Instance.DeployEmergency("ExchangeItem", item.InstanceData.ItemName);
 				return GameDefine.AcquireItemResultType.Full;
 			}
 		}

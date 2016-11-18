@@ -80,10 +80,10 @@ namespace MineS
 			}
 		}
 
-		public void DeployEmergency(string key)
+		public void DeployEmergency(string key, params object[] option)
 		{
 			this.emergencyRoot.SetActive(true);
-			this.emergencyText.text = this.data.Get(key).Message;
+			this.emergencyText.text = string.Format(this.data.Get(key).Message, option);
 		}
 
 		public DescriptionData Data{ get { return this.data; } }
