@@ -24,6 +24,8 @@ GameObject:
   - 114: {fileID: 114000012415848260}
   - 114: {fileID: 114000012639431616}
   - 114: {fileID: 114000010506953044}
+  - 114: {fileID: 114000011109671216}
+  - 114: {fileID: 114000010181021750}
   m_Layer: 8
   m_Name: SuccessTheftEffect
   m_TagString: Untagged
@@ -62,6 +64,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 224000011323500798}
   m_RootOrder: 0
+--- !u!114 &114000010181021750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010633946786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff54d235b46bf4707aa0b1f0c3a7d1f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 114000011887551414}
+  from: 1
+  to: 0
+  duration: 1
+  ease: 20
+  loopCount: 1
 --- !u!114 &114000010506953044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,6 +93,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 2
+--- !u!114 &114000011109671216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010633946786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4773e17cef85d43feaf0ff687da87794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  from: {x: 0, y: 0, z: 0}
+  to: {x: 0, y: 120, z: 0}
+  duration: 0.5
+  ease: 15
+  target: {fileID: 224000011323500798}
 --- !u!114 &114000011887551414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,7 +180,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013221006634}
   serializedVersion: 4
-  lengthInSec: 1.5
+  lengthInSec: 1
   startDelay:
     scalar: 0
     maxCurve:
@@ -193,7 +228,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     startLifetime:
-      scalar: 0.8
+      scalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -563,7 +598,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 5
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -609,7 +644,7 @@ ParticleSystem:
     time1: 0.1
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 1
     curve:
@@ -781,7 +816,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     curve:
-      scalar: 3.1415925
+      scalar: 8.377581
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1918,6 +1953,6 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 339}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
