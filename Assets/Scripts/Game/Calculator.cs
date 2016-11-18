@@ -389,7 +389,7 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static int GetInitiativeDamage(IAttack attacker)
 		{
-			return attacker.GetAbilityNumber(GameDefine.AbilityType.Initiative) * 2;
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Initiative) * 9;
 		}
 
 		/// <summary>
