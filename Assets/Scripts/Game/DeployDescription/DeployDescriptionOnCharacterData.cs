@@ -20,6 +20,8 @@ namespace MineS
 		public override void Deploy()
 		{
 			DescriptionManager.Instance.Deploy(this.characterData);
+			//var cellData = EnemyManager.Instance.InEnemyCells[(this.characterData as EnemyData)];
+			//Debug.LogFormat("Position[{0}, {1}]", cellData.Position.y, cellData.Position.x);
 		}
 	}
 }

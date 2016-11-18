@@ -253,8 +253,12 @@ namespace MineS
 		private void Deserialize()
 		{
 			CellManager.Instance.Deserialize();
+			EnemyManager.Instance.Deserialize();
 			ItemManager.Instance.Deserialize();
 			DungeonSerializer.InvalidSaveData();
+
+			CellManager.Instance.LateDeserialize();
+
 			HK.Framework.SaveData.Save();
 		}
 	}

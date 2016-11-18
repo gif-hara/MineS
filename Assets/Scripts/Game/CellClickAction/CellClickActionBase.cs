@@ -46,5 +46,9 @@ namespace MineS
 		{
 			Debug.AssertFormat(false, "{0}のDeserialize処理がありませんでした.", this.GetType().Name);
 		}
+
+		public virtual void LateDeserialize(int y, int x)
+		{
+		}
 	}
 }

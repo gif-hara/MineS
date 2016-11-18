@@ -216,8 +216,7 @@ namespace MineS
 				var cell = Cell.Deserialize(this.GetCellSerializeKeyName(i));
 				var enemy = EnemyData.Deserialize(this.GetEnemySerializeKeyName(i), CellManager.Instance.CellControllers[cell.y, cell.x]);
 				var cellData = CellManager.Instance.CellDatabase[cell.y, cell.x];
-				this.Enemies.Add(cellData, enemy);
-				this.InEnemyCells.Add(enemy, cellData);
+				this.Add(cellData, enemy);
 			}
 		}
 

@@ -32,9 +32,18 @@ namespace MineS
 		public override void SetCellData(CellData data)
 		{
 			this.cellData = data;
+
+			// セーブデータ復帰の場合はEnemyManagerの準備が出来ていないのでここでは設定しない.
+			// LateDeserializeで復帰を行う.
+			if(!EnemyManager.Instance.Enemies.ContainsKey(this.cellData))
+			{
+				return;
+			}
+
 			this.cellController.SetImage(this.Image);
 			this.cellController.SetCharacterData(EnemyManager.Instance.Enemies[this.cellData]);
 			this.cellData.BindDeployDescription(new DeployDescriptionOnCharacterData(this.Enemy));
+			Debug.Log("CombatEnemyAction DeployDescriptionOnCharacterData");
 		}
 
 		public override GameDefine.EventType EventType
@@ -67,6 +76,11 @@ namespace MineS
 
 		public override void Deserialize(int y, int x)
 		{
+		}
+
+		public override void LateDeserialize(int y, int x)
+		{
+			this.SetCellData(this.cellData);
 		}
 	}
 }

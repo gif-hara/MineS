@@ -322,9 +322,13 @@ namespace MineS
 		public void Deserialize()
 		{
 			this.cellDatabase = DungeonSerializer.DeserializeCellData(this.CellControllers, GameDefine.CellRowMax, GameDefine.CellCulumnMax);
-			EnemyManager.Instance.Deserialize();
 			this.SetCell(this.cellDatabase);
 			this.ToListCellData.ForEach(c => c.UseXrayOnDeserialize());
+		}
+
+		public void LateDeserialize()
+		{
+			this.ToListCellData.ForEach(c => c.LateDeserialize());
 		}
 	}
 }

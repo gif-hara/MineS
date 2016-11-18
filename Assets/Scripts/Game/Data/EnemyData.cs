@@ -143,6 +143,7 @@ namespace MineS
 		{
 			cellData.BindCellClickAction(new CombatEnemyAction());
 			cellData.BindDeployDescription(new DeployDescriptionOnCharacterData(this));
+			Debug.Log("ENemyData DeployDescriptionOnCharacterData");
 			cellData.Controller.SetCharacterData(this);
 			cellData.Controller.SetImage(this.Image);
 			var adjacentCells = cellData.AdjacentCellAll;

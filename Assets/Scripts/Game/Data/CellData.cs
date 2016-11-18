@@ -299,6 +299,16 @@ namespace MineS
 			}
 		}
 
+		public void LateDeserialize()
+		{
+			if(this.cellClickAction == null)
+			{
+				return;
+			}
+
+			this.cellClickAction.LateDeserialize(this.Position.y, this.Position.x);
+		}
+
 		public void UseXrayOnDeserialize()
 		{
 			if(this.serializeData.isXray)
