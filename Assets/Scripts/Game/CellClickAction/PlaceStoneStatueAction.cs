@@ -32,6 +32,8 @@ namespace MineS
 			base.OnIdentification(cellData);
 			this.InternalIdentification();
 			Object.Instantiate(EffectManager.Instance.prefabInvokeStoneStatue.Element, CanvasManager.Instance.CellField, false);
+			var descriptionElement = DescriptionManager.Instance.Data.Get(GameDefine.GetStoneStatueDescriptionKey(this.type));
+			InformationManager.InvokeStoneStatue(descriptionElement.Title);
 		}
 
 		public override void SetCellData(CellData data)

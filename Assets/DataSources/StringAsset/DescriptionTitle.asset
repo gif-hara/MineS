@@ -332,3 +332,35 @@ MonoBehaviour:
       ja: "\u7F6E\u304D\u571F\u7523\u306E\u77F3\u50CF"
       en: 
     guid: a7ae59bd-f731-4ce7-9251-14b0af3753fe
+  - value:
+      ja: "\u5FC5\u4E2D\u306E\u77F3\u50CF"
+      en: 
+    guid: 1f3d0d50-be4b-4f75-adc5-aa67fc80af82
+  - value:
+      ja: "\u8B58\u5225\u306E\u77F3\u50CF"
+      en: 
+    guid: 9a4973e6-b020-4ab4-8cc8-ac8ee036d05a
+  - value:
+      ja: "\u518D\u751F\u306E\u77F3\u50CF"
+      en: 
+    guid: 2f3bf5da-cfc3-4862-96ba-3da7d4152fe4
+  - value:
+      ja: "\u6BD2\u306E\u77F3\u50CF"
+      en: 
+    guid: 3cb60cf7-66c0-4084-a0da-4efa2464d4fd
+  - value:
+      ja: "\u706F\u308A\u306E\u77F3\u50CF"
+      en: 
+    guid: 46fef13d-3129-410b-888d-7b737bedcafb
+  - value:
+      ja: "\u5E7B\u899A\u306E\u77F3\u50CF"
+      en: 
+    guid: f41c7fd4-36d3-4fd1-b3b4-df294a304818
+  - value:
+      ja: "\u6E67\u304D\u6C34\u306E\u77F3\u50CF"
+      en: 
+    guid: dc7a55fd-e5a8-483c-ae7b-3be393b7a82d
+  - value:
+      ja: "\u5E78\u798F\u306E\u77F3\u50CF"
+      en: 
+    guid: 78041364-264d-456b-81e4-e5663f61ed82

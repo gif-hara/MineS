@@ -24,7 +24,7 @@ namespace MineS
 
 		public GameDefine.CellClickMode ClickMode{ private set; get; }
 
-		private List<GameDefine.StoneStatueType> placeStoneStatues = new List<GameDefine.StoneStatueType>();
+		private List<StoneStatue> placeStoneStatues = new List<StoneStatue>();
 
 		public CellData[,] CellDatabase{ get { return this.cellDatabase; } }
 
@@ -231,12 +231,12 @@ namespace MineS
 
 		public void AddStoneStatue(GameDefine.StoneStatueType type)
 		{
-			this.placeStoneStatues.Add(type);
+			this.placeStoneStatues.Add(StoneStatueFactory.Create(type));
 		}
 
 		public bool FindStoneStatue(GameDefine.StoneStatueType type)
 		{
-			return this.placeStoneStatues.FindIndex(s => s == type) != -1;
+			return this.placeStoneStatues.FindIndex(s => s.Type == type) != -1;
 		}
 
 		public void DebugAction()

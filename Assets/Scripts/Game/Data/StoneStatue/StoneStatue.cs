@@ -12,12 +12,9 @@ namespace MineS
 	{
 		protected GameDefine.StoneStatueType type;
 
-		protected string descriptionKey;
-
-		public StoneStatue(GameDefine.StoneStatueType type, string descriptionKey)
+		public StoneStatue(GameDefine.StoneStatueType type)
 		{
 			this.type = type;
-			this.descriptionKey = descriptionKey;
 		}
 
 		public GameDefine.StoneStatueType Type

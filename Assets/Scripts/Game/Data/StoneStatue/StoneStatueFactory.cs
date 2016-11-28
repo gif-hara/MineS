@@ -15,23 +15,23 @@ namespace MineS
 			switch(type)
 			{
 			case GameDefine.StoneStatueType.Souvenir:
-				return new StoneStatue(type, "StoneStatueType.Souvenir");
+				return new StoneStatue(type);
 			case GameDefine.StoneStatueType.InbariablyHit:
-				return new StoneStatue(type, "StoneStatueType.InbariablyHit");
+				return new StoneStatue(type);
 			case GameDefine.StoneStatueType.Identification:
-				return new StoneStatue(type, "StoneStatueType.Identification");
+				return new StoneStatue(type);
 			case GameDefine.StoneStatueType.Regeneration:
-				return new StoneStatue(type, "StoneStatueType.Regeneration");
+				return new StoneStatue(type);
 			case GameDefine.StoneStatueType.Poison:
-				return new StoneStatue(type, "StoneStatueType.Poison");
+				return new StoneStatue(type);
 			case GameDefine.StoneStatueType.Light:
-				return new StoneStatue(type, "StoneStatueType.Light");
+				return new StoneStatue(type);
 			case GameDefine.StoneStatueType.Illusion:
-				return new StoneStatue(type, "StoneStatueType.Illusion");
+				return new StoneStatue(type);
 			case GameDefine.StoneStatueType.SpringWater:
 				return new StoneStatueSpringWater();
 			case GameDefine.StoneStatueType.Happiness:
-				return new StoneStatue(type, "StoneStatueType.Happiness");
+				return new StoneStatue(type);
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = {0}", type);
 				return null;

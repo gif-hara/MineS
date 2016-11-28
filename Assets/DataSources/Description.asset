@@ -1022,3 +1022,83 @@ MonoBehaviour:
       value: "\u6575\u3092\u5012\u3057\u305F\u6642\u306B\u5FC5\u305A\u30A2\u30A4\u30C6\u30E0\u3092\u843D\u3068\u3059\u305E\uFF01"
       guid: 1a62b020-6694-4b4d-89c7-4fa886921367
     image: {fileID: 21300000, guid: 8c93c8283d37b48dfaa2d2dc9830491b, type: 3}
+  - key: StoneStatueType.InbariablyHit
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5FC5\u4E2D\u306E\u77F3\u50CF"
+      guid: 1f3d0d50-be4b-4f75-adc5-aa67fc80af82
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u5168\u3066\u306E\u653B\u6483\u304C\u5FC5\u305A\u547D\u4E2D\u3059\u308B\u305E\uFF01"
+      guid: 635e7a19-4bc5-4ce6-8c25-ceee2b94eba0
+    image: {fileID: 21300000, guid: 8c93c8283d37b48dfaa2d2dc9830491b, type: 3}
+  - key: StoneStatueType.Identification
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u8B58\u5225\u306E\u77F3\u50CF"
+      guid: 9a4973e6-b020-4ab4-8cc8-ac8ee036d05a
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30A2\u30A4\u30C6\u30E0\u3092\u62FE\u3046\u6642\u306B\u8B58\u5225\u3055\u308C\u308B\u305E\uFF01"
+      guid: b4854099-1ea4-463c-bf99-f53b96a16f93
+    image: {fileID: 21300000, guid: 8c93c8283d37b48dfaa2d2dc9830491b, type: 3}
+  - key: StoneStatueType.Regeneration
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u518D\u751F\u306E\u77F3\u50CF"
+      guid: 2f3bf5da-cfc3-4862-96ba-3da7d4152fe4
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u6575\u3092\u898B\u3064\u3051\u305F\u6642\u306B\u30D0\u30D5\u306E\u518D\u751F\u304C\u4ED8\u4E0E\u3055\u308C\u3066\u3057\u307E\u3046\u305E\uFF01"
+      guid: 8dfd9227-d383-414d-9f48-d18462935db5
+    image: {fileID: 21300000, guid: 8c93c8283d37b48dfaa2d2dc9830491b, type: 3}
+  - key: StoneStatueType.Poison
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u6BD2\u306E\u77F3\u50CF"
+      guid: 3cb60cf7-66c0-4084-a0da-4efa2464d4fd
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u6575\u3092\u898B\u3064\u3051\u305F\u6642\u306B\u30C7\u30D0\u30D5\u306E\u6BD2\u3092\u4ED8\u4E0E\u3059\u308B\u305E\uFF01"
+      guid: 933187fa-01ac-4e06-804a-47c91206f44a
+    image: {fileID: 21300000, guid: 8c93c8283d37b48dfaa2d2dc9830491b, type: 3}
+  - key: StoneStatueType.Light
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u706F\u308A\u306E\u77F3\u50CF"
+      guid: 46fef13d-3129-410b-888d-7b737bedcafb
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30D5\u30A3\u30FC\u30EB\u30C9\u5168\u4F53\u304C\u898B\u3048\u308B\u3088\u3046\u306B\u306A\u308B\u305E\uFF01"
+      guid: 14d0e1bc-41df-4efc-9029-48345fb3c806
+    image: {fileID: 21300000, guid: 8c93c8283d37b48dfaa2d2dc9830491b, type: 3}
+  - key: StoneStatueType.Illusion
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5E7B\u899A\u306E\u77F3\u50CF"
+      guid: f41c7fd4-36d3-4fd1-b3b4-df294a304818
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u898B\u3048\u308B\u3082\u306E\u5168\u3066\u304C\u5225\u306E\u3082\u306E\u306B\u898B\u3048\u3066\u3057\u307E\u3046\u305E\uFF01"
+      guid: 65894f42-b5c3-42af-a9f6-e2eefa6b819b
+    image: {fileID: 21300000, guid: 8c93c8283d37b48dfaa2d2dc9830491b, type: 3}
+  - key: StoneStatueType.SpringWater
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u6E67\u304D\u6C34\u306E\u77F3\u50CF"
+      guid: dc7a55fd-e5a8-483c-ae7b-3be393b7a82d
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u30BF\u30FC\u30F3\u7D42\u4E86\u6642\u306B\u77F3\u50CF\u306E\u5468\u308A\u306B\u30DD\u30FC\u30B7\u30E7\u30F3\u304C\u751F\u6210\u3055\u308C\u308B\u305E\uFF01"
+      guid: a875b3cf-0244-4ffa-a5e1-43120998f5a6
+    image: {fileID: 21300000, guid: 8c93c8283d37b48dfaa2d2dc9830491b, type: 3}
+  - key: StoneStatueType.Happiness
+    title:
+      target: {fileID: 11400000, guid: 83d3bdf56c869446bbb039223a59bdb9, type: 2}
+      value: "\u5E78\u798F\u306E\u77F3\u50CF"
+      guid: 78041364-264d-456b-81e4-e5663f61ed82
+    message:
+      target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
+      value: "\u7D4C\u9A13\u5024\u304C2\u500D\u306B\u306A\u308B\u305E\uFF01"
+      guid: 75b8d3c2-6fe7-4d89-83b8-79824cf2a352
+    image: {fileID: 21300000, guid: 8c93c8283d37b48dfaa2d2dc9830491b, type: 3}

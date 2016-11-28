@@ -65,7 +65,8 @@ namespace MineS
 			returnTownEnemy = null,
 			changeCharacter = null,
 			forceReleaseLock = null,
-			addAbility = null;
+			addAbility = null,
+			invokeStoneStatue = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -410,6 +411,12 @@ namespace MineS
 			var message = instance.addAbility.Format(target.Name, ability.Name)
 				.Replace(TargetColor, target.ColorCode);
 			instance._AddMessage(message);
+		}
+
+		public static void InvokeStoneStatue(string stoneStatueName)
+		{
+			var instance = InformationManager.Instance;
+			instance._AddMessage(instance.invokeStoneStatue.Format(stoneStatueName));
 		}
 
 		public static void AddMessage(string message)

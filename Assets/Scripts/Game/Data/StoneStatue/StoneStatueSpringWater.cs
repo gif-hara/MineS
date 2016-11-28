@@ -11,7 +11,7 @@ namespace MineS
 	public class StoneStatueSpringWater : StoneStatue
 	{
 		public StoneStatueSpringWater()
-			: base(GameDefine.StoneStatueType.SpringWater, "StoneStatueType.SpringWater")
+			: base(GameDefine.StoneStatueType.SpringWater)
 		{
 		}
 	}
