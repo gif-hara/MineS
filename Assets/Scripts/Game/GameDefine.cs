@@ -1111,6 +1111,11 @@ namespace MineS
 			}
 		}
 
+		public static string GetStoneStatueDescriptionKey(StoneStatueType type)
+		{
+			return string.Format("{0}.{1}", type.GetType().Name, type.ToString());
+		}
+
 #if UNITY_EDITOR
 		public static UsableItemType GetUsableItemType(string name)
 		{

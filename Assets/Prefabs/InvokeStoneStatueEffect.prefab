@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1e93c72e5ca40688932c031b807fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.3
+  delay: 2
 --- !u!114 &114000012025263998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.21379304, a: 0}
+  m_Color: {r: 0.93593836, g: 0.34256053, b: 0.9705882, a: 0}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -81,10 +81,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 114000012025263998}
-  from: 0.2
+  from: 0.75
   to: 0
-  duration: 0.25
-  ease: 3
+  duration: 2
+  ease: 4
   loopCount: 1
 --- !u!222 &222000012293033300
 CanvasRenderer:

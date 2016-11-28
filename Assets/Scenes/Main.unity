@@ -29390,6 +29390,8 @@ MonoBehaviour:
     element: {fileID: 1000014151412420, guid: 61e8aad3e19684d9fba699bd05d7a601, type: 2}
   prefabUseMagicStone0:
     element: {fileID: 1000014151412420, guid: e5e27edb43c6241979fc0089e1a76b5d, type: 2}
+  prefabInvokeStoneStatue:
+    element: {fileID: 1000011697786726, guid: 9dbaf459bc9e24b0e92475dbbdf93c05, type: 2}
   prefabSuccessTheft: {fileID: 114000012415848260, guid: 43c4bbbe700a44990b5e822e878418aa,
     type: 2}
 --- !u!114 &1584263366
@@ -29405,6 +29407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectLv0: {fileID: 89597400}
   effectLv1: {fileID: 1837765749}
+  cellField: {fileID: 707576094}
 --- !u!114 &1584263367
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -79,6 +79,7 @@ namespace MineS
 		{
 			this.cellController.SetImage(this.Image);
 			CellManager.Instance.AddStoneStatue(this.type);
+			this.cellController.Data.BindDeployDescription(new DeployDescriptionOnDescriptionData(GameDefine.GetStoneStatueDescriptionKey(this.type)));
 		}
 
 		private string GetTypeSerializeKeyName(int y, int x)
