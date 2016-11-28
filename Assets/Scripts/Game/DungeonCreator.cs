@@ -63,6 +63,12 @@ namespace MineS
 				this.CreateCellData(cellManager, database, mapChipCreator, new CreateBlackSmithAction());
 			}
 
+			// 石像を作成.
+			if(_dungeonData.CanCreateStoneStatue(dungeonManager.Floor))
+			{
+				this.CreateCellData(cellManager, database, mapChipCreator, new PlaceStoneStatueAction(_dungeonData.CreateStoneStatueType(dungeonManager.Floor)));
+			}
+
 			// 店を作成.
 			if(_dungeonData.CanCreateShop(dungeonManager.Floor))
 			{

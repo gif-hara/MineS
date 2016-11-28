@@ -73,6 +73,11 @@ namespace MineS
 			/// 宣伝屋.
 			/// </summary>
 			Publicity,
+
+			/// <summary>
+			/// 石像.
+			/// </summary>
+			StoneStatue,
 		}
 
 		/// <summary>
@@ -357,6 +362,54 @@ namespace MineS
 			/// ランダムで特殊能力を付与する.
 			/// </summary>
 			AddAbility,
+		}
+
+		public enum StoneStatueType:int
+		{
+			/// <summary>
+			/// 置き土産の石像：敵を倒した際に必ずアイテムを落とす.
+			/// </summary>
+			Souvenir,
+
+			/// <summary>
+			/// 必中の石像：プレイヤーも敵も攻撃が必中する.
+			/// </summary>
+			InbariablyHit,
+
+			/// <summary>
+			/// 識別の石像：アイテムを拾う際に識別される.
+			/// </summary>
+			Identification,
+
+			/// <summary>
+			/// 再生の石像：識別される敵にバフの再生を付与する.
+			/// </summary>
+			Regeneration,
+
+			/// <summary>
+			/// 毒の石像：識別される敵にデバフの毒を付与する.
+			/// </summary>
+			Poison,
+
+			/// <summary>
+			/// 灯りの石像：全てのセルが表示される.
+			/// </summary>
+			Light,
+
+			/// <summary>
+			/// 幻覚の石像：セルに配置されているものは全て別物に見える.
+			/// </summary>
+			Illusion,
+
+			/// <summary>
+			/// 湧き水の石像：ターン終了時にポーション系アイテムが石像の周りに配置される.
+			/// </summary>
+			SpringWater,
+
+			/// <summary>
+			/// 幸福の石像：経験値が2倍になる.
+			/// </summary>
+			Happiness,
 		}
 
 		public enum AbnormalStatusType:int

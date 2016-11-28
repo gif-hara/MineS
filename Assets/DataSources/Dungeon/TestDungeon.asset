@@ -15,6 +15,7 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 4172020a15e334b00838b72bf6b90d8f, type: 2}
     value: "\u30C6\u30B9\u30C8\u30C0\u30F3\u30B8\u30E7\u30F3"
     guid: f1f2bb3b-0336-429b-9013-213c2d9ef1af
+  serializable: 1
   itemIdentified: 0
   mapChipTable:
     elements:
@@ -37,47 +38,63 @@ MonoBehaviour:
   shopTable:
     elements:
     - floorRange:
-        min: 1
-        max: 1
+        min: 0
+        max: 0
       probability: 100
       itemTable:
         elements:
         - masterData: {fileID: 11400000, guid: efe88658878e94286a9c64db374a9252, type: 2}
           probability: 100
+        - masterData: {fileID: 11400000, guid: 3b2f8ec64cafa442c82019217424f3d0, type: 2}
+          probability: 100
+        - masterData: {fileID: 11400000, guid: 3ecaaef1a2b9443e0b96ed675bd10d2a, type: 2}
+          probability: 100
+        - masterData: {fileID: 11400000, guid: a3223164c51e44ddbabf27c9d51f47d8, type: 2}
+          probability: 100
+        - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
+          probability: 100
+        - masterData: {fileID: 11400000, guid: 2b4ca59cebc5344c8a6eea2313d797ee, type: 2}
+          probability: 100
+        - masterData: {fileID: 11400000, guid: b2cb144a5edce4b27b3fed3552e8556d, type: 2}
+          probability: 100
+  otherDungeonProccesses:
+    proccesses: []
+  clearDungeonProccesses:
+    proccesses: []
   floorMax: 1
   enemyTable:
     elements:
     - floorRange:
-        min: 0
-        max: 0
+        min: 1
+        max: 1
       enemies:
-      - masterData: {fileID: 11400000, guid: b27bedffcd9ab4a92b73c155283c6926, type: 2}
+      - masterData: {fileID: 11400000, guid: 0adba6c459939469480396f0fc218632, type: 2}
+        probability: 100
+      - masterData: {fileID: 11400000, guid: 7fcbd403fc4214a6391c71cee03232f8, type: 2}
         probability: 100
   itemTable:
     elements:
     - masterData: {fileID: 11400000, guid: efe88658878e94286a9c64db374a9252, type: 2}
       probability: 100
-    - masterData: {fileID: 11400000, guid: 3ecaaef1a2b9443e0b96ed675bd10d2a, type: 2}
-      probability: 100
   trapTable:
     elements:
-    - type: 0
-      probability: 100
-    - type: 1
-      probability: 100
-    - type: 2
-      probability: 100
-    - type: 3
-      probability: 100
     - type: 4
       probability: 100
   blackSmithTable:
     elements:
     - floorRange:
-        min: 1
-        max: 1
+        min: 0
+        max: 0
+      probability: 0
+  stoneStatueTable:
+    elements:
+    - floorRange:
+        min: 0
+        max: 10
+      createTable:
+      - type: 0
+        probability: 100
       probability: 100
-  clearDungeonProccesses: []
   createRecoveryItemRange:
     min: 0
     max: 0

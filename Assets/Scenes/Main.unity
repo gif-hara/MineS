@@ -28928,6 +28928,8 @@ MonoBehaviour:
     element: {fileID: 21300000, guid: 7be0b1fbb71c648329e2f57037cfaf36, type: 3}
   moneyImage:
     element: {fileID: 21300000, guid: a99a9e4853dd14d118d2e20c51c8c99b, type: 3}
+  stoneStatueImage:
+    element: {fileID: 21300000, guid: 8c93c8283d37b48dfaa2d2dc9830491b, type: 3}
 --- !u!114 &1584263360
 MonoBehaviour:
   m_ObjectHideFlags: 0

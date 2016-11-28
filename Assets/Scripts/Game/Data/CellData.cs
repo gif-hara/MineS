@@ -91,10 +91,28 @@ namespace MineS
 
 		public void DebugAction()
 		{
-			this.Identification(true, false, false);
+			var actionableType = this.GetActionableType;
+			if(actionableType != GameDefine.ActionableType.OK && this.infeasibleEvent != null)
+			{
+				this.infeasibleEvent(actionableType);
+				return;
+			}
+
+			var isIdentification = this.Identification(true, PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray), true);
 			if(this.cellClickAction != null)
 			{
-				this.cellClickAction.Invoke(this);
+				var currentCellClickAction = this.cellClickAction;
+				currentCellClickAction.Invoke(this);
+				if(isIdentification)
+				{
+					currentCellClickAction.OnIdentification(this);
+				}
+			}
+
+			if(isIdentification)
+			{
+				TurnManager.Instance.Progress(GameDefine.TurnProgressType.CellClick);
+				Object.Instantiate(EffectManager.Instance.prefabStepEffect.Element, this.Controller.transform, false);
 			}
 		}
 

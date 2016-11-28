@@ -32,6 +32,9 @@ namespace MineS
 		private BlackSmithTable blackSmithTable;
 
 		[SerializeField]
+		private StoneStatueTable stoneStatueTable;
+
+		[SerializeField]
 		private Range createRecoveryItemRange;
 
 		[SerializeField]
@@ -116,6 +119,16 @@ namespace MineS
 		public bool CanCreateBlackSmith(int floor)
 		{
 			return this.blackSmithTable.CanCreate(floor);
+		}
+
+		public bool CanCreateStoneStatue(int floor)
+		{
+			return this.stoneStatueTable.CanCreate(floor);
+		}
+
+		public GameDefine.StoneStatueType CreateStoneStatueType(int floor)
+		{
+			return this.stoneStatueTable.GetCreateType(floor);
 		}
 
 #if UNITY_EDITOR

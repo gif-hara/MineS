@@ -1,4 +1,4 @@
-﻿//#define OUTPUT_LOG
+﻿#define OUTPUT_LOG
 using System;
 using System.Collections.Generic;
 using System.Linq;

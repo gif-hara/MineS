@@ -176,5 +176,7 @@ namespace MineS
 		public SerializeFieldGetter.Sprite anvilImage;
 
 		public SerializeFieldGetter.Sprite moneyImage;
+
+		public SerializeFieldGetter.Sprite stoneStatueImage;
 	}
 }
