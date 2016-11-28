@@ -34,6 +34,8 @@ namespace MineS
 
 		public SerializeFieldGetter.GameObject prefabUseMagicStone0;
 
+		public SerializeFieldGetter.GameObject prefabInvokeStoneStatue;
+
 		[SerializeField]
 		private ItemObserver prefabSuccessTheft;
 

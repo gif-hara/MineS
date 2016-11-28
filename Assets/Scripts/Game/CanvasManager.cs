@@ -16,8 +16,13 @@ namespace MineS
 		[SerializeField]
 		private Canvas effectLv1;
 
+		[SerializeField]
+		private Transform cellField;
+
 		public Canvas EffectLv0{ get { return this.effectLv0; } }
 
 		public Canvas EffectLv1{ get { return this.effectLv1; } }
+
+		public Transform CellField{ get { return this.cellField; } }
 	}
 }

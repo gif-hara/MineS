@@ -31,6 +31,12 @@ namespace MineS
 		{
 			base.OnIdentification(cellData);
 			this.InternalIdentification();
+			Object.Instantiate(EffectManager.Instance.prefabInvokeStoneStatue.Element, CanvasManager.Instance.CellField, false);
+		}
+
+		public override void SetCellData(CellData data)
+		{
+			Debug.LogFormat("y:{0} x:{1}", data.Position.y, data.Position.x);
 		}
 
 		public override GameDefine.EventType EventType
