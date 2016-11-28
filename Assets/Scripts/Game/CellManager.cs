@@ -90,6 +90,7 @@ namespace MineS
 
 		private void NextFloor()
 		{
+			this.placeStoneStatues.Clear();
 			this.CreateCellDatabaseFromDungeonData();
 		}
 

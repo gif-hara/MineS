@@ -70,8 +70,6 @@ MonoBehaviour:
       enemies:
       - masterData: {fileID: 11400000, guid: 0adba6c459939469480396f0fc218632, type: 2}
         probability: 100
-      - masterData: {fileID: 11400000, guid: 7fcbd403fc4214a6391c71cee03232f8, type: 2}
-        probability: 100
   itemTable:
     elements:
     - masterData: {fileID: 11400000, guid: efe88658878e94286a9c64db374a9252, type: 2}
@@ -92,7 +90,7 @@ MonoBehaviour:
         min: 0
         max: 10
       createTable:
-      - type: 5
+      - type: 0
         probability: 100
       probability: 100
   createRecoveryItemRange:
@@ -105,8 +103,8 @@ MonoBehaviour:
     min: 0
     max: 0
   createEnemyRange:
-    min: 0
-    max: 0
+    min: 30
+    max: 30
   createItemRange:
     min: 0
     max: 0

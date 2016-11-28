@@ -30,8 +30,7 @@ namespace MineS
 		public override void OnIdentification(CellData cellData)
 		{
 			base.OnIdentification(cellData);
-			this.cellController.SetImage(this.Image);
-			CellManager.Instance.AddStoneStatue(this.type);
+			this.InternalIdentification();
 		}
 
 		public override GameDefine.EventType EventType
@@ -62,11 +61,18 @@ namespace MineS
 
 		public override void LateDeserialize(int y, int x)
 		{
-			if(this.cellController.Data.IsIdentification)
+			if(!this.cellController.Data.IsIdentification)
 			{
-				this.cellController.SetImage(this.Image);
-				CellManager.Instance.AddStoneStatue(this.type);
+				return;
 			}
+
+			this.InternalIdentification();
+		}
+
+		private void InternalIdentification()
+		{
+			this.cellController.SetImage(this.Image);
+			CellManager.Instance.AddStoneStatue(this.type);
 		}
 
 		private string GetTypeSerializeKeyName(int y, int x)

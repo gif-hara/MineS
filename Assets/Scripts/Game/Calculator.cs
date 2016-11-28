@@ -241,6 +241,11 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static bool CanDropItem(int probability, IAttack attacker)
 		{
+			if(CellManager.Instance.FindStoneStatue(GameDefine.StoneStatueType.Souvenir))
+			{
+				return true;
+			}
+				
 			if(attacker != null)
 			{
 				probability += attacker.GetAbilityNumber(GameDefine.AbilityType.Fortune);
