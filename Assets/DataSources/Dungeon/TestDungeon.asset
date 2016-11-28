@@ -92,7 +92,7 @@ MonoBehaviour:
         min: 0
         max: 10
       createTable:
-      - type: 0
+      - type: 5
         probability: 100
       probability: 100
   createRecoveryItemRange:

@@ -24,6 +24,8 @@ namespace MineS
 
 		public GameDefine.CellClickMode ClickMode{ private set; get; }
 
+		private List<GameDefine.StoneStatueType> placeStoneStatues = new List<GameDefine.StoneStatueType>();
+
 		public CellData[,] CellDatabase{ get { return this.cellDatabase; } }
 
 		void Start()
@@ -216,9 +218,24 @@ namespace MineS
 			return result.Select(r => r.Value).ToList();
 		}
 
+		/// <summary>
+		/// 十字方向に存在する全てのセルを返す.
+		/// </summary>
+		/// <returns>The cross cell data all.</returns>
+		/// <param name="origin">Origin.</param>
 		public List<CellData> GetCrossCellDataAll(Cell origin)
 		{
 			return this.ToListCellData.Where(c => (c.Position.x == origin.x || c.Position.y == origin.y)).ToList();
+		}
+
+		public void AddStoneStatue(GameDefine.StoneStatueType type)
+		{
+			this.placeStoneStatues.Add(type);
+		}
+
+		public bool FindStoneStatue(GameDefine.StoneStatueType type)
+		{
+			return this.placeStoneStatues.FindIndex(s => s == type) != -1;
 		}
 
 		public void DebugAction()

@@ -31,6 +31,7 @@ namespace MineS
 		{
 			base.OnIdentification(cellData);
 			this.cellController.SetImage(this.Image);
+			CellManager.Instance.AddStoneStatue(this.type);
 		}
 
 		public override GameDefine.EventType EventType
@@ -51,10 +52,12 @@ namespace MineS
 
 		public override void Serialize(int y, int x)
 		{
+			HK.Framework.SaveData.SetInt(this.GetTypeSerializeKeyName(y, x), (int)this.type);
 		}
 
 		public override void Deserialize(int y, int x)
 		{
+			this.type = (GameDefine.StoneStatueType)HK.Framework.SaveData.GetInt(this.GetTypeSerializeKeyName(y, x));
 		}
 
 		public override void LateDeserialize(int y, int x)
@@ -62,7 +65,13 @@ namespace MineS
 			if(this.cellController.Data.IsIdentification)
 			{
 				this.cellController.SetImage(this.Image);
+				CellManager.Instance.AddStoneStatue(this.type);
 			}
+		}
+
+		private string GetTypeSerializeKeyName(int y, int x)
+		{
+			return string.Format("PlaceStoneStatueActionType_{0}_{1}", y, x);
 		}
 	}
 }
