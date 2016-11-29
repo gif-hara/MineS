@@ -153,6 +153,16 @@ namespace MineS
 					adjacentCells[i].AddLock();
 				}
 			}
+
+			if(CellManager.Instance.FindStoneStatue(GameDefine.StoneStatueType.Regeneration))
+			{
+				this.AddAbnormalStatus(AbnormalStatusFactory.Create(GameDefine.AbnormalStatusType.Regeneration, this, 5, 0));
+			}
+
+			if(CellManager.Instance.FindStoneStatue(GameDefine.StoneStatueType.Poison))
+			{
+				this.AddAbnormalStatus(AbnormalStatusFactory.Create(GameDefine.AbnormalStatusType.Poison, this, 5, 0));
+			}
 		}
 
 		public void OnDivision(CellData cellData)
