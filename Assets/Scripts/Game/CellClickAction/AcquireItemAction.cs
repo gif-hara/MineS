@@ -31,6 +31,14 @@ namespace MineS
 				data.BindCellClickAction(null);
 				data.BindDeployDescription(null);
 				SEManager.Instance.PlaySE(SEManager.Instance.acquireItem);
+				if(CellManager.Instance.FindStoneStatue(GameDefine.StoneStatueType.Identification))
+				{
+					var oldItemName = this.item.InstanceData.ItemName;
+					if(ItemManager.Instance.UsableItemIdentified.Identified(this.item))
+					{
+						InformationManager.IdentifiedItem(oldItemName, this.item.InstanceData.ItemName);
+					}
+				}
 			}
 		}
 

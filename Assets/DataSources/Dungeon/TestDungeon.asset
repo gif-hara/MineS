@@ -67,7 +67,7 @@ MonoBehaviour:
         probability: 100
   itemTable:
     elements:
-    - masterData: {fileID: 11400000, guid: efe88658878e94286a9c64db374a9252, type: 2}
+    - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
       probability: 100
   trapTable:
     elements:
