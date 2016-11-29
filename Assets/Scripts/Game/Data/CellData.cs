@@ -233,6 +233,14 @@ namespace MineS
 			return true;
 		}
 
+		public void OnNextFloor()
+		{
+			if(this.cellClickAction != null)
+			{
+				this.cellClickAction.OnNextFloor();
+			}
+		}
+
 		public List<CellData> AdjacentCellAll
 		{
 			get

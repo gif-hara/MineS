@@ -39,8 +39,9 @@ namespace MineS
 					this.CellControllers[y, x] = Instantiate(this.cellPrefab, this.cellField, false) as CellController;
 				}
 			}
-
+				
 			DungeonManager.Instance.AddNextFloorEvent(this.NextFloor);
+			DungeonManager.Instance.AddChangeDungeonEvent(this.ChangeDungeonData);
 			TurnManager.Instance.AddLateEndTurnEvent(this.OnLateTurnProgress);
 		}
 
@@ -91,7 +92,14 @@ namespace MineS
 		private void NextFloor()
 		{
 			this.placeStoneStatues.Clear();
+			this.ToListCellData.ForEach(c => c.OnNextFloor());
 			this.CreateCellDatabaseFromDungeonData();
+		}
+
+		private void ChangeDungeonData()
+		{
+			this.placeStoneStatues.Clear();
+			this.ToListCellData.ForEach(c => c.OnNextFloor());
 		}
 
 		private void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)

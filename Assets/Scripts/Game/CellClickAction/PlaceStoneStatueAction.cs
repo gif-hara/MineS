@@ -14,6 +14,8 @@ namespace MineS
 		[SerializeField]
 		private GameDefine.StoneStatueType type;
 
+		private GameObject floatingObject;
+
 		public PlaceStoneStatueAction()
 		{
 		}
@@ -57,6 +59,11 @@ namespace MineS
 			}
 		}
 
+		public override void OnNextFloor()
+		{
+			Object.Destroy(this.floatingObject);
+		}
+
 		public override void Serialize(int y, int x)
 		{
 			HK.Framework.SaveData.SetInt(this.GetTypeSerializeKeyName(y, x), (int)this.type);
@@ -82,6 +89,7 @@ namespace MineS
 			this.cellController.SetImage(this.Image);
 			CellManager.Instance.AddStoneStatue(this.type);
 			this.cellController.Data.BindDeployDescription(new DeployDescriptionOnDescriptionData(GameDefine.GetStoneStatueDescriptionKey(this.type)));
+			this.floatingObject = Object.Instantiate(EffectManager.Instance.StoneStatueFloatingObject.Get(this.type), this.cellController.transform, false) as GameObject;
 		}
 
 		private string GetTypeSerializeKeyName(int y, int x)

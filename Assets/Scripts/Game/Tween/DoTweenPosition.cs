@@ -21,6 +21,12 @@ namespace MineS
 		private float duration;
 
 		[SerializeField]
+		private int loopCount = 1;
+
+		[SerializeField]
+		private LoopType loopType = LoopType.Restart;
+
+		[SerializeField]
 		private Ease ease;
 
 		[SerializeField]
@@ -28,7 +34,9 @@ namespace MineS
 
 		void Start()
 		{
-			this.target.DOLocalMove(this.to, this.duration).SetEase(this.ease);
+			this.target.DOLocalMove(this.to, this.duration)
+				.SetEase(this.ease)
+				.SetLoops(this.loopCount, this.loopType);
 		}
 	}
 }

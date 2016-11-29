@@ -37,6 +37,10 @@ namespace MineS
 		{
 		}
 
+		public virtual void OnNextFloor()
+		{
+		}
+
 		public virtual void Serialize(int y, int x)
 		{
 			Debug.AssertFormat(false, "{0}のSerialize処理がありませんでした.", this.GetType().Name);
