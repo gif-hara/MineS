@@ -466,7 +466,7 @@ namespace MineS
 				return GameDefine.AttackResultType.MissByFear;
 			}
 
-			if(this.FindAbility(GameDefine.AbilityType.InbariablyHit))
+			if(this.FindAbility(GameDefine.AbilityType.InbariablyHit) || CellManager.Instance.FindStoneStatue(GameDefine.StoneStatueType.InbariablyHit))
 			{
 				return GameDefine.AttackResultType.Hit;
 			}
