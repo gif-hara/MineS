@@ -25,6 +25,10 @@ namespace MineS
 			}
 		}
 
+		public virtual void StartUp()
+		{
+		}
+
 		public virtual void OnTurnProgress()
 		{
 		}

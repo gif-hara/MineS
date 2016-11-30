@@ -41,6 +41,11 @@ namespace MineS
 		{
 		}
 
+		public virtual void InvokeFromLightStoneStatue(CellData cellData)
+		{
+			this.Invoke(cellData);
+		}
+
 		public virtual void Serialize(int y, int x)
 		{
 			Debug.AssertFormat(false, "{0}のSerialize処理がありませんでした.", this.GetType().Name);

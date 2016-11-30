@@ -89,6 +89,20 @@ namespace MineS
 			}
 		}
 
+		public void InvokeFromLightStoneStatue()
+		{
+			var isIdentification = this.Identification(true, PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray), false);
+			if(this.cellClickAction != null)
+			{
+				var currentCellClickAction = this.cellClickAction;
+				currentCellClickAction.InvokeFromLightStoneStatue(this);
+				if(isIdentification)
+				{
+					currentCellClickAction.OnIdentification(this);
+				}
+			}
+		}
+
 		public void DebugAction()
 		{
 			var isIdentification = this.Identification(true, PlayerManager.Instance.Data.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray), true);

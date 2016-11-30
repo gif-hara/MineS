@@ -25,7 +25,7 @@ namespace MineS
 			case GameDefine.StoneStatueType.Poison:
 				return new StoneStatue(type);
 			case GameDefine.StoneStatueType.Light:
-				return new StoneStatue(type);
+				return new StoneStatueLight();
 			case GameDefine.StoneStatueType.Illusion:
 				return new StoneStatue(type);
 			case GameDefine.StoneStatueType.SpringWater:

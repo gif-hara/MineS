@@ -32,7 +32,7 @@ namespace MineS
 		public override void OnIdentification(CellData cellData)
 		{
 			base.OnIdentification(cellData);
-			this.InternalIdentification();
+			this.InternalIdentification(true);
 			Object.Instantiate(EffectManager.Instance.prefabInvokeStoneStatue.Element, CanvasManager.Instance.CellField, false);
 			var descriptionElement = DescriptionManager.Instance.Data.Get(GameDefine.GetStoneStatueDescriptionKey(this.type));
 			InformationManager.InvokeStoneStatue(descriptionElement.Title);
@@ -81,13 +81,18 @@ namespace MineS
 				return;
 			}
 
-			this.InternalIdentification();
+			this.InternalIdentification(false);
 		}
 
-		private void InternalIdentification()
+		private void InternalIdentification(bool canStartUp)
 		{
 			this.cellController.SetImage(this.Image);
-			CellManager.Instance.AddStoneStatue(this.type);
+			var stoneStatue = StoneStatueFactory.Create(this.type);
+			if(canStartUp)
+			{
+				stoneStatue.StartUp();
+			}
+			CellManager.Instance.AddStoneStatue(stoneStatue);
 			this.cellController.Data.BindDeployDescription(new DeployDescriptionOnDescriptionData(GameDefine.GetStoneStatueDescriptionKey(this.type)));
 			this.floatingObject = Object.Instantiate(EffectManager.Instance.StoneStatueFloatingObject.Get(this.type), this.cellController.transform, false) as GameObject;
 		}

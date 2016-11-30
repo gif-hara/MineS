@@ -14,22 +14,13 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			if(!this.isInvoke)
-			{
-				return;
-			}
-
-			this.isInvoke = false;
-			this.cellController.SetImage(this.Image);
-
-			var player = PlayerManager.Instance.Data;
-			if(player.FindAbnormalStatus(GameDefine.AbnormalStatusType.TrapMaster) || player.FindAbility(GameDefine.AbilityType.AvoidTrap))
-			{
-				return;
-			}
-
-			data.BindDeployDescription(new DeployDescriptionOnDescriptionData(this.DescriptionKey));
+			this._InternalInvoke(data);
 			this.InternalInvoke(data);
+		}
+
+		public override void InvokeFromLightStoneStatue(CellData cellData)
+		{
+			this._InternalInvoke(cellData);
 		}
 
 		public override void SetCellController(CellController cellController)
@@ -67,6 +58,25 @@ namespace MineS
 		public override void Deserialize(int y, int x)
 		{
 			this.isInvoke = HK.Framework.SaveData.GetInt(this.GetIsInvokeSerializeKeyName(y, x)) == 1;
+		}
+
+		private void _InternalInvoke(CellData data)
+		{
+			if(!this.isInvoke)
+			{
+				return;
+			}
+
+			this.isInvoke = false;
+			this.cellController.SetImage(this.Image);
+
+			var player = PlayerManager.Instance.Data;
+			if(player.FindAbnormalStatus(GameDefine.AbnormalStatusType.TrapMaster) || player.FindAbility(GameDefine.AbilityType.AvoidTrap))
+			{
+				return;
+			}
+
+			data.BindDeployDescription(new DeployDescriptionOnDescriptionData(this.DescriptionKey));
 		}
 
 		private string GetIsInvokeSerializeKeyName(int y, int x)

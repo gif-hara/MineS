@@ -89,6 +89,15 @@ namespace MineS
 			this.ClickMode = mode;
 		}
 
+		public void AllActionFromLightStoneStatue()
+		{
+			var cells = this.ToListCellData.Where(c => !c.IsIdentification).ToList();
+			var sortedCells = new List<CellData>();
+			sortedCells.AddRange(cells.Where(c => c.CurrentEventType == GameDefine.EventType.Enemy).ToList());
+			sortedCells.AddRange(cells.Where(c => c.CurrentEventType != GameDefine.EventType.Enemy).ToList());
+			sortedCells.ForEach(c => c.InvokeFromLightStoneStatue());
+		}
+
 		private void NextFloor()
 		{
 			this.placeStoneStatues.Clear();
@@ -237,9 +246,9 @@ namespace MineS
 			return this.ToListCellData.Where(c => (c.Position.x == origin.x || c.Position.y == origin.y)).ToList();
 		}
 
-		public void AddStoneStatue(GameDefine.StoneStatueType type)
+		public void AddStoneStatue(StoneStatue stoneStatue)
 		{
-			this.placeStoneStatues.Add(StoneStatueFactory.Create(type));
+			this.placeStoneStatues.Add(stoneStatue);
 		}
 
 		public bool FindStoneStatue(GameDefine.StoneStatueType type)
@@ -261,10 +270,7 @@ namespace MineS
 		private void InitializeStep()
 		{
 			var initialCell = this.RandomBlankCell(false);
-			if(initialCell == null)
-			{
-				return;
-			}
+			Debug.AssertFormat(initialCell != null, "空白セルがありませんでした.");
 			var playerData = PlayerManager.Instance.Data;
 			var isXray = playerData.IsXray;
 			initialCell.Steppable(isXray);
