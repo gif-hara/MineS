@@ -103,7 +103,7 @@ GameObject:
   - 114: {fileID: 271938}
   - 114: {fileID: 271937}
   - 114: {fileID: 271936}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - 222: {fileID: 15591730}
   - 114: {fileID: 15591729}
   - 114: {fileID: 15591726}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   - 114: {fileID: 39127203}
   - 223: {fileID: 39127205}
   - 114: {fileID: 39127204}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Basic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1347,7 +1347,7 @@ GameObject:
   - 114: {fileID: 69679965}
   - 114: {fileID: 69679964}
   - 114: {fileID: 69679967}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HitProbability
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2220,7 +2220,7 @@ GameObject:
   - 114: {fileID: 132848684}
   - 114: {fileID: 132848683}
   - 114: {fileID: 132848682}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3192,7 +3192,7 @@ GameObject:
   - 114: {fileID: 182715907}
   - 114: {fileID: 182715909}
   - 114: {fileID: 182715910}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3394,7 +3394,7 @@ GameObject:
   - 114: {fileID: 188787579}
   - 114: {fileID: 188787578}
   - 114: {fileID: 188787582}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: AbilitiesImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3627,7 +3627,7 @@ GameObject:
   - 224: {fileID: 196121852}
   - 114: {fileID: 196121854}
   - 114: {fileID: 196121853}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4102,7 +4102,7 @@ GameObject:
   - 114: {fileID: 216055441}
   - 114: {fileID: 216055440}
   - 114: {fileID: 216055444}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Strength
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4847,7 +4847,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 244519763}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5096,7 +5096,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 267290301}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5336,7 +5336,7 @@ RectTransform:
   - {fileID: 1472946471}
   - {fileID: 249133381}
   m_Father: {fileID: 322339126}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -5521,7 +5521,7 @@ GameObject:
   - 114: {fileID: 311507374}
   - 114: {fileID: 311507373}
   - 114: {fileID: 311507372}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5622,7 +5622,7 @@ GameObject:
   - 114: {fileID: 321821441}
   - 114: {fileID: 321821440}
   - 114: {fileID: 321821439}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5812,9 +5812,7 @@ RectTransform:
   - {fileID: 260925635}
   - {fileID: 519695688}
   - {fileID: 2039506431}
-  - {fileID: 2070819926}
   - {fileID: 1876956135}
-  - {fileID: 1626304124}
   - {fileID: 304729854}
   - {fileID: 843573040}
   m_Father: {fileID: 0}
@@ -6258,7 +6256,7 @@ GameObject:
   - 114: {fileID: 358521258}
   - 114: {fileID: 358521257}
   - 114: {fileID: 358521256}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6516,7 +6514,7 @@ GameObject:
   - 222: {fileID: 375801929}
   - 114: {fileID: 375801928}
   - 114: {fileID: 375801927}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Texts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6874,7 +6872,7 @@ GameObject:
   - 224: {fileID: 404743682}
   - 114: {fileID: 404743684}
   - 114: {fileID: 404743683}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7138,7 +7136,7 @@ GameObject:
   - 114: {fileID: 414216789}
   - 114: {fileID: 414216792}
   - 114: {fileID: 414216793}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Luck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7264,7 +7262,7 @@ GameObject:
   - 114: {fileID: 420361885}
   - 114: {fileID: 420361883}
   - 114: {fileID: 420361887}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7600,7 +7598,7 @@ GameObject:
   - 114: {fileID: 431185975}
   - 114: {fileID: 431185974}
   - 114: {fileID: 431185973}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7876,7 +7874,7 @@ GameObject:
   - 114: {fileID: 473538023}
   - 114: {fileID: 473538022}
   - 114: {fileID: 473538021}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: ItemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8297,6 +8295,100 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!1 &488669532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 488669533}
+  - 223: {fileID: 488669536}
+  - 114: {fileID: 488669535}
+  - 114: {fileID: 488669534}
+  m_Layer: 10
+  m_Name: UI/Lv.1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &488669533
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 488669532}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 2070819926}
+  - {fileID: 1626304124}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &488669534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 488669532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &488669535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 488669532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &488669536
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 488669532}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_RenderMode: 1
+  m_Camera: {fileID: 1507228374}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &495542700
 GameObject:
   m_ObjectHideFlags: 0
@@ -8309,7 +8401,7 @@ GameObject:
   - 114: {fileID: 495542704}
   - 114: {fileID: 495542703}
   - 114: {fileID: 495542702}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8509,7 +8601,7 @@ GameObject:
   - 114: {fileID: 504855511}
   - 114: {fileID: 504855508}
   - 114: {fileID: 504855512}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Parameters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9459,7 +9551,7 @@ GameObject:
   - 224: {fileID: 541204588}
   - 114: {fileID: 541204590}
   - 114: {fileID: 541204589}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9536,7 +9628,7 @@ GameObject:
   - 114: {fileID: 542417944}
   - 114: {fileID: 542417943}
   - 114: {fileID: 542417942}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10085,7 +10177,7 @@ GameObject:
   - 114: {fileID: 570738227}
   - 114: {fileID: 570738226}
   - 114: {fileID: 570738229}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10284,7 +10376,7 @@ GameObject:
   - 114: {fileID: 585015695}
   - 114: {fileID: 585015694}
   - 114: {fileID: 585015693}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10878,7 +10970,7 @@ GameObject:
   - 114: {fileID: 618922092}
   - 114: {fileID: 618922091}
   - 114: {fileID: 618922090}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: CharacterImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10980,7 +11072,7 @@ GameObject:
   - 114: {fileID: 627041311}
   - 114: {fileID: 627041310}
   - 114: {fileID: 627041309}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11895,7 +11987,7 @@ GameObject:
   - 224: {fileID: 692028115}
   - 114: {fileID: 692028116}
   - 114: {fileID: 692028117}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12169,7 +12261,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 719830254}
   - 114: {fileID: 719830255}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Status
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12226,7 +12318,7 @@ GameObject:
   - 224: {fileID: 725839761}
   - 114: {fileID: 725839763}
   - 114: {fileID: 725839762}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12444,7 +12536,7 @@ GameObject:
   - 114: {fileID: 732000596}
   - 114: {fileID: 732000595}
   - 114: {fileID: 732000594}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12545,7 +12637,7 @@ GameObject:
   - 114: {fileID: 734151365}
   - 114: {fileID: 734151364}
   - 114: {fileID: 734151363}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12747,7 +12839,7 @@ GameObject:
   - 224: {fileID: 745020735}
   - 114: {fileID: 745020737}
   - 114: {fileID: 745020736}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12987,7 +13079,7 @@ GameObject:
   - 114: {fileID: 760416632}
   - 114: {fileID: 760416634}
   - 114: {fileID: 760416631}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13155,7 +13247,7 @@ GameObject:
   - 222: {fileID: 776032544}
   - 114: {fileID: 776032543}
   - 114: {fileID: 776032542}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Parameters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13484,7 +13576,7 @@ GameObject:
   - 224: {fileID: 795818944}
   - 222: {fileID: 795818946}
   - 114: {fileID: 795818945}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13961,7 +14053,7 @@ GameObject:
   - 114: {fileID: 836248899}
   - 223: {fileID: 836248900}
   - 114: {fileID: 836248901}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Emergency
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14119,7 +14211,7 @@ GameObject:
   - 114: {fileID: 839185470}
   - 114: {fileID: 839185468}
   - 114: {fileID: 839185469}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14370,7 +14462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 322339126}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -14745,7 +14837,7 @@ GameObject:
   - 224: {fileID: 862286765}
   - 114: {fileID: 862286767}
   - 114: {fileID: 862286766}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14909,7 +15001,7 @@ GameObject:
   - 114: {fileID: 877054375}
   - 114: {fileID: 877054373}
   - 114: {fileID: 877054377}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16338,7 +16430,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &940876480
 GameObject:
   m_ObjectHideFlags: 0
@@ -16349,7 +16441,7 @@ GameObject:
   - 224: {fileID: 940876481}
   - 222: {fileID: 940876484}
   - 114: {fileID: 940876482}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Viewport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16811,7 +16903,7 @@ GameObject:
   - 114: {fileID: 973510055}
   - 114: {fileID: 973510054}
   - 114: {fileID: 973510057}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17441,7 +17533,7 @@ GameObject:
   - 224: {fileID: 1004784075}
   - 222: {fileID: 1004784078}
   - 114: {fileID: 1004784076}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Viewport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17496,7 +17588,7 @@ GameObject:
   - 114: {fileID: 1012876677}
   - 114: {fileID: 1012876675}
   - 114: {fileID: 1012876676}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17601,7 +17693,7 @@ GameObject:
   - 114: {fileID: 1031978176}
   - 114: {fileID: 1031978175}
   - 114: {fileID: 1031978178}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17800,7 +17892,7 @@ GameObject:
   - 114: {fileID: 1049576344}
   - 114: {fileID: 1049576343}
   - 114: {fileID: 1049576342}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18818,7 +18910,7 @@ GameObject:
   - 114: {fileID: 1085319312}
   - 114: {fileID: 1085319311}
   - 114: {fileID: 1085319310}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18925,7 +19017,7 @@ GameObject:
   - 222: {fileID: 1094292513}
   - 114: {fileID: 1094292512}
   - 114: {fileID: 1094292511}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19442,7 +19534,7 @@ GameObject:
   - 114: {fileID: 1119999569}
   - 114: {fileID: 1119999568}
   - 114: {fileID: 1119999567}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19700,7 +19792,7 @@ GameObject:
   - 114: {fileID: 1127487516}
   - 114: {fileID: 1127487515}
   - 114: {fileID: 1127487514}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Abilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19989,7 +20081,7 @@ GameObject:
   - 114: {fileID: 1145896061}
   - 114: {fileID: 1145896060}
   - 114: {fileID: 1145896059}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Buff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20168,7 +20260,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 1156803346}
   - 114: {fileID: 1156803347}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Status
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20353,7 +20445,7 @@ GameObject:
   - 114: {fileID: 1170325542}
   - 114: {fileID: 1170325545}
   - 114: {fileID: 1170325546}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Evasion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20960,7 +21052,7 @@ GameObject:
   - 114: {fileID: 1228046834}
   - 114: {fileID: 1228046833}
   - 114: {fileID: 1228046832}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21476,7 +21568,7 @@ GameObject:
   - 114: {fileID: 1253134585}
   - 114: {fileID: 1253134588}
   - 114: {fileID: 1253134589}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HitProbability
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22041,7 +22133,7 @@ GameObject:
   - 114: {fileID: 1282119506}
   - 114: {fileID: 1282119505}
   - 114: {fileID: 1282119504}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24046,7 +24138,7 @@ GameObject:
   - 224: {fileID: 1391607296}
   - 114: {fileID: 1391607298}
   - 114: {fileID: 1391607297}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24123,7 +24215,7 @@ GameObject:
   - 114: {fileID: 1391832694}
   - 114: {fileID: 1391832693}
   - 114: {fileID: 1391832696}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26883,7 +26975,7 @@ GameObject:
   - 114: {fileID: 1485183357}
   - 114: {fileID: 1485183356}
   - 114: {fileID: 1485183355}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27269,6 +27361,69 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1500555849}
+--- !u!1 &1507228372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1507228373}
+  - 20: {fileID: 1507228374}
+  m_Layer: 0
+  m_Name: UI/Lv.1Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1507228373
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507228372}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 2044139098}
+  m_RootOrder: 3
+--- !u!20 &1507228374
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507228372}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 5
+  m_Depth: 3
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!1 &1510987850
 GameObject:
   m_ObjectHideFlags: 0
@@ -27282,7 +27437,7 @@ GameObject:
   - 114: {fileID: 1510987853}
   - 114: {fileID: 1510987852}
   - 114: {fileID: 1510987856}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27588,7 +27743,7 @@ GameObject:
   - 224: {fileID: 1534093149}
   - 114: {fileID: 1534093151}
   - 114: {fileID: 1534093150}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27773,7 +27928,7 @@ GameObject:
   - 114: {fileID: 1537393993}
   - 114: {fileID: 1537393992}
   - 114: {fileID: 1537393991}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Debuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28308,7 +28463,7 @@ GameObject:
   - 114: {fileID: 1557604787}
   - 114: {fileID: 1557604786}
   - 114: {fileID: 1557604789}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Strength
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28721,7 +28876,7 @@ Transform:
   - {fileID: 2061042064}
   - {fileID: 1339646583}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &1584263352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29882,7 +30037,7 @@ GameObject:
   - 114: {fileID: 1598099271}
   - 114: {fileID: 1598099270}
   - 114: {fileID: 1598099273}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29992,7 +30147,7 @@ GameObject:
   - 114: {fileID: 1612956103}
   - 114: {fileID: 1612956102}
   - 114: {fileID: 1612956101}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30192,7 +30347,7 @@ GameObject:
   - 114: {fileID: 1621521012}
   - 114: {fileID: 1621521011}
   - 114: {fileID: 1621521010}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30372,7 +30527,7 @@ GameObject:
   - 223: {fileID: 1626304129}
   - 225: {fileID: 1626304128}
   - 114: {fileID: 1626304127}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30385,14 +30540,14 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1626304123}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1119999566}
-  m_Father: {fileID: 322339126}
-  m_RootOrder: 11
+  m_Father: {fileID: 488669533}
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -30934,7 +31089,7 @@ GameObject:
   - 114: {fileID: 1636882862}
   - 114: {fileID: 1636882861}
   - 114: {fileID: 1636882864}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31786,7 +31941,7 @@ GameObject:
   - 222: {fileID: 1690549774}
   - 114: {fileID: 1690549773}
   - 114: {fileID: 1690549772}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Scrollbar Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31994,7 +32149,7 @@ GameObject:
   - 114: {fileID: 1699206475}
   - 114: {fileID: 1699206474}
   - 114: {fileID: 1699206473}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32100,7 +32255,7 @@ GameObject:
   - 114: {fileID: 1709766163}
   - 223: {fileID: 1709766168}
   - 114: {fileID: 1709766167}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: CharacterData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32758,7 +32913,7 @@ GameObject:
   - 114: {fileID: 1726565613}
   - 114: {fileID: 1726565612}
   - 114: {fileID: 1726565611}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32866,7 +33021,7 @@ GameObject:
   - 114: {fileID: 1729803493}
   - 114: {fileID: 1729803492}
   - 114: {fileID: 1729803491}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33210,7 +33365,7 @@ GameObject:
   - 114: {fileID: 1743148362}
   - 114: {fileID: 1743148361}
   - 114: {fileID: 1743148364}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34079,7 +34234,7 @@ GameObject:
   - 222: {fileID: 1779836073}
   - 114: {fileID: 1779836072}
   - 114: {fileID: 1779836069}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34196,7 +34351,7 @@ GameObject:
   - 114: {fileID: 1784010576}
   - 114: {fileID: 1784010575}
   - 114: {fileID: 1784010574}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: AbnormalStatuses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34472,7 +34627,7 @@ GameObject:
   - 222: {fileID: 1792552604}
   - 114: {fileID: 1792552603}
   - 114: {fileID: 1792552602}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Scrollbar Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34741,7 +34896,7 @@ GameObject:
   - 114: {fileID: 1819195689}
   - 114: {fileID: 1819195688}
   - 114: {fileID: 1819195687}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34849,7 +35004,7 @@ GameObject:
   - 114: {fileID: 1821006250}
   - 114: {fileID: 1821006249}
   - 114: {fileID: 1821006252}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Evasion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35497,7 +35652,7 @@ GameObject:
   - 224: {fileID: 1852886643}
   - 114: {fileID: 1852886645}
   - 114: {fileID: 1852886644}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35860,7 +36015,7 @@ RectTransform:
   m_Children:
   - {fileID: 909923118}
   m_Father: {fileID: 322339126}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -36214,7 +36369,7 @@ GameObject:
   - 114: {fileID: 1918136750}
   - 114: {fileID: 1918136749}
   - 114: {fileID: 1918136748}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36323,7 +36478,7 @@ GameObject:
   - 114: {fileID: 1918954028}
   - 114: {fileID: 1918954027}
   - 114: {fileID: 1918954031}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Abilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36493,7 +36648,7 @@ GameObject:
   - 114: {fileID: 1947098907}
   - 114: {fileID: 1947098906}
   - 114: {fileID: 1947098905}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37094,7 +37249,7 @@ GameObject:
   - 224: {fileID: 1971532211}
   - 222: {fileID: 1971532213}
   - 114: {fileID: 1971532212}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37307,7 +37462,7 @@ GameObject:
   - 114: {fileID: 1987595938}
   - 223: {fileID: 1987595943}
   - 114: {fileID: 1987595942}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37487,7 +37642,7 @@ GameObject:
   - 114: {fileID: 1987720471}
   - 114: {fileID: 1987720470}
   - 114: {fileID: 1987720469}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37687,7 +37842,7 @@ GameObject:
   - 114: {fileID: 1993628039}
   - 114: {fileID: 1993628038}
   - 114: {fileID: 1993628042}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38074,7 +38229,7 @@ GameObject:
   - 224: {fileID: 2010042241}
   - 114: {fileID: 2010042243}
   - 114: {fileID: 2010042242}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38292,7 +38447,7 @@ GameObject:
   - 114: {fileID: 2020498537}
   - 114: {fileID: 2020498536}
   - 114: {fileID: 2020498535}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39026,6 +39181,7 @@ Transform:
   - {fileID: 865574717}
   - {fileID: 1141085328}
   - {fileID: 1414249613}
+  - {fileID: 1507228373}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &2044538385
@@ -39040,7 +39196,7 @@ GameObject:
   - 114: {fileID: 2044538389}
   - 114: {fileID: 2044538388}
   - 114: {fileID: 2044538387}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39587,7 +39743,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 2070819926}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39600,7 +39756,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2070819925}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -39609,8 +39765,8 @@ RectTransform:
   - {fileID: 1987595937}
   - {fileID: 39127199}
   - {fileID: 836248896}
-  m_Father: {fileID: 322339126}
-  m_RootOrder: 9
+  m_Father: {fileID: 488669533}
+  m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -39855,7 +40011,7 @@ GameObject:
   - 114: {fileID: 2102498312}
   - 114: {fileID: 2102498311}
   - 114: {fileID: 2102498310}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40077,7 +40233,7 @@ GameObject:
   - 224: {fileID: 2117573718}
   - 114: {fileID: 2117573720}
   - 114: {fileID: 2117573719}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40154,7 +40310,7 @@ GameObject:
   - 114: {fileID: 2128810068}
   - 114: {fileID: 2128810067}
   - 114: {fileID: 2128810066}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
