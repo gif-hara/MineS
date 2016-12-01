@@ -87,7 +87,7 @@ namespace MineS
 		private void InternalIdentification(bool canStartUp)
 		{
 			this.cellController.SetImage(this.Image);
-			var stoneStatue = StoneStatueFactory.Create(this.type);
+			var stoneStatue = StoneStatueFactory.Create(this.type, this.cellController.Data);
 			if(canStartUp)
 			{
 				stoneStatue.StartUp();

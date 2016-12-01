@@ -71,6 +71,8 @@ namespace MineS
 
 		public Range AcquireMoneyRange{ get { return this.acquireMoneyRange; } }
 
+		public ItemTable ItemTable{ get { return this.itemTable; } }
+
 #if UNITY_EDITOR
 		[ContextMenu("Check")]
 		private void AssertionCheck()

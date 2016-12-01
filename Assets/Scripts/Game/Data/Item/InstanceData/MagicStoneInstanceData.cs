@@ -151,7 +151,7 @@ namespace MineS
 			case GameDefine.MagicStoneType.Passage:
 				{
 					var cellData = EnemyManager.Instance.InEnemyCells[target as EnemyData];
-					CellManager.Instance.GetAdjacentCellDataAll(cellData.Position.y, cellData.Position.x).ForEach(c => c.ForceReleaseLock());
+					CellManager.Instance.GetAdjacentCellDataAll(cellData.Position).ForEach(c => c.ForceReleaseLock());
 					InformationManager.ForceReleaseLock();
 				}
 			break;

@@ -10,8 +10,8 @@ namespace MineS
 	/// </summary>
 	public class StoneStatueLight : StoneStatue
 	{
-		public StoneStatueLight()
-			: base(GameDefine.StoneStatueType.Light)
+		public StoneStatueLight(CellData cellData)
+			: base(GameDefine.StoneStatueType.Light, cellData)
 		{
 		}
 

@@ -259,7 +259,7 @@ namespace MineS
 		{
 			get
 			{
-				return CellManager.Instance.GetAdjacentCellDataAll(this.Position.y, this.Position.x);
+				return CellManager.Instance.GetAdjacentCellDataAll(this.Position);
 			}
 		}
 

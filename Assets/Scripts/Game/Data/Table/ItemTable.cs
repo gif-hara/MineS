@@ -18,6 +18,8 @@ namespace MineS
 		[SerializeField]
 		private List<Element> elements = new List<Element>();
 
+		public List<Element> Elements{ get { return this.elements; } }
+
 		public Item Create()
 		{
 			return this.elements[GameDefine.Lottery(this.elements)].Create();
@@ -42,7 +44,7 @@ namespace MineS
 #endif
 
 		[System.Serializable]
-		private class Element : IProbability
+		public class Element : IProbability
 		{
 			[SerializeField]
 			private ItemMasterDataBase masterData;

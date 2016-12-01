@@ -29417,15 +29417,14 @@ MonoBehaviour:
     light:
       element: {fileID: 1000013973540558, guid: 531e7c619150944cbbbed89f5ee70867,
         type: 2}
-    illusion:
-      element: {fileID: 1000013973540558, guid: cc1eecbb10b2b4cca9210900ccbb38a5,
-        type: 2}
     springWater:
       element: {fileID: 1000013973540558, guid: 1d21f4703a24c4166a7a5efbcb326abe,
         type: 2}
     happiness:
       element: {fileID: 1000013973540558, guid: c5dc854fee5ce4c88a45460352ca1d7f,
         type: 2}
+  prefabCreateUsableItemSpringWater:
+    element: {fileID: 1000010633946786, guid: 005b439b6a8f04601a89fb02501cf1c6, type: 2}
 --- !u!114 &1584263366
 MonoBehaviour:
   m_ObjectHideFlags: 0

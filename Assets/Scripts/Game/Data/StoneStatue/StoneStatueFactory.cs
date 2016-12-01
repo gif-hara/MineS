@@ -10,28 +10,26 @@ namespace MineS
 	/// </summary>
 	public static class StoneStatueFactory
 	{
-		public static StoneStatue Create(GameDefine.StoneStatueType type)
+		public static StoneStatue Create(GameDefine.StoneStatueType type, CellData cellData)
 		{
 			switch(type)
 			{
 			case GameDefine.StoneStatueType.Souvenir:
-				return new StoneStatue(type);
+				return new StoneStatue(type, cellData);
 			case GameDefine.StoneStatueType.InbariablyHit:
-				return new StoneStatue(type);
+				return new StoneStatue(type, cellData);
 			case GameDefine.StoneStatueType.Identification:
-				return new StoneStatue(type);
+				return new StoneStatue(type, cellData);
 			case GameDefine.StoneStatueType.Regeneration:
-				return new StoneStatue(type);
+				return new StoneStatue(type, cellData);
 			case GameDefine.StoneStatueType.Poison:
-				return new StoneStatue(type);
+				return new StoneStatue(type, cellData);
 			case GameDefine.StoneStatueType.Light:
-				return new StoneStatueLight();
-			case GameDefine.StoneStatueType.Illusion:
-				return new StoneStatue(type);
+				return new StoneStatueLight(cellData);
 			case GameDefine.StoneStatueType.SpringWater:
-				return new StoneStatueSpringWater();
+				return new StoneStatueSpringWater(cellData);
 			case GameDefine.StoneStatueType.Happiness:
-				return new StoneStatue(type);
+				return new StoneStatue(type, cellData);
 			default:
 				Debug.AssertFormat(false, "不正な値です. type = {0}", type);
 				return null;

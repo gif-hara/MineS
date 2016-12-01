@@ -12,9 +12,12 @@ namespace MineS
 	{
 		protected GameDefine.StoneStatueType type;
 
-		public StoneStatue(GameDefine.StoneStatueType type)
+		protected CellData cellData;
+
+		public StoneStatue(GameDefine.StoneStatueType type, CellData cellData)
 		{
 			this.type = type;
+			this.cellData = cellData;
 		}
 
 		public GameDefine.StoneStatueType Type
@@ -29,7 +32,7 @@ namespace MineS
 		{
 		}
 
-		public virtual void OnTurnProgress()
+		public virtual void OnLateTurnProgress()
 		{
 		}
 	}

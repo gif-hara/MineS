@@ -118,6 +118,8 @@ namespace MineS
 			{
 				this.OnUseXrayNotIdentification();
 			}
+				
+			this.placeStoneStatues.ForEach(s => s.OnLateTurnProgress());
 		}
 
 		public void OnUseXrayNotIdentification()
@@ -166,12 +168,12 @@ namespace MineS
 			return null;
 		}
 
-		public List<CellData> GetAdjacentCellDataAll(int y, int x)
+		public List<CellData> GetAdjacentCellDataAll(Cell position)
 		{
 			var result = new List<CellData>();
 			for(int i = 0; i < GameDefine.AdjacentMax; i++)
 			{
-				var cell = GetAdjacentCellData(y, x, (GameDefine.AdjacentType)i);
+				var cell = GetAdjacentCellData(position.y, position.x, (GameDefine.AdjacentType)i);
 				if(cell == null)
 				{
 					continue;

@@ -448,5 +448,17 @@ namespace MineS
 			var playerData = PlayerManager.Instance.Data;
 			return item.Power + Mathf.FloorToInt((float)playerData.BaseStrength * ((float)item.PlayerPower / 100));
 		}
+
+		/// <summary>
+		/// 湧き水の石像のポーション生成確率を返す.
+		/// </summary>
+		/// <value><c>true</c> if can create stone statue spring water; otherwise, <c>false</c>.</value>
+		public static bool CanCreateStoneStatueSpringWater
+		{
+			get
+			{
+				return 0.5f > Random.value;
+			}
+		}
 	}
 }

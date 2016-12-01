@@ -32,9 +32,6 @@ namespace MineS
 			private SerializeFieldGetter.GameObject light;
 
 			[SerializeField]
-			private SerializeFieldGetter.GameObject illusion;
-
-			[SerializeField]
 			private SerializeFieldGetter.GameObject springWater;
 
 			[SerializeField]
@@ -56,8 +53,6 @@ namespace MineS
 					return this.poison.Element;
 				case GameDefine.StoneStatueType.Light:
 					return this.light.Element;
-				case GameDefine.StoneStatueType.Illusion:
-					return this.illusion.Element;
 				case GameDefine.StoneStatueType.SpringWater:
 					return this.springWater.Element;
 				case GameDefine.StoneStatueType.Happiness:
@@ -100,6 +95,8 @@ namespace MineS
 
 		[SerializeField]
 		private _StoneStatueFloatingObject stoneStatueFloatingObject;
+
+		public SerializeFieldGetter.GameObject prefabCreateUsableItemSpringWater;
 
 		public _StoneStatueFloatingObject StoneStatueFloatingObject{ get { return this.stoneStatueFloatingObject; } }
 
