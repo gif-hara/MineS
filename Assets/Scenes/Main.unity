@@ -30133,8 +30133,8 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: '{0}'
     guid: 8e1e21b5-d0f4-40ef-a478-2c0e477d302b
-  basicColor: {r: 0, g: 0, b: 0, a: 0}
-  limitOverColor: {r: 0, g: 0, b: 0, a: 0}
+  basicColor: {r: 1, g: 1, b: 1, a: 1}
+  limitOverColor: {r: 0, g: 1, b: 0.08965516, a: 1}
 --- !u!1 &1612956099
 GameObject:
   m_ObjectHideFlags: 0
