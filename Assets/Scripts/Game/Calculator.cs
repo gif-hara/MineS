@@ -130,11 +130,11 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static int GetFinalExperience(int baseExperience, IAttack attacker)
 		{
-			float rate = attacker.FindAbnormalStatus(GameDefine.AbnormalStatusType.Happiness)
-				? 2.0f
-				: attacker.FindAbnormalStatus(GameDefine.AbnormalStatusType.Blur)
-				? 0.5f
-				: 1.0f;
+			float rate = 1.0f;
+			rate *= attacker.FindAbnormalStatus(GameDefine.AbnormalStatusType.Happiness) || CellManager.Instance.FindStoneStatue(GameDefine.StoneStatueType.Happiness)
+				? 2.0f : 1.0f;
+			rate /= attacker.FindAbnormalStatus(GameDefine.AbnormalStatusType.Blur)
+				? 2.0f : 1.0f;
 
 			return Mathf.FloorToInt(baseExperience * rate * GetProficiencyRate(attacker));
 		}
