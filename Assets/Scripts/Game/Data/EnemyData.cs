@@ -30,6 +30,7 @@ namespace MineS
 			}
 
 			var cellData = EnemyManager.Instance.InEnemyCells[this];
+			cellData.BindDeployDescription(null);
 			if(Calculator.CanDropItem(this.DropItemProbability, attacker))
 			{
 				var item = this.OverrideDropItems.Count > 0
@@ -156,12 +157,12 @@ namespace MineS
 
 			if(CellManager.Instance.FindStoneStatue(GameDefine.StoneStatueType.Regeneration))
 			{
-				this.AddAbnormalStatus(AbnormalStatusFactory.Create(GameDefine.AbnormalStatusType.Regeneration, this, 5, 0));
+				this.AddAbnormalStatus(AbnormalStatusFactory.Create(GameDefine.AbnormalStatusType.Regeneration, this, 5, 1));
 			}
 
 			if(CellManager.Instance.FindStoneStatue(GameDefine.StoneStatueType.Poison))
 			{
-				this.AddAbnormalStatus(AbnormalStatusFactory.Create(GameDefine.AbnormalStatusType.Poison, this, 5, 0));
+				this.AddAbnormalStatus(AbnormalStatusFactory.Create(GameDefine.AbnormalStatusType.Poison, this, 5, 1));
 			}
 		}
 
