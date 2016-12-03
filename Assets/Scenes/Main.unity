@@ -4375,7 +4375,7 @@ GameObject:
   - 114: {fileID: 223910147}
   - 114: {fileID: 223910146}
   - 114: {fileID: 223910145}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5001,7 +5001,7 @@ RectTransform:
   - {fileID: 15666594}
   - {fileID: 1910636784}
   m_Father: {fileID: 488669533}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -130.00246}
@@ -5336,7 +5336,7 @@ RectTransform:
   - {fileID: 1472946471}
   - {fileID: 249133381}
   m_Father: {fileID: 488669533}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -5808,7 +5808,6 @@ RectTransform:
   - {fileID: 1776251863}
   - {fileID: 1477290503}
   - {fileID: 192200997}
-  - {fileID: 519695688}
   - {fileID: 2039506431}
   - {fileID: 843573040}
   m_Father: {fileID: 0}
@@ -8321,6 +8320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 649978026}
+  - {fileID: 519695688}
   - {fileID: 260925635}
   - {fileID: 2070819926}
   - {fileID: 1876956135}
@@ -9004,7 +9004,7 @@ GameObject:
   - 114: {fileID: 519695691}
   - 223: {fileID: 519695690}
   - 114: {fileID: 519695689}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Confirm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9023,8 +9023,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 223910144}
-  m_Father: {fileID: 322339126}
-  m_RootOrder: 5
+  m_Father: {fileID: 488669533}
+  m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000030517578, y: -210.5}
@@ -14463,7 +14463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 322339126}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -23343,6 +23343,8 @@ MonoBehaviour:
     element: {fileID: 8300000, guid: 445004cff047043a6b9fdb4c34858fb1, type: 3}
   invokeStoneStatue:
     element: {fileID: 8300000, guid: e458c6e3eaa8e400392299ce621bfbb9, type: 3}
+  successTheft:
+    element: {fileID: 8300000, guid: f8654330df8494e1db8b12c096639370, type: 3}
   prefabElement: {fileID: 114000012096606980, guid: dfa5d91d0823a40a081667c24b52d466,
     type: 2}
 --- !u!114 &1339646585
@@ -30552,7 +30554,7 @@ RectTransform:
   m_Children:
   - {fileID: 1119999566}
   m_Father: {fileID: 488669533}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -36019,7 +36021,7 @@ RectTransform:
   m_Children:
   - {fileID: 909923118}
   m_Father: {fileID: 488669533}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -38960,7 +38962,7 @@ RectTransform:
   - {fileID: 1379021831}
   - {fileID: 1655852437}
   m_Father: {fileID: 322339126}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -39451,7 +39453,7 @@ RectTransform:
   m_Children:
   - {fileID: 1150758296}
   m_Father: {fileID: 488669533}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -39770,7 +39772,7 @@ RectTransform:
   - {fileID: 39127199}
   - {fileID: 836248896}
   m_Father: {fileID: 488669533}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}

@@ -63,6 +63,7 @@ namespace MineS
 				var theftItem = DungeonManager.Instance.CurrentDataAsDungeon.CreateItem();
 				EffectManager.Instance.CreateTheftEffect(theftItem, EnemyManager.Instance.InEnemyCells[(target as EnemyData)].Controller.transform);
 				this.Inventory.AddItem(theftItem);
+				SEManager.Instance.PlaySE(SEManager.Instance.successTheft);
 			}
 		}
 
