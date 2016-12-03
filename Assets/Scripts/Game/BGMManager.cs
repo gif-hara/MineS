@@ -26,6 +26,14 @@ namespace MineS
 
 		private BGMData currentData = null;
 
+		public AudioClip Current
+		{
+			get
+			{
+				return this.source.clip;
+			}
+		}
+
 #if BGMDATA_EDITMODE
 		void Start()
 		{
@@ -40,6 +48,7 @@ namespace MineS
 				this.source.time = this.startTime;
 			}
 		}
+
 
 
 

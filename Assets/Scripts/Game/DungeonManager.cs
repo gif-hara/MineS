@@ -54,20 +54,22 @@ namespace MineS
 		protected override void Awake()
 		{
 			base.Awake();
+		}
+
+		void Start()
+		{
+			var bgm = this.current.GetBGM(this.floorCount);
 			if(DungeonSerializer.ContainsDungeonData)
 			{
 				var serializeData = DungeonSerializer.DeserializeDungeonData();
 				this.floorCount = serializeData.floor;
 				this.current = serializeData.dungeonData;
+				bgm = serializeData.bgm;
 			}
-		}
-
-		void Start()
-		{
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalNextFloor);
 			this.dungeonNameFlowController.AddStartTextFadeIn(this.PlayBGM);
 			this.dungeonNameFlowController.AddCompleteFadeInEvent(this.InvokeOtherProccess);
-			this.titleFlowController.AddStartFadeOutEvent(this.OnStartTitleFadeOut);
+			this.titleFlowController.AddStartFadeOutEvent(() => this.OnStartTitleFadeOut(bgm));
 
 			if(DungeonSerializer.ContainsDungeonData)
 			{
@@ -216,7 +218,7 @@ namespace MineS
 			BGMManager.Instance.StartBGM(this.current.GetBGM(this.floorCount));
 		}
 
-		private void OnStartTitleFadeOut()
+		private void OnStartTitleFadeOut(AudioClip bgm)
 		{
 			if(!MineS.SaveData.Progress.IsCompleteTutorial)
 			{
@@ -224,7 +226,7 @@ namespace MineS
 			}
 			else
 			{
-				BGMManager.Instance.StartBGM(this.current.GetBGM(this.floorCount));
+				BGMManager.Instance.StartBGM(bgm);
 			}
 		}
 
@@ -241,7 +243,7 @@ namespace MineS
 				CellManager.Instance.Serialize();
 				EnemyManager.Instance.Serialize();
 				ItemManager.Instance.Serialize();
-				DungeonSerializer.Save(this.floorCount, this.current);
+				DungeonSerializer.Save(this.floorCount, this.current, BGMManager.Instance.Current);
 				HK.Framework.SaveData.Save();
 			}
 			else

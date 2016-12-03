@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using System.Linq;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -27,7 +28,14 @@ namespace MineS
 				
 			}
 
-			public AudioClip Clip{ get { return this.clips[Random.Range(0, this.clips.Count)]; } }
+			public AudioClip Clip
+			{
+				get
+				{
+					var playClips = this.clips.Where(c => c != BGMManager.Instance.Current).ToList();
+					return playClips[Random.Range(0, playClips.Count)];
+				}
+			}
 
 			public bool CanPlay(int floor)
 			{

@@ -5336,7 +5336,7 @@ RectTransform:
   - {fileID: 1472946471}
   - {fileID: 249133381}
   m_Father: {fileID: 488669533}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -5810,7 +5810,6 @@ RectTransform:
   - {fileID: 192200997}
   - {fileID: 519695688}
   - {fileID: 2039506431}
-  - {fileID: 1876956135}
   - {fileID: 843573040}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -7366,7 +7365,7 @@ GameObject:
   - 114: {fileID: 420896745}
   - 114: {fileID: 420896744}
   - 114: {fileID: 420896743}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8324,7 +8323,9 @@ RectTransform:
   - {fileID: 649978026}
   - {fileID: 260925635}
   - {fileID: 2070819926}
+  - {fileID: 1876956135}
   - {fileID: 1626304124}
+  - {fileID: 2053258982}
   - {fileID: 304729854}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -10733,7 +10734,7 @@ GameObject:
   - 222: {fileID: 592675366}
   - 114: {fileID: 592675363}
   - 114: {fileID: 592675364}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12185,7 +12186,7 @@ GameObject:
   - 224: {fileID: 716190242}
   - 222: {fileID: 716190244}
   - 114: {fileID: 716190243}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14462,7 +14463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 322339126}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -15655,7 +15656,7 @@ GameObject:
   - 224: {fileID: 909923118}
   - 114: {fileID: 909923119}
   - 225: {fileID: 909923120}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Contents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19412,7 +19413,7 @@ GameObject:
   - 114: {fileID: 1115110117}
   - 114: {fileID: 1115110116}
   - 114: {fileID: 1115110115}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Achievements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20187,7 +20188,7 @@ GameObject:
   - 224: {fileID: 1150758296}
   - 222: {fileID: 1150758298}
   - 114: {fileID: 1150758297}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23611,7 +23612,7 @@ GameObject:
   - 222: {fileID: 1372189254}
   - 114: {fileID: 1372189253}
   - 114: {fileID: 1372189252}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25501,7 +25502,7 @@ GameObject:
   - 114: {fileID: 1433623173}
   - 114: {fileID: 1433623172}
   - 114: {fileID: 1433623171}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: ConfirmButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30551,7 +30552,7 @@ RectTransform:
   m_Children:
   - {fileID: 1119999566}
   m_Father: {fileID: 488669533}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -35405,8 +35406,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 2053258982}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
@@ -35999,7 +35999,7 @@ GameObject:
   - 114: {fileID: 1876956136}
   - 223: {fileID: 1876956140}
   - 114: {fileID: 1876956141}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36012,14 +36012,14 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1876956134}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 909923118}
-  m_Father: {fileID: 322339126}
-  m_RootOrder: 7
+  m_Father: {fileID: 488669533}
+  m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -39309,7 +39309,7 @@ GameObject:
   - 114: {fileID: 2051273572}
   - 114: {fileID: 2051273571}
   - 114: {fileID: 2051273570}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Cause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39431,7 +39431,7 @@ GameObject:
   - 114: {fileID: 2053258984}
   - 114: {fileID: 2053258983}
   - 223: {fileID: 2053258986}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: DungeonName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39450,8 +39450,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1150758296}
-  m_Father: {fileID: 1837765750}
-  m_RootOrder: 0
+  m_Father: {fileID: 488669533}
+  m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -39531,7 +39531,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1 &2059530902
 GameObject:

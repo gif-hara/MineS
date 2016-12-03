@@ -20,9 +20,9 @@ namespace MineS
 			}
 		}
 
-		public static void Save(int floor, DungeonDataBase dungeonData)
+		public static void Save(int floor, DungeonDataBase dungeonData, AudioClip bgm)
 		{
-			var serializeData = new DungeonSerializeData(floor, dungeonData);
+			var serializeData = new DungeonSerializeData(floor, dungeonData, bgm);
 			HK.Framework.SaveData.SetClass<DungeonSerializeData>(SaveDungeonKeyName, serializeData);
 		}
 

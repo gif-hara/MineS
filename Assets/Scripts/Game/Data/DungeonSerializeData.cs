@@ -17,15 +17,19 @@ namespace MineS
 		[SerializeField]
 		public DungeonDataBase dungeonData;
 
+		[SerializeField]
+		public AudioClip bgm;
+
 		public DungeonSerializeData()
 		{
 			
 		}
 
-		public DungeonSerializeData(int floor, DungeonDataBase dungeonData)
+		public DungeonSerializeData(int floor, DungeonDataBase dungeonData, AudioClip bgm)
 		{
 			this.floor = floor;
 			this.dungeonData = dungeonData;
+			this.bgm = bgm;
 		}
 	}
 }
