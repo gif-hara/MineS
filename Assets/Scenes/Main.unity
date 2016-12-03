@@ -23338,6 +23338,8 @@ MonoBehaviour:
     element: {fileID: 8300000, guid: 4aa3ede7196fe432688973fffd1d98a5, type: 3}
   useMagicStone0:
     element: {fileID: 8300000, guid: ed42f704668b243dab4c91c5184d8475, type: 3}
+  createUsingItem:
+    element: {fileID: 8300000, guid: 445004cff047043a6b9fdb4c34858fb1, type: 3}
   prefabElement: {fileID: 114000012096606980, guid: dfa5d91d0823a40a081667c24b52d466,
     type: 2}
 --- !u!114 &1339646585

@@ -24,7 +24,7 @@ namespace MineS
 			}
 
 			var adjacentCells = CellManager.Instance.GetAdjacentCellDataAll(this.cellData.Position)
-				.Where(c => c.CurrentEventType == GameDefine.EventType.None)
+				.Where(c => c.CurrentEventType == GameDefine.EventType.None && c.IsIdentification)
 				.ToList();
 			if(adjacentCells.Count <= 0)
 			{
@@ -38,6 +38,7 @@ namespace MineS
 			cell.BindCellClickAction(new AcquireItemAction(item));
 			cell.BindDeployDescription(new DeployDescriptionOnItem(item));
 			Object.Instantiate(EffectManager.Instance.prefabCreateUsableItemSpringWater.Element, cell.Controller.transform, false);
+			SEManager.Instance.PlaySE(SEManager.Instance.createUsingItem);
 		}
 	}
 }

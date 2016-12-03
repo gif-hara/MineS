@@ -40,6 +40,8 @@ namespace MineS
 
 		public SerializeFieldGetter.AudioClip useMagicStone0;
 
+		public SerializeFieldGetter.AudioClip createUsingItem;
+
 		[SerializeField]
 		private SEElement prefabElement;
 
