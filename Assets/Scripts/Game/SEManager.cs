@@ -42,6 +42,8 @@ namespace MineS
 
 		public SerializeFieldGetter.AudioClip createUsingItem;
 
+		public SerializeFieldGetter.AudioClip invokeStoneStatue;
+
 		[SerializeField]
 		private SEElement prefabElement;
 
