@@ -124,6 +124,10 @@ namespace MineS
 
 		public void OnUseXrayNotIdentification()
 		{
+			if(this.cellDatabase == null)
+			{
+				return;
+			}
 			var notIdentificationCells = this.ToListCellData.Where(c => !c.IsIdentification && c.CanStep).ToList();
 			notIdentificationCells.ForEach(c => c.OnUseXray());
 		}
