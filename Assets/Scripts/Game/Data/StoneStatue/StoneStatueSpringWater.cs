@@ -33,6 +33,7 @@ namespace MineS
 			var usableItemMasterData = DungeonManager.Instance.CurrentDataAsDungeon.ItemTable.Elements
 				.Where(e => e.MasterData.ItemType == GameDefine.ItemType.UsableItem)
 				.ToList();
+			Debug.AssertFormat(usableItemMasterData.Count > 0, "使用可能アイテムが存在しません.");
 			var item = new Item(usableItemMasterData[Random.Range(0, usableItemMasterData.Count)].MasterData);
 			var cell = adjacentCells[Random.Range(0, adjacentCells.Count)];
 			cell.BindCellClickAction(new AcquireItemAction(item));
