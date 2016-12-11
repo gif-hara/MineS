@@ -397,11 +397,6 @@ namespace MineS
 			Light,
 
 			/// <summary>
-			/// 幻覚の石像：セルに配置されているものは全て別物に見える.
-			/// </summary>
-			Illusion,
-
-			/// <summary>
 			/// 湧き水の石像：ターン終了時にポーション系アイテムが石像の周りに配置される.
 			/// </summary>
 			SpringWater,
