@@ -6601,6 +6601,7 @@ GameObject:
   - 222: {fileID: 383702674}
   - 114: {fileID: 383702673}
   - 114: {fileID: 383702672}
+  - 114: {fileID: 383702675}
   m_Layer: 5
   m_Name: HitPoint
   m_TagString: Untagged
@@ -6682,6 +6683,22 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 383702670}
+--- !u!114 &383702675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 383702670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e507180a5c92b4db798f46fa3b9934e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 383702671}
+  from: {x: 2, y: 2, z: 2}
+  to: {x: 1, y: 1, z: 1}
+  duration: 0.75
+  ease: 9
 --- !u!1 &385454985
 GameObject:
   m_ObjectHideFlags: 0
