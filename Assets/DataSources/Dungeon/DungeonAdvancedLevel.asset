@@ -321,7 +321,14 @@ MonoBehaviour:
         max: 26
       probability: 100
   stoneStatueTable:
-    elements: []
+    elements:
+    - floorRange:
+        min: 1
+        max: 10
+      createTable:
+      - type: 0
+        probability: 100
+      probability: 0
   createRecoveryItemRange:
     min: 1
     max: 3
