@@ -3,6 +3,10 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace MineS
 {
 	/// <summary>
@@ -15,7 +19,7 @@ namespace MineS
 		public class Element : TableElementBase
 		{
 			[SerializeField]
-			private List<CreateTable> createTable;
+			private List<CreateTable> createTable = new List<CreateTable>();
 
 			[SerializeField][Range(0, 100)]
 			private int probability;
@@ -31,6 +35,16 @@ namespace MineS
 			public GameDefine.StoneStatueType GetCreateType()
 			{
 				return this.createTable[GameDefine.Lottery(this.createTable)].Type;
+			}
+
+			public void SetProbability(int probability)
+			{
+				this.probability = probability;
+			}
+
+			public void Add(CreateTable table)
+			{
+				this.createTable.Add(table);
 			}
 
 			public bool CanCreate
@@ -86,6 +100,28 @@ namespace MineS
 			var element = this.elements.Find(e => e.IsMatch(floor));
 			return element.GetCreateType();
 		}
+#if UNITY_EDITOR
+		public static StoneStatueTable CreateFromCsv(string dungeonName)
+		{
+			var csv = CsvParser.Split(AssetDatabase.LoadAssetAtPath(string.Format("Assets/DataSources/Csv/Dungeon/{0}StoneStatueTable.csv", dungeonName), typeof(TextAsset)) as TextAsset);
+			var result = new StoneStatueTable();
+			foreach(var c in csv)
+			{
+				var floorRange = new Range(int.Parse(c[0]), int.Parse(c[1]));
+				var element = result.elements.Find(e => e.IsMatchRange(floorRange));
+				if(element == null)
+				{
+					element = new Element(floorRange);
+					element.SetProbability(int.Parse(c[2]));
+					result.elements.Add(element);
+				}
+
+				element.Add(CreateTable.Create(GameDefine.GetType<GameDefine.StoneStatueType>(c[3]), int.Parse(c[4])));
+			}
+
+			return result;
+		}
+#endif
 
 	}
 }

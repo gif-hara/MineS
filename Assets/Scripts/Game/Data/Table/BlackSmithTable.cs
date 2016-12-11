@@ -71,7 +71,6 @@ namespace MineS
 			{
 				var floorRange = new Range(int.Parse(c[0]), int.Parse(c[1]));
 				var element = new Element(floorRange);
-				element = new Element(floorRange);
 				element.SetProbability(int.Parse(c[2]));
 				result.elements.Add(element);
 			}

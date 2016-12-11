@@ -157,6 +157,7 @@ namespace MineS
 			this.itemTable = ItemTable.CreateFromCsv(basicData[0]);
 			this.trapTable = TrapTable.CreateFromCsv(basicData[0]);
 			this.blackSmithTable = BlackSmithTable.CreateFromCsv(basicData[0]);
+			this.stoneStatueTable = StoneStatueTable.CreateFromCsv(basicData[0]);
 
 			this.AssertionCheck();
 		}
