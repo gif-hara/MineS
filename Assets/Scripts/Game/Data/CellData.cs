@@ -76,6 +76,7 @@ namespace MineS
 			{
 				var currentCellClickAction = this.cellClickAction;
 				currentCellClickAction.Invoke(this);
+				CellManager.Instance.OccurredEvent();
 				if(isIdentification)
 				{
 					currentCellClickAction.OnIdentification(this);

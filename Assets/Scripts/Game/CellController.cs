@@ -13,7 +13,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class CellController : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
+	public class CellController : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 	{
 		[SerializeField]
 		private GameObject notStepObject;
@@ -54,6 +54,9 @@ namespace MineS
 		[SerializeField]
 		private Image mapChip;
 
+		[SerializeField]
+		private bool canSwipeAction;
+
 		private Tweener imageShakeTweener = null;
 
 		public CellData Data{ private set; get; }
@@ -87,6 +90,33 @@ namespace MineS
 			StopCoroutine(this.deployDescriptionCoroutine);
 			this.deployDescriptionCoroutine = null;
 			this.Action();
+		}
+
+#endregion
+
+#region IPointerEnterHandler implementation
+
+		public void OnPointerEnter(PointerEventData eventData)
+		{
+			if(InputController.Instance.IsDown || !InputController.Instance.IsTouch || CellManager.Instance.AnyOccurredEvent || !this.canSwipeAction)
+			{
+				return;
+			}
+			this.Action();
+		}
+
+#endregion
+
+#region IPointerExitHandler implementation
+
+		public void OnPointerExit(PointerEventData eventData)
+		{
+			if(this.deployDescriptionCoroutine == null)
+			{
+				return;
+			}
+
+			StopCoroutine(this.deployDescriptionCoroutine);
 		}
 
 #endregion

@@ -28,6 +28,11 @@ namespace MineS
 
 		public CellData[,] CellDatabase{ get { return this.cellDatabase; } }
 
+		/// <summary>
+		/// 今回のタップでフィールド上に何かしらのイベントが発生したか.
+		/// </summary>
+		public bool AnyOccurredEvent{ private set; get; }
+
 		void Start()
 		{
 			this.ClickMode = GameDefine.CellClickMode.Step;
@@ -43,6 +48,7 @@ namespace MineS
 			DungeonManager.Instance.AddNextFloorEvent(this.NextFloor);
 			DungeonManager.Instance.AddChangeDungeonEvent(this.ChangeDungeonData);
 			TurnManager.Instance.AddLateEndTurnEvent(this.OnLateTurnProgress);
+			InputController.Instance.AddTouchUpAction(this.OnTouchUp);
 		}
 
 		private void SetCell(CellData[,] database)
@@ -137,6 +143,11 @@ namespace MineS
 			this.ToListCellData.ForEach(c => c.OnUseXray());
 		}
 
+		public void OnTouchUp(Vector2 position)
+		{
+			this.ResetOccurredEvent();
+		}
+
 		public void RemoveTrap()
 		{
 			var trapCells = this.ToListCellData.Where(c => c.CurrentEventType == GameDefine.EventType.Trap).ToList();
@@ -145,6 +156,16 @@ namespace MineS
 				c.BindCellClickAction(null);
 				c.Controller.SetImage(null);
 			});
+		}
+
+		public void OccurredEvent()
+		{
+			this.AnyOccurredEvent = true;
+		}
+
+		public void ResetOccurredEvent()
+		{
+			this.AnyOccurredEvent = false;
 		}
 
 		public CellData GetAdjacentCellData(int y, int x, GameDefine.AdjacentType type)
@@ -250,6 +271,11 @@ namespace MineS
 		public List<CellData> GetCrossCellDataAll(Cell origin)
 		{
 			return this.ToListCellData.Where(c => (c.Position.x == origin.x || c.Position.y == origin.y)).ToList();
+		}
+
+		public bool IsFieldCellController(CellController cellController)
+		{
+			return this.ToListCellData.Find(c => c.Controller == cellController) != null;
 		}
 
 		public void AddStoneStatue(StoneStatue stoneStatue)
