@@ -59,6 +59,11 @@ namespace MineS
 
 		public bool CanPlay(int floor)
 		{
+			if(this.elements.Count <= 0)
+			{
+				return false;
+			}
+
 			return this.elements.Find(e => e.IsMatch(floor)).CanPlay(floor);
 		}
 #if UNITY_EDITOR
