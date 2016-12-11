@@ -39,11 +39,6 @@ namespace MineS
 			InformationManager.InvokeStoneStatue(descriptionElement.Title);
 		}
 
-		public override void SetCellData(CellData data)
-		{
-			Debug.LogFormat("y:{0} x:{1}", data.Position.y, data.Position.x);
-		}
-
 		public override GameDefine.EventType EventType
 		{
 			get
