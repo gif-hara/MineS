@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: UsableItem20
   m_EditorClassIdentifier: 
   id: 20
-  itemName: "\u7121\u52B9\u85AC\u30FB\u8D64"
+  itemName: "\u92ED\u5229\u6253\u6D88\u306E\u85AC"
   purchasePrice: 700
   sellingPrice: 350
   image: {fileID: 21300000, guid: 5b3676b45a4310a49a3eeeff33b48b21, type: 3}

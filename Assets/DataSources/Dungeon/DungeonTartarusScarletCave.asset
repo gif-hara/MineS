@@ -1230,9 +1230,9 @@ MonoBehaviour:
       probability: 80
     - masterData: {fileID: 11400000, guid: aeb1e31c4cc344520a05ceef0d553f47, type: 2}
       probability: 80
-    - masterData: {fileID: 11400000, guid: 63ddac2474ad44136bc4e01edd675894, type: 2}
-      probability: 50
     - masterData: {fileID: 11400000, guid: f07a294caa64b4104acbd1e6446c9b20, type: 2}
+      probability: 50
+    - masterData: {fileID: 11400000, guid: 63ddac2474ad44136bc4e01edd675894, type: 2}
       probability: 50
     - masterData: {fileID: 11400000, guid: f8444afd086a540df847abff2691a866, type: 2}
       probability: 50
@@ -1420,6 +1420,8 @@ MonoBehaviour:
         min: 5
         max: 90
       probability: 10
+  stoneStatueTable:
+    elements: []
   createRecoveryItemRange:
     min: 1
     max: 2

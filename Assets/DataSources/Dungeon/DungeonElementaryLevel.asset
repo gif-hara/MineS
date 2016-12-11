@@ -45,7 +45,8 @@ MonoBehaviour:
         elements:
         - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
           probability: 100
-  otherDungeonProccesses: []
+  otherDungeonProccesses:
+    proccesses: []
   clearDungeonProccesses:
     proccesses:
     - {fileID: 11400000, guid: f109e944a0e864115a36ca043e205740, type: 2}
@@ -128,6 +129,8 @@ MonoBehaviour:
         min: 1
         max: 10
       probability: 0
+  stoneStatueTable:
+    elements: []
   createRecoveryItemRange:
     min: 2
     max: 5
