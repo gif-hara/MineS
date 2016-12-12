@@ -84,6 +84,16 @@ MonoBehaviour:
           probability: 80
         - masterData: {fileID: 11400000, guid: 4d6ec913ab03c4498b8b97c44e709598, type: 2}
           probability: 80
+        - masterData: {fileID: 11400000, guid: 7227855bcc3734b9197c551c0655cc1c, type: 2}
+          probability: 100
+        - masterData: {fileID: 11400000, guid: 744cb84fccfed40d797e16732b209875, type: 2}
+          probability: 100
+        - masterData: {fileID: 11400000, guid: e265fdf7653fa45909e97f70600e2984, type: 2}
+          probability: 100
+        - masterData: {fileID: 11400000, guid: e082e83b446e24872ac006b60f5b12b6, type: 2}
+          probability: 100
+        - masterData: {fileID: 11400000, guid: 9a95c444663fe4481b3e9c3096c92c59, type: 2}
+          probability: 100
   otherDungeonProccesses:
     proccesses: []
   clearDungeonProccesses:
@@ -244,6 +254,8 @@ MonoBehaviour:
       probability: 20
     - masterData: {fileID: 11400000, guid: d102d8f1a9f70420baf28b1559384175, type: 2}
       probability: 100
+    - masterData: {fileID: 11400000, guid: 69588ec15bc9041a6a46683a642f9b8c, type: 2}
+      probability: 25
     - masterData: {fileID: 11400000, guid: 4960e048c3e97410986cc2e6ec689df9, type: 2}
       probability: 80
     - masterData: {fileID: 11400000, guid: 66eeb53d158be4578a33bf0a20c2605e, type: 2}
@@ -252,7 +264,11 @@ MonoBehaviour:
       probability: 80
     - masterData: {fileID: 11400000, guid: f07a294caa64b4104acbd1e6446c9b20, type: 2}
       probability: 50
+    - masterData: {fileID: 11400000, guid: 01ecc9420f34544adb762851e1f52ad3, type: 2}
+      probability: 80
     - masterData: {fileID: 11400000, guid: 899d8176e01544a04a7a326d26f04ae2, type: 2}
+      probability: 80
+    - masterData: {fileID: 11400000, guid: 2b216b68a143b4bffbfe14bae40b488e, type: 2}
       probability: 80
     - masterData: {fileID: 11400000, guid: b2cb144a5edce4b27b3fed3552e8556d, type: 2}
       probability: 100
@@ -304,6 +320,16 @@ MonoBehaviour:
       probability: 30
     - masterData: {fileID: 11400000, guid: f57f2f225f2444545b6523e36ba07e32, type: 2}
       probability: 20
+    - masterData: {fileID: 11400000, guid: 7227855bcc3734b9197c551c0655cc1c, type: 2}
+      probability: 30
+    - masterData: {fileID: 11400000, guid: 744cb84fccfed40d797e16732b209875, type: 2}
+      probability: 30
+    - masterData: {fileID: 11400000, guid: e265fdf7653fa45909e97f70600e2984, type: 2}
+      probability: 30
+    - masterData: {fileID: 11400000, guid: e082e83b446e24872ac006b60f5b12b6, type: 2}
+      probability: 30
+    - masterData: {fileID: 11400000, guid: 9a95c444663fe4481b3e9c3096c92c59, type: 2}
+      probability: 30
   trapTable:
     elements:
     - type: 0
@@ -342,8 +368,8 @@ MonoBehaviour:
     min: 7
     max: 10
   createItemRange:
-    min: 3
-    max: 5
+    min: 2
+    max: 4
   createTrapRange:
     min: 0
     max: 4

@@ -160,6 +160,10 @@ namespace MineS
 
 		public void OccurredEvent()
 		{
+			if(!OptionManager.Instance.Data.SwipeStop)
+			{
+				return;
+			}
 			this.AnyOccurredEvent = true;
 		}
 

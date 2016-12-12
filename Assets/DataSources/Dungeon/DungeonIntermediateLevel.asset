@@ -75,6 +75,12 @@ MonoBehaviour:
           probability: 80
         - masterData: {fileID: 11400000, guid: 4d6ec913ab03c4498b8b97c44e709598, type: 2}
           probability: 80
+        - masterData: {fileID: 11400000, guid: 7227855bcc3734b9197c551c0655cc1c, type: 2}
+          probability: 80
+        - masterData: {fileID: 11400000, guid: 744cb84fccfed40d797e16732b209875, type: 2}
+          probability: 80
+        - masterData: {fileID: 11400000, guid: e265fdf7653fa45909e97f70600e2984, type: 2}
+          probability: 80
   otherDungeonProccesses:
     proccesses: []
   clearDungeonProccesses:
@@ -219,6 +225,12 @@ MonoBehaviour:
       probability: 40
     - masterData: {fileID: 11400000, guid: ab1b65d1947d043878891cf1966c4e80, type: 2}
       probability: 20
+    - masterData: {fileID: 11400000, guid: 7227855bcc3734b9197c551c0655cc1c, type: 2}
+      probability: 20
+    - masterData: {fileID: 11400000, guid: 744cb84fccfed40d797e16732b209875, type: 2}
+      probability: 40
+    - masterData: {fileID: 11400000, guid: e265fdf7653fa45909e97f70600e2984, type: 2}
+      probability: 30
   trapTable:
     elements:
     - type: 0
@@ -255,8 +267,8 @@ MonoBehaviour:
     min: 6
     max: 10
   createItemRange:
-    min: 3
-    max: 5
+    min: 2
+    max: 4
   createTrapRange:
     min: 0
     max: 2

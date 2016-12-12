@@ -640,6 +640,16 @@ MonoBehaviour:
           probability: 10
         - masterData: {fileID: 11400000, guid: 385213eba3b1346c496f8f73d5197e11, type: 2}
           probability: 10
+        - masterData: {fileID: 11400000, guid: 7227855bcc3734b9197c551c0655cc1c, type: 2}
+          probability: 50
+        - masterData: {fileID: 11400000, guid: 744cb84fccfed40d797e16732b209875, type: 2}
+          probability: 50
+        - masterData: {fileID: 11400000, guid: e265fdf7653fa45909e97f70600e2984, type: 2}
+          probability: 50
+        - masterData: {fileID: 11400000, guid: e082e83b446e24872ac006b60f5b12b6, type: 2}
+          probability: 50
+        - masterData: {fileID: 11400000, guid: 9a95c444663fe4481b3e9c3096c92c59, type: 2}
+          probability: 50
     - floorRange:
         min: 99
         max: 99
@@ -1276,6 +1286,16 @@ MonoBehaviour:
       probability: 50
     - masterData: {fileID: 11400000, guid: 54bc1bc067d33403e9abc35b7f73dd56, type: 2}
       probability: 50
+    - masterData: {fileID: 11400000, guid: 7227855bcc3734b9197c551c0655cc1c, type: 2}
+      probability: 40
+    - masterData: {fileID: 11400000, guid: 744cb84fccfed40d797e16732b209875, type: 2}
+      probability: 40
+    - masterData: {fileID: 11400000, guid: e265fdf7653fa45909e97f70600e2984, type: 2}
+      probability: 40
+    - masterData: {fileID: 11400000, guid: e082e83b446e24872ac006b60f5b12b6, type: 2}
+      probability: 40
+    - masterData: {fileID: 11400000, guid: 9a95c444663fe4481b3e9c3096c92c59, type: 2}
+      probability: 40
   trapTable:
     elements:
     - type: 0
@@ -1314,10 +1334,10 @@ MonoBehaviour:
         probability: 120
       probability: 50
   createRecoveryItemRange:
-    min: 1
+    min: 0
     max: 3
   createAnvilRange:
-    min: 1
+    min: 0
     max: 3
   createMoneyRange:
     min: 3
@@ -1326,8 +1346,8 @@ MonoBehaviour:
     min: 8
     max: 10
   createItemRange:
-    min: 3
-    max: 5
+    min: 2
+    max: 3
   createTrapRange:
     min: 0
     max: 5

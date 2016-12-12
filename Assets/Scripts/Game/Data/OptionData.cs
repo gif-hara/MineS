@@ -26,6 +26,9 @@ namespace MineS
 		[SerializeField]
 		private bool autoSort;
 
+		[SerializeField]
+		private bool swipeStop;
+
 		public const float MessageSpeedMax = 2.0f;
 
 		public float BGMVolume{ get { return this.bgmVolume; } }
@@ -38,6 +41,8 @@ namespace MineS
 
 		public bool AutoSort{ get { return this.autoSort; } }
 
+		public bool SwipeStop{ get { return this.swipeStop; } }
+
 		public OptionData()
 		{
 			this.bgmVolume = 0.5f;
@@ -45,6 +50,7 @@ namespace MineS
 			this.messageSpeed = 1;
 			this.isFewMessage = false;
 			this.autoSort = false;
+			this.swipeStop = true;
 		}
 
 		public void SetBGMVolume(float value)
@@ -74,6 +80,12 @@ namespace MineS
 		public void SetAutoSort(bool value)
 		{
 			this.autoSort = value;
+			HK.Framework.SaveData.SetClass<OptionData>(MineS.SaveData.OptionKeyName, this);
+		}
+
+		public void SetSwipeStop(bool value)
+		{
+			this.swipeStop = value;
 			HK.Framework.SaveData.SetClass<OptionData>(MineS.SaveData.OptionKeyName, this);
 		}
 	}
