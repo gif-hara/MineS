@@ -162,7 +162,6 @@ namespace MineS
 			this.AddBaseStrength(-growthData.Strength);
 			this.baseArmor -= growthData.Armor;
 			this.baseArmor = this.Armor < 0 ? 0 : this.Armor;
-			this.cellController.SetImage(this.Image);
 		}
 
 		public void OnChangeDungeon()
