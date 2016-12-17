@@ -28,15 +28,15 @@ namespace MineS
 
 		void Update()
 		{
-			if(this.IsDown)
+			if(HK.Framework.Input.IsTouchDown)
 			{
 				this.downAction.Invoke(this.TouchPosition);
 			}
-			if(this.IsUp)
+			if(HK.Framework.Input.IsTouchUp)
 			{
 				this.upAction.Invoke(this.TouchPosition);
 			}
-			if(this.IsTouch)
+			if(HK.Framework.Input.IsTouch)
 			{
 				this.swipeAction.Invoke(this.TouchPosition);
 			}
@@ -72,83 +72,21 @@ namespace MineS
 			this.swipeAction.RemoveListener(action);
 		}
 
-		public bool IsDown
-		{
-			get
-			{
-				if(Application.isConsolePlatform || Application.isEditor)
-				{
-					return Input.GetMouseButtonDown(0);
-				}
-				else if(Application.isMobilePlatform)
-				{
-					if(Input.touches.Length <= 0)
-					{
-						return false;
-					}
-					return Input.touches[0].phase == TouchPhase.Began;
-				}
-
-				Debug.AssertFormat(false, "未対応のプラットフォームです. {0}", Application.platform);
-				return false;
-			}
-		}
-
-		public bool IsUp
-		{
-			get
-			{
-				if(Application.isConsolePlatform || Application.isEditor)
-				{
-					return Input.GetMouseButtonUp(0);
-				}
-				else if(Application.isMobilePlatform)
-				{
-					if(Input.touches.Length <= 0)
-					{
-						return false;
-					}
-					return Input.touches[0].phase == TouchPhase.Ended;
-				}
-
-				Debug.AssertFormat(false, "未対応のプラットフォームです. {0}", Application.platform);
-				return false;
-			}
-		}
-
-		public bool IsTouch
-		{
-			get
-			{
-				if(Application.isConsolePlatform || Application.isEditor)
-				{
-					return Input.GetMouseButton(0);
-				}
-				else if(Application.isMobilePlatform)
-				{
-					return Input.touches.Length > 0;
-				}
-
-				Debug.AssertFormat(false, "未対応のプラットフォームです. {0}", Application.platform);
-				return false;
-			}
-		}
-
 		private Vector2 TouchPosition
 		{
 			get
 			{
 				if(Application.isConsolePlatform || Application.isEditor)
 				{
-					return Input.mousePosition;
+					return UnityEngine.Input.mousePosition;
 				}
 				else if(Application.isMobilePlatform)
 				{
-					if(Input.touches.Length <= 0)
+					if(UnityEngine.Input.touches.Length <= 0)
 					{
 						return Vector2.zero;
 					}
-					return Input.touches[0].position;
+					return UnityEngine.Input.touches[0].position;
 				}
 
 				Debug.AssertFormat(false, "未対応のプラットフォームです. {0}", Application.platform);

@@ -98,7 +98,7 @@ namespace MineS
 
 		public void OnPointerEnter(PointerEventData eventData)
 		{
-			if(InputController.Instance.IsDown || !InputController.Instance.IsTouch || CellManager.Instance.AnyOccurredEvent || !this.canSwipeAction)
+			if(HK.Framework.Input.IsTouchDown || !HK.Framework.Input.IsTouch || CellManager.Instance.AnyOccurredEvent || !this.canSwipeAction)
 			{
 				return;
 			}

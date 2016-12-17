@@ -28,91 +28,91 @@ namespace MineS
 
 		void Update()
 		{
-			if(Input.GetKeyDown(KeyCode.Q))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.Q))
 			{
 				CellManager.Instance.DebugAction();
 			}
-			if(Input.GetKeyDown(KeyCode.W))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.W))
 			{
 				PlayerManager.Instance.DebugRecoveryHitPoint();
 			}
-			if(Input.GetKeyDown(KeyCode.E))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.E))
 			{
 				PlayerManager.Instance.DebugRecoveryHitPointDying();
 			}
-			if(Input.GetKeyDown(KeyCode.R))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.R))
 			{
 				PlayerManager.Instance.DebugRecoveryArmor();
 			}
-			if(Input.GetKeyDown(KeyCode.T))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.T))
 			{
 				PlayerManager.Instance.DebugZeroArmor();
 			}
-			if(Input.GetKeyDown(KeyCode.A))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.A))
 			{
 				PlayerManager.Instance.DebugAddAbnormalStatus((int)GameDefine.AbnormalStatusType.Regeneration);
 			}
-			if(Input.GetKeyDown(KeyCode.S))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.S))
 			{
 				PlayerManager.Instance.DebugAddAbnormalStatus((int)GameDefine.AbnormalStatusType.Sharpness);
 			}
-			if(Input.GetKeyDown(KeyCode.D))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.D))
 			{
 				PlayerManager.Instance.DebugAddAbnormalStatus((int)GameDefine.AbnormalStatusType.Curing);
 			}
-			if(Input.GetKeyDown(KeyCode.F))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.F))
 			{
 				PlayerManager.Instance.DebugAddAbnormalStatus((int)GameDefine.AbnormalStatusType.TrapMaster);
 			}
-			if(Input.GetKeyDown(KeyCode.G))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.G))
 			{
 				PlayerManager.Instance.DebugAddAbnormalStatus((int)GameDefine.AbnormalStatusType.Xray);
 			}
-			if(Input.GetKeyDown(KeyCode.H))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.H))
 			{
 				PlayerManager.Instance.DebugAddAbnormalStatus((int)GameDefine.AbnormalStatusType.Happiness);
 			}
-			if(Input.GetKeyDown(KeyCode.Z))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.Z))
 			{
 				PlayerManager.Instance.DebugAddAbnormalStatus((int)GameDefine.AbnormalStatusType.Poison);
 			}
-			if(Input.GetKeyDown(KeyCode.X))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.X))
 			{
 				PlayerManager.Instance.DebugAddAbnormalStatus((int)GameDefine.AbnormalStatusType.Blur);
 			}
-			if(Input.GetKeyDown(KeyCode.C))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.C))
 			{
 				PlayerManager.Instance.DebugAddAbnormalStatus((int)GameDefine.AbnormalStatusType.Gout);
 			}
-			if(Input.GetKeyDown(KeyCode.V))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.V))
 			{
 				PlayerManager.Instance.DebugAddAbnormalStatus((int)GameDefine.AbnormalStatusType.Dull);
 			}
-			if(Input.GetKeyDown(KeyCode.B))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.B))
 			{
 				PlayerManager.Instance.DebugAddAbnormalStatus((int)GameDefine.AbnormalStatusType.Confusion);
 			}
-			if(Input.GetKeyDown(KeyCode.Z))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.Z))
 			{
 				InformationManager.AddMessage("一行表示テスト");
 			}
-			if(Input.GetKeyDown(KeyCode.X))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.X))
 			{
 				InformationManager.AddMessage("二行表示テスト\n二行表示テスト");
 			}
-			if(Input.GetKeyDown(KeyCode.C))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.C))
 			{
 				TalkManager.Instance.StartTalk(this.testTalk, null);
 			}
-			if(Input.GetKeyDown(KeyCode.M))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.M))
 			{
 				UnityAdsController.Instance.ShowRewardedAd();
 			}
-			if(Input.GetKeyDown(KeyCode.L))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.L))
 			{
 				CellManager.Instance.Serialize();
 			}
-			if(Input.GetKeyDown(KeyCode.Alpha1))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.Alpha1))
 			{
 				HK.Framework.SaveData.Save();
 			}
