@@ -81,7 +81,14 @@ namespace MineS
 			var confirmManager = ConfirmManager.Instance;
 			confirmManager.Add(this.watchVideoMessage, () =>
 			{
-				UnityAdsController.Instance.ShowRewardedAd(this.HandleRewardedAd);
+				if(PlayerManager.Instance.Data.Inventory.IsFreeSpace)
+				{
+					UnityAdsController.Instance.ShowRewardedAd(this.HandleRewardedAd);
+				}
+				else
+				{
+					this.StartFullInventoryTalk();
+				}
 			}, true);
 			confirmManager.Add(this.closedMessage, () =>
 			{
