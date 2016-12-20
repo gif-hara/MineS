@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c932cb5455f464b288e33eb7fa54f213, type: 3}
+  m_Name: Enemy
+  m_EditorClassIdentifier: 
+  database:
+  - value:
+      ja: "\u30B9\u30E9\u30A4\u30E0"
+      en: 
+    guid: e1c12773-14df-4703-b6f2-ea3f76f7ddec
+  - value:
+      ja: "\u30B4\u30D6\u30EA\u30F3"
+      en: 
+    guid: b6346892-a892-4f09-992d-72b52e0754ce
+  - value:
+      ja: "\u30D0\u30C3\u30C8"
+      en: 
+    guid: af85b136-568b-451b-b98a-9ec9f21e4d78
+  - value:
+      ja: "\u30B4\u30FC\u30B9\u30C8"
+      en: 
+    guid: 91ec1162-3c04-4810-a11c-87e57d10216d
+  - value:
+      ja: "\u30BF\u30A4\u30BF\u30F3"
+      en: 
+    guid: 4ca89cf8-426e-46ca-bb16-1af998418770
+  - value:
+      ja: "\u30B9\u30CA\u30A4\u30D1\u30FC"
+      en: 
+    guid: b1ac8c62-4018-4c5a-9f95-6a424277bcdf
+  - value:
+      ja: "\u5927\u86C7"
+      en: 
+    guid: b93ba305-5d53-4ef0-87fb-b862a7ea020c
+  - value:
+      ja: "\u72FC"
+      en: 
+    guid: b40e5a55-9fc7-4d21-aba5-3021992cfa87
+  - value:
+      ja: "\u30CF\u30EB\u30D4\u30E5\u30A4\u30A2"
+      en: 
+    guid: 8cfeffdd-f2ef-4799-88f1-5efddbada72e
+  - value:
+      ja: "\u30EA\u30B6\u30FC\u30C9\u30DE\u30F3"
+      en: 
+    guid: a22628bc-5753-469a-ae79-dfc8cd31d0ba
+  - value:
+      ja: "\u30A8\u30EB\u30D5"
+      en: 
+    guid: 6589565c-9c8c-4cdc-9c17-698550ef34c8
+  - value:
+      ja: "\u30B5\u30E2\u30CA\u30FC"
+      en: 
+    guid: 012df2bf-26fc-4adc-a203-6b4878fb5471
+  - value:
+      ja: "\u5438\u8840\u8349"
+      en: 
+    guid: 0a5974e1-6ec9-41ac-8806-c18a5ea87458
+  - value:
+      ja: "\u30A2\u30E1\u30FC\u30D0"
+      en: 
+    guid: e4e0cde3-c744-4a8e-bf0b-50fc72b20195
+  - value:
+      ja: "\u30D4\u30AF\u30B7\u30FC"
+      en: 
+    guid: a6fcf8c7-ed70-473c-996b-97e3a003080a
+  - value:
+      ja: "\u30B5\u30E0\u30E9\u30A4"
+      en: 
+    guid: 733f6e52-abc6-46fe-8677-e6ed3465ec65
+  - value:
+      ja: "\u8001\u5E2B"
+      en: 
+    guid: b9c05b1d-cf4c-4871-833a-3c13aa79ffb9
+  - value:
+      ja: "\u30BE\u30F3\u30D3"
+      en: 
+    guid: 95aa1297-b9f0-4221-97e6-66ef40e2b4ac
+  - value:
+      ja: "\u30C8\u30ED\u30FC\u30EB"
+      en: 
+    guid: c923e32a-4f15-4a55-9577-da40acb869e7
+  - value:
+      ja: "\u30B3\u30DC\u30EB\u30C8"
+      en: 
+    guid: d4ec51af-3051-40d3-85bc-57ac8aea444c
+  - value:
+      ja: "\u30C9\u30E9\u30B4\u30F3"
+      en: 
+    guid: bdb136a5-9225-459e-b977-03b94024b45f
+  - value:
+      ja: "\u52D5\u304F\u7532\u5191"
+      en: 
+    guid: 7b006e0b-3bba-4f3c-aebb-f9a1a0c82a65
+  - value:
+      ja: "\u30AC\u30EB\u30FC\u30C0"
+      en: 
+    guid: 1185db1a-a2a5-49e7-b369-f09a0d012c0d
+  - value:
+      ja: "\u6B7B\u795E"
+      en: 
+    guid: 2495d026-6661-4d4f-a583-453454f3f425
+  - value:
+      ja: "\u30DE\u30BF\u30F3\u30B4"
+      en: 
+    guid: 58821359-3e9e-411e-988d-7b904200fdb8
+  - value:
+      ja: "\u30A2\u30FC\u30EA\u30DE\u30F3"
+      en: 
+    guid: a9a4f68a-f9fd-4963-8f37-848ad9e44feb
+  - value:
+      ja: "\u30A6\u30F3\u30C7\u30A3\u30FC\u30CD"
+      en: 
+    guid: 21903dd5-b092-4b37-8a2e-af1815ed2286
+  - value:
+      ja: "\u30B7\u30FC\u30D5"
+      en: 
+    guid: f4703efe-a62e-46e1-9341-44d02a3b7e55
+  - value:
+      ja: "\u706B\u85AC\u5B66\u58EB"
+      en: 
+    guid: a589c3a5-ce40-4013-baea-bee8df26fc7e
+  - value:
+      ja: "\u30AC\u30B9\u30C8"
+      en: 
+    guid: b929672f-e4e5-41ef-820c-6e714f5f3cfc
+  - value:
+      ja: "\u30B0\u30EC\u30F3\u30C7\u30EB"
+      en: 
+    guid: 688fb22d-f226-4c66-bff1-5c95ff93896c
+  - value:
+      ja: "\u30B1\u30C3\u30C8\u30B7\u30FC"
+      en: 
+    guid: 295309f3-9c9a-40ac-bd17-c8247e06441b
+  - value:
+      ja: "\u30D3\u30B7\u30E7\u30C3\u30D7"
+      en: 
+    guid: 65d8fb93-db5e-4f94-82e2-7a0019adc862
+  - value:
+      ja: "\u30D0\u30ED\u30FC\u30EB"
+      en: 
+    guid: dc94bd24-c84a-412b-ad1a-3e312e2f726d
+  - value:
+      ja: "\u86DE\u8753"
+      en: 
+    guid: a16de747-0508-4956-b936-833892869b07
