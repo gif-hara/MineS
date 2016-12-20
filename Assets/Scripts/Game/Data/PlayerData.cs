@@ -9,11 +9,8 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public class PlayerData : CharacterData
+	public sealed class PlayerData : CharacterData
 	{
-		[SerializeField]
-		private int level;
-
 		[SerializeField]
 		private CharacterMasterData growthData = null;
 

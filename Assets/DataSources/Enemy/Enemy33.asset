@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
   m_Name: Enemy33
   m_EditorClassIdentifier: 
-  characterName: "\u30B5\u30E2\u30CA\u30FCLv.1"
+  characterName: "\u30B5\u30E2\u30CA\u30FC"
+  level: 1
   hitPoint: 120
   strength: 2
   armor: 0

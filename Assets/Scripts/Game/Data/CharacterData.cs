@@ -14,6 +14,9 @@ namespace MineS
 	public abstract class CharacterData : IAttack, ITurnProgress
 	{
 		[SerializeField]
+		protected int level;
+
+		[SerializeField]
 		protected string name;
 
 		[SerializeField]

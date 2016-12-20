@@ -10,7 +10,7 @@ namespace MineS
 	/// .
 	/// </summary>
 	[System.Serializable]
-	public class EnemyData : CharacterData, IIdentification
+	public sealed class EnemyData : CharacterData, IIdentification
 	{
 		public override void Dead(CharacterData attacker)
 		{
