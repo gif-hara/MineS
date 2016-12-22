@@ -18,7 +18,7 @@ namespace MineS
 		public IdentifiedItemManager(ItemMasterDataBaseList list, StringAsset unidentifiedStringAsset)
 		{
 			Debug.AssertFormat(list.Database.Count <= unidentifiedStringAsset.database.Count, "未識別文字列が足りません. list = {0}", list.name);
-			var unidentifiedStrings = unidentifiedStringAsset.database.Select(d => d.value.Get()).ToList();
+			var unidentifiedStrings = unidentifiedStringAsset.database.Select(d => d.value.Default).ToList();
 			list.Database.ForEach(d =>
 			{
 				var unidentifiedStringIndex = Random.Range(0, unidentifiedStrings.Count);

@@ -13,8 +13,8 @@ namespace MineS
 	{
 
 		[SerializeField]
-		private string characterName;
-		public string Name{ get { return this.characterName; } }
+		private StringAsset.Finder characterName;
+		public virtual string Name{ get { return this.characterName.Get; } }
 
 		[SerializeField]
 		private int level;
@@ -76,7 +76,8 @@ namespace MineS
 		public static CharacterMasterData CreateFromCsv(List<string> csv)
 		{
 			var instance = ScriptableObject.CreateInstance<CharacterMasterData>();
-			instance.characterName = csv[1];
+			var nameStringAsset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/StringAsset/Enemy.asset", typeof(StringAsset)) as StringAsset;
+			instance.characterName = new StringAsset.Finder(nameStringAsset, nameStringAsset.database.Find(d => d.value.Default == csv[1]));
 			instance.level = int.Parse(csv[2]);
 			instance.hitPoint = int.Parse(csv[3]);
 			instance.armor = int.Parse(csv[4]);
