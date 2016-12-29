@@ -11,7 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
   m_Name: _TestEnemy2
   m_EditorClassIdentifier: 
-  characterName: "\u30C7\u30D0\u30C3\u30B0\u30B9\u30E9\u30A4\u30E0\u541B3\u53F7"
+  characterName:
+    target: {fileID: 11400000, guid: eb63d14417ee24bb1aad6aa3a20aaeef, type: 2}
+    value: "\u30C7\u30D0\u30C3\u30B0\u30B9\u30E9\u30A4\u30E0\u541B"
+    guid: 82395619-1199-46fa-8006-7bd5994b4069
+  level: 3
   hitPoint: 380
   strength: 98
   armor: 60

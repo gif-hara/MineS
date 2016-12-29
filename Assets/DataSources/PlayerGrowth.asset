@@ -11,7 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec885fde12b1f4efba319e544f6fde99, type: 3}
   m_Name: PlayerGrowth
   m_EditorClassIdentifier: 
-  characterName: $
+  characterName:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u30D7\u30EC\u30A4\u30E4\u30FC"
+    guid: 84284437-5455-41a1-a2d9-56e6c0551876
+  level: 0
   hitPoint: 5
   strength: 2
   armor: 0
@@ -23,3 +27,5 @@ MonoBehaviour:
   overrideDropItems: []
   abilityTypes: 
   image: {fileID: 0}
+  previousLevelData: {fileID: 0}
+  nextLevelData: {fileID: 0}
