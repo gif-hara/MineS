@@ -76,16 +76,16 @@ namespace MineS
 			}
 
 #if BGMDATA_EDITMODE
-			var addValue = Input.GetKey(KeyCode.LeftCommand) ? 0.01f : 0.001f;
-			if(!Input.GetKey(KeyCode.LeftShift))
+			var addValue = UnityEngine.Input.GetKey(KeyCode.LeftCommand) ? 0.01f : 0.001f;
+			if(!UnityEngine.Input.GetKey(KeyCode.LeftShift))
 			{
-				if(Input.GetKeyDown(KeyCode.LeftArrow))
+				if(UnityEngine.Input.GetKeyDown(KeyCode.LeftArrow))
 				{
 					this.currentData.startLoop -= addValue;
 					Debug.LogFormat("startLoop = {0}", this.currentData.startLoop);
 					this.SetStartTime();
 				}
-				if(Input.GetKeyDown(KeyCode.RightArrow))
+				if(UnityEngine.Input.GetKeyDown(KeyCode.RightArrow))
 				{
 					this.currentData.startLoop += addValue;
 					Debug.LogFormat("startLoop = {0}", this.currentData.startLoop);
@@ -94,13 +94,13 @@ namespace MineS
 			}
 			else
 			{
-				if(Input.GetKeyDown(KeyCode.LeftArrow))
+				if(UnityEngine.Input.GetKeyDown(KeyCode.LeftArrow))
 				{
 					this.currentData.endLoop -= addValue;
 					Debug.LogFormat("endLoop = {0}", this.currentData.endLoop);
 					this.SetStartTime();
 				}
-				if(Input.GetKeyDown(KeyCode.RightArrow))
+				if(UnityEngine.Input.GetKeyDown(KeyCode.RightArrow))
 				{
 					this.currentData.endLoop += addValue;
 					Debug.LogFormat("endLoop = {0}", this.currentData.endLoop);
@@ -108,7 +108,7 @@ namespace MineS
 				}
 			}
 
-			if(Input.GetKeyDown(KeyCode.Space))
+			if(UnityEngine.Input.GetKeyDown(KeyCode.Space))
 			{
 				Debug.LogFormat("time = {0}", this.source.time);
 			}
