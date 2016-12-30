@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Dungeon10
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 285050cdf826d4fd18f9085fe1f82842, type: 3}
-  startLoop: 55.7
+  startLoop: 56
   endLoop: 14.7
