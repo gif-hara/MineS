@@ -77,7 +77,7 @@ namespace MineS
 		{
 			var instance = ScriptableObject.CreateInstance<CharacterMasterData>();
 			var nameStringAsset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/StringAsset/Enemy.asset", typeof(StringAsset)) as StringAsset;
-			instance.characterName = new StringAsset.Finder(nameStringAsset, nameStringAsset.database.Find(d => d.value.Default == csv[1]));
+			instance.characterName = nameStringAsset.CreateFinder(csv[1]);
 			instance.level = int.Parse(csv[2]);
 			instance.hitPoint = int.Parse(csv[3]);
 			instance.armor = int.Parse(csv[4]);
