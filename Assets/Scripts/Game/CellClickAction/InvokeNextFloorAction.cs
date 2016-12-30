@@ -14,8 +14,6 @@ namespace MineS
 		{
 			if(DungeonManager.Instance.IsClear)
 			{
-				InformationManager.GameClear(DungeonManager.Instance.CurrentData.Name);
-				ResultManager.Instance.Invoke(GameDefine.GameResultType.Clear, ResultManager.Instance.causeClear.Element.Get);
 				DungeonManager.Instance.ClearDungeon(GameDefine.GameResultType.Clear);
 			}
 			else

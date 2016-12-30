@@ -29,6 +29,7 @@ namespace MineS
 		public static void InvalidSaveData()
 		{
 			HK.Framework.SaveData.Remove(SaveDungeonKeyName);
+			HK.Framework.SaveData.Save();
 		}
 
 		public static void SerializeCellData(CellData[,] cellDatabase, int rowMax, int culumnMax)

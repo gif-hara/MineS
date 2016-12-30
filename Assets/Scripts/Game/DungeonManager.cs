@@ -51,6 +51,8 @@ namespace MineS
 
 		private int cachedAddFloorCount = 0;
 
+		private bool isClear = false;
+
 		protected override void Awake()
 		{
 			base.Awake();
@@ -100,6 +102,7 @@ namespace MineS
 
 		public void ChangeDungeonData(DungeonDataBase data, bool immediateFadeOut, int floor = 1)
 		{
+			this.isClear = false;
 			this.current = data;
 			this.floorCount = floor;
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalChangeDungeon);
@@ -154,6 +157,9 @@ namespace MineS
 			{
 				this.CurrentDataAsDungeon.ClearDungeon();
 			}
+			this.isClear = true;
+			InformationManager.GameClear(DungeonManager.Instance.CurrentData.Name);
+			ResultManager.Instance.Invoke(type, ResultManager.Instance.causeClear.Element.Get);
 			PlayerManager.Instance.CloseInventoryUI();
 			HK.Framework.SaveData.Save();
 		}
@@ -237,7 +243,7 @@ namespace MineS
 
 		public void Serialize()
 		{
-			if(this.current.Serializable && !ResultManager.Instance.IsResult)
+			if(!this.isClear && this.current.Serializable && !ResultManager.Instance.IsResult)
 			{
 				PlayerManager.Instance.Serialize();
 				CellManager.Instance.Serialize();
