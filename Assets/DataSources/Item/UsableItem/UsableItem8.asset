@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Name: UsableItem8
   m_EditorClassIdentifier: 
   id: 8
-  itemName: "\u786C\u5316\u4ED8\u4E0E\u306E\u85AC"
+  itemName:
+    target: {fileID: 11400000, guid: 32145e7d535134721a51719653d20ddc, type: 2}
+    value: "\u786C\u5316\u4ED8\u4E0E\u306E\u85AC"
+    guid: 5c05bc2d-8f87-4400-9a50-ea89dad348a6
   purchasePrice: 1200
   sellingPrice: 600
   image: {fileID: 21300000, guid: 5b3676b45a4310a49a3eeeff33b48b21, type: 3}

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Name: Weapon
   m_EditorClassIdentifier: 
   database:
-  - {fileID: 11400000, guid: 64b9c8fae63e24929becf4fa94976efc, type: 2}
   - {fileID: 11400000, guid: b2cb144a5edce4b27b3fed3552e8556d, type: 2}
   - {fileID: 11400000, guid: a38c2b3b551880b48ad9874572d9a070, type: 2}
   - {fileID: 11400000, guid: a3ff16e6b0c9f6140b203d23083191b9, type: 2}

@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Name: Throwing1
   m_EditorClassIdentifier: 
   id: 1
-  itemName: "\u9244\u306E\u77E2"
+  itemName:
+    target: {fileID: 11400000, guid: a99a104babd4a4e2ea731c437b9d6686, type: 2}
+    value: "\u9244\u306E\u77E2"
+    guid: 312a223c-f62f-464f-9948-554660b0a392
   purchasePrice: 80
   sellingPrice: 32
   image: {fileID: 21300000, guid: 7759d21d8b01143588b04d3b7a24ab4b, type: 3}

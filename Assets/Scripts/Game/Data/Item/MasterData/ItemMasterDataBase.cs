@@ -16,7 +16,7 @@ namespace MineS
 		protected int id;
 
 		[SerializeField]
-		protected string itemName;
+		protected StringAsset.Finder itemName;
 
 		[SerializeField]
 		protected int purchasePrice;
@@ -29,7 +29,7 @@ namespace MineS
 
 		public int Id{ get { return this.id; } }
 
-		public string ItemName{ get { return this.itemName; } }
+		public string ItemName{ get { return this.itemName.Get; } }
 
 		public int PurchasePrice{ get { return this.purchasePrice; } }
 

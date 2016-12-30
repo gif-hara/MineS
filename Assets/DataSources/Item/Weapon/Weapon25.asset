@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Name: Weapon25
   m_EditorClassIdentifier: 
   id: 25
-  itemName: "\u5996\u5200\u30A4\u30DE\u30C4\u30EB\u30AE"
+  itemName:
+    target: {fileID: 11400000, guid: 0ded2a4acf5104022a19259bf2a62162, type: 2}
+    value: "\u5996\u5200\u30A4\u30DE\u30C4\u30EB\u30AE"
+    guid: 741cddac-e762-451a-9fc3-289f3ef7a49a
   purchasePrice: 25000
   sellingPrice: 12500
   image: {fileID: 21300000, guid: 3018621846a96364689ebd6ec635ab20, type: 3}

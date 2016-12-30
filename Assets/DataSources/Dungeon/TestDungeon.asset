@@ -27,9 +27,16 @@ MonoBehaviour:
     elements:
     - floorRange:
         min: 1
+        max: 1
+      clips:
+      - {fileID: 8300000, guid: ef2ea4bd0fbca41c58699dbc76f0ee19, type: 3}
+      - {fileID: 8300000, guid: b9e69e120297b4bb6b8d6d1369e00951, type: 3}
+    - floorRange:
+        min: 2
         max: 2
       clips:
       - {fileID: 8300000, guid: ef2ea4bd0fbca41c58699dbc76f0ee19, type: 3}
+      - {fileID: 8300000, guid: b9e69e120297b4bb6b8d6d1369e00951, type: 3}
   shopTable:
     elements:
     - floorRange:
@@ -73,6 +80,10 @@ MonoBehaviour:
     elements:
     - type: 4
       probability: 100
+    - type: 0
+      probability: 100
+    - type: 1
+      probability: 100
   blackSmithTable:
     elements:
     - floorRange:
@@ -85,7 +96,7 @@ MonoBehaviour:
         min: 0
         max: 10
       createTable:
-      - type: 2
+      - type: 4
         probability: 100
       probability: 100
   createRecoveryItemRange:
@@ -98,8 +109,8 @@ MonoBehaviour:
     min: 0
     max: 0
   createEnemyRange:
-    min: 0
-    max: 0
+    min: 3
+    max: 3
   createItemRange:
     min: 0
     max: 0

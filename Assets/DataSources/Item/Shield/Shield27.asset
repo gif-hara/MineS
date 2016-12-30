@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Name: Shield27
   m_EditorClassIdentifier: 
   id: 27
-  itemName: "\u30A2\u30C0\u30DE\u30F3\u30BF\u30A4\u30C8\u306E\u76FE"
+  itemName:
+    target: {fileID: 11400000, guid: 4aeb90f974c174e99976061beac1ffe7, type: 2}
+    value: "\u30A2\u30C0\u30DE\u30F3\u30BF\u30A4\u30C8\u306E\u76FE"
+    guid: d914dc6a-f113-48aa-b1e6-bbb242a48e69
   purchasePrice: 30000
   sellingPrice: 15000
   image: {fileID: 21300000, guid: 4b7717b4f098de9469e80eab6fb574aa, type: 3}

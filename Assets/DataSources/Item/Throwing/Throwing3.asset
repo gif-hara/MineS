@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Name: Throwing3
   m_EditorClassIdentifier: 
   id: 3
-  itemName: SAA
+  itemName:
+    target: {fileID: 11400000, guid: a99a104babd4a4e2ea731c437b9d6686, type: 2}
+    value: SAA
+    guid: 00d53c89-402a-4055-aca1-94c11222c4da
   purchasePrice: 150
   sellingPrice: 75
   image: {fileID: 21300000, guid: 3ec27b92e649f409c9b00f0f7c9ff8ba, type: 3}

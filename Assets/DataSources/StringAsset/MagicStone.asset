@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c932cb5455f464b288e33eb7fa54f213, type: 3}
+  m_Name: MagicStone
+  m_EditorClassIdentifier: 
+  database:
+  - value:
+      ja: "\u920D\u3089\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 327ce515-7954-43c7-8a88-d276c766a5af
+  - value:
+      ja: "\u8CA0\u50B7\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: fe24db16-358e-46cf-b5d0-ebbae4a31f34
+  - value:
+      ja: "\u6050\u6016\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 7c80bf67-248e-4eab-be7c-4f2813adecce
+  - value:
+      ja: "\u5C01\u5370\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: f7353b1d-7a08-423e-ada1-759559c4993c
+  - value:
+      ja: "\u6DF7\u4E71\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 90429f3c-79e5-4b96-bec1-0839a7cc6679
+  - value:
+      ja: "\u80A9\u4EE3\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 3c677075-9b63-4c79-965b-fdb455ee73a7
+  - value:
+      ja: "\u72B6\u614B\u7570\u5E38\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: b356a6c1-fccc-4cfe-95eb-ab72ffdfc6c7
+  - value:
+      ja: "\u86DE\u8753\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 0ffd1cbb-dbe7-4147-93f1-7ccd7c07ece8
+  - value:
+      ja: "\u30A6\u30F3\u30C7\u30A3\u30FC\u30CD\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 01397e27-01cd-4aec-8bc0-92414dabc23d
+  - value:
+      ja: "\u30AA\u30F3\u30C7\u30A3\u30FC\u30CC\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 0300f004-d322-4889-9e75-0170aaaadeae
+  - value:
+      ja: "\u901A\u884C\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 9f4582b6-6523-4263-88f2-62720ff71845
+  - value:
+      ja: "\u5909\u7570\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: 3bc7151f-53e6-4a95-9647-b9e580dd75d8
+  - value:
+      ja: "\u80FD\u529B\u4ED8\u4E0E\u306E\u9B54\u6CD5\u77F3"
+      en: 
+    guid: e4e13f24-a983-453c-8a07-c91ad4123409

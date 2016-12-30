@@ -51,7 +51,7 @@ namespace MineS
 			var result = CreateInstance<EquipmentMasterData>();
 			result.itemType = itemType;
 			result.id = int.Parse(csv[0]);
-			result.itemName = csv[1];
+			result.itemName = GameDefine.GetNameStringAsset(itemType).CreateFinder(csv[1]);
 			result.purchasePrice = int.Parse(csv[2]);
 			result.sellingPrice = int.Parse(csv[3]);
 			result.image = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/Textures/Item/" + itemType.ToString() + "/" + itemType.ToString() + csv[4] + ".png", typeof(Sprite)) as Sprite;

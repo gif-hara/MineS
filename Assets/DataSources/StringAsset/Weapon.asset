@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c932cb5455f464b288e33eb7fa54f213, type: 3}
+  m_Name: Weapon
+  m_EditorClassIdentifier: 
+  database:
+  - value:
+      ja: "\u3053\u3093\u68D2"
+      en: 
+    guid: b7751879-ba5e-4657-a731-dc25ec9b54e6
+  - value:
+      ja: "\u9244\u306E\u5263"
+      en: 
+    guid: c12d630f-9285-4475-8e48-649fcc8efc8e
+  - value:
+      ja: "\u92FC\u306E\u5263"
+      en: 
+    guid: 10362ae8-7450-449c-893b-5440319030dc
+  - value:
+      ja: "\u92FC\u9244\u306E\u5263"
+      en: 
+    guid: 5172147f-1b45-4cc4-98f4-56233b0c2ab9
+  - value:
+      ja: "\u602A\u5263\u30B7\u30E5\u30C6\u30F3\u30C9\u30A6\u30B8"
+      en: 
+    guid: 396c51c9-3503-4e9b-9dab-8ab71c4f329b
+  - value:
+      ja: "\u5927\u5668\u306E\u5263"
+      en: 
+    guid: 8b0765c4-0752-41d4-b9f0-a90c3d16f282
+  - value:
+      ja: "\u86C7\u306E\u5263"
+      en: 
+    guid: 9358a924-f20d-43ec-99ef-4dcf650eea06
+  - value:
+      ja: "\u873B\u86C9\u5207"
+      en: 
+    guid: d66f4d44-cb3a-4cd4-97ce-c0f2057a8cad
+  - value:
+      ja: "\u30D1\u30EB\u30C1\u30B6\u30F3"
+      en: 
+    guid: 9b4a25cc-72ac-4868-a446-b6609102c6a5
+  - value:
+      ja: "\u898B\u6975\u3081\u306E\u5263"
+      en: 
+    guid: 70aeca72-82ef-4fe7-b0e8-827305902525
+  - value:
+      ja: "\u30AD\u30BB\u30EB"
+      en: 
+    guid: 135f4f38-392d-45e2-857e-869b775bbc45
+  - value:
+      ja: "\u61D0\u5200"
+      en: 
+    guid: 414193b6-9625-4c08-9312-9480963c760e
+  - value:
+      ja: "\u4E16\u754C\u6A39\u306E\u6756"
+      en: 
+    guid: 8c08e722-a729-473c-bd15-38f9a80d334f
+  - value:
+      ja: "\u4E03\u661F\u5263"
+      en: 
+    guid: df0c4cf3-798d-4527-97c7-3da14700f64f
+  - value:
+      ja: "\u30EF\u30B6\u30E2\u30CE\u30C4\u30EB\u30AE"
+      en: 
+    guid: c395a5c3-5dfa-4a6c-ab08-e90094c0116e
+  - value:
+      ja: "\u30AF\u30AF\u30EA"
+      en: 
+    guid: ad49fd01-9197-4532-bbed-3c857baea861
+  - value:
+      ja: "\u30D8\u30C9\u30ED\u306E\u5263"
+      en: 
+    guid: a8317442-b9a5-42cb-8d78-a0cef296dd55
+  - value:
+      ja: "\u60D1\u308F\u3057\u306E\u6756"
+      en: 
+    guid: 71c0e867-26f8-4b3d-88ff-d42ae98d790f
+  - value:
+      ja: "\u6050\u559D\u5263"
+      en: 
+    guid: e9fda805-8e6b-4f70-ae86-545f8cebc516
+  - value:
+      ja: "\u516D\u8292\u661F\u306E\u5263"
+      en: 
+    guid: 88e9b053-87d8-4145-a6a3-5b89319f00b7
+  - value:
+      ja: "\u5E78\u904B\u306E\u5263"
+      en: 
+    guid: eafb3a14-80be-4741-a72f-c586488df7af
+  - value:
+      ja: "\u30AC\u30E9\u30C9\u30FC\u30EB"
+      en: 
+    guid: bde29119-62df-4ba3-a418-dd579f96985b
+  - value:
+      ja: "\u935B\u932C\u306E\u5263"
+      en: 
+    guid: 75fbeb6f-c99d-4f26-8a55-4c3d8c560a1b
+  - value:
+      ja: "\u92AD\u5200"
+      en: 
+    guid: ddf37bcd-989c-4622-b757-cd18f5501058
+  - value:
+      ja: "\u5341\u624B"
+      en: 
+    guid: df012d94-bc37-44ee-981e-6865b4c910ce
+  - value:
+      ja: "\u5996\u5200\u30A4\u30DE\u30C4\u30EB\u30AE"
+      en: 
+    guid: 741cddac-e762-451a-9fc3-289f3ef7a49a
+  - value:
+      ja: "\u30EC\u30FC\u30F4\u30A1\u30C6\u30A4\u30F3"
+      en: 
+    guid: 239e96a5-e76c-41d1-8d69-3d04549ddad0
+  - value:
+      ja: "\u30C8\u30C4\u30AB\u30CE\u30C4\u30EB\u30AE"
+      en: 
+    guid: 6cfee6d5-c383-4b76-8ab8-412eba62640d
+  - value:
+      ja: "\u5BA3\u4F1D\u5C4B\u306E\u5263"
+      en: 
+    guid: d19dfac5-ee79-480b-baa0-797401bd1e1a
+  - value:
+      ja: "\u30C7\u30D0\u30C3\u30B0\u3053\u3093\u68D2"
+      en: 
+    guid: ffba78db-1f9a-40d4-8aa3-97c3e5a9d69a

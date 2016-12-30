@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Name: Weapon19
   m_EditorClassIdentifier: 
   id: 19
-  itemName: "\u516D\u8292\u661F\u306E\u5263"
+  itemName:
+    target: {fileID: 11400000, guid: 0ded2a4acf5104022a19259bf2a62162, type: 2}
+    value: "\u516D\u8292\u661F\u306E\u5263"
+    guid: 88e9b053-87d8-4145-a6a3-5b89319f00b7
   purchasePrice: 8500
   sellingPrice: 4250
   image: {fileID: 21300000, guid: 0bd900d7aa509a64d941deb2f44386c1, type: 3}

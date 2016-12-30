@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Name: MagicStone12
   m_EditorClassIdentifier: 
   id: 12
-  itemName: "\u80FD\u529B\u4ED8\u4E0E\u306E\u9B54\u6CD5\u77F3"
+  itemName:
+    target: {fileID: 11400000, guid: 8d4853f94305a45848b0cad242af7bcc, type: 2}
+    value: "\u80FD\u529B\u4ED8\u4E0E\u306E\u9B54\u6CD5\u77F3"
+    guid: e4e13f24-a983-453c-8a07-c91ad4123409
   purchasePrice: 1900
   sellingPrice: 950
   image: {fileID: 21300000, guid: 885db1e3c82194da98e63b2b862b9fd0, type: 3}

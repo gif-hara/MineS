@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System;
+using HK.Framework;
 
 namespace MineS
 {
@@ -1250,6 +1251,11 @@ namespace MineS
 		public static bool IsPossitiveGameClear(GameResultType type)
 		{
 			return type == GameResultType.Clear || type == GameResultType.ReturnInItem;
+		}
+
+		public static StringAsset GetNameStringAsset(GameDefine.ItemType itemType)
+		{
+			return UnityEditor.AssetDatabase.LoadAssetAtPath(string.Format("Assets/DataSources/StringAsset/{0}.asset", itemType.ToString()), typeof(StringAsset)) as StringAsset;
 		}
 
 		public const string GoodColorCode = "#00FFE9";
