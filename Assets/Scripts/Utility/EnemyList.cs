@@ -12,24 +12,27 @@ namespace MineS
 	/// </summary>
 	public class EnemyList
 	{
-		private static Dictionary<string, CharacterMasterData> enemies = null;
+		private static List<CharacterMasterData> enemies = null;
 
 		public static CharacterMasterData Get(string name)
 		{
 			if(enemies == null)
 			{
-				enemies = new Dictionary<string, CharacterMasterData>();
+				enemies = new List<CharacterMasterData>();
 				int i = 0;
 				var masterData = AssetDatabase.LoadAssetAtPath(string.Format("Assets/DataSources/Enemy/Enemy{0}.asset", i), typeof(CharacterMasterData)) as CharacterMasterData;
 				while(masterData != null)
 				{
-					enemies.Add(masterData.Name, masterData);
+					enemies.Add(masterData);
 					i++;
 					masterData = AssetDatabase.LoadAssetAtPath(string.Format("Assets/DataSources/Enemy/Enemy{0}.asset", i), typeof(CharacterMasterData)) as CharacterMasterData;
 				}
 			}
 
-			return enemies[name];
+			var levelString = "Lv.";
+			var fixedName = name.Substring(0, name.IndexOf(levelString));
+			var level = int.Parse(name.Substring(name.IndexOf(levelString) + levelString.Length));
+			return enemies.Find(e => e.Name == fixedName && e.Level == level);
 		}
 	}
 }

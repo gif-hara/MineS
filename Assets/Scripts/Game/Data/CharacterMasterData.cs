@@ -77,17 +77,20 @@ namespace MineS
 		{
 			var instance = ScriptableObject.CreateInstance<CharacterMasterData>();
 			var nameStringAsset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/StringAsset/Enemy.asset", typeof(StringAsset)) as StringAsset;
-			instance.characterName = nameStringAsset.CreateFinder(csv[1]);
-			instance.level = int.Parse(csv[2]);
-			instance.hitPoint = int.Parse(csv[3]);
-			instance.armor = int.Parse(csv[4]);
-			instance.strength = int.Parse(csv[5]);
-			instance.hitProbability = int.Parse(csv[6]);
-			instance.evasion = int.Parse(csv[7]);
-			instance.experience = int.Parse(csv[8]);
-			instance.dropItemProbability = int.Parse(csv[9]);
-			instance.overrideDropItems = UnityEditor.AssetDatabase.LoadAssetAtPath<ItemMasterDataBaseList>("Assets/DataSources/Item/ItemList/UsableItem.asset").Parse(csv[10]);
-			instance.abilityTypes = AbilityParser.Parse(csv[11]);
+			var name = csv[1];
+			var levelString = "Lv.";
+			var levelIndex = name.IndexOf(levelString);
+			instance.characterName = nameStringAsset.CreateFinder(name.Substring(0, levelIndex));
+			instance.level = int.Parse(name.Substring(levelIndex + levelString.Length));
+			instance.hitPoint = int.Parse(csv[2]);
+			instance.armor = int.Parse(csv[3]);
+			instance.strength = int.Parse(csv[4]);
+			instance.hitProbability = int.Parse(csv[5]);
+			instance.evasion = int.Parse(csv[6]);
+			instance.experience = int.Parse(csv[7]);
+			instance.dropItemProbability = int.Parse(csv[8]);
+			instance.overrideDropItems = UnityEditor.AssetDatabase.LoadAssetAtPath<ItemMasterDataBaseList>("Assets/DataSources/Item/ItemList/UsableItem.asset").Parse(csv[9]);
+			instance.abilityTypes = AbilityParser.Parse(csv[10]);
 			instance.image = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/DataSources/Textures/Enemy/Enemy" + int.Parse(csv[0]) + ".png", typeof(Sprite)) as Sprite;
 
 			return instance;
