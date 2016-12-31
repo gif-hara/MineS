@@ -101,7 +101,7 @@ namespace MineS
 					InformationManager.AddMessage(this.notBuyMoneyMessage.Get);
 					return;
 				}
-				if(!playerManager.Data.Inventory.IsFreeSpace)
+				if(!playerManager.Data.Inventory.CanAddItem(item))
 				{
 					InformationManager.AddMessage(this.notBuyNotFreeSpaceMessage.Get);
 					return;

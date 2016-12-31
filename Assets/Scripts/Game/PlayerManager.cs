@@ -223,7 +223,7 @@ namespace MineS
 
 		public GameDefine.AcquireItemResultType AddItemOnClickCell(Item item, CellData cellData)
 		{
-			if(this.Data.Inventory.IsFreeSpace)
+			if(this.Data.Inventory.CanAddItem(item))
 			{
 				this.AddItem(item);
 				return GameDefine.AcquireItemResultType.Acquired;
