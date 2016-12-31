@@ -40,6 +40,14 @@ namespace MineS
 
 		public static void CombatLongRangeAttack(CharacterData player, CharacterData enemy)
 		{
+			// 混乱ならなにもしない
+			if(enemy.FindAbnormalStatus(GameDefine.AbnormalStatusType.Confusion))
+			{
+				return;
+			}
+
+			CharacterData enemyTarget = EnemyManager.Instance.AssumptionEnemy;
+			enemyTarget = enemyTarget == null ? player : enemyTarget;
 			enemy.Attack(player);
 		}
 
