@@ -16,8 +16,8 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 32145e7d535134721a51719653d20ddc, type: 2}
     value: "\u8CA0\u50B7\u4ED8\u4E0E\u306E\u85AC"
     guid: ad18bc92-f679-4fa3-a0d6-1356b5b2d170
-  purchasePrice: 1500
-  sellingPrice: 750
+  purchasePrice: 600
+  sellingPrice: 300
   image: {fileID: 21300000, guid: 5b3676b45a4310a49a3eeeff33b48b21, type: 3}
   type: 2
   power0: 9
