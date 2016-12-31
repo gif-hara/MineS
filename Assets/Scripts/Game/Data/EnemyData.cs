@@ -12,6 +12,13 @@ namespace MineS
 	[System.Serializable]
 	public sealed class EnemyData : CharacterData, IIdentification
 	{
+		public override string Name
+		{
+			get
+			{
+				return string.Format(EnemyManager.Instance.NameFormat, this.name, this.level);
+			}
+		}
 		public override void Dead(CharacterData attacker)
 		{
 			this.OnDead(true);

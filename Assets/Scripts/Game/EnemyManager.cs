@@ -14,6 +14,10 @@ namespace MineS
 		[SerializeField]
 		private CharacterMasterData slugMasterData;
 
+		[SerializeField]
+		private StringAsset.Finder nameFormat;
+		public string NameFormat{ get{ return this.nameFormat.Get; } }
+
 		public CharacterMasterData SlugMasterData{ get { return this.slugMasterData; } }
 
 		public Dictionary<CellData, EnemyData> Enemies{ private set; get; }

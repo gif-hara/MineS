@@ -67,7 +67,7 @@ namespace MineS
 		[SerializeField]
 		protected CharacterMasterData masterData;
 
-		public string Name{ get { return this.name; } }
+		public virtual string Name{ get { return this.name; } }
 
 		public int HitPointMax{ get { return this.hitPointMax; } }
 
@@ -109,6 +109,7 @@ namespace MineS
 		{
 			this.masterData = masterData;
 			this.name = masterData.Name;
+			this.level = masterData.Level;
 			this.hitPointMax = masterData.HitPoint;
 			this.hitPoint = masterData.HitPoint;
 			this.baseStrength = masterData.Strength;
