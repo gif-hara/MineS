@@ -409,7 +409,7 @@ namespace MineS
 		{
 			var rate = 22 - attacker.GetAbilityNumber(GameDefine.AbilityType.Splash) * 2;
 			rate = rate < 10 ? 10 : rate;
-			return takeDamage / rate;
+			return Mathf.Max(takeDamage / rate, 1);
 		}
 
 		/// <summary>
