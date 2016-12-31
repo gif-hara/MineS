@@ -17,7 +17,7 @@ MonoBehaviour:
     guid: a589c3a5-ce40-4013-baea-bee8df26fc7e
   level: 3
   hitPoint: 258
-  strength: 37
+  strength: 45
   armor: 0
   hitProbability: 90
   evasion: 0
