@@ -457,7 +457,7 @@ namespace MineS
 		{
 			get
 			{
-				return 0.5f > Random.value;
+				return 0.25f > Random.value;
 			}
 		}
 	}
