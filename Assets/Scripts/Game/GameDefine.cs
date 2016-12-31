@@ -1137,6 +1137,12 @@ namespace MineS
 			var index = Array.FindIndex(Enum.GetNames(type), u => u.CompareTo(name) == 0);
 			return (T)Enum.GetValues(type).GetValue(index);
 		}
+		
+		public static StringAsset GetNameStringAsset(GameDefine.ItemType itemType)
+		{
+			return UnityEditor.AssetDatabase.LoadAssetAtPath(string.Format("Assets/DataSources/StringAsset/{0}.asset", itemType.ToString()), typeof(StringAsset)) as StringAsset;
+		}
+
 #endif
 
 		public static string GetAbnormalStatusColor(AbnormalStatusType type)
@@ -1251,11 +1257,6 @@ namespace MineS
 		public static bool IsPossitiveGameClear(GameResultType type)
 		{
 			return type == GameResultType.Clear || type == GameResultType.ReturnInItem;
-		}
-
-		public static StringAsset GetNameStringAsset(GameDefine.ItemType itemType)
-		{
-			return UnityEditor.AssetDatabase.LoadAssetAtPath(string.Format("Assets/DataSources/StringAsset/{0}.asset", itemType.ToString()), typeof(StringAsset)) as StringAsset;
 		}
 
 		public const string GoodColorCode = "#00FFE9";
