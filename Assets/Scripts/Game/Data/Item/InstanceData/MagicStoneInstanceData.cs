@@ -32,7 +32,7 @@ namespace MineS
 
 		public GameDefine.MagicStoneType MagicStoneType{ get { return this.type; } }
 
-		public DescriptionData.Element DescriptionElement{ get { return new DescriptionData.Element(this.ItemName, this.description, this.Image); } }
+		public DescriptionData.Element DescriptionElement{ get { return new DescriptionData.Element(this.ItemName, this.Description, this.Image); } }
 
 		public int RemainingNumber{ get { return this.remainingNumber; } }
 
@@ -83,6 +83,16 @@ namespace MineS
 			get
 			{
 				return GameDefine.ItemType.MagicStone;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return ItemManager.Instance.MagicStoneIdentified.IsIdentified(this)
+				? this.description
+				: ItemManager.Instance.unidentifiedDescription.Element.Get;
 			}
 		}
 
