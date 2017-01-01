@@ -7,6 +7,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
+	[System.Serializable]
 	public class AchievementData
 	{
 		[SerializeField]
@@ -33,7 +34,47 @@ namespace MineS
 			get{ return this.takeDamage; }
 		}
 
-		public AchievementData()
+        [SerializeField]
+        private float playTimer;
+		public float PlayTimer
+        {
+            set { this.playTimer = value; }
+            get { return this.playTimer; }
+        }
+
+		public float PlayTimeHours
+        { 
+			get
+			{
+				return Mathf.Floor(this.playTimer / 60 / 60);
+            }
+		}
+
+		public float PlayTimeMinutes
+        { 
+			get
+			{
+				return Mathf.Floor(this.playTimer / 60);
+            }
+		}
+
+		public float PlayTimeSeconds
+        { 
+			get
+			{
+				return Mathf.Floor(this.playTimer);
+            }
+		}
+
+		public float PlayTimeMilliSeconds
+        { 
+			get
+			{
+				return Mathf.Floor((this.playTimer - Mathf.Floor(this.playTimer)) * 100);
+            }
+		}
+
+        public AchievementData()
 		{
 			this.defeatedEnemy = 0;
 			this.giveDamage = 0;

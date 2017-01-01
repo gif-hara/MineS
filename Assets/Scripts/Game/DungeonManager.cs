@@ -85,6 +85,14 @@ namespace MineS
 			this.observers.ForEach(o => o.ModifiedData(this.current));
 		}
 
+		void Update()
+		{
+			if(!this.isClear)
+			{
+	            AchievementManager.Instance.Data.PlayTimer += Time.deltaTime;
+			}
+        }
+
 		void OnApplicationQuit()
 		{
 			this.Serialize();
@@ -103,7 +111,8 @@ namespace MineS
 		public void ChangeDungeonData(DungeonDataBase data, bool immediateFadeOut, int floor = 1)
 		{
 			this.isClear = false;
-			this.current = data;
+            AchievementManager.Instance.Data.PlayTimer = 0.0f;
+            this.current = data;
 			this.floorCount = floor;
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalChangeDungeon);
 			this.NextFloorEvent(0, immediateFadeOut);

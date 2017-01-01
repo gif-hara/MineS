@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using HK.Framework;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
 
 namespace MineS
 {
@@ -27,9 +28,18 @@ namespace MineS
 			{
 				return this.value.Format(value);
 			}
-		}
 
-		[SerializeField]
+            public string ValueFromDateTime(float totalHours, float minutes, float seconds, float milliSeconds)
+            {
+                return this.value.Get
+				.Replace("hh", totalHours.ToString("00"))
+                .Replace("mm", minutes.ToString("00"))
+                .Replace("ss", seconds.ToString("00"))
+                .Replace("ms", milliSeconds.ToString("000"));
+            }
+        }
+
+        [SerializeField]
 		private Image uiRoot;
 
 		[SerializeField]
@@ -49,6 +59,9 @@ namespace MineS
 
 		[SerializeField]
 		private ResultAchievementElementController prefabElement;
+
+		[SerializeField]
+		private AchievementElement playTime;
 
 		[SerializeField]
 		private AchievementElement floor;
@@ -102,6 +115,7 @@ namespace MineS
 			this.causeText.text = causeMessage;
 			var playerData = PlayerManager.Instance.Data;
 			var achievementManager = AchievementManager.Instance;
+			this.CreateAchievementElementFromDateTime(this.playTime, achievementManager.Data);
 			this.CreateAchievementElement(this.floor, DungeonManager.Instance.Floor);
 			this.CreateAchievementElement(this.level, playerData.Level);
 			this.CreateAchievementElement(this.hitPoint, playerData.HitPointMax);
@@ -123,6 +137,13 @@ namespace MineS
 		{
 			var ui = Instantiate(this.prefabElement, this.achievementParent, false) as ResultAchievementElementController;
 			ui.Initialize(element.Title, element.Value(achivementValue));
+			this.createdObjects.Add(ui);
+		}
+
+		public void CreateAchievementElementFromDateTime(AchievementElement element, AchievementData data)
+		{
+			var ui = Instantiate(this.prefabElement, this.achievementParent, false) as ResultAchievementElementController;
+			ui.Initialize(element.Title, element.ValueFromDateTime(data.PlayTimeHours, data.PlayTimeMinutes, data.PlayTimeSeconds, data.PlayTimeMilliSeconds));
 			this.createdObjects.Add(ui);
 		}
 
