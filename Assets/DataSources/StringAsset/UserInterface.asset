@@ -778,3 +778,7 @@ MonoBehaviour:
       ja: '{0}Lv.{1}'
       en: 
     guid: 717515ac-2c15-4345-8383-612ff0fabc49
+  - value:
+      ja: "\u6226\u7E3E"
+      en: 
+    guid: b4127eae-cb9e-49e8-a7a0-e89af80e8083
