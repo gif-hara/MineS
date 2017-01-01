@@ -87,7 +87,7 @@ namespace MineS
 
 		void Update()
 		{
-			if(!this.isClear)
+			if(!this.isClear && this.CurrentDataAsDungeon != null)
 			{
 	            AchievementManager.Instance.Data.PlayTimer += Time.deltaTime;
 			}

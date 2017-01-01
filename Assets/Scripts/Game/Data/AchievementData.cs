@@ -63,7 +63,7 @@ namespace MineS
         { 
 			get
 			{
-				return Mathf.Floor(this.playTimer / 60);
+				return (Mathf.Floor(this.playTimer / 60)) % 60;
             }
 		}
 
@@ -71,7 +71,7 @@ namespace MineS
         { 
 			get
 			{
-				return Mathf.Floor(this.playTimer);
+				return Mathf.Floor(this.playTimer) % 60;
             }
 		}
 
@@ -79,7 +79,7 @@ namespace MineS
         { 
 			get
 			{
-				return Mathf.Floor((this.playTimer - Mathf.Floor(this.playTimer)) * 100);
+				return (this.playTimer % 1) * 1000;
             }
 		}
 
