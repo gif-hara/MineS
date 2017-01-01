@@ -29,13 +29,9 @@ namespace MineS
 				return this.value.Format(value);
 			}
 
-            public string ValueFromDateTime(float totalHours, float minutes, float seconds, float milliSeconds)
+            public string ValueFromDateTime(AchievementData data)
             {
-                return this.value.Get
-				.Replace("hh", totalHours.ToString("00"))
-                .Replace("mm", minutes.ToString("00"))
-                .Replace("ss", seconds.ToString("00"))
-                .Replace("ms", milliSeconds.ToString("000"));
+                return data.PlayTimeToString(this.value.Get);
             }
         }
 
@@ -143,7 +139,7 @@ namespace MineS
 		public void CreateAchievementElementFromDateTime(AchievementElement element, AchievementData data)
 		{
 			var ui = Instantiate(this.prefabElement, this.achievementParent, false) as ResultAchievementElementController;
-			ui.Initialize(element.Title, element.ValueFromDateTime(data.PlayTimeHours, data.PlayTimeMinutes, data.PlayTimeSeconds, data.PlayTimeMilliSeconds));
+			ui.Initialize(element.Title, element.ValueFromDateTime(data));
 			this.createdObjects.Add(ui);
 		}
 
