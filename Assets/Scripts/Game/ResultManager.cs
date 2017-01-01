@@ -108,9 +108,9 @@ namespace MineS
 			this.CreateAchievementElement(this.armor, playerData.ArmorMax);
 			this.CreateAchievementElement(this.strength, playerData.Strength);
 			this.CreateAchievementElement(this.money, playerData.Money);
-			this.CreateAchievementElement(this.defeatedEnemy, achievementManager.DefeatedEnemy);
-			this.CreateAchievementElement(this.giveDamage, achievementManager.GiveDamage);
-			this.CreateAchievementElement(this.takeDamage, achievementManager.TakeDamage);
+			this.CreateAchievementElement(this.defeatedEnemy, achievementManager.Data.DefeatedEnemy);
+			this.CreateAchievementElement(this.giveDamage, achievementManager.Data.GiveDamage);
+			this.CreateAchievementElement(this.takeDamage, achievementManager.Data.TakeDamage);
 
 			this.uiRoot.gameObject.SetActive(true);
 			this.uiRoot.color = GameDefine.IsPossitiveGameClear(type) ? this.clearColor : this.gameOverColor;

@@ -10,11 +10,12 @@ namespace MineS
 	/// </summary>
 	public class AchievementManager : SingletonMonoBehaviour<AchievementManager>
 	{
-		public int DefeatedEnemy{ private set; get; }
+		public AchievementData Data{ private set; get; }
 
-		public int GiveDamage{ private set; get; }
-
-		public int TakeDamage{ private set; get; }
+		protected override void Awake()
+		{
+			this.Initialize();
+		}
 
 		void Start()
 		{
@@ -23,24 +24,41 @@ namespace MineS
 
 		public void Initialize()
 		{
-			this.DefeatedEnemy = 0;
-			this.GiveDamage = 0;
-			this.TakeDamage = 0;
+			this.Data = new AchievementData();
 		}
 
 		public void AddDefeatedEnemy(int value)
 		{
-			this.DefeatedEnemy += value;
+			this.Data.DefeatedEnemy += value;
 		}
 
 		public void AddGiveDamage(int value)
 		{
-			this.GiveDamage += value;
+			this.Data.GiveDamage += value;
 		}
 
 		public void AddTakeDamage(int value)
 		{
-			this.TakeDamage += value;
+			this.Data.TakeDamage += value;
+		}
+
+		public void Serialize()
+		{
+			HK.Framework.SaveData.SetClass<AchievementData>(SerializeKey, this.Data);
+		}
+
+		public void Deserialize()
+		{
+			Assert.IsTrue(HK.Framework.SaveData.ContainsKey(SerializeKey));
+			this.Data = HK.Framework.SaveData.GetClass<AchievementData>(SerializeKey, null);
+		}
+
+		private static string SerializeKey
+		{
+			get
+			{
+				return "AchievementData";
+			}
 		}
 	}
 }
