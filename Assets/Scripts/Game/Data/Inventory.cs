@@ -145,12 +145,17 @@ namespace MineS
 
 		public bool CanAddItem(Item item)
 		{
+			if(IsFreeSpace)
+			{
+				return true;
+			}
+
 			if(item.InstanceData.ItemType == GameDefine.ItemType.Throwing)
 			{
 				return this.items.Find(i => this.CanIntegrationThrowing(i, item)) != null;
 			}
 
-			return IsFreeSpace;
+			return false;
 		}
 
 		public Item ChangeEquipment(Item item)
