@@ -12,7 +12,7 @@ namespace MineS
 	[System.Serializable]
 	public class OptionData
 	{
-		public class VisiblePlayTimeEvent : UnityEvent<bool>
+		public class BoolEvent : UnityEvent<bool>
 		{
 		}
 		[SerializeField]
@@ -36,7 +36,7 @@ namespace MineS
         [SerializeField]
         private bool visiblePlayTime;
 
-		private VisiblePlayTimeEvent onModifiedVisiblePlayTime = new VisiblePlayTimeEvent();
+		private BoolEvent onModifiedVisiblePlayTime = new BoolEvent();
 
         public const float MessageSpeedMax = 2.0f;
 
