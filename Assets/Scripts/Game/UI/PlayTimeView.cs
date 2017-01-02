@@ -17,9 +17,20 @@ namespace MineS
         [SerializeField]
         private StringAsset.Finder format;
 
+		void Start()
+		{
+            this.text.enabled = OptionManager.Instance.Data.VisiblePlayTime;
+            OptionManager.Instance.Data.AddModifiedVisiblePlayTimeEvent(this.OnModifiedVisiblePlayTime);
+        }
+
         void Update()
         {
             this.text.text = AchievementManager.Instance.Data.PlayTimeToString(this.format.Get);
+        }
+
+		private void OnModifiedVisiblePlayTime(bool value)
+		{
+            this.text.enabled = value;
         }
     }
 }

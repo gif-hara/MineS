@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using UnityEngine.Events;
 
 namespace MineS
 {
@@ -11,6 +12,9 @@ namespace MineS
 	[System.Serializable]
 	public class OptionData
 	{
+		public class VisiblePlayTimeEvent : UnityEvent<bool>
+		{
+		}
 		[SerializeField]
 		private float bgmVolume;
 
@@ -29,7 +33,12 @@ namespace MineS
 		[SerializeField]
 		private bool swipeStop;
 
-		public const float MessageSpeedMax = 2.0f;
+        [SerializeField]
+        private bool visiblePlayTime;
+
+		private VisiblePlayTimeEvent onModifiedVisiblePlayTime = new VisiblePlayTimeEvent();
+
+        public const float MessageSpeedMax = 2.0f;
 
 		public float BGMVolume{ get { return this.bgmVolume; } }
 
@@ -43,7 +52,9 @@ namespace MineS
 
 		public bool SwipeStop{ get { return this.swipeStop; } }
 
-		public OptionData()
+		public bool VisiblePlayTime{ get { return this.visiblePlayTime; } }
+
+        public OptionData()
 		{
 			this.bgmVolume = 0.5f;
 			this.seVolume = 0.5f;
@@ -51,7 +62,8 @@ namespace MineS
 			this.isFewMessage = false;
 			this.autoSort = false;
 			this.swipeStop = true;
-		}
+            this.visiblePlayTime = false;
+        }
 
 		public void SetBGMVolume(float value)
 		{
@@ -88,5 +100,22 @@ namespace MineS
 			this.swipeStop = value;
 			HK.Framework.SaveData.SetClass<OptionData>(MineS.SaveData.OptionKeyName, this);
 		}
-	}
+
+        public void SetVisiblePlayTime(bool value)
+        {
+            this.visiblePlayTime = value;
+            HK.Framework.SaveData.SetClass<OptionData>(MineS.SaveData.OptionKeyName, this);
+            this.onModifiedVisiblePlayTime.Invoke(value);
+        }
+
+		public void AddModifiedVisiblePlayTimeEvent(UnityAction<bool> action)
+		{
+            this.onModifiedVisiblePlayTime.AddListener(action);
+        }
+
+		public void RemoveModifiedVisiblePlayTimeEvent(UnityAction<bool> action)
+		{
+            this.onModifiedVisiblePlayTime.RemoveListener(action);
+        }
+    }
 }

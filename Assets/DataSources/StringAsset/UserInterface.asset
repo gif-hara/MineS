@@ -790,3 +790,7 @@ MonoBehaviour:
       ja: hh:mm:ss,ms
       en: 
     guid: 18050295-26b9-4c81-b9b1-9557e0bf79e6
+  - value:
+      ja: "\u30D7\u30EC\u30A4\u6642\u9593\u3092\u8868\u793A\u3059\u308B"
+      en: 
+    guid: 54c1ff98-10f5-4a02-8a11-51641782bedf

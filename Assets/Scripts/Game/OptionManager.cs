@@ -73,5 +73,9 @@ namespace MineS
 			this.Data.SetSwipeStop(value);
 		}
 
+		public void SetVisiblePlayTime(bool value)
+		{
+            this.Data.SetVisiblePlayTime(value);
+        }
 	}
 }
