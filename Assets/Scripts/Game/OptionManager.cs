@@ -77,5 +77,10 @@ namespace MineS
 		{
             this.Data.SetVisiblePlayTime(value);
         }
+
+		public void SetAlwaysFrontPlayTime(bool value)
+		{
+            this.Data.SetAlwaysFrontPlayTime(value);
+        }
 	}
 }

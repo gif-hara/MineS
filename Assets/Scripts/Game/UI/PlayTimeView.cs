@@ -12,15 +12,27 @@ namespace MineS
 	public class PlayTimeView : MonoBehaviour
 	{
         [SerializeField]
+        private Canvas canvas;
+
+        [SerializeField]
         private Text text;
 
         [SerializeField]
         private StringAsset.Finder format;
 
-		void Start()
+        [SerializeField]
+        private int defaultCanvasOrder;
+
+        [SerializeField]
+        private int alwaysFrontCanvasOrder;
+
+        void Start()
 		{
-            this.text.enabled = OptionManager.Instance.Data.VisiblePlayTime;
-            OptionManager.Instance.Data.AddModifiedVisiblePlayTimeEvent(this.OnModifiedVisiblePlayTime);
+            var optionData = OptionManager.Instance.Data;
+            this.OnModifiedVisiblePlayTime(optionData.VisiblePlayTime);
+            this.OnModifiedAlwaysFrontPlayTime(optionData.AlwaysFrontPlayTime);
+            optionData.AddModifiedVisiblePlayTimeEvent(this.OnModifiedVisiblePlayTime);
+            optionData.AddModifiedAlwaysFrontPlayTimeEvent(this.OnModifiedAlwaysFrontPlayTime);
         }
 
         void Update()
@@ -31,6 +43,12 @@ namespace MineS
 		private void OnModifiedVisiblePlayTime(bool value)
 		{
             this.text.enabled = value;
+        }
+
+		private void OnModifiedAlwaysFrontPlayTime(bool value)
+		{
+            var order = value ? this.alwaysFrontCanvasOrder : this.defaultCanvasOrder;
+            this.canvas.sortingOrder = order;
         }
     }
 }

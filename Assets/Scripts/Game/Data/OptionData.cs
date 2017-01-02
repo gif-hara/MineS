@@ -36,7 +36,12 @@ namespace MineS
         [SerializeField]
         private bool visiblePlayTime;
 
-		private BoolEvent onModifiedVisiblePlayTime = new BoolEvent();
+        [SerializeField]
+        private bool alwaysFrontPlayTime;
+
+        private BoolEvent onModifiedVisiblePlayTime = new BoolEvent();
+
+        private BoolEvent onModifiedAlwaysFrontPlayTime = new BoolEvent();
 
         public const float MessageSpeedMax = 2.0f;
 
@@ -53,6 +58,8 @@ namespace MineS
 		public bool SwipeStop{ get { return this.swipeStop; } }
 
 		public bool VisiblePlayTime{ get { return this.visiblePlayTime; } }
+
+		public bool AlwaysFrontPlayTime{get { return this.alwaysFrontPlayTime; } }
 
         public OptionData()
 		{
@@ -108,6 +115,13 @@ namespace MineS
             this.onModifiedVisiblePlayTime.Invoke(value);
         }
 
+		public void SetAlwaysFrontPlayTime(bool value)
+		{
+            this.alwaysFrontPlayTime = value;
+            HK.Framework.SaveData.SetClass<OptionData>(MineS.SaveData.OptionKeyName, this);
+            this.onModifiedAlwaysFrontPlayTime.Invoke(value);
+        }
+
 		public void AddModifiedVisiblePlayTimeEvent(UnityAction<bool> action)
 		{
             this.onModifiedVisiblePlayTime.AddListener(action);
@@ -116,6 +130,16 @@ namespace MineS
 		public void RemoveModifiedVisiblePlayTimeEvent(UnityAction<bool> action)
 		{
             this.onModifiedVisiblePlayTime.RemoveListener(action);
+        }
+
+		public void AddModifiedAlwaysFrontPlayTimeEvent(UnityAction<bool> action)
+		{
+            this.onModifiedAlwaysFrontPlayTime.AddListener(action);
+        }
+
+		public void RemoveModifiedAlwaysFrontPlayTimeEvent(UnityAction<bool> action)
+		{
+            this.onModifiedAlwaysFrontPlayTime.RemoveListener(action);
         }
     }
 }
