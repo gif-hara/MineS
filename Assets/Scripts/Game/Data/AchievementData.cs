@@ -88,6 +88,7 @@ namespace MineS
 			this.defeatedEnemy = 0;
 			this.giveDamage = 0;
 			this.takeDamage = 0;
-		}
+            this.playTimer = 0.0f;
+        }
 	}
 }

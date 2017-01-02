@@ -35,7 +35,7 @@ namespace MineS
             optionData.AddModifiedAlwaysFrontPlayTimeEvent(this.OnModifiedAlwaysFrontPlayTime);
         }
 
-        void Update()
+        void LateUpdate()
         {
             this.text.text = AchievementManager.Instance.Data.PlayTimeToString(this.format.Get);
         }

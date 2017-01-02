@@ -37,7 +37,9 @@ namespace MineS
 
 		private int floorCount = 1;
 
-		private UnityEvent preChangeDungeonEvent = new UnityEvent();
+        private UnityEvent immediateChangeDungeonEvent = new UnityEvent();
+
+        private UnityEvent preChangeDungeonEvent = new UnityEvent();
 
 		private UnityEvent changeDungeonEvent = new UnityEvent();
 
@@ -85,11 +87,6 @@ namespace MineS
 			this.observers.ForEach(o => o.ModifiedData(this.current));
 		}
 
-		void Update()
-		{
-            this.UpdatePlayTime();
-        }
-
 		void OnApplicationQuit()
 		{
 			this.Serialize();
@@ -107,13 +104,23 @@ namespace MineS
 
 		public void ChangeDungeonData(DungeonDataBase data, bool immediateFadeOut, int floor = 1)
 		{
-			this.isClear = false;
-            AchievementManager.Instance.Data.PlayTimer = 0.0f;
+            this.isClear = false;
             this.current = data;
 			this.floorCount = floor;
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalChangeDungeon);
-			this.NextFloorEvent(0, immediateFadeOut);
+            this.immediateChangeDungeonEvent.Invoke();
+            this.NextFloorEvent(0, immediateFadeOut);
 		}
+
+		public void AddImmediateChangeDungeonEvent(UnityAction otherEvent)
+		{
+            this.immediateChangeDungeonEvent.AddListener(otherEvent);
+        }
+
+		public void RemoveImmediateChangeDungeonEvent(UnityAction otherEvent)
+		{
+            this.immediateChangeDungeonEvent.RemoveListener(otherEvent);
+        }
 
 		public void AddPreChangeDungeonEvent(UnityAction otherEvent)
 		{
@@ -245,20 +252,6 @@ namespace MineS
 		private void InvokeOtherProccess()
 		{
 			this.current.InvokeOtherProccess();
-		}
-
-		private void UpdatePlayTime()
-		{
-			if(this.CurrentDataAsDungeon == null)
-			{
-                return;
-            }
-			if(ResultManager.Instance.IsResult)
-			{
-                return;
-            }
-
-            AchievementManager.Instance.Data.PlayTimer += Time.deltaTime;
 		}
 
 		public void Serialize()

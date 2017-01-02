@@ -10,21 +10,31 @@ namespace MineS
 	/// </summary>
 	public class AchievementManager : SingletonMonoBehaviour<AchievementManager>
 	{
-		public AchievementData Data{ private set; get; }
+        [SerializeField]
+        private AchievementData data;
+        public AchievementData Data
+		{
+            get { return this.data; }
+        }
 
 		protected override void Awake()
 		{
-			this.Initialize();
-		}
+            this.Initialize();
+        }
 
 		void Start()
 		{
-			DungeonManager.Instance.AddChangeDungeonEvent(this.Initialize);
+			DungeonManager.Instance.AddImmediateChangeDungeonEvent(this.Initialize);
 		}
+
+		void Update()
+		{
+            this.UpdatePlayTime();
+        }
 
 		public void Initialize()
 		{
-			this.Data = new AchievementData();
+			this.data = new AchievementData();
 		}
 
 		public void AddDefeatedEnemy(int value)
@@ -44,13 +54,23 @@ namespace MineS
 
 		public void Serialize()
 		{
-			HK.Framework.SaveData.SetClass<AchievementData>(SerializeKey, this.Data);
+			HK.Framework.SaveData.SetClass<AchievementData>(SerializeKey, this.data);
 		}
 
 		public void Deserialize()
 		{
 			Assert.IsTrue(HK.Framework.SaveData.ContainsKey(SerializeKey));
-			this.Data = HK.Framework.SaveData.GetClass<AchievementData>(SerializeKey, null);
+			this.data = HK.Framework.SaveData.GetClass<AchievementData>(SerializeKey, null);
+		}
+
+		private void UpdatePlayTime()
+		{
+			if(DungeonManager.Instance.CurrentDataAsDungeon == null || ResultManager.Instance.IsResult)
+			{
+                return;
+            }
+
+            this.data.PlayTimer += Time.deltaTime;
 		}
 
 		private static string SerializeKey
