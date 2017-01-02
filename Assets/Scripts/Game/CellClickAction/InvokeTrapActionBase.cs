@@ -14,6 +14,10 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
+			if(!this.isInvoke)
+			{
+                return;
+            }
 			this._InternalInvoke(data);
 			this.InternalInvoke(data);
 		}
@@ -56,18 +60,18 @@ namespace MineS
 		}
 
 		public override void Deserialize(int y, int x)
-		{
-			this.isInvoke = HK.Framework.SaveData.GetInt(this.GetIsInvokeSerializeKeyName(y, x)) == 1;
-		}
+        {
+            this.isInvoke = HK.Framework.SaveData.GetInt(this.GetIsInvokeSerializeKeyName(y, x)) == 1;
+        }
 
-		private void _InternalInvoke(CellData data)
+        private void _InternalInvoke(CellData data)
 		{
 			if(!this.isInvoke)
 			{
 				return;
 			}
 
-			this.isInvoke = false;
+            this.isInvoke = false;
 			this.cellController.SetImage(this.Image);
 
 			var player = PlayerManager.Instance.Data;
