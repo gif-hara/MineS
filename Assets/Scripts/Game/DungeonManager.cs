@@ -87,10 +87,7 @@ namespace MineS
 
 		void Update()
 		{
-			if(!this.isClear && this.CurrentDataAsDungeon != null)
-			{
-	            AchievementManager.Instance.Data.PlayTimer += Time.deltaTime;
-			}
+            this.UpdatePlayTime();
         }
 
 		void OnApplicationQuit()
@@ -248,6 +245,20 @@ namespace MineS
 		private void InvokeOtherProccess()
 		{
 			this.current.InvokeOtherProccess();
+		}
+
+		private void UpdatePlayTime()
+		{
+			if(this.CurrentDataAsDungeon == null)
+			{
+                return;
+            }
+			if(ResultManager.Instance.IsResult)
+			{
+                return;
+            }
+
+            AchievementManager.Instance.Data.PlayTimer += Time.deltaTime;
 		}
 
 		public void Serialize()
