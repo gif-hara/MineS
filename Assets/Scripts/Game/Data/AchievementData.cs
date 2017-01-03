@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 using System.Collections.Generic;
+using System.Text;
 
 namespace MineS
 {
@@ -42,13 +43,17 @@ namespace MineS
             get { return this.playTimer; }
         }
 
-		public string PlayTimeToString(string format)
+        private static StringBuilder sb = new StringBuilder();
+        public string PlayTimeToString(string format)
 		{
-			return format
+            sb.Remove(0, sb.Length);
+            sb.Append(format);
+            return sb
 				.Replace("hh", this.PlayTimeHours.ToString("00"))
 				.Replace("mm", this.PlayTimeMinutes.ToString("00"))
 				.Replace("ss", this.PlayTimeSeconds.ToString("00"))
-				.Replace("ms", this.PlayTimeMilliSeconds.ToString("000"));
+				.Replace("ms", this.PlayTimeMilliSeconds.ToString("000"))
+				.ToString();
 		}
 
 		public float PlayTimeHours
