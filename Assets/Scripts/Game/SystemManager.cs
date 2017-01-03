@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using System;
 
 namespace MineS
 {
@@ -24,6 +25,11 @@ namespace MineS
 			QualitySettings.vSyncCount = 1;
 			Application.targetFrameRate = 60;
 		}
+
+		void Start()
+		{
+            DungeonManager.Instance.AddNextFloorEvent(this.OnNextFloorEvent);
+        }
 
 		void OnApplicationQuit()
 		{
@@ -59,5 +65,10 @@ namespace MineS
 			{
 			}, true);
 		}
+
+		private void OnNextFloorEvent()
+		{
+            GC.Collect();
+        }
 	}
 }
