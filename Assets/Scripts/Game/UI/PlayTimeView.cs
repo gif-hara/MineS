@@ -37,6 +37,10 @@ namespace MineS
 
         void LateUpdate()
         {
+            if(!OptionManager.Instance.Data.VisiblePlayTime)
+            {
+                return;
+            }
             this.text.text = AchievementManager.Instance.Data.PlayTimeToString(this.format.Get);
         }
 
