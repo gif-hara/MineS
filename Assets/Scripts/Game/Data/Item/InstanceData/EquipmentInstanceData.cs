@@ -42,7 +42,14 @@ namespace MineS
 		{
 			get
 			{
-				return this.basePower + this.Level;
+                var fixedPower = this.Level;
+
+				// アーマー修正値のみ倍率をかける
+				if(this.itemType == GameDefine.ItemType.Shield)
+				{
+                    fixedPower *= 2;
+                }
+                return this.basePower + fixedPower;
 			}
 		}
 
