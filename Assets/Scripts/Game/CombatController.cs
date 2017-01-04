@@ -47,8 +47,8 @@ namespace MineS
 			}
 
 			CharacterData enemyTarget = EnemyManager.Instance.AssumptionEnemy;
-			enemyTarget = enemyTarget == null ? player : enemyTarget;
-			enemy.Attack(player);
+            enemyTarget = enemyTarget == null ? player : enemyTarget;
+			enemy.Attack(enemyTarget);
 		}
 
 		private static bool CanAttackEnemy(CharacterData enemy)
