@@ -34,7 +34,9 @@ namespace MineS
 
 		string ColorCode{ get; }
 
-		bool FindAbility(GameDefine.AbilityType type);
+		CharacterMasterData MasterData{ get; }
+
+        bool FindAbility(GameDefine.AbilityType type);
 
 		bool FindAbnormalStatus(GameDefine.AbnormalStatusType type);
 

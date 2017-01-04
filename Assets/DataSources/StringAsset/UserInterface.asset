@@ -798,3 +798,7 @@ MonoBehaviour:
       ja: "\u30D7\u30EC\u30A4\u6642\u9593\u3092\u5E38\u306B\u624B\u524D\u306B\u8868\u793A"
       en: 
     guid: 084a7481-7baa-4a79-8b11-b0e3cffcdee2
+  - value:
+      ja: "\u3042\u3042\u3063\u3068\uFF01<color=targetColor>{0}</color>\u304C\u30DE\u30BF\u30BF\u30D3\u306B\u3058\u3083\u308C\u3066\u3044\u308B\u3045\uFF01"
+      en: 
+    guid: 60d77236-623d-4b58-86a8-a6cc71c2cf00

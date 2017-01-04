@@ -30092,6 +30092,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slugMasterData: {fileID: 11400000, guid: 4dafd8e0bdb47427697a10585839c626, type: 2}
+  kettseyMasterData:
+  - {fileID: 11400000, guid: 11f681ffd5fca49c097a5caed31d23e3, type: 2}
+  - {fileID: 11400000, guid: c4735073ceff446649272e33dd2fe582, type: 2}
+  - {fileID: 11400000, guid: cd2973964066e43d0b765a00baa2026a, type: 2}
   nameFormat:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: '{0}Lv.{1}'
@@ -30460,6 +30464,10 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "<color=orange>{0}</color>\u304C\u8D77\u52D5\u3057\u305F\uFF01"
     guid: 26593b64-3eab-4151-88a2-ba8461b099d0
+  playfulKettsey:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u3042\u3042\u3063\u3068\uFF01<color=targetColor>{0}</color>\u304C\u30DE\u30BF\u30BF\u30D3\u306B\u3058\u3083\u308C\u3066\u3044\u308B\u3045\uFF01"
+    guid: 60d77236-623d-4b58-86a8-a6cc71c2cf00
 --- !u!114 &1584263361
 MonoBehaviour:
   m_ObjectHideFlags: 0

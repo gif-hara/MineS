@@ -66,7 +66,8 @@ namespace MineS
 			changeCharacter = null,
 			forceReleaseLock = null,
 			addAbility = null,
-			invokeStoneStatue = null;
+			invokeStoneStatue = null,
+			playfulKettsey = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -418,6 +419,14 @@ namespace MineS
 			var instance = InformationManager.Instance;
 			instance._AddMessage(instance.invokeStoneStatue.Format(stoneStatueName));
 		}
+
+		public static void OnPlayfulKettsey(IAttack user)
+		{
+            var instance = InformationManager.Instance;
+			var message = instance.playfulKettsey.Format(user.Name)
+				.Replace(TargetColor, user.ColorCode);
+            instance._AddMessage(message);
+        }
 
 		public static void AddMessage(string message)
 		{

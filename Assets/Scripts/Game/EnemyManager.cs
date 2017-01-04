@@ -14,13 +14,18 @@ namespace MineS
 		[SerializeField]
 		private CharacterMasterData slugMasterData;
 
-		[SerializeField]
+        [SerializeField]
+        private List<CharacterMasterData> kettseyMasterData;
+
+        [SerializeField]
 		private StringAsset.Finder nameFormat;
 		public string NameFormat{ get{ return this.nameFormat.Get; } }
 
 		public CharacterMasterData SlugMasterData{ get { return this.slugMasterData; } }
 
-		public Dictionary<CellData, EnemyData> Enemies{ private set; get; }
+		public List<CharacterMasterData> KettseyMasterData{ get { return this.kettseyMasterData; } }
+
+        public Dictionary<CellData, EnemyData> Enemies{ private set; get; }
 
 		public Dictionary<EnemyData, CellData> InEnemyCells{ private set; get; }
 
@@ -101,6 +106,11 @@ namespace MineS
 
 			return target[Random.Range(0, target.Count)];
 		}
+
+		public bool IsKettsey(CharacterMasterData masterData)
+		{
+            return this.kettseyMasterData.Find(m => m == masterData) != null;
+        }
 
 		public void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{

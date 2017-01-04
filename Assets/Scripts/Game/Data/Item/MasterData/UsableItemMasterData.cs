@@ -213,8 +213,15 @@ namespace MineS
 					}
 					else if(user.CharacterType == GameDefine.CharacterType.Enemy && rate > Random.value)
 					{
-						(user as EnemyData).OnDivision(blankCell);
-						InformationManager.OnUseActinidiaByEnemy(user);
+						if(EnemyManager.Instance.IsKettsey(user.MasterData))
+						{
+							InformationManager.OnPlayfulKettsey(user);
+						}
+						else
+						{
+							(user as EnemyData).OnDivision(blankCell);
+							InformationManager.OnUseActinidiaByEnemy(user);
+						}
 					}
 				}
 			break;
