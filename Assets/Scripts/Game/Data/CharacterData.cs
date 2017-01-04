@@ -402,7 +402,10 @@ namespace MineS
 		{
 			this.abnormalStatuses.ForEach(a => a.OnTurnProgress(type, turnCount));
 			this.abnormalStatuses.RemoveAll(a => !a.IsValid);
-			this.Abilities.ForEach(a => a.OnTurnProgress(type, turnCount));
+			if(!this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Seal))
+			{
+				this.Abilities.ForEach(a => a.OnTurnProgress(type, turnCount));
+			}
 
 			if(this.FindAbility(GameDefine.AbilityType.Summon) && !this.IsDead && Calculator.CanInvokeSummon)
 			{
