@@ -1202,41 +1202,33 @@ namespace MineS
 					: GameDefine.AdjacentType.Bottom;
 		}
 
-		public static AbnormalStatusType RandomAbnormalStatus
+		public static AbnormalStatusType RandomAbnormalStatusOnMagicStone
 		{
 			get
 			{
-				var result = UnityEngine.Random.Range(0, 14);
+				var result = UnityEngine.Random.Range(0, 10);
 				switch(result)
 				{
 				case 0:
 					return GameDefine.AbnormalStatusType.Assumption;
 				case 1:
-					return GameDefine.AbnormalStatusType.Blur;
-				case 2:
 					return GameDefine.AbnormalStatusType.Confusion;
-				case 3:
+				case 2:
 					return GameDefine.AbnormalStatusType.Curing;
-				case 4:
+				case 3:
 					return GameDefine.AbnormalStatusType.Dull;
-				case 5:
+				case 4:
 					return GameDefine.AbnormalStatusType.Fear;
-				case 6:
+				case 5:
 					return GameDefine.AbnormalStatusType.Gout;
-				case 7:
-					return GameDefine.AbnormalStatusType.Happiness;
-				case 8:
+				case 6:
 					return GameDefine.AbnormalStatusType.Poison;
-				case 9:
+				case 7:
 					return GameDefine.AbnormalStatusType.Regeneration;
-				case 10:
+				case 8:
 					return GameDefine.AbnormalStatusType.Seal;
-				case 11:
+				case 9:
 					return GameDefine.AbnormalStatusType.Sharpness;
-				case 12:
-					return GameDefine.AbnormalStatusType.TrapMaster;
-				case 13:
-					return GameDefine.AbnormalStatusType.Xray;
 				default:
 					Debug.AssertFormat(false, "不正な値です. result = {0}", result);
 					return GameDefine.AbnormalStatusType.None;

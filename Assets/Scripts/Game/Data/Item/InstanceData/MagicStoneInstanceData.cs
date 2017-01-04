@@ -104,7 +104,6 @@ namespace MineS
 
 		public void Use(CharacterData attacker, IAttack target)
 		{
-			
 			this.remainingNumber--;
 			switch(this.type)
 			{
@@ -140,7 +139,7 @@ namespace MineS
 			break;
 			case GameDefine.MagicStoneType.AddRandomAbnormalStatus:
 				{
-					this.AddAbnormalStatus(GameDefine.RandomAbnormalStatus, target);
+					this.AddAbnormalStatus(GameDefine.RandomAbnormalStatusOnMagicStone, target);
 				}
 			break;
 			case GameDefine.MagicStoneType.ChangeSlug:
