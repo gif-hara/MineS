@@ -467,7 +467,7 @@ namespace MineS
 		{
 			var informationElement = Instantiate(this.prefabInformation, this.parent, false) as InformationElement;
 			informationElement.Initialize(message);
-			yield return new WaitForSeconds(OptionData.MessageSpeedMax - MineS.SaveData.Option.MessageSpeed);
+			yield return new WaitForSeconds(OptionData.MessageWaitMax - MineS.SaveData.Option.MessageSpeed / 4);
 
 			if(this.messageQueue.Count > 0)
 			{

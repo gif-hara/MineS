@@ -43,7 +43,9 @@ namespace MineS
 
         private BoolEvent onModifiedAlwaysFrontPlayTime = new BoolEvent();
 
-        public const float MessageSpeedMax = 2.0f;
+        public const float MessageScrollSpeedMax = 0.5f;
+
+        public const float MessageWaitMax = 1.0f;
 
 		public float BGMVolume{ get { return this.bgmVolume; } }
 
