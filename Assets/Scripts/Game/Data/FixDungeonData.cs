@@ -56,6 +56,12 @@ namespace MineS
 		{
 		}
 
+		[ContextMenu("Apply Shop Data")]
+		private void ApplyShopData()
+		{
+            this.shopTable = ShopTable.CreateFromCsv(this.name);
+        }
+
 		public override CellData[,] Create(CellManager cellManager)
 		{
 			return new FixDungeonCreator().Create(cellManager, this, GameDefine.CellRowMax, GameDefine.CellCulumnMax);
