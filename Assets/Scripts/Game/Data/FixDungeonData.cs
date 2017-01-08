@@ -51,6 +51,7 @@ namespace MineS
 
 		public List<string> MapChip{ get { return this.mapChip; } }
 
+#if UNITY_EDITOR
 		[ContextMenu("Check")]
 		private void AssertionCheck()
 		{
@@ -61,6 +62,7 @@ namespace MineS
 		{
             this.shopTable = ShopTable.CreateFromCsv(this.name);
         }
+#endif
 
 		public override CellData[,] Create(CellManager cellManager)
 		{
