@@ -46,7 +46,11 @@ namespace MineS
 
 		public SerializeFieldGetter.AudioClip successTheft;
 
-		[SerializeField]
+        public SerializeFieldGetter.AudioClip avoidPlayer;
+
+        public SerializeFieldGetter.AudioClip avoidEnemy;
+
+        [SerializeField]
 		private SEElement prefabElement;
 
 		private Dictionary<AudioClip, SEElement> dictionary = new Dictionary<AudioClip, SEElement>();

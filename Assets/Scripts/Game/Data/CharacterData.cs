@@ -168,7 +168,11 @@ namespace MineS
 			var hitResult = this.CanAttack(target);
 			if(hitResult != GameDefine.AttackResultType.Hit)
 			{
-				if(hitResult == GameDefine.AttackResultType.Miss)
+                var avoidSE = this.CharacterType == GameDefine.CharacterType.Player
+                    ? SEManager.Instance.avoidPlayer
+                    : SEManager.Instance.avoidEnemy;
+                SEManager.Instance.PlaySE(avoidSE);
+                if(hitResult == GameDefine.AttackResultType.Miss)
 				{
 					InformationManager.OnMiss(this);
 				}

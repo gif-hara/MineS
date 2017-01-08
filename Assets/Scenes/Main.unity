@@ -24287,6 +24287,10 @@ MonoBehaviour:
     element: {fileID: 8300000, guid: e458c6e3eaa8e400392299ce621bfbb9, type: 3}
   successTheft:
     element: {fileID: 8300000, guid: f8654330df8494e1db8b12c096639370, type: 3}
+  avoidPlayer:
+    element: {fileID: 8300000, guid: ac3ba3b05e09a4cdbb09366f9d6a166a, type: 3}
+  avoidEnemy:
+    element: {fileID: 8300000, guid: 00eaafeff2faa4209b781fc60a1cf734, type: 3}
   prefabElement: {fileID: 114000012096606980, guid: dfa5d91d0823a40a081667c24b52d466,
     type: 2}
 --- !u!114 &1339646585
@@ -30815,7 +30819,7 @@ MonoBehaviour:
   data:
     bgmVolume: 0.5
     seVolume: 0.5
-    messageSpeed: 2
+    messageSpeed: 1
     isFewMessage: 0
     autoSort: 0
     swipeStop: 1
