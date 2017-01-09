@@ -30816,13 +30816,14 @@ MonoBehaviour:
   - {fileID: 674414086}
   - {fileID: 765326952}
   - {fileID: 1978675741}
+  - {fileID: 265858854}
   data:
     bgmVolume: 0.5
     seVolume: 0.5
     messageSpeed: 1
     isFewMessage: 0
     autoSort: 0
-    swipeStop: 1
+    swipeStop: 0
     visiblePlayTime: 0
     alwaysFrontPlayTime: 0
 --- !u!114 &1584263368
