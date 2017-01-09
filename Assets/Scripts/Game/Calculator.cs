@@ -314,7 +314,7 @@ namespace MineS
 		}
 
 		/// <summary>
-		/// 特殊能力の精巧いよるアーマー上昇値を返す.
+		/// 特殊能力の精巧によるアーマー上昇値を返す.
 		/// </summary>
 		/// <returns>The exquisite armor value.</returns>
 		/// <param name="attacker">Attacker.</param>
