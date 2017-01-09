@@ -45,14 +45,6 @@ namespace MineS
 			Item.AddOnUseItemEvent(this.OnUseItem);
 		}
 
-		void Update()
-		{
-			if(UnityEngine.Input.GetKeyDown(KeyCode.J))
-			{
-                Debug.Log(this.VisibleEnemies);
-            }
-		}
-
 		public EnemyData Create(CellData cellData)
 		{
 			Debug.AssertFormat(!this.Enemies.ContainsKey(cellData), "既に敵が存在します.");
