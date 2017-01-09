@@ -263,7 +263,8 @@ namespace MineS
 
 		public virtual void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint)
 		{
-			if(this.IsDead)
+            Assert.IsFalse(this.IsDead);
+            if(this.IsDead)
 			{
 				return;
 			}
