@@ -154,7 +154,7 @@ namespace MineS
 				{
 					this.TakeDamage(target, damage);
 					Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
-					var otherEnemy = EnemyManager.Instance.VisibleEnemies.Where(e => e != (target as EnemyData)).ToList();
+					var otherEnemy = EnemyManager.Instance.VisibleEnemies.Where(e => e != (target as EnemyData) && !e.IsDead).ToList();
 					if(otherEnemy.Count > 0)
 					{
 						var otherTarget = otherEnemy[Random.Range(0, otherEnemy.Count)];

@@ -45,6 +45,14 @@ namespace MineS
 			Item.AddOnUseItemEvent(this.OnUseItem);
 		}
 
+		void Update()
+		{
+			if(UnityEngine.Input.GetKeyDown(KeyCode.J))
+			{
+                Debug.Log(this.VisibleEnemies);
+            }
+		}
+
 		public EnemyData Create(CellData cellData)
 		{
 			Debug.AssertFormat(!this.Enemies.ContainsKey(cellData), "既に敵が存在します.");
@@ -97,7 +105,7 @@ namespace MineS
 
 		public CharacterData GetRandomEnemy(List<CharacterData> ignoreEnemy)
 		{
-			var target = this.VisibleEnemies.Where(e => ignoreEnemy.Find(i => i == e) == null).ToList();
+			var target = this.VisibleEnemies.Where(e => ignoreEnemy.Find(i => i == e) == null && !e.IsDead).ToList();
 
 			if(target.Count <= 0)
 			{
