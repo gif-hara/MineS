@@ -97,10 +97,16 @@ namespace MineS
 
 		public override void Dead(CharacterData attacker)
 		{
+			var resultManager = ResultManager.Instance;
+
+			// すでに結果処理が行われていたら処理しない
+			if(resultManager.IsResult)
+			{
+                return;
+            }
 			InformationManager.GameOver();
 			PlayerManager.Instance.CloseInventoryUI();
 			PlayerManager.Instance.NotifyCharacterDataObservers();
-			var resultManager = ResultManager.Instance;
 			var causeMessage = attacker == null
 				? resultManager.causeOtherDead.Element.Format(this.Name)
 				: resultManager.causeEnemyDead.Element.Format(attacker.Name);
