@@ -70,6 +70,8 @@ namespace MineS
 
         public virtual string Name{ get { return this.name; } }
 
+		public int Level{get { return this.level; } }
+
 		public int HitPointMax{ get { return this.hitPointMax; } }
 
 		public int HitPoint{ get { return this.hitPoint; } }

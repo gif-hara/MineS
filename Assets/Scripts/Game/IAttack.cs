@@ -12,7 +12,9 @@ namespace MineS
 	{
 		string Name{ get; }
 
-		int HitPointMax{ get; }
+		int Level{ get; }
+
+        int HitPointMax{ get; }
 
 		int HitPoint{ get; }
 

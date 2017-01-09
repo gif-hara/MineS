@@ -14,8 +14,6 @@ namespace MineS
 		[SerializeField]
 		private CharacterMasterData growthData = null;
 
-		public int Level{ get { return this.level; } }
-
 		public Inventory Inventory{ private set; get; }
 
 		private GameObject dyingEffect = null;

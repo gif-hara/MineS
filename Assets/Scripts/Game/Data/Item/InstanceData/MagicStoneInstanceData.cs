@@ -168,7 +168,7 @@ namespace MineS
 				{
 					var dungeonManager = DungeonManager.Instance;
 					var creatableEnemies = dungeonManager.CurrentDataAsDungeon.GetCreatableEnemies(dungeonManager.Floor)
-						.Where(e => e.Name != target.Name)
+						.Where(e => e != target.MasterData)
 						.ToList();
 					target.ChangeMasterData(creatableEnemies[Random.Range(0, creatableEnemies.Count)]);
 				}
