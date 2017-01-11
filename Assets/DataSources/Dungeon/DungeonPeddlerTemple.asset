@@ -1338,7 +1338,7 @@ MonoBehaviour:
     max: 3
   createAnvilRange:
     min: 0
-    max: 3
+    max: 0
   createMoneyRange:
     min: 3
     max: 5
