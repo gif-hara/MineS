@@ -48,6 +48,15 @@ namespace MineS
 			}
 		}
 
+		public override void Defeat(IAttack target)
+		{
+			// 肩代の敵を倒した場合はプレイヤーが倒したことにする
+			if(target.CharacterType == GameDefine.CharacterType.Enemy && target.FindAbnormalStatus(GameDefine.AbnormalStatusType.Assumption))
+			{
+                PlayerManager.Instance.Data.Defeat(target);
+            }
+		}
+
 		public override string ColorCode
 		{
 			get
