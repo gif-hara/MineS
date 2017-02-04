@@ -215,6 +215,12 @@ namespace MineS
             this.debuffEffect = Object.Instantiate(EffectManager.Instance.prefabDebuffEffect.Element, this.transform, false);
 		}
 
+	    public void DestroyBuffDebuffEffect()
+	    {
+	        Destroy(this.buffEffect);
+	        Destroy(this.debuffEffect);
+	    }
+
 		public void Action()
 		{
 			if(this.Data == null)

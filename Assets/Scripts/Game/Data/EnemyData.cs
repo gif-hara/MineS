@@ -254,6 +254,7 @@ namespace MineS
 		{
 			this.cellController.DamageEffectCreator.ForceRemove();
 			this.cellController.ForceRemoveImageShake();
+		    this.cellController.DestroyBuffDebuffEffect();
 
 			if(createDeadEffect)
 			{
