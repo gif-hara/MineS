@@ -59,7 +59,11 @@ namespace MineS
 
 		private Tweener imageShakeTweener = null;
 
-		public CellData Data{ private set; get; }
+        private GameObject buffEffect = null;
+
+        private GameObject debuffEffect = null;
+
+        public CellData Data{ private set; get; }
 
 		public CharacterDataObserver CharacterDataObserver{ get { return this.characterDataObserver; } }
 
@@ -165,6 +169,29 @@ namespace MineS
 		{
 			this.imageShakeTweener.Kill();
 			this.imageShakeTweener = null;
+		}
+
+		public void OnAddedAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
+		{
+			if(GameDefine.IsBuff(newAbnormalStatus.Type))
+			{
+				if(this.buffEffect == null)
+				{
+                    this.buffEffect = Object.Instantiate(EffectManager.Instance.prefabBuffEffect.Element, this.transform, false);
+                }
+			}
+			else
+			{
+				if(this.debuffEffect == null)
+				{
+                    this.debuffEffect = Object.Instantiate(EffectManager.Instance.prefabDebuffEffect.Element, this.transform, false);
+                }
+			}
+		}
+
+		public void OnRemovedAbnormalStatus(CharacterData characterData)
+		{
+
 		}
 
 		public void Action()

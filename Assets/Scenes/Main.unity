@@ -3217,10 +3217,10 @@ RectTransform:
   m_Father: {fileID: 1119999566}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 480, y: -93.28}
-  m_SizeDelta: {x: 800, y: 106.560005}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &182715907
 MonoBehaviour:
@@ -9336,9 +9336,9 @@ RectTransform:
   m_Father: {fileID: 842027360}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 371.25, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 371.25, y: -130}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518210043
@@ -10165,8 +10165,8 @@ RectTransform:
   m_Father: {fileID: 912330559}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 110, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
@@ -20485,7 +20485,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 960, y: 186.56}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1119999567
 MonoBehaviour:
@@ -30752,6 +30752,10 @@ MonoBehaviour:
     element: {fileID: 1000014151412420, guid: e5e27edb43c6241979fc0089e1a76b5d, type: 2}
   prefabInvokeStoneStatue:
     element: {fileID: 1000011697786726, guid: 9dbaf459bc9e24b0e92475dbbdf93c05, type: 2}
+  prefabBuffEffect:
+    element: {fileID: 1238452784904722, guid: 25c1b0137d8e7403a901cfb12c41409d, type: 2}
+  prefabDebuffEffect:
+    element: {fileID: 1856561042279486, guid: 4a8103ed8669d40f0a18d827b20a3ab6, type: 2}
   prefabSuccessTheft: {fileID: 114000012415848260, guid: 43c4bbbe700a44990b5e822e878418aa,
     type: 2}
   stoneStatueFloatingObject:
@@ -31767,7 +31771,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1626304124
 RectTransform:
   m_ObjectHideFlags: 0

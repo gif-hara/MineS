@@ -399,12 +399,19 @@ namespace MineS
 
 		protected virtual void OnAddedAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{
-		}
+            this.cellController.OnAddedAbnormalStatus(newAbnormalStatus);
+        }
 
 		public void RemoveAbnormalStatus(GameDefine.AbnormalStatusType type)
 		{
 			this.abnormalStatuses.RemoveAll(a => a.Type == type);
-		}
+            this.OnRemovedAbnormalStatus(type);
+        }
+
+		protected virtual void OnRemovedAbnormalStatus(GameDefine.AbnormalStatusType type)
+		{
+            this.cellController.OnRemovedAbnormalStatus(this);
+        }
 
 		public virtual void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{

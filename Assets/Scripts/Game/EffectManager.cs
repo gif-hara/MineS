@@ -90,7 +90,11 @@ namespace MineS
 
 		public SerializeFieldGetter.GameObject prefabInvokeStoneStatue;
 
-		[SerializeField]
+        public SerializeFieldGetter.GameObject prefabBuffEffect;
+
+        public SerializeFieldGetter.GameObject prefabDebuffEffect;
+
+        [SerializeField]
 		private ItemObserver prefabSuccessTheft;
 
 		[SerializeField]

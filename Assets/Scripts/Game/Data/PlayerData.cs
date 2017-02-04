@@ -38,7 +38,8 @@ namespace MineS
 
 		protected override void OnAddedAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{
-			if(GameDefine.IsBuff(newAbnormalStatus.Type))
+            base.OnAddedAbnormalStatus(newAbnormalStatus);
+            if(GameDefine.IsBuff(newAbnormalStatus.Type))
 			{
 				Object.Instantiate(EffectManager.Instance.prefabAddAbnormalBuff.Element, CanvasManager.Instance.EffectLv0.transform, false);
 			}
