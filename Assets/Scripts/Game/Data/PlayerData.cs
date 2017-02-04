@@ -341,6 +341,15 @@ namespace MineS
 			result.abilities = new List<AbilityBase>();
 			result.CreateDyingEffect();
 
+		    if (result.IsAnyBuff)
+		    {
+		        result.cellController.CreateBuffEffect();
+		    }
+		    if (result.IsAnyDebuff)
+		    {
+		        result.cellController.CreateDebuffEffect();
+		    }
+
 			return result;
 		}
 
