@@ -20,19 +20,27 @@ namespace MineS
 		[SerializeField]
 		private Color damageColor;
 
+	    [SerializeField]
+	    private StringAsset.Finder missMessage;
+
 		public void AsDamage(int damage)
 		{
-			this.Set(damage, this.damageColor);
+			this.Set(damage.ToString(), this.damageColor);
 		}
 
 		public void AsRecovery(int damage)
 		{
-			this.Set(damage, this.recoveryColor);
+			this.Set(damage.ToString(), this.recoveryColor);
 		}
 
-		private void Set(int damage, Color color)
+	    public void AsMiss()
+	    {
+	        this.Set(this.missMessage.Get, this.damageColor);
+	    }
+
+	    private void Set(string message, Color color)
 		{
-			this.target.text = damage.ToString();
+			this.target.text = message;
 			this.target.color = color;
 		}
 	}

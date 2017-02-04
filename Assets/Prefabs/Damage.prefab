@@ -16,15 +16,15 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 224: {fileID: 224000011816173002}
-  - 114: {fileID: 114000012685630682}
-  - 114: {fileID: 114000012262463128}
-  - 114: {fileID: 114000013307704974}
-  - 114: {fileID: 114000010422155798}
-  - 114: {fileID: 114000013000774892}
-  - 114: {fileID: 114000010703414974}
+  - component: {fileID: 224000011816173002}
+  - component: {fileID: 114000012685630682}
+  - component: {fileID: 114000012262463128}
+  - component: {fileID: 114000013307704974}
+  - component: {fileID: 114000010422155798}
+  - component: {fileID: 114000013000774892}
+  - component: {fileID: 114000010703414974}
   m_Layer: 9
   m_Name: Damage
   m_TagString: Untagged
@@ -37,14 +37,14 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 224: {fileID: 224000011350691688}
-  - 222: {fileID: 222000011136946956}
-  - 114: {fileID: 114000013393525338}
-  - 114: {fileID: 114000012774683160}
-  - 114: {fileID: 114000013094310660}
-  - 225: {fileID: 225000010082293434}
+  - component: {fileID: 224000011350691688}
+  - component: {fileID: 222000011136946956}
+  - component: {fileID: 114000013393525338}
+  - component: {fileID: 114000012774683160}
+  - component: {fileID: 114000013094310660}
+  - component: {fileID: 225000010082293434}
   m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
@@ -88,6 +88,8 @@ MonoBehaviour:
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
 --- !u!114 &114000012262463128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,6 +116,10 @@ MonoBehaviour:
   target: {fileID: 114000013393525338}
   recoveryColor: {r: 0.102941155, g: 1, b: 0.14624752, a: 1}
   damageColor: {r: 1, g: 0.13235295, b: 0.13235295, a: 1}
+  missMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: MISS
+    guid: 9ab2cc54-127d-41ac-bc89-d0e84bce78b5
 --- !u!114 &114000012774683160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,6 +174,8 @@ MonoBehaviour:
   from: {x: 0, y: 0, z: 0}
   to: {x: 0, y: 60, z: 0}
   duration: 0.15
+  loopCount: 1
+  loopType: 0
   ease: 6
   target: {fileID: 224000011350691688}
 --- !u!114 &114000013393525338
@@ -218,10 +226,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 224000011816173002}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -236,11 +244,11 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 224000011350691688}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}

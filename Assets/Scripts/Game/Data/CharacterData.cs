@@ -182,6 +182,7 @@ namespace MineS
 				{
 					InformationManager.OnMissByFear(this);
 				}
+			    target.cellController.Miss();
 				return;
 			}
 

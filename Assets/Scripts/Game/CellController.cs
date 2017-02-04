@@ -150,6 +150,11 @@ namespace MineS
 			this.Data.Setup();
 		}
 
+	    public void Miss()
+	    {
+	        this.damageEffectCreator.CreateMiss(this.transform.position, CanvasManager.Instance.EffectLv1.transform);
+	    }
+
 		public void TakeDamage(int damage)
 		{
 			this.damageEffectCreator.CreateAsDamage(damage, this.transform.position, CanvasManager.Instance.EffectLv1.transform);

@@ -55,6 +55,15 @@ namespace MineS
 			});
 		}
 
+	    public void CreateMiss(Vector3 position, Transform parent)
+	    {
+	        this.requests.Enqueue(() =>
+	        {
+	            this.currentEffect = this.Create(position, parent);
+	            this.currentEffect.AsMiss();
+	        });
+	    }
+
 		private DamageUI Create(Vector3 position, Transform parent)
 		{
 			return Instantiate(this.prefab, position, Quaternion.identity, parent) as DamageUI;
