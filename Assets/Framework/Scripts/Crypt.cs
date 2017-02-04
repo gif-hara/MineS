@@ -10,24 +10,36 @@ namespace HK.Framework
 	/// Crypt.
 	/// http://magnaga.com/unity/2016/01/11/unity-save/
 	/// </summary>
-	public class Crypt
+	public static class Crypt
 	{
 
 		private const string AesIV = @"Yg7FavTgpQl30UbX";
 		private const string AesKey = @"1GboYhc8SmU4g0yb";
 
+	    private static RijndaelManaged aes = null;
+	    public static RijndaelManaged Aes
+	    {
+	        get
+	        {
+	            if (aes == null)
+	            {
+	                aes = new RijndaelManaged();
+	                aes.BlockSize = 128;
+	                aes.KeySize = 128;
+	                aes.Padding = PaddingMode.Zeros;
+	                aes.Mode = CipherMode.CBC;
+	                aes.Key = System.Text.Encoding.UTF8.GetBytes(AesKey);
+	                aes.IV = System.Text.Encoding.UTF8.GetBytes(AesIV);
+	            }
+
+	            return aes;
+	        }
+	    }
+
+
 		public static string Encrypt(string text)
 		{
-
-			RijndaelManaged aes = new RijndaelManaged();
-			aes.BlockSize = 128;
-			aes.KeySize = 128;
-			aes.Padding = PaddingMode.Zeros;
-			aes.Mode = CipherMode.CBC;
-			aes.Key = System.Text.Encoding.UTF8.GetBytes(AesKey);
-			aes.IV = System.Text.Encoding.UTF8.GetBytes(AesIV);
-
-			ICryptoTransform encrypt = aes.CreateEncryptor();
+			ICryptoTransform encrypt = Aes.CreateEncryptor();
 			MemoryStream memoryStream = new MemoryStream();
 			CryptoStream cryptStream = new CryptoStream(memoryStream, encrypt, CryptoStreamMode.Write);
 
@@ -43,15 +55,7 @@ namespace HK.Framework
 
 		public static string Decrypt(string cryptText)
 		{
-			RijndaelManaged aes = new RijndaelManaged();
-			aes.BlockSize = 128;
-			aes.KeySize = 128;
-			aes.Padding = PaddingMode.Zeros;
-			aes.Mode = CipherMode.CBC;
-			aes.Key = System.Text.Encoding.UTF8.GetBytes(AesKey);
-			aes.IV = System.Text.Encoding.UTF8.GetBytes(AesIV);
-
-			ICryptoTransform decryptor = aes.CreateDecryptor();
+			ICryptoTransform decryptor = Aes.CreateDecryptor();
 
 			byte[] encrypted = System.Convert.FromBase64String(cryptText);
 			byte[] planeText = new byte[encrypted.Length];
