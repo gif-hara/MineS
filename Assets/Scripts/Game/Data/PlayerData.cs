@@ -96,6 +96,7 @@ namespace MineS
 
 		public override void Dead(CharacterData attacker)
 		{
+		    base.Dead(attacker);
 			var resultManager = ResultManager.Instance;
 
 			// すでに結果処理が行われていたら処理しない

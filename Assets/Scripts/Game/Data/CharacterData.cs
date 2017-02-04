@@ -315,7 +315,10 @@ namespace MineS
 		{
 		}
 
-		public abstract void Dead(CharacterData attacker);
+	    public virtual void Dead(CharacterData attacker)
+	    {
+	        this.cellController.DestroyBuffDebuffEffect();
+	    }
 
 		public abstract string ColorCode{ get; }
 

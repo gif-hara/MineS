@@ -22,6 +22,7 @@ namespace MineS
 		}
 		public override void Dead(CharacterData attacker)
 		{
+		    base.Dead(attacker);
 			this.OnDead(true);
 
 			SEManager.Instance.PlaySE(SEManager.Instance.dead);
@@ -254,7 +255,6 @@ namespace MineS
 		{
 			this.cellController.DamageEffectCreator.ForceRemove();
 			this.cellController.ForceRemoveImageShake();
-		    this.cellController.DestroyBuffDebuffEffect();
 
 			if(createDeadEffect)
 			{
