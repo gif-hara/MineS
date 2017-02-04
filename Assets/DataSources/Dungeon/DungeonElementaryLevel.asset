@@ -72,7 +72,7 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: cf37f3c4351964e17836d25a20dbefe5, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
-        probability: 100
+        probability: 20
     - floorRange:
         min: 5
         max: 6
@@ -82,7 +82,7 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: 94231d284b74c4a0c83708a62ed534c3, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
-        probability: 100
+        probability: 40
     - floorRange:
         min: 7
         max: 8
@@ -96,7 +96,7 @@ MonoBehaviour:
         max: 10
       enemies:
       - masterData: {fileID: 11400000, guid: fa4a55beaa7a244ef91590c10de2f293, type: 2}
-        probability: 100
+        probability: 50
       - masterData: {fileID: 11400000, guid: 649ca90f7ce90465680df5cdf56b8f37, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: f2a9bee251178425eaf7ad66bf9646c2, type: 2}
