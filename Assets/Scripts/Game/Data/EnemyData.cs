@@ -85,11 +85,6 @@ namespace MineS
 			}
 		}
 
-		public override void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)
-		{
-			base.OnLateTurnProgress(type, turnCount);
-		}
-
 		public override void ForceLevelUp(int value)
 		{
 			if(this.masterData.NextLevelData == null)
