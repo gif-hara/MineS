@@ -175,23 +175,37 @@ namespace MineS
 		{
 			if(GameDefine.IsBuff(newAbnormalStatus.Type))
 			{
-				if(this.buffEffect == null)
-				{
-                    this.buffEffect = Object.Instantiate(EffectManager.Instance.prefabBuffEffect.Element, this.transform, false);
-                }
-			}
+                this.CreateBuffEffect();
+            }
 			else
 			{
-				if(this.debuffEffect == null)
-				{
-                    this.debuffEffect = Object.Instantiate(EffectManager.Instance.prefabDebuffEffect.Element, this.transform, false);
-                }
-			}
+                this.CreateDebuffEffect();
+            }
 		}
 
 		public void OnRemovedAbnormalStatus(CharacterData characterData)
 		{
 
+		}
+
+		public void CreateBuffEffect()
+		{
+			if(this.buffEffect != null)
+			{
+                return;
+            }
+
+            this.buffEffect = Object.Instantiate(EffectManager.Instance.prefabBuffEffect.Element, this.transform, false);
+		}
+
+		public void CreateDebuffEffect()
+		{
+			if(this.debuffEffect != null)
+			{
+                return;
+            }
+
+            this.debuffEffect = Object.Instantiate(EffectManager.Instance.prefabDebuffEffect.Element, this.transform, false);
 		}
 
 		public void Action()

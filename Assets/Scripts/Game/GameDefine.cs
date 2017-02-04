@@ -1066,6 +1066,13 @@ namespace MineS
 			type == AbnormalStatusType.Happiness;
 		}
 
+	    public static bool IsDebuff(GameDefine.AbnormalStatusType type)
+	    {
+	        Debug.AssertFormat(type != AbnormalStatusType.None, "不正な値です.");
+
+	        return !GameDefine.IsBuff(type);
+	    }
+
 		public static string GetAbnormalStatusDescriptionKey(GameDefine.AbnormalStatusType type)
 		{
 			switch(type)

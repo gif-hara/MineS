@@ -3,6 +3,7 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace MineS
 {
@@ -212,7 +213,15 @@ namespace MineS
 			obj.abilities = AbilityFactory.Create(obj.abilityTypes, obj);
 			obj.cellController = cellController;
 			DeserializeAbnormalStatuses(key, obj);
-			return obj;
+		    if (obj.IsAnyBuff)
+		    {
+		        obj.cellController.CreateBuffEffect();
+		    }
+		    if (obj.IsAnyDebuff)
+		    {
+		        obj.cellController.CreateDebuffEffect();
+		    }
+            return obj;
 		}
 
 		protected override void OnTakedDamage(CharacterData attacker, int value, bool onlyHitPoint)

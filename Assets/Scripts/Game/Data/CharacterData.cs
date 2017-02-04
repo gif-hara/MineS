@@ -449,7 +449,17 @@ namespace MineS
 			return this.GetAbilityNumber(type) > 0;
 		}
 
-		public int GetAbilityNumber(GameDefine.AbilityType type)
+	    public bool IsAnyBuff
+	    {
+	        get { return this.abnormalStatuses.Find(a => GameDefine.IsBuff(a.Type)) != null; }
+	    }
+
+	    public bool IsAnyDebuff
+	    {
+	        get { return this.abnormalStatuses.Find(a => GameDefine.IsDebuff(a.Type)) != null; }
+	    }
+
+	    public int GetAbilityNumber(GameDefine.AbilityType type)
 		{
 			// 封印状態なら常にfalseを返す.
 			if(this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Seal))
