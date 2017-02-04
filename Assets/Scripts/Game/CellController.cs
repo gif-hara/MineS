@@ -136,6 +136,7 @@ namespace MineS
 
 		public void SetCellData(CellData data)
 		{
+		    this.DestroyBuffDebuffEffect();
 			this.SetActiveStatusObject(false);
 			this.SetText("");
 			this.SetImage(null);
