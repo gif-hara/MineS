@@ -185,7 +185,14 @@ namespace MineS
 
 		public void OnRemovedAbnormalStatus(CharacterData characterData)
 		{
-
+		    if (!characterData.IsAnyBuff)
+		    {
+		        Destroy(this.buffEffect);
+		    }
+		    if (!characterData.IsAnyDebuff)
+		    {
+		        Destroy(this.debuffEffect);
+		    }
 		}
 
 		public void CreateBuffEffect()
