@@ -419,7 +419,13 @@ namespace MineS
 		public virtual void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
 		{
 			this.abnormalStatuses.ForEach(a => a.OnTurnProgress(type, turnCount));
-			this.abnormalStatuses.RemoveAll(a => !a.IsValid);
+		    var invalidIndex = this.abnormalStatuses.FindIndex(a => !a.IsValid);
+		    while (invalidIndex != -1)
+		    {
+		        this.RemoveAbnormalStatus(this.abnormalStatuses[invalidIndex].Type);
+		        invalidIndex = this.abnormalStatuses.FindIndex(a => !a.IsValid);
+		    }
+
 			if(!this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Seal))
 			{
 				this.Abilities.ForEach(a => a.OnTurnProgress(type, turnCount));
