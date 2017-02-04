@@ -53,7 +53,7 @@ namespace MineS
 
 		private static bool CanAttackEnemy(CharacterData enemy)
 		{
-			return !enemy.IsDead && !enemy.FindAbility(GameDefine.AbilityType.LongRangeAttack);
+			return !enemy.IsDead && !enemy.FindAbility(GameDefine.AbilityType.LongRangeAttack) && !enemy.FindAbnormalStatus(GameDefine.AbnormalStatusType.Confusion);
 		}
 	}
 }
