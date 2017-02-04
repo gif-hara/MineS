@@ -793,7 +793,7 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: 9f8d502de637744d99a98949689f57a4, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 11f681ffd5fca49c097a5caed31d23e3, type: 2}
-        probability: 100
+        probability: 50
       - masterData: {fileID: 11400000, guid: 714e1bde786804d329994d8b049219ce, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
@@ -809,7 +809,7 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: 7d7fcc16ddb164c38b1e65daa0839f4a, type: 2}
         probability: 60
       - masterData: {fileID: 11400000, guid: 11f681ffd5fca49c097a5caed31d23e3, type: 2}
-        probability: 80
+        probability: 50
       - masterData: {fileID: 11400000, guid: 23648adb281d0413e8b76884dcf09594, type: 2}
         probability: 10
     - floorRange:
@@ -893,7 +893,7 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: a9a69e7b003ba44309053111f383e998, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: c4735073ceff446649272e33dd2fe582, type: 2}
-        probability: 100
+        probability: 50
       - masterData: {fileID: 11400000, guid: 2664c6b88a3774eb58b7b3a2fe2b36fd, type: 2}
         probability: 80
       - masterData: {fileID: 11400000, guid: 2669507a80614453f8ca686e99748f3d, type: 2}
@@ -905,7 +905,7 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: 76d0526b93cc34716886397f448ffe00, type: 2}
         probability: 90
       - masterData: {fileID: 11400000, guid: c4735073ceff446649272e33dd2fe582, type: 2}
-        probability: 40
+        probability: 30
       - masterData: {fileID: 11400000, guid: a9a69e7b003ba44309053111f383e998, type: 2}
         probability: 50
       - masterData: {fileID: 11400000, guid: 2669507a80614453f8ca686e99748f3d, type: 2}
@@ -1049,7 +1049,7 @@ MonoBehaviour:
       - masterData: {fileID: 11400000, guid: 195d32c3395c644b5a6ca3fb7d1fa3cc, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: cd2973964066e43d0b765a00baa2026a, type: 2}
-        probability: 100
+        probability: 50
       - masterData: {fileID: 11400000, guid: 782d91bf9cfc7436294fb9097f517b15, type: 2}
         probability: 100
       - masterData: {fileID: 11400000, guid: 97e9a7e2c1f9b408c985738b5e5822d9, type: 2}
