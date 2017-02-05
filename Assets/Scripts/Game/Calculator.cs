@@ -218,7 +218,7 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static int GetGoemonValue(IAttack attacker)
 		{
-			return Random.Range(10, (attacker.GetAbilityNumber(GameDefine.AbilityType.Goemon) * 200) + 1);
+			return Random.Range(10, (attacker.GetAbilityNumber(GameDefine.AbilityType.Goemon) * 100) + 1);
 		}
 
 		/// <summary>
