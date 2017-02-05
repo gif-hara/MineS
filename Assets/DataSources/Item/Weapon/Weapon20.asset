@@ -16,11 +16,11 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: 0ded2a4acf5104022a19259bf2a62162, type: 2}
     value: "\u5E78\u904B\u306E\u5263"
     guid: eafb3a14-80be-4741-a72f-c586488df7af
-  purchasePrice: 13000
-  sellingPrice: 6500
+  purchasePrice: 10000
+  sellingPrice: 5000
   image: {fileID: 21300000, guid: 9775e63c5c76caf4c93224e067a5ca49, type: 3}
   basePower: 4
-  brandingLimit: 5
+  brandingLimit: 6
   canExtraction: 1
   itemType: 1
   abilities: 0c000000
