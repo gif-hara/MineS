@@ -184,7 +184,7 @@ namespace MineS
 		{
 			get
 			{
-				return 2000 + 500 * this.Level;
+				return 1000 + 200 * this.Level;
 			}
 		}
 
