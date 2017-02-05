@@ -17,7 +17,7 @@ MonoBehaviour:
     guid: 58821359-3e9e-411e-988d-7b904200fdb8
   level: 3
   hitPoint: 140
-  strength: 20
+  strength: 16
   armor: 0
   hitProbability: 90
   evasion: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   money: 0
   dropItemProbability: 2
   overrideDropItems: []
-  abilityTypes: 1b0000001b0000001b0000001b000000
+  abilityTypes: 1b0000001b0000001b0000001b0000001b000000
   image: {fileID: 21300000, guid: 2233ee63ef46746cfb69527c8ea7f8b6, type: 3}
   previousLevelData: {fileID: 11400000, guid: 7d7fcc16ddb164c38b1e65daa0839f4a, type: 2}
   nextLevelData: {fileID: 0}
