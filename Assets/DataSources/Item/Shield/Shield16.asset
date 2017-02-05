@@ -20,7 +20,7 @@ MonoBehaviour:
   sellingPrice: 4400
   image: {fileID: 21300000, guid: 7516741e19cf7f846b51872200e1ff65, type: 3}
   basePower: 5
-  brandingLimit: 6
+  brandingLimit: 7
   canExtraction: 1
   itemType: 2
   abilities: 04000000
