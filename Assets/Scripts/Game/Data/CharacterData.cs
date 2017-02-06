@@ -227,13 +227,16 @@ namespace MineS
 				this.RecoveryArmor(Calculator.GetRepairValue(this), true);
 			}
 
-			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.PoisonPainted, GameDefine.AbnormalStatusType.Poison);
-			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Absentmindedness, GameDefine.AbnormalStatusType.Blur);
-			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.VitalsPoke, GameDefine.AbnormalStatusType.Gout);
-			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.BladeBroken, GameDefine.AbnormalStatusType.Dull);
-			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Derangement, GameDefine.AbnormalStatusType.Confusion);
-			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Intimidation, GameDefine.AbnormalStatusType.Fear);
-			this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Curse, GameDefine.AbnormalStatusType.Seal);
+		    if (!target.IsDead)
+		    {
+		        this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.PoisonPainted, GameDefine.AbnormalStatusType.Poison);
+		        this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Absentmindedness, GameDefine.AbnormalStatusType.Blur);
+		        this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.VitalsPoke, GameDefine.AbnormalStatusType.Gout);
+		        this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.BladeBroken, GameDefine.AbnormalStatusType.Dull);
+		        this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Derangement, GameDefine.AbnormalStatusType.Confusion);
+		        this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Intimidation, GameDefine.AbnormalStatusType.Fear);
+		        this.AddAbnormalStatusFromAbility(target, GameDefine.AbilityType.Curse, GameDefine.AbnormalStatusType.Seal);
+		    }
 		}
 
 		protected void GiveDamage(CharacterData target, bool onlyHitPoint)
