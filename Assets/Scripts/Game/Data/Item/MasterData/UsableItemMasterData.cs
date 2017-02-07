@@ -187,6 +187,7 @@ namespace MineS
 						var item = DungeonManager.Instance.CreateItem();
 						cellData.BindCellClickAction(new AcquireItemAction(item));
 						cellData.BindDeployDescription(new DeployDescriptionOnItem(item));
+					    cellData.Controller.DestroyBuffDebuffEffect();
 						InformationManager.OnUseAlchemy(user);
 					}
 					else
