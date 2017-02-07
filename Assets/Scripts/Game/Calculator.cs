@@ -207,7 +207,7 @@ namespace MineS
 				return 0;
 			}
 
-			return (abilityNumber * 3) + 1;
+			return (abilityNumber * 5) + 2;
 		}
 
 		/// <summary>
