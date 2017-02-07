@@ -260,7 +260,7 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static int GetRiskOfLifeAddStrengthValue(IAttack attacker)
 		{
-			return attacker.GetAbilityNumber(GameDefine.AbilityType.RiskOfLife) * 6;
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.RiskOfLife) * 10;
 		}
 
 		/// <summary>
