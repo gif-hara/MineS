@@ -320,7 +320,7 @@ namespace MineS
 		/// <param name="attacker">Attacker.</param>
 		public static int GetExquisiteArmorValue(IAttack attacker)
 		{
-			return attacker.GetAbilityNumber(GameDefine.AbilityType.Exquisite) * 3;
+			return 7 + attacker.GetAbilityNumber(GameDefine.AbilityType.Exquisite) * 8;
 		}
 
 		/// <summary>
