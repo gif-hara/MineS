@@ -353,7 +353,8 @@ namespace MineS
 				return false;
 			}
 
-			var probability = 10 + attacker.GetAbilityNumber(abilityType) * 2;
+		    var rate = attacker.CharacterType == GameDefine.CharacterType.Player ? 2 : 10;
+			var probability = 10 + attacker.GetAbilityNumber(abilityType) * rate;
 
 			return probability > Random.Range(0, 100);
 		}
