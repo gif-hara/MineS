@@ -17,11 +17,11 @@ MonoBehaviour:
     guid: e4e0cde3-c744-4a8e-bf0b-50fc72b20195
   level: 3
   hitPoint: 985
-  strength: 43
+  strength: 21
   armor: 0
   hitProbability: 90
   evasion: 0
-  experience: 94
+  experience: 188
   money: 0
   dropItemProbability: 2
   overrideDropItems: []

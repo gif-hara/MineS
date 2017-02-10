@@ -18,7 +18,7 @@ MonoBehaviour:
   level: 2
   hitPoint: 44
   strength: 36
-  armor: 308
+  armor: 193
   hitProbability: 90
   evasion: 0
   experience: 361
