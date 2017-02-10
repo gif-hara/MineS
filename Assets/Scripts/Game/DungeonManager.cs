@@ -264,6 +264,7 @@ namespace MineS
 				ItemManager.Instance.Serialize();
 				AchievementManager.Instance.Serialize();
 				DungeonSerializer.Save(this.floorCount, this.current, BGMManager.Instance.Current);
+			    TurnManager.Instance.Serialize();
 				HK.Framework.SaveData.Save();
 			}
 			else
@@ -279,6 +280,7 @@ namespace MineS
 			ItemManager.Instance.Deserialize();
 			AchievementManager.Instance.Deserialize();
 			DungeonSerializer.InvalidSaveData();
+		    TurnManager.Instance.Deserialize();
 
 			CellManager.Instance.LateDeserialize();
 

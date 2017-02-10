@@ -31343,7 +31343,7 @@ MonoBehaviour:
     isFewMessage: 0
     autoSort: 0
     swipeStop: 1
-    visiblePlayTime: 1
+    visiblePlayTime: 0
     alwaysFrontPlayTime: 0
 --- !u!114 &1584263368
 MonoBehaviour:

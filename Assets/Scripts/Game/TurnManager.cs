@@ -23,9 +23,16 @@ namespace MineS
 
 		public IntReactiveProperty Count { private set; get; }
 
+	    private const string CountSerializeKeyName = "TurnCount";
+
 	    void Awake()
 	    {
 	        this.Count = new IntReactiveProperty();
+	    }
+
+	    void Start()
+	    {
+	        DungeonManager.Instance.AddNextFloorEvent(() => this.Count.Value = 0);
 	    }
 
 		public void Progress(GameDefine.TurnProgressType type)
@@ -36,6 +43,17 @@ namespace MineS
 			Calculator.ResetCanInvokeSummon();
 			DungeonManager.Instance.Serialize();
 		}
+
+	    public void Serialize()
+	    {
+	        HK.Framework.SaveData.SetInt(CountSerializeKeyName, this.Count.Value);
+	    }
+
+	    public void Deserialize()
+	    {
+	        this.Count.Value = HK.Framework.SaveData.GetInt(CountSerializeKeyName);
+	    }
+
 
 		public void AddEndTurnEvent(UnityAction<GameDefine.TurnProgressType, int> action)
 		{
