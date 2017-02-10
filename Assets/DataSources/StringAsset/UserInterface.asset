@@ -806,3 +806,7 @@ MonoBehaviour:
       ja: MISS
       en: 
     guid: 9ab2cc54-127d-41ac-bc89-d0e84bce78b5
+  - value:
+      ja: Turn:{0}
+      en: 
+    guid: 047c9501-8fea-4033-85f2-a2c8cee03cd2

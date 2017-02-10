@@ -3,6 +3,7 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
 using UnityEngine.Events;
+using UniRx;
 
 namespace MineS
 {
@@ -20,13 +21,18 @@ namespace MineS
 
 		private ProgressEvent lateEndTurnProgressEvent = new ProgressEvent();
 
-		private int count = 0;
+		public IntReactiveProperty Count { private set; get; }
+
+	    void Awake()
+	    {
+	        this.Count = new IntReactiveProperty();
+	    }
 
 		public void Progress(GameDefine.TurnProgressType type)
 		{
-			this.count++;
-			this.endTurnProgressEvent.Invoke(type, this.count);
-			this.lateEndTurnProgressEvent.Invoke(type, this.count);
+			this.Count.Value++;
+			this.endTurnProgressEvent.Invoke(type, this.Count.Value);
+			this.lateEndTurnProgressEvent.Invoke(type, this.Count.Value);
 			Calculator.ResetCanInvokeSummon();
 			DungeonManager.Instance.Serialize();
 		}
