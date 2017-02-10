@@ -513,7 +513,7 @@ MonoBehaviour:
     - floorRange:
         min: 5
         max: 90
-      probability: 10
+      probability: 18
       itemTable:
         elements:
         - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
@@ -1495,7 +1495,7 @@ MonoBehaviour:
     - floorRange:
         min: 5
         max: 90
-      probability: 10
+      probability: 18
   stoneStatueTable:
     elements:
     - floorRange:
