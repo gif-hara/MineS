@@ -436,7 +436,7 @@ MonoBehaviour:
           probability: 50
     - floorRange:
         min: 41
-        max: 47
+        max: 50
       probability: 20
       itemTable:
         elements:
@@ -465,13 +465,13 @@ MonoBehaviour:
         - masterData: {fileID: 11400000, guid: f8444afd086a540df847abff2691a866, type: 2}
           probability: 50
         - masterData: {fileID: 11400000, guid: bd29123d4987641a2a7148f164dabbe7, type: 2}
-          probability: 200
+          probability: 500
         - masterData: {fileID: 11400000, guid: 31f7cab888b1f4171bdb8b59a5fab6ff, type: 2}
-          probability: 200
+          probability: 500
         - masterData: {fileID: 11400000, guid: 5ccd2bb416ac2491095026a154e72cda, type: 2}
-          probability: 200
+          probability: 500
         - masterData: {fileID: 11400000, guid: 4af5b264a44ed4025aae776caa4b1e62, type: 2}
-          probability: 200
+          probability: 500
   otherDungeonProccesses:
     proccesses: []
   clearDungeonProccesses:
