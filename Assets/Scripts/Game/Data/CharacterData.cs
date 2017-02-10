@@ -435,16 +435,24 @@ namespace MineS
 				this.Abilities.ForEach(a => a.OnTurnProgress(type, turnCount));
 			}
 
-			if(this.FindAbility(GameDefine.AbilityType.Summon) && !this.IsDead && Calculator.CanInvokeSummon)
-			{
-				var blankCell = CellManager.Instance.RandomBlankCell(true);
-				if(blankCell != null)
-				{
-					var enemy = EnemyManager.Instance.Create(blankCell);
-					EnemyManager.BindCombatEnemyAction(blankCell, enemy);
-					UnityEngine.Object.Instantiate(EffectManager.Instance.prefabSummon.Element, blankCell.Controller.transform, false);
-				}
-			}
+		    if (!this.IsDead)
+		    {
+		        if(this.FindAbility(GameDefine.AbilityType.Summon) && Calculator.CanInvokeSummon)
+		        {
+		            var blankCell = CellManager.Instance.RandomBlankCell(true);
+		            if(blankCell != null)
+		            {
+		                var enemy = EnemyManager.Instance.Create(blankCell);
+		                EnemyManager.BindCombatEnemyAction(blankCell, enemy);
+		                UnityEngine.Object.Instantiate(EffectManager.Instance.prefabSummon.Element, blankCell.Controller.transform, false);
+		            }
+		        }
+		        if (this.FindAbility(GameDefine.AbilityType.Regeneration))
+		        {
+		            this.RecoveryHitPoint(Calculator.GetRegenerationAbilityValue(this), true);
+		        }
+		    }
+
 		}
 
 		public virtual void OnLateTurnProgress(GameDefine.TurnProgressType type, int turnCount)

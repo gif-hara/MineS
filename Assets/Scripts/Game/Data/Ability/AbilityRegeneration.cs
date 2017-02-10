@@ -14,15 +14,5 @@ namespace MineS
 			: base(GameDefine.AbilityType.Regeneration, holder, "Regeneration")
 		{
 		}
-
-		public override void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)
-		{
-			if(this.Holder == null)
-			{
-				return;
-			}
-
-			this.Holder.RecoveryHitPoint(Calculator.GetRegenerationAbilityValue(this.Holder), true);
-		}
 	}
 }
