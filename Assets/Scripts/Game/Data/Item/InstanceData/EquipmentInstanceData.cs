@@ -117,6 +117,7 @@ namespace MineS
 			var targetEquipmentData = target.InstanceData as EquipmentInstanceData;
 			this.AddAbility(targetEquipmentData.Abilities);
 			this.level += targetEquipmentData.Level;
+		    this.level = this.level > GameDefine.EquipmentLevelMax ? GameDefine.EquipmentLevelMax : this.level;
 		}
 
 		public bool CanRemoveAbility(int index)
