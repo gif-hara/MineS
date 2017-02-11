@@ -19,8 +19,12 @@ namespace MineS
 
 		public override void Invoke(CellData data)
 		{
-			Debug.AssertFormat(this.item != null, "アイテムがありません.");
-			WareHouseManager.Instance.LeaveItem(this.item);
+		    if (this.item == null)
+		    {
+		        return;
+		    }
+
+		    WareHouseManager.Instance.LeaveItem(this.item);
 		}
 
 		public override void SetCellController(CellController cellController)
