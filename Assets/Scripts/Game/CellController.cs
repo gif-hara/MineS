@@ -73,6 +73,11 @@ namespace MineS
 
 		private const float WaitDeployDescriptionTime = 0.5f;
 
+	    void Start()
+	    {
+	        DungeonManager.Instance.AddNextFloorEvent(this.OnNextFloor);
+	    }
+
 #region IPointerDownHandler implementation
 
 		public void OnPointerDown(PointerEventData eventData)
@@ -383,8 +388,15 @@ namespace MineS
 
 		private void Infeasible(GameDefine.ActionableType actionableType)
 		{
-			Debug.Log("Not Executable = " + actionableType);
 		}
+
+	    private void OnNextFloor()
+	    {
+	        if (this.damageEffectCreator != null)
+	        {
+	            this.damageEffectCreator.ForceRemove();
+	        }
+	    }
 
 		private void ModifiedCanStep(bool canStep)
 		{
