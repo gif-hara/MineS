@@ -633,9 +633,9 @@ MonoBehaviour:
         - masterData: {fileID: 11400000, guid: 54bc1bc067d33403e9abc35b7f73dd56, type: 2}
           probability: 50
         - masterData: {fileID: 11400000, guid: b62776a0fcafe4780874b6b16363f0b0, type: 2}
-          probability: 50
+          probability: 30
         - masterData: {fileID: 11400000, guid: 385213eba3b1346c496f8f73d5197e11, type: 2}
-          probability: 50
+          probability: 30
         - masterData: {fileID: 11400000, guid: 7227855bcc3734b9197c551c0655cc1c, type: 2}
           probability: 50
         - masterData: {fileID: 11400000, guid: 744cb84fccfed40d797e16732b209875, type: 2}
