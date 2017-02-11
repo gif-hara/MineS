@@ -25,7 +25,7 @@ namespace MineS
 
 	    private const string CountSerializeKeyName = "TurnCount";
 
-	    void Awake()
+	    protected override void Awake()
 	    {
 	        this.Count = new IntReactiveProperty();
 	    }
