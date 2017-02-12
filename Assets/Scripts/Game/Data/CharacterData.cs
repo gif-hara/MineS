@@ -239,7 +239,7 @@ namespace MineS
 		    }
 		}
 
-		protected void GiveDamage(CharacterData target, bool onlyHitPoint)
+		public int GiveDamage(CharacterData target, bool onlyHitPoint)
 		{
 		    var actuallyDamage = 0;
 			var damage = target.TakeDamage(this, this.FinalStrength, out actuallyDamage, onlyHitPoint);
@@ -248,6 +248,8 @@ namespace MineS
 			{
 				this.Defeat(target);
 			}
+
+		    return damage;
 		}
 
 		protected void GiveDamageRaw(CharacterData target, int damage, bool onlyHitPoint)
@@ -310,7 +312,6 @@ namespace MineS
 				this.Dead(attacker);
 			}
 
-		    Debug.Log(new{attacker = attacker.name, actuallyDamage = actuallyDamage});
 		    return actuallyDamage;
 		}
 
