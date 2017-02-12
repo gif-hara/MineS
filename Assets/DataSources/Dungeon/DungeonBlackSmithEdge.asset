@@ -513,7 +513,7 @@ MonoBehaviour:
     - floorRange:
         min: 5
         max: 90
-      probability: 18
+      probability: 15
       itemTable:
         elements:
         - masterData: {fileID: 11400000, guid: a38c2b3b551880b48ad9874572d9a070, type: 2}
