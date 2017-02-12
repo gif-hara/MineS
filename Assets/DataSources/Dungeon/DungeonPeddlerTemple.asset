@@ -1171,17 +1171,11 @@ MonoBehaviour:
   itemTable:
     elements:
     - masterData: {fileID: 11400000, guid: b28ff35488708486ebb047907cd257f7, type: 2}
-      probability: 100
+      probability: 150
     - masterData: {fileID: 11400000, guid: 2b4ca59cebc5344c8a6eea2313d797ee, type: 2}
-      probability: 50
-    - masterData: {fileID: 11400000, guid: b04dd023f9d114bb4a4a8150f4dc39fc, type: 2}
-      probability: 50
-    - masterData: {fileID: 11400000, guid: d102d8f1a9f70420baf28b1559384175, type: 2}
       probability: 100
-    - masterData: {fileID: 11400000, guid: 69588ec15bc9041a6a46683a642f9b8c, type: 2}
-      probability: 50
-    - masterData: {fileID: 11400000, guid: ce7760b32b171439183c82bd5f3200c4, type: 2}
-      probability: 50
+    - masterData: {fileID: 11400000, guid: b04dd023f9d114bb4a4a8150f4dc39fc, type: 2}
+      probability: 70
     - masterData: {fileID: 11400000, guid: 4960e048c3e97410986cc2e6ec689df9, type: 2}
       probability: 80
     - masterData: {fileID: 11400000, guid: 66eeb53d158be4578a33bf0a20c2605e, type: 2}
@@ -1269,9 +1263,9 @@ MonoBehaviour:
     - masterData: {fileID: 11400000, guid: 95575a5bb799a45d9a823ee0539f9cff, type: 2}
       probability: 50
     - masterData: {fileID: 11400000, guid: d74b383a5429040a68c0667a05fd9a6b, type: 2}
-      probability: 40
+      probability: 30
     - masterData: {fileID: 11400000, guid: 611ac5c14b52e4ac8b5b3ee8f687fb5c, type: 2}
-      probability: 40
+      probability: 30
     - masterData: {fileID: 11400000, guid: 20b656e8b100245bfa9c4d6fbd6ff18b, type: 2}
       probability: 50
     - masterData: {fileID: 11400000, guid: f744990c432cc412798ce6a48aae537c, type: 2}
