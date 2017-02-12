@@ -80,6 +80,7 @@ namespace MineS
 			{
 				var targets = EnemyManager.Instance.VisibleEnemies;
 				var target = targets[Random.Range(0, targets.Count)];
+			    // プレイヤーが攻撃した扱いにする
 				var damage = PlayerManager.Instance.Data.GiveDamage(target, false);
 			    InformationManager.ConfusionEnemyAttack(this, target, damage);
 			}
