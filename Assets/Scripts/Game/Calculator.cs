@@ -474,7 +474,9 @@ namespace MineS
 	    public static int GetAbsorptionRecovery(IAttack attacker, int giveDamage)
 	    {
 	        var rate = attacker.CharacterType == GameDefine.CharacterType.Player ? 3 : 2;
-	        return giveDamage / rate;
+	        var result = giveDamage / rate;
+	        result = result <= 0 ? 1 : result;
+	        return result;
 	    }
 
 	}

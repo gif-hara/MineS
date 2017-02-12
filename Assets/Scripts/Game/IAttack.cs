@@ -54,7 +54,7 @@ namespace MineS
 
 		void RemoveAbnormalStatus(GameDefine.AbnormalStatusType type);
 
-		void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint);
+		int TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint);
 
 		void TakeDamageArmorOnly(int value, bool playSE);
 

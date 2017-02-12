@@ -80,7 +80,8 @@ namespace MineS
 			{
 				var targets = EnemyManager.Instance.VisibleEnemies;
 				var target = targets[Random.Range(0, targets.Count)];
-				var damage = target.TakeDamage(this, this.FinalStrength, false);
+			    var actuallyDamage = 0;
+				var damage = target.TakeDamage(this, this.FinalStrength, out actuallyDamage, false);
 				InformationManager.ConfusionEnemyAttack(this, target, damage);
 			}
 		}

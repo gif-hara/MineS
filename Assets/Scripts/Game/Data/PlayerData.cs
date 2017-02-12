@@ -49,9 +49,9 @@ namespace MineS
 			}
 		}
 
-		protected override void OnAttacked(CharacterData target, int damage)
+		protected override void OnAttacked(CharacterData target, int damage, int actuallyDamage)
 		{
-			base.OnAttacked(target, damage);
+			base.OnAttacked(target, damage, actuallyDamage);
 			AchievementManager.Instance.AddGiveDamage(damage);
 
 			if(this.Inventory.IsFreeSpace && this.FindAbility(GameDefine.AbilityType.Theft) && Calculator.IsSuccessTheft(this))
@@ -63,12 +63,15 @@ namespace MineS
 			}
 		}
 
-		public override void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint)
+		public override int TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint)
 		{
+		    var actuallyDamage = 0;
 			AchievementManager.Instance.AddTakeDamage(value);
-			base.TakeDamageRaw(attacker, value, onlyHitPoint);
+			actuallyDamage = base.TakeDamageRaw(attacker, value, onlyHitPoint);
 			Object.Instantiate(EffectManager.Instance.prefabTakeDamage.Element, CanvasManager.Instance.EffectLv0.transform, false);
 			this.CreateDyingEffect();
+
+		    return actuallyDamage;
 		}
 
 		public override void RecoveryHitPoint(int value, bool isLimit)

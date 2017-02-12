@@ -190,13 +190,13 @@ namespace MineS
 			UnityEngine.Object.Instantiate(EffectManager.Instance.prefabBattleEffectSlash.Element, target.cellController.transform, false);
 		}
 
-		protected virtual void OnAttacked(CharacterData target, int damage)
+		protected virtual void OnAttacked(CharacterData target, int damage, int actuallyDamage)
 		{
 			InformationManager.OnAttack(this, target, damage);
 
 			if(this.FindAbility(GameDefine.AbilityType.Absorption))
 			{
-				this.RecoveryHitPoint(Calculator.GetAbsorptionRecovery(this, damage), true);
+				this.RecoveryHitPoint(Calculator.GetAbsorptionRecovery(this, actuallyDamage), true);
 			}
 			if(this.FindAbility(GameDefine.AbilityType.Recovery))
 			{
@@ -241,8 +241,9 @@ namespace MineS
 
 		protected void GiveDamage(CharacterData target, bool onlyHitPoint)
 		{
-			var damage = target.TakeDamage(this, this.FinalStrength, onlyHitPoint);
-			this.OnAttacked(target, damage);
+		    var actuallyDamage = 0;
+			var damage = target.TakeDamage(this, this.FinalStrength, out actuallyDamage, onlyHitPoint);
+			this.OnAttacked(target, damage, actuallyDamage);
 			if(target.IsDead)
 			{
 				this.Defeat(target);
@@ -258,41 +259,59 @@ namespace MineS
 			}
 		}
 
-		public int TakeDamage(CharacterData attacker, int value, bool onlyHitPoint)
+	    /// <summary>
+	    /// ダメージを受ける処理
+	    /// </summary>
+	    /// <param name="attacker"></param>
+	    /// <param name="value"></param>
+	    /// <param name="actuallyDamage">実際に与えたダメージ量</param>
+	    /// <param name="onlyHitPoint"></param>
+	    /// <returns>
+	    /// 与えたダメージ
+	    /// </returns>
+		public int TakeDamage(CharacterData attacker, int value, out int actuallyDamage, bool onlyHitPoint)
 		{
 			var resultDamage = Calculator.GetFinalDamage(value, this);
-			this.TakeDamageRaw(attacker, resultDamage, onlyHitPoint);
+			actuallyDamage = this.TakeDamageRaw(attacker, resultDamage, onlyHitPoint);
 			this.OnTakedDamage(attacker, resultDamage, onlyHitPoint);
 
 			return resultDamage;
 		}
 
-		public virtual void TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint)
+		public virtual int TakeDamageRaw(CharacterData attacker, int value, bool onlyHitPoint)
 		{
             Assert.IsFalse(this.IsDead);
             if(this.IsDead)
 			{
-				return;
+				return 0;
 			}
 
 			SEManager.Instance.PlaySE(SEManager.Instance.damage);
 
+		    var actuallyDamage = 0;
 			this.cellController.TakeDamage(value);
 			if(!onlyHitPoint)
 			{
+			    var tempArmor = this.baseArmor;
 				this.baseArmor -= value;
 				value = -this.Armor;
 				value = value < 0 ? 0 : value;
 				this.baseArmor = this.Armor < 0 ? 0 : this.Armor;
+			    actuallyDamage += tempArmor - this.baseArmor;
 			}
 
+		    var tempHitPoint = this.hitPoint;
 			this.hitPoint -= value;
 			this.hitPoint = this.HitPoint < 0 ? 0 : this.HitPoint;
+		    actuallyDamage += tempHitPoint - this.hitPoint;
 
 			if(this.IsDead)
 			{
 				this.Dead(attacker);
 			}
+
+		    Debug.Log(new{attacker = attacker.name, actuallyDamage = actuallyDamage});
+		    return actuallyDamage;
 		}
 
 		protected virtual void OnTakedDamage(CharacterData attacker, int value, bool onlyHitPoint)
