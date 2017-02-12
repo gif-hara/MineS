@@ -196,7 +196,7 @@ namespace MineS
 
 			if(this.FindAbility(GameDefine.AbilityType.Absorption))
 			{
-				this.RecoveryHitPoint(damage / 2, true);
+				this.RecoveryHitPoint(Calculator.GetAbsorptionRecovery(this, damage), true);
 			}
 			if(this.FindAbility(GameDefine.AbilityType.Recovery))
 			{

@@ -466,5 +466,16 @@ namespace MineS
 				return 0.25f > Random.value;
 			}
 		}
+
+	    /// <summary>
+	    /// 特殊能力の吸収の回復量を返す
+	    /// </summary>
+	    /// <returns></returns>
+	    public static int GetAbsorptionRecovery(IAttack attacker, int giveDamage)
+	    {
+	        var rate = attacker.CharacterType == GameDefine.CharacterType.Player ? 3 : 2;
+	        return giveDamage / rate;
+	    }
+
 	}
 }
