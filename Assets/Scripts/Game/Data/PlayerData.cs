@@ -70,8 +70,9 @@ namespace MineS
 			actuallyDamage = base.TakeDamageRaw(attacker, value, onlyHitPoint);
 			Object.Instantiate(EffectManager.Instance.prefabTakeDamage.Element, CanvasManager.Instance.EffectLv0.transform, false);
 			this.CreateDyingEffect();
+            CellManager.Instance.OnTakeDamagePlayer();
 
-		    return actuallyDamage;
+            return actuallyDamage;
 		}
 
 		public override void RecoveryHitPoint(int value, bool isLimit)

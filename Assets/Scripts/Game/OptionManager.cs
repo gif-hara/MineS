@@ -68,9 +68,14 @@ namespace MineS
 			this.Data.SetAutoSort(value);
 		}
 
-		public void SetSwipeStop(bool value)
+		public void SetSwipeStopAnyEvent(bool value)
 		{
-			this.Data.SetSwipeStop(value);
+			this.Data.SetSwipeStopAnyEvent(value);
+		}
+
+		public void SetSwipeStopDamage(bool value)
+		{
+			this.Data.SetSwipeStopDamage(value);
 		}
 
 		public void SetVisiblePlayTime(bool value)

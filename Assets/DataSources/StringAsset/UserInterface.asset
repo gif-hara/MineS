@@ -771,9 +771,13 @@ MonoBehaviour:
       en: 
     guid: 26593b64-3eab-4151-88a2-ba8461b099d0
   - value:
-      ja: "\u30B9\u30EF\u30A4\u30D7\u30B9\u30C8\u30C3\u30D7"
+      ja: "\u4F55\u304B\u3042\u3063\u305F\u3089\u30B9\u30EF\u30A4\u30D7\u30B9\u30C8\u30C3\u30D7"
       en: 
     guid: 1c4d82ed-bab4-462d-87af-33a919d8f62e
+  - value:
+      ja: "\u30C0\u30E1\u30FC\u30B8\u3092\u53D7\u3051\u305F\u3089\u30B9\u30EF\u30A4\u30D7\u30B9\u30C8\u30C3\u30D7"
+      en: 
+    guid: bc7ee827-b2f6-43ac-8b4e-7dbfa83c613f
   - value:
       ja: '{0}Lv.{1}'
       en: 

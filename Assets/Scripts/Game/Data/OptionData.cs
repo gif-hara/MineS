@@ -3,6 +3,7 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
 using UnityEngine.Events;
+using UniRx;
 
 namespace MineS
 {
@@ -30,8 +31,17 @@ namespace MineS
 		[SerializeField]
 		private bool autoSort;
 
+		/// <summary>
+		/// 何かしらのイベントがあったらスワイプストップをするか
+		/// </summary>
 		[SerializeField]
-		private bool swipeStop;
+		private bool swipeStopAnyEvent;
+
+		/// <summary>
+		/// ダメージを受けたらスワイプストップをするか
+		/// </summary>
+        [SerializeField]
+        private bool swipeStopDamage;
 
         [SerializeField]
         private bool visiblePlayTime;
@@ -57,7 +67,9 @@ namespace MineS
 
 		public bool AutoSort{ get { return this.autoSort; } }
 
-		public bool SwipeStop{ get { return this.swipeStop; } }
+		public bool SwipeStopAnyEvent{ get { return this.swipeStopAnyEvent; } }
+
+		public bool SwipeStopDamage{ get { return this.swipeStopDamage; } }
 
 		public bool VisiblePlayTime{ get { return this.visiblePlayTime; } }
 
@@ -70,7 +82,7 @@ namespace MineS
 			this.messageSpeed = 1;
 			this.isFewMessage = false;
 			this.autoSort = false;
-			this.swipeStop = true;
+			this.swipeStopAnyEvent = true;
             this.visiblePlayTime = false;
         }
 
@@ -104,9 +116,15 @@ namespace MineS
 			HK.Framework.SaveData.SetClass<OptionData>(MineS.SaveData.OptionKeyName, this);
 		}
 
-		public void SetSwipeStop(bool value)
+		public void SetSwipeStopAnyEvent(bool value)
 		{
-			this.swipeStop = value;
+			this.swipeStopAnyEvent = value;
+			HK.Framework.SaveData.SetClass<OptionData>(MineS.SaveData.OptionKeyName, this);
+		}
+
+		public void SetSwipeStopDamage(bool value)
+		{
+			this.swipeStopDamage = value;
 			HK.Framework.SaveData.SetClass<OptionData>(MineS.SaveData.OptionKeyName, this);
 		}
 

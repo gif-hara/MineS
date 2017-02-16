@@ -9,7 +9,7 @@ namespace MineS
 	/// <summary>
 	/// .
 	/// </summary>
-	public class OnModifiedOptionDataSetToggleSwipeStop : MonoBehaviour, IReceiveModifiedOptionData
+	public class OnModifiedOptionDataSetToggleSwipeStopDamage : MonoBehaviour, IReceiveModifiedOptionData
 	{
 		[SerializeField]
 		private Toggle target;
@@ -18,7 +18,7 @@ namespace MineS
 
 		public void OnModifiedOptionData(OptionData data)
 		{
-			this.target.isOn = data.SwipeStop;
+			this.target.isOn = data.SwipeStopDamage;
 		}
 
 #endregion

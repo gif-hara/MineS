@@ -160,12 +160,21 @@ namespace MineS
 
 		public void OccurredEvent()
 		{
-			if(!OptionManager.Instance.Data.SwipeStop)
+			if(!OptionManager.Instance.Data.SwipeStopAnyEvent)
 			{
 				return;
 			}
 			this.AnyOccurredEvent = true;
 		}
+
+		public void OnTakeDamagePlayer()
+		{
+			if(!OptionManager.Instance.Data.SwipeStopDamage)
+			{
+                return;
+            }
+            this.AnyOccurredEvent = true;
+        }
 
 		public void ResetOccurredEvent()
 		{
