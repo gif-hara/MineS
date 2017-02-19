@@ -380,9 +380,39 @@ namespace MineS
 		/// <returns>The synthesis need money.</returns>
 		/// <param name="baseEquipment">Base equipment.</param>
 		/// <param name="targetEquipment">Target equipment.</param>
-		public static int GetSynthesisNeedMoney(Item baseEquipment, Item targetEquipment)
+		public static int GetSynthesisNeedMoney(EquipmentInstanceData baseEquipment, EquipmentInstanceData targetEquipment)
 		{
-			return (baseEquipment.InstanceData.PurchasePrice + targetEquipment.InstanceData.PurchasePrice) / 2;
+            var baseReinforcementTotalMoney = GetReinforcementTotalMoney(baseEquipment.Level);
+            var willBaseReinforcementTotalMoney = GetReinforcementTotalMoney(baseEquipment.Level + targetEquipment.Level);
+            var fixReinforcementMoney = willBaseReinforcementTotalMoney - baseReinforcementTotalMoney;
+            return ((baseEquipment.PurchasePrice + targetEquipment.PurchasePrice) / 2) + fixReinforcementMoney;
+		}
+
+		/// <summary>
+		/// 引数のレベルにするのに必要な強化費用を返す
+		/// </summary>
+		/// <param name="level"></param>
+		/// <returns></returns>
+		public static int GetReinforcementTotalMoney(int level)
+		{
+			if(level <= 0)
+			{
+                return 0;
+            }
+
+            var oldLevel = level - 1;
+			var result = (1000 * level) + ((100 * oldLevel) * level);
+            return result;
+        }
+
+		/// <summary>
+		/// 強化に必要な費用を返す
+		/// </summary>
+		/// <param name="level"></param>
+		/// <returns></returns>
+		public static int GetReinforcementNeedMoney(int level)
+		{
+			return 1000 + 200 * level;
 		}
 
 		/// <summary>

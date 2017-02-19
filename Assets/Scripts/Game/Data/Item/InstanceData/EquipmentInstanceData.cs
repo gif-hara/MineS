@@ -185,8 +185,8 @@ namespace MineS
 		{
 			get
 			{
-				return 1000 + 200 * this.Level;
-			}
+                return Calculator.GetReinforcementNeedMoney(this.Level);
+            }
 		}
 
 	}

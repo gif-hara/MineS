@@ -169,6 +169,7 @@ namespace MineS
 
 		public void InvokeSynthesis(Item targetEquipment)
 		{
+			this.SynthesisTargetEquipment = targetEquipment;			
 			var equipmentData = targetEquipment.InstanceData as EquipmentInstanceData;
 			if(!equipmentData.CanExtraction)
 			{
@@ -177,22 +178,21 @@ namespace MineS
 			}
 
 			var baseEquipment = PlayerManager.Instance.Data.Inventory.SelectItem;
-			if(equipmentData.ExistBranding)
+            var needMoney = Calculator.GetSynthesisNeedMoney(baseEquipment.InstanceData as EquipmentInstanceData, targetEquipment.InstanceData as EquipmentInstanceData);
+            if(equipmentData.ExistBranding)
 			{
-				InformationManager.AddMessage(this.confirmSynthesisMessage.Format(baseEquipment.InstanceData.ItemName, targetEquipment.InstanceData.ItemName, Calculator.GetSynthesisNeedMoney(baseEquipment, targetEquipment)));
+				InformationManager.AddMessage(this.confirmSynthesisMessage.Format(baseEquipment.InstanceData.ItemName, targetEquipment.InstanceData.ItemName, needMoney));
 			}
 			else
 			{
 				InformationManager.AddMessage(this.notExistBrandingEquipmentMessage.Get);
 				return;
 			}
-			this.SynthesisTargetEquipment = targetEquipment;
 
 			var confirmManager = ConfirmManager.Instance;
 			confirmManager.Add(this.synthesisMessage, () =>
 			{
 				var playerManager = PlayerManager.Instance;
-				var needMoney = Calculator.GetSynthesisNeedMoney(baseEquipment, this.SynthesisTargetEquipment);
 				if(playerManager.Data.Money >= needMoney)
 				{
 					playerManager.AddMoney(-needMoney, false);
