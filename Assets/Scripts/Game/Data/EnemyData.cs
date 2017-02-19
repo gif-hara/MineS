@@ -20,6 +20,15 @@ namespace MineS
 				return string.Format(EnemyManager.Instance.NameFormat, this.name, this.level);
 			}
 		}
+
+		public override int Evasion
+		{
+			get
+			{
+                var xrayPower = this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Xray) ? 50 : 0;
+                return base.Evasion + xrayPower;
+            }
+		}
 		public override void Dead(CharacterData attacker)
 		{
 		    base.Dead(attacker);

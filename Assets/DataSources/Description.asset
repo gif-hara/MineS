@@ -609,8 +609,8 @@ MonoBehaviour:
       guid: 9d630085-a69d-483d-9597-417390c4febf
     message:
       target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
-      value: "\u307E\u3060\u6B69\u3044\u3066\u3044\u306A\u3044\u5834\u6240\u306B\u4F55\u304C\u3042\u308B\u304B\u5206\u304B\u308B\u3088\u3046\u306B\u306A\u308B\u305E\uFF01"
-      guid: 8e0c0c78-2764-4380-b770-e495388c0de0
+      value: "\u307E\u3060\u6B69\u3044\u3066\u3044\u306A\u3044\u5834\u6240\u306B\u4F55\u304C\u3042\u308B\u304B\u5206\u304B\u308B\u3088\u3046\u306B\u306A\u308B\u305E\uFF01\n\u6575\u304C\u900F\u8996\u306B\u306A\u308B\u3068\u30FB\u30FB\u30FB\uFF1F"
+      guid: a74bebba-3215-4b7c-8636-37160412997f
     image: {fileID: 21300000, guid: f8703712915408a48a98af024b15f8ac, type: 3}
   - key: AbnormalStatusType.TrapMaster
     title:
