@@ -21,6 +21,15 @@ namespace MineS
 			}
 		}
 
+		public override int HitProbability
+		{
+			get
+			{
+                var happinessPower = this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Happiness) ? 100 : 0;
+                return base.HitProbability + happinessPower;
+            }
+		}
+
 		public override int Evasion
 		{
 			get
@@ -29,6 +38,7 @@ namespace MineS
                 return base.Evasion + xrayPower;
             }
 		}
+		
 		public override void Dead(CharacterData attacker)
 		{
 		    base.Dead(attacker);
