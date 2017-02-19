@@ -814,3 +814,7 @@ MonoBehaviour:
       ja: Turn:{0}
       en: 
     guid: 047c9501-8fea-4033-85f2-a2c8cee03cd2
+  - value:
+      ja: "\u8A71\u3059"
+      en: 
+    guid: 698869df-2c75-4370-979e-0b08900ad396

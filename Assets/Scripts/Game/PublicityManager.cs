@@ -17,7 +17,10 @@ namespace MineS
 		[SerializeField]
 		private StringAsset.Finder watchVideoMessage;
 
-		[SerializeField]
+        [SerializeField]
+        private StringAsset.Finder chattingMessage;
+
+        [SerializeField]
 		private StringAsset.Finder closedMessage;
 
 		[SerializeField]
@@ -41,7 +44,12 @@ namespace MineS
 		[SerializeField]
 		private List<Rewards> rewards;
 
-		[System.Serializable]
+        [SerializeField]
+        private List<ChatData> chatDatabase;
+
+        private int chattingCount;
+
+        [System.Serializable]
 		public class Rewards
 		{
 			[SerializeField]
@@ -90,7 +98,14 @@ namespace MineS
 					this.StartFullInventoryTalk();
 				}
 			}, true);
-			confirmManager.Add(this.closedMessage, () =>
+            confirmManager.Add(this.chattingMessage, () =>
+            {
+                var clearDungeonCount = MineS.SaveData.Progress.ClearDungeonCount;
+                var talks = this.chatDatabase[clearDungeonCount].Talks;
+                TalkManager.Instance.StartTalk(talks[this.chattingCount % talks.Count], this.CreateConfirm);
+                ++this.chattingCount;
+            }, true);
+            confirmManager.Add(this.closedMessage, () =>
 			{
 				InformationManager.AddMessage(this.goodbyeMessage);
 				NPCManager.Instance.SetActiveUI(false);
