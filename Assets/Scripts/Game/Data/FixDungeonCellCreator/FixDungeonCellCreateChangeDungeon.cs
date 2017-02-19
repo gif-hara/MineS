@@ -33,7 +33,10 @@ namespace MineS
 		[SerializeField]
 		private ConditionScriptableObjectBase canChange;
 
-		[SerializeField]
+        [SerializeField]
+        private Sprite stairImage;
+
+        [SerializeField]
 		private bool debugOnly;
 
 		public override CellData Create(int y, int x, CellController cellController, MapChipCreatorBase mapChipCreator)
@@ -49,7 +52,7 @@ namespace MineS
 
 			if(this.conditioner.Condition)
 			{
-				cellData.BindCellClickAction(new ChangeDungeonDataAction(this.data, this.descriptionKey, this.canChange));
+				cellData.BindCellClickAction(new ChangeDungeonDataAction(this.data, this.descriptionKey, this.canChange, this.stairImage));
 			}
 			else
 			{

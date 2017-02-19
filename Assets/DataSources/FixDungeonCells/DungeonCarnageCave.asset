@@ -16,4 +16,5 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: f268d898cb68841be9c19f71e65dbbc6, type: 2}
   descriptionKey: DungeonCarnageCave
   canChange: {fileID: 11400000, guid: ef61b50bada6846e08e949a7a8b5856d, type: 2}
+  stairImage: {fileID: 21300000, guid: 7d8416c345de846d09b9481747514f95, type: 3}
   debugOnly: 0

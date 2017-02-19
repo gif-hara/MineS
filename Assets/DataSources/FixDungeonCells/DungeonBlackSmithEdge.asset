@@ -16,4 +16,5 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 5384516a4a97e4137bf6fcd9b0ea631c, type: 2}
   descriptionKey: DungeonBlackSmithEdge
   canChange: {fileID: 11400000, guid: bdcc0045142234e0184c10018e4ba134, type: 2}
+  stairImage: {fileID: 21300000, guid: 7d8416c345de846d09b9481747514f95, type: 3}
   debugOnly: 0

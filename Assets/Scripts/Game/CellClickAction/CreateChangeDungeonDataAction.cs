@@ -26,7 +26,7 @@ namespace MineS
 		public override void Invoke(CellData data)
 		{
 			this.cellController.SetImage(this.Image);
-			data.BindCellClickAction(new ChangeDungeonDataAction(this.dungeonData, this.descriptionKey, this.canChange));
+			data.BindCellClickAction(new ChangeDungeonDataAction(this.dungeonData, this.descriptionKey, this.canChange, TextureManager.Instance.stairImage.Element));
 		}
 
 		public override GameDefine.EventType EventType

@@ -31808,7 +31808,7 @@ MonoBehaviour:
     isFewMessage: 0
     autoSort: 0
     swipeStopAnyEvent: 1
-    swipeStopDamage: 1
+    swipeStopDamage: 0
     visiblePlayTime: 0
     alwaysFrontPlayTime: 0
 --- !u!114 &1584263368

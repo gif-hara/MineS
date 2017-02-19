@@ -16,12 +16,15 @@ namespace MineS
 
 		private ConditionScriptableObjectBase canChange;
 
-		public ChangeDungeonDataAction(DungeonDataBase dungeonData, string descriptionKey, ConditionScriptableObjectBase canChange)
+        private Sprite stairImage;
+
+        public ChangeDungeonDataAction(DungeonDataBase dungeonData, string descriptionKey, ConditionScriptableObjectBase canChange, Sprite stairImage)
 		{
 			this.dungeonData = dungeonData;
 			this.descriptionKey = descriptionKey;
 			this.canChange = canChange;
-		}
+            this.stairImage = stairImage;
+        }
 
 		public override void Invoke(CellData data)
 		{
@@ -65,7 +68,7 @@ namespace MineS
 		{
 			get
 			{
-				return TextureManager.Instance.stairImage.Element;
+				return this.stairImage;
 			}
 		}
 	}
