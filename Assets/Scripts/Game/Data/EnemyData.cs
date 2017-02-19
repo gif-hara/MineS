@@ -26,7 +26,10 @@ namespace MineS
 			get
 			{
                 var happinessPower = this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Happiness) ? 100 : 0;
-                return base.HitProbability + happinessPower;
+				var blurPower = this.FindAbnormalStatus(GameDefine.AbnormalStatusType.Blur) ? -50 : 0;
+                var result = base.HitProbability + happinessPower + blurPower;
+                result = result < 0 ? 0 : result;
+                return result;
             }
 		}
 
