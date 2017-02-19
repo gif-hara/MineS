@@ -106,7 +106,7 @@ namespace MineS
 
 		public abstract GameDefine.CharacterType CharacterType{ get; }
 
-		protected CellController cellController;
+		public CellController CellController{ protected set; get; }
 
 		public void Initialize(CharacterMasterData masterData, CellController cellController)
 		{
@@ -128,7 +128,7 @@ namespace MineS
 			this.abilities = AbilityFactory.Create(masterData.AbilityTypes, this);
 			this.abilityTypes = new List<GameDefine.AbilityType>(masterData.AbilityTypes);
 			this.image = masterData.Image;
-			this.cellController = cellController;
+			this.CellController = cellController;
 		}
 
 		public virtual void RecoveryHitPoint(int value, bool isLimit)
@@ -139,7 +139,7 @@ namespace MineS
 			}
 
 			SEManager.Instance.PlaySE(SEManager.Instance.recovery);
-			this.cellController.Recovery(value);
+			this.CellController.Recovery(value);
 			if(this.HitPoint >= this.HitPointMax && isLimit)
 			{
 				return;
@@ -159,7 +159,7 @@ namespace MineS
 			{
 				SEManager.Instance.PlaySE(SEManager.Instance.recovery);
 			}
-			this.cellController.Recovery(value);
+			this.CellController.Recovery(value);
 			this.baseArmor += value;
 			this.baseArmor = this.Armor > this.ArmorMax ? this.ArmorMax : this.Armor;
 		}
@@ -182,12 +182,12 @@ namespace MineS
 				{
 					InformationManager.OnMissByFear(this);
 				}
-			    target.cellController.Miss();
+			    target.CellController.Miss();
 				return;
 			}
 
 			this.GiveDamage(target, FindAbility(GameDefine.AbilityType.Penetoration));
-			UnityEngine.Object.Instantiate(EffectManager.Instance.prefabBattleEffectSlash.Element, target.cellController.transform, false);
+			UnityEngine.Object.Instantiate(EffectManager.Instance.prefabBattleEffectSlash.Element, target.CellController.transform, false);
 		}
 
 		protected virtual void OnAttacked(CharacterData target, int damage, int actuallyDamage)
@@ -291,7 +291,7 @@ namespace MineS
 			SEManager.Instance.PlaySE(SEManager.Instance.damage);
 
 		    var actuallyDamage = 0;
-			this.cellController.TakeDamage(value);
+			this.CellController.TakeDamage(value);
 			if(!onlyHitPoint)
 			{
 			    var tempArmor = this.baseArmor;
@@ -330,7 +330,7 @@ namespace MineS
 				SEManager.Instance.PlaySE(SEManager.Instance.damage);
 			}
 
-			this.cellController.TakeDamage(value);
+			this.CellController.TakeDamage(value);
 			this.baseArmor -= value;
 			this.baseArmor = this.Armor < 0 ? 0 : this.Armor;
 		}
@@ -341,7 +341,7 @@ namespace MineS
 
 	    public virtual void Dead(CharacterData attacker)
 	    {
-	        this.cellController.DestroyBuffDebuffEffect();
+	        this.CellController.DestroyBuffDebuffEffect();
 	    }
 
 		public abstract string ColorCode{ get; }
@@ -426,7 +426,7 @@ namespace MineS
 
 		protected virtual void OnAddedAbnormalStatus(AbnormalStatusBase newAbnormalStatus)
 		{
-            this.cellController.OnAddedAbnormalStatus(newAbnormalStatus);
+            this.CellController.OnAddedAbnormalStatus(newAbnormalStatus);
         }
 
 		public void RemoveAbnormalStatus(GameDefine.AbnormalStatusType type)
@@ -437,7 +437,7 @@ namespace MineS
 
 		protected virtual void OnRemovedAbnormalStatus(GameDefine.AbnormalStatusType type)
 		{
-            this.cellController.OnRemovedAbnormalStatus(this);
+            this.CellController.OnRemovedAbnormalStatus(this);
         }
 
 		public virtual void OnTurnProgress(GameDefine.TurnProgressType type, int turnCount)

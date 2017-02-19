@@ -60,7 +60,7 @@ namespace MineS
 
 		public void OnUse(IAttack user, float rate)
 		{
-			switch(this.type)
+            switch(this.type)
 			{
 			case GameDefine.UsableItemType.RecoveryHitPointLimit:
 				{

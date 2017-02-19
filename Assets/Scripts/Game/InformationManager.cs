@@ -67,7 +67,8 @@ namespace MineS
 			forceReleaseLock = null,
 			addAbility = null,
 			invokeStoneStatue = null,
-			playfulKettsey = null;
+			playfulKettsey = null,
+			invalidUseItemOnTrapMaster = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -427,6 +428,12 @@ namespace MineS
 				.Replace(TargetColor, user.ColorCode);
             instance._AddMessage(message);
         }
+
+		public static void InvalidUseItemOnTrapMaster()
+		{
+            var instance = InformationManager.Instance;
+            instance._AddMessage(instance.invalidUseItemOnTrapMaster.Get);
+		}
 
 		public static void AddMessage(string message)
 		{

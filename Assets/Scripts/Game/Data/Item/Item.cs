@@ -92,6 +92,18 @@ namespace MineS
 			onUseItemEvent.Invoke(this);
 		}
 
+		/// <summary>
+		/// アイテムを識別する
+		/// </summary>
+		public void Identification()
+		{
+			var itemName = this.instanceData.ItemName;
+			if(ItemManager.Instance.MagicStoneIdentified.Identified(this))
+			{
+				InformationManager.IdentifiedItem(itemName, this.instanceData.ItemName);
+			}
+		}
+
 		public void Serialize(string key)
 		{
 			switch(this.instanceData.ItemType)
@@ -160,14 +172,18 @@ namespace MineS
 		private void UseUsableItem(IAttack user, Inventory inventory)
 		{
 			SEManager.Instance.PlaySE((this.instanceData.MasterData as UsableItemMasterData).UseSound);
-			var itemName = this.instanceData.ItemName;
-			if(ItemManager.Instance.UsableItemIdentified.Identified(this))
-			{
-				InformationManager.IdentifiedItem(itemName, this.instanceData.ItemNameRaw);
-			}
-
-			(this.instanceData.MasterData as UsableItemMasterData).OnUse(user, 1.0f);
 			inventory.RemoveItem(this);
+
+			if(user.CharacterType == GameDefine.CharacterType.Enemy && user.FindAbnormalStatus(GameDefine.AbnormalStatusType.TrapMaster))
+			{
+                SEManager.Instance.PlaySE(SEManager.Instance.avoidPlayer);
+                InformationManager.InvalidUseItemOnTrapMaster();
+                return;
+            }
+
+            this.Identification();
+
+            (this.instanceData.MasterData as UsableItemMasterData).OnUse(user, 1.0f);
 		}
 
 		private void UseThrowing(IAttack user, Inventory inventory)
@@ -184,19 +200,13 @@ namespace MineS
 		{
 			SEManager.Instance.PlaySE(SEManager.Instance.useMagicStone0);
 			Object.Instantiate(EffectManager.Instance.prefabUseMagicStone0.Element, EnemyManager.Instance.InEnemyCells[user as EnemyData].Controller.transform, false);
-			var itemName = this.instanceData.ItemName;
-			if(ItemManager.Instance.MagicStoneIdentified.Identified(this))
-			{
-				InformationManager.IdentifiedItem(itemName, this.instanceData.ItemName);
-			}
 
-			var magicStoneInstanceData = this.instanceData as MagicStoneInstanceData;
-			magicStoneInstanceData.Use(PlayerManager.Instance.Data, user);
+            var magicStoneInstanceData = this.instanceData as MagicStoneInstanceData;
+			magicStoneInstanceData.Use(this, PlayerManager.Instance.Data, user);
 			if(magicStoneInstanceData.IsEmpty)
 			{
 				inventory.RemoveItem(this);
 			}
 		}
-
 	}
 }

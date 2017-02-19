@@ -420,3 +420,7 @@ MonoBehaviour:
       ja: "\u7D4C\u9A13\u5024\u304C2\u500D\u306B\u306A\u308B\u305E\uFF01"
       en: 
     guid: 75b8d3c2-6fe7-4d89-83b8-79824cf2a352
+  - value:
+      ja: "\u7F60\u306B\u5F15\u3063\u304B\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01\n\u6575\u304C\u7F60\u5E2B\u306B\u306A\u308B\u3068\u30FB\u30FB\u30FB\uFF1F"
+      en: 
+    guid: 199f6175-7eb2-406e-809e-3deca6238674

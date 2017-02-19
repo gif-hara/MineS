@@ -44,8 +44,14 @@ namespace MineS
 
 		public SerializeFieldGetter.AudioClip invokeStoneStatue;
 
+		/// <summary>
+		/// 敵の攻撃を避けた際のSE
+		/// </summary>
 		public SerializeFieldGetter.AudioClip successTheft;
 
+		/// <summary>
+		/// プレイヤーの攻撃が避けられた際のSE
+		/// </summary>
         public SerializeFieldGetter.AudioClip avoidPlayer;
 
         public SerializeFieldGetter.AudioClip avoidEnemy;

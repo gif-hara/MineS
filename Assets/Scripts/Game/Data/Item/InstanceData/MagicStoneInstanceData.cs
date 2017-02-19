@@ -102,9 +102,19 @@ namespace MineS
 			this.remainingNumber = this.remainingNumber > GameDefine.MagicStoneItemMax ? GameDefine.MagicStoneItemMax : this.remainingNumber;
 		}
 
-		public void Use(CharacterData attacker, IAttack target)
+		public void Use(Item item, CharacterData attacker, IAttack target)
 		{
 			this.remainingNumber--;
+
+			if(target.CharacterType == GameDefine.CharacterType.Enemy && target.FindAbnormalStatus(GameDefine.AbnormalStatusType.TrapMaster))
+			{
+                SEManager.Instance.PlaySE(SEManager.Instance.avoidPlayer);
+                InformationManager.InvalidUseItemOnTrapMaster();
+                return;
+            }
+
+			item.Identification();
+
 			switch(this.type)
 			{
 			case GameDefine.MagicStoneType.AddDebuff_Dull:

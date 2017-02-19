@@ -619,8 +619,8 @@ MonoBehaviour:
       guid: 8e6e178a-99fd-4daa-887e-5c0273189019
     message:
       target: {fileID: 11400000, guid: e14fd85dd573e47698152861c6d25317, type: 2}
-      value: "\u7F60\u306B\u5F15\u3063\u304B\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01\n\u3053\u306E\u80FD\u529B\u306F\u8907\u6570\u3042\u308B\u3068\u305D\u306E\u5206\u52B9\u679C\u304C\u767A\u63EE\u3059\u308B\u305E\uFF01"
-      guid: afd21b64-7f02-4889-a5c5-f124dd7563b9
+      value: "\u7F60\u306B\u5F15\u3063\u304B\u304B\u3089\u306A\u304F\u306A\u308B\u305E\uFF01\n\u6575\u306B\u304B\u304B\u308B\u3068\u30FB\u30FB\u30FB\uFF1F"
+      guid: 199f6175-7eb2-406e-809e-3deca6238674
     image: {fileID: 21300000, guid: 9f2421b0a36841a44b7b0d72fa3c7f0f, type: 3}
   - key: AbnormalStatusType.Happiness
     title:

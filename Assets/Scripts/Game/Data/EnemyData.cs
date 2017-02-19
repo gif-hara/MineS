@@ -101,12 +101,12 @@ namespace MineS
 				{
 					break;
 				}
-				this.Initialize(this.masterData.NextLevelData, this.cellController);
+				this.Initialize(this.masterData.NextLevelData, this.CellController);
 			}
 
-			this.cellController.SetImage(this.Image);
+			this.CellController.SetImage(this.Image);
 			InformationManager.LevelUpEnemy(this, currentName, this.Name);
-			Object.Instantiate(EffectManager.Instance.prefabSummon.Element, this.cellController.transform, false);
+			Object.Instantiate(EffectManager.Instance.prefabSummon.Element, this.CellController.transform, false);
 		}
 
 		public override void ForceLevelDown(int value)
@@ -124,12 +124,12 @@ namespace MineS
 				{
 					break;
 				}
-				this.Initialize(this.masterData.PreviousLevelData, this.cellController);
+				this.Initialize(this.masterData.PreviousLevelData, this.CellController);
 			}
 
-			this.cellController.SetImage(this.Image);
+			this.CellController.SetImage(this.Image);
 			InformationManager.LevelDownEnemy(this, currentName, this.Name);
-			Object.Instantiate(EffectManager.Instance.prefabSummon.Element, this.cellController.transform, false);
+			Object.Instantiate(EffectManager.Instance.prefabSummon.Element, this.CellController.transform, false);
 		}
 
 		public override void ForceDead()
@@ -148,10 +148,10 @@ namespace MineS
 		public override void ChangeMasterData(CharacterMasterData masterData)
 		{
 			var currentName = this.Name;
-			this.Initialize(masterData, this.cellController);
-			this.cellController.SetImage(this.Image);
+			this.Initialize(masterData, this.CellController);
+			this.CellController.SetImage(this.Image);
 			InformationManager.ChangeCharacter(currentName, this);
-			Object.Instantiate(EffectManager.Instance.prefabSummon.Element, this.cellController.transform, false);
+			Object.Instantiate(EffectManager.Instance.prefabSummon.Element, this.CellController.transform, false);
 		}
 
 		public void OnVisible(CellData cellData)
@@ -208,15 +208,15 @@ namespace MineS
 		{
 			var obj = HK.Framework.SaveData.GetClass<EnemyData>(key, null);
 			obj.abilities = AbilityFactory.Create(obj.abilityTypes, obj);
-			obj.cellController = cellController;
+			obj.CellController = cellController;
 			DeserializeAbnormalStatuses(key, obj);
 		    if (obj.IsAnyBuff)
 		    {
-		        obj.cellController.CreateBuffEffect();
+		        obj.CellController.CreateBuffEffect();
 		    }
 		    if (obj.IsAnyDebuff)
 		    {
-		        obj.cellController.CreateDebuffEffect();
+		        obj.CellController.CreateDebuffEffect();
 		    }
             return obj;
 		}
@@ -249,12 +249,12 @@ namespace MineS
 
 		private void OnDead(bool createDeadEffect)
 		{
-			this.cellController.DamageEffectCreator.ForceRemove();
-			this.cellController.ForceRemoveImageShake();
+			this.CellController.DamageEffectCreator.ForceRemove();
+			this.CellController.ForceRemoveImageShake();
 
 			if(createDeadEffect)
 			{
-				Object.Instantiate(EffectManager.Instance.prefabDeadEffect.Element, this.cellController.transform, false);
+				Object.Instantiate(EffectManager.Instance.prefabDeadEffect.Element, this.CellController.transform, false);
 			}
 
 			var cellData = EnemyManager.Instance.InEnemyCells[this];

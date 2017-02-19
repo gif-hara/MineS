@@ -3,6 +3,7 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
 using System.Linq;
+using System;
 
 namespace MineS
 {
@@ -122,18 +123,20 @@ namespace MineS
 			{
 			case GameDefine.ThrowingType.None:
 				{
-					this.TakeDamage(target, damage);
-					Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
+					this.GiveDamage(target, damage, null);
+					UnityEngine.Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
 				}
 			break;
 			case GameDefine.ThrowingType.Coatable:
 				{
-					this.TakeDamage(target, damage);
-					Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
-					if(this.coatingId != -1 && !target.IsDead)
+					this.GiveDamage(target, damage, () =>
 					{
-						(ItemManager.Instance.UsableItemList.Database.Find(i => i.Id == this.coatingId) as UsableItemMasterData).OnUse(target, 0.5f);
-					}
+						if(this.coatingId != -1 && !target.IsDead)
+						{
+							(ItemManager.Instance.UsableItemList.Database.Find(i => i.Id == this.coatingId) as UsableItemMasterData).OnUse(target, 0.5f);
+						}
+					});
+					UnityEngine.Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
 				}
 			break;
 			case GameDefine.ThrowingType.Diffusion:
@@ -146,23 +149,23 @@ namespace MineS
 						{
 							if(!enemy.IsDead)
 							{
-								this.TakeDamage(enemy, damage);
+								this.GiveDamage(enemy, damage, null);
 							}
 						}
-						Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, c.Controller.transform, false);
+						UnityEngine.Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, c.Controller.transform, false);
 					});
 				}
 			break;
 			case GameDefine.ThrowingType.Bounce:
 				{
-					this.TakeDamage(target, damage);
-					Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
+					this.GiveDamage(target, damage, null);
+					UnityEngine.Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[target as EnemyData].Controller.transform, false);
 					var otherEnemy = EnemyManager.Instance.VisibleEnemies.Where(e => e != (target as EnemyData) && !e.IsDead).ToList();
 					if(otherEnemy.Count > 0)
 					{
-						var otherTarget = otherEnemy[Random.Range(0, otherEnemy.Count)];
-						this.TakeDamage(otherTarget, damage);
-						Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[otherTarget].Controller.transform, false);
+						var otherTarget = otherEnemy[UnityEngine.Random.Range(0, otherEnemy.Count)];
+						this.GiveDamage(otherTarget, damage, null);
+						UnityEngine.Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, EnemyManager.Instance.InEnemyCells[otherTarget].Controller.transform, false);
 					}
 				}
 			break;
@@ -176,10 +179,10 @@ namespace MineS
 						{
 							if(!enemy.IsDead)
 							{
-								this.TakeDamage(enemy, damage);
+								this.GiveDamage(enemy, damage, null);
 							}
 						}
-						Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, c.Controller.transform, false);
+						UnityEngine.Object.Instantiate(EffectManager.Instance.prefabThrowing0.Element, c.Controller.transform, false);
 					});
 				}
 			break;
@@ -200,10 +203,22 @@ namespace MineS
 			PlayerManager.Instance.AddItem(coatingItem);
 		}
 
-		private void TakeDamage(IAttack target, int damage)
+		private void GiveDamage(IAttack target, int damage, Action giveDamagedAction)
 		{
+			if(target.CharacterType == GameDefine.CharacterType.Enemy && target.FindAbnormalStatus(GameDefine.AbnormalStatusType.TrapMaster))
+			{
+                SEManager.Instance.PlaySE(SEManager.Instance.avoidPlayer);
+                InformationManager.InvalidUseItemOnTrapMaster();
+                return;
+            }
+
 			target.TakeDamageRaw(null, damage, false);
-			if(target.IsDead)
+			if(giveDamagedAction != null)
+			{
+	            giveDamagedAction();
+			}
+
+            if(target.IsDead)
 			{
 				PlayerManager.Instance.Data.Defeat(target);
 			}

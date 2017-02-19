@@ -338,7 +338,7 @@ namespace MineS
 		public static PlayerData Deserialize(string key, CellController cellController)
 		{
 			var result = HK.Framework.SaveData.GetClass<PlayerData>(key, null);
-			result.cellController = cellController;
+			result.CellController = cellController;
 			DeserializeAbnormalStatuses(key, result);
 			result.Inventory = new Inventory(result, GameDefine.InventoryItemMax);
 			result.Inventory.Deserialize(GetInventorySerializeKeyName(key));
@@ -347,11 +347,11 @@ namespace MineS
 
 		    if (result.IsAnyBuff)
 		    {
-		        result.cellController.CreateBuffEffect();
+		        result.CellController.CreateBuffEffect();
 		    }
 		    if (result.IsAnyDebuff)
 		    {
-		        result.cellController.CreateDebuffEffect();
+		        result.CellController.CreateDebuffEffect();
 		    }
 
 			return result;
