@@ -51,7 +51,7 @@ namespace MineS
 				return;
 			}
 			base.OnTurnProgress(type, turnCount);
-			this.Holder.RecoveryHitPoint(Calculator.GetRegenerationValue(this.Holder, this.Holder.HitPointMax), true);
+			this.Holder.RecoveryHitPoint(Calculator.GetRegenerationValue(this.Holder, this.Holder.HitPointMax), false);
 		}
 	}
 }
