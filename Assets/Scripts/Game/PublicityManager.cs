@@ -47,6 +47,12 @@ namespace MineS
         [SerializeField]
         private List<ChatData> chatDatabase;
 
+        [SerializeField]
+        private bool debugChatting;
+
+        [SerializeField]
+        private TalkChunkData debugChatData;
+
         private int chattingCount;
 
         [System.Serializable]
@@ -100,10 +106,17 @@ namespace MineS
 			}, true);
             confirmManager.Add(this.chattingMessage, () =>
             {
-                var clearDungeonCount = MineS.SaveData.Progress.ClearDungeonCount;
-                var talks = this.chatDatabase[clearDungeonCount].Talks;
-                TalkManager.Instance.StartTalk(talks[this.chattingCount % talks.Count], this.CreateConfirm);
-                ++this.chattingCount;
+				if(this.debugChatting)
+				{
+                    TalkManager.Instance.StartTalk(this.debugChatData, this.CreateConfirm);
+                }
+				else
+				{
+					var clearDungeonCount = MineS.SaveData.Progress.ClearDungeonCount;
+					var talks = this.chatDatabase[clearDungeonCount].Talks;
+					TalkManager.Instance.StartTalk(talks[this.chattingCount % talks.Count], this.CreateConfirm);
+					++this.chattingCount;
+				}
             }, true);
             confirmManager.Add(this.closedMessage, () =>
 			{

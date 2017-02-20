@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d22cadf659a04916b06266ad7bd98c9, type: 3}
+  m_Name: TrapMasterOnEnemy_0
+  m_EditorClassIdentifier: 
+  talkElement:
+    target: {fileID: 11400000, guid: c8da0f77dff1e433295965e7cb7ee730, type: 2}
+    value: "\u72B6\u614B\u7570\u5E38\u306E<color=aqua>\u7F60\u5E2B</color>\u304C\u6575\u306B\u304B\u304B\u3063\u305F\u3089\u3069\u3046\u306A\u308B\u304B\u77E5\u3063\u3066\u308B\u304B\uFF1F"
+    guid: 5b83fb49-1a1a-492e-897a-460dddd00e08
+  nextMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u6B21\u3078"
+    guid: e909d898-4a3d-45b9-b2a0-3c80996d78ab

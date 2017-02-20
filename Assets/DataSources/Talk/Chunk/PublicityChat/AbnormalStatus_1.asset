@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d22cadf659a04916b06266ad7bd98c9, type: 3}
+  m_Name: AbnormalStatus_1
+  m_EditorClassIdentifier: 
+  talkElement:
+    target: {fileID: 11400000, guid: c8da0f77dff1e433295965e7cb7ee730, type: 2}
+    value: "\u304A\u524D\u306E\u5834\u5408\u306F\u753B\u9762\u53F3\u4E0A\u306B\u8868\u793A\u3055\u308C\u308B\u304B\u3089\u3088\u304F\u5206\u304B\u308B\u3060\u308D\u3002"
+    guid: eda9cf70-91f8-4e12-b9e3-75525b1d4a3b
+  nextMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u6B21\u3078"
+    guid: e909d898-4a3d-45b9-b2a0-3c80996d78ab

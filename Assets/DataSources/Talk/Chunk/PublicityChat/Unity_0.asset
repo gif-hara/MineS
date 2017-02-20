@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d22cadf659a04916b06266ad7bd98c9, type: 3}
-  m_Name: 0_0
+  m_Name: Unity_0
   m_EditorClassIdentifier: 
   talkElement:
     target: {fileID: 11400000, guid: c8da0f77dff1e433295965e7cb7ee730, type: 2}
-    value: "\u96D1\u8AC7\u306E\u30C6\u30B9\u30C8\u3060\u3088"
-    guid: 1c336ee3-b762-4952-aaa1-1a1c8862f184
+    value: "<color=aqua>\u4E00\u81F4\u56E3\u7D50</color>\u3068\u8A00\u3046\u7279\u6B8A\u80FD\u529B\u304C\u3042\u308B\u3002"
+    guid: 12570e10-b393-46ad-a8e3-3981b5eb38b4
   nextMessage:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u6B21\u3078"

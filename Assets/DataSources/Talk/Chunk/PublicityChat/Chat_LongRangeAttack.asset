@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
+  m_Name: Chat_LongRangeAttack
+  m_EditorClassIdentifier: 
+  elements:
+  - {fileID: 11400000, guid: b00a30c7bf7354db0b71bc15cb4a50d8, type: 2}
+  - {fileID: 11400000, guid: 5f6b8d47500e8454bab3a01e023f635d, type: 2}
+  - {fileID: 11400000, guid: 3debea7465565471796400d28ae885c2, type: 2}
+  - {fileID: 11400000, guid: 10fe0cb548eb54c1d83f529f8248c4d8, type: 2}
