@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
+  m_Name: Chat_Swipe
+  m_EditorClassIdentifier: 
+  elements:
+  - {fileID: 11400000, guid: 44c3bc16380a44e7ba8c5959a01704b6, type: 2}
+  - {fileID: 11400000, guid: ced227d7adbe44e39b1ec0b5d85721b3, type: 2}
+  - {fileID: 11400000, guid: c0b6d9601f0f1443d9646b6f542ede6c, type: 2}

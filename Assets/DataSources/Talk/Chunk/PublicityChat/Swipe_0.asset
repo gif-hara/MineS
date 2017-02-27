@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d22cadf659a04916b06266ad7bd98c9, type: 3}
+  m_Name: Swipe_0
+  m_EditorClassIdentifier: 
+  talkElement:
+    target: {fileID: 11400000, guid: c8da0f77dff1e433295965e7cb7ee730, type: 2}
+    value: "\u57FA\u672C\u7684\u306B\u30C0\u30F3\u30B8\u30E7\u30F3\u306F<color=aqua>\u30BF\u30C3\u30D7</color>\u3067\u9032\u3080\u3093\u3060\u304C\u30FB\u30FB\u30FB\u3002"
+    guid: 55eac3c2-2ff9-455d-a9c8-5caf4c023f0f
+  nextMessage:
+    target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
+    value: "\u6B21\u3078"
+    guid: e909d898-4a3d-45b9-b2a0-3c80996d78ab
