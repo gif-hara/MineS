@@ -35,7 +35,13 @@ namespace MineS
 		[SerializeField]
 		private StringAsset.Finder giveupCancelMessage;
 
-		private int floorCount = 1;
+        [SerializeField]
+        private StringAsset.Finder nextFloorDecideMessage;
+
+        [SerializeField]
+        private StringAsset.Finder nextFloorCancelMessage;
+
+        private int floorCount = 1;
 
         private UnityEvent immediateChangeDungeonEvent = new UnityEvent();
 
@@ -102,14 +108,14 @@ namespace MineS
 			this.Serialize();
 		}
 
-		public void ChangeDungeonData(DungeonDataBase data, bool immediateFadeOut, int floor = 1)
+		public void ChangeDungeonData(DungeonDataBase data, bool immediateFadeOut, int floor, bool confirm)
 		{
             this.isClear = false;
             this.current = data;
 			this.floorCount = floor;
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalChangeDungeon);
             this.immediateChangeDungeonEvent.Invoke();
-            this.NextFloorEvent(0, immediateFadeOut);
+            this.NextFloorEvent(0, immediateFadeOut, confirm);
 		}
 
 		public void AddImmediateChangeDungeonEvent(UnityAction otherEvent)
@@ -142,7 +148,20 @@ namespace MineS
 			this.nextFloorEvent.AddListener(otherEvent);
 		}
 
-		public void NextFloorEvent(int addValue, bool immediateFadeOut)
+		public void NextFloorEvent(int addValue, bool immediateFadeOut, bool confirm)
+		{
+			if(!confirm)
+			{
+                this.GotoNextFloor(addValue, immediateFadeOut);
+                return;
+            }
+
+            InformationManager.ConfirmNextFloor();
+            ConfirmManager.Instance.Add(this.nextFloorDecideMessage, () => this.GotoNextFloor(addValue, immediateFadeOut), true);
+            ConfirmManager.Instance.Add(this.nextFloorCancelMessage, null, true);
+        }
+
+		private void GotoNextFloor(int addValue, bool immediateFadeOut)
 		{
 			this.cachedAddFloorCount = addValue;
 			SEManager.Instance.PlaySE(SEManager.Instance.stair);
@@ -185,7 +204,7 @@ namespace MineS
 			{
 				PlayerManager.Instance.Giveup();
 				OptionManager.Instance.CloseUI();
-				this.ChangeDungeonData(this.townData, false);
+				this.ChangeDungeonData(this.townData, false, 1, false);
 			}, true);
 			confirmManager.Add(this.giveupCancelMessage, () =>
 			{
@@ -195,7 +214,7 @@ namespace MineS
 
 		public void RemoveSaveData()
 		{
-			this.ChangeDungeonData(this.tutorialData, false);
+			this.ChangeDungeonData(this.tutorialData, false, 1, false);
 		}
 
 		public bool CanTurnBack(int addValue)
@@ -241,7 +260,7 @@ namespace MineS
 		{
 			if(!MineS.SaveData.Progress.IsCompleteTutorial)
 			{
-				this.ChangeDungeonData(this.tutorialData, true);
+				this.ChangeDungeonData(this.tutorialData, true, 1, false);
 			}
 			else
 			{

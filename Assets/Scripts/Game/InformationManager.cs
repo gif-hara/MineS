@@ -68,7 +68,8 @@ namespace MineS
 			addAbility = null,
 			invokeStoneStatue = null,
 			playfulKettsey = null,
-			invalidUseItemOnTrapMaster = null;
+			invalidUseItemOnTrapMaster = null,
+			confirmNextFloor = null;
 
 		private Queue<string> messageQueue = new Queue<string>();
 
@@ -433,6 +434,12 @@ namespace MineS
 		{
             var instance = InformationManager.Instance;
             instance._AddMessage(instance.invalidUseItemOnTrapMaster.Get);
+		}
+
+		public static void ConfirmNextFloor()
+		{
+            var instance = InformationManager.Instance;
+            instance._AddMessage(instance.confirmNextFloor.Get);
 		}
 
 		public static void AddMessage(string message)

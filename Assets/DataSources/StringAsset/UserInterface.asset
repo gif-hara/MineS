@@ -822,3 +822,7 @@ MonoBehaviour:
       ja: "\u306A\u3093\u3068\uFF01<color=aqua>\u7F60\u5E2B</color>\u306E\u52B9\u679C\u3067\u907F\u3051\u3089\u308C\u3066\u3057\u307E\u3063\u305F\uFF01"
       en: 
     guid: ff485b7f-21fe-45a4-b585-a870c2d02396
+  - value:
+      ja: "\u6B21\u306E\u30D5\u30ED\u30A2\u30D8\u9032\u307F\u307E\u3059\u304B\uFF1F"
+      en: 
+    guid: d2815cf8-1e3b-4256-8721-3ee9bddc2d5f

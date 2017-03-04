@@ -18,7 +18,7 @@ namespace MineS
 			}
 			else
 			{
-				DungeonManager.Instance.NextFloorEvent(1, false);
+				DungeonManager.Instance.NextFloorEvent(1, false, true);
 			}
 		}
 

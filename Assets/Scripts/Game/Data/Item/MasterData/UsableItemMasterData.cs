@@ -230,7 +230,7 @@ namespace MineS
 				{
 					if(user.CharacterType == GameDefine.CharacterType.Player && DungeonManager.Instance.CanTurnBack(-1))
 					{
-						DungeonManager.Instance.NextFloorEvent(-1, false);
+						DungeonManager.Instance.NextFloorEvent(-1, false, false);
 						PlayerManager.Instance.CloseInventoryUI();
 					}
 					else
@@ -243,7 +243,7 @@ namespace MineS
 				{
 					if(user.CharacterType == GameDefine.CharacterType.Player)
 					{
-						DungeonManager.Instance.NextFloorEvent(1, false);
+						DungeonManager.Instance.NextFloorEvent(1, false, false);
 						PlayerManager.Instance.CloseInventoryUI();
 					}
 					else
