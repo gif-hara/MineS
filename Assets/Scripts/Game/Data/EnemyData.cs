@@ -45,10 +45,6 @@ namespace MineS
 		public override void Dead(CharacterData attacker)
 		{
 		    base.Dead(attacker);
-			this.OnDead(true);
-
-			SEManager.Instance.PlaySE(SEManager.Instance.dead);
-
 			if(this.FindAbility(GameDefine.AbilityType.Reincarnation))
 			{
 				var blankCell = CellManager.Instance.RandomBlankCell(true);
@@ -59,6 +55,10 @@ namespace MineS
 					Object.Instantiate(EffectManager.Instance.prefabSummon.Element, blankCell.Controller.transform, false);
 				}
 			}
+			
+			this.OnDead(true);
+
+			SEManager.Instance.PlaySE(SEManager.Instance.dead);
 
 			var cellData = EnemyManager.Instance.InEnemyCells[this];
 			cellData.BindDeployDescription(null);

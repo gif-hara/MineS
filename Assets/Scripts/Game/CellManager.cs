@@ -383,7 +383,7 @@ namespace MineS
 		public CellData RandomBlankCell(bool isIdentification)
 		{
 			var blankCells = this.ToListCellData;
-			blankCells = blankCells.Where(c => (isIdentification == c.IsIdentification) && c.CurrentEventType == GameDefine.EventType.None).ToList();
+			blankCells = blankCells.FindAll(c => (isIdentification == c.IsIdentification) && c.CurrentEventType == GameDefine.EventType.None);
 			if(blankCells.Count <= 0)
 			{
 				return null;
