@@ -45,7 +45,8 @@ namespace MineS
 			{
 				get
 				{
-					return this.probability > Random.Range(0, 100);
+                    var probability = this.probability + PlayerManager.Instance.Data.Inventory.Equipment.TotalLuck;
+                    return probability > Random.Range(0, 100);
 				}
 			}
 
