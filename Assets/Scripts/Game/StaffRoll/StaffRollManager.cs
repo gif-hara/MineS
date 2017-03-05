@@ -38,6 +38,8 @@ namespace MineS
 
         private List<StaffRollElement> currentElements = new List<StaffRollElement>();
 
+        private List<StaffRollElement> removeElements = new List<StaffRollElement>();
+
         private int visibleChunkCount;
 
 		void Start()
@@ -55,12 +57,15 @@ namespace MineS
 
         public void Complete(StaffRollElement element)
         {
-            Destroy(element.gameObject);
+            this.removeElements.Add(element);
             this.currentElements.Remove(element);
 			if(this.currentElements.Count > 0)
 			{
                 return;
             }
+
+            this.removeElements.ForEach(e => Destroy(e.gameObject));
+            this.removeElements.Clear();
 
             ++this.visibleChunkCount;
 			if(this.chunks.Count > this.visibleChunkCount)

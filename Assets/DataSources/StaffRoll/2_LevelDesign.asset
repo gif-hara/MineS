@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03e0ecf20b8e40ee90ac982ae895c56, type: 3}
+  m_Name: 2_LevelDesign
+  m_EditorClassIdentifier: 
+  messages:
+  - target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
+    value: "\u301C \u30EC\u30D9\u30EB\u30C7\u30B6\u30A4\u30F3 \u301C"
+    guid: 17173085-ff76-40bc-a1cb-52f6345c9772
+  - target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
+    value: "\u301C Hiroki Kitahara \u301C"
+    guid: d4ea1d15-1fe7-4037-a5c7-39911fe2f86b

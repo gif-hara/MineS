@@ -367,6 +367,15 @@ MonoBehaviour:
   chunks:
   - {fileID: 11400000, guid: 412006d6c373144bc868ecaebf336aa7, type: 2}
   - {fileID: 11400000, guid: 1f078ceccacdb46cd9fbefe19d89d394, type: 2}
+  - {fileID: 11400000, guid: f79fa3be8da334fa098b4352ee2a9c19, type: 2}
+  - {fileID: 11400000, guid: b6dee611a67c844e4a6a167b0ad65cb5, type: 2}
+  - {fileID: 11400000, guid: 5695aeb45f7ed42efa071ee18f3d568b, type: 2}
+  - {fileID: 11400000, guid: e2bdb6188ed454b29bfe008c0ea75d20, type: 2}
+  - {fileID: 11400000, guid: e8141c195b1e343a9ab5206df36991e0, type: 2}
+  - {fileID: 11400000, guid: b1738c64139f3420fbd453fe1cc4fa45, type: 2}
+  - {fileID: 11400000, guid: 0198a77fd42d84b1ca52f49da45c00bd, type: 2}
+  - {fileID: 11400000, guid: 6dda8ac9d61cd44188f1c3bb318a9492, type: 2}
+  - {fileID: 11400000, guid: b0c0d8895912b40978e55f545e2f1f89, type: 2}
 --- !u!225 &3199549
 CanvasGroup:
   m_ObjectHideFlags: 0
