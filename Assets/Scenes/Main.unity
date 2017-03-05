@@ -361,21 +361,20 @@ MonoBehaviour:
   canvas: {fileID: 3199544}
   canvasGroup: {fileID: 3199549}
   createDelay: 1
-  visibleDelay: 1
+  visibleDelay: 0.5
   completeFadeOutDelay: 1
   completeFadeOutDuration: 1
   chunks:
   - {fileID: 11400000, guid: 412006d6c373144bc868ecaebf336aa7, type: 2}
-  - {fileID: 11400000, guid: 1f078ceccacdb46cd9fbefe19d89d394, type: 2}
-  - {fileID: 11400000, guid: f79fa3be8da334fa098b4352ee2a9c19, type: 2}
-  - {fileID: 11400000, guid: b6dee611a67c844e4a6a167b0ad65cb5, type: 2}
-  - {fileID: 11400000, guid: 5695aeb45f7ed42efa071ee18f3d568b, type: 2}
-  - {fileID: 11400000, guid: e2bdb6188ed454b29bfe008c0ea75d20, type: 2}
-  - {fileID: 11400000, guid: e8141c195b1e343a9ab5206df36991e0, type: 2}
-  - {fileID: 11400000, guid: b1738c64139f3420fbd453fe1cc4fa45, type: 2}
-  - {fileID: 11400000, guid: 0198a77fd42d84b1ca52f49da45c00bd, type: 2}
-  - {fileID: 11400000, guid: 6dda8ac9d61cd44188f1c3bb318a9492, type: 2}
-  - {fileID: 11400000, guid: b0c0d8895912b40978e55f545e2f1f89, type: 2}
+  - {fileID: 11400000, guid: b1439f89339fa40ffb242afdd2209fd5, type: 2}
+  - {fileID: 11400000, guid: 66dfba240d75347b8ae55aa027e212fe, type: 2}
+  - {fileID: 11400000, guid: b88af3c3e8e0241cdb071442b72589ef, type: 2}
+  - {fileID: 11400000, guid: e33e03505dfca4572873ed528e3f2abf, type: 2}
+  - {fileID: 11400000, guid: b375c4b6795734609844d0afba75d78f, type: 2}
+  - {fileID: 11400000, guid: 224e3bb2afc214ac281b0edebd7aa36f, type: 2}
+  - {fileID: 11400000, guid: 2c707151eb7b649da83f0573921b99e2, type: 2}
+  - {fileID: 11400000, guid: f17597952aca243baa13decd24dd8296, type: 2}
+  - {fileID: 11400000, guid: bb1670a516d114b7d80725be38ae23c6, type: 2}
 --- !u!225 &3199549
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9701,9 +9700,9 @@ RectTransform:
   m_Father: {fileID: 842027360}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 371.25, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 371.25, y: -130}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518210043

@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using HK.Framework;
 using System.Collections.Generic;
+using System;
 
 namespace MineS
 {
@@ -12,14 +13,28 @@ namespace MineS
 	public class StaffRollChunk : ScriptableObject
 	{
         [SerializeField]
-        private List<StringAsset.Finder> messages;
+        private List<Element> elements;
 
-        public List<StringAsset.Finder> Messages
+        public List<Element> Elements
         {
             get 
 			{
-                return this.messages;
+                return this.elements;
             }
+        }
+
+        [Serializable]
+        public class Element
+        {
+            [SerializeField]
+            private StringAsset.Finder message;
+
+            [SerializeField]
+            private float visibleDuration;
+
+            public string Message{ get { return this.message.Get; } }
+
+            public float VisibleDuration{ get { return this.visibleDuration; } }
         }
     }
 }

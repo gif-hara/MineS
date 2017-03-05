@@ -9,16 +9,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c03e0ecf20b8e40ee90ac982ae895c56, type: 3}
-  m_Name: 1_Program
+  m_Name: 6_Texture
   m_EditorClassIdentifier: 
   elements:
   - message:
       target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
-      value: "\u301C \u30D7\u30ED\u30B0\u30E9\u30E0 \u301C"
-      guid: fd301e4d-03b0-4b69-92c9-d8fda6e6ad5f
+      value: "\u301C \u30C6\u30AF\u30B9\u30C1\u30E3 \u301C"
+      guid: 040d49fa-0180-48b8-b921-41d5d08bb45c
     visibleDuration: 2
   - message:
       target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
-      value: "\u301C Hiroki Kitahara \u301C"
-      guid: d4ea1d15-1fe7-4037-a5c7-39911fe2f86b
+      value: Denzi
+      guid: e53eccf6-c1aa-406c-8ea0-432eb6a63ace
+    visibleDuration: 2
+  - message:
+      target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
+      value: "\u68EE\u306E\u5965\u306E\u96A0\u308C\u91CC"
+      guid: 72ab8a44-214c-45e2-85bc-b7f6e47d2591
     visibleDuration: 2

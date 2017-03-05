@@ -11,10 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03e0ecf20b8e40ee90ac982ae895c56, type: 3}
   m_Name: 0_Start
   m_EditorClassIdentifier: 
-  messages:
-  - target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
-    value: ~ Mine's Rogue ~
-    guid: b72948c5-f157-4e0d-b176-7ef6cb08321a
-  - target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
-    value: "~ \u30B9\u30BF\u30C3\u30D5\u30ED\u30FC\u30EB ~"
-    guid: 38029f81-d173-4743-b1d0-7f101097881a
+  elements:
+  - message:
+      target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
+      value: "\u301C Mine's Rogue \u301C"
+      guid: b72948c5-f157-4e0d-b176-7ef6cb08321a
+    visibleDuration: 2
+  - message:
+      target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
+      value: "\u301C \u30B9\u30BF\u30C3\u30D5\u30ED\u30FC\u30EB \u301C"
+      guid: 38029f81-d173-4743-b1d0-7f101097881a
+    visibleDuration: 2

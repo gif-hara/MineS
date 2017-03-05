@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03e0ecf20b8e40ee90ac982ae895c56, type: 3}
+  m_Name: 8_SpecialThanks
+  m_EditorClassIdentifier: 
+  elements:
+  - message:
+      target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
+      value: "\u301C \u30B9\u30DA\u30B7\u30E3\u30EB\u30B5\u30F3\u30AF\u30B9 \u301C"
+      guid: 191c29c8-9a2f-4011-bba2-df632641964b
+    visibleDuration: 2
+  - message:
+      target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
+      value: Ryuichi Kamimura
+      guid: 7b3de4cb-9d16-493f-96ac-9858e35901a4
+    visibleDuration: 2
+  - message:
+      target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
+      value: Takao Shimoda
+      guid: 90b04c26-89e2-43c7-890b-3bb83a0c64f8
+    visibleDuration: 2
+  - message:
+      target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
+      value: "\u301C  \u301C"
+      guid: c82147bd-c530-4c21-893b-0353ff4d9f0e
+    visibleDuration: 2

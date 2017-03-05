@@ -29,7 +29,7 @@ MonoBehaviour:
       en: 
     guid: fd301e4d-03b0-4b69-92c9-d8fda6e6ad5f
   - value:
-      ja: "\u301C Hiroki Kitahara \u301C"
+      ja: Hiroki Kitahara
       en: 
     guid: d4ea1d15-1fe7-4037-a5c7-39911fe2f86b
   - value:
@@ -41,45 +41,13 @@ MonoBehaviour:
       en: 
     guid: 17173085-ff76-40bc-a1cb-52f6345c9772
   - value:
-      ja: "\u301C Hiroki Kitahara \u301C"
+      ja: Hiroki Kitahara
       en: 
     guid: b0b0a4ac-b62a-4bb2-aff0-e0ff6b0ee6e8
   - value:
       ja: 
       en: 
     guid: f0d0d9ad-7d99-4d8a-907b-6854c1b20283
-  - value:
-      ja: "\u301C \u30C7\u30D0\u30C3\u30AC\u30FC \u301C"
-      en: 
-    guid: 8d4bd8a3-147d-40bb-bea8-5709d32e86c8
-  - value:
-      ja: "\u301C  \u301C"
-      en: 
-    guid: 7a0f4bea-cd6a-4ac6-85b0-408346713c17
-  - value:
-      ja: 
-      en: 
-    guid: 99e409fb-2e4d-451a-8fd0-304ddaa2bd71
-  - value:
-      ja: "\u301C \u30C6\u30B9\u30C8\u30D7\u30EC\u30A4\u30E4\u30FC \u301C"
-      en: 
-    guid: 191c29c8-9a2f-4011-bba2-df632641964b
-  - value:
-      ja: "\u301C Ryuichi Kamimura \u301C"
-      en: 
-    guid: 7b3de4cb-9d16-493f-96ac-9858e35901a4
-  - value:
-      ja: "\u301C  \u301C"
-      en: 
-    guid: c82147bd-c530-4c21-893b-0353ff4d9f0e
-  - value:
-      ja: "\u301C  \u301C"
-      en: 
-    guid: 90b04c26-89e2-43c7-890b-3bb83a0c64f8
-  - value:
-      ja: 
-      en: 
-    guid: e7d01f17-8bf3-435a-b5af-7ae08d2aef1c
   - value:
       ja: "\u301C \u4F7F\u7528\u7D20\u6750 \u301C"
       en: 
@@ -89,11 +57,11 @@ MonoBehaviour:
       en: 
     guid: c471f841-a2b7-4efe-a850-253bf84b6c18
   - value:
-      ja: "\u301C BGM \u301C"
+      ja: "\u301C \u97F3\u697D \u301C"
       en: 
     guid: 02822b96-d77e-4c83-b0b8-472a40cf2c52
   - value:
-      ja: "\u301C \u9B54\u738B\u9B42 \u301C"
+      ja: "\u9B54\u738B\u9B42"
       en: 
     guid: 28d0a939-b239-412f-b655-979c266acfac
   - value:
@@ -101,19 +69,19 @@ MonoBehaviour:
       en: 
     guid: de8ae96f-cdab-41e3-bfca-a790e3173c7b
   - value:
-      ja: "\u301C SE \u301C"
+      ja: "\u301C \u52B9\u679C\u97F3 \u301C"
       en: 
     guid: bd571ac3-4255-43e5-94c9-f1c2badb0eba
   - value:
-      ja: "\u301C On-Jin\uFF08\u97F3\u4EBA\uFF09 \u301C"
+      ja: "On-Jin\uFF08\u97F3\u4EBA\uFF09"
       en: 
     guid: 94d4aee9-c9e7-4051-9a98-1e3eedfa1f4e
   - value:
-      ja: "\u301C \u304F\u3089\u3052\u5DE5\u623F \u301C"
+      ja: "\u304F\u3089\u3052\u5DE5\u623F"
       en: 
     guid: 0afb3a12-3340-40c8-947e-e7abd2370846
   - value:
-      ja: "\u301C \u52B9\u679C\u97F3\u30E9\u30DC \u301C"
+      ja: "\u52B9\u679C\u97F3\u30E9\u30DC"
       en: 
     guid: 9a8c5bfe-d654-4d88-98cd-a69320f9837d
   - value:
@@ -125,11 +93,11 @@ MonoBehaviour:
       en: 
     guid: 040d49fa-0180-48b8-b921-41d5d08bb45c
   - value:
-      ja: "\u301C Denzi \u301C"
+      ja: Denzi
       en: 
     guid: e53eccf6-c1aa-406c-8ea0-432eb6a63ace
   - value:
-      ja: "\u301C \u68EE\u306E\u5965\u306E\u96A0\u308C\u91CC \u301C"
+      ja: "\u68EE\u306E\u5965\u306E\u96A0\u308C\u91CC"
       en: 
     guid: 72ab8a44-214c-45e2-85bc-b7f6e47d2591
   - value:
@@ -141,13 +109,33 @@ MonoBehaviour:
       en: 
     guid: 6f39a4b1-0dc0-43f0-8ec4-d22052f04092
   - value:
-      ja: "\u301C \u81EA\u5BB6\u88FD\u30D5\u30A9\u30F3\u30C8\u5DE5\u623F \u301C"
+      ja: "\u81EA\u5BB6\u88FD\u30D5\u30A9\u30F3\u30C8\u5DE5\u623F"
       en: 
     guid: ba3fddee-4108-4be9-beed-97a403c246ae
   - value:
       ja: 
       en: 
     guid: 5a382821-53d8-42b0-9cd8-7134df7dc261
+  - value:
+      ja: "\u301C \u30B9\u30DA\u30B7\u30E3\u30EB\u30B5\u30F3\u30AF\u30B9 \u301C"
+      en: 
+    guid: 191c29c8-9a2f-4011-bba2-df632641964b
+  - value:
+      ja: Ryuichi Kamimura
+      en: 
+    guid: 7b3de4cb-9d16-493f-96ac-9858e35901a4
+  - value:
+      ja: Takao Shimoda
+      en: 
+    guid: 90b04c26-89e2-43c7-890b-3bb83a0c64f8
+  - value:
+      ja: "\u301C  \u301C"
+      en: 
+    guid: c82147bd-c530-4c21-893b-0353ff4d9f0e
+  - value:
+      ja: 
+      en: 
+    guid: e7d01f17-8bf3-435a-b5af-7ae08d2aef1c
   - value:
       ja: "\u3053\u3053\u307E\u3067\u904A\u3093\u3067\u304F\u308C\u3066\u3042\u308A\u304C\u3068\u3046\uFF01"
       en: 

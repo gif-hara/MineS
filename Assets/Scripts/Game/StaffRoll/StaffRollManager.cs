@@ -7,7 +7,7 @@ using DG.Tweening;
 
 namespace MineS
 {
-	/// <summary>
+    /// <summary>
 	/// スタッフロールを制御するヤーツ
 	/// </summary>
 	public class StaffRollManager : SingletonMonoBehaviour<StaffRollManager>
@@ -92,10 +92,10 @@ namespace MineS
         {
             yield return new WaitForSeconds(this.createDelay);
 
-            for (var i = 0; i < chunk.Messages.Count; i++)
+            for (var i = 0; i < chunk.Elements.Count; i++)
             {
                 var element = Instantiate(this.prefab, this.transform, false);
-                element.Setup(this, chunk.Messages[i].Get, this.visibleDelay * i);
+                element.Setup(this, chunk.Elements[i].Message, this.visibleDelay * i, chunk.Elements[i].VisibleDuration);
                 this.currentElements.Add(element);
             }
         }

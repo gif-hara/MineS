@@ -9,9 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c03e0ecf20b8e40ee90ac982ae895c56, type: 3}
-  m_Name: 5_Resources
+  m_Name: 3_Resources
   m_EditorClassIdentifier: 
-  messages:
-  - target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
-    value: "\u301C \u4F7F\u7528\u7D20\u6750 \u301C"
-    guid: 0eed8438-f408-4781-a03a-26ab8e7932ad
+  elements:
+  - message:
+      target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
+      value: "\u301C \u4F7F\u7528\u7D20\u6750 \u301C"
+      guid: 0eed8438-f408-4781-a03a-26ab8e7932ad
+    visibleDuration: 2

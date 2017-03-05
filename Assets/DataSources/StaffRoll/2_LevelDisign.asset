@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c03e0ecf20b8e40ee90ac982ae895c56, type: 3}
-  m_Name: 1_Program
+  m_Name: 2_LevelDisign
   m_EditorClassIdentifier: 
   elements:
   - message:
       target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
-      value: "\u301C \u30D7\u30ED\u30B0\u30E9\u30E0 \u301C"
-      guid: fd301e4d-03b0-4b69-92c9-d8fda6e6ad5f
+      value: "\u301C \u30EC\u30D9\u30EB\u30C7\u30B6\u30A4\u30F3 \u301C"
+      guid: 17173085-ff76-40bc-a1cb-52f6345c9772
     visibleDuration: 2
   - message:
       target: {fileID: 11400000, guid: f981625829f094cafbfa015eaf7eba45, type: 2}
