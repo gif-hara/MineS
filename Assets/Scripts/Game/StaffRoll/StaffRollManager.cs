@@ -42,9 +42,10 @@ namespace MineS
 
         private int visibleChunkCount;
 
-		void Start()
-		{
-            this.StartStaffRoll();
+        void Awake()
+        {
+            this.canvas.enabled = false;
+            this.canvasGroup.alpha = 0.0f;
         }
 
         public void StartStaffRoll()
