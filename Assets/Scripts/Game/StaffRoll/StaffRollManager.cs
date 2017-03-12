@@ -44,7 +44,7 @@ namespace MineS
 
         private int visibleChunkCount;
 
-        void Awake()
+        protected override void Awake()
         {
             this.canvas.enabled = false;
             this.canvasGroup.alpha = 0.0f;
