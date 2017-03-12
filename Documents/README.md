@@ -3,7 +3,7 @@
 
 - [どんなゲーム？](spec/WhatGame/README.md)
 - 各画面について
-- [村について](spec/Village.md)
+- [村について](spec/Village/README.md)
     - 宣伝屋
     - 銀行
     - ショップ
