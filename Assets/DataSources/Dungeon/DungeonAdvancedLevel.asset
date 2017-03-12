@@ -99,6 +99,7 @@ MonoBehaviour:
   clearDungeonProccesses:
     proccesses:
     - {fileID: 11400000, guid: cfc9e45a8ab4344ccb9f010bf0a9211f, type: 2}
+    - {fileID: 11400000, guid: 10263be7152f048c59d731e5ce38fe41, type: 2}
   floorMax: 30
   enemyTable:
     elements:

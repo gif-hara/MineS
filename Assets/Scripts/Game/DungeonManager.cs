@@ -116,7 +116,7 @@ namespace MineS
 			this.dungeonNameFlowController.AddCompleteFadeOutEvent(this.InternalChangeDungeon);
             this.immediateChangeDungeonEvent.Invoke();
             this.NextFloorEvent(0, immediateFadeOut, confirm);
-		}
+        }
 
 		public void AddImmediateChangeDungeonEvent(UnityAction otherEvent)
 		{
@@ -237,6 +237,7 @@ namespace MineS
 			OptionManager.Instance.CloseUI();
 			this.nextFloorEvent.Invoke();
 			this.observers.ForEach(o => o.ModifiedData(this.CurrentData));
+            this.StartStaffRoll(this.current);
 		}
 
 		private void InternalChangeDungeon()
@@ -271,6 +272,19 @@ namespace MineS
 		private void InvokeOtherProccess()
 		{
 			this.current.InvokeOtherProccess();
+		}
+
+		private void StartStaffRoll(DungeonDataBase data)
+		{
+            if (data != this.townData)
+            {
+                return;
+            }
+            var staffRollManager = StaffRollManager.Instance;
+			if(staffRollManager.CanStart)
+			{
+				staffRollManager.StartStaffRoll();
+			}
 		}
 
 		public void Serialize()

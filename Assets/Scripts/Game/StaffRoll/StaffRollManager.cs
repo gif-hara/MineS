@@ -36,6 +36,8 @@ namespace MineS
         [SerializeField]
         private List<StaffRollChunk> chunks;
 
+        public bool CanStart{ private set; get; }
+
         private List<StaffRollElement> currentElements = new List<StaffRollElement>();
 
         private List<StaffRollElement> removeElements = new List<StaffRollElement>();
@@ -54,6 +56,12 @@ namespace MineS
             this.canvas.enabled = true;
             this.canvasGroup.alpha = 1.0f;
             StartCoroutine(this.CreateElement(this.chunks[this.visibleChunkCount]));
+            this.CanStart = false;
+        }
+
+        public void Invokable()
+        {
+            this.CanStart = true;
         }
 
         public void Complete(StaffRollElement element)
