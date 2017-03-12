@@ -32020,12 +32020,12 @@ MonoBehaviour:
   data:
     bgmVolume: 0.5
     seVolume: 0.5
-    messageSpeed: 2
-    isFewMessage: 1
+    messageSpeed: 1
+    isFewMessage: 0
     autoSort: 1
-    swipeStopAnyEvent: 0
-    swipeStopDamage: 0
-    visiblePlayTime: 1
+    swipeStopAnyEvent: 1
+    swipeStopDamage: 1
+    visiblePlayTime: 0
     alwaysFrontPlayTime: 0
 --- !u!114 &1584263368
 MonoBehaviour:
@@ -32359,10 +32359,9 @@ MonoBehaviour:
   - talks:
     - {fileID: 11400000, guid: 855cdf8829fd1495fa4fb9b603d3dfc5, type: 2}
     - {fileID: 11400000, guid: ad8cad0cf9d74419db6dc0bf0397d91e, type: 2}
+    - {fileID: 11400000, guid: 7a6a0adbb40fd40f19828390c2f6dabd, type: 2}
     - {fileID: 11400000, guid: 58ef44c7cdcbd48b3bdcb854cd3954ec, type: 2}
     - {fileID: 11400000, guid: 720610219cb2d4591a1e5aca144e3492, type: 2}
-    - {fileID: 11400000, guid: 7a6a0adbb40fd40f19828390c2f6dabd, type: 2}
-    - {fileID: 11400000, guid: a100cf4b930614d8fb64622e6494d1c0, type: 2}
   - talks:
     - {fileID: 11400000, guid: e79591be7514f4a7aad2d762fc1f504c, type: 2}
     - {fileID: 11400000, guid: 882452ccd85b045aab9dc9533c561eb7, type: 2}
@@ -32451,7 +32450,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d0da6f56282d449d78b80e827deb4874, type: 2}
     - {fileID: 11400000, guid: 7a6a0adbb40fd40f19828390c2f6dabd, type: 2}
     - {fileID: 11400000, guid: 30ffa2901de4e4a01ad4395409924329, type: 2}
-  debugChatting: 1
+  debugChatting: 0
   debugChatData: {fileID: 11400000, guid: 0a4212f8874e74d58b9da61920b288b7, type: 2}
 --- !u!114 &1584263375
 MonoBehaviour:
