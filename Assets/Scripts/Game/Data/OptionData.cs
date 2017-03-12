@@ -81,9 +81,11 @@ namespace MineS
 			this.seVolume = 0.5f;
 			this.messageSpeed = 1;
 			this.isFewMessage = false;
-			this.autoSort = false;
+			this.autoSort = true;
 			this.swipeStopAnyEvent = true;
+            this.swipeStopDamage = true;
             this.visiblePlayTime = false;
+            this.alwaysFrontPlayTime = false;
         }
 
 		public void SetBGMVolume(float value)

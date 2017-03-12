@@ -32022,9 +32022,9 @@ MonoBehaviour:
     seVolume: 0.5
     messageSpeed: 1
     isFewMessage: 0
-    autoSort: 0
+    autoSort: 1
     swipeStopAnyEvent: 1
-    swipeStopDamage: 0
+    swipeStopDamage: 1
     visiblePlayTime: 0
     alwaysFrontPlayTime: 0
 --- !u!114 &1584263368
