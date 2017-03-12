@@ -95,10 +95,10 @@ namespace MineS
 		/// <summary>
 		/// アイテムを識別する
 		/// </summary>
-		public void Identification()
+		public void Identification(IdentifiedItemManager identifiedManager)
 		{
 			var itemName = this.instanceData.ItemName;
-			if(ItemManager.Instance.MagicStoneIdentified.Identified(this))
+			if(identifiedManager.Identified(this))
 			{
 				InformationManager.IdentifiedItem(itemName, this.instanceData.ItemName);
 			}
@@ -181,7 +181,7 @@ namespace MineS
                 return;
             }
 
-            this.Identification();
+            this.Identification(ItemManager.Instance.UsableItemIdentified);
 
             (this.instanceData.MasterData as UsableItemMasterData).OnUse(user, 1.0f);
 		}

@@ -113,7 +113,7 @@ namespace MineS
                 return;
             }
 
-			item.Identification();
+			item.Identification(ItemManager.Instance.MagicStoneIdentified);
 
 			switch(this.type)
 			{
