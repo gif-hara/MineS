@@ -9,9 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
-  m_Name: Chat_Armor
+  m_Name: 22_Theft
   m_EditorClassIdentifier: 
   elements:
-  - {fileID: 11400000, guid: 293c1f72217464c1da1c5cd1e197f0c8, type: 2}
-  - {fileID: 11400000, guid: facbb9452566642e9bb6dc81ff3356ee, type: 2}
-  - {fileID: 11400000, guid: dc1272859d77047848a17a2dad8bca21, type: 2}
+  - {fileID: 11400000, guid: ecac75725d2054a8da3de4d7ca1ed208, type: 2}
+  - {fileID: 11400000, guid: 783e56f97d62a4a098b6b19f87ea3355, type: 2}
+  - {fileID: 11400000, guid: 95e5d73d58d3a44ccba50411f9aa05cf, type: 2}
+  - {fileID: 11400000, guid: 9f8f2b8cc7722413cae73cc954d6382e, type: 2}

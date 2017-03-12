@@ -9,9 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
-  m_Name: Chat_Unity
+  m_Name: 18_Luck
   m_EditorClassIdentifier: 
   elements:
-  - {fileID: 11400000, guid: 1270aae2dccf945abb2f157fb5116e6c, type: 2}
-  - {fileID: 11400000, guid: bdf55b77d50e84650a09952eab3406b6, type: 2}
-  - {fileID: 11400000, guid: fd4605e0f83a34dfdbcf2ae16f0fee41, type: 2}
+  - {fileID: 11400000, guid: dc4cb54456e834abfbf67049e08f17f8, type: 2}
+  - {fileID: 11400000, guid: 6c0daaa68039b481e8676581670e682a, type: 2}
+  - {fileID: 11400000, guid: 1d0c9a7bc69e346b7bd93a97f952edbc, type: 2}
+  - {fileID: 11400000, guid: 03a6ca84184f944a3bac0051f70f9f2e, type: 2}

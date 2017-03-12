@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
-  m_Name: Chat_StoneStatue
+  m_Name: 21_Swipe
   m_EditorClassIdentifier: 
   elements:
-  - {fileID: 11400000, guid: b0cd5e9665e5b43e0a115a5b7227050a, type: 2}
-  - {fileID: 11400000, guid: 043d27eec855e4896a17a8888055e7ce, type: 2}
-  - {fileID: 11400000, guid: caeb0212f4a4e430a9188d68e2b2f313, type: 2}
+  - {fileID: 11400000, guid: 44c3bc16380a44e7ba8c5959a01704b6, type: 2}
+  - {fileID: 11400000, guid: ced227d7adbe44e39b1ec0b5d85721b3, type: 2}
+  - {fileID: 11400000, guid: c0b6d9601f0f1443d9646b6f542ede6c, type: 2}

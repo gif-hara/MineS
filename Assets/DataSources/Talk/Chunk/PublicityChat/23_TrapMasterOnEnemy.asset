@@ -9,8 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
-  m_Name: Chat_ItemThrowInbariablyHit
+  m_Name: 23_TrapMasterOnEnemy
   m_EditorClassIdentifier: 
   elements:
-  - {fileID: 11400000, guid: aa50c8adbf81749ffa25f69433a19898, type: 2}
-  - {fileID: 11400000, guid: 01d3e1debd18446399f9eaae785f52be, type: 2}
+  - {fileID: 11400000, guid: a5bdfedf2c4cb41d880fe9b4ff351456, type: 2}
+  - {fileID: 11400000, guid: 9385081f4ada8432f90a40683cab4445, type: 2}
+  - {fileID: 11400000, guid: e00f1980e5d694d32a3f710699fb9d1a, type: 2}
+  - {fileID: 11400000, guid: b3f6e23a9c34749ebac82fcd82d40a00, type: 2}

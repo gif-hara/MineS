@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
-  m_Name: Chat_BlurOnEnemy
+  m_Name: 9_Division
   m_EditorClassIdentifier: 
   elements:
-  - {fileID: 11400000, guid: c7e580b0980964e52b47b8b3235e9354, type: 2}
-  - {fileID: 11400000, guid: d6d35c9a93649438eab2991c47e99165, type: 2}
-  - {fileID: 11400000, guid: 7b2a0355913944227acaef9e2023d04a, type: 2}
-  - {fileID: 11400000, guid: 3070fbd6d9715439eb04939d9c50f8b6, type: 2}
+  - {fileID: 11400000, guid: 164a7b237059b4279baece1341c18abf, type: 2}
+  - {fileID: 11400000, guid: 243c7d112c0084c05b4f5724758cc061, type: 2}
+  - {fileID: 11400000, guid: 65146e51c96644697b4fea1f82f874d5, type: 2}
+  - {fileID: 11400000, guid: cad39b8e0cb684fd6a919918d62d2de6, type: 2}

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
-  m_Name: Chat_Theft
+  m_Name: 2_AbnormalStatus
   m_EditorClassIdentifier: 
   elements:
-  - {fileID: 11400000, guid: ecac75725d2054a8da3de4d7ca1ed208, type: 2}
-  - {fileID: 11400000, guid: 783e56f97d62a4a098b6b19f87ea3355, type: 2}
-  - {fileID: 11400000, guid: 95e5d73d58d3a44ccba50411f9aa05cf, type: 2}
-  - {fileID: 11400000, guid: 9f8f2b8cc7722413cae73cc954d6382e, type: 2}
+  - {fileID: 11400000, guid: daf187b6fbb8a43f18bdb44e3fb3c0c4, type: 2}
+  - {fileID: 11400000, guid: 8aa16101bc5854efe8d782dec326e7d0, type: 2}
+  - {fileID: 11400000, guid: 4b26bebd26949408fb72d019218c1ba1, type: 2}
+  - {fileID: 11400000, guid: a9ae8e5fc9e5142b18e4c454fe3cbeca, type: 2}

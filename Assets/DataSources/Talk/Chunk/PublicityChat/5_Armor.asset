@@ -9,10 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
-  m_Name: Chat_ExtraDungeon
+  m_Name: 5_Armor
   m_EditorClassIdentifier: 
   elements:
-  - {fileID: 11400000, guid: 56e7a01de50e2408d8a795698e7c2189, type: 2}
-  - {fileID: 11400000, guid: 4d4659af60a9245629c76e96ef90e37e, type: 2}
-  - {fileID: 11400000, guid: 9f963fdd8daf946c2bd7c36b36f14828, type: 2}
-  - {fileID: 11400000, guid: c222babb697a647bdbfbbd8bca69a904, type: 2}
+  - {fileID: 11400000, guid: 293c1f72217464c1da1c5cd1e197f0c8, type: 2}
+  - {fileID: 11400000, guid: facbb9452566642e9bb6dc81ff3356ee, type: 2}
+  - {fileID: 11400000, guid: dc1272859d77047848a17a2dad8bca21, type: 2}

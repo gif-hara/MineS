@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5a3fd33236a7428892ef134278a14c0, type: 3}
-  m_Name: Chat_Ability
+  m_Name: 1_Ability
   m_EditorClassIdentifier: 
   elements:
   - {fileID: 11400000, guid: 2ebde9e3d8dd441a29aa185561b41af7, type: 2}
