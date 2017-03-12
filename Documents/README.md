@@ -2,7 +2,7 @@
 軽くですが仕様書っぽいのをまとめておきます。以下のリンクに詳細を書いていく予定です。
 
 - [どんなゲーム？](spec/WhatGame/README.md)
-- 各画面について
+- [各画面について](spec/UI/README.md)
 - [村について](spec/Village/README.md)
     - 宣伝屋
     - 銀行
