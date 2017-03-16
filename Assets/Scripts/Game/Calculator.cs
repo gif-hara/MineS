@@ -74,8 +74,7 @@ namespace MineS
 			var baseStrength = attacker.Strength;
 			if(attacker.FindAbility(GameDefine.AbilityType.Reinforcement))
 			{
-				var reinforcementPower = attacker.GetAbilityNumber(GameDefine.AbilityType.Reinforcement) * (EnemyManager.Instance.IdentitiedEnemyNumber - 1) * 2;
-				reinforcementPower = reinforcementPower < 0 ? 0 : reinforcementPower;
+				var reinforcementPower = GetReinforcementValue(attacker);
 				baseStrength += reinforcementPower;
 			}
 
@@ -508,6 +507,19 @@ namespace MineS
 	        result = result <= 0 ? 1 : result;
 	        return result;
 	    }
+
+		/// <summary>
+		/// 特殊能力の三子教訓による攻撃力上昇値を返す
+		/// </summary>
+		/// <param name="attacker"></param>
+		/// <returns></returns>
+		public static int GetReinforcementValue(IAttack attacker)
+		{
+			var result = attacker.GetAbilityNumber(GameDefine.AbilityType.Reinforcement) * (EnemyManager.Instance.IdentitiedEnemyNumber - 1) * 2;
+			result = result < 0 ? 0 : result;
+
+			return result;
+		}
 
 	}
 }
