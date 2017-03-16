@@ -4,10 +4,10 @@
 - [どんなゲーム？](spec/WhatGame/README.md)
 - [各画面について](spec/UI/README.md)
 - [村について](spec/Village/README.md)
-    - 宣伝屋
-    - 銀行
-    - ショップ
-    - 鍛冶屋
+    - [宣伝屋](spec/Village/Publicity/README.md)
+    - [銀行](spec/Village/Bank/README.md)
+    - [ショップ](spec/Village/Shop/README.md)
+    - [鍛冶屋](spec/Village/BlackSmith/README.md)
 - ダンジョンについて
     - 通常ダンジョン
         - 初めてのダンジョン
@@ -18,11 +18,11 @@
         - 鍛冶屋の縁の下
         - 行商人の祠
         - タルタロスの緋巌窟
-- キャラクターについて
-    - プレイヤー
-    - 敵
-    - 状態異常
-    - 特殊能力
+- [キャラクターについて](spec/Character/README.md)
+    - [プレイヤー](spec/Character/Player/README.md)
+    - [敵](spec/Character/Enemy/README.md)
+    - [状態異常](spec/Character/AbnormalStatus/README.md)
+    - [特殊能力](spec/Character/Ability/README.md)
 - アイテム
     - 使用可能アイテム（ポーション）
     - 武器
