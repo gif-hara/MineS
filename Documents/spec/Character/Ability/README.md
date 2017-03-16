@@ -111,8 +111,10 @@
 ### 捨身
 - アーマーを消費して攻撃力が上昇します
 - アーマーが無い場合は発動しません
-- 上昇量は`(abilityNumber * 10)`です
+- 攻撃力上昇量は`(abilityNumber * 10)`です
     - :eyes:`Calculator.GetRiskOfLifeAddStrengthValue();`
+- 攻撃する際に消費されるアーマー値は`((abilityNumber / 2) + 1)`です
+    - :eyes:`Calculator.GetRiskOfLifeSubArmorValue();`
 
 ### 増進
 - バフの継続ターンが上昇します
