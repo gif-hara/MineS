@@ -247,7 +247,7 @@ namespace MineS
 				
 			if(attacker != null)
 			{
-				probability += attacker.GetAbilityNumber(GameDefine.AbilityType.Fortune);
+				probability += GetFortuneItemDropValue(attacker);
 			}
 			return probability > Random.Range(0, 100);
 		}
@@ -521,5 +521,12 @@ namespace MineS
 			return result;
 		}
 
+		/// <summary>
+		/// 特殊能力の幸運によるアイテムドロップ率上昇量を返す
+		/// </summary>
+		public static int GetFortuneItemDropValue(IAttack attacker)
+		{
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Fortune);			
+		}
 	}
 }
