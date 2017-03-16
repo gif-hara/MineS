@@ -76,12 +76,12 @@
 
 ### 匠
 - 攻撃力が上昇します
-- 上昇量は`(2 + (abilityNumber * 4))`です
+- 上昇量は`((abilityNumber * 4) + 2)`です
     - :eyes:`Calculator.GetArtisanRate();`
 
 ### 精巧
 - アーマーが上昇します
-- 上昇量は`(7 + (abilityNumber * 8))`です
+- 上昇量は`((abilityNumber * 8) + 7)`です
     - :eyes:`Calculator.GetExquisiteArmorValue();`
 
 ### 回避
@@ -147,12 +147,12 @@
 ### 薬師
 - 回復系アイテムの回復量が上昇します
 - `プレイヤーのみ付与される特殊能力`です
-- 上昇量は`(10 + abilityNumber * 15)%`です
+- 上昇量は`((abilityNumber * 15) + 10)%`です
     - :eyes:`Calculator.GetHealingBuddhaValue();`
 
 ### 毒塗
 - ダメージを与えた際に確率でデバフの毒を付与します
-- 付与する確率はプレイヤーの場合は`(10 + abilituNumber * 2)%`で、敵の場合は`(10 + abilityNumber * 10)%`です
+- 付与する確率はプレイヤーの場合は`((abilituNumber * 2) + 10)%`で、敵の場合は`((abilityNumber * 10) + 10)%`です
     - :eyes:`Calculator.CanAddAbnormalStatusFromAbility();`
 
 ### 放心
