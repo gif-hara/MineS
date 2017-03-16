@@ -154,7 +154,7 @@
 
 ### 毒塗
 - ダメージを与えた際に確率でデバフの毒を付与します
-- 付与する確率はプレイヤーの場合は`((abilituNumber * 2) + 10)%`で、敵の場合は`((abilityNumber * 10) + 10)%`です
+- 付与する確率はプレイヤーの場合は`((abilityNumber * 2) + 10)%`で、敵の場合は`((abilityNumber * 10) + 10)%`です
     - :eyes:`Calculator.CanAddAbnormalStatusFromAbility();`
 
 ### 放心
