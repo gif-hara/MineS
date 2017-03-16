@@ -528,5 +528,13 @@ namespace MineS
 		{
 			return attacker.GetAbilityNumber(GameDefine.AbilityType.Fortune);			
 		}
+
+		/// <summary>
+		/// 特殊能力の回避による回避率を返す
+		/// </summary>
+		public static int GetEvationAbilityValue(IAttack attacker)
+		{
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Evasion);
+		}
 	}
 }
