@@ -8,13 +8,13 @@
     - [銀行](spec/Village/Bank/README.md)
     - [ショップ](spec/Village/Shop/README.md)
     - [鍛冶屋](spec/Village/BlackSmith/README.md)
-- ダンジョンについて
-    - 通常ダンジョン
+- [ダンジョンについて](spec/Dungeon/README.md)
+    - [通常ダンジョン](spec/Dungeon/StoryDungeon/README.md)
         - 初めてのダンジョン
         - 腕鳴らしのダンジョン
         - 挑戦者のダンジョン
-    - EXダンジョン
-        - 修羅の洞窟
+    - [EXダンジョン](spec/Dungeon/ExtraDungeon/README.md)
+        - [修羅の洞窟](spec/Dungeon/ExtraDungeon/CarnageCave/README.md)
         - 鍛冶屋の縁の下
         - 行商人の祠
         - タルタロスの緋巌窟
