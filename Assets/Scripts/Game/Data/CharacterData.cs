@@ -88,7 +88,7 @@ namespace MineS
 
 		public virtual int HitProbability{ get { return this.baseHitProbability + this.GetAbilityNumber(GameDefine.AbilityType.HitProbability); } }
 
-		public virtual int Evasion{ get { return this.baseEvasion + this.GetAbilityNumber(GameDefine.AbilityType.Evasion); } }
+		public virtual int Evasion{ get { return this.baseEvasion + Calculator.GetEvationAbilityValue(this); } }
 
 		public int Experience{ get { return this.experience; } }
 

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: RewardAccessory3
   m_EditorClassIdentifier: 
   equipments:
-  - {fileID: 11400000, guid: 2d8a95644889a47babd48a8663adf85f, type: 2}
-  addCount: 10
+  - {fileID: 11400000, guid: cd9131b5e02e44d5389c68cf66f50495, type: 2}
+  addCount: 6
   randomAddAbilities: 090000000a0000000f00000010000000230000001200000007000000

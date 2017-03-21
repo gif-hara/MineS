@@ -74,8 +74,7 @@ namespace MineS
 			var baseStrength = attacker.Strength;
 			if(attacker.FindAbility(GameDefine.AbilityType.Reinforcement))
 			{
-				var reinforcementPower = attacker.GetAbilityNumber(GameDefine.AbilityType.Reinforcement) * (EnemyManager.Instance.IdentitiedEnemyNumber - 1) * 2;
-				reinforcementPower = reinforcementPower < 0 ? 0 : reinforcementPower;
+				var reinforcementPower = GetReinforcementValue(attacker);
 				baseStrength += reinforcementPower;
 			}
 
@@ -110,12 +109,12 @@ namespace MineS
 				: receiver.FindAbnormalStatus(GameDefine.AbnormalStatusType.Curing)
 				? 0.5f
 				: 1.0f;
-			int result = Mathf.FloorToInt(baseDamage * rate) - (receiver.GetAbilityNumber(GameDefine.AbilityType.Protection) * 3);
+			int result = Mathf.FloorToInt(baseDamage * rate) - GetProtectionSubDamage(receiver);
 
 			// 敵のみ一致団結の処理を行う.
 			if(receiver.CharacterType == GameDefine.CharacterType.Enemy)
 			{
-				result -= (EnemyManager.Instance.VisibleEnemies.Count - 1) * (EnemyManager.Instance.GetAbilityUnityNumber * 2);
+				result -= GetAbilityUnitySubDamage();
 			}
 			result = result < 1 ? 1 : result;
 
@@ -248,7 +247,7 @@ namespace MineS
 				
 			if(attacker != null)
 			{
-				probability += attacker.GetAbilityNumber(GameDefine.AbilityType.Fortune);
+				probability += GetFortuneItemDropValue(attacker);
 			}
 			return probability > Random.Range(0, 100);
 		}
@@ -338,8 +337,7 @@ namespace MineS
 		{
 			if(user.FindAbility(GameDefine.AbilityType.HealingBuddha))
 			{
-				float rate = 0.10f + user.GetAbilityNumber(GameDefine.AbilityType.HealingBuddha) * 0.15f;
-				baseValue += Mathf.FloorToInt(baseValue * rate);
+				baseValue += Mathf.FloorToInt(baseValue * GetHealingBuddhaValue(user));
 			}
 
 			return baseValue;
@@ -509,5 +507,57 @@ namespace MineS
 	        return result;
 	    }
 
+		/// <summary>
+		/// 特殊能力の三子教訓による攻撃力上昇値を返す
+		/// </summary>
+		/// <param name="attacker"></param>
+		/// <returns></returns>
+		public static int GetReinforcementValue(IAttack attacker)
+		{
+			var result = attacker.GetAbilityNumber(GameDefine.AbilityType.Reinforcement) * (EnemyManager.Instance.IdentitiedEnemyNumber - 1) * 2;
+			result = result < 0 ? 0 : result;
+
+			return result;
+		}
+
+		/// <summary>
+		/// 特殊能力の幸運によるアイテムドロップ率上昇量を返す
+		/// </summary>
+		public static int GetFortuneItemDropValue(IAttack attacker)
+		{
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Fortune);			
+		}
+
+		/// <summary>
+		/// 特殊能力の回避による回避率を返す
+		/// </summary>
+		public static int GetEvationAbilityValue(IAttack attacker)
+		{
+			return attacker.GetAbilityNumber(GameDefine.AbilityType.Evasion);
+		}
+
+		/// <summary>
+		/// 特殊能力の薬師による回復量上昇値を返す
+		/// </summary>
+		public static float GetHealingBuddhaValue(IAttack user)
+		{
+			return 0.10f + user.GetAbilityNumber(GameDefine.AbilityType.HealingBuddha) * 0.15f;			
+		}
+
+		/// <summary>
+		/// 特殊能力の防護によるダメージ減少値を返す
+		/// </summary>
+		public static int GetProtectionSubDamage(IAttack receiver)
+		{
+			return (receiver.GetAbilityNumber(GameDefine.AbilityType.Protection) * 3);
+		}
+
+		/// <summary>
+		/// 一致団結による受けるダメージの減少量を返す
+		/// </summary>
+		public static int GetAbilityUnitySubDamage()
+		{
+			return (EnemyManager.Instance.VisibleEnemies.Count - 1) * (EnemyManager.Instance.GetAbilityUnityNumber * 2);
+		}
 	}
 }
