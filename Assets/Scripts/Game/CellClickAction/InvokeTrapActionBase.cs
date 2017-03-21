@@ -19,6 +19,13 @@ namespace MineS
                 return;
             }
 			this._InternalInvoke(data);
+
+			var player = PlayerManager.Instance.Data;
+			if(player.FindAbnormalStatus(GameDefine.AbnormalStatusType.TrapMaster) || player.FindAbility(GameDefine.AbilityType.AvoidTrap))
+			{
+				return;
+			}
+
 			this.InternalInvoke(data);
 		}
 
@@ -73,14 +80,7 @@ namespace MineS
 
             this.isInvoke = false;
 			this.cellController.SetImage(this.Image);
-
-			var player = PlayerManager.Instance.Data;
-			if(player.FindAbnormalStatus(GameDefine.AbnormalStatusType.TrapMaster) || player.FindAbility(GameDefine.AbilityType.AvoidTrap))
-			{
-				return;
-			}
-
-			data.BindDeployDescription(new DeployDescriptionOnDescriptionData(this.DescriptionKey));
+            data.BindDeployDescription(new DeployDescriptionOnDescriptionData(this.DescriptionKey));
 		}
 
 		private string GetIsInvokeSerializeKeyName(int y, int x)
