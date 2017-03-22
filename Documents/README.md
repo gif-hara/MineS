@@ -9,6 +9,7 @@
     - [ショップ](spec/Village/Shop/README.md)
     - [鍛冶屋](spec/Village/BlackSmith/README.md)
 - [ダンジョンについて](spec/Dungeon/README.md)
+    - [チュートリアルダンジョン](spec/Dungeon/TutorialDungeon/README.md)
     - [通常ダンジョン](spec/Dungeon/StoryDungeon/README.md)
         - [初めてのダンジョン](spec/Dungeon/StoryDungeon/ElementaryLevel/README.md)
         - [腕鳴らしのダンジョン](spec/Dungeon/StoryDungeon/IntermediateLevel/README.md)
