@@ -10,14 +10,14 @@
     - [鍛冶屋](spec/Village/BlackSmith/README.md)
 - [ダンジョンについて](spec/Dungeon/README.md)
     - [通常ダンジョン](spec/Dungeon/StoryDungeon/README.md)
-        - 初めてのダンジョン
-        - 腕鳴らしのダンジョン
-        - 挑戦者のダンジョン
+        - [初めてのダンジョン](spec/Dungeon/StoryDungeon/ElementaryLevel/README.md)
+        - [腕鳴らしのダンジョン](spec/Dungeon/StoryDungeon/IntermediateLevel/README.md)
+        - [挑戦者のダンジョン](spec/Dungeon/StoryDungeon/AdvancedLevel/README.md)
     - [EXダンジョン](spec/Dungeon/ExtraDungeon/README.md)
         - [修羅の洞窟](spec/Dungeon/ExtraDungeon/CarnageCave/README.md)
-        - 鍛冶屋の縁の下
-        - 行商人の祠
-        - タルタロスの緋巌窟
+        - [鍛冶屋の縁の下](spec/Dungeon/ExtraDungeon/BlackSmithEdge/README.md)
+        - [行商人の祠](spec/Dungeon/ExtraDungeon/PeddlerTemple/README.md)
+        - [タルタロスの緋巌窟](spec/Dungeon/ExtraDungeon/TartarusScarletCave/README.md)
 - [キャラクターについて](spec/Character/README.md)
     - [プレイヤー](spec/Character/Player/README.md)
     - [敵](spec/Character/Enemy/README.md)
