@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -13,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talkElement:
     target: {fileID: 11400000, guid: 14d7696e2dcac49fb98182062b279630, type: 2}
-    value: "\u4FFA\u306F\u305D\u3093\u306A\u5192\u967A\u8005\u306E\u305F\u3081\u306B\u8272\u3093\u306A\u30A2\u30A4\u30C6\u30E0\u3092\u5206\u3051\u3066\u3093\u3060\u3002"
-    guid: 64b33105-1e2a-4a49-abe3-c919eff82ad6
+    value: "\u4FFA\u306F\u3053\u306E\u6751\u306B\u4F4F\u3093\u3067\u9577\u3044\u3002\u30C0\u30F3\u30B8\u30E7\u30F3\u306B\u3064\u3044\u3066\u8272\u3005\u6559\u3048\u3066\u3084\u308B\u3088\u3002"
+    guid: 25a4437c-e5bb-4786-8354-28fca3b989cd
   nextMessage:
     target: {fileID: 11400000, guid: 191b102ad64de4b9f89f71dfad4f4dd9, type: 2}
     value: "\u6B21\u3078"

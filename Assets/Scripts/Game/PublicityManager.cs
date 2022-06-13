@@ -93,17 +93,17 @@ namespace MineS
 		private void CreateConfirm()
 		{
 			var confirmManager = ConfirmManager.Instance;
-			confirmManager.Add(this.watchVideoMessage, () =>
-			{
-				if(PlayerManager.Instance.Data.Inventory.IsFreeSpace)
-				{
-					//UnityAdsController.Instance.ShowRewardedAd(this.HandleRewardedAd);
-				}
-				else
-				{
-					this.StartFullInventoryTalk();
-				}
-			}, true);
+			// confirmManager.Add(this.watchVideoMessage, () =>
+			// {
+			// 	if(PlayerManager.Instance.Data.Inventory.IsFreeSpace)
+			// 	{
+			// 		//UnityAdsController.Instance.ShowRewardedAd(this.HandleRewardedAd);
+			// 	}
+			// 	else
+			// 	{
+			// 		this.StartFullInventoryTalk();
+			// 	}
+			// }, true);
             confirmManager.Add(this.chattingMessage, () =>
             {
 				if(this.debugChatting)
