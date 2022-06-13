@@ -26,6 +26,7 @@ namespace MineS
 
 		private ModifiedEventInt abnormalStatusRemainingTurnEvent = new ModifiedEventInt();
 
+#if UNITY_EDITOR
 		void Update()
 		{
 			if(UnityEngine.Input.GetKeyDown(KeyCode.Q))
@@ -113,6 +114,7 @@ namespace MineS
 				HK.Framework.SaveData.Save();
 			}
 		}
+#endif
 
 		public void AddAbnormalStatusRemainingTurn(int value)
 		{
