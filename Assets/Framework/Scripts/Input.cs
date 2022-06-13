@@ -101,24 +101,12 @@ namespace HK.Framework
 		/// コンソールかWebPlayerかUnityで動作している環境のことを指します.
 		/// </remarks>
         /// <returns>コンシューマ環境で動作しているか返す.</returns>
-		private static bool isConsumerPlatform
-		{
-			get
-			{
-				return Application.isConsolePlatform || Application.isEditor;
-			}
-		}
+		private static bool isConsumerPlatform => !isMobilePlatform;
 
 		/// <summary>
         /// モバイル環境で動作しているか返す.
         /// </summary>
         /// <returns>モバイル環境で動作しているか返す.</returns>
-		private static bool isMobilePlatform
-		{
-			get
-			{
-				return Application.isMobilePlatform;
-			}
-		}
+		private static bool isMobilePlatform => Application.isMobilePlatform;
 	}
 }
