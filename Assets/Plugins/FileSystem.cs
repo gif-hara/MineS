@@ -31,7 +31,6 @@ namespace WebGL
         /// </summary>
         static FileSystem()
         {
-            FileSystemSyncfsAddEvent(Callback);
         }
 
         /// <summary>
