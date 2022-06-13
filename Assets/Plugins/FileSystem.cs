@@ -2,6 +2,10 @@ using AOT;
 using System;
 using System.Collections.Generic;
 
+#if UNITY_WEBGL && !UNITY_EDITOR
+using System.Runtime.InteropServices;
+#endif
+
 namespace WebGL
 {
     public static class FileSystem
