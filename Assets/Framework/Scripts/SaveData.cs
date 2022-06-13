@@ -211,6 +211,20 @@ namespace HK.Framework
 		public static void Save()
 		{
 			Savedatabase.Save();
+			
+#if UNITY_WEBGL && !UNITY_EDITOR
+			WebGL.FileSystem.Syncfs(error =>
+			{
+				if (string.IsNullOrEmpty(error))
+				{
+					Debug.Log("WebGL FileSystem Syncfs OK");
+				}
+				else
+				{
+					Debug.Log($"WebGL FileSystem Syncfs Error \"{error}\"");
+				}
+			});
+#endif
 		}
 
 #endregion
