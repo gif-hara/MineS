@@ -15,8 +15,6 @@ var LibraryFileSystem = {
 	// Sync
 	FileSystemSyncfs:function(id) {
 		FS.syncfs(function (err) {
-			var value = allocate(intArrayFromString(err?err:""), 'i8', ALLOC_NORMAL);
-			Runtime.dynCall('vii', FileSystem.callback, [id, value]);
 		});
 	},
 };
