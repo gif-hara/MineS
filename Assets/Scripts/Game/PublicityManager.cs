@@ -97,7 +97,7 @@ namespace MineS
 			{
 				if(PlayerManager.Instance.Data.Inventory.IsFreeSpace)
 				{
-					UnityAdsController.Instance.ShowRewardedAd(this.HandleRewardedAd);
+					//UnityAdsController.Instance.ShowRewardedAd(this.HandleRewardedAd);
 				}
 				else
 				{
@@ -125,17 +125,17 @@ namespace MineS
 			}, true);
 		}
 
-		private void HandleRewardedAd(ShowResult result)
-		{
-			if(result == ShowResult.Finished)
-			{
-				TalkManager.Instance.StartTalk(this.finishedTalk, this.GiveReward);
-			}
-			else
-			{
-				TalkManager.Instance.StartTalk(this.failureTalk, this.CreateConfirm);
-			}
-		}
+		// private void HandleRewardedAd(ShowResult result)
+		// {
+		// 	if(result == ShowResult.Finished)
+		// 	{
+		// 		TalkManager.Instance.StartTalk(this.finishedTalk, this.GiveReward);
+		// 	}
+		// 	else
+		// 	{
+		// 		TalkManager.Instance.StartTalk(this.failureTalk, this.CreateConfirm);
+		// 	}
+		// }
 
 		private void GiveReward()
 		{

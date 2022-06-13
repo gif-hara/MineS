@@ -104,10 +104,6 @@ namespace MineS
 			{
 				TalkManager.Instance.StartTalk(this.testTalk, null);
 			}
-			if(UnityEngine.Input.GetKeyDown(KeyCode.M))
-			{
-				UnityAdsController.Instance.ShowRewardedAd();
-			}
 			if(UnityEngine.Input.GetKeyDown(KeyCode.L))
 			{
 				CellManager.Instance.Serialize();
